@@ -5,7 +5,7 @@ FROM python:3.9-alpine
 WORKDIR /app
 
 # Copy the Python script and requirements.txt into the container
-COPY script.py /app/
+COPY muf-script.py /app/
 COPY requirements.txt /app/
 
 # Install Python dependencies
