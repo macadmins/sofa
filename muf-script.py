@@ -1,0 +1,202 @@
+import requests
+from bs4 import BeautifulSoup
+import json
+import re
+import os
+from datetime import datetime, timezone
+import xml.etree.ElementTree as ET
+import argparse
+
+def fetch_latest_macos_version_info(macos_version_major):
+    url = "https://gdmf.apple.com/v2/pmv"
+    response = requests.get(url, verify=False)
+    data = response.json()
+
+    macos_versions = data.get('AssetSets', {}).get('macOS', [])
+    filtered_versions = [v for v in macos_versions if v.get("ProductVersion", "").startswith(macos_version_major)]
+
+    if filtered_versions:
+        latest_macos_version = sorted(
+            filtered_versions,
+            key=lambda x: datetime.strptime(x['PostingDate'], '%Y-%m-%d'),
+            reverse=True
+        )[0]
+
+        return {
+            "ProductVersion": latest_macos_version.get("ProductVersion"),
+            "Build": latest_macos_version.get("Build"),
+            "ReleaseDate": latest_macos_version.get("PostingDate"),
+            "ExpirationDate": latest_macos_version.get("ExpirationDate"),
+        }
+    else:
+        return None
+
+def get_major_version(macos_full_version):
+    # Example input: "macOS Ventura 13"
+    # Expected output: "13"
+    match = re.search(r'\d+$', macos_full_version)
+    return match.group(0) if match else None
+
+
+def fetch_security_releases(macos_version):
+    # Uncomment the following line to hardcode the macOS version for debugging
+    # macos_version = "macOS Sonoma"
+    # macos_version = "macOS Ventura"
+    # macos_version = "macOS Monterey"
+
+    url = 'https://support.apple.com/en-us/HT201222'
+    response = requests.get(url)
+    security_releases = []
+
+    # Debugging print to show which macOS version is being searched for
+    print(f"Fetching security releases for: {macos_version}")
+
+    # Split the macOS version into name and number for dynamic regex construction
+    if " " in macos_version:  # Check to ensure version includes a space before splitting
+        version_name, version_number = macos_version.rsplit(" ", 1)
+        version_regex = rf"{version_name} {version_number}.*?(\d+\.\d+(\.\d+)*)?"
+    else:
+        version_regex = rf"{macos_version}.*?(\d+\.\d+(\.\d+)*)?"
+
+    if response.status_code == 200:
+        html_content = response.text
+        soup = BeautifulSoup(html_content, 'lxml')
+        rows = soup.find_all('tr')
+
+        for row in rows:
+            cells = row.find_all('td')
+            if cells:
+                name_info = cells[0].get_text(strip=True)
+                # print(f"Debug: Found name info: {name_info}")  # Debug output
+                version_match = re.search(version_regex, name_info)
+                
+                if version_match:
+                    link = cells[0].find('a', href=True)
+                    if link:
+                        link_info = link['href']
+                        cves = fetch_cves(link_info)
+                        unique_cves_count = len(set(cves))
+                    else:
+                        link_info = "This update has no published CVE entries."
+                        cves = []
+                        unique_cves_count = 0
+                    date = cells[-1].get_text(strip=True)
+        
+                    security_releases.append({
+                        "OSVersion": name_info,
+                        "ReleaseDate": date,
+                        "SecurityInfo": link_info,
+                        "CVEs": cves,
+                        "UniqueCVEsCount": unique_cves_count
+                    })
+        return security_releases
+    else:
+        print("Failed to retrieve security releases.")
+        return []
+
+def fetch_cves(url):
+    response = requests.get(url)
+    cves = set()
+    if response.ok:
+        html_content = response.text
+        soup = BeautifulSoup(html_content, 'html.parser')
+        article_body = soup.find('div', itemprop='articleBody')
+        if article_body:
+            for paragraph in article_body.find_all('p'):
+                text = paragraph.get_text()
+                cve_matches = re.findall(r'\bCVE-\d{4}-\d{4,7}\b', text)
+                cves.update(cve_matches)
+    return list(cves)
+
+def fetch_content(url):
+    response = requests.get(url)
+    if response.ok:
+        return response.text
+    else:
+        raise Exception(f"Error fetching data from {url}: HTTP {response.status_code}")
+
+def extract_xprotect_versions_and_post_date(catalog_content, pkm_url):
+    pkm_content = fetch_content(pkm_url)
+    version_info = {}
+
+    if pkm_content:
+        root = ET.fromstring(pkm_content)
+        for bundle in root.findall(".//bundle"):
+            id_attr = bundle.get('id')
+            version = bundle.get('CFBundleShortVersionString')
+            if 'XProtect' in id_attr or 'PluginService' in id_attr:
+                version_info[id_attr] = version
+
+        post_date_regex = rf'<string>{re.escape(pkm_url)}</string>.*?<date>(.*?)</date>'
+        post_date_match = re.search(post_date_regex, catalog_content, re.DOTALL)
+        if post_date_match:
+            version_info["ReleaseDate"] = post_date_match.group(1)
+
+    return version_info
+
+def write_data_to_json(data, filename):
+    data['lastCheck'] = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+    with open(filename, "w") as json_file:
+        json.dump(data, json_file, indent=4)
+
+def read_and_validate_json(filename):
+    """Reads and validates the JSON file's content."""
+    try:
+        with open(filename, 'r') as file:
+            data = json.load(file)
+            # Example validation checks
+            required_keys = ["OSVersion", "LatestMacOS", "SecurityReleases", "XProtectPlistConfigData", "XProtectPayloads"]
+            missing_keys = [key for key in required_keys if key not in data]
+            if missing_keys:
+                print(f"Validation error: Missing keys {missing_keys} in {filename}")
+            else:
+                print(f"Validation passed for {filename}.")
+                # Optionally, print the JSON content
+                # print(json.dumps(data, indent=4))
+    except FileNotFoundError:
+        print(f"File not found: {filename}")
+    except json.JSONDecodeError:
+        print(f"Error decoding JSON from the file: {filename}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+def main():
+    # Fetch catalog content once, as it's common for all macOS versions
+    catalog_url = "https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog"
+    catalog_content = fetch_content(catalog_url)
+
+    plist_url = re.search(r'https.*XProtectPlistConfigData.*?\.pkm', catalog_content).group(0)
+    payloads_url = re.search(r'https.*XProtectPayloads.*?\.pkm', catalog_content).group(0)
+    
+    plist_info = extract_xprotect_versions_and_post_date(catalog_content, plist_url)
+    payloads_info = extract_xprotect_versions_and_post_date(catalog_content, payloads_url)
+
+    # Process each macOS version specified in the environment variable
+    macos_versions = [version.strip() for version in os.getenv("MACOS_VERSIONS", "").split(",")]
+
+    for macos_version in macos_versions:
+        macos_full_version = f"macOS {macos_version}"
+        major_version = get_major_version(macos_full_version)
+        
+        # Fetch the latest macOS version information and security releases for each specified version
+        latest_macos_info = fetch_latest_macos_version_info(major_version)
+        security_releases = fetch_security_releases(macos_full_version)
+
+        # Assemble data for the current macOS version, incorporating the fetched XProtect data
+        data_for_version = {
+            "OSVersion": macos_full_version,
+            "XProtectPayloads": payloads_info,
+            "XProtectPlistConfigData": plist_info,
+            "LatestMacOS": latest_macos_info,
+            "SecurityReleases": security_releases,
+        }
+
+        filename = f"muf_data_{macos_version.replace(' ', '_').lower()}.json"
+        write_data_to_json(data_for_version, filename)
+        print(f"Data for {macos_version} has been written to {filename}")
+
+        # Validate the data written to the JSON file
+        read_and_validate_json(filename)
+
+if __name__ == "__main__":
+    main()
