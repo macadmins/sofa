@@ -29,11 +29,13 @@ jobs:
         docker cp muf_scan_container:/app/muf_data_monterey_12.json .
         docker cp muf_scan_container:/app/muf_data_sonoma_14.json .
         docker cp muf_scan_container:/app/muf_data_ventura_13.json .
+        docker cp muf_scan_container:/app/time-series.csv .
       
     - name: Commit and push if changes are detected
       run: |
+        timestamp=$(date +'%Y-%m-%d %H:%M:%S')
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
-        git add muf_data_*.json
-        git commit -m "Update MUF data" -a || exit 0   # Commit if there are changes, otherwise exit gracefully
+        git add muf_data_*.json time-series.csv
+        git commit -m "Update MUF data - $timestamp" -a || exit 0  # Commit all changes, otherwise exit gracefully
         git push
