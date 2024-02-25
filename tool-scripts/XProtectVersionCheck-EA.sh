@@ -3,7 +3,7 @@
 ## based on Grahampugh's version https://github.com/grahampugh/osx-scripts/blob/main/check-xprotect-version/XProtectVersionCheck-EA.sh
 
 # URL to the online JSON data
-onlineJsonUrl="https://headmin.github.io/xprotect-scan/xprotect_data.json"
+onlineJsonUrl="https://headmin.github.io/muf/muf_data_sonoma_14.json"
 
 # Extract the online version of XProtect configuration data
 onlineXProtectVersion=$(curl -s "$onlineJsonUrl" | grep -o '"com.apple.XProtect": "[^"]*' | awk -F': "' '{print $2}')
