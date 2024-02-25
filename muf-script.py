@@ -44,6 +44,26 @@ def get_major_version(macos_full_version):
     return match.group(0) if match else None
 
 
+def process_os_version(macos_version, name_info):
+    # Split the macOS version into name and number for dynamic regex construction
+    if " " in macos_version:
+        version_name, version_number = macos_version.rsplit(" ", 1)
+        version_regex = rf"{version_name} {version_number}.*?(\d+\.\d+(\.\d+)*)?"
+    else:
+        version_regex = rf"{macos_version}.*?(\d+\.\d+(\.\d+)*)?"
+
+    version_match = re.search(version_regex, name_info)
+
+    if version_match:
+        # Construct regex pattern for OSVersion stripping
+        perfect_pattern = r"(Rapid Security Response)?macOS\s+\w+\s*\d+(?:\.\d+)*(?:\.\d+)*(?:\s*(?:\(.\))?.*?)?"
+        # Applying regex pattern specifically for OSVersion field
+        os_version = re.search(perfect_pattern, name_info).group()
+        return os_version
+    else:
+        return None
+
+
 def fetch_security_releases(macos_version):
     # Uncomment the following line to hardcode the macOS version for debugging
     # macos_version = "macOS Sonoma"
@@ -57,15 +77,6 @@ def fetch_security_releases(macos_version):
     # Debugging print to show which macOS version is being searched for
     print(f"Fetching security releases for: {macos_version}")
 
-    # Split the macOS version into name and number for dynamic regex construction
-    if (
-        " " in macos_version
-    ):  # Check to ensure version includes a space before splitting
-        version_name, version_number = macos_version.rsplit(" ", 1)
-        version_regex = rf"{version_name} {version_number}.*?(\d+\.\d+(\.\d+)*)?"
-    else:
-        version_regex = rf"{macos_version}.*?(\d+\.\d+(\.\d+)*)?"
-
     if response.status_code == 200:
         html_content = response.text
         soup = BeautifulSoup(html_content, "lxml")
@@ -76,29 +87,30 @@ def fetch_security_releases(macos_version):
             if cells:
                 name_info = cells[0].get_text(strip=True)
                 # print(f"Debug: Found name info: {name_info}")  # Debug output
-                version_match = re.search(version_regex, name_info)
 
-                if version_match:
+                os_version = process_os_version(macos_version, name_info)
+                if os_version:
                     link = cells[0].find("a", href=True)
                     if link:
                         link_info = link["href"]
                         cves = fetch_cves(link_info)
                         unique_cves_count = len(set(cves))
                     else:
-                        link_info = "This update may have no published CVE entries."
+                        link_info = "This update has no published CVE entries."
                         cves = []
                         unique_cves_count = 0
                     date = cells[-1].get_text(strip=True)
 
                     security_releases.append(
                         {
-                            "OSVersion": name_info,
+                            "OSVersion": os_version,
                             "ReleaseDate": date,
                             "SecurityInfo": link_info,
                             "CVEs": cves,
                             "UniqueCVEsCount": unique_cves_count,
                         }
                     )
+
         return security_releases
     else:
         print("Failed to retrieve security releases.")
