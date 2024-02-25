@@ -29,7 +29,7 @@ jobs:
         docker cp muf_scan_container:/app/muf_data_monterey_12.json .
         docker cp muf_scan_container:/app/muf_data_sonoma_14.json .
         docker cp muf_scan_container:/app/muf_data_ventura_13.json .
-        docker cp --fail muf_scan_container:/app/time-series.csv .
+        docker cp muf_scan_container:/app/time-series.csv .
       
     - name: Commit and push if changes are detected
       run: |
