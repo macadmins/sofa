@@ -118,21 +118,22 @@
       // Dynamically construct the macOS version section with image
       if (data.LatestMacOS) {
         const osSectionHTML = `
-      <div class="relative bg-gray-800 border border-gray-600 shadow overflow-hidden sm:rounded-lg p-6">
-        <h3 class="text-lg leading-6 font-semibold text-indigo-400">${data.OSVersion}</h3>
-        <div><strong>Last released version:</strong> ${data.LatestMacOS.ProductVersion}</div>
-        <div class="mt-2 max-w-xl text-sm text-gray-400">
-            <p><strong>Build:</strong> ${data.LatestMacOS.Build}</p>
-            <p><strong>Release Date:</strong> ${data.LatestMacOS.ReleaseDate}</p>
-            <p><strong>Expiration Date:</strong> ${data.LatestMacOS.ExpirationDate}</p>
-        </div>
-        <img src="images/${imageName}" alt="${osName}" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
-        <div class="mt-4 max-w-xl text-sm text-gray-400">
-            Apple Software Lookup Service: 
-            <a href="https://support.apple.com/guide/deployment/use-mdm-to-deploy-software-updates-depafd2fad80/1/web/1.0" class="text-yellow-500 hover:text-yellow-300">Get to know more</a>
-        </div>
-      </div>
-    `;
+           <div class="relative bg-gray-800 border border-gray-600 shadow overflow-hidden sm:rounded-lg p-6 flex flex-col">
+               <h3 class="text-lg leading-6 font-semibold text-indigo-400">${data.OSVersion}</h3>
+               <div><strong>Last released version:</strong> ${data.LatestMacOS.ProductVersion}</div>
+               <div class="mt-2 max-w-xl text-sm text-gray-400">
+                   <p><strong>Build:</strong> ${data.LatestMacOS.Build}</p>
+                   <p><strong>Release Date:</strong> ${data.LatestMacOS.ReleaseDate}</p>
+                   <p><strong>Expiration Date:</strong> ${data.LatestMacOS.ExpirationDate}</p>
+               </div>
+               <img src="images/${imageName}" alt="${osName}" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
+               <div class="flex-grow"></div>
+               <div class="max-w-xl text-sm text-gray-400 pb-8">
+                   macOS Updates Management: 
+                   <a href="https://support.apple.com/guide/deployment/use-mdm-to-deploy-software-updates-depafd2fad80/1/web/1.0" target="_blank" rel="noopener noreferrer" class="text-yellow-500 hover:text-yellow-300">Get to know more</a>
+               </div>
+           </div>
+       `;
         versionAndXProtectContainer.innerHTML += osSectionHTML;
       }
 
@@ -151,9 +152,11 @@
           <p><strong>XProtectPlistConfigData latest version:</strong> ${data.XProtectPlistConfigData["com.apple.XProtect"]}</p>
           <p><strong>Release Date:</strong> ${data.XProtectPlistConfigData.ReleaseDate}</p>
         </div>
-      <div class="mt-4 max-w-xl text-sm text-gray-400">
-         What is XProtect: <a href="https://support.apple.com/guide/security/protecting-against-malware-sec469d47bd8/web" class="text-yellow-500 hover:text-yellow-300">Get to know more</a>
-      </div>
+ <div class="mt-8 max-w-xl text-sm text-gray-400">
+     What is XProtect: 
+     <a href="https://support.apple.com/guide/security/protecting-against-malware-sec469d47bd8/web" target="_blank" rel="noopener noreferrer" class="text-yellow-500 hover:text-yellow-300">Get to know more</a>
+ </div>
+
         <img src="images/SWUpdate.png" alt="SWUpdate" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
       </div>
     `;
