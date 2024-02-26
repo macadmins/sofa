@@ -1,35 +1,41 @@
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MUF | a macadmins update feed for macOS, Xprotect, and more</title>
+  <title>MUF | macadmin's update feed for macOS, XProtect and more</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .text-content {
-        padding-right: 80px; /* Adjust the padding to ensure text does not overlap the image */
+      padding-right: 80px;
+      /* Adjust the padding to ensure text does not overlap the image */
     }
 
     .os-image {
-        position: absolute;
-        top: -30px; /* Adjust the position to let the image float on top */
-        right: 15px;
-        height: 60px; /* Adjust the size of the image as needed */
-        width: auto;
-        border-radius: 50%; /* Circular image */
+      position: absolute;
+      top: -30px;
+      /* Adjust the position to let the image float on top */
+      right: 15px;
+      height: 60px;
+      /* Adjust the size of the image as needed */
+      width: auto;
+      border-radius: 50%;
+      /* Circular image */
     }
 
     /* Any additional custom styles */
   </style>
 </head>
+
 <body class="bg-gray-900 text-gray-300 font-sans">
   <div class="container mx-auto px-6 py-12">
     <div class="flex items-center mb-6">
       <img src="images/custom_logo.png" alt="Custom Logo" class="h-14 w-14 mr-4 sm:mr-6">
-      <h1 class="text-3xl font-bold text-white">MUF - macadmins update feed (community edition)</h1>
+      <h1 class="text-3xl font-bold text-white">MUF - macadmins update feed</h1>
     </div>
     <div id="tabs" class="mb-6 flex"></div>
-    <div id="last-checked" class="mb-6 text-indigo-400"></div>
-    <div id="machine-readable-feed" class="text-indigo-300 hover:text-indigo-200 mb-6"></div>
+    <div id="last-checked" class="mb-2 text-indigo-400"></div>
+    <div id="machine-readable-feed" class="text-indigo-400 mb-6"></div>
     <div class="grid md:grid-cols-2 gap-4" id="version-and-xprotect"></div>
     <hr class="border-t-2 border-gray-700 my-8">
     <div id="security-releases" class="space-y-4">
@@ -41,84 +47,103 @@
 
   <script>
     // Define the data for each tab
-    const tabsData = [
-      { id: 'sonoma-14', name: 'Sonoma 14', file: 'muf_data_sonoma_14.json' },
-      { id: 'ventura-13', name: 'Ventura 13', file: 'muf_data_ventura_13.json' },
-      { id: 'monterey-12', name: 'Monterey 12', file: 'muf_data_monterey_12.json' }
+    const tabsData = [{
+        id: 'sonoma-14',
+        name: 'Sonoma 14',
+        file: 'muf_data_sonoma_14.json'
+      },
+      {
+        id: 'ventura-13',
+        name: 'Ventura 13',
+        file: 'muf_data_ventura_13.json'
+      },
+      {
+        id: 'monterey-12',
+        name: 'Monterey 12',
+        file: 'muf_data_monterey_12.json'
+      }
     ];
-  
-document.addEventListener('DOMContentLoaded', () => {
-  createTabs();
-});
 
-function createTabs() {
-  const tabsContainer = document.getElementById('tabs');
-  tabsData.forEach((tab, index) => {
-    const tabButton = document.createElement('button');
-    tabButton.textContent = tab.name;
-    tabButton.dataset.file = tab.file; // Store file path in data attribute
-    tabButton.className = `px-4 py-2 rounded-lg mr-2 text-white font-medium transition duration-150 ease-in-out ${index === 0 ? 'bg-indigo-600' : 'bg-gray-700 hover:bg-indigo-500'}`;
-    tabButton.onclick = () => {
-      setActiveTab(tabButton);
-      fetchData(tab.file);
-    };
-    tabsContainer.appendChild(tabButton);
-  });
-  
-  // Trigger click on the first tab to load its content
-  tabsContainer.firstChild.click();
-}
+    document.addEventListener('DOMContentLoaded', () => {
+      createTabs();
+    });
 
-function setActiveTab(activeTab) {
-  document.querySelectorAll('#tabs button').forEach(btn => {
-    btn.classList.replace('bg-indigo-600', 'bg-gray-700');
-    btn.classList.add('hover:bg-indigo-500');
-  });
-  activeTab.classList.replace('bg-gray-700', 'bg-indigo-600');
-}
+    function createTabs() {
+      const tabsContainer = document.getElementById('tabs');
+      tabsData.forEach((tab, index) => {
+        const tabButton = document.createElement('button');
+        tabButton.textContent = tab.name;
+        tabButton.dataset.file = tab.file; // Store file path in data attribute
+        tabButton.className = `px-4 py-2 rounded-lg mr-2 text-white font-medium transition duration-150 ease-in-out ${index === 0 ? 'bg-indigo-600' : 'bg-gray-700 hover:bg-indigo-500'}`;
+        tabButton.onclick = () => {
+          setActiveTab(tabButton);
+          fetchData(tab.file);
+        };
+        tabsContainer.appendChild(tabButton);
+      });
 
-function fetchData(file) {
-  fetch(file)
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('last-checked').textContent = `Last Checked: ${data.lastCheck}`;
-      document.getElementById('machine-readable-feed').innerHTML = `Machine readable feed: <a href="${file}" class="text-indigo-300 hover:text-indigo-200">${file}</a>`;
-      populateVersionAndXProtect(data);
-      populateSecurityReleases(data.SecurityReleases);
-    })
-    .catch(error => console.error('Error fetching data:', error));
-}
+      // Trigger click on the first tab to load its content
+      tabsContainer.firstChild.click();
+    }
 
-function populateVersionAndXProtect(data) {
-  const versionAndXProtectContainer = document.getElementById('version-and-xprotect');
-  versionAndXProtectContainer.innerHTML = ''; // Clear existing content
+    function setActiveTab(activeTab) {
+      document.querySelectorAll('#tabs button').forEach(btn => {
+        btn.classList.replace('bg-indigo-600', 'bg-gray-700');
+        btn.classList.add('hover:bg-indigo-500');
+      });
+      activeTab.classList.replace('bg-gray-700', 'bg-indigo-600');
+    }
 
-  const osName = data.OSVersion.split(' ')[1];
-  const imageName = `${osName}.png`; // Construct the image filename like "Monterey.png"
+    function fetchData(file) {
+      fetch(file)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('last-checked').innerHTML = `Last checked: <span class="text-indigo-300">${data.lastCheck}</span>`;
+          document.getElementById('machine-readable-feed').innerHTML = `
+            Machine readable feed: 
+            <a href="${file}" class="text-yellow-500 hover:text-yellow-300">${file}</a>`;
+          populateVersionAndXProtect(data);
+          populateSecurityReleases(data.SecurityReleases);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    }
 
-  // Dynamically construct the macOS version section with image
-  if (data.LatestMacOS) {
-    const osSectionHTML = `
-      <div class="relative bg-gray-800 border border-gray-600 shadow overflow-hidden sm:rounded-lg p-6">
-        <h3 class="text-lg leading-6 font-semibold text-indigo-400">${data.OSVersion}</h3>
-        <div><strong>Last released version:</strong> ${data.LatestMacOS.ProductVersion}</div>
-        <div class="mt-2 max-w-xl text-sm text-gray-400">
-            <p><strong>Build:</strong> ${data.LatestMacOS.Build}</p>
-            <p><strong>Release Date:</strong> ${data.LatestMacOS.ReleaseDate}</p>
-            <p><strong>Expiration Date:</strong> ${data.LatestMacOS.ExpirationDate}</p>
-        </div>
-        <img src="images/${imageName}" alt="${osName}" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
-      </div>
-    `;
-    versionAndXProtectContainer.innerHTML += osSectionHTML;
-  }
+    function populateVersionAndXProtect(data) {
+      const versionAndXProtectContainer = document.getElementById('version-and-xprotect');
+      versionAndXProtectContainer.innerHTML = ''; // Clear existing content
 
-  // Dynamically construct the XProtect data section
-  if (data.XProtectPlistConfigData && data.XProtectPayloads) {
-    const xProtectSectionHTML = `
+      const osName = data.OSVersion.split(' ')[1];
+      const imageName = `${osName}.png`; // Construct the image filename like "Sonoma.png"
+
+      // Dynamically construct the macOS version section with image
+      if (data.LatestMacOS) {
+        const osSectionHTML = `
+           <div class="relative bg-gray-800 border border-gray-600 shadow overflow-hidden sm:rounded-lg p-6 flex flex-col">
+               <h3 class="text-lg leading-6 font-semibold text-indigo-400">${data.OSVersion}</h3>
+               <div><strong>Last released version:</strong> ${data.LatestMacOS.ProductVersion}</div>
+               <div class="mt-2 max-w-xl text-sm text-gray-400">
+                   <p><strong>Build:</strong> ${data.LatestMacOS.Build}</p>
+                   <p><strong>Release Date:</strong> ${data.LatestMacOS.ReleaseDate}</p>
+                   <p><strong>Expiration Date:</strong> ${data.LatestMacOS.ExpirationDate}</p>
+               </div>
+               <img src="images/${imageName}" alt="${osName}" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
+               <div class="flex-grow"></div>
+           <div class="mt-8 max-w-xl text-sm text-gray-400">
+               How to Manage Updates: 
+               <a href="https://support.apple.com/guide/deployment/use-mdm-to-deploy-software-updates-depafd2fad80/1/web/1.0" target="_blank" rel="noopener noreferrer" class="text-yellow-500 hover:text-yellow-300">Get to know more</a>
+           </div>
+
+           </div>
+       `;
+        versionAndXProtectContainer.innerHTML += osSectionHTML;
+      }
+
+      // Dynamically construct the XProtect data section
+      if (data.XProtectPlistConfigData && data.XProtectPayloads) {
+        const xProtectSectionHTML = `
     <div class="relative bg-gray-800 border border-gray-600 shadow overflow-hidden sm:rounded-lg p-6 mt-4 md:mt-0 md:ml-4">
-        <h3 class="text-lg leading-6 font-semibold text-indigo-400">XProtect latest versions</h3>
-        <div><strong>Last released version:</strong> ${data.XProtectPayloads["com.apple.XProtectFramework.XProtect"]} | ${data.XProtectPayloads["com.apple.XprotectFramework.PluginService"]} | ${data.XProtectPlistConfigData["com.apple.XProtect"]}</div>
+        <h3 class="text-lg leading-6 font-semibold text-indigo-400">XProtect data files</h3>
+        <div><strong>Latest versions:</strong> ${data.XProtectPayloads["com.apple.XProtectFramework.XProtect"]} | ${data.XProtectPayloads["com.apple.XprotectFramework.PluginService"]} | ${data.XProtectPlistConfigData["com.apple.XProtect"]}</div>
         <div class="mt-2 max-w-xl text-sm text-gray-400">
           <p><strong>XProtect.app latest version:</strong> ${data.XProtectPayloads["com.apple.XProtectFramework.XProtect"]}</p>
           <p><strong>XProtect Remediator latest version:</strong> ${data.XProtectPayloads["com.apple.XprotectFramework.PluginService"]}</p>
@@ -128,30 +153,33 @@ function populateVersionAndXProtect(data) {
           <p><strong>XProtectPlistConfigData latest version:</strong> ${data.XProtectPlistConfigData["com.apple.XProtect"]}</p>
           <p><strong>Release Date:</strong> ${data.XProtectPlistConfigData.ReleaseDate}</p>
         </div>
+ <div class="mt-8 max-w-xl text-sm text-gray-400">
+     What is XProtect: 
+     <a href="https://support.apple.com/guide/security/protecting-against-malware-sec469d47bd8/web" target="_blank" rel="noopener noreferrer" class="text-yellow-500 hover:text-yellow-300">Get to know more</a>
+ </div>
+
         <img src="images/SWUpdate.png" alt="SWUpdate" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
       </div>
     `;
-    versionAndXProtectContainer.innerHTML += xProtectSectionHTML;
-  }
-}
+        versionAndXProtectContainer.innerHTML += xProtectSectionHTML;
+      }
+    }
 
+    function populateSecurityReleases(securityReleases) {
+      const securityReleasesContainer = document.getElementById('security-releases');
+      securityReleasesContainer.innerHTML = `<h2 class="text-2xl text-indigo-400 font-semibold mb-4">macOS update security feed</h2>`; // Re-initialize the container with the title
 
+      securityReleases.forEach((release, index) => {
+        const warningSign = release.SecurityInfo.startsWith('http') ? `<span class="text-yellow-400"> ⚠️</span>` : '';
+        const securityInfoHTML = release.SecurityInfo.startsWith('http') ?
+          `<a href="${release.SecurityInfo}" class="text-yellow-500 hover:text-yellow-300" target="_blank">${release.SecurityInfo}</a>` :
+          release.SecurityInfo;
 
-function populateSecurityReleases(securityReleases) {
-  const securityReleasesContainer = document.getElementById('security-releases');
-  securityReleasesContainer.innerHTML = `<h2 class="text-2xl text-indigo-400 font-semibold mb-4">macOS update security feed</h2>`; // Re-initialize the container with the title
+        let cveLinksHTML = release.CVEs.length > 0 ? release.CVEs.map(cve =>
+          `<a href="https://www.cve.org/CVERecord?id=${cve}" class="text-yellow-500 hover:text-yellow-300" target="_blank">${cve}</a>`
+        ).join(', ') : '<i>This update has no published CVE entries.</i>';
 
-  securityReleases.forEach((release, index) => {
-    const warningSign = release.SecurityInfo.startsWith('http') ? `<span class="text-yellow-400"> ⚠️</span>` : '';
-    const securityInfoHTML = release.SecurityInfo.startsWith('http') ?
-        `<a href="${release.SecurityInfo}" class="text-yellow-500 hover:text-yellow-300" target="_blank">${release.SecurityInfo}</a>` :
-        release.SecurityInfo;
-
-    let cveLinksHTML = release.CVEs.length > 0 ? release.CVEs.map(cve => 
-        `<a href="https://www.cve.org/CVERecord?id=${cve}" class="text-yellow-500 hover:text-yellow-300" target="_blank">${cve}</a>`
-    ).join(', ') : '<i>This update has no published CVE entries.</i>';
-
-    const releaseHTML = `
+        const releaseHTML = `
       <div class="${index > 0 ? 'border-t-2 border-gray-500 pt-4 mt-4' : ''}">
         <p class="mt-1 max-w-2xl text-sm text-gray-500">Release Date: ${formatDate(release.ReleaseDate)}${warningSign}</p>
         <h3 class="text-lg leading-6 font-medium text-indigo-400">${release.OSVersion}</h3>
@@ -160,15 +188,19 @@ function populateSecurityReleases(securityReleases) {
         <p>Security Advisories (CVE Identifiers): ${cveLinksHTML}</p>
       </div>
     `;
-    securityReleasesContainer.innerHTML += releaseHTML;
-  });
-}
+        securityReleasesContainer.innerHTML += releaseHTML;
+      });
+    }
 
-function formatDate(dateString) {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-}
-
+    function formatDate(dateString) {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    }
   </script>
 </body>
+
 </html>
