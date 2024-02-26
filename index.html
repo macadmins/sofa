@@ -94,7 +94,7 @@
         tabButton.className = `px-4 py-2 rounded-lg mr-2 text-white font-medium transition duration-150 ease-in-out ${index === 0 ? 'bg-indigo-600' : 'bg-gray-700 hover:bg-indigo-500'}`;
         tabButton.onclick = () => {
           setActiveTab(tabButton);
-          fetchData(tab.file);
+          fetchData(tab.file, filterCVEs); // Pass filterCVEs as callback
         };
         tabsContainer.appendChild(tabButton);
       });
