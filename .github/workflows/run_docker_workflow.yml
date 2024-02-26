@@ -9,7 +9,7 @@ on:
     # On weekends every 12 hours from 12:00 AM to 11:59 PM CET
     - cron: '0 */8 * * 6,7'
   workflow_dispatch:
-  
+
 jobs:
   build-and-run:
     runs-on: ubuntu-latest
