@@ -34,8 +34,8 @@
       <h1 class="text-3xl font-bold text-white">MUF - macadmins update feed</h1>
     </div>
     <div id="tabs" class="mb-6 flex"></div>
-    <div id="last-checked" class="mb-6 text-indigo-400"></div>
-    <div id="machine-readable-feed" class="text-indigo-300 hover:text-indigo-200 mb-6"></div>
+    <div id="last-checked" class="mb-2 text-indigo-400"></div>
+    <div id="machine-readable-feed" class="text-indigo-400 mb-6"></div>
     <div class="grid md:grid-cols-2 gap-4" id="version-and-xprotect"></div>
     <hr class="border-t-2 border-gray-700 my-8">
     <div id="security-releases" class="space-y-4">
@@ -98,10 +98,10 @@
       fetch(file)
         .then(response => response.json())
         .then(data => {
-          document.getElementById('last-checked').textContent = `Last Checked: ${data.lastCheck}`;
+          document.getElementById('last-checked').textContent = `Last checked: ${data.lastCheck}`;
           document.getElementById('machine-readable-feed').innerHTML = `
             Machine readable feed: 
-            <a href="${file}" class="text-indigo-600 hover:text-indigo-400">${file}</a>`;
+            <a href="${file}" class="text-indigo-400 hover:text-indigo-200">${file}</a>`;
           populateVersionAndXProtect(data);
           populateSecurityReleases(data.SecurityReleases);
         })
