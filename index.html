@@ -24,7 +24,8 @@
     }
 
     .highlight-cve {
-      background-color: yellow;
+      background-color: rgb(173, 29, 79);
+      box-shadow: 0 0 1px 1px rgb(173, 29, 79);
       /* Set the background color to highlight cve's */
     }
 
@@ -93,7 +94,7 @@
         tabButton.className = `px-4 py-2 rounded-lg mr-2 text-white font-medium transition duration-150 ease-in-out ${index === 0 ? 'bg-indigo-600' : 'bg-gray-700 hover:bg-indigo-500'}`;
         tabButton.onclick = () => {
           setActiveTab(tabButton);
-          fetchData(tab.file);
+          fetchData(tab.file, filterCVEs); // Pass filterCVEs as callback
         };
         tabsContainer.appendChild(tabButton);
       });
@@ -108,18 +109,22 @@
         btn.classList.add('hover:bg-indigo-500');
       });
       activeTab.classList.replace('bg-gray-700', 'bg-indigo-600');
+      // Add this line to retrigger search filtering after tab switch
+      filterCVEs();
     }
 
-    function fetchData(file) {
+    function fetchData(file, callback) {
       fetch(file)
         .then(response => response.json())
         .then(data => {
-          document.getElementById('last-checked').innerHTML = `Last checked: <span class="text-indigo-300">${data.lastCheck}</span>`;
-          document.getElementById('machine-readable-feed').innerHTML = `
-            Machine readable feed: 
-            <a href="${file}" class="text-yellow-500 hover:text-yellow-300">${file}</a>`;
+          // Existing code to process fetched data
           populateVersionAndXProtect(data);
           populateSecurityReleases(data.SecurityReleases);
+    
+          // Invoke the callback at the end of data processing
+          if (callback && typeof callback === 'function') {
+            callback();
+          }
         })
         .catch(error => console.error('Error fetching data:', error));
     }
@@ -150,35 +155,34 @@
                How to Manage Updates: 
                <a href="https://support.apple.com/guide/deployment/use-mdm-to-deploy-software-updates-depafd2fad80/1/web/1.0" target="_blank" rel="noopener noreferrer" class="text-yellow-500 hover:text-yellow-300">Get to know more</a>
            </div>
-
            </div>
-       `;
+           `;
         versionAndXProtectContainer.innerHTML += osSectionHTML;
       }
 
       // Dynamically construct the XProtect data section
       if (data.XProtectPlistConfigData && data.XProtectPayloads) {
         const xProtectSectionHTML = `
-    <div class="relative bg-gray-800 border border-gray-600 shadow overflow-hidden sm:rounded-lg p-6 mt-4 md:mt-0 md:ml-4">
-        <h3 class="text-lg leading-6 font-semibold text-indigo-400">XProtect data files</h3>
-        <div><strong>Latest versions:</strong> ${data.XProtectPayloads["com.apple.XProtectFramework.XProtect"]} | ${data.XProtectPayloads["com.apple.XprotectFramework.PluginService"]} | ${data.XProtectPlistConfigData["com.apple.XProtect"]}</div>
-        <div class="mt-2 max-w-xl text-sm text-gray-400">
-          <p><strong>XProtect.app latest version:</strong> ${data.XProtectPayloads["com.apple.XProtectFramework.XProtect"]}</p>
-          <p><strong>XProtect Remediator latest version:</strong> ${data.XProtectPayloads["com.apple.XprotectFramework.PluginService"]}</p>
-          <p><strong>Release Date:</strong> ${data.XProtectPayloads.ReleaseDate}</p>
-        </div>
-        <div class="mt-4 max-w-xl text-sm text-gray-400">
-          <p><strong>XProtectPlistConfigData latest version:</strong> ${data.XProtectPlistConfigData["com.apple.XProtect"]}</p>
-          <p><strong>Release Date:</strong> ${data.XProtectPlistConfigData.ReleaseDate}</p>
-        </div>
- <div class="mt-8 max-w-xl text-sm text-gray-400">
-     What is XProtect: 
-     <a href="https://support.apple.com/guide/security/protecting-against-malware-sec469d47bd8/web" target="_blank" rel="noopener noreferrer" class="text-yellow-500 hover:text-yellow-300">Get to know more</a>
- </div>
-
-        <img src="images/SWUpdate.png" alt="SWUpdate" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
-      </div>
-    `;
+        <div class="relative bg-gray-800 border border-gray-600 shadow overflow-hidden sm:rounded-lg p-6 mt-4 md:mt-0 md:ml-4">
+            <h3 class="text-lg leading-6 font-semibold text-indigo-400">XProtect data files</h3>
+            <div><strong>Latest versions:</strong> ${data.XProtectPayloads["com.apple.XProtectFramework.XProtect"]} | ${data.XProtectPayloads["com.apple.XprotectFramework.PluginService"]} | ${data.XProtectPlistConfigData["com.apple.XProtect"]}</div>
+            <div class="mt-2 max-w-xl text-sm text-gray-400">
+              <p><strong>XProtect.app latest version:</strong> ${data.XProtectPayloads["com.apple.XProtectFramework.XProtect"]}</p>
+              <p><strong>XProtect Remediator latest version:</strong> ${data.XProtectPayloads["com.apple.XprotectFramework.PluginService"]}</p>
+              <p><strong>Release Date:</strong> ${data.XProtectPayloads.ReleaseDate}</p>
+            </div>
+            <div class="mt-4 max-w-xl text-sm text-gray-400">
+              <p><strong>XProtectPlistConfigData latest version:</strong> ${data.XProtectPlistConfigData["com.apple.XProtect"]}</p>
+              <p><strong>Release Date:</strong> ${data.XProtectPlistConfigData.ReleaseDate}</p>
+            </div>
+             <div class="mt-8 max-w-xl text-sm text-gray-400">
+                 What is XProtect: 
+                 <a href="https://support.apple.com/guide/security/protecting-against-malware-sec469d47bd8/web" target="_blank" rel="noopener noreferrer" class="text-yellow-500 hover:text-yellow-300">Get to know more</a>
+             </div>
+    
+            <img src="images/SWUpdate.png" alt="SWUpdate" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
+          </div>
+          `;
         versionAndXProtectContainer.innerHTML += xProtectSectionHTML;
       }
     }
@@ -190,8 +194,9 @@
       securityReleases.forEach((release, index) => {
         const warningSign = release.SecurityInfo.startsWith('http') ? `<span class="text-yellow-400"> ⚠️</span>` : '';
         const securityInfoHTML = release.SecurityInfo.startsWith('http') ?
-          `<a href="${release.SecurityInfo}" class="text-yellow-500 hover:text-yellow-300" target="_blank">${release.SecurityInfo}</a>` :
+          `<a href="${createSafeLink(release.SecurityInfo)}" class="text-yellow-500 hover:text-yellow-300" target="_blank">${release.SecurityInfo}</a>` :
           release.SecurityInfo;
+
 
         let cveLinksHTML = release.CVEs.length > 0 ? release.CVEs.map(cve =>
           `<a href="https://www.cve.org/CVERecord?id=${cve}" class="text-yellow-500 hover:text-yellow-300" target="_blank">${cve}</a>`
@@ -205,37 +210,38 @@
         <p>Vulnerabilities Addressed: ${release.CVEs.length}</p>
         <p>Security Advisories (CVE Identifiers): ${cveLinksHTML}</p>
       </div>
-    `;
+      `;
         securityReleasesContainer.innerHTML += releaseHTML;
       });
     }
 
-    // CVE Search Functionality
-    document.getElementById('searchInput').addEventListener('input', function() {
-      const searchTerm = this.value.trim().toLowerCase();
+    // Abstracted Search Logic for CVE Search Functionality
+    function filterCVEs() {
+      const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
       const securityReleasesContainer = document.getElementById('security-releases');
       const releaseContainers = securityReleasesContainer.querySelectorAll('div');
 
       if (searchTerm.length < 2) {
-        // Reset search filtering if the search term is too short
         resetSearchFiltering(releaseContainers);
-        return;
-      }
-
-      releaseContainers.forEach(container => {
-        const cveLinks = Array.from(container.querySelectorAll('a')).filter(link => link.href.includes("cve.org/CVERecord?id="));
-        let found = false;
-        cveLinks.forEach(link => {
-          if (link.textContent.toLowerCase().includes(searchTerm)) {
-            found = true;
-            link.classList.add('highlight-cve');
-          } else {
-            link.classList.remove('highlight-cve');
-          }
+      } else {
+        releaseContainers.forEach(container => {
+          const cveLinks = Array.from(container.querySelectorAll('a')).filter(link => link.href.includes("cve.org/CVERecord?id="));
+          let found = false;
+          cveLinks.forEach(link => {
+            if (link.textContent.toLowerCase().includes(searchTerm)) {
+              found = true;
+              link.classList.add('highlight-cve');
+            } else {
+              link.classList.remove('highlight-cve');
+            }
+          });
+          container.style.display = found ? 'block' : 'none';
         });
-        container.style.display = found ? 'block' : 'none';
-      });
-    });
+      }
+    }
+
+    // Update to use abstracted search logic
+    document.getElementById('searchInput').addEventListener('input', filterCVEs);
 
     function resetSearchFiltering(releaseContainers) {
       releaseContainers.forEach(container => {
@@ -247,14 +253,22 @@
       });
     }
 
+    function createSafeLink(url) {
+      // Create a temporary element
+      const tempElement = document.createElement('a');
+      // Set the href attribute to the sanitized URL
+      tempElement.href = url;
+      // Return the sanitized href attribute value
+      return tempElement.href;
+    }
+    
     function formatDate(dateString) {
       const date = new Date(dateString);
-      return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
+      // Use the browser's current language setting
+      const browserLocale = navigator.language;
+      return date.toLocaleDateString(browserLocale, { year: 'numeric', month: 'long', day: 'numeric' });
     }
+    
   </script>
 </body>
 
