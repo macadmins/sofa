@@ -7,7 +7,7 @@ on:
     # On weekdays except Friday every 4 hours from 12:00 AM to 4:00 PM and from 9:00 PM to 11:59 PM CET
     - cron: '0 0-16/4,21-23/4 * * 1-5'
     # On weekends every 12 hours from 12:00 AM to 11:59 PM CET
-    - cron: '0 */8 * * 6,7'
+    - cron: '0 0,8,16 * * 6,7'
   workflow_dispatch:
 
 jobs:
