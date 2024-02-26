@@ -113,16 +113,18 @@
       filterCVEs();
     }
 
-    function fetchData(file) {
+    function fetchData(file, callback) {
       fetch(file)
         .then(response => response.json())
         .then(data => {
-          document.getElementById('last-checked').innerHTML = `Last checked: <span class="text-indigo-300">${data.lastCheck}</span>`;
-          document.getElementById('machine-readable-feed').innerHTML = `
-            Machine readable feed: 
-            <a href="${file}" class="text-yellow-500 hover:text-yellow-300">${file}</a>`;
+          // Existing code to process fetched data
           populateVersionAndXProtect(data);
           populateSecurityReleases(data.SecurityReleases);
+    
+          // Invoke the callback at the end of data processing
+          if (callback && typeof callback === 'function') {
+            callback();
+          }
         })
         .catch(error => console.error('Error fetching data:', error));
     }
@@ -213,8 +215,7 @@
       });
     }
 
-    // CVE Search Functionality
-    // Abstracted Search Logic
+    // Abstracted Search Logic for CVE Search Functionality
     function filterCVEs() {
       const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
       const securityReleasesContainer = document.getElementById('security-releases');
@@ -260,15 +261,14 @@
       // Return the sanitized href attribute value
       return tempElement.href;
     }
-
+    
     function formatDate(dateString) {
       const date = new Date(dateString);
-      return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
+      // Use the browser's current language setting
+      const browserLocale = navigator.language;
+      return date.toLocaleDateString(browserLocale, { year: 'numeric', month: 'long', day: 'numeric' });
     }
+    
   </script>
 </body>
 
