@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MUF | macadmin's update feed for macOS, XProtect and more</title>
+  <title>muf | a macadmin's metadata update feed for macOS, XProtect and more</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .text-content {
@@ -23,6 +23,11 @@
       /* Circular image */
     }
 
+    .highlight-cve {
+      background-color: yellow;
+      /* Set the background color to highlight cve's */
+    }
+
     /* Any additional custom styles */
   </style>
 </head>
@@ -31,9 +36,20 @@
   <div class="container mx-auto px-6 py-12">
     <div class="flex items-center mb-6">
       <img src="images/custom_logo.png" alt="Custom Logo" class="h-14 w-14 mr-4 sm:mr-6">
-      <h1 class="text-3xl font-bold text-white">MUF - macadmins update feed</h1>
+      <h1 class="text-3xl font-bold text-white">muf - metadata update feed</h1>
     </div>
-    <div id="tabs" class="mb-6 flex"></div>
+    <div class="flex flex-col sm:flex-row justify-between items-center mb-6">
+      <div id="tabs" class="mb-6 flex"></div>
+      <!-- CVE Search field -->
+      <div class="relative mb-4">
+        <input type="search" id="searchInput" placeholder="Search CVEs..." class="h-10 bg-gray-800 text-white placeholder-gray-400 pl-10 pr-4 rounded-lg border-2 border-gray-700 focus:outline-none focus:border-indigo-500">
+        <div class="absolute top-0 left-0 mt-2 ml-3">
+          <svg class="text-gray-400 h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
     <div id="last-checked" class="mb-2 text-indigo-400"></div>
     <div id="machine-readable-feed" class="text-indigo-400 mb-6"></div>
     <div class="grid md:grid-cols-2 gap-4" id="version-and-xprotect"></div>
@@ -114,7 +130,7 @@
 
       const osName = data.OSVersion.split(' ')[1];
       const imageName = `${osName}.png`; // Construct the image filename like "Sonoma.png"
-      
+
       const daysSinceRelease = Math.floor((new Date() - new Date(data.LatestMacOS.ReleaseDate)) / (1000 * 60 * 60 * 24));
 
       // Dynamically construct the macOS version section with image
@@ -191,6 +207,43 @@
       </div>
     `;
         securityReleasesContainer.innerHTML += releaseHTML;
+      });
+    }
+
+    // CVE Search Functionality
+    document.getElementById('searchInput').addEventListener('input', function() {
+      const searchTerm = this.value.trim().toLowerCase();
+      const securityReleasesContainer = document.getElementById('security-releases');
+      const releaseContainers = securityReleasesContainer.querySelectorAll('div');
+
+      if (searchTerm.length < 2) {
+        // Reset search filtering if the search term is too short
+        resetSearchFiltering(releaseContainers);
+        return;
+      }
+
+      releaseContainers.forEach(container => {
+        const cveLinks = Array.from(container.querySelectorAll('a')).filter(link => link.href.includes("cve.org/CVERecord?id="));
+        let found = false;
+        cveLinks.forEach(link => {
+          if (link.textContent.toLowerCase().includes(searchTerm)) {
+            found = true;
+            link.classList.add('highlight-cve');
+          } else {
+            link.classList.remove('highlight-cve');
+          }
+        });
+        container.style.display = found ? 'block' : 'none';
+      });
+    });
+
+    function resetSearchFiltering(releaseContainers) {
+      releaseContainers.forEach(container => {
+        container.style.display = 'block';
+        const highlightedLinks = container.querySelectorAll('.highlight-cve');
+        highlightedLinks.forEach(link => {
+          link.classList.remove('highlight-cve');
+        });
       });
     }
 
