@@ -114,6 +114,8 @@
 
       const osName = data.OSVersion.split(' ')[1];
       const imageName = `${osName}.png`; // Construct the image filename like "Sonoma.png"
+      
+      const daysSinceRelease = Math.floor((new Date() - new Date(data.LatestMacOS.ReleaseDate)) / (1000 * 60 * 60 * 24));
 
       // Dynamically construct the macOS version section with image
       if (data.LatestMacOS) {
@@ -124,7 +126,7 @@
                <div class="mt-2 max-w-xl text-sm text-gray-400">
                    <p><strong>Build:</strong> ${data.LatestMacOS.Build}</p>
                    <p><strong>Release Date:</strong> ${data.LatestMacOS.ReleaseDate}</p>
-                   <p><strong>Expiration Date:</strong> ${data.LatestMacOS.ExpirationDate}</p>
+                   <p><strong>Days since release:</strong> ${daysSinceRelease}</p>
                </div>
                <img src="images/${imageName}" alt="${osName}" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
                <div class="flex-grow"></div>
