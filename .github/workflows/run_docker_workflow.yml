@@ -10,7 +10,7 @@ on:
     - cron: '0 17-20 * * 1,2,3,4,5'
     
     # On every day every 4 hours
-    - cron: '0 */4 * * *'
+    - cron: '30 */4 * * *'
 
 jobs:
   build-and-run:
