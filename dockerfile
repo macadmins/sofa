@@ -8,8 +8,10 @@ WORKDIR /app
 COPY muf-script.py /app/
 COPY muf-time-series.py /app/
 COPY requirements.txt /app/
+
 # Check if the file exists before copying
-RUN test -e time-series.csv && cp time-series.csv /app/ || true
+RUN touch time-series.csv || true
+COPY time-series.csv /app/
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
