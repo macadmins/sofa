@@ -134,7 +134,10 @@ def fetch_cves(url):
                     # Extract CVEs from the element's text
                     cves.update(find_cves_in_text(element))
 
-    return list(cves)
+    # Convert set to a list , then sort it
+    sorted_cves = sorted(list(cves), reverse=True)  # Sort in reverse order, to have latest first
+    return sorted_cves
+
 
 
 def is_cve_related(element):
