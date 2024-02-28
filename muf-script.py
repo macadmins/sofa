@@ -177,9 +177,30 @@ def extract_xprotect_versions_and_post_date(catalog_content, pkm_url):
 
 
 def write_data_to_json(data, filename):
-    data["lastCheck"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    # Format dates to ISO 8601 standard with timezone
+    data["lastCheck"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat() + "Z"
+    
+    if "LatestMacOS" in data and "ReleaseDate" in data["LatestMacOS"]:
+        data["LatestMacOS"]["ReleaseDate"] = format_iso_date(data["LatestMacOS"]["ReleaseDate"])
+        
+    for release in data.get("SecurityReleases", []):
+        release["ReleaseDate"] = format_iso_date(release["ReleaseDate"])
+
     with open(filename, "w") as json_file:
         json.dump(data, json_file, indent=4)
+
+
+def format_iso_date(date_str):
+    # Try parsing with different formats
+    # See https://stackoverflow.com/questions/2150739/iso-time-iso-8601-in-python
+    formats = ["%Y-%m-%d", "%d %b %Y"]
+    for fmt in formats:
+        try:
+            return datetime.strptime(date_str, fmt).replace(microsecond=0).isoformat() + "Z"
+        except ValueError:
+            pass
+    # If none of the formats match, return the original string
+    return date_str
 
 
 def read_and_validate_json(filename):

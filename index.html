@@ -149,7 +149,7 @@
                <div><strong>Last released version:</strong> ${data.LatestMacOS.ProductVersion}</div>
                <div class="mt-2 max-w-xl text-sm text-gray-400">
                    <p><strong>Build:</strong> ${data.LatestMacOS.Build}</p>
-                   <p><strong>Release Date:</strong> ${data.LatestMacOS.ReleaseDate}</p>
+                   <p><strong>Release Date:</strong> ${formatDate(data.LatestMacOS.ReleaseDate)}</p>
                    <p><strong>Days since release:</strong> ${daysSinceRelease}</p>
                </div>
                <img src="images/${imageName}" alt="${osName}" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
