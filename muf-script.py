@@ -126,6 +126,7 @@ def fetch_security_releases(macos_version):
                         cves = []
                         unique_cves_count = 0
                     date = cells[-1].get_text(strip=True)
+                    release_dates.append(date)
 
                     security_releases.append(
                         {
