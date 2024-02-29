@@ -63,6 +63,30 @@ def process_os_version(macos_version, name_info):
     else:
         return None
 
+def calculate_days_since_previous_release(release_dates):
+    days_between_releases = {}
+    for i in range(len(release_dates) - 1):
+        try:
+            next_release_date = parse_flexible_date(release_dates[i])
+            current_release_date = parse_flexible_date(release_dates[i + 1])
+            days_difference = abs((next_release_date - current_release_date).days)
+            days_between_releases[release_dates[i]] = days_difference
+        except ValueError as e:
+            print(f"Error parsing date: {e}")
+    return days_between_releases
+
+def parse_flexible_date(date_str):
+    # Check for different formats
+    formats = ["%Y-%m-%d", "%d %b %Y"]
+    # Try to parse the date string with each format
+    for fmt in formats:
+        try:
+            return datetime.strptime(date_str, fmt)
+        except ValueError:
+            continue
+    # If parsing fails for all formats, raise an error
+    raise ValueError(f"Date format not recognized: {date_str}")
+
 
 def fetch_security_releases(macos_version):
     # Uncomment the following line to hardcode the macOS version for debugging
@@ -81,6 +105,8 @@ def fetch_security_releases(macos_version):
         html_content = response.text
         soup = BeautifulSoup(html_content, "lxml")
         rows = soup.find_all("tr")
+
+        release_dates = []
 
         for row in rows:
             cells = row.find_all("td")
@@ -110,6 +136,12 @@ def fetch_security_releases(macos_version):
                             "UniqueCVEsCount": unique_cves_count,
                         }
                     )
+
+        days_since_previous_release = calculate_days_since_previous_release(release_dates)
+
+        for release in security_releases:
+            release["DaysSincePreviousRelease"] = days_since_previous_release.get(release["ReleaseDate"], 0)
+
 
         return security_releases
     else:

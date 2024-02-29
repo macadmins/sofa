@@ -191,31 +191,31 @@
     }
 
     function populateSecurityReleases(securityReleases) {
-      const securityReleasesContainer = document.getElementById('security-releases');
-      securityReleasesContainer.innerHTML = `<h2 class="text-2xl text-indigo-400 font-semibold mb-4">macOS update security feed</h2>`; // Re-initialize the container with the title
+    const securityReleasesContainer = document.getElementById('security-releases');
+    securityReleasesContainer.innerHTML = `<h2 class="text-2xl text-indigo-400 font-semibold mb-4">macOS update security feed</h2>`; // Re-initialize the container with the title
 
-      securityReleases.forEach((release, index) => {
+    securityReleases.forEach((release, index) => {
         const warningSign = release.SecurityInfo.startsWith('http') ? `<span class="text-yellow-400"> ⚠️</span>` : '';
         const securityInfoHTML = release.SecurityInfo.startsWith('http') ?
-          `<a href="${createSafeLink(release.SecurityInfo)}" class="text-yellow-500 hover:text-yellow-300" target="_blank">${release.SecurityInfo}</a>` :
-          release.SecurityInfo;
-
+            `<a href="${createSafeLink(release.SecurityInfo)}" class="text-yellow-500 hover:text-yellow-300" target="_blank">${release.SecurityInfo}</a>` :
+            release.SecurityInfo;
 
         let cveLinksHTML = release.CVEs.length > 0 ? release.CVEs.map(cve =>
-          `<a href="https://www.cve.org/CVERecord?id=${cve}" class="text-yellow-500 hover:text-yellow-300" target="_blank">${cve}</a>`
+            `<a href="https://www.cve.org/CVERecord?id=${cve}" class="text-yellow-500 hover:text-yellow-300" target="_blank">${cve}</a>`
         ).join(', ') : '<i>This update has no published CVE entries.</i>';
 
         const releaseHTML = `
-      <div class="${index > 0 ? 'border-t-2 border-gray-500 pt-4 mt-4' : ''}">
-        <p class="mt-1 max-w-2xl text-sm text-gray-500">Release Date: ${formatDate(release.ReleaseDate)}${warningSign}</p>
-        <h3 class="text-lg leading-6 font-medium text-indigo-400">${release.OSVersion}</h3>
-        <p>Security Info: ${securityInfoHTML}</p>
-        <p>Vulnerabilities Addressed: ${release.CVEs.length}</p>
-        <p>Security Advisories (CVE Identifiers): ${cveLinksHTML}</p>
-      </div>
-      `;
+            <div class="${index > 0 ? 'border-t-2 border-gray-500 pt-4 mt-4' : ''}">
+                <p class="mt-1 max-w-2xl text-sm text-gray-500">Release Date: ${formatDate(release.ReleaseDate)}${warningSign}</p>
+                <h3 class="text-lg leading-6 font-medium text-indigo-400">${release.OSVersion}</h3>
+                <p>Security Info: ${securityInfoHTML}</p>
+                <p>Vulnerabilities Addressed: ${release.CVEs.length}</p>
+                <p>Security Advisories (CVE Identifiers): ${cveLinksHTML}</p>
+                <p class="mt-1 max-w-2xl text-sm text-gray-500">Days to Prev. Release: ${release.DaysSincePreviousRelease}</p>
+            </div>
+        `;
         securityReleasesContainer.innerHTML += releaseHTML;
-      });
+    });
     }
 
     // Abstracted Search Logic for CVE Search Functionality
