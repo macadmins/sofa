@@ -43,6 +43,12 @@ def get_major_version(macos_full_version):
     match = re.search(r"\d+$", macos_full_version)
     return match.group(0) if match else None
 
+def extract_macos_name(macos_full_version):
+    # Assuming format "macOS [Name] [Version]", extract just the [Name]
+    parts = macos_full_version.split()
+    if len(parts) >= 2:  # Check to ensure the string is as expected
+        return parts[1]  # Return just the name part, e.g., "Sonoma"
+    return ""  # Return empty string if the format is unexpected
 
 def process_os_version(macos_version, name_info):
     # Split the macOS version into name and number for dynamic regex construction
@@ -212,6 +218,36 @@ def extract_xprotect_versions_and_post_date(catalog_content, pkm_url):
     return version_info
 
 
+def add_compatible_machines(current_macos_full_version):
+    # Extract the macOS name, convert it to lowercase for filename construction
+    current_macos_name = extract_macos_name(current_macos_full_version).lower()
+
+    # Dynamically construct the filename based on the macOS name
+    filename = f"model_identifier_{current_macos_name}.json"
+
+    # Attempt to open and read the dynamically determined JSON file
+    try:
+        with open(filename, 'r') as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        print(f"File not found: {filename}")
+        return []
+
+    compatible_machines = []
+    for entry in data:
+        model = entry["Model"]
+        url = entry["URL"]
+        identifiers = entry["Identifiers"]
+        compatible_machines.append({
+            "Model": model,
+            "URL": url,
+            "Identifiers": identifiers
+        })
+
+    return compatible_machines
+
+
+
 def write_data_to_json(data, filename):
     # Format dates to ISO 8601 standard with timezone
     data["lastCheck"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat() + "Z"
@@ -221,6 +257,12 @@ def write_data_to_json(data, filename):
         
     for release in data.get("SecurityReleases", []):
         release["ReleaseDate"] = format_iso_date(release["ReleaseDate"])
+
+    # Reorder keys to place "lastCheck" at the top
+    data = {
+        "lastCheck": data.pop("lastCheck"),
+        **data
+    }
 
     with open(filename, "w") as json_file:
         json.dump(data, json_file, indent=4)
@@ -297,12 +339,18 @@ def main():
         latest_macos_info = fetch_latest_macos_version_info(major_version)
         security_releases = fetch_security_releases(macos_full_version)
 
+          # Filter and add compatible machines for the current macOS version
+        compatible_machines = add_compatible_machines(macos_full_version)
+        print(macos_full_version)
+        print(compatible_machines)
+
         # Assemble data for the current macOS version, incorporating the fetched XProtect data
         data_for_version = {
             "OSVersion": macos_full_version,
             "LatestMacOS": latest_macos_info,
             "XProtectPayloads": payloads_info,
             "XProtectPlistConfigData": plist_info,
+            "CompatibleMachines": compatible_machines,
             "SecurityReleases": security_releases,
         }
 

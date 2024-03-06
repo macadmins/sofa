@@ -13,6 +13,8 @@ COPY requirements.txt /app/
 RUN touch time-series.csv || true
 COPY time-series.csv /app/
 
+COPY model_identifier_*.json /app/
+
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
