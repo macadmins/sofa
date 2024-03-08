@@ -82,36 +82,49 @@
     ];
 
     document.addEventListener('DOMContentLoaded', () => {
-      createTabs();
-    });
+  createTabs();
+  // Attach the search input listener only after tabs have been created
+  document.getElementById('searchInput').addEventListener('input', filterCVEs);
+});
 
-    function createTabs() {
-      const tabsContainer = document.getElementById('tabs');
-      tabsData.forEach((tab, index) => {
-        const tabButton = document.createElement('button');
-        tabButton.textContent = tab.name;
-        tabButton.dataset.file = tab.file; // Store file path in data attribute
-        tabButton.className = `px-4 py-2 rounded-lg mr-2 text-white font-medium transition duration-150 ease-in-out ${index === 0 ? 'bg-indigo-600' : 'bg-gray-700 hover:bg-indigo-500'}`;
-        tabButton.onclick = () => {
-          setActiveTab(tabButton);
-          fetchData(tab.file, filterCVEs); // Pass filterCVEs as callback
-        };
-        tabsContainer.appendChild(tabButton);
-      });
+function createTabs() {
+  const tabsContainer = document.getElementById('tabs');
+  const activeTabId = localStorage.getItem('activeTabId'); // Retrieve the saved tab identifier or default to the first tab's file if null
 
-      // Trigger click on the first tab to load its content
-      tabsContainer.firstChild.click();
-    }
+  tabsData.forEach((tab, index) => {
+    const tabButton = document.createElement('button');
+    tabButton.textContent = tab.name;
+    tabButton.dataset.file = tab.file; // Store file path in data attribute
+    tabButton.className = `px-4 py-2 rounded-lg mr-2 text-white font-medium transition duration-150 ease-in-out ${tab.file === activeTabId ? 'bg-indigo-600' : 'bg-gray-700 hover:bg-indigo-500'}`;
+    
+    // Assign click event to each tab that handles activation and data fetching
+    tabButton.onclick = () => {
+      setActiveTab(tabButton); // Activate the clicked tab
+      fetchData(tab.file, filterCVEs); // Fetch and display the tab's data
+    };
 
-    function setActiveTab(activeTab) {
-      document.querySelectorAll('#tabs button').forEach(btn => {
-        btn.classList.replace('bg-indigo-600', 'bg-gray-700');
-        btn.classList.add('hover:bg-indigo-500');
-      });
-      activeTab.classList.replace('bg-gray-700', 'bg-indigo-600');
-      // Add this line to retrigger search filtering after tab switch
-      filterCVEs();
-    }
+    tabsContainer.appendChild(tabButton);
+  });
+
+  // Automatically activate the last active tab or the first tab
+  const initialTabToActivate = tabsContainer.querySelector(`[data-file="${activeTabId}"]`) || tabsContainer.firstChild;
+  if (initialTabToActivate) {
+    initialTabToActivate.click();
+  }
+}
+
+
+function setActiveTab(activeTab) {
+  const tabsContainer = document.getElementById('tabs');
+  // Remove active class from all tabs and then add it to the clicked tab
+  tabsContainer.querySelectorAll('button').forEach(btn => {
+    btn.className = btn.className.replace('bg-indigo-600', 'bg-gray-700 hover:bg-indigo-500');
+  });
+  activeTab.className = activeTab.className.replace('bg-gray-700 hover:bg-indigo-500', 'bg-indigo-600');
+
+  // Save the identifier of the currently active tab to localStorage
+  localStorage.setItem('activeTabId', activeTab.dataset.file);
+}
 
     function fetchData(file, callback) {
       fetch(file)
