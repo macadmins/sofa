@@ -53,10 +53,6 @@
     <div id="last-checked" class="mb-2 text-indigo-400"></div>
     <div id="machine-readable-feed" class="text-indigo-400 mb-6"></div>
     <div class="grid md:grid-cols-2 gap-4" id="version-and-xprotect"></div>
-    <div id="os-links" class="mt-8">
-      <h2 class="text-2xl text-indigo-400 font-semibold mb-4">Essential Apple Resources</h2>
-      <div id="os-links-container" class="space-y-4"></div>
-    </div>    
     <hr class="border-t-2 border-gray-700 my-8">
     <div id="security-releases" class="space-y-4">
       <h2 class="text-2xl text-indigo-400 font-semibold mb-4">Apple Resources</h2>
@@ -202,6 +198,10 @@ function populateVersionAndXProtect(data) {
          <div class="mt-8 max-w-xl text-sm text-gray-400">
              How to Manage Updates: 
              <a href="https://support.apple.com/guide/deployment/use-mdm-to-deploy-software-updates-depafd2fad80/1/web/1.0" target="_blank" rel="noopener noreferrer" class="text-yellow-500 hover:text-yellow-300">Get to know more</a>
+      </div>
+      <div class="essential-links mt-4">
+        <h4 class="text leading-6 font-semibold text-indigo-400">Essential Apple Resources</h4>
+        <ul class="links-list" data-os-version="${osVersion}"></ul>
          </div>
          </div>
          `;
