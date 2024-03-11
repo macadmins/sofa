@@ -5,7 +5,7 @@ localPlistBundle="/Library/Apple/System/Library/CoreServices/XProtect.bundle/Con
 localPlistApp="/Library/Apple/System/Library/CoreServices/XProtect.app/Contents/Info.plist"
 
 # URL to the online JSON data
-onlineJsonUrl="https://headmin.github.io/muf/muf_data_sonoma_14.json"
+onlineJsonUrl="https://headmin.github.io/muf/macos_sonoma_14.json"
 
 # Extract the local versions of XProtect using CFBundleShortVersionString
 localVersionBundle=$(defaults read "${localPlistBundle%.plist}" CFBundleShortVersionString)

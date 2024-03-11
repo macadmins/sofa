@@ -8,104 +8,104 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def fetch_latest_macos_version_info(macos_version_major):
-    url = "https://gdmf.apple.com/v2/pmv"
-    response = requests.get(url, verify=False)
-    data = response.json()
+# Temporarily set the environment variable for this script
+# os.environ['OS_VERSIONS'] = "Sonoma 14, Monterey 12, Ventura 13, iOS 17, iOS 16"
 
-    macos_versions = data.get("AssetSets", {}).get("macOS", [])
-    filtered_versions = [
-        v
-        for v in macos_versions
-        if v.get("ProductVersion", "").startswith(macos_version_major)
-    ]
+def parse_os_versions_from_env():
+    os_versions_str = os.getenv("OS_VERSIONS", "")
+    os_versions_list = os_versions_str.split(", ")
+    os_versions = []
 
-    if filtered_versions:
-        latest_macos_version = sorted(
-            filtered_versions,
-            key=lambda x: datetime.strptime(x["PostingDate"], "%Y-%m-%d"),
-            reverse=True,
-        )[0]
+    for version in os_versions_list:
+        parts = version.split(" ")
+        if len(parts) == 3:  # macOS with a major version number, e.g., "Sonoma 14"
+            os_type = "macOS"
+            os_name = parts[0]
+            major_version = parts[1]
+        elif len(parts) == 2:  # macOS without a specified major version or iOS
+            if "iOS" in parts[0]:
+                os_type = "iOS"
+                os_name = parts[1]
+                major_version = None  # iOS does not use a sub-version in this context
+            else:
+                os_type = "macOS"
+                os_name = parts[0]
+                major_version = parts[1]
+        os_versions.append((os_type, os_name, major_version))
 
-        return {
-            "ProductVersion": latest_macos_version.get("ProductVersion"),
-            "Build": latest_macos_version.get("Build"),
-            "ReleaseDate": latest_macos_version.get("PostingDate"),
-            "ExpirationDate": latest_macos_version.get("ExpirationDate"),
-        }
+    return os_versions
+
+
+def process_os_version(os_type, os_version, name_info):
+    # Dynamically adjust the regex pattern based on the OS type
+    if os_type == "macOS":
+        version_regex_pattern = rf"{os_type}\s+{os_version}.*?(\d+\.\d+(\.\d+)*)?"
+    elif os_type == "iOS":
+        version_regex_pattern = rf"{os_type}\s*{os_version}.*?(\d+)"
     else:
+        # Handle other OS types or return None if OS type is unsupported
         return None
 
-
-def get_major_version(macos_full_version):
-    # Example input: "macOS Ventura 13"
-    # Expected output: "13"
-    match = re.search(r"\d+$", macos_full_version)
-    return match.group(0) if match else None
-
-def extract_macos_name(macos_full_version):
-    # Assuming format "macOS [Name] [Version]", extract just the [Name]
-    parts = macos_full_version.split()
-    if len(parts) >= 2:  # Check to ensure the string is as expected
-        return parts[1]  # Return just the name part, e.g., "Sonoma"
-    return ""  # Return empty string if the format is unexpected
-
-def process_os_version(macos_version, name_info):
-    # Split the macOS version into name and number for dynamic regex construction
-    if " " in macos_version:
-        version_name, version_number = macos_version.rsplit(" ", 1)
-        version_regex = rf"{version_name} {version_number}.*?(\d+\.\d+(\.\d+)*)?"
-    else:
-        version_regex = rf"{macos_version}.*?(\d+\.\d+(\.\d+)*)?"
-
-    version_match = re.search(version_regex, name_info)
+    version_match = re.search(version_regex_pattern, name_info)
 
     if version_match:
-        # Construct regex pattern for OSVersion stripping
-        perfect_pattern = r"(Rapid Security Response)?macOS\s+\w+\s*\d+(?:\.\d+)*(?:\.\d+)*(?:\s*(?:\(.\))?.*?)?"
-        # Applying regex pattern specifically for OSVersion field
-        os_version = re.search(perfect_pattern, name_info).group()
-        return os_version
+        # For macOS, we might still need the full pattern including the OS name, version, and potential minor updates
+        if os_type == "macOS":
+            perfect_pattern = r"(Rapid Security Response)?macOS\s+\w+\s*\d+(?:\.\d+)*(?:\.\d+)*(?:\s*(?:\(.\))?.*?)?"
+            os_version_full = re.search(perfect_pattern, name_info).group()
+        elif os_type == "iOS":
+            # For iOS, the original match may already suffice, or you might want to refine this based on actual page content
+            os_version_full = version_match.group(0)
+        else:
+            os_version_full = None
+
+        return os_version_full
     else:
         return None
 
-def calculate_days_since_previous_release(release_dates):
-    days_between_releases = {}
-    for i in range(len(release_dates) - 1):
-        try:
-            next_release_date = parse_flexible_date(release_dates[i])
-            current_release_date = parse_flexible_date(release_dates[i + 1])
-            days_difference = abs((next_release_date - current_release_date).days)
-            days_between_releases[release_dates[i]] = days_difference
-        except ValueError as e:
-            print(f"Error parsing date: {e}")
-    return days_between_releases
 
-def parse_flexible_date(date_str):
-    # Check for different formats
-    formats = ["%Y-%m-%d", "%d %b %Y"]
-    # Try to parse the date string with each format
-    for fmt in formats:
-        try:
-            return datetime.strptime(date_str, fmt)
-        except ValueError:
-            continue
-    # If parsing fails for all formats, raise an error
-    raise ValueError(f"Date format not recognized: {date_str}")
+def fetch_latest_os_version_info(os_type, os_version_name):
+    print(f"Fetching latest:{os_type}:{os_version_name}")
+    url = "https://gdmf.apple.com/v2/pmv"
+    response = requests.get(url, verify=False)  # Note: Adjust SSL verification as per your setup
+    if not response.ok:
+        print(f"Failed to fetch data from {url}. HTTP status code: {response.status_code}")
+        return None
+
+    data = response.json()
+    os_versions_key = "macOS" if os_type == "macOS" else "iOS"
+    os_versions = data.get("AssetSets", {}).get(os_versions_key, [])
+    os_version_major_str = os_version_name.split(' ')[-1] if os_type == "macOS" else os_version_name
+
+    # Filter versions for the specific major version string
+    filtered_versions = [v for v in os_versions if v.get("ProductVersion", "").startswith(os_version_major_str)]
+
+    # For iOS, further filter to ensure only those with SupportedDevices for iPad and iPhone are considered
+    if os_type == "iOS":
+        filtered_versions = [v for v in filtered_versions if "SupportedDevices" in v and any(device.startswith("iPad") or device.startswith("iPhone") for device in v["SupportedDevices"])]
+
+    # Sort and pick the latest version by PostingDate
+    if filtered_versions:
+        latest_os_version = sorted(filtered_versions, key=lambda x: datetime.strptime(x["PostingDate"], "%Y-%m-%d"), reverse=True)[0]
+        result = {
+            "ProductVersion": latest_os_version.get("ProductVersion"),
+            "Build": latest_os_version.get("Build"),
+            "ReleaseDate": format_iso_date(latest_os_version.get("PostingDate")),
+            "ExpirationDate": format_iso_date(latest_os_version.get("ExpirationDate")),
+            "SupportedDevices": latest_os_version.get("SupportedDevices", [])  # Ensure SupportedDevices is always included, even if empty
+        }
+        return result
+
+    print(f"No versions matched the criteria for {os_type} {os_version_name}.")
+    return None
 
 
-def fetch_security_releases(macos_version):
-    # Uncomment the following line to hardcode the macOS version for debugging
-    # macos_version = "macOS Sonoma"
-    # macos_version = "macOS Ventura"
-    # macos_version = "macOS Monterey"
-
+def fetch_security_releases(os_type, os_version):
     url = "https://support.apple.com/en-us/HT201222"
     response = requests.get(url)
     security_releases = []
 
-    # Debugging print to show which macOS version is being searched for
-    print(f"Fetching security releases for: {macos_version}")
+    print(f"Fetching security releases for: {os_type} {os_version}")
 
     if response.status_code == 200:
         html_content = response.text
@@ -118,10 +118,10 @@ def fetch_security_releases(macos_version):
             cells = row.find_all("td")
             if cells:
                 name_info = cells[0].get_text(strip=True)
-                # print(f"Debug: Found name info: {name_info}")  # Debug output
 
-                os_version = process_os_version(macos_version, name_info)
-                if os_version:
+                # Adjust process_os_version to handle different OS types
+                os_version_info = process_os_version(os_type, os_version, name_info)
+                if os_version_info:
                     link = cells[0].find("a", href=True)
                     if link:
                         link_info = link["href"]
@@ -136,7 +136,7 @@ def fetch_security_releases(macos_version):
 
                     security_releases.append(
                         {
-                            "OSVersion": os_version,
+                            "OSVersion": os_version_info,
                             "ReleaseDate": date,
                             "SecurityInfo": link_info,
                             "CVEs": cves,
@@ -144,11 +144,11 @@ def fetch_security_releases(macos_version):
                         }
                     )
 
+        # Assume calculate_days_since_previous_release function exists
         days_since_previous_release = calculate_days_since_previous_release(release_dates)
 
         for release in security_releases:
             release["DaysSincePreviousRelease"] = days_since_previous_release.get(release["ReleaseDate"], 0)
-
 
         return security_releases
     else:
@@ -178,7 +178,6 @@ def fetch_cves(url):
     return sorted_cves
 
 
-
 def is_cve_related(element):
     # Check if the element is likely associated with CVEs
     # When websites change and we fail here, we may check if the element in more depth to see if contains a CVE record
@@ -188,6 +187,49 @@ def is_cve_related(element):
 def find_cves_in_text(text):
     cve_matches = re.findall(r"\bCVE-\d{4,}-\d{4,}\b", text)
     return cve_matches
+
+
+def calculate_days_since_previous_release(release_dates):
+    days_between_releases = {}
+    for i in range(len(release_dates) - 1):
+        try:
+            next_release_date = parse_flexible_date(release_dates[i])
+            current_release_date = parse_flexible_date(release_dates[i + 1])
+            days_difference = abs((next_release_date - current_release_date).days)
+            days_between_releases[release_dates[i]] = days_difference
+        except ValueError as e:
+            print(f"Error parsing date: {e}")
+    return days_between_releases
+
+
+def parse_flexible_date(date_str):
+    # Check for different formats
+    formats = ["%Y-%m-%d", "%d %b %Y"]
+    # Try to parse the date string with each format
+    for fmt in formats:
+        try:
+            return datetime.strptime(date_str, fmt)
+        except ValueError:
+            continue
+    # If parsing fails for all formats, raise an error
+    raise ValueError(f"Date format not recognized: {date_str}")
+
+
+def print_security_releases(releases, os_type):
+    print(f"Security releases for {os_type}:")
+    for release in releases:
+        print(f"OS Version: {release['OSVersion']}")
+        print(f"Release Date: {release['ReleaseDate']}")
+        print(f"Days Since Previous Release: {release['DaysSincePreviousRelease']}")
+        print(f"Security Info: {release['SecurityInfo']}")
+        if release['CVEs']:
+            print(f"Unique CVEs Count: {release['UniqueCVEsCount']}")
+            print("CVEs:")
+            for cve in release['CVEs']:
+                print(f" - {cve}")
+        else:
+            print("No CVE entries.")
+        print("--------------------------------------------------")
 
 
 def fetch_content(url):
@@ -213,14 +255,17 @@ def extract_xprotect_versions_and_post_date(catalog_content, pkm_url):
         post_date_regex = rf"<string>{re.escape(pkm_url)}</string>.*?<date>(.*?)</date>"
         post_date_match = re.search(post_date_regex, catalog_content, re.DOTALL)
         if post_date_match:
-            version_info["ReleaseDate"] = post_date_match.group(1)
+            # Ensure the release date is formatted in ISO 8601 format
+            release_date = post_date_match.group(1)
+            version_info["ReleaseDate"] = format_iso_date(release_date)  # Assumes format_iso_date is implemented
 
     return version_info
 
 
 def add_compatible_machines(current_macos_full_version):
-    # Extract the macOS name, convert it to lowercase for filename construction
-    current_macos_name = extract_macos_name(current_macos_full_version).lower()
+    # Extract only the base name of the macOS version, ensure it's lowercase for filename construction
+    # Assuming current_macos_full_version is something like "Ventura 13"
+    current_macos_name = current_macos_full_version.split(" ")[0].lower()  # This will get "ventura" from "Ventura 13"
 
     # Dynamically construct the filename based on the macOS name
     filename = f"model_identifier_{current_macos_name}.json"
@@ -247,59 +292,51 @@ def add_compatible_machines(current_macos_full_version):
     return compatible_machines
 
 
-
 def write_data_to_json(data, filename):
-    # Format dates to ISO 8601 standard with timezone
+    # Ensure the 'lastCheck' timestamp is added
     data["lastCheck"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat() + "Z"
-    
-    if "LatestMacOS" in data and "ReleaseDate" in data["LatestMacOS"]:
-        data["LatestMacOS"]["ReleaseDate"] = format_iso_date(data["LatestMacOS"]["ReleaseDate"])
-        
+
+    # Format the release date in 'LatestVersionInfo'
+    if "LatestVersionInfo" in data and data["LatestVersionInfo"] is not None:
+        data["LatestVersionInfo"]["ReleaseDate"] = format_iso_date(data["LatestVersionInfo"]["ReleaseDate"])
+        if "ExpirationDate" in data["LatestVersionInfo"]:  # Optional: Check if ExpirationDate exists
+            data["LatestVersionInfo"]["ExpirationDate"] = format_iso_date(data["LatestVersionInfo"]["ExpirationDate"])
+
+    # Format the release dates in 'SecurityReleases'
     for release in data.get("SecurityReleases", []):
         release["ReleaseDate"] = format_iso_date(release["ReleaseDate"])
-
-    # Reorder keys to place "lastCheck" at the top
-    data = {
-        "lastCheck": data.pop("lastCheck"),
-        **data
-    }
 
     with open(filename, "w") as json_file:
         json.dump(data, json_file, indent=4)
 
-
 def format_iso_date(date_str):
-    # Try parsing with different formats
-    # See https://stackoverflow.com/questions/2150739/iso-time-iso-8601-in-python
     formats = ["%Y-%m-%d", "%d %b %Y"]
     for fmt in formats:
         try:
             return datetime.strptime(date_str, fmt).replace(microsecond=0).isoformat() + "Z"
         except ValueError:
             pass
-    # If none of the formats match, return the original string
     return date_str
 
 
 def read_and_validate_json(filename):
-    """Reads and validates the JSON file's content."""
     try:
         with open(filename, "r") as file:
             data = json.load(file)
-            # Some validation checks
+
+            # Adjusted required keys for a more generic approach
             required_keys = [
                 "OSVersion",
-                "LatestMacOS",
+                "LatestOS",  # Generic key for latest OS version info
                 "SecurityReleases",
-                "XProtectPlistConfigData",
-                "XProtectPayloads",
             ]
+            # Additional keys like "XProtectPlistConfigData" and "XProtectPayloads" may not be relevant for all OS types
+
             missing_keys = [key for key in required_keys if key not in data]
             if missing_keys:
                 print(f"Validation error: Missing keys {missing_keys} in {filename}")
             else:
                 print(f"Validation passed for {filename}.")
-                # Optionally, print the JSON content, extra visibility during docker run
                 print(json.dumps(data, indent=4))
     except FileNotFoundError:
         print(f"File not found: {filename}")
@@ -310,57 +347,69 @@ def read_and_validate_json(filename):
 
 
 def main():
-    # Fetch catalog content once, as it's common for all macOS versions to be gathered - last checked 2024-02-22
-    catalog_url = "https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog"
-    catalog_content = fetch_content(catalog_url)
+    os_versions = parse_os_versions_from_env()
+    print(f"OS versions: {os_versions}")
 
-    plist_url = re.search(
-        r"https.*XProtectPlistConfigData.*?\.pkm", catalog_content
-    ).group(0)
-    payloads_url = re.search(r"https.*XProtectPayloads.*?\.pkm", catalog_content).group(
-        0
-    )
+    for os_type, name, version in os_versions:
+        if os_type == "macOS" and version is not None:
+            os_version_name = f"{name} {version}"
+        else:
+            os_version_name = name  # For iOS, use the name directly, as version is None
 
-    plist_info = extract_xprotect_versions_and_post_date(catalog_content, plist_url)
-    payloads_info = extract_xprotect_versions_and_post_date(
-        catalog_content, payloads_url
-    )
+        latest_version_info = fetch_latest_os_version_info(os_type, os_version_name)
+        print(latest_version_info)
 
-    # Process each macOS version as specified in the environment variable
-    macos_versions = [
-        version.strip() for version in os.getenv("MACOS_VERSIONS", "").split(",")
-    ]
+        if latest_version_info:
+            latest_version_info["ReleaseDate"] = format_iso_date(latest_version_info["ReleaseDate"])
+            if "ExpirationDate" in latest_version_info:
+                latest_version_info["ExpirationDate"] = format_iso_date(latest_version_info["ExpirationDate"])
 
-    for macos_version in macos_versions:
-        macos_full_version = f"macOS {macos_version}"
-        major_version = get_major_version(macos_full_version)
+        latest_version_key = "LatestOS" if os_type == "macOS" else "LatestOS"
+        security_releases = fetch_security_releases(os_type, os_version_name)
 
-        # Fetch the latest macOS version information and security releases for each specified version
-        latest_macos_info = fetch_latest_macos_version_info(major_version)
-        security_releases = fetch_security_releases(macos_full_version)
+        # Filter and add compatible machines for the current macOS version
+        compatible_machines = add_compatible_machines(os_version_name)
 
-          # Filter and add compatible machines for the current macOS version
-        compatible_machines = add_compatible_machines(macos_full_version)
-        print(macos_full_version)
-        print(compatible_machines)
-
-        # Assemble data for the current macOS version, incorporating the fetched XProtect data
-        data_for_version = {
-            "OSVersion": macos_full_version,
-            "LatestMacOS": latest_macos_info,
-            "XProtectPayloads": payloads_info,
-            "XProtectPlistConfigData": plist_info,
-            "CompatibleMachines": compatible_machines,
+        combined_data = {
+            "lastCheck": datetime.now(timezone.utc).replace(microsecond=0).isoformat() + "Z",
+            "OSVersion": f"{os_type} {os_version_name}",
+            latest_version_key: latest_version_info,
             "SecurityReleases": security_releases,
         }
 
-        filename = f"muf_data_{macos_version.replace(' ', '_').lower()}.json"
-        write_data_to_json(data_for_version, filename)
-        print(f"Data for {macos_version} has been written to {filename}")
+        if os_type == "macOS":
 
-        # Validate the data written to the JSON file
+            compatible_machines = add_compatible_machines(os_version_name)
+            combined_data["SupportedModels"] = compatible_machines
+
+            catalog_url = "https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog"
+            catalog_content = fetch_content(catalog_url)
+
+            # Extract URLs for XProtect data
+            plist_url = re.search(r"https.*XProtectPlistConfigData.*?\.pkm", catalog_content).group(0)
+            payloads_url = re.search(r"https.*XProtectPayloads.*?\.pkm", catalog_content).group(0)
+
+            # Fetch and process XProtect data
+            plist_info = extract_xprotect_versions_and_post_date(catalog_content, plist_url)
+            payloads_info = extract_xprotect_versions_and_post_date(catalog_content, payloads_url)
+
+            # Format ReleaseDate in ISO format
+            if "ReleaseDate" in plist_info:
+                plist_info["ReleaseDate"] = format_iso_date(plist_info["ReleaseDate"])
+            if "ReleaseDate" in payloads_info:
+                payloads_info["ReleaseDate"] = format_iso_date(payloads_info["ReleaseDate"])
+
+            # Incorporate XProtect data into combined_data
+            combined_data.update({
+                "XProtectPayloads": payloads_info,
+                "XProtectPlistConfigData": plist_info,
+            })
+
+        filename = f"{os_type.lower()}_{os_version_name.lower().replace(' ', '_')}.json"
+        write_data_to_json(combined_data, filename)
+
+         # Validate the data written to the JSON file
         read_and_validate_json(filename)
-
 
 if __name__ == "__main__":
     main()

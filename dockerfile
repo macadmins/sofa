@@ -19,7 +19,7 @@ COPY model_identifier_*.json /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Set an environment variable for the macOS versions
-ENV MACOS_VERSIONS="Sonoma 14, Monterey 12, Ventura 13"
+ENV OS_VERSIONS="Sonoma 14, Monterey 12, Ventura 13, iOS 17, iOS 16"
 
 # Use an entrypoint script to pass the environment variable as an argument to your Python script
 
