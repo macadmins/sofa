@@ -292,22 +292,30 @@ def add_compatible_machines(current_macos_full_version):
     return compatible_machines
 
 
-def write_data_to_json(data, filename):
-    # Ensure the 'lastCheck' timestamp is added
-    data["lastCheck"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat() + "Z"
+def write_data_to_json(combined_data, filename):
+    # We manually construct the data dictionary in the desired order for better readability
+    ordered_data = {
+        "lastCheck": combined_data.get("lastCheck"),
+        "OSVersion": combined_data.get("OSVersion"),
+        "LatestOS": combined_data.get("LatestOS"),
+        # Conditionally add XProtect data if present
+        **({"XProtectPayloads": combined_data["XProtectPayloads"]} if "XProtectPayloads" in combined_data else {}),
+        **({"XProtectPlistConfigData": combined_data["XProtectPlistConfigData"]} if "XProtectPlistConfigData" in combined_data else {}),
+        # Continue with the rest of the keys in the desired order
+        "SupportedModels": combined_data.get("SupportedModels", []),
+        "SecurityReleases": combined_data.get("SecurityReleases", []),
+    }
 
-    # Format the release date in 'LatestVersionInfo'
-    if "LatestVersionInfo" in data and data["LatestVersionInfo"] is not None:
-        data["LatestVersionInfo"]["ReleaseDate"] = format_iso_date(data["LatestVersionInfo"]["ReleaseDate"])
-        if "ExpirationDate" in data["LatestVersionInfo"]:  # Optional: Check if ExpirationDate exists
-            data["LatestVersionInfo"]["ExpirationDate"] = format_iso_date(data["LatestVersionInfo"]["ExpirationDate"])
-
-    # Format the release dates in 'SecurityReleases'
-    for release in data.get("SecurityReleases", []):
+    # Ensure all dates are formatted
+    if "LatestOS" in ordered_data and ordered_data["LatestOS"] is not None:
+        ordered_data["LatestOS"]["ReleaseDate"] = format_iso_date(ordered_data["LatestOS"]["ReleaseDate"])
+        if "ExpirationDate" in ordered_data["LatestOS"]:
+            ordered_data["LatestOS"]["ExpirationDate"] = format_iso_date(ordered_data["LatestOS"]["ExpirationDate"])
+    for release in ordered_data.get("SecurityReleases", []):
         release["ReleaseDate"] = format_iso_date(release["ReleaseDate"])
 
     with open(filename, "w") as json_file:
-        json.dump(data, json_file, indent=4)
+        json.dump(ordered_data, json_file, indent=4)
 
 def format_iso_date(date_str):
     formats = ["%Y-%m-%d", "%d %b %Y"]
@@ -364,8 +372,18 @@ def main():
             if "ExpirationDate" in latest_version_info:
                 latest_version_info["ExpirationDate"] = format_iso_date(latest_version_info["ExpirationDate"])
 
-        latest_version_key = "LatestOS" if os_type == "macOS" else "LatestOS"
+        latest_version_key = "LatestOS" if os_type == "macOS" else "LatestOS" # We keep it here in case variants such as "CurrentOS", "CurrentiOS", "CurrentmacOS" are to be used  
         security_releases = fetch_security_releases(os_type, os_version_name)
+        
+        # For some applications, e.g. Nudge, we add info from the latest security release directly to LatestOS
+        if security_releases:
+            latest_security_release = security_releases[0]  # Assuming here sorting works, the first one is the latest
+            latest_version_info.update({
+                "SecurityInfo": latest_security_release.get("SecurityInfo"),
+                "CVEs": latest_security_release.get("CVEs"),
+                "UniqueCVEsCount": latest_security_release.get("UniqueCVEsCount"),
+                "DaysSincePreviousRelease": latest_security_release.get("DaysSincePreviousRelease"),
+                })
 
         # Filter and add compatible machines for the current macOS version
         compatible_machines = add_compatible_machines(os_version_name)
@@ -373,7 +391,7 @@ def main():
         combined_data = {
             "lastCheck": datetime.now(timezone.utc).replace(microsecond=0).isoformat() + "Z",
             "OSVersion": f"{os_type} {os_version_name}",
-            latest_version_key: latest_version_info,
+            latest_version_key: latest_version_info, # By default we use "LatestOS" here, variants are possible (see above)
             "SecurityReleases": security_releases,
         }
 
