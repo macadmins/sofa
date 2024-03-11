@@ -1,8 +1,8 @@
 function fetchJsonAndPopulateSheet() {
   var urls = [
-    'https://headmin.github.io/muf/muf_data_sonoma_14.json',
-    'https://headmin.github.io/muf/muf_data_ventura_13.json',
-    'https://headmin.github.io/muf/muf_data_monterey_12.json'
+    'https://headmin.github.io/muf/macos_sonoma_14.json',
+    'https://headmin.github.io/muf/macos_ventura_13.json',
+    'https://headmin.github.io/muf/macos_monterey_12.json'
   ];
   
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();

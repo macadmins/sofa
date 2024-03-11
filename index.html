@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>muf | a macadmin's metadata update feed for macOS, XProtect and more</title>
+  <title>muf | a macadmin's metadata update feed for macOS, XProtect, iOS/iPadOS and more</title>
   <link href="./main.css" rel="stylesheet">
   <style>
     .text-content {
@@ -41,7 +41,6 @@
     </div>
     <div class="flex flex-col sm:flex-row justify-between items-center mb-6">
       <div id="tabs" class="mb-6 flex"></div>
-      <!-- CVE Search field -->
       <div class="relative mb-4">
         <input type="search" id="searchInput" placeholder="Search CVEs..." class="h-10 bg-gray-800 text-white placeholder-gray-400 pl-10 pr-4 rounded-lg border-2 border-gray-700 focus:outline-none focus:border-indigo-500">
         <div class="absolute top-0 left-0 mt-2 ml-3">
@@ -54,238 +53,321 @@
     <div id="last-checked" class="mb-2 text-indigo-400"></div>
     <div id="machine-readable-feed" class="text-indigo-400 mb-6"></div>
     <div class="grid md:grid-cols-2 gap-4" id="version-and-xprotect"></div>
+    <div id="os-links" class="mt-8">
+      <h2 class="text-2xl text-indigo-400 font-semibold mb-4">Essential Apple Resources</h2>
+      <div id="os-links-container" class="space-y-4"></div>
+    </div>    
     <hr class="border-t-2 border-gray-700 my-8">
     <div id="security-releases" class="space-y-4">
-      <h2 class="text-2xl text-indigo-400 font-semibold mb-4">Security Releases</h2>
-      <a href="https://support.apple.com/en-us/HT201222" class="text-indigo-300 hover:text-indigo-200 text-lg">Apple security releases</a>
-      <!-- Security releases info will be dynamically inserted here -->
+      <h2 class="text-2xl text-indigo-400 font-semibold mb-4">Apple Resources</h2>
+      <a href="https://support.apple.com/en-us/HT201222" class="text-yellow-500 hover:text-yellow-300 text-lg">Apple security releases</a>
     </div>
   </div>
 
   <script>
-    // Define the data for each tab
-    const tabsData = [{
-        id: 'sonoma-14',
-        name: 'Sonoma 14',
-        file: 'muf_data_sonoma_14.json'
+  // Define the data for each tab
+  const tabsData = [{
+          id: 'sonoma-14',
+          name: 'Sonoma 14',
+          file: 'macos_sonoma_14.json',
+          osType: 'macOS'
       },
       {
-        id: 'ventura-13',
-        name: 'Ventura 13',
-        file: 'muf_data_ventura_13.json'
+          id: 'ventura-13',
+          name: 'Ventura 13',
+          file: 'macos_ventura_13.json',
+          osType: 'macOS'
       },
       {
-        id: 'monterey-12',
-        name: 'Monterey 12',
-        file: 'muf_data_monterey_12.json'
+          id: 'monterey-12',
+          name: 'Monterey 12',
+          file: 'macos_monterey_12.json',
+          osType: 'macOS'
+      },
+      {
+          id: 'ios-17',
+          name: 'iOS 17',
+          file: 'ios_17.json',
+          osType: 'iOS'
+      },
+      {
+          id: 'ios-16',
+          name: 'iOS 16',
+          file: 'ios_16.json',
+          osType: 'iOS'
       }
-    ];
-
-    document.addEventListener('DOMContentLoaded', () => {
+  ];
+document.addEventListener('DOMContentLoaded', () => {
   createTabs();
-  // Attach the search input listener only after tabs have been created
   document.getElementById('searchInput').addEventListener('input', filterCVEs);
 });
 
 function createTabs() {
   const tabsContainer = document.getElementById('tabs');
   const activeTabId = localStorage.getItem('activeTabId'); // Retrieve the saved tab identifier or default to the first tab's file if null
-
   tabsData.forEach((tab, index) => {
-    const tabButton = document.createElement('button');
-    tabButton.textContent = tab.name;
-    tabButton.dataset.file = tab.file; // Store file path in data attribute
-    tabButton.className = `px-4 py-2 rounded-lg mr-2 text-white font-medium transition duration-150 ease-in-out ${tab.file === activeTabId ? 'bg-indigo-600' : 'bg-gray-700 hover:bg-indigo-500'}`;
-    
-    // Assign click event to each tab that handles activation and data fetching
-    tabButton.onclick = () => {
-      setActiveTab(tabButton); // Activate the clicked tab
-      fetchData(tab.file, filterCVEs); // Fetch and display the tab's data
-    };
-
-    tabsContainer.appendChild(tabButton);
+      const tabButton = document.createElement('button');
+      tabButton.textContent = tab.name;
+      tabButton.dataset.file = tab.file; // Store file path in data attribute
+      tabButton.className = `px-4 py-2 rounded-lg mr-2 text-white font-medium transition duration-150 ease-in-out ${tab.file === activeTabId ? 'bg-indigo-600' : 'bg-gray-700 hover:bg-indigo-500'}`;
+      // Assign click event to each tab that handles activation and data fetching
+      tabButton.onclick = () => {
+          setActiveTab(tabButton); // Activate the clicked tab
+          fetchData(tab.file, tab.osType, filterCVEs); // Fetch and display the tab's data
+      };
+      tabsContainer.appendChild(tabButton);
   });
-
   // Automatically activate the last active tab or the first tab
   const initialTabToActivate = tabsContainer.querySelector(`[data-file="${activeTabId}"]`) || tabsContainer.firstChild;
   if (initialTabToActivate) {
-    initialTabToActivate.click();
+      initialTabToActivate.click();
   }
 }
-
 
 function setActiveTab(activeTab) {
   const tabsContainer = document.getElementById('tabs');
   // Remove active class from all tabs and then add it to the clicked tab
   tabsContainer.querySelectorAll('button').forEach(btn => {
-    btn.className = btn.className.replace('bg-indigo-600', 'bg-gray-700 hover:bg-indigo-500');
+      btn.className = btn.className.replace('bg-indigo-600', 'bg-gray-700 hover:bg-indigo-500');
   });
   activeTab.className = activeTab.className.replace('bg-gray-700 hover:bg-indigo-500', 'bg-indigo-600');
-
   // Save the identifier of the currently active tab to localStorage
   localStorage.setItem('activeTabId', activeTab.dataset.file);
 }
 
-    function fetchData(file, callback) {
-      fetch(file)
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('last-checked').innerHTML = `Last checked: <span class="text-indigo-300">${data.lastCheck}</span>`;
-            document.getElementById('machine-readable-feed').innerHTML = `
-        Machine readable feed: 
-        <a href="${file}" class="text-yellow-500 hover:text-yellow-300">${file}</a>`;
+function fetchData(file, osType, callback) {
+  fetch(file)
+      .then(response => response.json())
+      .then(data => {
+          document.getElementById('last-checked').innerHTML = `Last checked: <span class="text-indigo-300">${data.lastCheck}</span>`;
+          document.getElementById('machine-readable-feed').innerHTML = `
+  Machine readable feed: 
+  <a href="${file}" class="text-yellow-500 hover:text-yellow-300">${file}</a>`;
           populateVersionAndXProtect(data);
-          populateSecurityReleases(data.SecurityReleases);
-    
-          // Invoke the callback at the end of data processing
+          populateSecurityReleases(data.SecurityReleases, osType); // Now includes osType
+          // Assuming determineOSVersion is implemented correctly
+          const osVersion = determineOSVersion(data);
+          // Now fetch and display the relevant OS links
+          fetchAndDisplayOSLinks(osType, osVersion);
           if (callback && typeof callback === 'function') {
-            callback();
+              callback();
           }
-        })
-        .catch(error => console.error('Error fetching data:', error));
-    }
+      })
+      .catch(error => console.error('Error fetching data:', error));
+}
 
-    function populateVersionAndXProtect(data) {
-      const versionAndXProtectContainer = document.getElementById('version-and-xprotect');
-      versionAndXProtectContainer.innerHTML = ''; // Clear existing content
+function determineOSVersion(data) {
+  // This is a placeholder example. You need to implement logic based on your data structure.
+  // For instance, if data.OSVersion is something like "macOS Sonoma", and you need "Sonoma":
+  let osVersion = data.OSVersion.split(' ')[1]; // This assumes the version name is the second word.
+  // Here, you might need additional logic to map or parse osVersion to match your JSON keys exactly.
+  return osVersion;
+}
 
-      const osName = data.OSVersion.split(' ')[1];
-      const imageName = `${osName}.png`; // Construct the image filename like "Sonoma.png"
+function getImageName(data) {
+  let osName, imageName;
+  const osVersionParts = data.OSVersion.split(' ');
+  // Determine if it's macOS or iOS based on the OSVersion string
+  if (osVersionParts[0].toLowerCase() === "macos") {
+      // macOS: Use the name directly for the image
+      osName = osVersionParts[1]; // Assuming macOS names are always one word
+      imageName = `${osName}.png`; // Construct the image filename like "Sonoma.png"
+  } else if (osVersionParts[0].toLowerCase() === "ios") {
+      // iOS: Use "ios_" prefix and the version number
+      const iosVersion = osVersionParts[1];
+      imageName = `ios_${iosVersion}.png`; // Construct the filename like "ios_17.png"
+  }
+  return imageName;
+}
 
-      const daysSinceRelease = Math.floor((new Date() - new Date(data.LatestMacOS.ReleaseDate)) / (1000 * 60 * 60 * 24));
-
-      // Dynamically construct the macOS version section with image
-      if (data.LatestMacOS) {
-        const osSectionHTML = `
-           <div class="relative bg-gray-800 border border-gray-600 shadow overflow-hidden sm:rounded-lg p-6 flex flex-col">
-               <h3 class="text-lg leading-6 font-semibold text-indigo-400">${data.OSVersion}</h3>
-               <div><strong>Last released version:</strong> ${data.LatestMacOS.ProductVersion}</div>
-               <div class="mt-2 max-w-xl text-sm text-gray-400">
-                   <p><strong>Build:</strong> ${data.LatestMacOS.Build}</p>
-                   <p><strong>Release Date:</strong> ${formatDate(data.LatestMacOS.ReleaseDate)}</p>
-                   <p><strong>Days since release:</strong> ${daysSinceRelease}</p>
-               </div>
-               <img src="images/${imageName}" alt="${osName}" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
-               <div class="flex-grow"></div>
-           <div class="mt-8 max-w-xl text-sm text-gray-400">
-               How to Manage Updates: 
-               <a href="https://support.apple.com/guide/deployment/use-mdm-to-deploy-software-updates-depafd2fad80/1/web/1.0" target="_blank" rel="noopener noreferrer" class="text-yellow-500 hover:text-yellow-300">Get to know more</a>
-           </div>
-           </div>
-           `;
-        versionAndXProtectContainer.innerHTML += osSectionHTML;
-      }
-
-      // Dynamically construct the XProtect data section
-      if (data.XProtectPlistConfigData && data.XProtectPayloads) {
-        const xProtectSectionHTML = `
-        <div class="relative bg-gray-800 border border-gray-600 shadow overflow-hidden sm:rounded-lg p-6 mt-4 md:mt-0 md:ml-4">
-            <h3 class="text-lg leading-6 font-semibold text-indigo-400">XProtect data files</h3>
-            <div><strong>Latest versions:</strong> ${data.XProtectPayloads["com.apple.XProtectFramework.XProtect"]} | ${data.XProtectPayloads["com.apple.XprotectFramework.PluginService"]} | ${data.XProtectPlistConfigData["com.apple.XProtect"]}</div>
-            <div class="mt-2 max-w-xl text-sm text-gray-400">
-              <p><strong>XProtect.app latest version:</strong> ${data.XProtectPayloads["com.apple.XProtectFramework.XProtect"]}</p>
-              <p><strong>XProtect Remediator latest version:</strong> ${data.XProtectPayloads["com.apple.XprotectFramework.PluginService"]}</p>
-              <p><strong>Release Date:</strong> ${data.XProtectPayloads.ReleaseDate}</p>
-            </div>
-            <div class="mt-4 max-w-xl text-sm text-gray-400">
-              <p><strong>XProtectPlistConfigData latest version:</strong> ${data.XProtectPlistConfigData["com.apple.XProtect"]}</p>
-              <p><strong>Release Date:</strong> ${data.XProtectPlistConfigData.ReleaseDate}</p>
-            </div>
-             <div class="mt-8 max-w-xl text-sm text-gray-400">
-                 What is XProtect: 
-                 <a href="https://support.apple.com/guide/security/protecting-against-malware-sec469d47bd8/web" target="_blank" rel="noopener noreferrer" class="text-yellow-500 hover:text-yellow-300">Get to know more</a>
+function populateVersionAndXProtect(data) {
+  const versionAndXProtectContainer = document.getElementById('version-and-xprotect');
+  versionAndXProtectContainer.innerHTML = ''; // Clear existing content
+  const osName = data.OSVersion.split(' ')[1];
+  const imageName = getImageName(data); // Load the image filename like "Sonoma.png"
+  const daysSinceRelease = Math.floor((new Date() - new Date(data.LatestOS.ReleaseDate)) / (1000 * 60 * 60 * 24));
+  // Dynamically construct the macOS version section with image
+  if (data.LatestOS) {
+      const osSectionHTML = `
+         <div class="relative bg-gray-800 border border-gray-600 shadow overflow-hidden sm:rounded-lg p-6 flex flex-col">
+             <h3 class="text-lg leading-6 font-semibold text-indigo-400">${data.OSVersion}</h3>
+             <div><strong>Last released version:</strong> ${data.LatestOS.ProductVersion}</div>
+             <div class="mt-2 max-w-xl text-sm text-gray-400">
+                 <p><strong>Build:</strong> ${data.LatestOS.Build}</p>
+                 <p><strong>Release Date:</strong> ${formatDate(data.LatestOS.ReleaseDate)}</p>
+                 <p><strong>Days since release:</strong> ${daysSinceRelease}</p>
              </div>
-    
-            <img src="images/SWUpdate.png" alt="SWUpdate" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
+             <img src="images/${imageName}" alt="${osName}" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
+             <div class="flex-grow"></div>
+         <div class="mt-8 max-w-xl text-sm text-gray-400">
+             How to Manage Updates: 
+             <a href="https://support.apple.com/guide/deployment/use-mdm-to-deploy-software-updates-depafd2fad80/1/web/1.0" target="_blank" rel="noopener noreferrer" class="text-yellow-500 hover:text-yellow-300">Get to know more</a>
+         </div>
+         </div>
+         `;
+      versionAndXProtectContainer.innerHTML += osSectionHTML;
+  }
+  // Dynamically construct the XProtect data section
+  if (data.XProtectPlistConfigData && data.XProtectPayloads) {
+      const xProtectSectionHTML = `
+      <div class="relative bg-gray-800 border border-gray-600 shadow overflow-hidden sm:rounded-lg p-6 mt-4 md:mt-0 md:ml-4">
+          <h3 class="text-lg leading-6 font-semibold text-indigo-400">XProtect data files</h3>
+          <div><strong>Latest versions:</strong> ${data.XProtectPayloads["com.apple.XProtectFramework.XProtect"]} | ${data.XProtectPayloads["com.apple.XprotectFramework.PluginService"]} | ${data.XProtectPlistConfigData["com.apple.XProtect"]}</div>
+          <div class="mt-2 max-w-xl text-sm text-gray-400">
+            <p><strong>XProtect.app latest version:</strong> ${data.XProtectPayloads["com.apple.XProtectFramework.XProtect"]}</p>
+            <p><strong>XProtect Remediator latest version:</strong> ${data.XProtectPayloads["com.apple.XprotectFramework.PluginService"]}</p>
+            <p><strong>Release Date:</strong> ${data.XProtectPayloads.ReleaseDate}</p>
           </div>
-          `;
-        versionAndXProtectContainer.innerHTML += xProtectSectionHTML;
-      }
-    }
-
-    function populateSecurityReleases(securityReleases) {
-    const securityReleasesContainer = document.getElementById('security-releases');
-    securityReleasesContainer.innerHTML = `<h2 class="text-2xl text-indigo-400 font-semibold mb-4">macOS update security feed</h2>`; // Re-initialize the container with the title
-
-    securityReleases.forEach((release, index) => {
-        const warningSign = release.SecurityInfo.startsWith('http') ? `<span class="text-yellow-400"> ⚠️</span>` : '';
-        const securityInfoHTML = release.SecurityInfo.startsWith('http') ?
-            `<a href="${createSafeLink(release.SecurityInfo)}" class="text-yellow-500 hover:text-yellow-300" target="_blank">${release.SecurityInfo}</a>` :
-            release.SecurityInfo;
-
-        let cveLinksHTML = release.CVEs.length > 0 ? release.CVEs.map(cve =>
-            `<a href="https://www.cve.org/CVERecord?id=${cve}" class="text-yellow-500 hover:text-yellow-300" target="_blank">${cve}</a>`
-        ).join(', ') : '<i>This update has no published CVE entries.</i>';
-
-        const releaseHTML = `
-            <div class="${index > 0 ? 'border-t-2 border-gray-500 pt-4 mt-4' : ''}">
-                <p class="mt-1 max-w-2xl text-sm text-gray-500">Release Date: ${formatDate(release.ReleaseDate)}${warningSign}</p>
-                <h3 class="text-lg leading-6 font-medium text-indigo-400">${release.OSVersion}</h3>
-                <p>Security Info: ${securityInfoHTML}</p>
-                <p>Vulnerabilities Addressed: ${release.CVEs.length}</p>
-                <p>Security Advisories (CVE Identifiers): ${cveLinksHTML}</p>
-                <p class="mt-1 max-w-2xl text-sm text-gray-500">Days to Prev. Release: ${release.DaysSincePreviousRelease}</p>
-            </div>
+          <div class="mt-4 max-w-xl text-sm text-gray-400">
+            <p><strong>XProtectPlistConfigData latest version:</strong> ${data.XProtectPlistConfigData["com.apple.XProtect"]}</p>
+            <p><strong>Release Date:</strong> ${data.XProtectPlistConfigData.ReleaseDate}</p>
+          </div>
+           <div class="mt-8 max-w-xl text-sm text-gray-400">
+               What is XProtect: 
+               <a href="https://support.apple.com/guide/security/protecting-against-malware-sec469d47bd8/web" target="_blank" rel="noopener noreferrer" class="text-yellow-500 hover:text-yellow-300">Get to know more</a>
+           </div>
+  
+          <img src="images/SWUpdate.png" alt="SWUpdate" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
+        </div>
         `;
-        securityReleasesContainer.innerHTML += releaseHTML;
-    });
-    }
+      versionAndXProtectContainer.innerHTML += xProtectSectionHTML;
+  }
+}
 
-    // Abstracted Search Logic for CVE Search Functionality
-    function filterCVEs() {
-      const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
-      const securityReleasesContainer = document.getElementById('security-releases');
-      const releaseContainers = securityReleasesContainer.querySelectorAll('div');
-
-      if (searchTerm.length < 2) {
-        resetSearchFiltering(releaseContainers);
+function fetchAndDisplayOSLinks(osType, osVersion) {
+  console.log(`Fetching links for ${osType}, version: ${osVersion}`);
+  fetch('essential_links.json') // Make sure this path is correct
+    .then(response => {
+      if (!response.ok) throw new Error('Network response was not OK');
+      return response.json();
+    })
+    .then(data => {
+      console.log("Fetched data:", data); // Check if data is as expected
+      // Merge common links with specific OS links
+      const commonLinks = data.Common || {};
+      const specificLinks = data[osType] && data[osType][osVersion] ? data[osType][osVersion] : {};
+      const mergedLinks = {...specificLinks, ...commonLinks};
+      console.log("Merged Links:", mergedLinks); // For debugging
+      if (Object.keys(mergedLinks).length) {
+        console.log(`Displaying links for ${osType} ${osVersion}:`, mergedLinks);
+        populateOSLinks(mergedLinks, osVersion); // Adjust populateOSLinks to accept osVersion
       } else {
-        releaseContainers.forEach(container => {
+        console.error(`No links found for ${osType} ${osVersion}`);
+      }
+    })
+    .catch(error => console.error('Error fetching essential links:', error));
+}
+
+function populateOSLinks(links, osVersion) {
+  const container = document.getElementById('os-links-container');
+  container.innerHTML = ''; // Clear previous links
+  Object.keys(links).forEach(key => {
+      // Create a paragraph element to contain the text and link
+      const paragraph = document.createElement('p');
+      paragraph.style.marginBottom = '-5px'; // Adjust vertical spacing to be narrower
+
+      // Set the descriptive text (key) with less bright color and include the OS version name
+      paragraph.innerHTML = `<span class="text">${key}</span>: `; 
+
+      // Create the link
+      const link = document.createElement('a');
+      link.href = links[key];
+      link.textContent = links[key]; // Use URL as link text
+      link.className = 'text-yellow-500 hover:text-yellow-300';
+      link.target = '_blank';
+
+      // Append the link to the paragraph
+      paragraph.appendChild(link);
+
+      // Append the paragraph to the container
+      container.appendChild(paragraph);
+  });
+}
+
+
+function populateSecurityReleases(securityReleases, osType) {
+  const securityReleasesContainer = document.getElementById('security-releases');
+  // Determine the header text based on osType
+  const headerText = `${osType} Security Updates Overview`;
+  // Set the header dynamically
+  securityReleasesContainer.innerHTML = `<h2 class="text-2xl text-indigo-400 font-semibold mb-4">${headerText}</h2>`;
+  securityReleases.forEach((release, index) => {
+      const warningSign = release.SecurityInfo.startsWith('http') ? `<span class="text-yellow-400"> ⚠️</span>` : '';
+      const securityInfoHTML = release.SecurityInfo.startsWith('http') ?
+          `<a href="${createSafeLink(release.SecurityInfo)}" class="text-yellow-500 hover:text-yellow-300" target="_blank">${release.SecurityInfo}</a>` :
+          release.SecurityInfo;
+      let cveLinksHTML = release.CVEs.length > 0 ? release.CVEs.map(cve =>
+          `<a href="https://www.cve.org/CVERecord?id=${cve}" class="text-yellow-500 hover:text-yellow-300" target="_blank">${cve}</a>`
+      ).join(', ') : '<i>This update has no published CVE entries.</i>';
+      const releaseHTML = `
+          <div class="${index > 0 ? 'border-t-2 border-gray-500 pt-4 mt-4' : ''}">
+              <p class="mt-1 max-w-2xl text-sm text-gray-500">Release Date: ${formatDate(release.ReleaseDate)}${warningSign}</p>
+              <h3 class="text-lg leading-6 font-medium text-indigo-400">${release.OSVersion}</h3>
+              <p>Security Info: ${securityInfoHTML}</p>
+              <p>Vulnerabilities Addressed: ${release.CVEs.length}</p>
+              <p>Security Advisories (CVE Identifiers): ${cveLinksHTML}</p>
+              <p class="mt-1 max-w-2xl text-sm text-gray-500">Days to Prev. Release: ${release.DaysSincePreviousRelease}</p>
+          </div>
+      `;
+      securityReleasesContainer.innerHTML += releaseHTML;
+  });
+}
+// Abstracted Search Logic for CVE Search Functionality
+function filterCVEs() {
+  const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
+  const securityReleasesContainer = document.getElementById('security-releases');
+  const releaseContainers = securityReleasesContainer.querySelectorAll('div');
+  if (searchTerm.length < 2) {
+      resetSearchFiltering(releaseContainers);
+  } else {
+      releaseContainers.forEach(container => {
           const cveLinks = Array.from(container.querySelectorAll('a')).filter(link => link.href.includes("cve.org/CVERecord?id="));
           let found = false;
           cveLinks.forEach(link => {
-            if (link.textContent.toLowerCase().includes(searchTerm)) {
-              found = true;
-              link.classList.add('highlight-cve');
-            } else {
-              link.classList.remove('highlight-cve');
-            }
+              if (link.textContent.toLowerCase().includes(searchTerm)) {
+                  found = true;
+                  link.classList.add('highlight-cve');
+              } else {
+                  link.classList.remove('highlight-cve');
+              }
           });
           container.style.display = found ? 'block' : 'none';
-        });
-      }
-    }
-
-    // Update to use abstracted search logic
-    document.getElementById('searchInput').addEventListener('input', filterCVEs);
-
-    function resetSearchFiltering(releaseContainers) {
-      releaseContainers.forEach(container => {
-        container.style.display = 'block';
-        const highlightedLinks = container.querySelectorAll('.highlight-cve');
-        highlightedLinks.forEach(link => {
-          link.classList.remove('highlight-cve');
-        });
       });
-    }
+  }
+}
+// Update to use abstracted search logic
+document.getElementById('searchInput').addEventListener('input', filterCVEs);
 
-    function createSafeLink(url) {
-      // Create a temporary element
-      const tempElement = document.createElement('a');
-      // Set the href attribute to the sanitized URL
-      tempElement.href = url;
-      // Return the sanitized href attribute value
-      return tempElement.href;
-    }
-    
-    function formatDate(dateString) {
-      const date = new Date(dateString);
-      // Use the browser's current language setting
-      const browserLocale = navigator.language;
-      return date.toLocaleDateString(browserLocale, { year: 'numeric', month: 'long', day: 'numeric' });
-    }
-    
-  </script>
+function resetSearchFiltering(releaseContainers) {
+  releaseContainers.forEach(container => {
+      container.style.display = 'block';
+      const highlightedLinks = container.querySelectorAll('.highlight-cve');
+      highlightedLinks.forEach(link => {
+          link.classList.remove('highlight-cve');
+      });
+  });
+}
+
+function createSafeLink(url) {
+  // Create a temporary element
+  const tempElement = document.createElement('a');
+  // Set the href attribute to the sanitized URL
+  tempElement.href = url;
+  // Return the sanitized href attribute value
+  return tempElement.href;
+}
+
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  // Use the browser's current language setting
+  const browserLocale = navigator.language;
+  return date.toLocaleDateString(browserLocale, {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+  });
+} 
+</script>
 </body>
 
 </html>
