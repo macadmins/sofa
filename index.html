@@ -52,7 +52,7 @@
     </div>
     <div id="last-checked" class="mb-2 text-indigo-400"></div>
     <div id="machine-readable-feed" class="text-indigo-400 mb-6"></div>
-    <div class="grid md:grid-cols-2 gap-4" id="version-and-xprotect"></div>
+    <div class="grid md:grid-cols-2 gap-4" id="version-and-xprotect"></div>  
     <hr class="border-t-2 border-gray-700 my-8">
     <div id="security-releases" class="space-y-4">
       <h2 class="text-2xl text-indigo-400 font-semibold mb-4">Apple Resources</h2>
@@ -179,34 +179,34 @@ function getImageName(data) {
 function populateVersionAndXProtect(data) {
   const versionAndXProtectContainer = document.getElementById('version-and-xprotect');
   versionAndXProtectContainer.innerHTML = ''; // Clear existing content
-  const osName = data.OSVersion.split(' ')[1];
-  const imageName = getImageName(data); // Load the image filename like "Sonoma.png"
-  const daysSinceRelease = Math.floor((new Date() - new Date(data.LatestOS.ReleaseDate)) / (1000 * 60 * 60 * 24));
-  // Dynamically construct the macOS version section with image
-  if (data.LatestOS) {
-      const osSectionHTML = `
-         <div class="relative bg-gray-800 border border-gray-600 shadow overflow-hidden sm:rounded-lg p-6 flex flex-col">
-             <h3 class="text-lg leading-6 font-semibold text-indigo-400">${data.OSVersion}</h3>
-             <div><strong>Last released version:</strong> ${data.LatestOS.ProductVersion}</div>
-             <div class="mt-2 max-w-xl text-sm text-gray-400">
-                 <p><strong>Build:</strong> ${data.LatestOS.Build}</p>
-                 <p><strong>Release Date:</strong> ${formatDate(data.LatestOS.ReleaseDate)}</p>
-                 <p><strong>Days since release:</strong> ${daysSinceRelease}</p>
-             </div>
-             <img src="images/${imageName}" alt="${osName}" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
-             <div class="flex-grow"></div>
-         <div class="mt-8 max-w-xl text-sm text-gray-400">
-             How to Manage Updates: 
-             <a href="https://support.apple.com/guide/deployment/use-mdm-to-deploy-software-updates-depafd2fad80/1/web/1.0" target="_blank" rel="noopener noreferrer" class="text-yellow-500 hover:text-yellow-300">Get to know more</a>
+  
+  const osVersion = data.OSVersion.split(' ')[1]; // Assuming OSVersion format is like "macOS Ventura"
+  const imageName = getImageName(data); // You already have this function
+  
+  // Generate the HTML content for this OS version
+  const osSectionHTML = `
+    <div class="relative bg-gray-800 border border-gray-600 shadow overflow-hidden sm:rounded-lg p-6 flex flex-col" data-os-version="${osVersion}">
+      <h3 class="text-lg leading-6 font-semibold text-indigo-400">${data.OSVersion}</h3>
+      <div><strong>Last released version:</strong> ${data.LatestOS.ProductVersion}</div>
+      <div class="mt-2 max-w-xl text-sm text-gray-400">
+        <p><strong>Build:</strong> ${data.LatestOS.Build}</p>
+        <p><strong>Release Date:</strong> ${formatDate(data.LatestOS.ReleaseDate)}</p>
+        <p><strong>Days since release:</strong> ${Math.floor((new Date() - new Date(data.LatestOS.ReleaseDate)) / (1000 * 60 * 60 * 24))}</p>
+      </div>
+      <img src="images/${imageName}" alt="${osVersion}" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
+      <div class="mt-8 max-w-xl text-sm text-gray-400">
+        How to Manage Updates: 
+        <a href="https://support.apple.com/guide/deployment/use-mdm-to-deploy-software-updates-depafd2fad80/1/web/1.0" target="_blank" rel="noopener noreferrer" class="text-yellow-500 hover:text-yellow-300">Get to know more</a>
       </div>
       <div class="essential-links mt-4">
         <h4 class="text leading-6 font-semibold text-indigo-400">Essential Apple Resources</h4>
         <ul class="links-list" data-os-version="${osVersion}"></ul>
-         </div>
-         </div>
-         `;
-      versionAndXProtectContainer.innerHTML += osSectionHTML;
-  }
+      </div>
+    </div>
+  `;
+  
+  versionAndXProtectContainer.innerHTML += osSectionHTML;
+
   // Dynamically construct the XProtect data section
   if (data.XProtectPlistConfigData && data.XProtectPayloads) {
       const xProtectSectionHTML = `
@@ -259,30 +259,25 @@ function fetchAndDisplayOSLinks(osType, osVersion) {
 }
 
 function populateOSLinks(links, osVersion) {
-  const container = document.getElementById('os-links-container');
-  container.innerHTML = ''; // Clear previous links
+  // Target the specific links list for the OS version
+  const linksList = document.querySelector(`.links-list[data-os-version='${osVersion}']`);
+
+  if (!linksList) {
+    console.error(`No links list found for OS version: ${osVersion}`);
+    return;
+  }
+
+  // Apply classes to the links list container for overall styling
+  linksList.classList.add('max-w-xl', 'text-sm');
+
+  linksList.innerHTML = ''; // Clear previous links
   Object.keys(links).forEach(key => {
-      // Create a paragraph element to contain the text and link
-      const paragraph = document.createElement('p');
-      paragraph.style.marginBottom = '-5px'; // Adjust vertical spacing to be narrower
-
-      // Set the descriptive text (key) with less bright color and include the OS version name
-      paragraph.innerHTML = `<span class="text">${key}</span>: `; 
-
-      // Create the link
-      const link = document.createElement('a');
-      link.href = links[key];
-      link.textContent = links[key]; // Use URL as link text
-      link.className = 'text-yellow-500 hover:text-yellow-300';
-      link.target = '_blank';
-
-      // Append the link to the paragraph
-      paragraph.appendChild(link);
-
-      // Append the paragraph to the container
-      container.appendChild(paragraph);
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `<a href="${links[key]}" target="_blank" rel="noopener noreferrer" class="text-yellow-500 hover:text-yellow-300">${key}</a>`;
+    linksList.appendChild(listItem);
   });
 }
+
 
 
 function populateSecurityReleases(securityReleases, osType) {
