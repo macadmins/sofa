@@ -1,10 +1,10 @@
 {
-    "lastCheck": "2024-03-25T17:05:33+00:00Z",
+    "lastCheck": "2024-03-25T18:06:18+00:00Z",
     "OSVersion": "macOS Ventura 13",
     "LatestOS": {
-        "ProductVersion": "13.6.5",
-        "Build": "22G621",
-        "ReleaseDate": "2024-03-07T00:00:00Z",
+        "ProductVersion": "13.6.6",
+        "Build": "22G630",
+        "ReleaseDate": "2024-03-25T00:00:00Z",
         "ExpirationDate": "2024-06-23T00:00:00Z",
         "SupportedDevices": [
             "J132AP",
@@ -63,40 +63,12 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
         ],
-        "SecurityInfo": "https://support.apple.com/kb/HT214085",
+        "SecurityInfo": "https://support.apple.com/kb/HT214095",
         "CVEs": [
-            "CVE-2024-23286",
-            "CVE-2024-23283",
-            "CVE-2024-23278",
-            "CVE-2024-23276",
-            "CVE-2024-23275",
-            "CVE-2024-23274",
-            "CVE-2024-23272",
-            "CVE-2024-23270",
-            "CVE-2024-23269",
-            "CVE-2024-23268",
-            "CVE-2024-23267",
-            "CVE-2024-23266",
-            "CVE-2024-23265",
-            "CVE-2024-23264",
-            "CVE-2024-23257",
-            "CVE-2024-23247",
-            "CVE-2024-23245",
-            "CVE-2024-23234",
-            "CVE-2024-23231",
-            "CVE-2024-23230",
-            "CVE-2024-23227",
-            "CVE-2024-23225",
-            "CVE-2024-23218",
-            "CVE-2024-23217",
-            "CVE-2024-23216",
-            "CVE-2024-23204",
-            "CVE-2024-23203",
-            "CVE-2024-23201",
-            "CVE-2023-28826"
+            "CVE-2024-1580"
         ],
-        "UniqueCVEsCount": 29,
-        "DaysSincePreviousRelease": 45
+        "UniqueCVEsCount": 1,
+        "DaysSincePreviousRelease": 18
     },
     "XProtectPayloads": {
         "com.apple.XProtectFramework.XProtect": "129",
@@ -211,6 +183,16 @@
         }
     ],
     "SecurityReleases": [
+        {
+            "OSVersion": "macOS Ventura 13.6.6",
+            "ReleaseDate": "2024-03-25T00:00:00Z",
+            "SecurityInfo": "https://support.apple.com/kb/HT214095",
+            "CVEs": [
+                "CVE-2024-1580"
+            ],
+            "UniqueCVEsCount": 1,
+            "DaysSincePreviousRelease": 18
+        },
         {
             "OSVersion": "macOS Ventura 13.6.5",
             "ReleaseDate": "2024-03-07T00:00:00Z",
