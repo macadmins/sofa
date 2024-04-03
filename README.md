@@ -1,2 +1,3 @@
-# mauf
-MAUF | MacAdmin's Metadata Aggregation and Update Feed: XProtect, macOS, iOS/iPadOS & More
+# SOFA
+
+SOFA | A MacAdmin's Simple Organized Feed for Apple Software Updates
