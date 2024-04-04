@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os_type: [iOS]  # Run only macOS tasks in this workflow
+        os_type: [macOS]  # Run only macOS tasks in this workflow
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
