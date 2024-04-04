@@ -1,0 +1,38 @@
+name: iOS SOFA Scan
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Once a day
+  workflow_dispatch:
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os_type: [iOS]  # Run only iOS tasks in this workflow
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Build Docker image
+      run: docker build . -t sofa_scan
+
+    - name: Run Docker container
+      run: docker run --name sofa_scan_container -e OS_TYPE=${{ matrix.os_type }} sofa_scan
+
+    - name: Copy resulting JSON files from container to host
+      run: |
+        docker cp sofa_scan_container:/app/macos_data_feed.json v1/. || true
+        docker cp sofa_scan_container:/app/ios_data_feed.json v1/. || true
+        docker cp sofa_scan_container:/app/time-series.csv .
+
+    - name: Commit and push if changes are detected
+      run: |
+        timestamp=$(date +'%Y-%m-%d %H:%M:%S')
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add v1/*.json time-series.csv
+        git commit -m "Update ${{ matrix.os_type }} SOFA data - $timestamp" -a || exit 0
+        git pull --no-edit -Xours
+        git push

@@ -5,12 +5,12 @@ on:
   workflow_dispatch:
   
   # Defines scheduled triggers for the workflow
-  schedule:
+  #schedule:
     # Monday, Tuesday, Thursday, and Friday every 1 hour from 5:00 PM to 8:00 PM CET
-    - cron: '0 17-20 * * 1,2,3,4,5'
+    #- cron: '0 17-20 * * 1,2,3,4,5'
     
     # On every day every 4 hours
-    - cron: '30 */4 * * *'
+    #- cron: '30 */4 * * *'
 
 jobs:
   build-and-run:
