@@ -458,7 +458,8 @@ html.dark .highlight-cve {
         securityReleasesContainer.innerHTML = `<h2 class="text-2xl text-indigo-700 dark:text-yellow-500 font-semibold mb-4">${headerText}</h2>`;
 
         securityReleases.forEach((release, index) => {
-            const warningSign = release.SecurityInfo.startsWith('http') ? `<span class="text-yellow-400"> ⚠️</span>` : '';
+            const tooltipText = "Critical security updates included in this release. Please review for impact.";
+            const warningSign = release.SecurityInfo.startsWith('http') ? `<span class="text-yellow-400" title="${tooltipText}"> ⚠️</span>` : '';
             const securityInfoHTML = release.SecurityInfo.startsWith('http') ?
                 `<a href="${createSafeLink(release.SecurityInfo)}" class="text-blue-600 dark:text-yellow-500 hover:text-blue-400" target="_blank">${release.SecurityInfo}</a>` :
                 release.SecurityInfo;
