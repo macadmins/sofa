@@ -379,7 +379,7 @@ def load_and_tag_model_data(filenames):
                             "OSVersions": [int(os_version.split()[-1])]
                         }
                     else:
-                        model_info[identifier]["SupportedOSVersions"].append(os_version)
+                        model_info[identifier]["SupportedOS"].append(os_version)
                         model_info[identifier]["OSVersions"].append(int(os_version.split()[-1]))
                         # Ensure the marketing name is consistent; if not, log a warning or handle discrepancies
     return model_info
