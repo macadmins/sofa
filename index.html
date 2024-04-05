@@ -310,14 +310,14 @@ html.dark .highlight-cve {
 
     function populateVersionCard(osData, osType) {
         const versionCardContainer = document.getElementById('version-card');
-        if (!versionCardContainer || !osData || !osData.LatestOS) {
+        if (!versionCardContainer || !osData || !osData.Latest) {
             console.error("Version card data is missing or empty.");
             return;
         }
         // Assuming osData is correctly passed as a single version object
         const {
             OSVersion,
-            LatestOS
+            Latest
         } = osData;
         const imageName = getImageName(osData, osType); // Adjust getImageName function as needed
         // Clear existing content
@@ -325,11 +325,11 @@ html.dark .highlight-cve {
         const osSectionHTML = `
     <div class="relative bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 shadow overflow-hidden sm:rounded-lg p-6 flex flex-col" data-os-version="${OSVersion}">
         <h3 class="text-lg leading-6 font-semibold text-indigo-700 dark:text-indigo-400">${osType} ${OSVersion}</h3>
-        <div><strong>Last released version:</strong> ${LatestOS.ProductVersion}</div>
+        <div><strong>Last released version:</strong> ${Latest.ProductVersion}</div>
         <div class="mt-2 max-w-xl text-sm text-gray-600 dark:text-gray-400">
-            <p><strong>Build:</strong> ${LatestOS.Build}</p>
-            <p><strong>Release Date:</strong> ${formatDate(LatestOS.ReleaseDate)}</p>
-            <p><strong>Days since release:</strong> ${Math.floor((new Date() - new Date(LatestOS.ReleaseDate)) / (1000 * 60 * 60 * 24))}</p>
+            <p><strong>Build:</strong> ${Latest.Build}</p>
+            <p><strong>Release Date:</strong> ${formatDate(Latest.ReleaseDate)}</p>
+            <p><strong>Days since release:</strong> ${Math.floor((new Date() - new Date(Latest.ReleaseDate)) / (1000 * 60 * 60 * 24))}</p>
         </div>
         <img src="images/${imageName}" alt="${OSVersion}" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
         <div class="mt-8 max-w-xl text-sm text-gray-600 dark:text-gray-400">

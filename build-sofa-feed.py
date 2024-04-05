@@ -521,7 +521,7 @@ def main(os_type):
                 # Add the macOS version information along with compatible machines to the feed structure
                 feed_structure["OSVersions"].append({
                     "OSVersion": os_version_name,
-                    "LatestOS": latest_version_info,
+                    "Latest": latest_version_info,
                     "SecurityReleases": fetch_security_releases(os_type, os_version_name),
                     "SupportedModels": compatible_machines  # Add compatible machines here
                 })

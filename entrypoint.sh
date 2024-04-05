@@ -18,7 +18,7 @@ sleep 5
 
 # Run our script for CSV time-series update
 if [ -f macos_data_feed.json ]; then 
-    echo "Processing: $OS_TYPE, upadte time-series.csv file."
+    echo "Processing: $OS_TYPE, update time-series.csv file."
     # Run script to generate time-series.csv only if the file exists
     python sofa-time-series.py --json macos_data_feed.json --csv time-series.csv; 
 fi
