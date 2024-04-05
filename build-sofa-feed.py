@@ -375,11 +375,12 @@ def load_and_tag_model_data(filenames):
                 for identifier, name in model["Identifiers"].items():
                     if identifier not in model_info:
                         model_info[identifier] = {
-                            "MarketingName": name,
-                            "SupportedOSVersions": [os_version]
+                            "SupportedOS": [os_version],
+                            "OSVersions": [int(os_version.split()[-1])]
                         }
                     else:
                         model_info[identifier]["SupportedOSVersions"].append(os_version)
+                        model_info[identifier]["OSVersions"].append(int(os_version.split()[-1]))
                         # Ensure the marketing name is consistent; if not, log a warning or handle discrepancies
     return model_info
 
