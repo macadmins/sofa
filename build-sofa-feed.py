@@ -375,6 +375,7 @@ def load_and_tag_model_data(filenames):
                 for identifier, name in model["Identifiers"].items():
                     if identifier not in model_info:
                         model_info[identifier] = {
+                            "MarketingName": name,
                             "SupportedOS": [os_version],
                             "OSVersions": [int(os_version.split()[-1])]
                         }
