@@ -1,5 +1,10 @@
 ## Using "GoogleSheet.gs" Script in Google Sheets
 
+Demo: Populate feed details into table with GoogleSheet.gs script
+
+![Demo gif](./GoogleSheet-fetch-macOS-releases.gif)
+
+
 1. **Open Google Sheets:**
    - Go to [Google Sheets](https://sheets.google.com) and sign in to your Google account if you're not already signed in.
 
