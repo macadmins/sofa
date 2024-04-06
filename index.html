@@ -454,41 +454,86 @@ html.dark .highlight-cve {
 
     function populateSecurityReleases(securityReleases, osType) {
         const securityReleasesContainer = document.getElementById('security-releases');
-        const headerText = `${osType} Security Updates Overview`;
-        securityReleasesContainer.innerHTML = `<h2 class="text-2xl text-indigo-700 dark:text-yellow-500 font-semibold mb-4">${headerText}</h2>`;
+        // Clear previous contents
+        securityReleasesContainer.innerHTML = '';
+
+        const header = document.createElement('h2');
+        header.className = "text-2xl text-indigo-700 dark:text-yellow-500 font-semibold mb-4";
+        header.textContent = `${osType} Security Updates Overview`;
+        securityReleasesContainer.appendChild(header);
 
         securityReleases.forEach((release, index) => {
+            const section = document.createElement('div');
+            section.className = `${index > 0 ? 'border-t-2 border-gray-500 pt-4 mt-4' : ''} dark:border-gray-700`;
+
             const tooltipText = "Critical security updates included in this release. Please review for impact.";
-            const warningSign = release.SecurityInfo.startsWith('http') ? `<span class="text-yellow-400" title="${tooltipText}"> ⚠️</span>` : '';
+            const warningSign = release.SecurityInfo.startsWith('http') ? `<span class="text-yellow-400" title="${tooltipText}" aria-label="${tooltipText}"> ⚠️</span>` : '';
+            
             const securityInfoHTML = release.SecurityInfo.startsWith('http') ?
-                `<a href="${createSafeLink(release.SecurityInfo)}" class="text-blue-600 dark:text-yellow-500 hover:text-blue-400" target="_blank">${release.SecurityInfo}</a>` :
+                `<a href="${createSafeLink(release.SecurityInfo)}" class="text-blue-600 dark:text-yellow-500 hover:text-blue-400" target="_blank" aria-label="Security Information Link">${release.SecurityInfo}</a>` :
                 release.SecurityInfo;
 
-            let cveLinksHTML = Object.keys(release.CVEs).map(cve => {
-                const cveUrl = `https://www.cve.org/CVERecord?id=${cve}`;
-                const cveStatus = release.CVEs[cve] ? '<span class="text-red-500 dark:text-red-500"> (Actively Exploited)</span>' : '';
-                return `<a href="${createSafeLink(cveUrl)}" data-cve class="text-blue-600 dark:text-yellow-500 hover:text-blue-400 dark:hover:text-yellow-300" target="_blank">${cve}${cveStatus}</a>`;
-            }).join(', ');
+                let cveLinksHTML = Object.keys(release.CVEs).map(cve => {
+                    const cveOrgUrl = `https://www.cve.org/CVERecord?id=${cve}`;
+                    const nvdUrl = `https://nvd.nist.gov/vuln/detail/${cve}`; // NVD URL
+                    const isActivelyExploited = release.CVEs[cve]; // Active exploitation check
+                    const cveStatusText = isActivelyExploited ? " (Actively Exploited)" : "";
+                    const tooltipText = isActivelyExploited ? 
+                        `View CVE at CVE.org. Or use 'Command-click'/'Ctrl-click' to open in NVD records at ${nvdUrl}` : 
+                        `View CVE at CVE.org. Or use 'Command-click'/'Ctrl-click' to open in NVD records.`;
+                        const cveClass = isActivelyExploited ? "text-blue-600 hover:text-orange-700" : "text-blue-600 hover:text-blue-400";
+        const darkModeCveClass = isActivelyExploited ? "dark:text-yellow-500 dark:hover:text-orange-500" : "dark:text-yellow-500 dark:hover:text-yellow-300";
+                    // Include data-nvd-url attribute
+                    return `<a href="${cveOrgUrl}" data-cve class="${cveClass} ${darkModeCveClass}" target="_blank" data-nvd-url="${nvdUrl}" title="${tooltipText}">${cve}${cveStatusText}</a>`;
+                }).join(', ');
+
+                document.querySelectorAll('a[data-cve]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Check for Command-click or Ctrl-click
+                    if (e.metaKey || e.ctrlKey) {
+                        e.preventDefault(); // Prevent default link behavior
+                        const nvdUrl = this.getAttribute('data-nvd-url'); // Access NVD URL
+                        window.open(nvdUrl, '_blank'); // Open NVD URL in a new tab
+                    }
+                });
+            });
 
             const activelyExploitedCVEsHTML = release.ActivelyExploitedCVEs.length > 0 ?
-                `<p class="text-gray-600 dark:text-gray-400">Actively Exploited Vulnerabilities (KEV): ` +
-                release.ActivelyExploitedCVEs.map(cve => {
-                    const kevUrl = `https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=${cve}`;
-                    return `<a href="${createSafeLink(kevUrl)}" data-cve class="text-blue-600 dark:text-yellow-500 hover:text-blue-400 dark:hover:text-yellow-300" target="_blank">${cve}</a>`;
-                }).join(', ') + `</p>` : '';
+            `<p class="text-gray-600 dark:text-gray-400">Actively Exploited Vulnerabilities (KEV): ` +
+            release.ActivelyExploitedCVEs.map(cve => {
+                // Generating the NVD URL dynamically based on the CVE ID.
+                const nvdUrl = `https://nvd.nist.gov/vuln/detail/${cve}`;
+                // Updated tooltip text to guide users towards CISA for an overview or NVD for detailed records.
+                const tooltipText = `View CVE at CISA.gov. Or use 'Command-click'/'Ctrl-click' to open in NVD records.`;
+                // CISA URL for viewing the overview of the CVE.
+                const kevUrl = `https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=${cve}`;
 
-            const releaseHTML = `
-            <div class="${index > 0 ? 'border-t-2 border-gray-500 pt-4 mt-4' : ''} dark:border-gray-700">
-              <p class="mt-1 max-w-2xl text-sm text-gray-600 dark:text-gray-400">Release Date: ${formatDate(release.ReleaseDate)}${warningSign}</p>
-              <h3 class="text-lg leading-6 font-medium text-indigo-700 dark:text-yellow-500">${release.UpdateName}</h3>
-              <p class="text-gray-600 dark:text-gray-400">Security Info: ${securityInfoHTML}</p>
-              <p class="text-gray-600 dark:text-gray-400">Vulnerabilities Addressed: ${Object.keys(release.CVEs).length}</p>
-              ${activelyExploitedCVEsHTML}
-              <p class="text-gray-600 dark:text-gray-400">Security Advisories (CVE Identifiers): ${cveLinksHTML}</p>
-              <p class="mt-1 max-w-2xl text-sm text-gray-600 dark:text-gray-400">Days to Prev. Release: ${release.DaysSincePreviousRelease}</p>
-            </div>
-        `;
-            securityReleasesContainer.innerHTML += releaseHTML;
+                // Return the anchor tag with the KEV link, including the tooltip and data attributes for dynamic URLs.
+                return `<a href="${createSafeLink(kevUrl)}" data-cve data-nvd-url="${nvdUrl}" class="text-blue-600 dark:text-yellow-500 hover:text-orange-700 dark:hover:text-orange-500" target="_blank" title="${tooltipText}" aria-label="KEV Link ${cve}">${cve}</a>`;
+            }).join(', ') + `</p>` : '';
+
+            document.querySelectorAll('a[data-cve][data-nvd-url]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (e.metaKey || e.ctrlKey) {
+                        e.preventDefault(); // Prevent the default action
+                        // Retrieve the NVD URL stored in the data attribute
+                        const nvdUrl = this.getAttribute('data-nvd-url');
+                        window.open(nvdUrl, '_blank'); // Open the NVD URL in a new tab
+                    }
+                });
+            });
+
+            section.innerHTML = `
+            <p class="mt-1 max-w-2xl text-sm text-gray-600 dark:text-gray-400">Release Date: ${formatDate(release.ReleaseDate)}${warningSign}</p>
+            <h3 class="text-lg leading-6 font-medium text-indigo-700 dark:text-yellow-500">${release.UpdateName}</h3>
+            <p class="text-gray-600 dark:text-gray-400">Security Info: ${securityInfoHTML}</p>
+            <p class="text-gray-600 dark:text-gray-400">Vulnerabilities Addressed: ${Object.keys(release.CVEs).length}</p>
+            ${activelyExploitedCVEsHTML}
+            <p class="text-gray-600 dark:text-gray-400">Security Advisories (CVE Identifiers): ${cveLinksHTML}</p>
+            <p class="mt-1 max-w-2xl text-sm text-gray-600 dark:text-gray-400">Days to Prev. Release: ${release.DaysSincePreviousRelease}</p>
+            `;
+
+            securityReleasesContainer.appendChild(section);
         });
     }
 
