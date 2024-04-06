@@ -394,11 +394,11 @@ def write_data_to_json(feed_structure, filename):
     :param filename: The name of the file to which the JSON data should be written.
     """
     for os_version in feed_structure['OSVersions']:
-        # Assuming 'LatestOS' is correctly structured and needs no iteration
-        if 'LatestOS' in os_version:
-            os_version['LatestOS']['ReleaseDate'] = format_iso_date(os_version['LatestOS'].get('ReleaseDate', ''))
-            if "ExpirationDate" in os_version['LatestOS']:
-                os_version['LatestOS']['ExpirationDate'] = format_iso_date(os_version['LatestOS'].get('ExpirationDate', ''))
+        # Assuming 'Latest' is correctly structured and needs no iteration
+        if 'Latest' in os_version:
+            os_version['Latest']['ReleaseDate'] = format_iso_date(os_version['Latest'].get('ReleaseDate', ''))
+            if "ExpirationDate" in os_version['Latest']:
+                os_version['Latest']['ExpirationDate'] = format_iso_date(os_version['Latest'].get('ExpirationDate', ''))
 
         # Verify SecurityReleases is a list and then format dates within each release
         if 'SecurityReleases' in os_version and isinstance(os_version['SecurityReleases'], list):
@@ -428,7 +428,7 @@ def read_and_validate_json(filename):
             # Adjusted required keys for a more generic approach
             required_keys = [
                 "OSVersions",
-                #"LatestOS",  # Generic key for latest OS version info
+                #"Latest",  # Generic key for latest OS version info
                 #"SecurityReleases",
             ]
             # Additional keys like "XProtectPlistConfigData" and "XProtectPayloads" may not be relevant for all OS types
@@ -531,7 +531,7 @@ def main(os_type):
                 # For iOS, append without compatible machines
                 feed_structure["OSVersions"].append({
                     "OSVersion": os_version_name,
-                    "LatestOS": latest_version_info,
+                    "Latest": latest_version_info,
                     "SecurityReleases": fetch_security_releases(os_type, os_version_name)
                     # Note: 'SupportedModels' is not included for iOS
                 })      
