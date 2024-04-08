@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SOFA | A MacAdmin's Simple Organized Feed for Apple Software Updates</title>
-  <link href="./main.css" rel="stylesheet">
+  <link href="/main.css" rel="stylesheet">
   <style>
     .text-content {
       padding-right: 80px;
@@ -24,36 +24,52 @@
     }
 
     /* Light mode styles as default */
-.highlight-cve {
-    background-color: rgb(227, 159, 32); /* Light mode color */
-    box-shadow: 0 0 1px 1px rgb(227, 159, 32);
-}
+    .highlight-cve {
+        background-color: rgb(227, 159, 32); /* Light mode color */
+        box-shadow: 0 0 1px 1px rgb(227, 159, 32);
+    }
 
-/* Dark mode styles */
-html.dark .highlight-cve {
-    background-color: rgb(154, 25, 70); /* Dark mode color */
-    box-shadow: 0 0 1px 1px rgb(154, 25, 70);
-}
+    /* Dark mode styles */
+    html.dark .highlight-cve {
+        background-color: rgb(154, 25, 70); /* Dark mode color */
+        box-shadow: 0 0 1px 1px rgb(154, 25, 70);
+    }
     /* Any additional custom styles */
   </style>
 </head>
 
+
 <body class="bg-gray-50 text-gray-700 dark:bg-gray-900 dark:text-gray-300 font-sans">
-  <div class="container mx-auto px-6 py-12">
-    <div class="flex items-center justify-between mb-6">
-      <div class="flex items-center">
-        <img src="images/custom_logo.png" alt="Custom Logo" class="h-20 w-20 mr-4 sm:mr-6">
-        <h1 class="text-3xl font-bold text-grey-900 dark:text-grey-100">SOFA | Simple Organized Feed for Apple Software Updates</h1>
+    <div class="container mx-auto px-6 py-12">
+      <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center">
+          <img src="images/custom_logo.png" alt="Custom Logo" class="h-20 w-20 mr-4 sm:mr-6">
+          <div class="flex items-center">
+            <h1 class="font-bold text-grey-900 dark:text-grey-100 mr-4">
+              <span class="text-3xl sm:text-4xl">SOFA</span> <!-- Larger on sm screens and up -->
+            </h1>
+            <p class="text-lg sm:text-xl text-grey-900 dark:text-grey-100"> <!-- Smaller on the smallest screens -->
+              Simple Organized Feed for Apple Software Updates
+            </p>
+        </div>
+        </div>
+        <div class="flex items-center ml-1">
+          <!-- Theme Toggle Button -->
+          <button id="theme-toggle" data-tooltip-target="tooltip-toggle" type="button" class="inline-flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg w-10 h-10 mr-2">
+            <svg id="theme-toggle-dark-icon" class="w-4 h-4 hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+              <path d="M17.8 13.75a1 1 0 0 0-.859-.5A7.488 7.488 0 0 1 10.52 2a1 1 0 0 0 0-.969A1.035 1.035 0 0 0 9.687.5h-.113a9.5 9.5 0 1 0 8.222 14.247 1 1 0 0 0 .004-.997Z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 15a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0-11a1 1 0 0 0 1-1V1a1 1 0 0 0-2 0v2a1 1 0 0 0 1 1Zm0 12a1 1 0 0 0-1 1v2a1 1 0 1 0 2 0v-2a1 1 0 0 0-1-1ZM4.343 5.757a1 1 0 0 0 1.414-1.414L4.343 2.929a1 1 0 0 0-1.414 1.414l1.414 1.414Zm11.314 8.486a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414ZM4 10a1 1 0 0 0-1-1H1a1 1 0 0 0 0 2h2a1 1 0 0 0 1-1Zm15-1h-2a1 1 0 1 0 0 2h2a1 1 0 0 0 0-2ZM4.343 14.243l-1.414 1.414a1 1 0 1 0 1.414 1.414l1.414-1.414a1 1 0 0 0-1.414-1.414ZM14.95 6.05a1 1 0 0 0 .707-.293l1.414-1.414a1 1 0 1 0-1.414-1.414l-1.414 1.414a1 1 0 0 0 .707 1.707Z"></path>
+            </svg>
+          </button>
+          <!-- Github Link -->
+          <a href="https://github.com/headmin/sofa" target="_blank" aria-label="GitHub" class="inline-flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg w-10 h-10">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 496 512" class="h-5 w-5">
+              <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+          </svg>
+        </a>
       </div>
-      <!-- Theme Toggle Button -->
-      <button id="theme-toggle" data-tooltip-target="tooltip-toggle" type="button" class="inline-flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg w-10 h-10">
-        <svg id="theme-toggle-dark-icon" class="w-4 h-4 hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
-          <path d="M17.8 13.75a1 1 0 0 0-.859-.5A7.488 7.488 0 0 1 10.52 2a1 1 0 0 0 0-.969A1.035 1.035 0 0 0 9.687.5h-.113a9.5 9.5 0 1 0 8.222 14.247 1 1 0 0 0 .004-.997Z"></path>
-        </svg>
-        <svg id="theme-toggle-light-icon" class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M10 15a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0-11a1 1 0 0 0 1-1V1a1 1 0 0 0-2 0v2a1 1 0 0 0 1 1Zm0 12a1 1 0 0 0-1 1v2a1 1 0 1 0 2 0v-2a1 1 0 0 0-1-1ZM4.343 5.757a1 1 0 0 0 1.414-1.414L4.343 2.929a1 1 0 0 0-1.414 1.414l1.414 1.414Zm11.314 8.486a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414ZM4 10a1 1 0 0 0-1-1H1a1 1 0 0 0 0 2h2a1 1 0 0 0 1-1Zm15-1h-2a1 1 0 1 0 0 2h2a1 1 0 0 0 0-2ZM4.343 14.243l-1.414 1.414a1 1 0 1 0 1.414 1.414l1.414-1.414a1 1 0 0 0-1.414-1.414ZM14.95 6.05a1 1 0 0 0 .707-.293l1.414-1.414a1 1 0 1 0-1.414-1.414l-1.414 1.414a1 1 0 0 0 .707 1.707Z"></path>
-        </svg>
-      </button>
     </div>
     <div class="flex flex-col sm:flex-row justify-between items-center mb-6">
       <div id="tabs" class="mb-6 flex"></div>
@@ -69,17 +85,24 @@ html.dark .highlight-cve {
     </div>
     <!-- Adjust informational text colors for light mode -->
     <div id="last-checked" class="mb-2 text-indigo-700 dark:text-indigo-400"></div>
-    <div id="machine-readable-feed" class="text-indigo-700 dark:text-indigo-400 mb-6"></div>
+    <div id="machine-readable-feed" class="text-indigo-700 dark:text-indigo-400 mb-6" title="Frequently updated with the latest security patches and updates."></div>
      <!-- New container for both the version card and XProtect card -->
-  <div class="grid md:grid-cols-2 gap-4">
-    <!-- Container for the OS version information -->
-    <div id="version-card"></div>
-    
-    <!-- Container for the XProtect information -->
-    <div id="xprotect-card"></div>
-  </div>
+
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Card 1 -->
+        <div id="version-card" class="gradient-border-card relative bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 shadow overflow-hidden sm:rounded-lg p-6 flex flex-col">
+        <!-- Dynamic content will be inserted here by JavaScript -->
+            
+        </div>
+        <!-- Card 2 -->
+        <div id="xprotect-card" class="gradient-border-card relative bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 shadow overflow-hidden sm:rounded-lg p-6 flex flex-col">
+            <!-- Dynamic content will be inserted here by JavaScript -->
+        </div>
+    </div>
+
     <!-- <div class="grid md:grid-cols-2 gap-4" id="version-card"></div> -->
     <hr class="border-t-2 border-gray-300 dark:border-gray-700 my-8">
+    
     <div id="security-releases" class="space-y-4">
       <!-- Adjust headings and link colors for light mode -->
       <h2 class="text-2xl text-indigo-700 dark:text-indigo-400 font-semibold mb-4">Apple Resources</h2>
@@ -118,28 +141,29 @@ html.dark .highlight-cve {
         }
     }
 
-    async function createTabs(orderedData) {
-        // Assuming configData is available here, either through closure or global variable
+        async function createTabs(orderedData) {
         const tabsContainer = document.getElementById('tabs');
         tabsContainer.innerHTML = '';
         const activeTabId = localStorage.getItem('activeTabId');
 
         orderedData.forEach(software => {
             const button = document.createElement('button');
-            // Check if the software is of type 'iOS' and prepend 'iOS ' to the name
             const softwareName = software.osType === 'iOS' ? `iOS ${software.name}` : software.name;
             button.textContent = softwareName;
             button.dataset.id = software.id;
             button.className = getClassNames(software.id.toString() === activeTabId);
-            button.addEventListener('click', async() => {
+            button.addEventListener('click', async () => {
                 setActiveTab(button);
-                // Determine the correct data feed path based on osType
                 const dataFeedPath = configData.globalSettings.dataFeedFiles[software.osType];
                 if (dataFeedPath) {
                     await fetchData(`./${dataFeedPath}`, software.osType, softwareName);
                 } else {
                     console.error("Data feed path not found for osType:", software.osType);
                 }
+                // Instead of a separate function, directly control the XProtect card visibility here
+                requestAnimationFrame(() => {
+                document.getElementById('xprotect-card').style.display = software.osType === 'iOS' ? 'none' : '';
+            });
             });
             tabsContainer.appendChild(button);
         });
@@ -323,7 +347,6 @@ html.dark .highlight-cve {
         // Clear existing content
         versionCardContainer.innerHTML = '';
         const osSectionHTML = `
-    <div class="relative bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 shadow overflow-hidden sm:rounded-lg p-6 flex flex-col" data-os-version="${OSVersion}">
         <h3 class="text-lg leading-6 font-semibold text-indigo-700 dark:text-indigo-400">${osType} ${OSVersion}</h3>
         <div><strong>Last released version:</strong> ${Latest.ProductVersion}</div>
         <div class="mt-2 max-w-xl text-sm text-gray-600 dark:text-gray-400">
@@ -340,7 +363,6 @@ html.dark .highlight-cve {
             <h4 class="text-lg leading-6 font-semibold text-indigo-700 dark:text-indigo-400">Essential Apple Resources</h4>
             <ul class="links-list" data-os-version="${OSVersion}"></ul>
         </div>
-    </div>
     `;
         // Append the generated HTML to the container
         versionCardContainer.innerHTML = osSectionHTML;
@@ -402,6 +424,7 @@ html.dark .highlight-cve {
         });
     }
 
+
     function populateXProtectCard(XProtectPlistConfigData, XProtectPayloads) {
         console.log("Populating XProtect Card", {
             XProtectPlistConfigData,
@@ -426,62 +449,60 @@ html.dark .highlight-cve {
         const sanitizedUrl = createSafeLink(xProtectInfoUrl); // Use createSafeLink to sanitize the URL
 
         const xProtectCardHTML = `
-    <div class="relative bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 shadow overflow-hidden sm:rounded-lg p-6 flex flex-col">
-      <h3 class="text-lg leading-6 font-semibold text-indigo-700 dark:text-indigo-400">XProtect data files</h3>
-      <div><strong>Latest versions:</strong> ${xProtectAppVersion} | ${xProtectRemediatorVersion} | ${xProtectVersion}</div>
-      <div class="mt-2 max-w-xl text-sm text-gray-600 dark:text-gray-400">
+        <h3 class="text-lg leading-6 font-semibold text-indigo-700 dark:text-indigo-400">XProtect data files</h3>
+        <div><strong>Latest versions:</strong> ${xProtectAppVersion} | ${xProtectRemediatorVersion} | ${xProtectVersion}</div>
+        <div class="mt-2 max-w-xl text-sm text-gray-600 dark:text-gray-400">
         <p><strong>XProtect.app latest version:</strong> ${xProtectAppVersion}</p>
         <p><strong>XProtect Remediator latest version:</strong> ${xProtectRemediatorVersion}</p>
         <p><strong>App Release Date:</strong> ${formatDate(appReleaseDate)}</p>
         <p><strong>Days since release:</strong> ${daysSinceAppRelease}</p>
-      </div>
-      <div class="mt-4 max-w-xl text-sm text-gray-600 dark:text-gray-400">
-          <p><strong>XProtectPlistConfigData latest version:</strong> ${xProtectVersion}</p>
-          <p><strong>Plist Release Date:</strong> ${formatDate(plistReleaseDate)}</p>
-          <p><strong>Days since release:</strong> ${daysSincePlistRelease}</p>
-      </div>
-      <div class="mt-8 max-w-xl text-sm text-gray-600 dark:text-gray-400">
+        </div>
+        <div class="mt-4 max-w-xl text-sm text-gray-600 dark:text-gray-400">
+            <p><strong>XProtectPlistConfigData latest version:</strong> ${xProtectVersion}</p>
+            <p><strong>Plist Release Date:</strong> ${formatDate(plistReleaseDate)}</p>
+            <p><strong>Days since release:</strong> ${daysSincePlistRelease}</p>
+        </div>
+        <div class="mt-8 max-w-xl text-sm text-gray-600 dark:text-gray-400">
         What is XProtect: 
         <a href="${sanitizedUrl}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-400 dark:text-yellow-500 dark:hover:text-yellow-300">Get to know more</a>
-      </div>
-      <img src="images/SWUpdate.png" alt="SWUpdate" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
+        </div>
+        <img src="images/SWUpdate.png" alt="SWUpdate" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
     </div>
     `;
 
         xProtectCardContainer.innerHTML = xProtectCardHTML;
     }
 
-
     function populateSecurityReleases(securityReleases, osType) {
-        const securityReleasesContainer = document.getElementById('security-releases');
-        // Clear previous contents
-        securityReleasesContainer.innerHTML = '';
+    const securityReleasesContainer = document.getElementById('security-releases');
+    // Clear previous contents
+    securityReleasesContainer.innerHTML = '';
 
-        const header = document.createElement('h2');
-        header.className = "text-2xl text-indigo-700 dark:text-yellow-500 font-semibold mb-4";
-        header.textContent = `${osType} Security Updates Overview`;
-        securityReleasesContainer.appendChild(header);
+    const header = document.createElement('h2');
+    header.className = "text-2xl text-indigo-700 dark:text-yellow-500 font-semibold mb-4";
+    header.textContent = `${osType} Security Updates Overview`;
+    securityReleasesContainer.appendChild(header);
 
-        securityReleases.forEach((release, index) => {
-            const section = document.createElement('div');
-            section.className = `${index > 0 ? 'border-t-2 border-gray-500 pt-4 mt-4' : ''} dark:border-gray-700`;
+    securityReleases.forEach((release, index) => {
+        const section = document.createElement('div');
+        section.className = `${index > 0 ? 'border-t-2 border-gray-500 pt-4 mt-4' : ''} dark:border-gray-700`;
 
-            const tooltipText = "Critical security updates included in this release. Please review for impact.";
-            const warningSign = release.SecurityInfo.startsWith('http') ? `<span class="text-yellow-400" title="${tooltipText}" aria-label="${tooltipText}"> ⚠️</span>` : '';
-            
-            const securityInfoHTML = release.SecurityInfo.startsWith('http') ?
-                `<a href="${createSafeLink(release.SecurityInfo)}" class="text-blue-600 dark:text-yellow-500 hover:text-blue-400" target="_blank" aria-label="Security Information Link">${release.SecurityInfo}</a>` :
-                release.SecurityInfo;
+        const tooltipText = "Critical security updates included in this release. Please review for impact.";
+        const warningSign = release.SecurityInfo.startsWith('http') ? `<span class="text-yellow-400" title="${tooltipText}" aria-label="${tooltipText}"> ⚠️</span>` : '';
+        
+        const securityInfoHTML = release.SecurityInfo.startsWith('http') ?
+            `<a href="${createSafeLink(release.SecurityInfo)}" class="text-blue-600 hover:text-blue-400 dark:text-yellow-500 dark:hover:text-yellow-300 " target="_blank" aria-label="Security Information Link">${release.SecurityInfo}</a>` :
+            release.SecurityInfo;
 
-                let cveLinksHTML = Object.keys(release.CVEs).map(cve => {
-                    const cveOrgUrl = `https://www.cve.org/CVERecord?id=${cve}`;
-                    const nvdUrl = `https://nvd.nist.gov/vuln/detail/${cve}`; // NVD URL
-                    const isActivelyExploited = release.CVEs[cve]; // Active exploitation check
-                    const cveStatusText = isActivelyExploited ? " (Actively Exploited)" : "";
-                    const tooltipText = isActivelyExploited ? 
-                        `View CVE at CVE.org. Or use 'Command-click'/'Ctrl-click' to open in NVD records at ${nvdUrl}` : 
-                        `View CVE at CVE.org. Or use 'Command-click'/'Ctrl-click' to open in NVD records.`;
-                        const cveClass = isActivelyExploited ? "text-blue-600 hover:text-orange-700" : "text-blue-600 hover:text-blue-400";
+            let cveLinksHTML = Object.keys(release.CVEs).map(cve => {
+                const cveOrgUrl = `https://www.cve.org/CVERecord?id=${cve}`;
+                const nvdUrl = `https://nvd.nist.gov/vuln/detail/${cve}`; // NVD URL
+                const isActivelyExploited = release.CVEs[cve]; // Active exploitation check
+                const cveStatusText = isActivelyExploited ? " (Actively Exploited)" : "";
+                const tooltipText = isActivelyExploited ? 
+                    `View CVE at CVE.org. Or use 'Command-click'/'Ctrl-click' to open in NVD records at ${nvdUrl}` : 
+                    `View CVE at CVE.org. Or use 'Command-click'/'Ctrl-click' to open in NVD records.`;
+                    const cveClass = isActivelyExploited ? "text-blue-600 hover:text-orange-700" : "text-blue-600 hover:text-blue-400";
         const darkModeCveClass = isActivelyExploited ? "dark:text-yellow-500 dark:hover:text-orange-500" : "dark:text-yellow-500 dark:hover:text-yellow-300";
                     // Include data-nvd-url attribute
                     return `<a href="${cveOrgUrl}" data-cve class="${cveClass} ${darkModeCveClass}" target="_blank" data-nvd-url="${nvdUrl}" title="${tooltipText}">${cve}${cveStatusText}</a>`;
@@ -498,30 +519,30 @@ html.dark .highlight-cve {
                 });
             });
 
-            const activelyExploitedCVEsHTML = release.ActivelyExploitedCVEs.length > 0 ?
-            `<p class="text-gray-600 dark:text-gray-400">Actively Exploited Vulnerabilities (KEV): ` +
-            release.ActivelyExploitedCVEs.map(cve => {
-                // Generating the NVD URL dynamically based on the CVE ID.
-                const nvdUrl = `https://nvd.nist.gov/vuln/detail/${cve}`;
-                // Updated tooltip text to guide users towards CISA for an overview or NVD for detailed records.
-                const tooltipText = `View CVE at CISA.gov. Or use 'Command-click'/'Ctrl-click' to open in NVD records.`;
-                // CISA URL for viewing the overview of the CVE.
-                const kevUrl = `https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=${cve}`;
+        const activelyExploitedCVEsHTML = release.ActivelyExploitedCVEs.length > 0 ?
+        `<p class="text-gray-600 dark:text-gray-400">Actively Exploited Vulnerabilities (KEV): ` +
+        release.ActivelyExploitedCVEs.map(cve => {
+            // Generating the NVD URL dynamically based on the CVE ID.
+            const nvdUrl = `https://nvd.nist.gov/vuln/detail/${cve}`;
+            // Updated tooltip text to guide users towards CISA for an overview or NVD for detailed records.
+            const tooltipText = `View CVE at CISA.gov. Or use 'Command-click'/'Ctrl-click' to open in NVD records.`;
+            // CISA URL for viewing the overview of the CVE.
+            const kevUrl = `https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=${cve}`;
 
-                // Return the anchor tag with the KEV link, including the tooltip and data attributes for dynamic URLs.
-                return `<a href="${createSafeLink(kevUrl)}" data-cve data-nvd-url="${nvdUrl}" class="text-blue-600 dark:text-yellow-500 hover:text-orange-700 dark:hover:text-orange-500" target="_blank" title="${tooltipText}" aria-label="KEV Link ${cve}">${cve}</a>`;
-            }).join(', ') + `</p>` : '';
+            // Return the anchor tag with the KEV link, including the tooltip and data attributes for dynamic URLs.
+            return `<a href="${createSafeLink(kevUrl)}" data-cve data-nvd-url="${nvdUrl}" class="text-blue-600 dark:text-yellow-500 hover:text-orange-700 dark:hover:text-orange-500" target="_blank" title="${tooltipText}" aria-label="KEV Link ${cve}">${cve}</a>`;
+        }).join(', ') + `</p>` : '';
 
-            document.querySelectorAll('a[data-cve][data-nvd-url]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    if (e.metaKey || e.ctrlKey) {
-                        e.preventDefault(); // Prevent the default action
-                        // Retrieve the NVD URL stored in the data attribute
-                        const nvdUrl = this.getAttribute('data-nvd-url');
-                        window.open(nvdUrl, '_blank'); // Open the NVD URL in a new tab
-                    }
-                });
+        document.querySelectorAll('a[data-cve][data-nvd-url]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (e.metaKey || e.ctrlKey) {
+                    e.preventDefault(); // Prevent the default action
+                    // Retrieve the NVD URL stored in the data attribute
+                    const nvdUrl = this.getAttribute('data-nvd-url');
+                    window.open(nvdUrl, '_blank'); // Open the NVD URL in a new tab
+                }
             });
+        });
 
             section.innerHTML = `
             <p class="mt-1 max-w-2xl text-sm text-gray-600 dark:text-gray-400">Release Date: ${formatDate(release.ReleaseDate)}${warningSign}</p>
