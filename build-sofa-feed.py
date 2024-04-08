@@ -1,14 +1,20 @@
 import json
 import yaml
 import os
+import ssl
+import sys
 import argparse
 import re
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from collections import defaultdict
-
+current_dir = os.getcwd()
+sys.path.insert(0, current_dir)
+import certifi
 import requests
 from bs4 import BeautifulSoup, NavigableString
+import process_uma
+
 
 
 # Load the feed structure template
@@ -486,6 +492,25 @@ def main(os_type):
 
         # Add the aggregated models data to the feed structure.
         feed_structure["Models"] = models_info
+        # UMA parsing
+        unrefined_products = process_uma.initial_uma_parse(catalog_content.encode())
+        print(f"Extracted {len(unrefined_products)} potential UMA packages")
+        ctx = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
+        ctx.load_verify_locations(cafile=certifi.where())
+        filtered_dict = {}
+        for slug, prod_dict in unrefined_products.items():
+            title, build, version = process_uma.get_metadata(ctx, prod_dict.get("dist_url"))
+            if title:
+                filtered_dict[slug] = {
+                    "title": title,
+                    "version": version,
+                    "build": build,
+                    "apple_slug": slug,
+                    "url": prod_dict.get("URL"),
+                }
+        latest, rest = process_uma.sort_installers(filtered_dict)
+        uma_list = {"LatestUMA": latest, "AllPreviousUMA": rest}
+        feed_structure["InstallationApps"] = uma_list
 
     elif os_type == "iOS":
         # Initialize os_versions dynamically for iOS
@@ -525,7 +550,7 @@ def main(os_type):
                     "OSVersion": os_version_name,
                     "Latest": latest_version_info,
                     "SecurityReleases": fetch_security_releases(os_type, os_version_name),
-                    "SupportedModels": compatible_machines  # Add compatible machines here
+                    "SupportedModels": compatible_machines,  # Add compatible machines here
                 })
             elif os_type == "iOS":
                 # For iOS, append without compatible machines
