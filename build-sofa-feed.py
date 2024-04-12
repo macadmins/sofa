@@ -44,6 +44,7 @@ def process_os_version(os_type, os_version, name_info):
     :param name_info:
     :return:
     """
+
     print(f"Processing data - {os_type}: {os_version}, Searching in: {name_info} ")
 
     rapid_response_prefix = "Rapid Security Response"
@@ -77,9 +78,9 @@ def process_os_version(os_type, os_version, name_info):
         if second_os_connector and second_os_part:
             version_str += f"and {second_os_part}"
 
-            return version_str.strip()
+        return version_str.strip()
 
-        return None
+    return None
 
 
 def fetch_latest_os_version_info(os_type, os_version_name):
