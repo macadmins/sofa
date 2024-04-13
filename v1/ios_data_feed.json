@@ -1,5 +1,5 @@
 {
-    "lastCheck": "2024-04-12T11:45:29+00:00Z",
+    "lastCheck": "2024-04-13T00:02:33+00:00Z",
     "OSVersions": [
         {
             "OSVersion": "17",
@@ -188,7 +188,17 @@
                         "CVE-2024-23222"
                     ],
                     "UniqueCVEsCount": 17,
-                    "DaysSincePreviousRelease": 42
+                    "DaysSincePreviousRelease": 34
+                },
+                {
+                    "UpdateName": "iOS 17.2.1",
+                    "ProductVersion": "17.2.1",
+                    "ReleaseDate": "2023-12-19T00:00:00Z",
+                    "SecurityInfo": "This update has no published CVE entries.",
+                    "CVEs": {},
+                    "ActivelyExploitedCVEs": [],
+                    "UniqueCVEsCount": 0,
+                    "DaysSincePreviousRelease": 8
                 },
                 {
                     "UpdateName": "iOS 17.2 and iPadOS 17.2",
@@ -322,6 +332,16 @@
                     "ActivelyExploitedCVEs": [],
                     "UniqueCVEsCount": 0,
                     "DaysSincePreviousRelease": 5
+                },
+                {
+                    "UpdateName": "iOS 17.0.2",
+                    "ProductVersion": "17.0.2",
+                    "ReleaseDate": "2023-09-21T00:00:00Z",
+                    "SecurityInfo": "This update has no published CVE entries.",
+                    "CVEs": {},
+                    "ActivelyExploitedCVEs": [],
+                    "UniqueCVEsCount": 0,
+                    "DaysSincePreviousRelease": 3
                 },
                 {
                     "UpdateName": "iOS 17.0.1 and iPadOS 17.0.1",
@@ -697,7 +717,35 @@
                         "CVE-2023-37450"
                     ],
                     "UniqueCVEsCount": 44,
-                    "DaysSincePreviousRelease": 33
+                    "DaysSincePreviousRelease": 12
+                },
+                {
+                    "UpdateName": "Rapid Security Response iOS 16.5.1 (c)",
+                    "ProductVersion": "16.5.1",
+                    "ReleaseDate": "2023-07-12T00:00:00Z",
+                    "SecurityInfo": "https://support.apple.com/kb/HT213823",
+                    "CVEs": {
+                        "CVE-2023-37450": true
+                    },
+                    "ActivelyExploitedCVEs": [
+                        "CVE-2023-37450"
+                    ],
+                    "UniqueCVEsCount": 1,
+                    "DaysSincePreviousRelease": 2
+                },
+                {
+                    "UpdateName": "Rapid Security Response iOS 16.5.1 (a)",
+                    "ProductVersion": "16.5.1",
+                    "ReleaseDate": "2023-07-10T00:00:00Z",
+                    "SecurityInfo": "https://support.apple.com/kb/HT213823",
+                    "CVEs": {
+                        "CVE-2023-37450": true
+                    },
+                    "ActivelyExploitedCVEs": [
+                        "CVE-2023-37450"
+                    ],
+                    "UniqueCVEsCount": 1,
+                    "DaysSincePreviousRelease": 19
                 },
                 {
                     "UpdateName": "iOS 16.5.1 and iPadOS 16.5.1",
@@ -966,7 +1014,21 @@
                         "CVE-2022-42856"
                     ],
                     "UniqueCVEsCount": 47,
-                    "DaysSincePreviousRelease": 34
+                    "DaysSincePreviousRelease": 13
+                },
+                {
+                    "UpdateName": "iOS 16.1.2",
+                    "ProductVersion": "16.1.2",
+                    "ReleaseDate": "2022-11-30T00:00:00Z",
+                    "SecurityInfo": "https://support.apple.com/kb/HT213516",
+                    "CVEs": {
+                        "CVE-2022-42856": true
+                    },
+                    "ActivelyExploitedCVEs": [
+                        "CVE-2022-42856"
+                    ],
+                    "UniqueCVEsCount": 1,
+                    "DaysSincePreviousRelease": 21
                 },
                 {
                     "UpdateName": "iOS 16.1.1 and iPadOS 16.1.1",
@@ -1035,6 +1097,100 @@
                         "CVE-2022-42827"
                     ],
                     "UniqueCVEsCount": 43,
+                    "DaysSincePreviousRelease": 14
+                },
+                {
+                    "UpdateName": "iOS 16.0.3",
+                    "ProductVersion": "16.0.3",
+                    "ReleaseDate": "2022-10-10T00:00:00Z",
+                    "SecurityInfo": "https://support.apple.com/kb/HT213480",
+                    "CVEs": {
+                        "CVE-2022-22658": false
+                    },
+                    "ActivelyExploitedCVEs": [],
+                    "UniqueCVEsCount": 1,
+                    "DaysSincePreviousRelease": 18
+                },
+                {
+                    "UpdateName": "iOS 16.0.2",
+                    "ProductVersion": "16.0.2",
+                    "ReleaseDate": "2022-09-22T00:00:00Z",
+                    "SecurityInfo": "This update has no published CVE entries.",
+                    "CVEs": {},
+                    "ActivelyExploitedCVEs": [],
+                    "UniqueCVEsCount": 0,
+                    "DaysSincePreviousRelease": 7
+                },
+                {
+                    "UpdateName": "iOS 16.0.1",
+                    "ProductVersion": "16.0.1",
+                    "ReleaseDate": "2022-09-15T00:00:00Z",
+                    "SecurityInfo": "This update has no published CVE entries.",
+                    "CVEs": {},
+                    "ActivelyExploitedCVEs": [],
+                    "UniqueCVEsCount": 0,
+                    "DaysSincePreviousRelease": 3
+                },
+                {
+                    "UpdateName": "iOS 16",
+                    "ProductVersion": "16",
+                    "ReleaseDate": "2022-09-12T00:00:00Z",
+                    "SecurityInfo": "https://support.apple.com/kb/HT213446",
+                    "CVEs": {
+                        "CVE-2022-42795": false,
+                        "CVE-2022-32827": false,
+                        "CVE-2022-32907": false,
+                        "CVE-2022-32877": false,
+                        "CVE-2022-32858": false,
+                        "CVE-2022-32898": false,
+                        "CVE-2022-32899": false,
+                        "CVE-2022-32889": false,
+                        "CVE-2022-32909": false,
+                        "CVE-2022-32854": false,
+                        "CVE-2022-32867": false,
+                        "CVE-2022-32865": false,
+                        "CVE-2022-32928": false,
+                        "CVE-2022-22643": false,
+                        "CVE-2022-32793": false,
+                        "CVE-2022-26744": false,
+                        "CVE-2022-32903": false,
+                        "CVE-2022-1622": false,
+                        "CVE-2022-32913": false,
+                        "CVE-2022-32887": false,
+                        "CVE-2022-32916": false,
+                        "CVE-2022-32914": false,
+                        "CVE-2022-32866": false,
+                        "CVE-2022-32911": false,
+                        "CVE-2022-32864": false,
+                        "CVE-2022-32917": false,
+                        "CVE-2022-32883": false,
+                        "CVE-2022-32908": false,
+                        "CVE-2022-32879": false,
+                        "CVE-2022-32918": false,
+                        "CVE-2022-32795": false,
+                        "CVE-2022-32868": false,
+                        "CVE-2022-32881": false,
+                        "CVE-2022-42793": false,
+                        "CVE-2022-32872": false,
+                        "CVE-2022-42790": false,
+                        "CVE-2022-32871": false,
+                        "CVE-2022-32870": false,
+                        "CVE-2022-42791": false,
+                        "CVE-2021-36690": false,
+                        "CVE-2022-32859": false,
+                        "CVE-2022-32835": false,
+                        "CVE-2022-32875": false,
+                        "CVE-2022-32833": false,
+                        "CVE-2022-32888": false,
+                        "CVE-2022-32891": false,
+                        "CVE-2022-32886": false,
+                        "CVE-2022-32912": false,
+                        "CVE-2022-32892": false,
+                        "CVE-2022-46709": false,
+                        "CVE-2022-32925": false
+                    },
+                    "ActivelyExploitedCVEs": [],
+                    "UniqueCVEsCount": 51,
                     "DaysSincePreviousRelease": 0
                 }
             ]
