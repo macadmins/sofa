@@ -563,7 +563,7 @@ def main(os_type):
 
     # Initialize the feed structure with placeholders
     feed_structure = {
-        "lastCheck": datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+        "LastCheck": datetime.now(timezone.utc).replace(microsecond=0).isoformat()
         + "Z",
         "OSVersions": [],  # To be populated later
     }
