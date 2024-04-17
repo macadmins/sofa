@@ -247,7 +247,7 @@
 
     function updateUIWithOSData(specificVersionData, osType, fullData, installationApps) {
         // Update the "Last Checked" and "Machine Readable Feed" sections
-        document.getElementById('last-checked').innerHTML = `Last checked: <span class="text-indigo-700 dark:text-indigo-300">${fullData.lastCheck}</span>`;
+        document.getElementById('last-checked').innerHTML = `Last checked: <span class="text-indigo-700 dark:text-indigo-300">${fullData.LastCheck}</span>`;
         const fullPath = `v1/${osType}_data_feed.json`;
         document.getElementById('machine-readable-feed').innerHTML = `Machine readable feed: <a href="${createSafeLink('v1/' + osType.toLowerCase() + '_data_feed.json')}" class="text-blue-600 hover:text-blue-400 dark:text-yellow-500 dark:hover:text-yellow-300">v1/${osType.toLowerCase()}_data_feed.json</a>`;
 
