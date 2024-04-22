@@ -13,6 +13,7 @@ WORKDIR /app
 
 # Copy the Python script and requirements.txt into the container
 COPY build-sofa-feed.py /app/
+COPY process_uma.py /app/
 COPY config.json /app/
 COPY feed_structure_template_v1.yaml /app/
 COPY forked_builds.json /app/
