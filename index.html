@@ -541,7 +541,7 @@
         // Extracting necessary data directly
         const xProtectVersion = XProtectPlistConfigData["com.apple.XProtect"];
         const xProtectAppVersion = XProtectPayloads["com.apple.XProtectFramework.XProtect"];
-        const xProtectRemediatorVersion = XProtectPayloads["com.apple.XprotectFramework.PluginService"];
+        const xProtectPluginService = XProtectPayloads["com.apple.XprotectFramework.PluginService"];
         const appReleaseDate = XProtectPayloads.ReleaseDate;
         const plistReleaseDate = XProtectPlistConfigData.ReleaseDate;
 
@@ -553,15 +553,15 @@
 
         const xProtectCardHTML = `
         <h3 class="text-lg leading-6 font-semibold text-indigo-700 dark:text-indigo-400">XProtect data files</h3>
-        <div><strong>Latest versions:</strong> ${xProtectAppVersion} | ${xProtectRemediatorVersion} | ${xProtectVersion}</div>
+        <div><strong>Latest versions:</strong> ${xProtectAppVersion} | ${xProtectPluginService} | ${xProtectVersion}</div>
         <div class="mt-2 max-w-xl text-sm text-gray-600 dark:text-gray-400">
-        <p><strong>XProtect.app latest version:</strong> ${xProtectAppVersion}</p>
-        <p><strong>XProtect Remediator latest version:</strong> ${xProtectRemediatorVersion}</p>
+        <p><strong>XProtect - Remediator.app:</strong> ${xProtectAppVersion}</p>
+        <p><strong>XProtect - PluginService:</strong> ${xProtectPluginService}</p>
         <p><strong>App Release Date:</strong> ${formatDate(appReleaseDate)}</p>
         <p><strong>Days since release:</strong> ${daysSinceAppRelease}</p>
         </div>
         <div class="mt-4 max-w-xl text-sm text-gray-600 dark:text-gray-400">
-            <p><strong>XProtectPlistConfigData latest version:</strong> ${xProtectVersion}</p>
+            <p><strong>Classic XProtect - PlistConfigData:</strong> ${xProtectVersion}</p>
             <p><strong>Plist Release Date:</strong> ${formatDate(plistReleaseDate)}</p>
             <p><strong>Days since release:</strong> ${daysSincePlistRelease}</p>
         </div>
