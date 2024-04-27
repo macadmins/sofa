@@ -6,8 +6,8 @@
 # Note that this uses plutil so is only compatible with macOS 12+
 
 # URL to the online JSON data
-online_json_url="https://macadmins.github.io/sofa/v1/macos_data_feed.json"
-json_data=$(/usr/bin/curl -s "$online_json_url")
+online_json_url="https://sofa.macadmins.io/v1/macos_data_feed.json"
+json_data=$(/usr/bin/curl -L -m 3 -s "$online_json_url")
 if [[ ! "$json_data" ]]; then
     echo "<result>Could not obtain data</result>"
     exit
