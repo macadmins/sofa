@@ -52,6 +52,6 @@ Visit the [SOFA Web UI](https://sofa.macadmins.io) to start exploring SOFA's fea
 Access the feed directly for integration with automated tools or scripts. For production use, we strongly recommend self-hosting the feed to enhance reliability and security. For guidance on how to utilize and implement the feed, explore examples in the [Tools](./tool-scripts) section. For details on self-hosting, please refer to the section below.
 
 
-### Self-Hosting SOFA
+## Self-Hosting SOFA
 
 We believe that organizations needing tight control and ownership of the data they rely on should consider self-hosting SOFA. By cloning the repository into your own GitHub account and activating GitHub Actions to automatically build the feed at set intervals — or implementing a similar setup on platforms like GitLab — you ensure full control over how the data is determined, updated, and utilized. Additional documentation on self-hosting will be available to guide you through this process.
