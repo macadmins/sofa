@@ -45,7 +45,8 @@ SOFA supports a wide array of practical applications, wether for MacAdmin toolin
 ## Getting Started
 
 ### Access the Web UI
-Visit the [SOFA Web UI](https://macadmins.github.io/sofa/) to start exploring SOFA's features
+
+Visit the [SOFA Web UI](https://sofa.macadmins.io) to start exploring SOFA's features
 
 ### Use the Feed Data
 Access the feed directly for integration with automated tools or scripts. For production use, we strongly recommend self-hosting the feed to enhance reliability and security. For guidance on how to utilize and implement the feed, explore examples in the [Tools](./tool-scripts) section. For details on self-hosting, please refer to the section below.
