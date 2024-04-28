@@ -28,7 +28,7 @@ system_version=$( /usr/bin/sw_vers -productVersion )
 echo "System Version: $system_version"
 
 # 3. idenfity latest compatible major OS
-latest_compatible_os=$(/usr/bin/plutil -extract "Models.$model.SupportedOS.0" raw -expect string - - <<< "$json_data" | /usr/bin/head -n 1 | sed 's|macOS ||')
+latest_compatible_os=$(/usr/bin/plutil -extract "Models.$model.SupportedOS.0" raw -expect string - - <<< "$json_data" | /usr/bin/head -n 1)
 echo "Latest Compatible macOS: $latest_compatible_os"
 
 # 4. Get OSVersions.Latest.ProductVersion
