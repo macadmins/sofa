@@ -1,16 +1,14 @@
 # Examples
 
-
-
-
-## XProtectVersionCheck - Jamf Extension attribute (EA) 
+## XProtectVersionCheck - Jamf Extension attribute (EA)
 
 ### Demo: run EA script for Xprotect version check
+
 ![Demo gif](./XprotectVersionCheck.gif)
 
 ### Notes
 
-This Script can be used as an Extension Attribute in Jamf Pro. 
+This Script can be used as an Extension Attribute in Jamf Pro.
 
 The script will check the version of XProtect (Apple's built-in malware protection) on a macOS system. Here's a breakdown of what it does:
 
@@ -24,7 +22,7 @@ The script will check the version of XProtect (Apple's built-in malware protecti
 
 The [mSCP project](https://github.com/usnistgov/macos_security) and CIS Benchmark (1.6) both ask for the software update to update XProtect automatically. This EA proves that it is effective.
 
-## XProtectVersion Check - SwiftDialog example 
+## XProtectVersion Check - SwiftDialog example
 
 This script illustrate how to use SwiftDialog to show information about XProtect on macOS. Here's a breakdown of its functionality:
 
@@ -42,7 +40,7 @@ This demo script assesses XProtect versions on macOS. It shows users if complian
 
 ## Using "GoogleSheet.gs" Script in Google Sheets
 
-This demo uses data from the feed to create a table. It can help align historic OS update data with your live status within the fleet. Having info on OS updates may serve as a foundation to present tangible information on Apple OS releases to management and other departments in a common format.  
+This demo uses data from the feed to create a table. It can help align historic OS update data with your live status within the fleet. Having info on OS updates may serve as a foundation to present tangible information on Apple OS releases to management and other departments in a common format.
 
 ### Demo: Populate feed details into table with GoogleSheet.gs script
 
