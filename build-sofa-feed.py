@@ -447,18 +447,24 @@ def load_and_tag_model_data(filenames):
             data = json.load(f)
             for model in data:
                 for identifier, name in model["Identifiers"].items():
+                    formatted_os_version = " ".join(os_version.split()[1:]).strip()
                     if identifier not in model_info:
                         model_info[identifier] = {
                             "MarketingName": name,
-                            "SupportedOS": [os_version],
-                            "OSVersions": [int(os_version.split()[-1])],
+                            "SupportedOS": [formatted_os_version],
+                            "OSVersions": [int(formatted_os_version.split()[-1])],
                         }
                     else:
-                        model_info[identifier]["SupportedOS"].append(os_version)
-                        model_info[identifier]["OSVersions"].append(
-                            int(os_version.split()[-1])
-                        )
-                        # Ensure the marketing name is consistent; if not, log a warning or handle discrepancies
+                        if (
+                            formatted_os_version
+                            not in model_info[identifier]["SupportedOS"]
+                        ):
+                            model_info[identifier]["SupportedOS"].append(
+                                formatted_os_version
+                            )
+                            model_info[identifier]["OSVersions"].append(
+                                int(formatted_os_version.split()[-1])
+                            )
     return model_info
 
 
