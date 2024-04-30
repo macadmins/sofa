@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/zsh --no-rcs
 # shellcheck shell=bash
 
 # Check if the local system matches the latest available compatible version using SOFA
