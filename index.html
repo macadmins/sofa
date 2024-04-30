@@ -143,7 +143,7 @@
         }
     }
 
-        async function createTabs(orderedData) {
+    async function createTabs(orderedData) {
         const tabsContainer = document.getElementById('tabs');
         tabsContainer.innerHTML = '';
         const activeTabId = localStorage.getItem('activeTabId');
@@ -215,9 +215,9 @@
             });
 
             if (specificVersionData) {
-            console.log("Found specific OS version data:", specificVersionData);
-            // Pass InstallationApps directly along with specific version data and osType
-            updateUIWithOSData(specificVersionData, osType, data, data.InstallationApps);
+                console.log("Found specific OS version data:", specificVersionData);
+                // Pass InstallationApps directly along with specific version data and osType
+                updateUIWithOSData(specificVersionData, osType, data, data.InstallationApps);
             } else {
                 console.error(`Specific OS version data not found for: ${osVersionName}`);
                 // Optionally handle fallback here
@@ -397,10 +397,10 @@
 
 
     function generateLatestUMAHtml(installationApps, productVersion) {
-    let umaDetails = null;
+        let umaDetails = null;
 
-    console.log("Installation for product:", productVersion);
-    console.log("Available installationApps data:", installationApps);
+        console.log("Installation for product:", productVersion);
+        console.log("Available installationApps data:", installationApps);
 
         if (installationApps) {
             // Debugging output to check the versions in LatestUMA and AllPreviousUMA
@@ -558,10 +558,10 @@
         <h3 class="text-lg leading-6 font-semibold text-indigo-700 dark:text-indigo-400">XProtect data files</h3>
         <div><strong>Latest versions:</strong> ${xProtectAppVersion} | ${xProtectPluginService} | ${xProtectVersion}</div>
         <div class="mt-2 max-w-xl text-sm text-gray-600 dark:text-gray-400">
-        <p><strong>XProtect Remediator:</strong> ${xProtectAppVersion}</p>
-        <p><strong>XProtect Plug-In Service:</strong> ${xProtectPluginService}</p>
-        <p><strong>App Release Date:</strong> ${formatDate(appReleaseDate)}</p>
-        <p><strong>Days since release:</strong> ${daysSinceAppRelease}</p>
+            <p><strong>XProtect Remediator:</strong> ${xProtectAppVersion}</p>
+            <p><strong>XProtect Plug-In Service:</strong> ${xProtectPluginService}</p>
+            <p><strong>App Release Date:</strong> ${formatDate(appReleaseDate)}</p>
+            <p><strong>Days since release:</strong> ${daysSinceAppRelease}</p>
         </div>
         <div class="mt-4 max-w-xl text-sm text-gray-600 dark:text-gray-400">
             <p><strong>XProtect Config Data:</strong> ${xProtectVersion}</p>
@@ -569,36 +569,35 @@
             <p><strong>Days since release:</strong> ${daysSincePlistRelease}</p>
         </div>
         <div class="mt-8 max-w-xl text-sm text-gray-600 dark:text-gray-400">
-        What is XProtect: 
-        <a href="${sanitizedUrl}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-400 dark:text-yellow-500 dark:hover:text-yellow-300">Get to know more</a>
+            What is XProtect:
+            <a href="${sanitizedUrl}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-400 dark:text-yellow-500 dark:hover:text-yellow-300">Get to know more</a>
         </div>
         <img src="images/SWUpdate.png" alt="SWUpdate" class="absolute top-6 right-6 h-14 w-auto" onerror="this.onerror=null; this.src='default.png';">
-    </div>
-    `;
+        `;
 
         xProtectCardContainer.innerHTML = xProtectCardHTML;
     }
 
     function populateSecurityReleases(securityReleases, osType) {
-    const securityReleasesContainer = document.getElementById('security-releases');
-    // Clear previous contents
-    securityReleasesContainer.innerHTML = '';
+        const securityReleasesContainer = document.getElementById('security-releases');
+        // Clear previous contents
+        securityReleasesContainer.innerHTML = '';
 
-    const header = document.createElement('h2');
-    header.className = "text-2xl text-indigo-700 dark:text-yellow-500 font-semibold mb-4";
-    header.textContent = `${osType} Security Updates Overview`;
-    securityReleasesContainer.appendChild(header);
+        const header = document.createElement('h2');
+        header.className = "text-2xl text-indigo-700 dark:text-yellow-500 font-semibold mb-4";
+        header.textContent = `${osType} Security Updates Overview`;
+        securityReleasesContainer.appendChild(header);
 
-    securityReleases.forEach((release, index) => {
-        const section = document.createElement('div');
-        section.className = `${index > 0 ? 'border-t-2 border-gray-500 pt-4 mt-4' : ''} dark:border-gray-700`;
+        securityReleases.forEach((release, index) => {
+            const section = document.createElement('div');
+            section.className = `${index > 0 ? 'border-t-2 border-gray-500 pt-4 mt-4' : ''} dark:border-gray-700`;
 
-        const tooltipText = "Critical security updates included in this release. Please review for impact.";
-        const warningSign = release.SecurityInfo.startsWith('http') ? `<span class="text-yellow-400" title="${tooltipText}" aria-label="${tooltipText}"> ⚠️</span>` : '';
-        
-        const securityInfoHTML = release.SecurityInfo.startsWith('http') ?
-            `<a href="${createSafeLink(release.SecurityInfo)}" class="text-blue-600 hover:text-blue-400 dark:text-yellow-500 dark:hover:text-yellow-300 " target="_blank" aria-label="Security Information Link">${release.SecurityInfo}</a>` :
-            release.SecurityInfo;
+            const tooltipText = "Critical security updates included in this release. Please review for impact.";
+            const warningSign = release.SecurityInfo.startsWith('http') ? `<span class="text-yellow-400" title="${tooltipText}" aria-label="${tooltipText}"> ⚠️</span>` : '';
+
+            const securityInfoHTML = release.SecurityInfo.startsWith('http') ?
+                `<a href="${createSafeLink(release.SecurityInfo)}" class="text-blue-600 hover:text-blue-400 dark:text-yellow-500 dark:hover:text-yellow-300 " target="_blank" aria-label="Security Information Link">${release.SecurityInfo}</a>` :
+                release.SecurityInfo;
 
             let cveLinksHTML = Object.keys(release.CVEs).map(cve => {
                 const cveOrgUrl = `https://www.cve.org/CVERecord?id=${cve}`;
@@ -608,52 +607,52 @@
                 const tooltipText = isActivelyExploited ? 
                     `View CVE at CVE.org. Or use 'Command-click'/'Ctrl-click' to open in NVD records at ${nvdUrl}` : 
                     `View CVE at CVE.org. Or use 'Command-click'/'Ctrl-click' to open in NVD records.`;
-                    const cveClass = isActivelyExploited ? "text-blue-600 hover:text-orange-700" : "text-blue-600 hover:text-blue-400";
-    const darkModeCveClass = isActivelyExploited ? "dark:text-yellow-500 dark:hover:text-orange-500" : "dark:text-yellow-500 dark:hover:text-yellow-300";
+                const cveClass = isActivelyExploited ? "text-blue-600 hover:text-orange-700" : "text-blue-600 hover:text-blue-400";
+                const darkModeCveClass = isActivelyExploited ? "dark:text-yellow-500 dark:hover:text-orange-500" : "dark:text-yellow-500 dark:hover:text-yellow-300";
                 // Include data-nvd-url attribute
                 return `<a href="${cveOrgUrl}" data-cve class="${cveClass} ${darkModeCveClass}" target="_blank" data-nvd-url="${nvdUrl}" title="${tooltipText}">${cve}${cveStatusText}</a>`;
             }).join(', ');
 
             document.querySelectorAll('a[data-cve]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                // Check for Command-click or Ctrl-click
-                if (e.metaKey || e.ctrlKey) {
-                    e.preventDefault(); // Prevent default link behavior
-                    const nvdUrl = this.getAttribute('data-nvd-url'); // Access NVD URL
-                    window.open(nvdUrl, '_blank'); // Open NVD URL in a new tab
-                }
+                link.addEventListener('click', function(e) {
+                    // Check for Command-click or Ctrl-click
+                    if (e.metaKey || e.ctrlKey) {
+                        e.preventDefault(); // Prevent default link behavior
+                        const nvdUrl = this.getAttribute('data-nvd-url'); // Access NVD URL
+                        window.open(nvdUrl, '_blank'); // Open NVD URL in a new tab
+                    }
+                });
             });
-        });
 
-        const activelyExploitedCVEsHTML = release.ActivelyExploitedCVEs.length > 0 ?
-        `<p class="text-gray-600 dark:text-gray-400">Actively Exploited Vulnerabilities (KEV): ` +
-        release.ActivelyExploitedCVEs.map(cve => {
-            // Generating the NVD URL dynamically based on the CVE ID.
-            const nvdUrl = `https://nvd.nist.gov/vuln/detail/${cve}`;
-            // Assuming you have a way to fetch the Date Added and Due Date for each CVE
-            const dateAdded = "2024-03-06"; // Placeholder, replace with actual data retrieval logic
-            const dueDate = "2024-03-27"; // Placeholder, replace with actual data retrieval logic
-            // Updated tooltip text to guide users towards CISA for an overview or NVD for detailed records.
-            const tooltipText = `View CVE at CISA.gov. Or use 'Command-click'/'Ctrl-click' to open in NVD records. Date Added: ${dateAdded}, Due Date: ${dueDate}`;
-            // CISA URL for viewing the overview of the CVE.
-            const kevUrl = `https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=${cve}`;
+            const activelyExploitedCVEsHTML = release.ActivelyExploitedCVEs.length > 0 ?
+            `<p class="text-gray-600 dark:text-gray-400">Actively Exploited Vulnerabilities (KEV): ` +
+            release.ActivelyExploitedCVEs.map(cve => {
+                // Generating the NVD URL dynamically based on the CVE ID.
+                const nvdUrl = `https://nvd.nist.gov/vuln/detail/${cve}`;
+                // Assuming you have a way to fetch the Date Added and Due Date for each CVE
+                const dateAdded = "2024-03-06"; // Placeholder, replace with actual data retrieval logic
+                const dueDate = "2024-03-27"; // Placeholder, replace with actual data retrieval logic
+                // Updated tooltip text to guide users towards CISA for an overview or NVD for detailed records.
+                const tooltipText = `View CVE at CISA.gov. Or use 'Command-click'/'Ctrl-click' to open in NVD records. Date Added: ${dateAdded}, Due Date: ${dueDate}`;
+                // CISA URL for viewing the overview of the CVE.
+                const kevUrl = `https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=${cve}`;
 
-            // Incorporate the fire emoji for actively exploited CVEs
-            return `<a href="${createSafeLink(kevUrl)}" data-cve data-nvd-url="${nvdUrl}" class="text-blue-600 dark:text-yellow-500 hover:text-orange-700 dark:hover:text-orange-500" target="_blank" title="${tooltipText}" aria-label="KEV Link ${cve}">
-                        <span class="emoji highlight-active" title="Actively exploited">🔥 ${cve} </span>
-                    </a>`;
-        }).join(', ') + `</p>` : '';
+                // Incorporate the fire emoji for actively exploited CVEs
+                return `<a href="${createSafeLink(kevUrl)}" data-cve data-nvd-url="${nvdUrl}" class="text-blue-600 dark:text-yellow-500 hover:text-orange-700 dark:hover:text-orange-500" target="_blank" title="${tooltipText}" aria-label="KEV Link ${cve}">
+                            <span class="emoji highlight-active" title="Actively exploited">🔥 ${cve} </span>
+                        </a>`;
+            }).join(', ') + `</p>` : '';
 
-        document.querySelectorAll('a[data-cve][data-nvd-url]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                if (e.metaKey || e.ctrlKey) {
-                    e.preventDefault(); // Prevent the default action
-                    // Retrieve the NVD URL stored in the data attribute
-                    const nvdUrl = this.getAttribute('data-nvd-url');
-                    window.open(nvdUrl, '_blank'); // Open the NVD URL in a new tab
-                }
+            document.querySelectorAll('a[data-cve][data-nvd-url]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (e.metaKey || e.ctrlKey) {
+                        e.preventDefault(); // Prevent the default action
+                        // Retrieve the NVD URL stored in the data attribute
+                        const nvdUrl = this.getAttribute('data-nvd-url');
+                        window.open(nvdUrl, '_blank'); // Open the NVD URL in a new tab
+                    }
+                });
             });
-        });
 
 
             section.innerHTML = `
