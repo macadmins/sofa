@@ -34,7 +34,7 @@ echo "Model Identifier: $model"
 
 # 2. Get current system OS
 system_version=$( /usr/bin/sw_vers -productVersion )
-system_version=14.1  # UNCOMMENT TO TEST OLDER VERSIONS
+# system_version=14.1  # UNCOMMENT TO TEST OLDER VERSIONS
 system_os=$(cut -d. -f1 <<< "$system_version")
 echo "System Version: $system_version"
 
