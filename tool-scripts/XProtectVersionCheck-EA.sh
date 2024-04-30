@@ -3,7 +3,13 @@
 
 ## based on Graham Pugh's version https://github.com/grahampugh/osx-scripts/blob/main/check-xprotect-version/XProtectVersionCheck-EA.sh
 #
+# To use in a Smart Groups to scope computers that are not up to date:
+#   XProtect Version Check - is - Fail
+#
 # Note that this uses plutil so is only compatible with macOS 12+
+
+# autoload is-at-least module for version comparisons
+autoload is-at-least
 
 # URL to the online JSON data
 online_json_url="https://sofa.macadmins.io/v1/macos_data_feed.json"
@@ -12,6 +18,24 @@ if [[ ! "$json_data" ]]; then
     echo "<result>Could not obtain data</result>"
     exit
 fi
+
+# 1. Get model (DeviceID)
+device_info=$(/usr/sbin/ioreg -c IOPlatformExpertDevice -d 2)
+model=$(/usr/bin/grep \"model\" <<< "$device_info" | /usr/bin/awk -F '<"|">' '{ print $2 }')
+echo "Model Identifier: $model"
+
+# 2. Get current system OS
+system_version=$( /usr/bin/sw_vers -productVersion )
+system_os=$(cut -d. -f1 <<< "$system_version")
+echo "System Version: $system_version"
+
+# exit if less than macOS 12
+if ! is-at-least 12 "$system_os"; then
+    echo "<result>Unsupported macOS</result>"
+    exit
+fi
+
+echo
 
 # Extract the online version of XProtect configuration data
 onlineXProtectVersion=$(/usr/bin/plutil -extract "XProtectPlistConfigData.com\\.apple\\.XProtect" raw - - <<< "$json_data" | /usr/bin/head -n 1)
@@ -28,6 +52,8 @@ echo "Online XProtect.app Version: $onlineXProtectAppVersion"
 # Extract the local installed version of XProtect.app
 localXProtectAppVersion=$(/usr/bin/plutil -extract CFBundleShortVersionString raw /Library/Apple/System/Library/CoreServices/XProtect.app/Contents/Info.plist)
 echo "Local XProtect.app Version: $localXProtectAppVersion"
+
+echo
 
 # Compare the online version with the installed version for both XProtect and XProtect.app
 if [[ "$onlineXProtectVersion" == "$localXProtectVersion" ]] && [[ "$onlineXProtectAppVersion" == "$localXProtectAppVersion" ]]; then
