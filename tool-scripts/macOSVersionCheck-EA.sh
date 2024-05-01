@@ -4,6 +4,9 @@
 # Check if the local system matches the latest available compatible version using SOFA
 # by Graham Pugh
 #
+# To use in a Smart Groups to scope computers that are not up to date:
+#   macOS Version Check - is - Fail
+#
 # Note that this uses plutil so is only compatible with macOS 12+
 
 # autoload is-at-least module for version comparisons
@@ -24,8 +27,17 @@ echo "Model Identifier: $model"
 
 # 2. Get current system OS
 system_version=$( /usr/bin/sw_vers -productVersion )
-# system_version=13.6.2
+# system_version=14.1  # UNCOMMENT TO TEST OLDER VERSIONS
+system_os=$(cut -d. -f1 <<< "$system_version")
 echo "System Version: $system_version"
+
+echo
+
+# exit if less than macOS 12
+if ! is-at-least 12 "$system_os"; then
+    echo "<result>Unsupported macOS</result>"
+    exit
+fi
 
 # 3. idenfity latest compatible major OS
 latest_compatible_os=$(/usr/bin/plutil -extract "Models.$model.SupportedOS.0" raw -expect string - - <<< "$json_data" | /usr/bin/head -n 1)
@@ -41,6 +53,8 @@ for i in {0..3}; do
         fi
     fi
 done
+
+echo
 
 # 5. Compare system with latest compatible
 if is-at-least "$product_version" "$system_version"; then
