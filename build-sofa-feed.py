@@ -527,7 +527,7 @@ def compute_hash(data):
     return hashlib.sha256(json_str).hexdigest()
 
 
-def write_timestamp_and_hash(os_type, hash_value, filename="timestamp.json"):
+def write_timestamp_and_hash(os_type, hash_value, filename=None):
     """
     Update the timestamp and hash value for a specific OS type in a JSON file. This function constructs
     a current timestamp and a hash over the full JSON data, and then updates or creates a JSON file 
