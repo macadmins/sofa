@@ -2,12 +2,14 @@
 import argparse
 import json
 import os
+import plistlib
 import re
 import ssl
 import sys
 import hashlib
 import xml.etree.ElementTree as Et
 from datetime import datetime, timezone
+from urllib.request import urlopen
 
 # Third-party imports
 import requests
@@ -19,6 +21,7 @@ current_dir = os.getcwd()
 sys.path.insert(0, current_dir)
 import certifi
 import process_uma
+import process_ipsw
 
 
 # Load the feed structure template
@@ -690,6 +693,27 @@ def main(os_type):
         latest, rest = process_uma.sort_installers(filtered_dict)
         uma_list = {"LatestUMA": latest, "AllPreviousUMA": rest}
         feed_structure["InstallationApps"] = uma_list
+        # ipsw (latest/'most prevalent' in mesu only as of v1) parsing
+        mesu_url: str = "https://mesu.apple.com/assets/macos/com_apple_macOSIPSW/com_apple_macOSIPSW.xml"  # noqa: E501 pylint: disable=line-too-long
+        try:
+            with urlopen(mesu_url, context=ctx) as response:
+                mesu_cat = response.read()
+        except (Exception, OSError) as erroir:  # pylint: disable=broad-exception-caught
+            print(f"Error fetching mesu assets, {erroir}")
+            raise
+        mesu_catalog: dict = plistlib.loads(mesu_cat)
+        restore_datas = process_ipsw.extract_ipsw_raw(mesu_catalog)
+        prevalent_url, prevalent_build, prevalent_version = process_ipsw.process_ipsw_data(restore_datas)
+        apple_slug = process_ipsw.process_slug(prevalent_url)
+        print(f"Extracted IPSW\n{prevalent_url}")
+        feed_structure["InstallationApps"]["LatestMacIPSW"] = {
+            "macos_ipsw_url": prevalent_url,
+            "macos_ipsw_build": prevalent_build,
+            "macos_ipsw_version": prevalent_version,
+            "macos_ipsw_apple_slug": apple_slug
+        }
+
+
 
     elif os_type == "iOS":
         # Initialize os_versions dynamically for iOS
