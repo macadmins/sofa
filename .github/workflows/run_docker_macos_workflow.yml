@@ -23,13 +23,18 @@ jobs:
       run: docker build . -t sofa_scan
 
     - name: Run Docker container
-      run: docker run --name sofa_scan_container -e OS_TYPE=${{ matrix.os_type }} sofa_scan
+      run: docker run --name sofa_scan_container -e OS_TYPE=${{ matrix.os_type }} -e TIMESTAMP_FILE_PATH=/app/v1/timestamp.json -v $(pwd)/v1:/app/v1 sofa_scan
 
     - name: Copy resulting JSON files from container to host
       run: |
+        docker cp sofa_scan_container:/app/v1/timestamp.json v1/. || echo "Failed to copy timestamp.json"
         docker cp sofa_scan_container:/app/macos_data_feed.json v1/. || true
         docker cp sofa_scan_container:/app/ios_data_feed.json v1/. || true
         docker cp sofa_scan_container:/app/time-series.csv .
+
+
+    - name: List contents of v1
+      run: ls -la v1/
 
     - name: Commit and push if changes are detected
       run: |

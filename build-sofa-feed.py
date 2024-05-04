@@ -5,6 +5,7 @@ import os
 import re
 import ssl
 import sys
+import hashlib
 import xml.etree.ElementTree as Et
 from datetime import datetime, timezone
 
@@ -515,6 +516,71 @@ def format_iso_date(date_str):
     return date_str
 
 
+def compute_hash(data):
+    """
+    Compute a SHA-256 hash of the given data.
+
+    :param data: The data to hash, typically a dictionary.
+    :return: A hexadecimal string representing the hash of the data.
+    """
+    json_str = json.dumps(data, sort_keys=True).encode()
+    return hashlib.sha256(json_str).hexdigest()
+
+
+def write_timestamp_and_hash(os_type, hash_value, filename="timestamp.json"):
+    """
+    Update the timestamp and hash value for a specific OS type in a JSON file. This function constructs
+    a current timestamp and a hash over the full JSON data, and then updates or creates a JSON file 
+    with timestamp and hash information for a specified OS type ('macOS' or 'iOS').
+
+    If the file already exists, it reads the existing data and updates it.
+
+    The structure of the maintained timestamp.json looks like:
+    {
+        "macOS": {
+            "LastCheck": "timestamp",
+            "UpdateHash": "hash_value"
+        },
+        "iOS": {
+            "LastCheck": "timestamp",
+            "UpdateHash": "hash_value"
+        }
+    }
+
+    :param os_type: The OS type for which to update the timestamp and hash ('macOS' or 'iOS').
+    :param hash_value: The hash value computed from the data, represented as a string.
+    :param filename: The filename or path to the JSON file where the timestamp and hash
+                    should be stored. Defaults to 'timestamp.json', but can be overridden
+                    by an environment variable 'TIMESTAMP_FILE_PATH' if 'filename' is None.
+    """
+
+    if filename is None:
+        # Default to current directory or when run in docker we can specify custom default path
+        filename = os.getenv("TIMESTAMP_FILE_PATH", "timestamp.json")
+
+    # Construct the current timestamp
+    last_check = datetime.now(timezone.utc).replace(microsecond=0).isoformat() + "Z"
+
+    # Default structure for the timestamp file
+    timestamp_data = {"macOS": {}, "iOS": {}}
+
+    # Check if the file already exists and read the existing data
+    if os.path.exists(filename):
+        try:
+            with open(filename, "r") as file:
+                timestamp_data = json.load(file)
+        except json.JSONDecodeError:
+            # If JSON decoding fails, keep the default structure
+            pass
+
+    # Update the specific OS section
+    timestamp_data[os_type] = {"LastCheck": last_check, "UpdateHash": hash_value}
+
+    # Write the updated data back to the file
+    with open(filename, "w") as file:
+        json.dump(timestamp_data, file, indent=4)
+
+
 def read_and_validate_json(filename):
     """
     Read and validate the JSON file. Print verbose output.
@@ -569,8 +635,6 @@ def main(os_type):
 
     # Initialize the feed structure with placeholders
     feed_structure = {
-        "LastCheck": datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-        + "Z",
         "OSVersions": [],  # To be populated later
     }
 
@@ -688,11 +752,23 @@ def main(os_type):
                     }
                 )
 
+    # Compute hash of the feed_structure
+    hash_value = compute_hash(feed_structure)
+
+    # Add the hash at the top of the feed_structure
+    feed_structure = {
+        "UpdateHash": hash_value,  # Insert hash first
+        **feed_structure,  # Unpack other content after the hash
+    }
+
     # Determine the filename dynamically based on the os_type argument
     filename = f"{os_type.lower()}_data_feed.json"
 
     # Finally, write the structured data to a JSON file
     write_data_to_json(feed_structure, filename)
+
+    # Write the timestamp and hash to a JSON file per OS type
+    write_timestamp_and_hash(os_type, hash_value)
 
     # Optionally, validate the generated JSON file
     read_and_validate_json(filename)

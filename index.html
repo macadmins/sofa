@@ -248,9 +248,35 @@
         });
     }
 
+
+    async function loadLastCheckedDate(osType) {
+        try {
+            const response = await fetch('v1/timestamp.json');  // Make sure this path matches where your timestamp data is stored
+            if (!response.ok) {
+                throw new Error(`Failed to fetch timestamp data: HTTP status ${response.status}`);
+            }
+            const timestampData = await response.json();
+            displayLastChecked(timestampData, osType);
+        } catch (error) {
+            console.error('Error fetching LastChecked timestamp:', error);
+            document.getElementById('last-checked').textContent = 'Last checked date and update hash could not be loaded.';
+        }
+    }
+
+    function displayLastChecked(timestampData, osType) {
+        const osInfo = timestampData[osType];
+        const lastCheckedElement = document.getElementById('last-checked');
+        lastCheckedElement.innerHTML = `
+            Last checked: <span class="text-indigo-700 dark:text-indigo-300">${osInfo.LastCheck}</span><br>
+            Update hash: <span class="text-indigo-700 dark:text-indigo-300">${osInfo.UpdateHash}</span>
+        `;
+    }
+
+
     function updateUIWithOSData(specificVersionData, osType, fullData, installationApps) {
         // Update the "Last Checked" and "Machine Readable Feed" sections
-        document.getElementById('last-checked').innerHTML = `Last checked: <span class="text-indigo-700 dark:text-indigo-300">${fullData.LastCheck}</span>`;
+        loadLastCheckedDate(osType); // Load and display the last checked date for the selected OS type
+        // document.getElementById('last-checked').innerHTML = `Last checked: <span class="text-indigo-700 dark:text-indigo-300">${fullData.LastCheck}</span>`;
         const fullPath = `v1/${osType}_data_feed.json`;
         document.getElementById('machine-readable-feed').innerHTML = `Machine readable feed: <a href="${createSafeLink('v1/' + osType.toLowerCase() + '_data_feed.json')}" class="text-blue-600 hover:text-blue-400 dark:text-yellow-500 dark:hover:text-yellow-300">v1/${osType.toLowerCase()}_data_feed.json</a>`;
 
