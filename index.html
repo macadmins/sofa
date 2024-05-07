@@ -275,11 +275,13 @@
 
 
     function updateUIWithOSData(specificVersionData, osType, fullData, installationApps) {
-        // Update the "Last Checked" and "Machine Readable Feed" sections
+        // Update the "Last Checked", "Machine Readable Feed", and "RSS Feed" sections
         loadLastCheckedDate(osType); // Load and display the last checked date for the selected OS type
         // document.getElementById('last-checked').innerHTML = `Last checked: <span class="text-indigo-700 dark:text-indigo-300">${fullData.LastCheck}</span>`;
-        const fullPath = `v1/${osType}_data_feed.json`;
-        document.getElementById('machine-readable-feed').innerHTML = `Machine readable feed: <a href="${createSafeLink('v1/' + osType.toLowerCase() + '_data_feed.json')}" class="text-blue-600 hover:text-blue-400 dark:text-yellow-500 dark:hover:text-yellow-300">v1/${osType.toLowerCase()}_data_feed.json</a>`;
+        const data_fullPath = `v1/${osType.toLowerCase()}_data_feed.json`;
+        const rss_fullPath = `v1/${osType.toLowerCase()}_rss_feed.xml`
+        document.getElementById('machine-readable-feed').innerHTML = `Machine readable feed: <a href="${createSafeLink(data_fullPath)}" class="text-blue-600 hover:text-blue-400 dark:text-yellow-500 dark:hover:text-yellow-300">${data_fullPath}</a>`;
+        document.getElementById('rss-feed').innerHTML = `RSS feed: <a href="${createSafeLink(rss_fullPath)}" class="text-blue-600 hover:text-blue-400 dark:text-yellow-500 dark:hover:text-yellow-300">${rss_fullPath}</a>`;
 
         // Populate the version card with specific version data and installation apps
         populateVersionCard(specificVersionData, osType, installationApps);
