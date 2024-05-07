@@ -14,6 +14,7 @@ from urllib.request import urlopen
 # Third-party imports
 import requests
 import yaml
+from feedgen.feed import FeedGenerator
 from bs4 import BeautifulSoup, NavigableString
 
 # Local library specific imports
@@ -506,6 +507,115 @@ def write_data_to_json(feed_structure, filename):
         json.dump(feed_structure, json_file, indent=4, ensure_ascii=False)
 
 
+def sort_by_release_date(feed_structure):
+    """
+    Pull Security Releases for all OSVersions and sort by ReleaseDate.
+    :param feed_structure: The fully populated feed structure.
+    :return feed_list: Sorted list of entries.
+    """
+    try:
+        feed_list = []
+
+        # For each OS Version, retreive SecurityReleases and add to
+        # the end of the populated list
+        for os_version in feed_structure["OSVersions"]:
+            security_releases = os_version.get("SecurityReleases", [])
+            feed_list.extend(security_releases)
+
+        # Sort list by ReleaseDate but not if "Preinstalled" string. That one
+        # will be excluded in the sort, making it last in the list
+        feed_list.sort(
+            key=lambda x: (x["ReleaseDate"] != "Preinstalled", x["ReleaseDate"]),
+            reverse=True,
+        )
+
+        return feed_list
+    except Exception as e:
+        print(f"Error sorting feed by release data: {e}")
+        return []
+
+
+def write_data_to_rss(sorted_feed, filename):
+    """
+    Write the sorted feed to a RSS feed.
+    :param sorted_feed: Sorted list from sort_by_release_date function.
+    :param filename: The name of the file to which the RSS feed should be written.
+    """
+    # Escape if empty list
+    if not sorted_feed:
+        print("No entries to write. sorted_feed is empty.")
+        return
+
+    try:
+        # Set the primary feed information
+        feed_gen = FeedGenerator()
+        feed_gen.id("https://sofa.macadmins.io")
+        feed_gen.title(f"SOFA - {filename.split('_')[0]} feed")
+        feed_gen.author({"name": "Mac Admins"})
+        feed_gen.link(href="https://sofa.macadmins.io", rel="alternate")
+        feed_gen.logo("https://sofa.macadmins.io/images/custom_logo.png")
+        feed_gen.subtitle("Simple Organized Feed for Apple Software Updates")
+        feed_gen.link(href=f"https://sofa.macadmins.io/v1/{filename}", rel="self")
+        feed_gen.language("en")
+
+        # For each item in the sorted list, create a new entry in RSS Feed
+        for release in sorted_feed:
+            feed_entry = feed_gen.add_entry()
+            feed_entry.id(release["ProductVersion"])
+            feed_entry.title(release["UpdateName"])
+
+            # Format the CVEs for description to make it pretty like how
+            # the website looks like
+            actively_exploited = []
+            security_advisories = []
+
+            description = ""
+            description += f"Security Info: <a href=\"{release['SecurityInfo']}\" rel=\"alternate\">{release['SecurityInfo']}</a><br>"
+            description += f"Vulnerabilities Addressed: {release['UniqueCVEsCount']}<br>"
+
+            for cve, exploited in release["CVEs"].items():
+                if exploited:
+                    actively_exploited.append(
+                        f"🔥 <a href=\"https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext={cve}\" rel=\"alternate\">{cve}</a>"
+                    )
+                else:
+                    security_advisories.append(
+                        f"<a href=\"https://www.cve.org/CVERecord?id={cve}\" rel=\"alternate\">{cve}</a>"
+                    )
+
+            if actively_exploited:
+                description += (
+                    "Actively Exploited Vulnerabilities (KEV): "
+                    + ", ".join(actively_exploited)
+                    + "<br>"
+                )
+            if security_advisories:
+                description += (
+                    "Security Advisories (CVE Identifiers): "
+                    + ", ".join(security_advisories)
+                    + "<br>"
+                )
+
+            description += f"Days to Prev. Release: {release['DaysSincePreviousRelease']}"
+
+            feed_entry.description(description)
+
+            # Need to account for Preinstalled in ReleaseDate.
+            # Although sorted, we need to change it to a date
+            # in order to publish it.
+            if release["ReleaseDate"] == "Preinstalled":
+                publication_date = "1900-01-01T00:00:00Z"
+            else:
+                publication_date = release["ReleaseDate"]
+
+            feed_entry.published(publication_date)
+
+        feed_gen.rss_str(pretty=True)
+        feed_gen.rss_file(filename)
+    except Exception as e:
+        print(f"Error writing RSS feed: {e}")
+
+
 def format_iso_date(date_str):
     """
     Format the date string to ISO 8601 format.
@@ -808,16 +918,21 @@ def process_os_type(os_type, config):
     }
 
     # Determine the filename dynamically based on the os_type argument
-    filename = f"{os_type.lower()}_data_feed.json"
+    data_feed_filename = f"{os_type.lower()}_data_feed.json"
+    rss_feed_filename = f"{os_type.lower()}_rss_feed.xml"
 
     # Finally, write the structured data to a JSON file
-    write_data_to_json(feed_structure, filename)
+    write_data_to_json(feed_structure, data_feed_filename)
+
+    # Sort data and Build RSS feed
+    sorted_feed = sort_by_release_date(feed_structure)
+    write_data_to_rss(sorted_feed, rss_feed_filename)
 
     # Write the timestamp and hash to a JSON file per OS type
     write_timestamp_and_hash(os_type, hash_value)
 
     # Optionally, validate the generated JSON file
-    read_and_validate_json(filename)
+    read_and_validate_json(data_feed_filename)
 
 
 def main(os_types):

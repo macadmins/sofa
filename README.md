@@ -10,9 +10,10 @@ Updated automatically via GitHub Actions, the SOFA feed is a dynamic, centralize
 
 ## Key Features
 
-### Machine-Readable Feed and Web UI
+### Machine-Readable Feed, RSS Feed, and Web UI
 
 - **JSON Feed**: Provides detailed, machine-readable data optimized for automated tools and scripts
+- **RSS Feed**: Provides RSS Feed for use with entries sorted by date released
 - **Web Interface**: Divided between the major version tabs at the top and organized into sections that cover the latest OS information, XProtect updates, and security details for each OS, SOFA facilitates both quick summaries and deep dives into relevant data points
 
 ### Use Cases
