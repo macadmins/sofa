@@ -398,11 +398,10 @@
         // Build the HTML content for the OS section
         const osSectionHTML = `<h3 class="text-lg leading-6 font-semibold text-indigo-700 dark:text-indigo-400">${osType} ${OSVersion}</h3>
         <div><strong>Last released version:</strong> ${Latest.ProductVersion}</div>
+        <p><strong>Build:</strong> ${Latest.Build}</p>
         <div class="mt-2 max-w-xl text-sm text-gray-600 dark:text-gray-400">
             ${latestUMAHtml}
             ${latestIPSWHtml}
-
-            <p><strong>Build:</strong> ${Latest.Build}</p>
             <p><strong>Release Date:</strong> ${formatDate(Latest.ReleaseDate)}</p>
             <p><strong>Days since release:</strong> ${Math.floor((new Date() - new Date(Latest.ReleaseDate)) / (1000 * 60 * 60 * 24))}</p>
         </div>
