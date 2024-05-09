@@ -403,7 +403,7 @@
             ${latestUMAHtml}
             ${latestIPSWHtml}
             <p><strong>Release Date:</strong> ${formatDate(Latest.ReleaseDate)}</p>
-            <p><strong>Days since release:</strong> ${Math.floor((new Date() - new Date(Latest.ReleaseDate)) / (1000 * 60 * 60 * 24))}</p>
+            <p><strong>Days Since Release:</strong> ${Math.floor((new Date() - new Date(Latest.ReleaseDate)) / (1000 * 60 * 60 * 24))}</p>
         </div>
 
         
@@ -522,8 +522,15 @@
         }
     }
 
-
-
+    function timeSinceRelease(releaseDate) {
+        const now = new Date();
+        const release = new Date(releaseDate);
+        const milliseconds = now - release;
+        const days = Math.floor(milliseconds / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((milliseconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        
+        return `${days} day${days !== 1 ? 's' : ''}, ${hours} hour${hours !== 1 ? 's' : ''}`;
+    }
 
     function copyToClipboard() {
         // Assuming `this` context or binding in HTML
@@ -624,8 +631,8 @@
         const appReleaseDate = XProtectPayloads.ReleaseDate;
         const plistReleaseDate = XProtectPlistConfigData.ReleaseDate;
 
-        const daysSinceAppRelease = Math.floor((new Date() - new Date(appReleaseDate)) / (1000 * 60 * 60 * 24));
-        const daysSincePlistRelease = Math.floor((new Date() - new Date(plistReleaseDate)) / (1000 * 60 * 60 * 24));
+        const daysSinceAppRelease = timeSinceRelease(appReleaseDate);
+        const daysSincePlistRelease = timeSinceRelease(plistReleaseDate);
 
         const xProtectInfoUrl = "https://support.apple.com/guide/security/protecting-against-malware-sec469d47bd8/web";
         const sanitizedUrl = createSafeLink(xProtectInfoUrl); // Use createSafeLink to sanitize the URL
@@ -637,12 +644,12 @@
             <p><strong>XProtect Remediator:</strong> ${xProtectAppVersion}</p>
             <p><strong>XProtect Plug-In Service:</strong> ${xProtectPluginService}</p>
             <p><strong>App Release Date:</strong> ${formatDate(appReleaseDate)}</p>
-            <p><strong>Days since release:</strong> ${daysSinceAppRelease}</p>
+            <p><strong>Time Since Release::</strong> ${daysSinceAppRelease}</p>
         </div>
         <div class="mt-4 max-w-xl text-sm text-gray-600 dark:text-gray-400">
             <p><strong>XProtect Config Data:</strong> ${xProtectVersion}</p>
             <p><strong>Plist Release Date:</strong> ${formatDate(plistReleaseDate)}</p>
-            <p><strong>Days since release:</strong> ${daysSincePlistRelease}</p>
+            <p><strong>Time Since Release:</strong> ${daysSincePlistRelease}</p>
         </div>
         <div class="mt-8 max-w-xl text-sm text-gray-600 dark:text-gray-400">
             What is XProtect:
