@@ -393,17 +393,21 @@
 
         const imageName = getImageName(osData, osType);
         let latestUMAHtml = generateLatestUMAHtml(installationApps, Latest.ProductVersion);  // Assuming this is a separate function handling the logic
+        let latestIPSWHtml = generateLatestIPSWHtml(installationApps, Latest.ProductVersion);  // Assuming this is a separate function handling the logic
 
         // Build the HTML content for the OS section
         const osSectionHTML = `<h3 class="text-lg leading-6 font-semibold text-indigo-700 dark:text-indigo-400">${osType} ${OSVersion}</h3>
         <div><strong>Last released version:</strong> ${Latest.ProductVersion}</div>
         <div class="mt-2 max-w-xl text-sm text-gray-600 dark:text-gray-400">
             ${latestUMAHtml}
+            ${latestIPSWHtml}
 
             <p><strong>Build:</strong> ${Latest.Build}</p>
             <p><strong>Release Date:</strong> ${formatDate(Latest.ReleaseDate)}</p>
             <p><strong>Days since release:</strong> ${Math.floor((new Date() - new Date(Latest.ReleaseDate)) / (1000 * 60 * 60 * 24))}</p>
         </div>
+
+        
 
         ${forkedBuildHtml}
 
@@ -453,7 +457,7 @@
             const { title, version, build, apple_slug, url } = umaDetails;
             return `
                 <div class="uma-details">
-                    <div class="mt-2 max-w-xl text-sm text-gray-600 dark:text-gray-400">
+                    <div class="max-w-xl text-sm text-gray-600 dark:text-gray-400">
                         <p><strong>Installer Package:</strong>
                             <a href="${url}" target="_blank"
                             class="text-blue-600 hover:text-blue-400 dark:text-yellow-500 dark:hover:text-yellow-300"
@@ -473,6 +477,53 @@
             return ''; // Return an empty string if no data matches
         }
     }
+
+
+    function generateLatestIPSWHtml(installationApps, productVersion) {
+        let ipswDetails = null;
+
+        console.log("Checking IPSW for product version:", productVersion);
+        console.log("Available installationApps data for IPSW:", installationApps);
+
+        if (installationApps) {
+            // Log the current version details for debugging
+            if (installationApps.LatestMacIPSW) {
+                console.log("LatestMacIPSW version:", installationApps.LatestMacIPSW.macos_ipsw_version);
+            }
+
+            // Check if the current productVersion matches LatestMacIPSW
+            if (installationApps.LatestMacIPSW && installationApps.LatestMacIPSW.macos_ipsw_version === productVersion) {
+                ipswDetails = installationApps.LatestMacIPSW;
+            }
+        }
+
+        // Generate HTML if ipswDetails is found
+        if (ipswDetails) {
+            const { macos_ipsw_url, macos_ipsw_build, macos_ipsw_version, macos_ipsw_apple_slug } = ipswDetails;
+            return `
+                <div class="ipsw-details">
+                    <div class=" max-w-xl text-sm text-gray-600 dark:text-gray-400">
+                        <p><strong>Current IPSW file:</strong>
+                            <a href="${macos_ipsw_url}" target="_blank"
+                            class="text-blue-600 hover:text-blue-400 dark:text-yellow-500 dark:hover:text-yellow-300"
+                            title="Download macOS ${macos_ipsw_version} Build ${macos_ipsw_build}">
+                                ${macos_ipsw_version}-${macos_ipsw_build}
+                            </a>
+                            <button class="copy-btn text-blue-600 hover:text-blue-400 dark:text-yellow-500 dark:hover:text-yellow-300"
+                                    data-url="${macos_ipsw_url}" onclick="copyToClipboard('${macos_ipsw_url}')" style="cursor: pointer;">
+                                📋 Copy URL
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            `;
+        } else {
+            console.error("No matching IPSW details found for version:", productVersion);
+            return ''; // Return an empty string if no data matches
+        }
+    }
+
+
 
 
     function copyToClipboard() {
