@@ -504,10 +504,14 @@ def write_data_to_json(feed_structure, filename):
 def format_iso_date(date_str):
     """
     Format the date string to ISO 8601 format.
-    :param date_str:
-    :return:
+    :param date_str: Date string to be formatted
+    :return: ISO 8601 formatted date string or a hardcoded date if the input is "Preinstalled"
     """
-    formats = ["%Y-%m-%d", "%d %b %Y"]
+    if date_str == "Preinstalled":
+        # Return October 25th, 2021 in ISO 8601 format
+        return "2021-10-25T00:00:00Z"
+
+    formats = ["%Y-%m-%d", "%d %b %Y", "%B %d, %Y"]
     for fmt in formats:
         try:
             return (
