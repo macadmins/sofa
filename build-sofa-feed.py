@@ -205,6 +205,10 @@ def fetch_security_releases(os_type, os_version):
                         if exploited
                     ]
 
+                    os_info = fetch_latest_os_version_info(os_type, product_version)
+                    if not os_info:
+                        os_info = {}
+
                     security_releases.append(
                         {
                             "UpdateName": os_version_info,
@@ -215,6 +219,7 @@ def fetch_security_releases(os_type, os_version):
                                 if link_info
                                 else "This update has no published CVE entries."
                             ),
+                            "SupportedDevices": os_info.get("SupportedDevices", []),
                             "CVEs": cves_exploitation_status,
                             "ActivelyExploitedCVEs": actively_exploited_cves,
                             "UniqueCVEsCount": len(cves_exploitation_status),
