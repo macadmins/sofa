@@ -28,7 +28,7 @@ if [[ ! "$json_data" ]]; then
 fi
 
 # 1. Get model (DeviceID)
-model=$(sysctl -b hw.model)
+model=$(/usr/sbin/sysctl -n hw.model)
 echo "Model Identifier: $model"
 
 # 2. Get current system OS
