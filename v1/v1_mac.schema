@@ -1,0 +1,268 @@
+{
+  "type": "object",
+  "properties": {
+    "UpdateHash": {
+      "description": "SHA-256 of the last time the data in the feed was updated",
+      "type": "string"
+    },
+    "OSVersions": {
+      "description": "All macOS versions published to date that Apple has included in their security releases KB, HT201222",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "OSVersion": {
+            "description": "Instance of a macOS Version",
+            "type": "string"
+          },
+          "Latest": {
+            "description": "Latest release for this OS version, made distinct/'cherry-picked' for convenience",
+            "type": "object",
+            "properties": {
+              "ProductVersion": {
+                "description": "Just the numerical customer-facing version, for example '14.4.1'",
+                "type": "string"
+              },
+              "Build": {
+                "description": "More-stringent coded version, which can be parsed based on internal release 'train' and major darwin version, etc.",
+                "type": "string"
+              },
+              "ReleaseDate": {
+                "description": "Same UTC timestamp format as above for when this release was considered published",
+                "type": "string"
+              },
+              "ExpirationDate": {
+                "description": "Misnomer as not applicable to macOS, but for other OSes marks when 'personalization'/OTA activation process by Apple would no longer be allowed",
+                "type": "string"
+              },
+              "SupportedDevices": {
+                "description": "BoardIDs (which are a more-stingent identifier of devices) this release supports",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [ "ProductVersion", "Build", "ReleaseDate", "ExpirationDate", "SupportedDevices" ]
+          },
+          "SecurityReleases": {
+            "description": "All OS releases tracked in HT201222, including latest",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "UpdateName": {
+                  "description": "'Full' name of release, for example 'macOS Sonoma 14.4.1'",
+                  "type": "string"
+                },
+                "ProductVersion": {
+                  "description": "Matches above",
+                  "type": "string"
+                },
+                "ReleaseDate": {
+                  "description": "Matches above",
+                  "type": "string"
+                },
+                "SecurityInfo": {
+                  "description": "Link to 'About the security content of' said release, for example HT214084",
+                  "type": "string"
+                },
+                "SupportedDevices": {
+                  "description": "Could be missing (min 0) BoardIDs (which are a more-stingent identifier of devices) this release supports",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "CVEs": {
+                  "description": "BeautifulSoup extraction of listed CVE's on SecurityInfo page",
+                  "type": "object",
+                  "properties": {
+                    "CVE-XXXX-XXXX": {
+                      "description": "Assigned CVE identifier and boolean in text of whether corresponding CVE is considered actively exploited",
+                      "type": "string"
+                    }
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                },
+                "ActivelyExploitedCVEs": {
+                  "description": "Convenience listing/array of boolean 'true's from CVEs object above",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "UniqueCVEsCount": {
+                  "description": "Count of the above",
+                  "type": "number"
+                },
+                "DaysSincePreviousRelease": {
+                  "description": "timedelta of this release to previous in days",
+                  "type": "number"
+                }
+              },
+              "required": [ "UpdateName", "ProductVersion", "ReleaseDate", "SecurityInfo", "CVEs", "ActivelyExploitedCVEs", "UniqueCVEsCount", "DaysSincePreviousRelease" ]
+            },
+            "minItems": 1
+          },
+          "SupportedModels": {
+            "description": "Models from a scrape-able KB that confirms OS support, for example HT201862",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Model": {
+                  "description": "'Family' name, for example 'MacBook Air'",
+                  "type": "string"
+                },
+                "URL": {
+                  "description": "URL considered canonical per model 'family' for parsing OS compatibilty",
+                  "type": "string"
+                },
+                "Identifiers": {
+                  "type": "object",
+                  "properties": {
+                    "MacXX,XX": {
+                      "description": "Identifier entry per (somewhat) specific device, used to be contextual and ascending e.g. MacPro8,1, now it's all boring THANKS APPLE",
+                      "type": "string"
+                    }
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                }
+              },
+              "required": [ "Model", "URL", "Identifiers" ]
+            }
+          }
+        },
+        "required": [ "OSVersion", "Latest", "SecurityReleases", "SupportedModels" ]
+      }
+    },
+    "XProtectPayloads": {
+      "description": "Entries for each XProtect-relevant version, with most recent release date",
+      "type": "object",
+      "properties": {
+        "com.apple.XProtectFramework.XProtect": {
+          "type": "string"
+        },
+        "com.apple.XprotectFramework.PluginService": {
+          "type": "string"
+        },
+        "ReleaseDate": {
+          "type": "string"
+        }
+      },
+      "required": [ "com.apple.XProtectFramework.XProtect", "com.apple.XprotectFramework.PluginService", "ReleaseDate" ]
+    },
+    "XProtectPlistConfigData": {
+      "description": "As per support.apple.com/101591, 'Prevents known malware from running'",
+      "type": "object",
+      "properties": {
+        "com.apple.XProtect": {
+          "type": "string"
+        },
+        "ReleaseDate": {
+          "type": "string"
+        }
+      },
+      "required": [ "com.apple.XProtect", "ReleaseDate" ]
+    },
+    "Models": {
+      "description": "Re-presentation of info to help map devices and OS compatibility, with one entry per device",
+      "type": "object",
+      "properties": {
+        "MacXX,XX": {
+          "type": "object",
+          "properties": {
+            "MarketingName": {
+              "description": "For example 'Mac Pro (Late 2013)'",
+              "type": "string"
+            },
+            "SupportedOS": {
+              "description": "List of major OS versions supported, in the format name + major version 'macOS Sonoma 14'",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "OSVersions": {
+              "description": "Just major OS numbers in a list",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "required": [ "MarketingName", "SupportedOS", "OSVersions" ]
+        }
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "InstallationApps": {
+      "description": "'Universal Mac Assistant' installer info, which put for example 'Install macOS Sonoma.app' in the Applications folder",
+      "type": "object",
+      "properties": {
+        "LatestUMA": {
+          "description": "Convenience entry for most recent UMA app info",
+          "type": "object",
+          "properties": {
+            "title": {
+              "description": "Name of OS, for example macOS Sonoma",
+              "type": "string"
+            },
+            "version": {
+              "description": "'Full' numeric version, ",
+              "type": "string"
+            },
+            "build": {
+              "description": "Matches above",
+              "type": "string"
+            },
+            "apple_slug": {
+              "description": "3 digit, hyphen and ~5 digit way artifacts are ID'd by Apple internally",
+              "type": "string"
+            },
+            "url": {
+              "description": "URL on Apple's (or Akamai's still?) CDN",
+              "type": "string"
+            }
+          },
+          "required": [ "title", "version", "build", "apple_slug", "url" ]
+        },
+        "AllPreviousUMA": {
+          "description": "List of all older versions, matching the schema described above",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              },
+              "build": {
+                "type": "string"
+              },
+              "apple_slug": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            },
+            "required": [ "title", "version", "build", "apple_slug", "url" ]
+          }
+        }
+      },
+      "required": [ "LatestUMA", "AllPreviousUMA" ]
+    }
+  },
+  "required": [ "UpdateHash", "OSVersions", "XProtectPayloads", "XProtectPlistConfigData", "Models", "InstallationApps" ]
+}
