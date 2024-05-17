@@ -21,8 +21,7 @@ if [[ ! "$json_data" ]]; then
 fi
 
 # 1. Get model (DeviceID)
-device_info=$(/usr/sbin/ioreg -c IOPlatformExpertDevice -d 2)
-model=$(/usr/bin/grep \"model\" <<< "$device_info" | /usr/bin/awk -F '<"|">' '{ print $2 }')
+model=$(/usr/sbin/sysctl -n hw.model)
 echo "Model Identifier: $model"
 
 # 2. Get current system OS
