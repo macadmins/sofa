@@ -758,6 +758,15 @@ def main(os_type):
                 )
 
             if os_type == "macOS":
+                latest_security_info = fetch_security_releases(
+                    os_type, latest_version_info["ProductVersion"]
+                )
+                if latest_security_info:
+                    latest_version_info["SecurityInfo"] = latest_security_info[0]["SecurityInfo"]
+                    latest_version_info["CVEs"] = latest_security_info[0]["CVEs"]
+                    latest_version_info["ActivelyExploitedCVEs"] = latest_security_info[0]["ActivelyExploitedCVEs"]
+                    latest_version_info["UniqueCVEsCount"] = latest_security_info[0]["UniqueCVEsCount"]
+
                 # Fetch compatible machines for the macOS version
                 compatible_machines = add_compatible_machines(os_version_name)
 
