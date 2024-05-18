@@ -542,7 +542,7 @@ def compute_hash(data):
 def write_timestamp_and_hash(os_type, hash_value, filename=None):
     """
     Update the timestamp and hash value for a specific OS type in a JSON file. This function constructs
-    a current timestamp and a hash over the full JSON data, and then updates or creates a JSON file 
+    a current timestamp and a hash over the full JSON data, and then updates or creates a JSON file
     with timestamp and hash information for a specified OS type ('macOS' or 'iOS').
 
     If the file already exists, it reads the existing data and updates it.
@@ -625,17 +625,13 @@ def read_and_validate_json(filename):
         print(f"An error occurred: {e}")
 
 
-def main(os_type):
+def process_os_type(os_type, config):
     """
-    The main function to process OS version information based on the provided OS type.
+    Called in main function, process the given OS type (macOS, iOS) and update the feed structure.
 
-    Parameters:
-    - os_type (str): The type of OS to process (e.g., "macOS", "iOS").
+    :param os_type: The OS type to process.
+    :param config: The configuration data loaded from the config.json file.
     """
-
-    # Load configurations from config.json
-    config = load_configurations("config.json")
-
     # Filter software releases for the specified osType
     software_releases = [
         release
@@ -703,7 +699,9 @@ def main(os_type):
         uma_list = {"LatestUMA": latest, "AllPreviousUMA": rest}
         feed_structure["InstallationApps"] = uma_list
         # ipsw (latest/'most prevalent' in mesu only as of v1) parsing
-        mesu_url: str = "https://mesu.apple.com/assets/macos/com_apple_macOSIPSW/com_apple_macOSIPSW.xml"  # noqa: E501 pylint: disable=line-too-long
+        mesu_url: str = (
+            "https://mesu.apple.com/assets/macos/com_apple_macOSIPSW/com_apple_macOSIPSW.xml"  # noqa: E501 pylint: disable=line-too-long
+        )
         try:
             with urlopen(mesu_url, context=ctx) as response:
                 mesu_cat = response.read()
@@ -712,17 +710,17 @@ def main(os_type):
             raise
         mesu_catalog: dict = plistlib.loads(mesu_cat)
         restore_datas = process_ipsw.extract_ipsw_raw(mesu_catalog)
-        prevalent_url, prevalent_build, prevalent_version = process_ipsw.process_ipsw_data(restore_datas)
+        prevalent_url, prevalent_build, prevalent_version = (
+            process_ipsw.process_ipsw_data(restore_datas)
+        )
         apple_slug = process_ipsw.process_slug(prevalent_url)
         print(f"Extracted IPSW\n{prevalent_url}")
         feed_structure["InstallationApps"]["LatestMacIPSW"] = {
             "macos_ipsw_url": prevalent_url,
             "macos_ipsw_build": prevalent_build,
             "macos_ipsw_version": prevalent_version,
-            "macos_ipsw_apple_slug": apple_slug
+            "macos_ipsw_apple_slug": apple_slug,
         }
-
-
 
     elif os_type == "iOS":
         # Initialize os_versions dynamically for iOS
@@ -762,10 +760,16 @@ def main(os_type):
                     os_type, latest_version_info["ProductVersion"]
                 )
                 if latest_security_info:
-                    latest_version_info["SecurityInfo"] = latest_security_info[0]["SecurityInfo"]
+                    latest_version_info["SecurityInfo"] = latest_security_info[0][
+                        "SecurityInfo"
+                    ]
                     latest_version_info["CVEs"] = latest_security_info[0]["CVEs"]
-                    latest_version_info["ActivelyExploitedCVEs"] = latest_security_info[0]["ActivelyExploitedCVEs"]
-                    latest_version_info["UniqueCVEsCount"] = latest_security_info[0]["UniqueCVEsCount"]
+                    latest_version_info["ActivelyExploitedCVEs"] = latest_security_info[
+                        0
+                    ]["ActivelyExploitedCVEs"]
+                    latest_version_info["UniqueCVEsCount"] = latest_security_info[0][
+                        "UniqueCVEsCount"
+                    ]
 
                 # Fetch compatible machines for the macOS version
                 compatible_machines = add_compatible_machines(os_version_name)
@@ -816,12 +820,29 @@ def main(os_type):
     read_and_validate_json(filename)
 
 
+def main(os_types):
+    """
+    The main function to process OS version information based on the provided OS types.
+
+    Parameters:
+    - os_types (list of str): The types of OS to process (e.g., ["macOS", "iOS"]).
+    """
+    # Load configurations from config.json
+    config = load_configurations("config.json")
+
+    for os_type in os_types:
+        process_os_type(os_type, config)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process OS version information.")
     parser.add_argument(
-        "osType", type=str, help="The type of OS to process (macOS or iOS)"
+        "osTypes",
+        nargs="+",
+        type=str,
+        help="The types of OS to process (e.g., macOS iOS)",
     )
 
     args = parser.parse_args()
 
-    main(args.osType)
+    main(args.osTypes)
