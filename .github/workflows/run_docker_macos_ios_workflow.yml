@@ -1,4 +1,4 @@
-name: macOS SOFA Scan
+name: macOS and iOS SOFA Scan
 
 on:
   schedule:
@@ -12,9 +12,6 @@ on:
 jobs:
   build-and-run:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        os_type: [macOS]  # Run only macOS tasks in this workflow
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -22,8 +19,12 @@ jobs:
     - name: Build Docker image
       run: docker build . -t sofa_scan
 
-    - name: Run Docker container
-      run: docker run --name sofa_scan_container -e OS_TYPE=${{ matrix.os_type }} -e TIMESTAMP_FILE_PATH=/app/v1/timestamp.json -v $(pwd)/v1:/app/v1 sofa_scan
+
+    - name: Run Docker container with macOS and iOS arguments
+      run: |
+        docker run --name sofa_scan_container \
+          -e TIMESTAMP_FILE_PATH=/app/v1/timestamp.json \
+          -v $(pwd)/v1:/app/v1 sofa_scan macOS iOS
 
     - name: Copy resulting JSON files from container to host
       run: |
@@ -42,5 +43,5 @@ jobs:
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
         git add v1/*.json time-series.csv
-        git commit -m "Update ${{ matrix.os_type }} SOFA data - $timestamp" -a || exit 0
+        git commit -m "Update SOFA data - $timestamp" -a || exit 0
         git push
