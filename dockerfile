@@ -30,10 +30,6 @@ COPY model_identifier_*.json /app/
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Accept an environment variable for the OS type at build time
-ARG OS_TYPE
-ENV OS_TYPE=${OS_TYPE}
-
 # Use an entrypoint script to pass the environment variable as an argument to your Python script
 COPY entrypoint.sh /app/
 RUN chmod +x /app/entrypoint.sh
