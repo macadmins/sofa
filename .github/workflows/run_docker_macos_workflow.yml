@@ -32,6 +32,7 @@ jobs:
         docker cp sofa_scan_container:/app/macos_data_feed.json v1/. || true
         docker cp sofa_scan_container:/app/macos_rss_feed.xml v1/. || true
         docker cp sofa_scan_container:/app/ios_data_feed.json v1/. || true
+        docker cp sofa_scan_container:/app/ios_rss_feed.xml v1/. || true
         docker cp sofa_scan_container:/app/time-series.csv .
 
 
