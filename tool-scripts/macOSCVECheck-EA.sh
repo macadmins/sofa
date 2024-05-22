@@ -32,20 +32,23 @@ etag_cache="$json_cache_dir/macos_data_feed_etag.txt"
 
 # check local vs online using etag
 if [[ -f "$etag_cache" && -f "$json_cache" ]]; then
-    if /usr/bin/curl --etag-compare "$etag_cache" "$online_json_url"; then
-        echo "Cached e-tag matches online e-tag - local cached file is up to date"
+    if /usr/bin/curl --silent --etag-compare "$etag_cache" "$online_json_url" --output /dev/null; then
+        echo "Cached e-tag matches online e-tag - cached json file is up to date"
     else
-        echo "Cached e-tag does not match online e-tag, proceeding to download"
-        /usr/bin/curl -L -m 3 -s "$online_json_url" --etag-save "$etag_cache" -o "$json_cache"
+        echo "Cached e-tag does not match online e-tag, proceeding to download SOFA json file"
+        /usr/bin/curl --location --max-time 3 --silent "$online_json_url" --etag-save "$etag_cache" --output "$json_cache"
     fi
 else
-    echo "No e-tag cached, proceeding to download"
-    /usr/bin/curl -L -m 3 -s "$online_json_url" --etag-save "$etag_cache" -o "$json_cache"
+    echo "No e-tag cached, proceeding to download SOFA json file"
+    /usr/bin/curl --location --max-time 3 --silent "$online_json_url" --etag-save "$etag_cache" --output "$json_cache"
 fi
 
 echo
 
-if [[ ! "$json_cache" ]]; then
+if [[ ! -f "$json_cache" ]]; then
+    echo "<result>Could not obtain data</result>"
+    exit
+elif ! plutil -extract "UpdateHash" raw "$json_cache" > /dev/null; then
     echo "<result>Could not obtain data</result>"
     exit
 fi
