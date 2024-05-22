@@ -165,8 +165,8 @@
                 }
                 // Instead of a separate function, directly control the XProtect card visibility here
                 requestAnimationFrame(() => {
-                document.getElementById('xprotect-card').style.display = software.osType === 'iOS' ? 'none' : '';
-            });
+                    document.getElementById('xprotect-card').style.display = software.osType === 'iOS' ? 'none' : '';
+                });
             });
             tabsContainer.appendChild(button);
         });
