@@ -550,7 +550,8 @@ def write_data_to_rss(sorted_feed, filename):
         # Set the primary feed information
         feed_gen = FeedGenerator()
         feed_gen.id("https://sofa.macadmins.io")
-        feed_gen.title(f"SOFA - {filename.split('_')[0]} feed")
+        feed_gen.title(f"SOFA - {filename.split('_')[0]} Update Feed")
+        feed_gen.description("This feed includes updates on OS versions and security info.")
         feed_gen.author({"name": "Mac Admins"})
         feed_gen.link(href="https://sofa.macadmins.io", rel="alternate")
         feed_gen.logo("https://sofa.macadmins.io/images/custom_logo.png")
@@ -610,8 +611,7 @@ def write_data_to_rss(sorted_feed, filename):
 
             feed_entry.published(publication_date)
 
-        feed_gen.rss_str(pretty=True)
-        feed_gen.rss_file(filename)
+        feed_gen.rss_file(filename, pretty=True)
     except Exception as e:
         print(f"Error writing RSS feed: {e}")
 
