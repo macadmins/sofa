@@ -9,8 +9,31 @@ swiftDialog_command="/usr/local/bin/dialog" # Path to swiftDialog installation
 
 # URL to the online JSON data
 online_json_url="https://sofa.macadmins.io/v1/macos_data_feed.json"
-json_data=$(/usr/bin/curl -L -m 3 -s "$online_json_url")
-if [[ ! "$json_data" ]]; then
+
+# local store
+json_cache_dir="/private/tmp/sofa"
+json_cache="$json_cache_dir/macos_data_feed.json"
+etag_cache="$json_cache_dir/macos_data_feed_etag.txt"
+
+# ensure local cache folder exists
+/bin/mkdir -p "$json_cache_dir"
+
+# check local vs online using etag
+if [[ -f "$etag_cache" && -f "$json_cache" ]]; then
+    if /usr/bin/curl --silent --etag-compare "$etag_cache" "$online_json_url" --output /dev/null; then
+        echo "Cached e-tag matches online e-tag - cached json file is up to date"
+    else
+        echo "Cached e-tag does not match online e-tag, proceeding to download SOFA json file"
+        /usr/bin/curl --location --max-time 3 --silent "$online_json_url" --etag-save "$etag_cache" --output "$json_cache"
+    fi
+else
+    echo "No e-tag cached, proceeding to download SOFA json file"
+    /usr/bin/curl --location --max-time 3 --silent "$online_json_url" --etag-save "$etag_cache" --output "$json_cache"
+fi
+
+echo
+
+if [[ ! "$json_cache" ]]; then
     title="XProtect Version Check"
     icon="SF=network.slash"
     message="WARNING: could not verify latest XProtect version."
@@ -22,13 +45,13 @@ fi
 local_bundle_version=$(/usr/bin/plutil -extract CFBundleShortVersionString raw "$local_bundle_info")
 echo "Local XProtect Version: $local_bundle_version"
 
-latest_bundle_version=$(/usr/bin/plutil -extract "XProtectPlistConfigData.com\\.apple\\.XProtect" raw - - <<< "$json_data" | /usr/bin/head -n 1)
+latest_bundle_version=$(/usr/bin/plutil -extract "XProtectPlistConfigData.com\\.apple\\.XProtect" raw "$json_cache" | /usr/bin/head -n 1)
 echo "Online XProtect Version: $latest_bundle_version"
 
 local_app_version=$(/usr/bin/plutil -extract CFBundleShortVersionString raw "$local_app_info")
 echo "Local XProtect Remediator Version: $local_app_version"
 
-latest_app_version=$(/usr/bin/plutil -extract "XProtectPayloads.com\\.apple\\.XProtectFramework\\.XProtect" raw - - <<< "$json_data" | /usr/bin/head -n 1)
+latest_app_version=$(/usr/bin/plutil -extract "XProtectPayloads.com\\.apple\\.XProtectFramework\\.XProtect" raw "$json_cache" | /usr/bin/head -n 1)
 echo "Online XProtect Version: $latest_app_version"
 
 # Compare the versions
