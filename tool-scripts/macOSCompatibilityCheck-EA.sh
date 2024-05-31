@@ -4,11 +4,11 @@
 # Check if the model does support the latest version of macOS using SOFA
 # by Balz Aschwanden
 #
-# adobted from the following script by Graham Pugh
+# adopted from the following script by Graham Pugh
 # https://github.com/macadmins/sofa/blob/main/tool-scripts/macOSVersionCheck-EA.sh
 
 # Note that this uses plutil so is only compatible with macOS 12+
-#
+
 # Use code inspired by the following post to exit if macOS < 12
 # https://scriptingosx.com/2020/10/dealing-with-xpath-changes-in-big-sur/
 if [[ $(sw_vers -buildVersion) < "21H" ]]; then
