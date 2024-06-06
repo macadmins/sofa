@@ -81,7 +81,7 @@ fi
 
 echo
 # 3. idenfity latest compatible major OS
-latest_compatible_os=$(/usr/bin/plutil -extract "Models.$model.SupportedOS.0" raw -expect string "$json_cache" 2> /dev/null | /usr/bin/head -n 1 | cut -d' ' -f2)
+latest_compatible_os=$(/usr/bin/plutil -extract "Models.$model.SupportedOS.0" raw -expect string "$json_cache" | /usr/bin/head -n 1 | cut -d' ' -f2)
 echo "Latest Compatible macOS: $latest_compatible_os"
 
 # 4. Get OSVersions.Latest.ProductVersion
