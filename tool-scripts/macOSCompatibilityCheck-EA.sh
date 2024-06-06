@@ -54,6 +54,15 @@ fi
 model=$(/usr/sbin/sysctl -n hw.model)
 echo "Model Identifier: $model"
 
+# check that the model is virtual or is in the feed at all
+if [[ $model == "VirtualMac"* ]]; then
+    # if virtual, we need to arbitrarily choose a model that supports all current OSes. Plucked for an M1 Mac mini
+    model="Macmini9,1"
+elif ! grep -q "$model" "$json_cache"; then
+    echo "<result>Unsupported Hardware</result>"
+    exit
+fi
+
 # 2. identify the latest major OS
 latest_os=$(/usr/bin/plutil -extract "OSVersions.0.OSVersion" raw -expect string "$json_cache" | /usr/bin/head -n 1)
 echo "Latest macOS: $latest_os"
