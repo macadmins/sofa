@@ -57,6 +57,15 @@ fi
 model=$(/usr/sbin/sysctl -n hw.model)
 echo "Model Identifier: $model"
 
+# check that the model is virtual or is in the feed at all
+if [[ $model == "VirtualMac"* ]]; then
+    # if virtual, we need to arbitrarily choose a model that supports all current OSes. Plucked for an M1 Mac mini
+    model="Macmini9,1"
+elif ! grep -q "$model" "$json_cache"; then
+    echo "<result>Unsupported Hardware</result>"
+    exit
+fi
+
 # 2. Get current system OS
 system_version=$( /usr/bin/sw_vers -productVersion )
 # system_version=14.1  # UNCOMMENT TO TEST OLDER VERSIONS
