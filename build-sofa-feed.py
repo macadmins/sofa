@@ -689,7 +689,7 @@ def write_data_to_rss(sorted_feed, filename):
         # For each item in the sorted list, create a new entry in RSS Feed
         for release in sorted_feed:
             feed_entry = feed_gen.add_entry()
-            feed_entry.id(release["ProductVersion"])
+            feed_entry.id(f"{release['UpdateName'].split(' ')[0]}_{release['ProductVersion']}")
             feed_entry.title(release["UpdateName"])
             feed_entry.link(link={"href":"https://sofa.macadmins.io/"})
 
