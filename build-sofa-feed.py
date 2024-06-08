@@ -507,7 +507,103 @@ def write_data_to_json(feed_structure, filename):
         json.dump(feed_structure, json_file, indent=4, ensure_ascii=False)
 
 
-def sort_by_release_date(feed_structure):
+def diff_rss_data(os_type, feed_results):
+    """
+    Ingest feed results and split by OS to their own cache file.
+    :param os_type: The type of operating system.
+    :param feed_results: Generated feed results.
+    :return combined_data: Combined list of updated data from both os_type and XProtect caches.
+    """
+    json_data = []
+    x_data = []
+    updated = False
+    xprotect_updated = False
+    rss_cache_dir = "cache"
+    os_rss_cache = os.path.join(rss_cache_dir, f"{os_type}_rss_data.json")
+    xprotect_rss_cache = os.path.join(rss_cache_dir, "xprotect_rss_data.json")
+
+    try:
+        # Create cache directory if it doesn't exist
+        os.makedirs(rss_cache_dir, exist_ok=True)
+
+        # Load existing os_type cache file
+        if os.path.exists(os_rss_cache):
+            with open(os_rss_cache, "r") as file:
+                json_data = json.load(file)
+
+        # Load existing XProtect cache data if macOS
+        if os_type == "macOS" and os.path.exists(xprotect_rss_cache):
+            with open(xprotect_rss_cache, "r") as file:
+                x_data = json.load(file)
+
+        # Create sets of existing product versions in the os_type and XProtect caches
+        cache_updates = {update["ProductVersion"] for update in json_data}
+        xprotect_cache_updates = {update["ProductVersion"] for update in x_data}
+
+        # Check for new entries
+        new_entries, new_xprotect_entries = diff_feed_data(feed_results, cache_updates, xprotect_cache_updates)
+
+        # Update os_type cache file if there are new entries
+        if new_entries:
+            json_data.extend(new_entries)
+            with open(os_rss_cache, "w") as file:
+                json.dump(json_data, file, indent=4)
+            updated = True
+
+        # Update XProtect cache file if there are new entries
+        if new_xprotect_entries:
+            x_data.extend(new_xprotect_entries)
+            with open(xprotect_rss_cache, "w") as file:
+                json.dump(x_data, file, indent=4)
+            xprotect_updated = True
+
+        # Combine data for return
+        combined_data = json_data + x_data
+
+        if updated or xprotect_updated:
+            print("RSS: Cache updated")
+        else:
+            print("No updates found.")
+
+        return combined_data
+    except Exception as e:
+        print(f"Error diffing rss data with cache: {e}")
+        return json_data + x_data
+
+
+def diff_feed_data(feed_results, cache_updates, xprotect_cache_updates):
+    """
+    Compare feed results with cached updates and identify new entries.
+    :param feed_results: Generated feed results.
+    :param cache_updates: Set of existing os_type entries in the os_type cache.
+    :param xprotect_cache_updates: Set of existing os_type entries in the XProtect cache.
+    :return: Tuple containing lists of new os_type entries and new XProtect entries.
+    """
+    new_entries = []
+    new_xprotect_entries = []
+
+    try:
+        for new_entry in feed_results:
+            product_version = new_entry["ProductVersion"]
+
+            # Check if the entries from feed_results
+            # already exists in the cache for both
+            # XProtect and os_type entries, if not
+            # append to new entries lists
+            if "xprotect" in product_version:
+                if product_version not in xprotect_cache_updates:
+                    new_xprotect_entries.append(new_entry)
+            else:
+                if product_version not in cache_updates:
+                    new_entries.append(new_entry)
+
+        return new_entries, new_xprotect_entries
+    except Exception as e:
+        print(f"Error diffing feed data with cache: {e}")
+        return [], []
+
+
+def create_rss_json_data(feed_structure):
     """
     Pull Security Releases for all OSVersions and sort by ReleaseDate.
     :param feed_structure: The fully populated feed structure.
@@ -516,29 +612,60 @@ def sort_by_release_date(feed_structure):
     try:
         feed_list = []
 
-        # For each OS Version, retreive SecurityReleases and add to
+        # For each OS Version, retrieve SecurityReleases and add to
         # the end of the populated list
         for os_version in feed_structure["OSVersions"]:
             security_releases = os_version.get("SecurityReleases", [])
             feed_list.extend(security_releases)
 
-        # Sort list by ReleaseDate but not if "Preinstalled" string. That one
-        # will be excluded in the sort, making it last in the list
-        feed_list.sort(
-            key=lambda x: (x["ReleaseDate"] != "Preinstalled", x["ReleaseDate"]),
-            reverse=True,
-        )
+        # Handle XProtect data separately and create entries
+        # that will eventually be added to cache. They should
+        # mimic what other os_type entries look like.
+        if "XProtectPlistConfigData" in feed_structure:
+            config_data = feed_structure["XProtectPlistConfigData"]
+            config_data_version = config_data.get("com.apple.XProtect", "")
+            config_date = config_data.get("ReleaseDate", "")
+
+            feed_list.extend([
+                {
+                    "UpdateName": f"XProtect Plist Config {config_data_version}",
+                    "ProductVersion": f"xprotectconfig_{config_data_version}",
+                    "ReleaseDate": config_date
+                }
+            ])
+
+        if "XProtectPayloads" in feed_structure:
+            payload_data = feed_structure.get("XProtectPayloads", {})
+            remediator_version = payload_data.get("com.apple.XProtectFramework.XProtect", "")
+            plugin_service = payload_data.get("com.apple.XprotectFramework.PluginService", "")
+            payload_date = payload_data.get("ReleaseDate", "")
+
+            feed_list.extend([
+                {
+                    "UpdateName": f"XProtect Remediator {remediator_version}",
+                    "ProductVersion": f"xprotectremediator_{remediator_version}",
+                    "ReleaseDate": payload_date
+                },
+                {
+                    "UpdateName": f"XProtect Plug-in Service {plugin_service}",
+                    "ProductVersion": f"xprotectplugin_{plugin_service}",
+                    "ReleaseDate": payload_date
+                }
+            ])
+
+        # Sort list by ReleaseDate
+        feed_list.sort(key=lambda x: x["ReleaseDate"], reverse=True)
 
         return feed_list
     except Exception as e:
-        print(f"Error sorting feed by release data: {e}")
+        print(f"Error creating RSS JSON data: {e}")
         return []
 
 
 def write_data_to_rss(sorted_feed, filename):
     """
     Write the sorted feed to a RSS feed.
-    :param sorted_feed: Sorted list from sort_by_release_date function.
+    :param sorted_feed: Sorted list from diff_rss_data function.
     :param filename: The name of the file to which the RSS feed should be written.
     """
     # Escape if empty list
@@ -550,7 +677,7 @@ def write_data_to_rss(sorted_feed, filename):
         # Set the primary feed information
         feed_gen = FeedGenerator()
         feed_gen.id("https://sofa.macadmins.io")
-        feed_gen.title(f"SOFA - {filename.split('_')[0]} Update Feed")
+        feed_gen.title("SOFA - RSS Update Feed")
         feed_gen.description("This feed includes updates on OS versions and security info.")
         feed_gen.author({"name": "Mac Admins"})
         feed_gen.link(href="https://sofa.macadmins.io", rel="alternate")
@@ -564,50 +691,27 @@ def write_data_to_rss(sorted_feed, filename):
             feed_entry = feed_gen.add_entry()
             feed_entry.id(release["ProductVersion"])
             feed_entry.title(release["UpdateName"])
+            feed_entry.link(link={"href":"https://sofa.macadmins.io/"})
 
             # Format the CVEs for description to make it pretty like how
             # the website looks like
-            actively_exploited = []
-            security_advisories = []
-
             description = ""
-            description += f"Security Info: <a href=\"{release['SecurityInfo']}\" rel=\"alternate\">{release['SecurityInfo']}</a><br>"
-            description += f"Vulnerabilities Addressed: {release['UniqueCVEsCount']}<br>"
 
-            for cve, exploited in release["CVEs"].items():
-                if exploited:
-                    actively_exploited.append(
-                        f"🔥 <a href=\"https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext={cve}\" rel=\"alternate\">{cve}</a>"
-                    )
-                else:
-                    security_advisories.append(
-                        f"<a href=\"https://www.cve.org/CVERecord?id={cve}\" rel=\"alternate\">{cve}</a>"
-                    )
+            if "UniqueCVEsCount" in release:
+                description += f"Vulnerabilities Addressed: {release['UniqueCVEsCount']}<br>"
 
-            if actively_exploited:
+            if "CVEs" in release:
+                exploited = sum(value is True for value in release["CVEs"].values())
+
                 description += (
-                    "Actively Exploited Vulnerabilities (KEV): "
-                    + ", ".join(actively_exploited)
-                    + "<br>"
-                )
-            if security_advisories:
-                description += (
-                    "Security Advisories (CVE Identifiers): "
-                    + ", ".join(security_advisories)
-                    + "<br>"
+                    f"Exploited CVE(s): {exploited}<br>"
                 )
 
-            description += f"Days to Prev. Release: {release['DaysSincePreviousRelease']}"
+            if "DaysSincePreviousRelease" in release:
+                description += f"Days to Prev. Release: {release['DaysSincePreviousRelease']}"
 
             feed_entry.description(description)
-
-            # Need to account for Preinstalled in ReleaseDate.
-            # Although sorted, we need to change it to a date
-            # in order to publish it.
-            if release["ReleaseDate"] == "Preinstalled":
-                publication_date = "1900-01-01T00:00:00Z"
-            else:
-                publication_date = release["ReleaseDate"]
+            publication_date = release["ReleaseDate"]
 
             feed_entry.published(publication_date)
 
@@ -919,20 +1023,21 @@ def process_os_type(os_type, config):
 
     # Determine the filename dynamically based on the os_type argument
     data_feed_filename = f"{os_type.lower()}_data_feed.json"
-    rss_feed_filename = f"{os_type.lower()}_rss_feed.xml"
 
     # Finally, write the structured data to a JSON file
     write_data_to_json(feed_structure, data_feed_filename)
 
-    # Sort data and Build RSS feed
-    sorted_feed = sort_by_release_date(feed_structure)
-    write_data_to_rss(sorted_feed, rss_feed_filename)
+    # Sort data for RSS feed and create separate XProtect entries
+    sorted_feed = create_rss_json_data(feed_structure)
 
     # Write the timestamp and hash to a JSON file per OS type
     write_timestamp_and_hash(os_type, hash_value)
 
     # Optionally, validate the generated JSON file
     read_and_validate_json(data_feed_filename)
+
+    # Return sorted data for use for feeds
+    return sorted_feed
 
 
 def main(os_types):
@@ -942,11 +1047,19 @@ def main(os_types):
     Parameters:
     - os_types (list of str): The types of OS to process (e.g., ["macOS", "iOS"]).
     """
+    feed_results = []
+
     # Load configurations from config.json
     config = load_configurations("config.json")
 
     for os_type in os_types:
-        process_os_type(os_type, config)
+        result = process_os_type(os_type, config)
+        rss_data = diff_rss_data(os_type, result)
+        feed_results.extend(rss_data)
+
+    # Write out feed from sorted data returned in dictionary
+    # to RSS XML file
+    write_data_to_rss(feed_results, "rss_feed.xml")
 
 
 if __name__ == "__main__":
