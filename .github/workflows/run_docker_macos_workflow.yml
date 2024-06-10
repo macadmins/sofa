@@ -43,6 +43,6 @@ jobs:
         timestamp=$(date +'%Y-%m-%d %H:%M:%S')
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
-        git add v1/*.json time-series.csv
+        git add v1/*.json v1/*.xml cache/*.json time-series.csv
         git commit -m "Update SOFA data - $timestamp" -a || exit 0
         git push
