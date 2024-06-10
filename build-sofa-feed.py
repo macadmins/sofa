@@ -567,7 +567,7 @@ def diff_rss_data(os_type, feed_results):
 
         return combined_data
     except Exception as e:
-        print(f"Error diffing rss data with cache: {e}")
+        print(f"Error diffing RSS data with cache: {e}")
         return json_data + x_data
 
 
@@ -691,10 +691,8 @@ def write_data_to_rss(sorted_feed, filename):
             feed_entry = feed_gen.add_entry()
             feed_entry.id(f"{release['UpdateName'].split(' ')[0]}_{release['ProductVersion']}")
             feed_entry.title(release["UpdateName"])
-            feed_entry.link(link={"href":"https://sofa.macadmins.io/"})
+            feed_entry.link(link={"href": "https://sofa.macadmins.io/"})
 
-            # Format the CVEs for description to make it pretty like how
-            # the website looks like
             description = ""
 
             if "UniqueCVEsCount" in release:
@@ -702,17 +700,13 @@ def write_data_to_rss(sorted_feed, filename):
 
             if "CVEs" in release:
                 exploited = sum(value is True for value in release["CVEs"].values())
-
-                description += (
-                    f"Exploited CVE(s): {exploited}<br>"
-                )
+                description += f"Exploited CVE(s): {exploited}<br>"
 
             if "DaysSincePreviousRelease" in release:
                 description += f"Days to Prev. Release: {release['DaysSincePreviousRelease']}"
 
             feed_entry.description(description)
             publication_date = release["ReleaseDate"]
-
             feed_entry.published(publication_date)
 
         feed_gen.rss_file(filename, pretty=True)
