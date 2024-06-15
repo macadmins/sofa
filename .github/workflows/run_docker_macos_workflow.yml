@@ -31,6 +31,8 @@ jobs:
         docker cp sofa_scan_container:/app/v1/timestamp.json v1/. || echo "Failed to copy timestamp.json"
         docker cp sofa_scan_container:/app/macos_data_feed.json v1/. || true
         docker cp sofa_scan_container:/app/ios_data_feed.json v1/. || true
+        docker cp sofa_scan_container:/app/rss_feed.xml v1/. || true
+        docker cp sofa_scan_container:/app/cache . || echo "Failed to copy cache files"
         docker cp sofa_scan_container:/app/time-series.csv .
 
 
@@ -42,6 +44,6 @@ jobs:
         timestamp=$(date +'%Y-%m-%d %H:%M:%S')
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
-        git add v1/*.json time-series.csv
+        git add v1/*.json v1/*.xml cache/*.json time-series.csv
         git commit -m "Update SOFA data - $timestamp" -a || exit 0
         git push

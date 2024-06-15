@@ -10,9 +10,10 @@ Updated automatically via GitHub Actions, the SOFA feed is a dynamic, centralize
 
 ## Key Features
 
-### Machine-Readable Feed and Web UI
+### Machine-Readable Feed, RSS Feed, and Web UI
 
 - **JSON Feed**: Provides detailed, machine-readable data optimized for automated tools and scripts
+- **RSS Feed**: Provides RSS Feed for use with entries sorted by date released
 - **Web Interface**: Divided between the major version tabs at the top and organized into sections that cover the latest OS information, XProtect updates, and security details for each OS, SOFA facilitates both quick summaries and deep dives into relevant data points
 
 ### Use Cases
@@ -45,6 +46,17 @@ SOFA supports a wide array of practical applications, wether for MacAdmin toolin
 - **Release Timelines:** Overview of the release dates and intervals between the latest security updates.
 - **Vulnerability Details:**  For each CVE, links are provided to view detailed records at CISA.gov or CVE.org. Use 'Command-click' to open a CVE record on the NVD website, highlighting detailed info on actively exploited vulnerabilities and related security advisories
 - **Search and Highlight**: Search for specific CVEs to identify which OS updates address the vulnerabilities
+
+## RSS Overview
+
+The RSS feed is generated using [feedgen](https://feedgen.kiesow.be/) by leveraging the same data generated for the data feed. It extracts `SecurityReleases` and injects them into individual entries, providing a streamlined and organized feed of the latest updates. The process involves:
+
+1. **Loading Cache Data**: RSS data is loaded from cached JSON files from the `cache/` directory to ensure all previously fetched updates are considered.
+1. **Writing to Cache**: New or updated data is written back to the cache, sorted by `ReleaseDate`.
+1. **Diffing Data**: New feed results are compared against existing cached data to identify and handle new entries.
+1. **Generate New Cache**: Updating the current cache files with new entries if new entries exist.
+1. **Creating RSS Entries**: `SecurityReleases` from the data feed are used to create RSS entries, including handling specific data like `XProtect` configurations and payloads.
+1. **Writing RSS Feed**: The sorted and updated entries are written to an RSS feed file (`v1/rss_feed.xml`) using `feedgen`.
 
 ## Getting Started
 
