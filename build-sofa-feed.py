@@ -739,7 +739,7 @@ def write_data_to_rss(sorted_feed, filename):
         for release in sorted_feed:
             feed_entry = feed_gen.add_entry()
             feed_entry.id(
-                f"{release["ProductName"]}_{release['ReleaseType']}_{release['ProductVersion']}"
+                f"{release['ProductName']}_{release['ReleaseType']}_{release['ProductVersion']}"
             )
             feed_entry.title(release["UpdateName"])
             feed_entry.link(link={"href": "https://sofa.macadmins.io/"})
