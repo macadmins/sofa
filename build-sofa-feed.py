@@ -106,8 +106,9 @@ def fetch_gdmf_data():
 
     # Fetch live data if cache is not available or invalid
     url = "https://gdmf.apple.com/v2/pmv"
+    headers = {"User-Agent": "macadmins-sofa"}
     try:
-        response = requests.get(url, verify=False)  # Not recommended, but used here for simplicity
+        response = requests.get(url, headers=headers, verify=False)  # Not recommended, but used here for simplicity
         response.raise_for_status()  # This will raise an HTTPError if the response was an error
         data = response.json()
         if data and data != {}:  # Only update the cache if the data is not empty
