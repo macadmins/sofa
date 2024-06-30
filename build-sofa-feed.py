@@ -98,9 +98,9 @@ def fetch_gdmf_data():
     max_log_entries = 10
 
     # Check if the cache file exists, is valid JSON, and output its content
-    cached_data = check_cache_file(cache_file_path)
+    cached_data, cached_etag = check_cache_file(cache_file_path)
     if cached_data and cached_data != {}:
-        print("Validated cached GDMF data.")
+        print("Validated local cached GDMF data.")
     else:
         cached_data = None
 
@@ -110,11 +110,23 @@ def fetch_gdmf_data():
         response = requests.get(url, verify=False)  # Not recommended, but used here for simplicity
         response.raise_for_status()  # This will raise an HTTPError if the response was an error
         data = response.json()
-        if data:  # Only update the cache if the data is not empty
-            update_cache(cache_file_path, data)
-        print("Using live gathered GDMF data and updating cache.")
-        write_gdmf_log(log_file_path, response.status_code, data, max_log_entries)
-        return data
+        if data and data != {}:  # Only update the cache if the data is not empty
+            live_etag = compute_hash(data)
+            if live_etag != cached_etag:
+                update_cache(cache_file_path, data, live_etag)
+                print("Using live gathered GDMF data and updating cache.")
+            else:
+                print("Live gathered GDMF data is identical to cached data. No update needed.")
+            write_gdmf_log(log_file_path, response.status_code, data, max_log_entries)
+            return data
+        else:
+            print("Live GDMF data is empty or invalid. Using cached data if available.")
+            if cached_data:
+                write_gdmf_log(log_file_path, response.status_code if 'response' in locals() else 'N/A', cached_data, max_log_entries)
+                return cached_data
+            else:
+                write_gdmf_log(log_file_path, response.status_code if 'response' in locals() else 'N/A', {}, max_log_entries)
+                return None
     except requests.RequestException as e:
         print(f"Request failed: {e}")
         # If fetching live data fails, use the cached data if available
@@ -123,44 +135,56 @@ def fetch_gdmf_data():
             write_gdmf_log(log_file_path, response.status_code if 'response' in locals() else 'N/A', cached_data, max_log_entries)
             return cached_data
         print("No valid GDMF data available.")
-        write_gdmf_log(log_file_path, response.status_code if 'response' in locals() else 'N/A', {}, max_log_entries)
+        write_gdmf_log(log_file_path, 'N/A', {}, max_log_entries)
         return None
+
+
 
 
 def check_cache_file(cache_file_path):
     """
     Check if the cache file exists and is valid JSON.
     :param cache_file_path: Path to the cache file.
-    :return: The cached data if valid, otherwise None.
+    :return: The cached data and etag if valid, otherwise None.
     """
     if os.path.exists(cache_file_path):
         try:
             with open(cache_file_path, "r") as cache_file:
-                data = json.load(cache_file)
-                print("Cache file", cache_file_path, "is valid JSON.")
-                print("Cache content:", data)
-                if data == {}:
-                    print("Cache content is empty.")
-                return data
+                cache_content = json.load(cache_file)
+                if "etag" in cache_content and "data" in cache_content:
+                    print("Cache file", cache_file_path, "is valid JSON.")
+                    print("Cache content:", cache_content["data"])
+                    if cache_content["data"] == {}:
+                        print("Cache content is empty.")
+                    return cache_content["data"], cache_content["etag"]
+                else:
+                    print("Cache file structure is invalid.")
         except (json.JSONDecodeError, IOError) as e:
             print(f"Failed to read cache file: {e}")
     else:
         print(f"Cache file {cache_file_path} does not exist.")
-    return None
+    return None, None
 
-def update_cache(cache_file_path, data):
+
+def update_cache(cache_file_path, data, etag):
     """
-    Update the cache file with the provided data.
+    Update the cache file with the provided data and etag.
     :param cache_file_path: Path to the cache file.
     :param data: Data to be written to the cache.
+    :param etag: Etag value to be included.
     """
     try:
         os.makedirs(os.path.dirname(cache_file_path), exist_ok=True)
+        cache_data = {
+            "etag": etag,
+            "data": data
+        }
         with open(cache_file_path, "w") as cache_file:
-            json.dump(data, cache_file, indent=4)
+            json.dump(cache_data, cache_file, indent=4)
         print(f"Cache updated successfully at {cache_file_path}.")
     except Exception as e:
         print(f"Failed to update cache: {e}")
+
 
 def write_gdmf_log(log_file_path, status_code, data, max_log_entries):
     """
@@ -175,17 +199,21 @@ def write_gdmf_log(log_file_path, status_code, data, max_log_entries):
     log_entry = {
         "timestamp": current_time,
         "new_etag": new_etag,
-        "status": f"success ({status_code})" if status_code in {200, 201, 202} else f"failed ({status_code})",
+        "status": f"success ({status_code})" if status_code in {200, 201, 202, 301} else f"failed ({status_code})",
         "previous_etag": ""
     }
 
     if os.path.exists(log_file_path):
         with open(log_file_path, "r") as file:
-            log_data = json.load(file)
-            if log_data["log"]:
-                log_entry["previous_etag"] = log_data["log"][0]["new_etag"]
+            try:
+                log_data = json.load(file)
+            except json.JSONDecodeError:
+                log_data = {"latest_etag": {}, "log": []}
     else:
         log_data = {"latest_etag": {}, "log": []}
+
+    if log_data["log"]:
+        log_entry["previous_etag"] = log_data["log"][0]["new_etag"]
 
     log_data["latest_etag"] = {
         "LastCheck": current_time,
@@ -196,6 +224,7 @@ def write_gdmf_log(log_file_path, status_code, data, max_log_entries):
 
     with open(log_file_path, "w") as file:
         json.dump(log_data, file, indent=4)
+
 
 
 def fetch_latest_os_version_info(os_type, os_version_name, gdmf_data):
@@ -211,7 +240,7 @@ def fetch_latest_os_version_info(os_type, os_version_name, gdmf_data):
     os_versions_key = "macOS" if os_type == "macOS" else "iOS"
     filtered_versions = [
         v
-        for v in gdmf_data.get("AssetSets", {}).get(os_versions_key, [])
+        for v in gdmf_data.get("PublicAssetSets", {}).get(os_versions_key, [])
         if v.get("ProductVersion", "").startswith(
             os_version_name.split(" ")[-1] if os_type == "macOS" else os_version_name
         )
@@ -243,6 +272,7 @@ def fetch_latest_os_version_info(os_type, os_version_name, gdmf_data):
 
     print(f"No versions matched the criteria for {os_type} {os_version_name}.")
     return None
+
 
 
 def fetch_security_releases(os_type, os_version, gdmf_data):
