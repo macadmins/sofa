@@ -21,6 +21,19 @@ COPY forked_builds.json /app/
 COPY sofa-time-series.py /app/
 COPY requirements.txt /app/
 
+
+# Create the cache directory
+RUN mkdir -p /app/cache
+
+# Ensure cache files exist before copying
+RUN touch /app/cache/gdmf_cached.json || true
+RUN touch /app/cache/gdmf_log.json || true
+
+# Copy existing cache files if they are present
+COPY cache/gdmf_cached.json /app/cache/gdmf_cached.json
+COPY cache/gdmf_log.json /app/cache/gdmf_log.json
+
+
 # Check if the file exists before copying
 RUN touch time-series.csv || true
 COPY time-series.csv /app/
