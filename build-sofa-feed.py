@@ -88,29 +88,159 @@ def process_os_version(os_type, os_version, name_info):
 
     return None
 
-
-def fetch_latest_os_version_info(os_type, os_version_name):
+def fetch_gdmf_data():
     """
-    Fetch the latest version information for the given OS type and version name. Source: Apple's gdmf API.
-    :param os_type:
-    :param os_version_name:
+    Fetch the latest GDMF data, update the cache, and return the data.
+    :return: The GDMF data.
+    """
+    cache_file_path = "cache/gdmf_cached.json"
+    log_file_path = "cache/gdmf_log.json"
+    max_log_entries = 10
+
+    # Check if the cache file exists, is valid JSON, and output its content
+    cached_data, cached_etag = check_cache_file(cache_file_path)
+    if cached_data and cached_data != {}:
+        print("Validated local cached GDMF data.")
+    else:
+        cached_data = None
+
+    # Fetch live data if cache is not available or invalid
+    url = "https://gdmf.apple.com/v2/pmv"
+    try:
+        response = requests.get(url, verify=False)  # Not recommended, but used here for simplicity
+        response.raise_for_status()  # This will raise an HTTPError if the response was an error
+        data = response.json()
+        if data and data != {}:  # Only update the cache if the data is not empty
+            live_etag = compute_hash(data)
+            if live_etag != cached_etag:
+                update_cache(cache_file_path, data, live_etag)
+                print("Using live gathered GDMF data and updating cache.")
+            else:
+                print("Live gathered GDMF data is identical to cached data. No update needed.")
+            write_gdmf_log(log_file_path, response.status_code, data, max_log_entries)
+            return data
+        else:
+            print("Live GDMF data is empty or invalid. Using cached data if available.")
+            if cached_data:
+                write_gdmf_log(log_file_path, response.status_code if 'response' in locals() else 'N/A', cached_data, max_log_entries)
+                return cached_data
+            else:
+                write_gdmf_log(log_file_path, response.status_code if 'response' in locals() else 'N/A', {}, max_log_entries)
+                return None
+    except requests.RequestException as e:
+        print(f"Request failed: {e}")
+        # If fetching live data fails, use the cached data if available
+        if cached_data:
+            print("Using cached GDMF data due to live fetch failure.")
+            write_gdmf_log(log_file_path, response.status_code if 'response' in locals() else 'N/A', cached_data, max_log_entries)
+            return cached_data
+        print("No valid GDMF data available.")
+        write_gdmf_log(log_file_path, 'N/A', {}, max_log_entries)
+        return None
+
+
+
+
+def check_cache_file(cache_file_path):
+    """
+    Check if the cache file exists and is valid JSON.
+    :param cache_file_path: Path to the cache file.
+    :return: The cached data and etag if valid, otherwise None.
+    """
+    if os.path.exists(cache_file_path):
+        try:
+            with open(cache_file_path, "r") as cache_file:
+                cache_content = json.load(cache_file)
+                if "etag" in cache_content and "data" in cache_content:
+                    print("Cache file", cache_file_path, "is valid JSON.")
+                    print("Cache content:", cache_content["data"])
+                    if cache_content["data"] == {}:
+                        print("Cache content is empty.")
+                    return cache_content["data"], cache_content["etag"]
+                else:
+                    print("Cache file structure is invalid.")
+        except (json.JSONDecodeError, IOError) as e:
+            print(f"Failed to read cache file: {e}")
+    else:
+        print(f"Cache file {cache_file_path} does not exist.")
+    return None, None
+
+
+def update_cache(cache_file_path, data, etag):
+    """
+    Update the cache file with the provided data and etag.
+    :param cache_file_path: Path to the cache file.
+    :param data: Data to be written to the cache.
+    :param etag: Etag value to be included.
+    """
+    try:
+        os.makedirs(os.path.dirname(cache_file_path), exist_ok=True)
+        cache_data = {
+            "etag": etag,
+            "data": data
+        }
+        with open(cache_file_path, "w") as cache_file:
+            json.dump(cache_data, cache_file, indent=4)
+        print(f"Cache updated successfully at {cache_file_path}.")
+    except Exception as e:
+        print(f"Failed to update cache: {e}")
+
+
+def write_gdmf_log(log_file_path, status_code, data, max_log_entries):
+    """
+    Update the GDMF log file with the latest request details.
+    :param log_file_path: Path to the log file.
+    :param status_code: HTTP status code of the request.
+    :param data: Data to be logged.
+    :param max_log_entries: Maximum number of log entries to keep.
+    """
+    current_time = datetime.now(timezone.utc).replace(microsecond=0).isoformat() + "Z"
+    new_etag = compute_hash(data)
+    log_entry = {
+        "timestamp": current_time,
+        "new_etag": new_etag,
+        "status": f"success ({status_code})" if status_code in {200, 201, 202, 301} else f"failed ({status_code})",
+        "previous_etag": ""
+    }
+
+    if os.path.exists(log_file_path):
+        with open(log_file_path, "r") as file:
+            try:
+                log_data = json.load(file)
+            except json.JSONDecodeError:
+                log_data = {"latest_etag": {}, "log": []}
+    else:
+        log_data = {"latest_etag": {}, "log": []}
+
+    if log_data["log"]:
+        log_entry["previous_etag"] = log_data["log"][0]["new_etag"]
+
+    log_data["latest_etag"] = {
+        "LastCheck": current_time,
+        "UpdateHash": new_etag
+    }
+    log_data["log"].insert(0, log_entry)
+    log_data["log"] = sorted(log_data["log"], key=lambda x: x["timestamp"], reverse=True)[:max_log_entries]  # Sort and keep only the latest entries
+
+    with open(log_file_path, "w") as file:
+        json.dump(log_data, file, indent=4)
+
+
+
+def fetch_latest_os_version_info(os_type, os_version_name, gdmf_data):
+    """
+    Fetch the latest version information for the given OS type and version name using provided GDMF data.
+    :param os_type: The OS type (e.g., "macOS" or "iOS").
+    :param os_version_name: The OS version name.
+    :param gdmf_data: The GDMF data fetched from the API or cache.
     :return: The latest version information if found, otherwise None.
     """
     print(f"Fetching latest: {os_type} {os_version_name}")
-    url = "https://gdmf.apple.com/v2/pmv"
 
-    try:
-        response = requests.get(url, verify=False)  # Not recommended, but
-        response.raise_for_status()  # This will raise an HTTPError if the response was an error
-    except requests.RequestException as e:
-        print(f"Request failed: {e}")
-        return None
-
-    data = response.json()
     os_versions_key = "macOS" if os_type == "macOS" else "iOS"
     filtered_versions = [
         v
-        for v in data.get("AssetSets", {}).get(os_versions_key, [])
+        for v in gdmf_data.get("PublicAssetSets", {}).get(os_versions_key, [])
         if v.get("ProductVersion", "").startswith(
             os_version_name.split(" ")[-1] if os_type == "macOS" else os_version_name
         )
@@ -144,11 +274,13 @@ def fetch_latest_os_version_info(os_type, os_version_name):
     return None
 
 
-def fetch_security_releases(os_type, os_version):
+
+def fetch_security_releases(os_type, os_version, gdmf_data):
     """
     Fetch security releases for the given OS type and version, source HT201222 page.
     :param os_type:
     :param os_version:
+    :param gdmf_data: The GDMF data fetched from the API or cache.
     :return:
     """
     url = "https://support.apple.com/en-us/HT201222"
@@ -207,7 +339,7 @@ def fetch_security_releases(os_type, os_version):
                         if exploited
                     ]
 
-                    os_info = fetch_latest_os_version_info(os_type, product_version)
+                    os_info = fetch_latest_os_version_info(os_type, product_version, gdmf_data)
                     if not os_info:
                         os_info = {}
 
@@ -909,12 +1041,13 @@ def read_and_validate_json(filename):
         print(f"An error occurred: {e}")
 
 
-def process_os_type(os_type, config):
+def process_os_type(os_type, config, gdmf_data):
     """
     Called in main function, process the given OS type (macOS, iOS) and update the feed structure.
 
     :param os_type: The OS type to process.
     :param config: The configuration data loaded from the config.json file.
+    :param gdmf_data: The GDMF data fetched from the API or cache.
     """
     # Filter software releases for the specified osType
     software_releases = [
@@ -1020,7 +1153,7 @@ def process_os_type(os_type, config):
     latest_versions = {}
     for release in software_releases:
         os_version_name = release["name"]
-        latest_version_info = fetch_latest_os_version_info(os_type, os_version_name)
+        latest_version_info = fetch_latest_os_version_info(os_type, os_version_name, gdmf_data)
         if latest_version_info:
             latest_versions[os_version_name] = latest_version_info
 
@@ -1041,7 +1174,7 @@ def process_os_type(os_type, config):
 
             if os_type == "macOS":
                 latest_security_info = fetch_security_releases(
-                    os_type, latest_version_info["ProductVersion"]
+                    os_type, latest_version_info["ProductVersion"], gdmf_data
                 )
                 if latest_security_info:
                     latest_version_info["SecurityInfo"] = latest_security_info[0][
@@ -1064,7 +1197,7 @@ def process_os_type(os_type, config):
                         "OSVersion": os_version_name,
                         "Latest": latest_version_info,
                         "SecurityReleases": fetch_security_releases(
-                            os_type, os_version_name
+                            os_type, os_version_name, gdmf_data
                         ),
                         "SupportedModels": compatible_machines,  # Add compatible machines here
                     }
@@ -1076,7 +1209,7 @@ def process_os_type(os_type, config):
                         "OSVersion": os_version_name,
                         "Latest": latest_version_info,
                         "SecurityReleases": fetch_security_releases(
-                            os_type, os_version_name
+                            os_type, os_version_name, gdmf_data
                         ),
                         # Note: 'SupportedModels' is not included for iOS
                     }
@@ -1110,6 +1243,7 @@ def process_os_type(os_type, config):
     return data_feed
 
 
+
 def main(os_types):
     """
     The main function to process OS version information based on the provided OS types.
@@ -1122,12 +1256,19 @@ def main(os_types):
     # Load configurations from config.json
     config = load_configurations("config.json")
 
+    # Fetch GDMF data once and use it across all OS types
+    gdmf_data = fetch_gdmf_data()
+
+    if gdmf_data is None:
+        print("Failed to fetch GDMF data and no valid cached data available.")
+        return
+
     # Load all OS RSS data from cache
     rss_cache = load_rss_data_cache()
 
     # Process per os_type
     for os_type in os_types:
-        result = process_os_type(os_type, config)
+        result = process_os_type(os_type, config, gdmf_data)
         feed_results.extend(result)
 
     # Write out feed from data returned in dictionary
