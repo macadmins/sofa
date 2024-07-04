@@ -3,19 +3,21 @@ Can run standalone if you uncomment first line under `if __name__ ==...
 Majority of code by Alex Ferrer Alequin github.com/Arequ except for errors,
 which are all courtesy Allister Banks @arubdesu
 """
+
 import plistlib
 import ssl
 import urllib
 from urllib.request import urlopen
-
 from xml.dom import minidom
+from xml.dom.minidom import Element, Text
 from xml.parsers.expat import ExpatError
+
 import certifi
 
 
 def main():
     """gimme some main"""
-    cat_url = "https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog"
+    cat_url = "https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog"  # noqa: E501 pylint: disable=line-too-long
     ctx = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
     ctx.load_verify_locations(cafile=certifi.where())
     try:
@@ -51,7 +53,7 @@ def initial_uma_parse(catalog: bytes) -> dict:
     Passes back 'unrefined' dict (of dicts of products) with uma pkg URLs."""
     unrefined_products = {}
     # file not actually gzipped(!?), plist load bytes object directly
-    catalog = plistlib.loads(catalog)
+    catalog_dict = plistlib.loads(catalog)
     # schema note: as of 2024, besides Products, there's 3 one-value keys at the root
     #  which we don't need/throw away - CatalogVersion, ApplePostURL, IndexDate.
     # variable-ize two keys (the 2nd nested in the 1st) that denote UMA-related stanzas
@@ -59,8 +61,8 @@ def initial_uma_parse(catalog: bytes) -> dict:
     iapi_key = "InstallAssistantPackageIdentifiers"
     # product_key is in the XXX-XXXXX format, e.g. 042-45246, which you see as sort-of
     #  'name-spacing' in each URL
-    for product_key in catalog["Products"].keys():
-        product = catalog["Products"][product_key]
+    for product_key in catalog_dict["Products"].keys():
+        product = catalog_dict["Products"][product_key]
         # .get'ing without fallback to just avoid KeyError in lookup & skip invalid
         if product.get(emi_key) and product.get(emi_key).get(iapi_key):
             # further schema notes: each product has single values for DeferredSUEnablementDate,
@@ -93,17 +95,34 @@ def get_metadata(ctx, dist_url: str) -> tuple[str, str, str]:
             dist_data = dist_response.read().decode()
     except urllib.error.URLError as urle:
         print(f"Error downloading .dist from URL {dist_url}: {urle}")
-        return None, None, None
+    title: str = ""
+    build: str = ""
+    version: str = ""
     try:
         xmldoc = minidom.parseString(dist_data)
         # DEBUG - contains js installer script embedded in xml
         # print(xmldoc.toprettyxml(indent="  "))
-        title = xmldoc.getElementsByTagName("title")[0].firstChild.nodeValue
-        build = xmldoc.getElementsByTagName("string")[0].firstChild.nodeValue
-        version = xmldoc.getElementsByTagName("string")[1].firstChild.nodeValue
+        title_elements = xmldoc.getElementsByTagName("title")
+        if title_elements:
+            title_element = title_elements[0]
+            if isinstance(title_element, Element) and isinstance(
+                title_element.firstChild, Text
+            ):
+                title = title_element.firstChild.data
+        string_elements = xmldoc.getElementsByTagName("string")
+        if string_elements:
+            build_element = string_elements[0] if len(string_elements) > 0 else None
+            version_element = string_elements[1] if len(string_elements) > 1 else None
+            if isinstance(build_element, Element) and isinstance(
+                build_element.firstChild, Text
+            ):
+                build = build_element.firstChild.data
+            if isinstance(version_element, Element) and isinstance(
+                version_element.firstChild, Text
+            ):
+                version = version_element.firstChild.data
     except ExpatError as xmle:
         print("Error parsing XML:", xmle)
-        return None, None, None
     return title, build, version
 
 
@@ -125,4 +144,4 @@ def sort_installers(final_dict: dict) -> tuple[dict, list]:
 
 if __name__ == "__main__":
     # main()
-    print('Library of uma processing for SOFA.')
+    print("Library of uma processing for SOFA.")

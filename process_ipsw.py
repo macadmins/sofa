@@ -11,7 +11,7 @@ import certifi  # maybe I don't need any of this SSL handling,
 # depending on how python on the runner points at certs? leaving for ease of dev
 
 
-def main():
+def main() -> None:
     """gimme some main"""
     mesu_url: str = (
         "https://mesu.apple.com/assets/macos/com_apple_macOSIPSW/com_apple_macOSIPSW.xml"  # noqa: E501 pylint: disable=line-too-long
