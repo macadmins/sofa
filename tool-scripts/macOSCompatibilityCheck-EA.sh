@@ -26,6 +26,7 @@ fi
 
 # URL to the online JSON data
 online_json_url="https://sofa.macadmins.io/v1/macos_data_feed.json"
+user_agent="SOFA-Jamf-EA-macOSCompatibilityCheck/1.0"
 
 # local store
 json_cache_dir="/private/tmp/sofa"
@@ -37,18 +38,18 @@ etag_cache="$json_cache_dir/macos_data_feed_etag.txt"
 
 # check local vs online using etag (only available on macOS 12+)
 if [[ -f "$etag_cache" && -f "$json_cache" ]]; then
-    if /usr/bin/curl --silent --etag-compare "$etag_cache" "$online_json_url" --output /dev/null; then
+    if /usr/bin/curl --silent --etag-compare "$etag_cache" --header "User-Agent: $user_agent" "$online_json_url" --output /dev/null; then
         echo "Cached e-tag matches online e-tag - cached json file is up to date"
     else
         echo "Cached e-tag does not match online e-tag, proceeding to download SOFA json file"
-        /usr/bin/curl --location --max-time 3 --silent "$online_json_url" --etag-save "$etag_cache" --output "$json_cache"
+        /usr/bin/curl --location --max-time 3 --silent --header "User-Agent: $user_agent" "$online_json_url" --etag-save "$etag_cache" --output "$json_cache"
     fi
 elif [[ "$os_compatibility" == "legacy" ]]; then
     echo "No e-tag cached, proceeding to download SOFA json file"
-    /usr/bin/curl --location --max-time 3 --silent "$online_json_url" --output "$json_cache"
+    /usr/bin/curl --location --max-time 3 --silent --header "User-Agent: $user_agent" "$online_json_url" --output "$json_cache"
 else
     echo "No e-tag cached, proceeding to download SOFA json file"
-    /usr/bin/curl --location --max-time 3 --silent "$online_json_url" --etag-save "$etag_cache" --output "$json_cache"
+    /usr/bin/curl --location --max-time 3 --silent --header "User-Agent: $user_agent" "$online_json_url" --etag-save "$etag_cache" --output "$json_cache"
 fi
 
 echo
