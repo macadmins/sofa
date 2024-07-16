@@ -61,9 +61,9 @@ jobs:
         /usr/bin/gzip --best --stdout v1/ios_data_feed.json > v1/ios_data_feed_compressed.json
         /usr/bin/gzip --best --stdout v1/macos_data_feed.json > v1/macos_data_feed_compressed.json
         /usr/bin/gzip --best --stdout v1/timestamp.json > v1/timestamp_compressed.json
-        s3cmd put v1/ios_data_feed.json --mime-type 'application/json' --acl-public s3://sofafeed/ios_data_feed_uncompressed.json
-        s3cmd put v1/macos_data_feed.json --mime-type 'application/json' --acl-public s3://sofafeed/macos_data_feed_uncompressed.json
-        s3cmd put v1/timestamp.json --mime-type 'application/json' --acl-public s3://sofafeed/timestamp_uncompressed.json
-        s3cmd put v1/ios_data_feed_compressed.json --mime-type 'application/gzip' --add-header='Content-Encoding:gzip' --add-header='Cache-control:no-transform' --acl-public s3://sofafeed/ios_data_feed.json
-        s3cmd put v1/macos_data_feed_compressed.json --mime-type 'application/gzip' --add-header='Content-Encoding:gzip' --add-header='Cache-control:no-transform' --acl-public s3://sofafeed/macos_data_feed.json
-        s3cmd put v1/timestamp_compressed.json --mime-type 'application/gzip' --add-header='Content-Encoding:gzip' --add-header='Cache-control:no-transform' --acl-public s3://sofafeed/timestamp.json
+        s3cmd put v1/ios_data_feed.json --mime-type 'application/json' --acl-public s3://sofafeed/v1/ios_data_feed_uncompressed.json
+        s3cmd put v1/macos_data_feed.json --mime-type 'application/json' --acl-public s3://sofafeed/v1/macos_data_feed_uncompressed.json
+        s3cmd put v1/timestamp.json --mime-type 'application/json' --acl-public s3://sofafeed/v1/timestamp_uncompressed.json
+        s3cmd put v1/ios_data_feed_compressed.json --mime-type 'application/gzip' --add-header='Content-Encoding:gzip' --add-header='Cache-control:no-transform' --acl-public s3://sofafeed/v1/ios_data_feed.json
+        s3cmd put v1/macos_data_feed_compressed.json --mime-type 'application/gzip' --add-header='Content-Encoding:gzip' --add-header='Cache-control:no-transform' --acl-public s3://sofafeed/v1/macos_data_feed.json
+        s3cmd put v1/timestamp_compressed.json --mime-type 'application/gzip' --add-header='Content-Encoding:gzip' --add-header='Cache-control:no-transform' --acl-public s3://sofafeed/v1/timestamp.json
