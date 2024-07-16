@@ -64,6 +64,6 @@ jobs:
         s3cmd put v1/ios_data_feed.json --mime-type 'application/json' --acl-public s3://sofafeed/ios_data_feed_uncompressed.json
         s3cmd put v1/macos_data_feed.json --mime-type 'application/json' --acl-public s3://sofafeed/macos_data_feed_uncompressed.json
         s3cmd put v1/timestamp.json --mime-type 'application/json' --acl-public s3://sofafeed/timestamp_uncompressed.json
-        s3cmd put v1/ios_data_feed_compressed.json --mime-type 'application/gzip' --acl-public s3://sofafeed/ios_data_feed.json
-        s3cmd put v1/macos_data_feed_compressed.json --mime-type 'application/gzip' --acl-public s3://sofafeed/macos_data_feed.json
-        s3cmd put v1/timestamp_compressed.json --mime-type 'application/gzip' --acl-public s3://sofafeed/timestamp.json
+        s3cmd put v1/ios_data_feed_compressed.json --mime-type 'application/gzip' --add-header='Content-Encoding:gzip' --acl-public s3://sofafeed/ios_data_feed.json
+        s3cmd put v1/macos_data_feed_compressed.json --mime-type 'application/gzip' --add-header='Content-Encoding:gzip' --acl-public s3://sofafeed/macos_data_feed.json
+        s3cmd put v1/timestamp_compressed.json --mime-type 'application/gzip' --add-header='Content-Encoding:gzip' --acl-public s3://sofafeed/timestamp.json
