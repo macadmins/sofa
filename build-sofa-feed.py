@@ -131,7 +131,7 @@ def compute_hash(data: dict) -> str:
 def update_cache(cache_file_path: str, data: dict, etag: str):
     """Update the cache file with the provided data and hash as 'etag'"""
     try:
-        os.makedirs(os.path.dirname(cache_file_path))
+        os.makedirs(os.path.dirname(cache_file_path), exist_ok=True)
         cache_data = {"etag": etag, "data": data}
         with open(cache_file_path, "w", encoding="utf-8") as cache_file:
             json.dump(cache_data, cache_file, indent=4)
