@@ -1,0 +1,50 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    -   id: end-of-file-fixer
+-   repo: https://github.com/psf/black
+    rev: 24.2.0
+    hooks:
+    -    id: black
+-   repo: https://github.com/pycqa/flake8
+    rev: 7.0.0
+    hooks:
+    -    id: flake8
+         name: flake8+bugbear (on top of pylint)
+-   repo: local
+    hooks:
+    - id: pylint
+      name: pylint
+      entry: pylint
+      language: system
+      types: [python]
+      args:
+        [
+          "--errors-only", # ignore's e.g. 'TODO' warnings
+          "--score", "n" # we don't need pylint scores tyvm
+        ]
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.9.0
+    hooks:
+    -   id: mypy
+        additional_dependencies: [types-PyYAML, types-requests]
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.3.7
+    hooks:
+    -   id: ruff
+    # -   id: ruff-format
+-   repo: https://github.com/PyCQA/isort
+    rev: 5.13.2
+    hooks:
+    -    id: isort
+
+# -   repo: local
+#     hooks:
+#     - id: pytest
+#       name: pytest
+#       entry: pytest
+#       language: system
+#       pass_filenames: false
+#       always_run: true
+      # args: [--cov=filename]
