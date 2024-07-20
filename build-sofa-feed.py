@@ -454,19 +454,34 @@ def load_macos_data_feed():
 def update_supported_devices_in_feed(data, supported_devices_data):
     """Recursively update the 'SupportedDevices' in the data feed"""
     if isinstance(data, dict):
-        for key, value in data.items():
-            if key == 'SupportedDevices' and not value:
-                os_version = data.get('ProductVersion', '').split('.')[0]
-                for supported_device in supported_devices_data:
-                    supported_os_version = supported_device.get('OSVersion').split('.')[0]
-                    if os_version == supported_os_version:
-                        data['SupportedDevices'] = supported_device.get('SupportedDevices', [])
-                        print(f"Updated {data.get('ProductVersion')} with SupportedDevices: {data['SupportedDevices']}")
-            else:
-                update_supported_devices_in_feed(value, supported_devices_data)
+        update_devices_dict(data, supported_devices_data)
     elif isinstance(data, list):
-        for item in data:
-            update_supported_devices_in_feed(item, supported_devices_data)
+        update_devices_list(data, supported_devices_data)
+
+
+def update_devices_dict(data, supported_devices_data):
+    """Update the 'SupportedDevices' in a dictionary"""
+    for key, value in data.items():
+        if key == 'SupportedDevices' and not value:
+            update_supported_devices(data, supported_devices_data)
+        else:
+            update_supported_devices_in_feed(value, supported_devices_data)
+
+
+def update_devices_list(data, supported_devices_data):
+    """Update the 'SupportedDevices' in a list"""
+    for item in data:
+        update_supported_devices_in_feed(item, supported_devices_data)
+
+
+def update_supported_devices(data, supported_devices_data):
+    """Update the 'SupportedDevices' key if it's empty"""
+    os_version = data.get('ProductVersion', '').split('.')[0]
+    for supported_device in supported_devices_data:
+        supported_os_version = supported_device.get('OSVersion').split('.')[0]
+        if os_version == supported_os_version:
+            data['SupportedDevices'] = supported_device.get('SupportedDevices', [])
+            print(f"Updated {data.get('ProductVersion')} with SupportedDevices: {data['SupportedDevices']}")
 
 
 def save_updated_macos_data_feed(macos_data_feed):
