@@ -28,10 +28,12 @@ RUN mkdir -p /app/cache
 # Ensure cache files exist before copying
 RUN touch /app/cache/gdmf_cached.json || true
 RUN touch /app/cache/gdmf_log.json || true
+RUN touch /app/cache/supported_devices.json || true
 
 # Copy existing cache files if they are present
 COPY cache/gdmf_cached.json /app/cache/gdmf_cached.json
 COPY cache/gdmf_log.json /app/cache/gdmf_log.json
+COPY cache/supported_devices.json /app/cache/supported_devices.json
 
 
 # Check if the file exists before copying
