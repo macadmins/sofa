@@ -41,6 +41,16 @@ def main(os_types: list):
     rss_data = diff_rss_data(feed_results, rss_cache)
     write_data_to_rss(rss_data, "rss_feed.xml")
 
+    # Load supported devices and macOS data feed
+    supported_devices_data = load_supported_devices_data()
+    macos_data_feed = load_macos_data_feed()
+
+    # Update macos data feed with supported devices data if necessary
+    update_supported_devices_in_feed(macos_data_feed, supported_devices_data)
+
+    # Save the updated macOS data feed
+    save_updated_macos_data_feed(macos_data_feed)
+
 
 def fetch_gdmf_data() -> dict:
     """Fetches latest GDMF data, if succeeds update the cache & return, otherwise use cache"""
@@ -425,6 +435,45 @@ def load_and_tag_model_data(filenames: list) -> dict:
                                 int(formatted_os_version.split()[-1])
                             )
     return model_info
+
+
+def load_supported_devices_data():
+    """Load the supported devices data from the cache"""
+    supported_devices_file = os.path.join('cache', 'supported_devices.json')
+    with open(supported_devices_file, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+def load_macos_data_feed():
+    """Load the macOS data feed from the root directory"""
+    macos_data_feed_file = 'macos_data_feed.json'
+    with open(macos_data_feed_file, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+def update_supported_devices_in_feed(data, supported_devices_data):
+    """Recursively update the 'SupportedDevices' in the data feed"""
+    if isinstance(data, dict):
+        for key, value in data.items():
+            if key == 'SupportedDevices' and not value:
+                os_version = data.get('ProductVersion', '').split('.')[0]
+                for supported_device in supported_devices_data:
+                    supported_os_version = supported_device.get('OSVersion').split('.')[0]
+                    if os_version == supported_os_version:
+                        data['SupportedDevices'] = supported_device.get('SupportedDevices', [])
+                        print(f"Updated {data.get('ProductVersion')} with SupportedDevices: {data['SupportedDevices']}")
+            else:
+                update_supported_devices_in_feed(value, supported_devices_data)
+    elif isinstance(data, list):
+        for item in data:
+            update_supported_devices_in_feed(item, supported_devices_data)
+
+
+def save_updated_macos_data_feed(macos_data_feed):
+    """Save the updated macOS data feed to the file"""
+    macos_data_feed_file = 'macos_data_feed.json'
+    with open(macos_data_feed_file, 'w', encoding='utf-8') as f:
+        json.dump(macos_data_feed, f, indent=4)
 
 
 def fetch_latest_os_version_info(
