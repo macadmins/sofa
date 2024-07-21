@@ -10,7 +10,7 @@ However, SOFA provides a list of the latest available versions of macOS which ca
 
 This script can be used as an Extension Attribute in Jamf Pro to report whether macOS is up to date. It requires macOS 12 or above.
 
-Since SOFA includes hardware compatibility data for all available software updates, this script uses that information to find out what is the current latest available compatible version of macOS for the system on which the script is running, and compares that with the current system. 
+Since SOFA includes hardware compatibility data for all available software updates, this script uses that information to find out what is the current latest available compatible version of macOS for the system on which the script is running, and compares that with the current system.
 
 Here's a breakdown of what it does:
 
@@ -60,7 +60,7 @@ Here's a breakdown of what it does:
 
 2. It determines the hardware model using `/usr/sbin/sysctl -n hw.model`.
 
-3. It retrieves the current latest available macOS version from the JSON file that is compatible with the current system, then uses `plutil` to extract the version string. 
+3. It retrieves the current latest available macOS version from the JSON file that is compatible with the current system, then uses `plutil` to extract the version string.
 
 4. It compares the latest available version of macOS with the latest available macOS version that is compatible on the system, as reported in the SOFA JSON file. If they match, it returns `<result>Pass</result>`, indicating that the system can support the latest version of maCOS. Otherwise, it returns `<result>Fail</result>`.
 

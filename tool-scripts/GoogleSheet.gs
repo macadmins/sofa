@@ -8,7 +8,7 @@ function onOpen() {
 
 function fetchJsonAndPopulateSheet() {
   Logger.log('Starting fetchJsonAndPopulateSheet function.');
-  var url = 'https://sofa.macadmins.io/v1/macos_data_feed.json';
+  var url = 'https://sofafeed.macadmins.io/v1/macos_data_feed.json';
   
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   sheet.clear();
