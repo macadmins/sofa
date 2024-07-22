@@ -66,11 +66,13 @@ def fetch_gdmf_data() -> dict:
         cached_data = {}
     # TODO: shift to only fetching header for etag first
     url = "https://gdmf.apple.com/v2/pmv"
+    pemname = "AppleRoot.pem"
+    abs_file_path = os.path.abspath(pemname)
     headers = {"User-Agent": "macadmins-sofa"}
     try:
         response = requests.get(
-            url, headers=headers, verify=False
-        )  # TODO - confirm can be moved to TLS-verifying code
+            url, headers=headers, verify=abs_file_path
+        )
         response.raise_for_status()  # This will raise class HTTPError if the response was an HTTP code 4xx or 5xx  # noqa: E501 pylint: disable=line-too-long
         live_data = response.json()
         if live_data:  # Only update the cache if the data is not empty
