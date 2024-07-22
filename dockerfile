@@ -20,6 +20,7 @@ COPY feed_structure_template_v1.yaml /app/
 COPY forked_builds.json /app/
 COPY sofa-time-series.py /app/
 COPY requirements.txt /app/
+COPY AppleRoot.pem /app/
 
 
 # Create the cache directory
