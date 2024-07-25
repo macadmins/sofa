@@ -783,7 +783,7 @@ def write_data_to_json(feed_structure: dict, filename: str):
                 release["ReleaseDate"] = format_iso_date(release.get("ReleaseDate", ""))
     with open(filename, "w", encoding="utf-8") as json_file:
         json.dump(
-            feed_structure, json_file, indent=4, ensure_ascii=False
+            feed_structure, json_file, ensure_ascii=False
         )  # TODO: ascii false because we might have utf8 in it?
 
 
