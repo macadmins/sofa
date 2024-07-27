@@ -16,7 +16,7 @@ hero:
       text: Ventura 13
       link: /macOS_Ventura
     - theme: brand
-      text: Ventura 12
+      text: Monterey 12
       link: /macOS_Monterey
     - theme: brand
       text: iOS 17
