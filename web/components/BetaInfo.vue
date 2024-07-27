@@ -9,6 +9,12 @@
           Apple Developer News and Updates
         </a>
       </div>
+      <div class="ipsw-info">
+        <a :href="latestBetaMacIPSW.macos_ipsw_url" target="_blank" rel="noopener noreferrer">
+          Download restore image for Mac computers with Apple silicon
+        </a>
+        <p>{{ latestBetaMacIPSW.macos_ipsw_version }} (Build: {{ latestBetaMacIPSW.macos_ipsw_build }}) - Released on {{ formatDate(latestBetaMacIPSW.ReleaseDate) }}</p>
+      </div>
       <table>
         <thead>
           <tr>
@@ -54,6 +60,7 @@ export default {
       betaData: null,
       osImage: '', // Image URL for the OS
       releaseUrl: '', // URL for the release
+      latestBetaMacIPSW: null, // Latest Beta Mac IPSW info
     };
   },
   mounted() {
@@ -68,6 +75,7 @@ export default {
         this.betaData = data.default;
         this.osImage = this.getOsImage(this.platform, this.title);
         this.releaseUrl = this.betaData.OSVersions[0].url; // Set the release URL
+        this.latestBetaMacIPSW = this.betaData.OSVersions[0].LatestBetaMacIPSW; // Set the latest Beta Mac IPSW info
       } catch (error) {
         console.error('Error loading beta data:', error);
       }
@@ -115,6 +123,14 @@ export default {
 .release-url {
   text-align: center;
   margin-bottom: 20px;
+}
+.ipsw-info {
+  text-align: left;
+  margin-bottom: 10px;
+}
+.ipsw-info a {
+  display: block;
+  margin-bottom: 5px;
 }
 table {
   width: 100%;
