@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       essentialLinks: null,
-      includedSections: ['Apple Guides', 'Apple Training', 'Apple Developer', 'Security', 'Community Blogs'] // Define sections to include
+      includedSections: ['Apple Guides', '', 'Apple Developer', 'Security', 'Community Blogs'] // Define sections to include in rendering
     };
   },
   mounted() {
