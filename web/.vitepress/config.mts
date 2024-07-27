@@ -54,7 +54,7 @@ export default defineConfig({
       {
         text: 'Apple & Community',
         items: [
-          { text: 'Essentail Links', link: '/essential-info' }
+          { text: 'Essential Links', link: '/essential-info' }
         ],
       },
       {
