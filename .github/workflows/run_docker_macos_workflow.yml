@@ -4,7 +4,7 @@ on:
   schedule:
     # Monday, Tuesday, Thursday, and Friday every 1 hour from 5:00 PM to 8:00 PM CET
     - cron: '0 17-20 * * 1,2,3,4,5'
-    
+
     # On every day every 4 hours
     - cron: '30 */4 * * *'
   workflow_dispatch:
@@ -39,12 +39,19 @@ jobs:
     - name: List contents of v1
       run: ls -la v1/
 
+    - name: Copy v1 data feed files into public dir for VitePress
+      run: |
+        mkdir -p public/v1
+        cp -r v1/*.json public/v1/
+        cp -r v1/*.xml public/v1/
+
     - name: Commit and push if changes are detected
       run: |
         timestamp=$(date +'%Y-%m-%d %H:%M:%S')
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
         git add v1/*.json v1/*.xml cache/*.json time-series.csv
+        git add public/v1/*.json public/v1/*.xml
         git commit -m "Update SOFA data - $timestamp" -a || exit 0
         git push
 
