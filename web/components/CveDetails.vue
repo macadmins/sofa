@@ -35,6 +35,10 @@
       <p>Base Score: {{ cveDetails.baseScore }}</p>
       <p>Exploitability Score: {{ cveDetails.exploitabilityScore }}</p>
       <p>Impact Score: {{ cveDetails.impactScore }}</p>
+      <p>Severity: {{ cveDetails.severity }}</p>
+      <div v-if="cveDetails.severity !== 'No CVSS metric found'" :class="['severity-box', severityClass]">
+        SEVERITY: {{ cveDetails.severity }}
+      </div>
       <p>
         <a href="https://vulncheck.com/nvd2" target="_blank" rel="noopener noreferrer" class="link-color">
           Based on NVD++ CVE data - a VulnCheck Community resource
@@ -52,6 +56,8 @@
 </template>
 
 <script>
+import { ref, onMounted } from 'vue';
+
 export default {
   props: {
     cveId: {
@@ -79,8 +85,20 @@ export default {
     openCveUrl() {
       return `https://www.opencve.io/cve/${this.cveId}`;
     },
-    linkColor() {
-      return getComputedStyle(document.documentElement).getPropertyValue('--vp-c-text-link');
+    severityClass() {
+      if (this.cveDetails && this.cveDetails.severity) {
+        switch (this.cveDetails.severity) {
+          case 'HIGH':
+            return 'danger';
+          case 'MEDIUM':
+            return 'warning';
+          case 'LOW':
+            return 'tip';
+          default:
+            return '';
+        }
+      }
+      return '';
     }
   },
   mounted() {
@@ -105,7 +123,8 @@ export default {
                 id: details.id,
                 baseScore: 'No CVSS metric found',
                 exploitabilityScore: 'No CVSS metric found',
-                impactScore: 'No CVSS metric found'
+                impactScore: 'No CVSS metric found',
+                severity: 'No CVSS metric found'
               };
             } else {
               this.cveDetails = details;
@@ -136,7 +155,8 @@ export default {
           id: this.cveId,
           baseScore: 'Error loading data',
           exploitabilityScore: 'Error loading data',
-          impactScore: 'Error loading data'
+          impactScore: 'Error loading data',
+          severity: 'Error loading data'
         };
       } finally {
         this.progress = 100; // Ensure progress bar is full when done
@@ -170,6 +190,28 @@ export default {
 
 .cve-details-context {
   margin-top: 20px;
+}
+
+.severity-box {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.danger {
+  background-color: var(--vp-c-danger-soft);
+  color: var(--vp-c-danger-1);
+}
+
+.warning {
+  background-color: var(--vp-c-warning-soft);
+  color: var(--vp-c-warning-1);
+}
+
+.tip {
+  background-color: var(--vp-c-tip-soft);
+  color: var(--vp-c-tip-1);
 }
 
 .progress-bar {
