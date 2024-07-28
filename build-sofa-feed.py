@@ -490,7 +490,7 @@ def save_updated_macos_data_feed(macos_data_feed):
     """Save the updated macOS data feed to the file"""
     macos_data_feed_file = 'macos_data_feed.json'
     with open(macos_data_feed_file, 'w', encoding='utf-8') as f:
-        json.dump(macos_data_feed, f, indent=4)
+        json.dump(macos_data_feed, f)
 
 
 def fetch_latest_os_version_info(
