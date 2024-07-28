@@ -26,20 +26,50 @@
   "Common": {
     "Apple security releases": "https://support.apple.com/en-ca/HT201222",
     "Apple Platform Deployment": "https://support.apple.com/en-ca/guide/deployment/dep9d814c555/1/web/1.0",
-    "Apple Platform Security": "https://support.apple.com/en-ca/guide/security/secb82d6b274/web"
+    "Apple Platform Security": "https://support.apple.com/en-ca/guide/security/secb82d6b274/web",
+    "Apple Platform Certifications": "https://support.apple.com/en-ca/guide/certifications/apc353b1b736/web"
   },
-  "Extra_urls": {
-    "AppleDev": {
-      "AppleSeed": "https://beta.apple.com",
-      "Developer": "https://developer.apple.com/programs/",
-      "GitHub": "https://github.com/apple/device-management"
-    },
-    "Security": {
-      "Mitre": "https://attack.mitre.org/matrices/enterprise/macos/"
-    },
-    "Blogs": {
-      "Mr. Macintosh": "https://mrmacintosh.com/blog/",
-      "Ecleticlight (Howard Oakley)": "https://eclecticlight.co/category/macs/"
+  "Apple Guides": {
+    "description": "Find comprehensive guides to deploy, secure, and certify Apple platforms.",
+    "links": {
+      "Apple Platform Deployment": "https://support.apple.com/en-ca/guide/deployment/welcome/web",
+      "Apple Platform Security": "https://support.apple.com/en-ca/guide/security/welcome/web",
+      "Apple Platform Certifications": "https://support.apple.com/en-ca/guide/certifications/welcome/web",
+      "Apple security releases": "https://support.apple.com/en-ca/HT201222"
     }
+  },
+  "Apple Training": {
+    "description": "Explore training tutorials for Apple device support, deployment, management, and more.",
+    "links": {
+      "Apple Device Support Tutorials": "https://it-training.apple.com/tutorials/apt-support/",
+      "Deployment and Management Tutorials": "https://it-training.apple.com/tutorials/apt-deployment/",
+      "Mac Security Compliance Tutorials": "https://it-training.apple.com/tutorials/apt-compliance/",
+      "Apple Business Essentials Tutorials": "https://it-training.apple.com/tutorials/apt-business-essentials/"
+    }
+  },
+  "Apple Developer": {
+    "description": "Resources for Apple developers including beta programs and GitHub repositories.",
+    "Apple Beta Software Program": "https://beta.apple.com",
+    "Apple Developer Program": "https://developer.apple.com/programs/",
+    "Device Management (GitHub)": "https://github.com/apple/device-management",
+    "context": {
+      "Apple Beta Software Program": "Help shaping next releases of iOS, iPadOS, macOS, tvOS, watchOS and HomePod software by test-driving pre-release versions",
+      "Apple Developer Program": "Tools, resources, to develop and distribute apps and access to app services, testing tools, app analytics, and more",
+      "Device Management (GitHub)": "Device management schema data for MDM and Declarative Device maangement (DDM)."
+    }
+  },
+  "Security": {
+    "description": "Security resources including macOS Security Compliance Project and MITRE ATT&CK.",
+    "mSCP": "https://github.com/usnistgov/macos_security",
+    "Mitre": "https://attack.mitre.org/matrices/enterprise/macos/",
+    "context": {
+      "Mitre": "macOS Matrix\nBelow are the tactics and techniques representing the MITRE ATT&CK® Matrix for Enterprise. The Matrix contains information for the macOS platform.",
+      "mSCP": "The macOS security compliance project is an open source effort to provide a programmatic approach to generating security guidance."
+    }
+  },
+  "Community Blogs": {
+    "description": "Follow these blogs for updates and insights on macOS and Apple technologies.",
+    "Mr. Macintosh": "https://mrmacintosh.com/blog/",
+    "Eclecticlight (Howard Oakley)": "https://eclecticlight.co/category/macs/"
   }
 }
