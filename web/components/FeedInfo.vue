@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>macOS feed file</h2>
-    <a href="https://sofafeed.macadmins.io/beta/v1/macos_data_feed.json" target="_blank" rel="noopener noreferrer">View macOS Data Feed JSON</a>
+    <a href="https://sofafeed.macadmins.io/v1/macos_data_feed.json" target="_blank" rel="noopener noreferrer">View macOS Data Feed JSON</a>
     <div v-if="timestampData">
       <div>
         <p>Last Check: {{ timestampData.macOS.LastCheck }}</p>
@@ -9,7 +9,7 @@
       </div>
       <div>
         <h2>iOS feed file</h2>
-        <a href="https://sofafeed.macadmins.io/beta/v1/ios_data_feed.json" target="_blank" rel="noopener noreferrer">View iOS Data Feed JSON</a>
+        <a href="https://sofafeed.macadmins.io/v1/ios_data_feed.json" target="_blank" rel="noopener noreferrer">View iOS Data Feed JSON</a>
         <p>Last Check: {{ timestampData.iOS.LastCheck }}</p>
         <p>Update Hash: {{ timestampData.iOS.UpdateHash }}</p>
       </div>
