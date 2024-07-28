@@ -88,6 +88,7 @@ export default {
     severityClass() {
       if (this.cveDetails && this.cveDetails.severity) {
         switch (this.cveDetails.severity) {
+          case 'CRITICAL':
           case 'HIGH':
             return 'danger';
           case 'MEDIUM':
