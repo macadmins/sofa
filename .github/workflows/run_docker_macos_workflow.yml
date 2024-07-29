@@ -39,12 +39,6 @@ jobs:
     - name: List contents of v1
       run: ls -la v1/
 
-    - name: Copy v1 data feed files into public dir for VitePress
-      run: |
-        mkdir -p public/v1
-        cp -r v1/*.json public/v1/
-        cp -r v1/*.xml public/v1/
-
     - name: Commit and push if changes are detected
       run: |
         timestamp=$(date +'%Y-%m-%d %H:%M:%S')
@@ -55,6 +49,24 @@ jobs:
         git commit -m "Update SOFA data - $timestamp" -a || exit 0
         git push
 
+    - name: Un prettify jsons
+      run: |
+        jq -c . v1/ios_data_feed.json > v1/ios_data_feed_jq.json
+        rm -f v1/ios_data_feed.json
+        mv v1/ios_data_feed_jq.json > v1/ios_data_feed.json
+        jq -c . v1/macos_data_feed.json > v1/macos_data_feed_jq.json
+        rm -f v1/macos_data_feed.json
+        mv v1/macos_data_feed_jq.json > v1/macos_data_feed.json
+        jq -c . v1/timestamp.json > v1/timestamp_jq.json
+        rm -f v1/timestamp.json
+        mv v1/timestamp_jq.json > v1/timestamp.json
+
+    - name: Copy v1 data feed files into public dir for VitePress
+      run: |
+        mkdir -p public/v1
+        cp -r v1/*.json public/v1/
+        cp -r v1/*.xml public/v1/
+
     - name: Set up S3cmd cli tool
       uses: s3-actions/s3cmd@ef6ce583c6f4e5c121c53777f2f17740c36243be #v1.6.1
       with:
@@ -63,32 +75,26 @@ jobs:
         access_key: ${{ secrets.DO_S3_ACCESS_KEY }}
         secret_key: ${{ secrets.DO_S3_SECRET_KEY }}
 
-    - name: Un prettify jsons
-      run: |
-        /usr/local/bin/jq -c . v1/ios_data_feed.json > v1/ios_data_feed_jq.json
-        /usr/local/bin/jq -c . v1/macos_data_feed.json > v1/macos_data_feed_jq.json
-        /usr/local/bin/jq -c . v1/timestamp.json > v1/timestamp_jq.json
-
     - name: Create gzipped jsons
       run: |
-        /usr/bin/gzip --best --stdout v1/ios_data_feed_jq.json > v1/ios_data_feed_compressed.json
-        /usr/bin/gzip --best --stdout v1/macos_data_feed_jq.json > v1/macos_data_feed_compressed.json
-        /usr/bin/gzip --best --stdout v1/timestamp_jq.json > v1/timestamp_compressed.json
+        /usr/bin/gzip --best --stdout v1/ios_data_feed.json > v1/ios_data_feed_compressed.json
+        /usr/bin/gzip --best --stdout v1/macos_data_feed.json > v1/macos_data_feed_compressed.json
+        /usr/bin/gzip --best --stdout v1/timestamp.json > v1/timestamp_compressed.json
 
     - name: Upload to Digital Ocean (Beta Feed)
       run: |
-        s3cmd put v1/ios_data_feed_jq.json --mime-type 'application/json' --acl-public s3://sofafeed.macadmins.io/beta/v1/ios_data_feed_uncompressed.json
-        s3cmd put v1/macos_data_feed_jq.json --mime-type 'application/json' --acl-public s3://sofafeed.macadmins.io/beta/v1/macos_data_feed_uncompressed.json
-        s3cmd put v1/timestamp_jq.json --mime-type 'application/json' --acl-public s3://sofafeed.macadmins.io/beta/v1/timestamp_uncompressed.json
+        s3cmd put v1/ios_data_feed.json --mime-type 'application/json' --acl-public s3://sofafeed.macadmins.io/beta/v1/ios_data_feed_uncompressed.json
+        s3cmd put v1/macos_data_feed.json --mime-type 'application/json' --acl-public s3://sofafeed.macadmins.io/beta/v1/macos_data_feed_uncompressed.json
+        s3cmd put v1/timestamp.json --mime-type 'application/json' --acl-public s3://sofafeed.macadmins.io/beta/v1/timestamp_uncompressed.json
         s3cmd put v1/ios_data_feed_compressed.json --mime-type 'application/json' --add-header='Content-Encoding:gzip' --add-header='Cache-control:public, no-transform' --acl-public s3://sofafeed.macadmins.io/beta/v1/ios_data_feed.json
         s3cmd put v1/macos_data_feed_compressed.json --mime-type 'application/json' --add-header='Content-Encoding:gzip' --add-header='Cache-control:public, no-transform' --acl-public s3://sofafeed.macadmins.io/beta/v1/macos_data_feed.json
         s3cmd put v1/timestamp_compressed.json --mime-type 'application/json' --add-header='Content-Encoding:gzip' --add-header='Cache-control:public, no-transform' --acl-public s3://sofafeed.macadmins.io/beta/v1/timestamp.json
 
     - name: Upload to Digital Ocean (Production Feed)
       run: |
-        s3cmd put v1/ios_data_feed_jq.json --mime-type 'application/json' --acl-public s3://sofafeed.macadmins.io/v1/ios_data_feed_uncompressed.json
-        s3cmd put v1/macos_data_feed_jq.json --mime-type 'application/json' --acl-public s3://sofafeed.macadmins.io/v1/macos_data_feed_uncompressed.json
-        s3cmd put v1/timestamp_jq.json --mime-type 'application/json' --acl-public s3://sofafeed.macadmins.io/v1/timestamp_uncompressed.json
+        s3cmd put v1/ios_data_feed.json --mime-type 'application/json' --acl-public s3://sofafeed.macadmins.io/v1/ios_data_feed_uncompressed.json
+        s3cmd put v1/macos_data_feed.json --mime-type 'application/json' --acl-public s3://sofafeed.macadmins.io/v1/macos_data_feed_uncompressed.json
+        s3cmd put v1/timestamp.json --mime-type 'application/json' --acl-public s3://sofafeed.macadmins.io/v1/timestamp_uncompressed.json
         s3cmd put v1/ios_data_feed_compressed.json --mime-type 'application/json' --add-header='Content-Encoding:gzip' --add-header='Cache-control:public, no-transform' --acl-public s3://sofafeed.macadmins.io/v1/ios_data_feed.json
         s3cmd put v1/macos_data_feed_compressed.json --mime-type 'application/json' --add-header='Content-Encoding:gzip' --add-header='Cache-control:public, no-transform' --acl-public s3://sofafeed.macadmins.io/v1/macos_data_feed.json
         s3cmd put v1/timestamp_compressed.json --mime-type 'application/json' --add-header='Content-Encoding:gzip' --add-header='Cache-control:public, no-transform' --acl-public s3://sofafeed.macadmins.io/v1/timestamp.json
