@@ -34,7 +34,7 @@ const coreMembers = [
 
     { 
     avatar: 'https://github.com/erikng.png',
-    name: 'Eric Gomez', 
+    name: 'Erik Gomez', 
     title: 'Core Contributor', 
     links: [{ icon: 'github', link: 'https://github.com/erikng' }] 
   },
