@@ -53,13 +53,13 @@ jobs:
       run: |
         jq -c . v1/ios_data_feed.json > v1/ios_data_feed_jq.json
         rm -f v1/ios_data_feed.json
-        mv v1/ios_data_feed_jq.json > v1/ios_data_feed.json
+        mv v1/ios_data_feed_jq.json v1/ios_data_feed.json
         jq -c . v1/macos_data_feed.json > v1/macos_data_feed_jq.json
         rm -f v1/macos_data_feed.json
-        mv v1/macos_data_feed_jq.json > v1/macos_data_feed.json
+        mv v1/macos_data_feed_jq.json v1/macos_data_feed.json
         jq -c . v1/timestamp.json > v1/timestamp_jq.json
         rm -f v1/timestamp.json
-        mv v1/timestamp_jq.json > v1/timestamp.json
+        mv v1/timestamp_jq.json v1/timestamp.json
 
     - name: Copy v1 data feed files into public dir for VitePress
       run: |
