@@ -28,3 +28,5 @@ const frontmatter = {
 <BetaInfo :title="frontmatter.title" :platform="frontmatter.platform" />
 
 ## OS Relevant Links
+
+- macOS 15.1 Release Notes: https://developer.apple.com/documentation/macos-release-notes/macos-15_1-release-notes
