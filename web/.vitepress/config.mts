@@ -9,13 +9,6 @@ export default defineConfig({
   themeConfig: {
     logo: '/custom_logo.png',
     head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
-    search: {
-      provider: 'local',  // Default search provider
-      options: {
-        // Search options can be configured here
-      }
-    },
-
     nav: [
       { text: 'Home', link: '/getting-started' },
       { text: '💫 Sequoia', link: '/macOS_Sequoia' }, 
