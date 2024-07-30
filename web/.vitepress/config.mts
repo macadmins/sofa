@@ -84,6 +84,11 @@ export default defineConfig({
         '@v1': resolve(__dirname, '../../v1'),
       },
     },
+    ssr: {
+      noExternal: [
+        // Add any packages that should not be externalized in the SSR bundle
+      ],
+    },
     plugins: [
       {
         name: 'vitepress-config-logger',
