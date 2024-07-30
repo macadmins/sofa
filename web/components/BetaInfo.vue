@@ -21,6 +21,7 @@
             <th>Build</th>
             <th>App</th>
             <th>Installer Package</th>
+            <th>IPSW</th>
             <th>Available</th>
             <th>Release Date</th>
           </tr>
@@ -30,9 +31,16 @@
             <td>{{ beta.Build }}</td>
             <td>{{ beta.App }}</td>
             <td>
-              <a :href="beta.InstallerPackage" target="_blank" rel="noopener noreferrer">
+              <a v-if="beta.InstallerPackage" :href="beta.InstallerPackage" target="_blank" rel="noopener noreferrer">
                 Download
               </a>
+              <span v-else>n/a</span>
+            </td>
+            <td>
+              <a v-if="beta.macos_ipsw_url" :href="beta.macos_ipsw_url" target="_blank" rel="noopener noreferrer">
+                Download
+              </a>
+              <span v-else>n/a</span>
             </td>
             <td>{{ beta.Available }}</td>
             <td>{{ formatDate(beta.ReleaseDate) }}</td>
