@@ -18,7 +18,7 @@ export default defineConfig({
 
     nav: [
       { text: 'Home', link: '/getting-started' },
-      { text: '⚡️ Sequoia', link: '/macOS_Sequoia' }, 
+      { text: '💫 Sequoia', link: '/macOS_Sequoia' }, 
       { text: '✨ Sonoma', link: '/macOS_Sonoma' },
       { text: 'Ventura', link: '/macOS_Ventura' },
       { text: 'Monterey', link: '/macOS_Monterey' },
