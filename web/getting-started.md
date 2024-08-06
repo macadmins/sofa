@@ -51,7 +51,7 @@ The RSS feed is generated using [feedgen](https://feedgen.kiesow.be/) by leverag
 Access the JSON feed directly for integration with automated tools or scripts. The current JSON feed URLs for macOS and iOS respectively are as follows:
 
 - https://sofafeed.macadmins.io/v1/macos_data_feed.json
-- https://sofafeed.macadmins.io/v1/icos_data_feed.json
+- https://sofafeed.macadmins.io/v1/ios_data_feed.json
 
 For guidance on how to utilize and implement the feed in scripts, explore examples in the [Tools section](https://github.com/macadmins/sofa/tree/main/tool-scripts), and read [this blog post](https://grahamrpugh.com/2024/07/22/sofa-new-feed.html).
 
