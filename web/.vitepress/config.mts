@@ -4,8 +4,8 @@ import { extractHeadings } from './plugins/extractHeadings';
 
 export default defineConfig({
   base: '/',
-  title: 'SOFA - by MAOS',
-  description: 'A MacAdmins Open Source project',
+  title: 'SOFA - by Mac Admins Open Source',
+  description: 'SOFA supports MacAdmins by efficiently tracking and surfacing information on updates for macOS and iOS.',
   themeConfig: {
     logo: '/custom_logo.png',
     head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
