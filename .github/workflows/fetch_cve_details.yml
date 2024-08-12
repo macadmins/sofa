@@ -2,12 +2,8 @@ name: Fetch CVE Details
 
 on:
   workflow_dispatch:
-  push:
-    branches-ignore:
-      - main
-    paths-ignore:
-      - .github/workflows/deploy.yml
-      - .github/workflows/run_docker_macos_workflow.yml
+  schedule:
+    - cron: '0 20 * * *' 
 
 jobs:
   fetch_cve_details:
