@@ -5,7 +5,9 @@ on:
   push:
     branches-ignore:
       - main
-      - nate/*
+    paths-ignore:
+      - .github/workflows/deploy.yml
+      - .github/workflows/run_docker_macos_workflow.yml
 
 jobs:
   fetch_cve_details:
