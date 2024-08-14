@@ -17,6 +17,15 @@ Updated automatically via GitHub Actions, the SOFA feed is a dynamic, centralize
 - **RSS Feed**: Provides RSS Feed for use with entries sorted by date released
 - **Web Interface**: Divided between the major version tabs at the top and organized into sections that cover the latest OS information, XProtect updates, and security details for each OS, SOFA facilitates both quick summaries and deep dives into relevant data points
 
+## Deprecation notice
+**IMPORTANT NOTE:** Update Your Use of SOFA Feed
+- Implement a USER-AGENT in Custom Tools
+To optimize hosting and caching for SOFA, please implement a user-agent in your integrations, tools, and workflows. This enhances performance and user interactions with SOFA.
+- Update to the New Feed Location
+Please update your scripts that are utilising the SOFA macOS and iOS feeds to point to **https://sofafeed.macadmins.io/v1/macos_data_feed.json** and **https://sofafeed.macadmins.io/v1/ios_data_feed.json** respectively.
+
+The old feed addresses of https://sofa.macadmins.io/v1/macos_data_feed.json and https://sofa.macadmins.io/v1/ios_data_feed.json are **deprecated** and will be removed soon.
+
 ### Use Cases
 
 SOFA supports a wide array of practical applications, whether for MacAdmin tooling directly or discussing the state of security on Apple platforms with security personnel.
