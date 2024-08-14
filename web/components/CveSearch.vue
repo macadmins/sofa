@@ -105,7 +105,7 @@ export default {
               const url = release.SecurityInfo ? [release.SecurityInfo] : [];
               results.push({
                 cveId: cveId,
-                osVersionDetail: `${release.ProductName} ${release.ProductVersion})`, 
+                osVersionDetail: `${release.ProductName} ${release.ProductVersion}`, 
                 isKev: release.ActivelyExploitedCVEs.includes(cveId),
                 platform: platform,
                 urls: url,
