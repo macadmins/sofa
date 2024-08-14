@@ -1,18 +1,30 @@
 <template>
   <div class="cve-search">
     <h2>Search CVE</h2>
-    <input v-model="searchTerm" @input="searchCve" placeholder="Enter CVE ID (e.g., CVE-2023-12345 or part of it)" />
+    <label class="quick-search-container">
+        <input type="checkbox" v-model="quickSearch" class="quick-search-checkbox" />
+        Quick Search
+      </label>
+    <div class="input-container">
+      <input
+        v-model="searchTerm"
+        @input="quickSearch ? searchCve() : null"
+        @keyup.enter="quickSearch ? null : searchCve"
+        placeholder="Enter CVE ID (e.g., CVE-2023-12345 or part of it)"
+      />
+      <button @click="searchCve" class="action-button" :disabled="quickSearch">Search</button>
+      <button @click="resetSearch" class="action-button reset-button">Reset</button>
+    </div>
     <div class="button-container">
-      <button @click="sortResultsByKev">KEV on Top</button>
-      <button @click="exportToCsv">Export as CSV</button>
-      <button @click="resetSearch" class="reset-button">Reset</button>
+      <button @click="sortResultsByKev" class="action-button">KEV on Top</button>
+      <button @click="exportToCsv" class="action-button">Export as CSV</button>
     </div>
     <div v-if="searchResults.length">
       <h3>Search Results for "{{ searchTerm }}"</h3>
       <ul>
         <li v-for="(result, index) in searchResults" :key="index" class="cve-result">
           <p><strong>CVE ID:</strong> {{ result.cveId }}</p>
-          <p><strong>OS Version(s):</strong> {{ formatOsVersions(result.osVersions) }}</p>
+          <p><strong>OS Version(s):</strong> {{ formatOsVersionsWithFixes(result.osVersionDetails) }}</p>
           <p><strong>KEV:</strong> {{ result.isKev ? '🔥 Yes' : 'No' }}</p>
           <div v-if="result.urls.length">
             <p><strong>Apple security content notes:</strong></p>
@@ -23,10 +35,11 @@
             </ul>
           </div>
           <div>
-            <p><strong>External Links:</strong></p>
+            <p><strong>Lookup Resources:</strong></p>
             <ul class="external-links-list">
               <li><a :href="`https://www.cve.org/CVERecord?id=${result.cveId}`" target="_blank">View {{ result.cveId }} on CVE.org</a></li>
               <li><a :href="`https://nvd.nist.gov/vuln/detail/${result.cveId}`" target="_blank">View {{ result.cveId }} on NVD (NIST)</a></li>
+              <li><a :href="`https://www.opencve.io/cve/${result.cveId}`" target="_blank">View {{ result.cveId }} on OpenCVE</a></li>
               <li v-if="result.isKev"><a :href="`https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=${result.cveId}`" target="_blank">View {{ result.cveId }} on CISA KEV</a></li>
             </ul>
           </div>
@@ -48,6 +61,7 @@ export default {
     return {
       searchTerm: '',
       searchResults: [],
+      quickSearch: false,
     };
   },
   methods: {
@@ -91,7 +105,7 @@ export default {
               const url = release.SecurityInfo ? [release.SecurityInfo] : [];
               results.push({
                 cveId: cveId,
-                osVersions: [os.OSVersion],
+                osVersionDetail: `${release.ProductName} ${release.ProductVersion})`, 
                 isKev: release.ActivelyExploitedCVEs.includes(cveId),
                 platform: platform,
                 urls: url,
@@ -108,13 +122,13 @@ export default {
 
       results.forEach((result) => {
         if (mergedResults[result.cveId]) {
-          mergedResults[result.cveId].osVersions.push(...result.osVersions);
+          mergedResults[result.cveId].osVersionDetails.push(result.osVersionDetail); 
           mergedResults[result.cveId].isKev = mergedResults[result.cveId].isKev || result.isKev;
           mergedResults[result.cveId].urls.push(...result.urls);
         } else {
           mergedResults[result.cveId] = {
             cveId: result.cveId,
-            osVersions: result.osVersions,
+            osVersionDetails: [result.osVersionDetail], 
             isKev: result.isKev,
             urls: result.urls,
           };
@@ -123,7 +137,7 @@ export default {
 
       Object.values(mergedResults).forEach(result => {
         result.urls = [...new Set(result.urls)];
-        result.osVersions = [...new Set(result.osVersions)];
+        result.osVersionDetails = [...new Set(result.osVersionDetails)]; 
       });
 
       return Object.values(mergedResults);
@@ -139,7 +153,7 @@ export default {
       const headers = ['CVE ID', 'OS Versions', 'KEV', 'Apple security content notes'];
       const rows = this.searchResults.map(result => [
         `"${result.cveId}"`,
-        `"${this.formatOsVersions(result.osVersions)}"`,
+        `"${this.formatOsVersionsWithFixes(result.osVersionDetails)}"`,
         result.isKev ? '"Yes"' : '"No"',
         `"${result.urls.join(', ')}"`
       ]);
@@ -157,13 +171,8 @@ export default {
       link.click();
       document.body.removeChild(link);
     },
-    formatOsVersions(osVersions) {
-      return osVersions.map(osVersion => {
-        if (/^\d+$/.test(osVersion)) {
-          return `iOS/iPadOS ${osVersion}`;
-        }
-        return osVersion;
-      }).join(', ');
+    formatOsVersionsWithFixes(osVersionDetails) {
+      return osVersionDetails.join(', ');
     }
   },
 };
@@ -174,24 +183,22 @@ export default {
   margin: 20px 0;
 }
 
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .cve-search input {
-  width: 100%;
+  flex: 1;
   padding: 10px;
-  margin-bottom: 0; /* Remove margin-bottom to align with the buttons */
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 16px; /* Increased font size to match */
+  font-size: 16px;
 }
 
-.button-container {
-  display: flex;
-  justify-content: flex-start;
-  gap: 10px;
-  margin-top: 20px; /* Add margin-top to create space between input and buttons */
-}
-
-.cve-search button {
-  display: inline-block;
+.action-button,
+.reset-button {
   padding: 10px 20px;
   border: 1px solid #5672cd;
   border-radius: 5px;
@@ -199,22 +206,43 @@ export default {
   color: #fff;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
-  font-size: 16px; /* Increased font size to match */
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
-.cve-search .reset-button {
+.reset-button {
   background-color: #888;
-  color: white;
-  border: 1px solid #888; /* Grey border for the grey button */
-  margin-left: auto; /* Move the reset button to the right */
+  border-color: #888;
 }
 
-.cve-search button:hover {
-  background-color: #455bb2; /* Slightly darker blue for hover */
+.action-button:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
 }
 
-.cve-search .reset-button:hover {
+.reset-button:hover {
   background-color: #666;
+}
+
+.quick-search-container {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.quick-search-container input {
+  width: auto;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+  align-items: center;
 }
 
 .cve-search ul {
@@ -231,8 +259,8 @@ export default {
 
 .cve-search h3 {
   margin-top: 0;
-  font-size: 16px; /* Adjusted font size for the heading */
-  margin: 10px; /* Added margin-bottom for spacing */
+  font-size: 16px;
+  margin: 10px;
 }
 
 .cve-search li p {
@@ -252,7 +280,7 @@ export default {
 .cve-result .security-notes-list li,
 .cve-result .external-links-list li {
   margin-bottom: 5px;
-  border: none; /* Remove border from these items */
+  border: none;
 }
 
 .cve-search a {
@@ -262,7 +290,5 @@ export default {
 
 .cve-search a:hover {
   text-decoration: underline;
-
 }
-
 </style>
