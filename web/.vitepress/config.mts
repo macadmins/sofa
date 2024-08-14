@@ -96,6 +96,19 @@ export default defineConfig({
           console.log('VitePress Config:', config);
         }
       }
-    ]
+    ],
+    build: {
+      rollupOptions: {
+        output: {
+          // Ensure that CSS files have a static name without hash
+          assetFileNames: (assetInfo) => {
+            if (assetInfo.name && assetInfo.name.endsWith('.css')) {
+              return 'assets/[name].css';
+            }
+            return 'assets/[name].[hash][extname]';
+          }
+        }
+      }
+    }
   },
 });
