@@ -10,20 +10,28 @@
         <p>{{ info.UpdateName }}</p>
         <p>
           Security Info: 
-          <a :href="createSafeLink(info.SecurityInfo)" target="_blank">{{ info.SecurityInfo }}</a>
+          <a :href="createSafeLink(info.SecurityInfo)" target="_blank">
+            {{ info.SecurityInfo && info.SecurityInfo !== 'This update has no published CVE entries.' ? info.SecurityInfo : 'This update has no published CVE entries.' }}
+          </a>
         </p>
-        <p>Vulnerabilities Addressed: {{ Object.keys(info.CVEs).length }}</p>
+        <p>Vulnerabilities Addressed: {{ Object.keys(info.CVEs).length || 0 }}</p>
         <p>
           Actively Exploited Vulnerabilities (KEV): 
-          <span v-for="(cve, idx) in info.ActivelyExploitedCVEs" :key="idx">
-            🔥 <a :href="`/cve-details.html?cveId=${cve}`" target="_blank">{{ cve }}</a>{{ idx < info.ActivelyExploitedCVEs.length - 1 ? ', ' : '' }}
+          <span v-if="info.ActivelyExploitedCVEs.length">
+            <span v-for="(cve, idx) in info.ActivelyExploitedCVEs" :key="idx">
+              🔥 <a :href="`/cve-details.html?cveId=${cve}`" target="_blank">{{ cve }}</a>{{ idx < info.ActivelyExploitedCVEs.length - 1 ? ', ' : '' }}
+            </span>
           </span>
+          <span v-else>0</span>
         </p>
         <p>
           CVEs: 
-          <span v-for="(cve, idx) in Object.keys(info.CVEs)" :key="idx">
-            <a :href="`/cve-details.html?cveId=${cve}`" target="_blank">{{ cve }}</a>{{ idx < Object.keys(info.CVEs).length - 1 ? ', ' : '' }}
+          <span v-if="Object.keys(info.CVEs).length">
+            <span v-for="(cve, idx) in Object.keys(info.CVEs)" :key="idx">
+              <a :href="`/cve-details.html?cveId=${cve}`" target="_blank">{{ cve }}</a>{{ idx < Object.keys(info.CVEs).length - 1 ? ', ' : '' }}
+            </span>
           </span>
+          <span v-else>0</span>
         </p>
         <p>Days to Prev. Release: {{ info.DaysSincePreviousRelease }}</p>
       </div>
@@ -84,6 +92,10 @@ export default {
     createSafeLink(url) {
       const tempAnchorElement = document.createElement('a');
       tempAnchorElement.href = url;
+      // Replace specific text with a generic link
+      if (url === 'This update has no published CVE entries.') {
+        return 'https://support.apple.com/en-ca/HT201222';
+      }
       return tempAnchorElement.href;
     },
     isCritical(url) {
