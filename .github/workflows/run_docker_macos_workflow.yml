@@ -39,6 +39,12 @@ jobs:
     - name: List contents of v1
       run: ls -la v1/
 
+    - name: Copy v1 data feed files into public dir for VitePress
+      run: |
+        mkdir -p public/v1
+        cp -r v1/*.json public/v1/
+        cp -r v1/*.xml public/v1/
+
     - name: Commit and push if changes are detected
       run: |
         timestamp=$(date +'%Y-%m-%d %H:%M:%S')
@@ -60,12 +66,6 @@ jobs:
         jq -c . v1/timestamp.json > v1/timestamp_jq.json
         rm -f v1/timestamp.json
         mv v1/timestamp_jq.json v1/timestamp.json
-
-    - name: Copy v1 data feed files into public dir for VitePress
-      run: |
-        mkdir -p public/v1
-        cp -r v1/*.json public/v1/
-        cp -r v1/*.xml public/v1/
 
     - name: Set up S3cmd cli tool
       uses: s3-actions/s3cmd@ef6ce583c6f4e5c121c53777f2f17740c36243be #v1.6.1
