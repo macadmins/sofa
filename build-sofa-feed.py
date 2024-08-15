@@ -767,20 +767,46 @@ def add_compatible_machines(current_macos_full_version: str) -> list:
 
 def write_data_to_json(feed_structure: dict, filename: str):
     """Writes the fully populated feed structure to JSON filename"""
+    latest_versions = {}
+    
     for os_version in feed_structure["OSVersions"]:
         if "Latest" in os_version:
-            os_version["Latest"]["ReleaseDate"] = format_iso_date(
+            product_version = os_version["Latest"].get("ProductVersion", "")
+            latest_date = format_iso_date(
                 os_version["Latest"].get("ReleaseDate", "")
             )
+            os_version["Latest"]["ReleaseDate"] = latest_date
+
             if "ExpirationDate" in os_version["Latest"]:
                 os_version["Latest"]["ExpirationDate"] = format_iso_date(
                     os_version["Latest"].get("ExpirationDate", "")
                 )
-        if "SecurityReleases" in os_version and isinstance(
-            os_version["SecurityReleases"], list
-        ):
+            
+            # Store the latest version info for comparison
+            latest_versions[product_version] = {
+                "latest_date": latest_date,
+                "os_version_dict": os_version
+            }
+        
+        if "SecurityReleases" in os_version and isinstance(os_version["SecurityReleases"], list):
             for release in os_version["SecurityReleases"]:
-                release["ReleaseDate"] = format_iso_date(release.get("ReleaseDate", ""))
+                potential_date = format_iso_date(release.get("ReleaseDate", ""))
+                product_version = release.get("ProductVersion", "")
+
+                if product_version in latest_versions:
+                    # Update security date if the product version matches
+                    latest_versions[product_version]["security_date"] = potential_date
+                release["ReleaseDate"] = potential_date
+    
+    # Update all relevant Latest entries with their respective security dates
+    for product_version, version_info in latest_versions.items():
+        if "security_date" in version_info:
+            latest_dict = version_info["os_version_dict"]["Latest"]
+            from_date = version_info["latest_date"]
+            to_date = version_info["security_date"]
+            latest_dict["ReleaseDate"] = to_date
+            print(f"Updated {product_version} ReleaseDate from {from_date} to {to_date}")
+        
     with open(filename, "w", encoding="utf-8") as json_file:
         json.dump(
             feed_structure, json_file, indent=4, ensure_ascii=False
