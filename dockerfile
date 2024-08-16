@@ -41,7 +41,7 @@ COPY cache/supported_devices.json /app/cache/supported_devices.json
 RUN touch time-series.csv || true
 COPY time-series.csv /app/
 
-COPY model_identifier_*.json /app/
+COPY cache/model_identifier_*.json /app/
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
