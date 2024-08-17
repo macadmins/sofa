@@ -34,7 +34,7 @@ To edit the file directly in GitHub's web interface, follow these steps:
      import { defineConfig } from 'vitepress';
 
      export default defineConfig({
-       base: '/sofa', // Add 'sofa' or replace with your actual repository name if it's different
+       base: '/sofa/', // Use 'sofa' here as shown or replace with your actual repository name if it's different
        title: 'SOFA - by Mac Admins Open Source',
      ```
   4. Click "Commit changes" to save.
@@ -138,7 +138,7 @@ This guide shows you how to clone the SOFA repository locally with Terminal or G
      import { defineConfig } from 'vitepress';
 
      export default defineConfig({
-       base: '/repo-name/', // Replace 'repo-name' with your actual repository name
+       base: '/sofa/', // Use 'sofa' here as shown or replace with your actual repository name if it's different
        title: 'SOFA - by Mac Admins Open Source',
      ```
    - Save the file.
