@@ -23,7 +23,7 @@ Set up your self-hosted SOFA feed and website in a few easy steps with GitHub's 
 
 #### Option 1: GitHub Pages Subdomain Deployment
 
-**Edit `config.mts`**:
+1. **Edit `config.mts`**:
 
 To edit the file directly in GitHub's web interface, follow these steps:
   1.	Navigate to (`web/.vitepress/config.mts`) in your forked repository.
@@ -92,11 +92,6 @@ To ensure the GitHub action works for self-hosted, remove the following unnecess
 ### Final Note
 
 This guide covers the basics of setting up a self-hosted SOFA site on GitHub. Scheduled updates and the fetch CVE action details are out of the scope of this guide.
-
-
-Here’s the refined version of your guide:
-
----
 
 ## SOFA on GitHub (Local Edits via Terminal/GitHub Desktop)
 
