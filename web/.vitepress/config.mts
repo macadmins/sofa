@@ -106,7 +106,7 @@ export default defineConfig({
             if (assetInfo.name && assetInfo.name.endsWith('.css')) {
               return 'assets/[name].css';
             }
-            return 'assets/[name].[hash][extname]';
+            return 'assets/[name][extname]';
           }
         }
       }
