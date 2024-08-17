@@ -54,6 +54,7 @@ export default defineConfig({
         text: 'Info',
         items: [
           { text: 'Getting Started', link: '/getting-started' },
+          { text: 'Self Hosted', link: '/self-hosted' },
           { text: 'Contributors', link: '/team' },
           { text: 'Commmunity', link: '/community' },
         ],

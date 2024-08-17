@@ -33,18 +33,19 @@ Hello 👋,
 - **Vulnerability Details:**  For each CVE, links are provided to view detailed records at CISA.gov or CVE.org. Use 'Command-click' to open a CVE record on the NVD website, highlighting detailed info on actively exploited vulnerabilities and related security advisories
 - **Search and Highlight**: Search for specific CVEs to identify which OS updates address the vulnerabilities
 
+
 ## Self-hosting
 
 For production use, we highly recommend self-hosting the feed to improve reliability and security. This can be easily done by forking this repository and setting up a GitHub Action to deploy the feed on your own webhost.
 
-For detailed instructions, check out our [Quick Start Guide to Self-Hosted SOFA](self-hosted.md).
+For detailed instructions, check out our [Quick Start Guide to Self-Hosted SOFA](self-hosting.md).
 
 ## JSON Feed Data
 
 Access the JSON feed directly for integration with automated tools or scripts. The current JSON feed URLs for macOS and iOS respectively are as follows:
 
 - https://sofafeed.macadmins.io/v1/macos_data_feed.json
-- https://sofafeed.macadmins.io/v1/ios_data_feed.json
+- https://sofafeed.macadmins.io/v1/icos_data_feed.json
 
 For guidance on how to utilize and implement the feed in scripts, explore examples in the [Tools section](https://github.com/macadmins/sofa/tree/main/tool-scripts), and read [this blog post](https://grahamrpugh.com/2024/07/22/sofa-new-feed.html).
 
