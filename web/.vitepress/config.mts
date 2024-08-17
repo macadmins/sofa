@@ -54,6 +54,7 @@ export default defineConfig({
         text: 'Info',
         items: [
           { text: 'Getting Started', link: '/getting-started' },
+          { text: 'Self Hosted', link: '/self-hosted' },
           { text: 'Contributors', link: '/team' },
           { text: 'Commmunity', link: '/community' },
         ],
@@ -105,7 +106,7 @@ export default defineConfig({
             if (assetInfo.name && assetInfo.name.endsWith('.css')) {
               return 'assets/[name].css';
             }
-            return 'assets/[name].[hash][extname]';
+            return 'assets/[name][extname]';
           }
         }
       }
