@@ -81,12 +81,17 @@ To ensure the GitHub action works for self-hosted, remove the following unnecess
 
 ### Step 4: Deploy and Verify
 
-1. **Trigger the Workflow**:
+1. **Enable GitHub Pages**:
+   - Go to **Settings - Pages** in your GitHub repository.
+   - In the **Build and Deployment** section, select **Source** - **Deploy from a branch**, and **Branch** - **main**, **/ (root)**, and press Save.
+   - It is also recommended to check the **Enforce HTTPS** box.
+
+2. **Trigger the Workflow**:
    - Go to the "Actions" tab in your repository.
    - Select the workflow you edited and click "Run workflow" to trigger it.
 
-2. **Verify the Deployment**:
-   - After the workflow completes, check that the SOFA site is deployed correctly on your custom domain or GitHub Pages subdomain.
+3. **Verify the Deployment**:
+   - After the workflow completes, check that the SOFA site is deployed correctly on your custom domain or GitHub Pages subdomain. A link to the site is shown in **Settings - Pages**.
    - Ensure that all data feeds and the VitePress site are accessible and functioning properly.
 
 ### Final Note
@@ -195,15 +200,19 @@ This guide shows you how to clone the SOFA repository locally with Terminal or G
 
 ### Step 5: Deploy and Verify
 
-1. **Trigger the Workflow**:
+1. **Enable GitHub Pages**:
+   - Go to **Settings - Pages** in your GitHub repository.
+   - In the **Build and Deployment** section, select **Source** - **Deploy from a branch**, and **Branch** - **main**, **/ (root)**, and press Save.
+   - It is also recommended to check the **Enforce HTTPS** box.
+
+2. **Trigger the Workflow**:
    - Go to the "Actions" tab in your GitHub repository.
    - Select the workflow you edited and click "Run workflow" to trigger it manually.
 
-2. **Verify the Deployment**:
-   - After the workflow completes, check that the SOFA site is deployed correctly on your custom domain or GitHub Pages subdomain.
+3. **Verify the Deployment**:
+   - After the workflow completes, check that the SOFA site is deployed correctly on your custom domain or GitHub Pages subdomain. A link to the site is shown in **Settings - Pages**.
    - Ensure that all data feeds and the VitePress site are accessible and functioning properly.
 
 ### Final Note
 
 This guide covers the basics of setting up a self-hosted SOFA site on GitHub with local edits. Scheduled updates and the fetch CVE action details are out of the scope of this guide. Please refer to the relevant documentation for those advanced configurations.
-
