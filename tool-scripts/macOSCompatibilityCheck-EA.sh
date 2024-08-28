@@ -37,7 +37,7 @@ etag_cache_new="$json_cache_dir/macos_data_feed_etag_new.txt"
 # ensure local cache folder exists
 /bin/mkdir -p "$json_cache_dir"
 
-# check local vs online using etag
+# check local vs online using etag (only available on macOS 12+)
 if [[ -f "$etag_cache_old" && -f "$json_cache" ]]; then
     echo "e-tag stored, will download only if e-tag doesn't match"
     etag_old=$(/bin/cat "$etag_cache_old")
@@ -49,6 +49,9 @@ if [[ -f "$etag_cache_old" && -f "$json_cache" ]]; then
         echo "Cached ETag did not match online ETag, so downloaded new SOFA json file"
         echo "$etag_new" > "$etag_cache_old"
     fi
+elif [[ "$os_compatibility" == "legacy" ]]; then
+    echo "OS not compatible with e-tags, proceeding to download SOFA json file"
+    /usr/bin/curl --compressed --location --max-time 3 --silent --header "User-Agent: $user_agent" "$online_json_url" --output "$json_cache"
 else
     echo "No e-tag or SOFA json file cached, proceeding to download SOFA json file"
     /usr/bin/curl --compressed --location --max-time 3 --silent --header "User-Agent: $user_agent" "$online_json_url" --etag-save "$etag_cache_old" --output "$json_cache"
