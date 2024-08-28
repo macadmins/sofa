@@ -33,8 +33,6 @@ if [[ -f "$etag_cache_old" && -f "$json_cache" ]]; then
     etag_new=$(/bin/cat "$etag_cache_new")
     if [[ -f "$etag_cache_new" && "$etag_new" == "" ]] || [[ "$etag_old" == "$etag_new" ]]; then
         echo "Cached ETag matched online ETag - cached json file is up to date"
-    elif [[ "$etag_old" == "$etag_new" ]]; then
-        echo "Cached ETag matched online ETag - cached json file is up to date"
     else
         echo "Cached ETag did not match online ETag, so downloaded new SOFA json file"
         echo "$etag_new" > "$etag_cache_old"
