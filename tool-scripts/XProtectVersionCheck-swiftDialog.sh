@@ -9,7 +9,7 @@ swiftDialog_command="/usr/local/bin/dialog" # Path to swiftDialog installation
 
 # URL to the online JSON data
 online_json_url="https://sofafeed.macadmins.io/v1/macos_data_feed.json"
-user_agent="SOFA-dialog-XProtectVersionCheck/1.0"
+user_agent="SOFA-dialog-XProtectVersionCheck/1.1"
 
 # local store
 json_cache_dir="/private/tmp/sofa"
