@@ -37,7 +37,7 @@ Here's a breakdown of what it does:
 
 3. If the data extracted from the SOFA JSON file is a number, it subtracts the local major macOS version number from the latest available macOS major version number as reported in the SOFA JSON file. Otherwise, it returns an empty value. The value is passed within the `<result></result>` tags.
 
-A smart group with the following criterion will populate with computers that are running a version of macOS that has a displacement of 2 or greater (i.e. `n-2`):
+A smart group with the following criterion will populate with computers that are running a version of macOS that is more than 2 major versions behind the current (i.e. beyond `n-2`):
 
 | Criterion Name             | Operator      | Value |
 | -------------------------- | ------------- | ----- |
