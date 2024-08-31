@@ -20,6 +20,29 @@ Here's a breakdown of what it does:
 
 3. It compares the local system version of macOS with the latest available compatible macOS version as reported in the SOFA JSON file. If they match, it returns `<result>Pass</result>`, indicating that the system is up to date. Otherwise, it returns `<result>Fail</result>`.
 
+### macOSVersionDisplacement.sh
+
+Knowing how far behind (or in front) an installed version of macOS is from the current is a useful benchmark to determine information such as:
+
+* Whether Apple are still providing software updates (i.e. current or previous 2 major versions - `n-2`)
+* Whether the system is running a beta version of macOS (i.e. current plus 1 major version - `n+1`)
+
+This script calculates the displacemenent between the current major macOS version and that installed on the system it runs. The result is a whole number (Integer data type in a Jamf Pro Extension Attribute). It can be further parsed/evaluated with mathematical criteria (e.g "greater than", "less than", "equal to" etc).
+
+Here's a breakdown of what it does:
+
+1. It retrieves the current latest available macOS version by using `curl` to fetch JSON data from the specified URL, then uses `plutil` (macOS 12+) or `python` (macOS 11-) to extract the version string. Note that for macOS 12+, a check is made to see if the cached version of the JSON file matches the current online version - this prevents unnecessary data transfer.
+
+2. It retrieves the local version of macOS using the command `/usr/bin/sw_vers -productVersion`.
+
+3. If the data extracted from the SOFA JSON file is a number, it subtracts the local major macOS version number from the latest available macOS major version number as reported in the SOFA JSON file. Otherwise, it returns an empty value. The value is passed within the `<result></result>` tags.
+
+A smart group with the following criterion will populate with computers that are running a version of macOS that has a displacement of 2 or greater (i.e. `n-2`):
+
+| Criterion Name             | Operator      | Value |
+| -------------------------- | ------------- | ----- |
+| macOS Version Displacement | greater than  | `2`   |
+
 ### macOSCVECheck-EA.sh
 
 SOFA gives information about CVEs that were reported as patched in every macOS release. We can therefore use this information along with a check to see if the system is running the latest available macOS, in order to provide information about how many unpatched CVEs are present on the local system.
