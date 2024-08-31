@@ -20,7 +20,7 @@ Here's a breakdown of what it does:
 
 3. It compares the local system version of macOS with the latest available compatible macOS version as reported in the SOFA JSON file. If they match, it returns `<result>Pass</result>`, indicating that the system is up to date. Otherwise, it returns `<result>Fail</result>`.
 
-### macOSVersionDisplacement.sh
+### macOSVersionDisplacement-EA.sh
 
 Knowing how far behind (or in front) an installed version of macOS is from the current is a useful benchmark to determine information such as:
 
