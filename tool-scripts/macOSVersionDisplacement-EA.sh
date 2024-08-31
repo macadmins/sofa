@@ -75,7 +75,7 @@ fi
 if [[ "$os_compatibility" == "current" ]]; then
     os_version=$( /usr/bin/plutil -extract "OSVersions.0.Latest.ProductVersion" raw "$json_cache" | /usr/bin/head -n 1 | /usr/bin/grep -v "<stdin>" )
 else
-    os_version=$( "$python_path" -c 'import sys, json; print json.load(sys.stdin)["OSVersions"][0]["OSVersion"]' < "$json_cache" | /usr/bin/head -n 1 )
+    os_version=$( "$python_path" -c 'import sys, json; print json.load(sys.stdin)["OSVersions"][0]["Latest"]["ProductVersion"]' < "$json_cache" | /usr/bin/head -n 1 )
 fi
 latest_os=$( /usr/bin/cut -d. -f1 <<< "$os_version"  )
 echo "Latest Major Version: $latest_os"
