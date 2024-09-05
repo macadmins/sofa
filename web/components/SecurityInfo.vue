@@ -94,7 +94,7 @@ export default {
       tempAnchorElement.href = url;
       // Replace specific text with a generic link
       if (url === 'This update has no published CVE entries.') {
-        return 'https://support.apple.com/en-ca/HT201222';
+        return 'https://support.apple.com/en-ca/100100';
       }
       return tempAnchorElement.href;
     },
