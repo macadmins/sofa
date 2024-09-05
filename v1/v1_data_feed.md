@@ -8,9 +8,9 @@ Provides rapid access to the latest OS version details, including product versio
 
 **Integration with Security Releases:**
 
-- Source: `HT201222`
+- Source: `100100`
 
-After the OS information is updated in HT201222 (could take hours or days), the system automatically enriches the dataset with security release details, including update names, release dates, security information URLs, CVE details, and the number of days since the previous release.
+After the OS information is updated in Apple Security releases page (could take hours or days), the system automatically enriches the dataset with security release details, including update names, release dates, security information URLs, CVE details, and the number of days since the previous release.
 
 **Static Information Sources:**
 

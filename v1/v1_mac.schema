@@ -6,7 +6,7 @@
       "type": "string"
     },
     "OSVersions": {
-      "description": "All macOS versions published to date that Apple has included in their security releases KB, HT201222",
+      "description": "All macOS versions published to date that Apple has included in their security releases page (formerly known as HT201222)",
       "type": "array",
       "items": {
         "type": "object",
@@ -48,7 +48,7 @@
             "required": [ "ProductVersion", "Build", "ReleaseDate", "ExpirationDate", "SupportedDevices" ]
           },
           "SecurityReleases": {
-            "description": "All OS releases tracked in HT201222, including latest",
+            "description": "All OS releases tracked in Apple security releases page, including latest",
             "type": "array",
             "items": {
               "type": "object",
