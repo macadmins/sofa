@@ -553,108 +553,102 @@ def format_iso_date(date_str: str) -> str:
             pass
     return date_str
 
-
 def fetch_security_releases(os_type: str, os_version: str, gdmf_data: dict) -> list:
-    """Fetch security releases for the given OS type and version, sourced from HT201222 page"""
-    url = (
-        "https://support.apple.com/en-us/100100"  # TODO: refactor to fetch once, only
-    )
-    response = requests.get(url)
+    """Fetch security releases for the given OS type and version, sourced from multiple Apple Support pages."""
+    
+    # Updated URLs to include multiple sources
+    urls = [
+        "https://support.apple.com/en-ca/100100",  # Current info
+        "https://support.apple.com/en-ca/121012",  # 2022 to 2023
+        "https://support.apple.com/en-ca/120989",  # 2020 to 2021
+        "https://support.apple.com/en-ca/103179",  # 2018 to 2019
+    ]
+    
     security_releases = []
-    if (
-        response.ok
-    ):  # TODO: any validation we want on the rest of this page we're parsing?
-        html_content = response.text
-        soup = BeautifulSoup(html_content, "lxml")
-        rows = soup.find_all("tr")
-        release_dates = []
-        for row in rows:
-            cells = row.find_all("td")
-            if cells:
-                name_info = cells[0].get_text(
-                    strip=True
-                )  # TODO: example of this value?
-                os_version_info = process_os_version(os_type, os_version, name_info)
-                # Ensure os_version_info non-empty/matches the targeted version before proceeding
-                if (
-                    os_version_info and os_version in os_version_info
-                ):  # Filter based on the targeted OS version
-                    link = cells[0].find("a", href=True)
-                    if link:
-                        link_info = urljoin("https://support.apple.com", link["href"])
-                        cves_exploitation_status = fetch_cves(link_info)
-                    else:
-                        link_info = None
-                        cves_exploitation_status = {}
-                    # extract ProductVersion from the name_info, any digit(s), dot, any digit(s)
-                    version_match = re.search(r"\d+(\.\d+)*", name_info)
-                    product_version = (
-                        version_match.group() if version_match else "Unknown"
-                    )
-                    print(
-                        f"Processing security release {product_version}, source {name_info}"
-                    )
-                    # Handling the case when the page indicates no published CVE entries
-                    if (
-                        link_info
-                        and "no published CVE entries"
-                        in fetch_content(link_info).lower()
-                    ):
-                        cves_exploitation_status = {}
-                    date = cells[-1].get_text(strip=True)
-                    release_dates.append(date)
-                    # Extract actively exploited CVEs if any
-                    actively_exploited_cves = [
-                        cve
-                        for cve, exploited in cves_exploitation_status.items()
-                        if exploited
-                    ]
-                    os_info = fetch_latest_os_version_info(
-                        os_type, product_version, gdmf_data
-                    )
-                    if not os_info:
-                        os_info = {}
-                    # Handle RSR releases by grabbing letter in ()
-                    rsr_release = None
-                    if "Rapid Security Response" in os_version_info:
-                        rsr_vers = re.search(r"\((\w)\)", os_version_info)
-                        if rsr_vers:
-                            rsr_release = rsr_vers.group(1)
-                    security_releases.append(
-                        {
-                            "UpdateName": os_version_info,
-                            "ProductName": os_type,
-                            "ProductVersion": product_version,
-                            "ReleaseDate": date,
-                            "ReleaseType": (
-                                f"RSR_{rsr_release}" if rsr_release else "OS"
-                            ),
-                            "SecurityInfo": (
-                                link_info
-                                if link_info
-                                else "This update has no published CVE entries."
-                            ),
-                            "SupportedDevices": os_info.get("SupportedDevices", []),
-                            "CVEs": cves_exploitation_status,
-                            "ActivelyExploitedCVEs": actively_exploited_cves,
-                            "UniqueCVEsCount": len(cves_exploitation_status),
-                        }
-                    )
-        days_since_previous_release = calculate_days_since_previous_release(
-            release_dates
-        )
-        for release in security_releases:
-            release_date = release["ReleaseDate"]
-            if release_date in days_since_previous_release:
-                release["DaysSincePreviousRelease"] = days_since_previous_release[
-                    release_date
-                ]
-            else:
-                release["DaysSincePreviousRelease"] = 0
-        return security_releases
-    else:
-        print("Failed to retrieve security releases.")
-        return []
+    release_dates = []
+
+    # Loop through each URL to gather security release data
+    for url in urls:
+        print(f"Fetching data from {url}")
+        response = requests.get(url)
+
+        if (
+            response.ok
+        ):  # TODO: any validation we want on the rest of this page we're parsing?
+            html_content = response.text
+            soup = BeautifulSoup(html_content, "lxml")
+            rows = soup.find_all("tr")
+            
+            release_dates = []
+            for row in rows:
+                cells = row.find_all("td")
+                if cells:
+                    name_info = cells[0].get_text(strip=True)  # TODO: example of this value?
+                    os_version_info = process_os_version(os_type, os_version, name_info)
+                    # Ensure os_version_info non-empty/matches the targeted version before proceeding
+                    if os_version_info and os_version in os_version_info:  # Filter based on the targeted OS version
+                        link = cells[0].find("a", href=True)
+                        if link:
+                            link_info = urljoin("https://support.apple.com", link["href"])
+                            cves_exploitation_status = fetch_cves(link_info)
+                        else:
+                            link_info = None
+                            cves_exploitation_status = {}
+                        # extract ProductVersion from the name_info, any digit(s), dot, any digit(s)
+                        version_match = re.search(r"\d+(\.\d+)*", name_info)
+                        product_version = version_match.group() if version_match else "Unknown"
+                        print(f"Processing security release {product_version}, source {name_info}")
+                        # Handling the case when the page indicates no published CVE entries
+                        if link_info and "no published CVE entries" in fetch_content(link_info).lower():
+                            cves_exploitation_status = {}
+                        date = cells[-1].get_text(strip=True)
+                        release_dates.append(date)
+                        # Extract actively exploited CVEs if any
+                        actively_exploited_cves = [
+                            cve for cve, exploited in cves_exploitation_status.items() if exploited
+                        ]
+                        os_info = fetch_latest_os_version_info(os_type, product_version, gdmf_data)
+                        if not os_info:
+                            os_info = {}
+                        # Handle RSR releases by grabbing letter in ()
+                        rsr_release = None
+                        if "Rapid Security Response" in os_version_info:
+                            rsr_vers = re.search(r"\((\w)\)", os_version_info)
+                            if rsr_vers:
+                                rsr_release = rsr_vers.group(1)
+                        security_releases.append(
+                            {
+                                "UpdateName": os_version_info,
+                                "ProductName": os_type,
+                                "ProductVersion": product_version,
+                                "ReleaseDate": date,
+                                "ReleaseType": (
+                                    f"RSR_{rsr_release}" if rsr_release else "OS"
+                                ),
+                                "SecurityInfo": (
+                                    link_info
+                                    if link_info
+                                    else "This update has no published CVE entries."
+                                ),
+                                "SupportedDevices": os_info.get("SupportedDevices", []),
+                                "CVEs": cves_exploitation_status,
+                                "ActivelyExploitedCVEs": actively_exploited_cves,
+                                "UniqueCVEsCount": len(cves_exploitation_status),
+                            }
+                        )
+            days_since_previous_release = calculate_days_since_previous_release(release_dates)
+            for release in security_releases:
+                release_date = release["ReleaseDate"]
+                if release_date in days_since_previous_release:
+                    release["DaysSincePreviousRelease"] = days_since_previous_release[release_date]
+                else:
+                    release["DaysSincePreviousRelease"] = 0
+        else:
+            print(f"Failed to retrieve data from {url}")
+            continue  # Skip to the next URL if the current one fails
+    
+    return security_releases if security_releases else print("Failed to retrieve security releases.") or []
+
 
 
 def process_os_version(os_type: str, os_version: str, name_info: str) -> str:
