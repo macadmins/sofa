@@ -555,14 +555,11 @@ def format_iso_date(date_str: str) -> str:
 
 
 def fetch_security_releases(os_type: str, os_version: str, gdmf_data: dict) -> list:
-    """Fetch security releases for the given OS type and version, sourced from 100100 and year by year pages"""
-    urls = [
-        "https://support.apple.com/en-ca/100100",  # Current info
-        "https://support.apple.com/en-ca/121012",  # 2022 to 2023
-        "https://support.apple.com/en-ca/120989",  # 2020 to 2021
-        "https://support.apple.com/en-ca/103179",  # 2018 to 2019
-    ]
-    response = requests.get(urls)
+    """Fetch security releases for the given OS type and version, sourced from HT201222 page"""
+    url = (
+        "https://support.apple.com/en-us/100100"  # TODO: refactor to fetch once, only
+    )
+    response = requests.get(url)
     security_releases = []
     if (
         response.ok
