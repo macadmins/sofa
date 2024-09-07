@@ -15,6 +15,7 @@ export default defineConfig({
       { text: '✨ Sonoma', link: '/macOS_Sonoma' },
       { text: 'Ventura', link: '/macOS_Ventura' },
       { text: 'Monterey', link: '/macOS_Monterey' },
+      { text: '💫 iOS 18', link: '/iOS_18' },
       { text: '✨ iOS 17', link: '/iOS_17' },
       { text: 'iOS 16', link: '/iOS_16' },
       { text: 'Use Cases', link: '/use-cases' },
@@ -26,6 +27,7 @@ export default defineConfig({
       {
         text: 'macOS',
         items: [
+          { text: 'Sequoia 15', link: '/macOS_Sequoia' },
           { text: 'Sonoma 14', link: '/macOS_Sonoma' },
           { text: 'Ventura 13', link: '/macOS_Ventura' },
           { text: 'Monterey 12', link: '/macOS_Monterey' },
@@ -34,6 +36,7 @@ export default defineConfig({
       {
         text: 'iOS',
         items: [
+          { text: 'iOS 17', link: '/iOS_18' },
           { text: 'iOS 17', link: '/iOS_17' },
           { text: 'iOS 16', link: '/iOS_16' },
         ],

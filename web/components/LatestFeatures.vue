@@ -1,6 +1,9 @@
 <template>
   <div>
     <div v-if="osData">
+      <p>Feature information will be available when no longer in beta.</p>
+    </div>
+    <div v-else-if="osData">
       <div class="row-container">
         <div class="feature-column">
           <img :src="osImage" alt="OS Image" class="os-image" />
@@ -55,6 +58,10 @@ export default {
     platform: {
       type: String,
       required: true,
+    },
+    stage: {
+      type: String,
+      default: 'release', // Default to 'release'
     },
   },
   data() {
@@ -121,6 +128,8 @@ export default {
         }
       } else if (platform === 'iOS') {
         if (title.includes('iOS 17')) {
+          return this.getAssetPath('images/ios_18.png');
+        } else if (title.includes('iOS 17')) {
           return this.getAssetPath('images/ios_17.png');
         } else if (title.includes('iOS 16')) {
           return this.getAssetPath('images/ios_16.png');
