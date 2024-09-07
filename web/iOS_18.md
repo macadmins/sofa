@@ -1,35 +1,25 @@
 ---
-title: Sequoia 15
-platform: macOS
-layout: doc
+title: 18
+platform: iOS
 ---
 
-# macOS Sequoia 15 <Badge type="warning" text="beta version" />
+# iOS/iPadOS 18 <Badge type="tip" text="beta version" />
 
 ::: warning BETA VERSION 
-This is preliminary information about the latest macOS beta releases.
+This is preliminary information about the latest iOS/iPadOS beta releases.
 :::
-
-## Latest info
-
-- Apple Sequoia Preview https://www.apple.com/macos/macos-sequoia-preview/
 
 
 <script setup>
-import BetaInfo from './components/BetaInfo.vue';
 import LatestFeatures from './components/LatestFeatures.vue';
 import SecurityInfo from './components/SecurityInfo.vue';
 
 const frontmatter = {
-  title: 'Sequoia 15',
-  platform: 'macOS',
+  title: 'iOS 18',
+  platform: 'iOS',
   stage: 'beta',
 };
 </script>
-
-
-## Beta Information for Sequoia 15
-<BetaInfo :title="frontmatter.title" :platform="frontmatter.platform" :stage="frontmatter.stage" />
 
 ## Latest Release Info
 <LatestFeatures :title="frontmatter.title" :platform="frontmatter.platform" :stage="frontmatter.stage" />
