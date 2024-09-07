@@ -36,7 +36,7 @@ export default defineConfig({
       {
         text: 'iOS',
         items: [
-          { text: 'iOS 17', link: '/iOS_18' },
+          { text: 'iOS 18', link: '/iOS_18' },
           { text: 'iOS 17', link: '/iOS_17' },
           { text: 'iOS 16', link: '/iOS_16' },
         ],
