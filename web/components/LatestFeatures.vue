@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="osData">
+    <div v-if="!osData && stage === 'beta'">
       <p>Feature information will be available when no longer in beta.</p>
     </div>
     <div v-else-if="osData">
@@ -127,7 +127,7 @@ export default {
           return this.getAssetPath('images/Monterey.png');
         }
       } else if (platform === 'iOS') {
-        if (title.includes('iOS 17')) {
+        if (title.includes('iOS 18')) {
           return this.getAssetPath('images/ios_18.png');
         } else if (title.includes('iOS 17')) {
           return this.getAssetPath('images/ios_17.png');
