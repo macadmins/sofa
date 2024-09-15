@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Show beta message if stage is beta and no security data is available -->
-    <div v-if="!securityData && stage === 'beta'">
+    <div v-if="(securityData === null || securityData.length === 0) && stage === 'beta'">
       <p>Feature information will be available when no longer in beta.</p>
     </div>
 
@@ -90,7 +90,8 @@ export default {
         const osVersion = this.title.split(' ')[1];
         const osData = data.OSVersions.find((os) => os.OSVersion.includes(osVersion));
         if (osData) {
-          this.securityData = osData.SecurityReleases || [];
+          // Check if SecurityReleases is an array and is not empty
+          this.securityData = osData.SecurityReleases && osData.SecurityReleases.length ? osData.SecurityReleases : [];
         } else {
           throw new Error(`No data found for ${this.platform} ${osVersion}`);
         }

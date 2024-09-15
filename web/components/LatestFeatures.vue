@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="!osData && stage === 'beta'">
+    <div v-if="(!osData || osData.Latest.ReleaseDate === 'Unknown') && stage === 'beta'">
       <p>Feature information will be available when no longer in beta.</p>
     </div>
     <div v-else-if="osData">
@@ -85,6 +85,10 @@ export default {
         if (this.osData) {
           console.log('Loaded OS Data:', this.osData); // Log the data for debugging
 
+          if (!this.osData.Latest.ReleaseDate || this.osData.Latest.ReleaseDate === '') {
+            this.osData.Latest.ReleaseDate = 'Unknown'; // Set ReleaseDate to 'Unknown' if it's missing
+          }
+
           if (this.osData.OSVersion === 'Sonoma 14') {
             this.installationApps = data.InstallationApps;
             if (this.installationApps) {
@@ -141,10 +145,16 @@ export default {
       return new URL(`/${relativePath}`, import.meta.url).href;
     },
     formatDate(dateString) {
+      if (dateString === 'Unknown') {
+        return 'Unknown'; // Handle the case for unknown date
+      }
       const options = { year: 'numeric', month: 'long', day: 'numeric' };
       return new Date(dateString).toLocaleDateString(undefined, options);
     },
     daysSinceRelease(dateString) {
+      if (dateString === 'Unknown') {
+        return 'Unknown'; // Handle the case for unknown date
+      }
       const releaseDate = new Date(dateString);
       const currentDate = new Date();
       const timeDiff = currentDate - releaseDate;
@@ -152,6 +162,9 @@ export default {
       return daysDiff;
     },
     timeSinceRelease(dateString) {
+      if (dateString === 'Unknown') {
+        return 'Unknown'; // Handle the case for unknown date
+      }
       const releaseDate = new Date(dateString);
       const currentDate = new Date();
       const timeDiff = currentDate - releaseDate;
