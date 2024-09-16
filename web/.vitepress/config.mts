@@ -11,12 +11,12 @@ export default defineConfig({
     head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
     nav: [
       { text: 'Home', link: '/getting-started' },
-      { text: '💫 Sequoia', link: '/macOS_Sequoia' }, 
-      { text: '✨ Sonoma', link: '/macOS_Sonoma' },
+      { text: '✨ Sequoia', link: '/macOS_Sequoia' }, 
+      { text: 'Sonoma', link: '/macOS_Sonoma' },
       { text: 'Ventura', link: '/macOS_Ventura' },
       { text: 'Monterey', link: '/macOS_Monterey' },
-      { text: '💫 iOS 18', link: '/iOS_18' },
-      { text: '✨ iOS 17', link: '/iOS_17' },
+      { text: '✨ iOS 18', link: '/iOS_18' },
+      { text: 'iOS 17', link: '/iOS_17' },
       { text: 'iOS 16', link: '/iOS_16' },
       { text: 'Use Cases', link: '/use-cases' },
     ],
@@ -39,12 +39,6 @@ export default defineConfig({
           { text: 'iOS 18', link: '/iOS_18' },
           { text: 'iOS 17', link: '/iOS_17' },
           { text: 'iOS 16', link: '/iOS_16' },
-        ],
-      },
-      {
-        text: 'Beta Versions',
-        items: [
-          { text: 'macOS Sequoia', link: '/macOS_Sequoia' }
         ],
       },
       {
