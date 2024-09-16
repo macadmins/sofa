@@ -52,7 +52,7 @@ export default {
         const version = versionMatch ? versionMatch[0] : '';
 
         // Extract the version name for macOS
-        const macOSVersionMatch = this.title.match(/Sonoma|Ventura|Monterey|Big Sur|Catalina|Mojave|High Sierra|Sierra|El Capitan|Yosemite/);
+        const macOSVersionMatch = this.title.match(/Sequoia|Sonoma|Ventura|Monterey|Big Sur|Catalina|Mojave|High Sierra|Sierra|El Capitan|Yosemite/);
         const macOSVersion = macOSVersionMatch ? macOSVersionMatch[0] : '';
 
         if (platform === 'iOS' && version && data[platform] && data[platform][version]) {
