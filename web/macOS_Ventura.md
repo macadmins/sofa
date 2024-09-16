@@ -4,7 +4,7 @@ platform: macOS
 layout: doc
 ---
 
-# macOS Ventura 13 <Badge type="tip" text="Previous Version (N-1)" />
+# macOS Ventura 13 <Badge type="tip" text="Preceding Version (N-2)" />
 
 ::: tip STABLE RELEASE WITH MOST SECURITY UPDATES
 This version of macOS may not contain the newest security features contained in the latest macOS version. To maintain your computer's security, stability, and compatibility, Apple recommends using the latest macOS that is compatible with your Mac. 
