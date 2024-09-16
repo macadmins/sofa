@@ -4,19 +4,14 @@ platform: macOS
 layout: doc
 ---
 
-# macOS Sequoia 15 <Badge type="warning" text="beta version" />
+# macOS Sequoia 15 <Badge type="tip" text="Current Version (N-0)" />
 
-::: warning BETA VERSION 
-This is preliminary information about the latest macOS beta releases.
+::: tip RECOMMENDED RELEASE FOR MOST UP-TO-DATE SECURITY
+This is the latest version of macOS that receives the most up-to-date security patches and updates, making it the recommended choice to protect your devices.
 :::
-
-## Latest info
-
-- Apple Sequoia Preview https://www.apple.com/macos/macos-sequoia-preview/
 
 
 <script setup>
-import BetaInfo from './components/BetaInfo.vue';
 import LatestFeatures from './components/LatestFeatures.vue';
 import SecurityInfo from './components/SecurityInfo.vue';
 
@@ -26,10 +21,6 @@ const frontmatter = {
   stage: 'beta',
 };
 </script>
-
-
-## Beta Information for Sequoia 15
-<BetaInfo :title="frontmatter.title" :platform="frontmatter.platform" :stage="frontmatter.stage" />
 
 ## Latest Release Info
 <LatestFeatures :title="frontmatter.title" :platform="frontmatter.platform" :stage="frontmatter.stage" />
