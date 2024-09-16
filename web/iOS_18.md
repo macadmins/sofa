@@ -16,7 +16,7 @@ import SecurityInfo from './components/SecurityInfo.vue';
 const frontmatter = {
   title: 'iOS 18',
   platform: 'iOS',
-  stage: 'beta',
+  stage: 'release',
 };
 </script>
 

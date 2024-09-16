@@ -18,7 +18,7 @@ import SecurityInfo from './components/SecurityInfo.vue';
 const frontmatter = {
   title: 'Sequoia 15',
   platform: 'macOS',
-  stage: 'beta',
+  stage: 'release',
 };
 </script>
 
