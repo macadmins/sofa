@@ -13,7 +13,7 @@
           <p><strong>Build:</strong> {{ osData.Latest.Build }}</p>
           <p><strong>Release Date:</strong> {{ formatDate(osData.Latest.ReleaseDate) }}</p>
           <p><strong>Days Since Release:</strong> {{ daysSinceRelease(osData.Latest.ReleaseDate) }}</p>
-          <div v-if="osData.OSVersion === 'Sonoma 14'">
+          <div v-if="osData.OSVersion === 'Sequoia 15'">
             <p v-if="installationApps?.LatestUMA?.url">
               <strong>Installer Package: </strong>
               <a :href="installationApps.LatestUMA.url" target="_blank">Download</a>
