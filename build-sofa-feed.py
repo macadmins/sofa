@@ -222,7 +222,7 @@ def process_os_type(os_type: str, config: dict, gdmf_data: dict) -> list:
     }
     if os_type == "macOS":
         catalog_url: str = (
-            "https://swscan.apple.com/content/catalogs/others/index-15seed-15-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz" 
+            "https://swscan.apple.com/content/catalogs/others/index-15-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog" 
     # noqa: E501 pylint: disable=line-too-long
         )
         catalog_content = fetch_content(catalog_url)
