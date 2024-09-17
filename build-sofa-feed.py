@@ -222,7 +222,7 @@ def process_os_type(os_type: str, config: dict, gdmf_data: dict) -> list:
     }
     if os_type == "macOS":
         catalog_url: str = (
-            "https://swscan.apple.com/content/catalogs/others/index-15seed-15-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz" 
+            "https://swscan.apple.com/content/catalogs/others/index-15-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog" 
     # noqa: E501 pylint: disable=line-too-long
         )
         catalog_content = fetch_content(catalog_url)
@@ -580,8 +580,8 @@ def fetch_security_releases(os_type: str, os_version: str, gdmf_data: dict) -> l
     urls = [
         "https://support.apple.com/en-ca/100100",  # Current info
         "https://support.apple.com/en-ca/121012",  # 2022 to 2023
-        "https://support.apple.com/en-ca/120989",  # 2020 to 2021
-        "https://support.apple.com/en-ca/103179",  # 2018 to 2019
+        #"https://support.apple.com/en-ca/120989",  # 2020 to 2021
+        #"https://support.apple.com/en-ca/103179",  # 2018 to 2019
     ]
     
     security_releases = []
@@ -617,6 +617,9 @@ def fetch_security_releases(os_type: str, os_version: str, gdmf_data: dict) -> l
                         # extract ProductVersion from the name_info, any digit(s), dot, any digit(s)
                         version_match = re.search(r"\d+(\.\d+)*", name_info)
                         product_version = version_match.group() if version_match else "Unknown"
+                        # Ensure that product_version includes the minor version or add .0 see GH issue #174
+                        if '.' not in product_version:
+                            product_version += '.0'
                         print(f"Processing security release {product_version}, source {name_info}")
                         # Handling the case when the page indicates no published CVE entries
                         if link_info and "no published CVE entries" in fetch_content(link_info).lower():
