@@ -29,7 +29,7 @@ online_json_url="https://sofafeed.macadmins.io/v1/macos_data_feed.json"
 user_agent="SOFA-Jamf-EA-macOSCompatibilityCheck/1.1"
 
 # local store
-json_cache_dir="/private/tmp/sofa"
+json_cache_dir="/var/tmp/sofa"
 json_cache="$json_cache_dir/macos_data_feed.json"
 etag_cache="$json_cache_dir/macos_data_feed_etag.txt"
 etag_cache_temp="$json_cache_dir/macos_data_feed_etag_temp.txt"
@@ -74,6 +74,10 @@ fi
 
 # Get model (DeviceID)
 model=$(/usr/sbin/sysctl -n hw.model)
+if [[ -z "$model" ]]; then
+    echo "<result>Could not obtain model</result>"
+    exit
+fi
 echo "Model Identifier: $model"
 
 # check that the model is virtual or is in the feed at all
