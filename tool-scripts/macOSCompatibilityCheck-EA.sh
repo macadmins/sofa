@@ -94,7 +94,7 @@ else
     # identify the latest major OS (macOS 11- method)
     latest_os=$("$python_path" -c 'import sys, json; print json.load(sys.stdin)["OSVersions"][0]["OSVersion"]' < "$json_cache" | /usr/bin/head -n 1)
     # idenfity latest compatible major OS (macOS 11- method)
-    latest_compatible_os=$("$python_path" -c 'import sys, json; print json.load(sys.stdin)["Models"]['"$model"']["SupportedOS"][0]' < "$json_cache" | /usr/bin/head -n 1)
+    latest_compatible_os=$("$python_path" -c 'import sys, json; print json.load(sys.stdin)["Models"]["'$model'"]["SupportedOS"][0]' < "$json_cache" | /usr/bin/head -n 1)
 fi
 echo "Latest macOS: $latest_os"
 echo "Latest Compatible macOS: $latest_compatible_os"
