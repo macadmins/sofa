@@ -617,6 +617,9 @@ def fetch_security_releases(os_type: str, os_version: str, gdmf_data: dict) -> l
                         # extract ProductVersion from the name_info, any digit(s), dot, any digit(s)
                         version_match = re.search(r"\d+(\.\d+)*", name_info)
                         product_version = version_match.group() if version_match else "Unknown"
+                        # Ensure that product_version includes the minor version or add .0 see GH issue #174
+                        if '.' not in product_version:
+                            product_version += '.0'
                         print(f"Processing security release {product_version}, source {name_info}")
                         # Handling the case when the page indicates no published CVE entries
                         if link_info and "no published CVE entries" in fetch_content(link_info).lower():
