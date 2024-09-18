@@ -792,16 +792,16 @@ def write_data_to_json(feed_structure: dict, filename: str):
             latest_dict = os_version["Latest"]
             
             # Ensure all required keys are present with default values
-            latest_dict.setdefault("ProductVersion", "")
-            latest_dict.setdefault("ReleaseDate", "")
-            latest_dict.setdefault("ExpirationDate", "")
-            latest_dict.setdefault("Build", "")
-            latest_dict.setdefault("SecurityInfo", "")
-            latest_dict.setdefault("UniqueCVEsCount", 0)
-            latest_dict.setdefault("ActivelyExploitedCVEs", [])
-            latest_dict.setdefault("CVEs", {})
-            latest_dict.setdefault("SupportedDevices", [])
-
+            latest_dict["ProductVersion"] = latest_dict.get("ProductVersion", "")
+            latest_dict["ReleaseDate"] = latest_dict.get("ReleaseDate", "")
+            latest_dict["ExpirationDate"] = latest_dict.get("ExpirationDate", "")
+            latest_dict["Build"] = latest_dict.get("Build", "")
+            latest_dict["SecurityInfo"] = latest_dict.get("SecurityInfo", "")
+            latest_dict["UniqueCVEsCount"] = latest_dict.get("UniqueCVEsCount", 0)
+            latest_dict["ActivelyExploitedCVEs"] = latest_dict.get("ActivelyExploitedCVEs", [])
+            latest_dict["CVEs"] = latest_dict.get("CVEs", {})
+            latest_dict["SupportedDevices"] = latest_dict.get("SupportedDevices", [])
+            
             # Convert dates to ISO format
             latest_dict["ReleaseDate"] = format_iso_date(latest_dict.get("ReleaseDate", ""))
             latest_dict["ExpirationDate"] = format_iso_date(latest_dict.get("ExpirationDate", ""))
@@ -817,8 +817,8 @@ def write_data_to_json(feed_structure: dict, filename: str):
         # Handle SecurityReleases similarly if present
         if "SecurityReleases" in os_version and isinstance(os_version["SecurityReleases"], list):
             for release in os_version["SecurityReleases"]:
-                release.setdefault("ProductVersion", "")
-                release.setdefault("ReleaseDate", "")
+                release["ProductVersion"] = release.get("ProductVersion", "")
+                release["ReleaseDate"] = release.get("ReleaseDate", "")
                 release["ReleaseDate"] = format_iso_date(release.get("ReleaseDate", ""))
 
                 product_version = release["ProductVersion"]
@@ -835,7 +835,9 @@ def write_data_to_json(feed_structure: dict, filename: str):
     
     # Write the updated feed structure back to a file
     with open(filename, "w", encoding="utf-8") as json_file:
-        json.dump(feed_structure, json_file, indent=4, ensure_ascii=False)
+        json.dump(
+            feed_structure, json_file, indent=4, ensure_ascii=False
+        )  # TODO: ascii false because we might have utf8 in it?
 
 
 def create_rss_json_data(feed_structure: dict) -> list:
