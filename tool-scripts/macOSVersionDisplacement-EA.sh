@@ -43,7 +43,7 @@ online_json_url="https://sofafeed.macadmins.io/v1/macos_data_feed.json"
 user_agent="SOFA-Jamf-EA-macOSVersionDisplacement/1.0"
 
 # Local store
-json_cache_dir="/private/tmp/sofa"
+json_cache_dir="/private/var/tmp/sofa"
 json_cache="$json_cache_dir/macos_data_feed.json"
 etag_cache="$json_cache_dir/macos_data_feed_etag.txt"
 etag_cache_temp="$json_cache_dir/macos_data_feed_etag_temp.txt"
