@@ -789,46 +789,53 @@ def write_data_to_json(feed_structure: dict, filename: str):
     
     for os_version in feed_structure["OSVersions"]:
         if "Latest" in os_version:
-            product_version = os_version["Latest"].get("ProductVersion", "")
-            latest_date = format_iso_date(
-                os_version["Latest"].get("ReleaseDate", "")
-            )
-            os_version["Latest"]["ReleaseDate"] = latest_date
-
-            if "ExpirationDate" in os_version["Latest"]:
-                os_version["Latest"]["ExpirationDate"] = format_iso_date(
-                    os_version["Latest"].get("ExpirationDate", "")
-                )
+            latest_dict = os_version["Latest"]
             
+            # Ensure all required keys are present with default values
+            latest_dict.setdefault("ProductVersion", "")
+            latest_dict.setdefault("ReleaseDate", "")
+            latest_dict.setdefault("ExpirationDate", "")
+            latest_dict.setdefault("Build", "")
+            latest_dict.setdefault("SecurityInfo", "")
+            latest_dict.setdefault("UniqueCVEsCount", 0)
+            latest_dict.setdefault("ActivelyExploitedCVEs", [])
+            latest_dict.setdefault("CVEs", {})
+            latest_dict.setdefault("SupportedDevices", [])
+
+            # Convert dates to ISO format
+            latest_dict["ReleaseDate"] = format_iso_date(latest_dict.get("ReleaseDate", ""))
+            latest_dict["ExpirationDate"] = format_iso_date(latest_dict.get("ExpirationDate", ""))
+            
+            product_version = latest_dict["ProductVersion"]
+
             # Store the latest version info for comparison
             latest_versions[product_version] = {
-                "latest_date": latest_date,
+                "latest_date": latest_dict["ReleaseDate"],
                 "os_version_dict": os_version
             }
         
+        # Handle SecurityReleases similarly if present
         if "SecurityReleases" in os_version and isinstance(os_version["SecurityReleases"], list):
             for release in os_version["SecurityReleases"]:
-                potential_date = format_iso_date(release.get("ReleaseDate", ""))
-                product_version = release.get("ProductVersion", "")
+                release.setdefault("ProductVersion", "")
+                release.setdefault("ReleaseDate", "")
+                release["ReleaseDate"] = format_iso_date(release.get("ReleaseDate", ""))
 
+                product_version = release["ProductVersion"]
                 if product_version in latest_versions:
                     # Update security date if the product version matches
-                    latest_versions[product_version]["security_date"] = potential_date
-                release["ReleaseDate"] = potential_date
-    
+                    latest_versions[product_version]["security_date"] = release["ReleaseDate"]
+
     # Update all relevant Latest entries with their respective security dates
     for product_version, version_info in latest_versions.items():
         if "security_date" in version_info:
             latest_dict = version_info["os_version_dict"]["Latest"]
-            from_date = version_info["latest_date"]
-            to_date = version_info["security_date"]
-            latest_dict["ReleaseDate"] = to_date
-            print(f"Updated {product_version} ReleaseDate from {from_date} to {to_date}")
-        
+            latest_dict["ReleaseDate"] = version_info["security_date"]
+            print(f"Updated {product_version} ReleaseDate to {version_info['security_date']}")
+    
+    # Write the updated feed structure back to a file
     with open(filename, "w", encoding="utf-8") as json_file:
-        json.dump(
-            feed_structure, json_file, indent=4, ensure_ascii=False
-        )  # TODO: ascii false because we might have utf8 in it?
+        json.dump(feed_structure, json_file, indent=4, ensure_ascii=False)
 
 
 def create_rss_json_data(feed_structure: dict) -> list:
