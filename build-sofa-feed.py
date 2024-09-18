@@ -830,8 +830,10 @@ def write_data_to_json(feed_structure: dict, filename: str):
     for product_version, version_info in latest_versions.items():
         if "security_date" in version_info:
             latest_dict = version_info["os_version_dict"]["Latest"]
-            latest_dict["ReleaseDate"] = version_info["security_date"]
-            print(f"Updated {product_version} ReleaseDate to {version_info['security_date']}")
+            original_date = latest_dict.get("ReleaseDate", "")
+            new_date = version_info["security_date"]
+            latest_dict["ReleaseDate"] = new_date
+            print(f"Updated {product_version} ReleaseDate from {original_date} to {new_date}")
     
     # Write the updated feed structure back to a file
     with open(filename, "w", encoding="utf-8") as json_file:
