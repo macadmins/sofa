@@ -7,7 +7,7 @@ layout: doc
 # macOS Installer Information <Badge type="info" text="Latest Updates" />
 
 ::: info Latest macOS Installer Information
-This page provides information and links to the latest macOS installers, the Unified macOS Assistant (UMA), and macOS IPSW.
+This page provides information and links to the latest macOS installers, the Unified Mac Assistant (UMA), and macOS IPSW.
 :::
 
 ### macOS Restore IPSW (latest macOS)
