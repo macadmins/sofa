@@ -3,12 +3,11 @@ title: 17
 platform: iOS
 ---
 
-# iOS/iPadOS 17 <Badge type="tip" text="Current Version (N-0)" />
+# iOS/iPadOS 17 <Badge type="tip" text="Current Version (N-1)" />
 
-::: tip RECOMMENDED RELEASE FOR MOST UP-TO-DATE SECURITY
-This is the latest version of iOS/iPadOS that receives the most up-to-date security patches and updates, making it the recommended choice to protect your devices.
+::: tip STABLE RELEASE WITH SOME SECURITY UPDATES 
+This version of iOS and iPadOS may not include the newest security features or address all known security issues due to dependencies on architectural and system changes introduced in the latest version available as of now. To maintain your device's security, stability, and compatibility, Apple recommends using the latest iOS and iPadOS that is compatible with your device.
 :::
-
 
 <script setup>
 import LatestFeatures from './components/LatestFeatures.vue';

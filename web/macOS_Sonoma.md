@@ -6,8 +6,8 @@ layout: doc
 
 # macOS Sonoma 14 <Badge type="tip" text="Previous Version (N-1)" />
 
-::: tip STABLE RELEASE WITH MOST SECURITY UPDATES
-This version of macOS may not contain the newest security features contained in the latest macOS version. To maintain your computer's security, stability, and compatibility, Apple recommends using the latest macOS that is compatible with your Mac. 
+::: tip STABLE RELEASE WITH SOME SECURITY UPDATES
+This version of macOS may not include the latest security features or address all known security issues due to dependencies on architectural and system changes introduced in the latest macOS version available as of now. To maintain your computer's security, stability, and compatibility, Apple recommends using the latest macOS that is compatible with your Mac.
 ::: 
 
 
