@@ -16,8 +16,7 @@ Apple Silicon Macs can be restored using the IPSW restore file with Apple Config
 
 ### Unified macOS Assistant (UMA) - InstallAssistant.pkg 
 
-Download macOS full installer PKG files. These are the same full installers you'd get from the App Store. Once downloaded, install the PKG to place the macOS installer in your Applications folder.
-
+The only update or upgrade installation Apple supports on a running computer (besides from System Settings -> General -> Software Update) is via a package referred to as the Unified Mac Assistant or UMA. Once downloaded, installing the package places the `Install macOS <Version Name>` application bundle in the Applications folder. This would be the same as a full installation app you'd get from the (Mac) App Store. 
 
 
 <script setup>
