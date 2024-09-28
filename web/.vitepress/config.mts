@@ -31,6 +31,7 @@ export default defineConfig({
           { text: 'Sonoma 14', link: '/macOS_Sonoma' },
           { text: 'Ventura 13', link: '/macOS_Ventura' },
           { text: 'Monterey 12', link: '/macOS_Monterey' },
+          { text: 'macOS Installer - IPSW & PKG', link: '/macos_installer_info' },
         ],
       },
       {
