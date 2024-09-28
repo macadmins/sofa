@@ -14,7 +14,7 @@ This page provides information and links to the latest macOS installers, the Uni
 
 Apple Silicon Macs can be restored using the IPSW restore file with Apple Configurator 2.
 
-### Unified macOS Assistant (UMA) - InstallAssistant.pkg 
+### Unified Mac Assistant (UMA) - InstallAssistant.pkg 
 
 The only update or upgrade installation Apple supports on a running computer (besides from System Settings -> General -> Software Update) is via a package referred to as the Unified Mac Assistant or UMA. Once downloaded, installing the package places the `Install macOS <Version Name>` application bundle in the Applications folder. This would be the same as a full installation app you'd get from the (Mac) App Store. 
 
