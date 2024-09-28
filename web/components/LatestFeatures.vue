@@ -76,7 +76,7 @@ export default {
       osData: null,
       installationApps: null,
       xProtectData: null,
-      osImage: '', 
+      osImage: '',
     };
   },
   mounted() {
@@ -98,15 +98,6 @@ export default {
 
           if (this.osData.OSVersion === 'Sequoia 15') {
             this.installationApps = data.InstallationApps;
-            if (this.installationApps) {
-              console.log('Loaded InstallationApps Data:', this.installationApps); // Log the InstallationApps data for debugging
-            } else {
-              console.warn('InstallationApps not found in data');
-            }
-          }
-          else {
-            console.warn('OS version is not Sequoia 15. Redirecting to installer info page...');
-            this.$router.push('/macos_installer_info.html#release-information-table');
           }
 
           this.osImage = this.getOsImage(this.platform, this.title);
@@ -169,12 +160,11 @@ export default {
       const releaseDate = new Date(dateString);
       const currentDate = new Date();
       const timeDiff = currentDate - releaseDate;
-      const daysDiff = Math.floor(timeDiff / (1000 * 3600 * 24));
-      return daysDiff;
+      return Math.floor(timeDiff / (1000 * 3600 * 24));
     },
     timeSinceRelease(dateString) {
       if (dateString === 'Unknown') {
-        return 'Unknown'; // Handle the case for unknown date
+        return 'Unknown';
       }
       const releaseDate = new Date(dateString);
       const currentDate = new Date();
@@ -182,7 +172,7 @@ export default {
 
       const days = Math.floor(timeDiff / (1000 * 3600 * 24));
       const hours = Math.floor((timeDiff % (1000 * 3600 * 24)) / (1000 * 3600));
-      
+
       return `${days} days, ${hours} hours`;
     },
   },
