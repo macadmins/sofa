@@ -6,7 +6,7 @@ layout: doc
 
 # macOS Monterey 12 <Badge type="danger" text="Preceding Version (N-3)" />
 ::: danger LIMITED SUPPORT AND SECURITY PATCHES
-This version of macOS may not contain the newest security features contained in the latest macOS version. To maintain your computer's security, stability, and compatibility, Apple recommends using the latest macOS that is compatible with your Mac.
+This version of macOS may not include the latest security features or address all known security issues due to dependencies on architectural and system changes introduced in the latest macOS version available as of now. To maintain your computer's security, stability, and compatibility, Apple recommends using the latest macOS that is compatible with your Mac.
 :::
 
 <script setup>

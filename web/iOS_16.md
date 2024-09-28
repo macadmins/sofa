@@ -3,10 +3,10 @@ title: 16
 platform: iOS
 ---
 
-# iOS 16 <Badge type="tip" text="Previous Version (N-1)" />
+# iOS 16 <Badge type="danger" text="Previous Version (N-2)" />
 
-::: tip STABLE RELEASE WITH MOST SECURITY UPDATES 
-This version of iOS and iPadOS may not contain the newest security features contained in the latest version. To maintain your device's security, stability, and compatibility, Apple recommends using the latest iOS and iPadOS that is compatible with your device. 
+::: tip LIMITED SUPPORT AND SECURITY PATCHES
+This version of iOS and iPadOS may not include the newest security features or address all known security issues due to dependencies on architectural and system changes introduced in the latest version available as of now. To maintain your device's security, stability, and compatibility, Apple recommends using the latest iOS and iPadOS that is compatible with your device.
 :::
 
 <script setup>
