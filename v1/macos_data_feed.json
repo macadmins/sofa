@@ -1,13 +1,13 @@
 {
-    "UpdateHash": "960c8f8036acceaa3b8f72bc252b02b777a9c99a782d3ec5d032461949158135",
+    "UpdateHash": "f3830e077e355b3282e350075171f19c80c967e31a490dae10171bc380f3726a",
     "OSVersions": [
         {
             "OSVersion": "Sequoia 15",
             "Latest": {
-                "ProductVersion": "15.0",
-                "Build": "24A335",
-                "ReleaseDate": "2024-09-16T00:00:00Z",
-                "ExpirationDate": "2025-01-01T00:00:00Z",
+                "ProductVersion": "15.0.1",
+                "Build": "24A348",
+                "ReleaseDate": "2024-10-03T00:00:00Z",
+                "ExpirationDate": "2025-01-02T00:00:00Z",
                 "SupportedDevices": [
                     "J132AP",
                     "J137AP",
@@ -64,12 +64,80 @@
                     "VMA2MACOSAP",
                     "VMM-x86_64"
                 ],
-                "SecurityInfo": "",
-                "UniqueCVEsCount": 0,
+                "SecurityInfo": "This update has no published CVE entries.",
+                "CVEs": {},
                 "ActivelyExploitedCVEs": [],
-                "CVEs": {}
+                "UniqueCVEsCount": 0
             },
             "SecurityReleases": [
+                {
+                    "UpdateName": "macOS Sequoia 15.0.1",
+                    "ProductName": "macOS",
+                    "ProductVersion": "15.0.1",
+                    "ReleaseDate": "2024-10-03T00:00:00Z",
+                    "ReleaseType": "OS",
+                    "SecurityInfo": "This update has no published CVE entries.",
+                    "SupportedDevices": [
+                        "J132AP",
+                        "J137AP",
+                        "J152FAP",
+                        "J160AP",
+                        "J174AP",
+                        "J180dAP",
+                        "J185AP",
+                        "J185FAP",
+                        "J213AP",
+                        "J214KAP",
+                        "J215AP",
+                        "J223AP",
+                        "J230KAP",
+                        "J274AP",
+                        "J293AP",
+                        "J313AP",
+                        "J314cAP",
+                        "J314sAP",
+                        "J316cAP",
+                        "J316sAP",
+                        "J375cAP",
+                        "J375dAP",
+                        "J413AP",
+                        "J414cAP",
+                        "J414sAP",
+                        "J415AP",
+                        "J416cAP",
+                        "J416sAP",
+                        "J433AP",
+                        "J434AP",
+                        "J456AP",
+                        "J457AP",
+                        "J473AP",
+                        "J474sAP",
+                        "J475cAP",
+                        "J475dAP",
+                        "J493AP",
+                        "J504AP",
+                        "J514cAP",
+                        "J514mAP",
+                        "J514sAP",
+                        "J516cAP",
+                        "J516mAP",
+                        "J516sAP",
+                        "J613AP",
+                        "J615AP",
+                        "J680AP",
+                        "J780AP",
+                        "Mac-1E7E29AD0135F9BC",
+                        "Mac-63001698E7A34814",
+                        "Mac-937A206F2EE63C01",
+                        "Mac-AA95B1DDAB278B95",
+                        "VMA2MACOSAP",
+                        "VMM-x86_64"
+                    ],
+                    "CVEs": {},
+                    "ActivelyExploitedCVEs": [],
+                    "UniqueCVEsCount": 0,
+                    "DaysSincePreviousRelease": 0
+                },
                 {
                     "UpdateName": "macOS Sequoia 15",
                     "ProductName": "macOS",
@@ -313,7 +381,7 @@
                 "ProductVersion": "14.7",
                 "Build": "23H124",
                 "ReleaseDate": "2024-09-16T00:00:00Z",
-                "ExpirationDate": "2025-01-01T00:00:00Z",
+                "ExpirationDate": "2025-01-02T00:00:00Z",
                 "SupportedDevices": [
                     "J132AP",
                     "J137AP",
@@ -1996,7 +2064,7 @@
                 "ProductVersion": "13.7",
                 "Build": "22H123",
                 "ReleaseDate": "2024-09-16T00:00:00Z",
-                "ExpirationDate": "2025-01-01T00:00:00Z",
+                "ExpirationDate": "2025-01-02T00:00:00Z",
                 "SupportedDevices": [
                     "J132AP",
                     "J137AP",
@@ -4574,7 +4642,7 @@
                 "ProductVersion": "12.7.6",
                 "Build": "21H1320",
                 "ReleaseDate": "2024-07-29T00:00:00Z",
-                "ExpirationDate": "2025-01-01T00:00:00Z",
+                "ExpirationDate": "2025-01-02T00:00:00Z",
                 "SupportedDevices": [
                     "J132AP",
                     "J137AP",
@@ -8137,12 +8205,19 @@
     "InstallationApps": {
         "LatestUMA": {
             "title": "macOS Sequoia",
-            "version": "15.0",
-            "build": "24A335",
-            "apple_slug": "062-78429",
-            "url": "https://swcdn.apple.com/content/downloads/11/43/062-78429-A_DAI7Y9IP98/qxbabjzemiel7guag7q09xxe0631iie45p/InstallAssistant.pkg"
+            "version": "15.0.1",
+            "build": "24A348",
+            "apple_slug": "072-01382",
+            "url": "https://swcdn.apple.com/content/downloads/05/43/072-01382-A_5URDEOHRHL/chwodorv8xcjx5ea41i5gmmw9ofgjwxtq1/InstallAssistant.pkg"
         },
         "AllPreviousUMA": [
+            {
+                "title": "macOS Sequoia",
+                "version": "15.0",
+                "build": "24A335",
+                "apple_slug": "062-78429",
+                "url": "https://swcdn.apple.com/content/downloads/11/43/062-78429-A_DAI7Y9IP98/qxbabjzemiel7guag7q09xxe0631iie45p/InstallAssistant.pkg"
+            },
             {
                 "title": "macOS Sonoma",
                 "version": "14.7",
@@ -8222,10 +8297,10 @@
             }
         ],
         "LatestMacIPSW": {
-            "macos_ipsw_url": "https://updates.cdn-apple.com/2024FallFCS/fullrestores/062-78489/BDA44327-C79E-4608-A7E0-455A7E91911F/UniversalMac_15.0_24A335_Restore.ipsw",
-            "macos_ipsw_build": "24A335",
-            "macos_ipsw_version": "15.0",
-            "macos_ipsw_apple_slug": "062-78489"
+            "macos_ipsw_url": "https://updates.cdn-apple.com/2024FallFCS/fullrestores/072-01423/566E5B4E-1100-4643-91B3-131247351844/UniversalMac_15.0.1_24A348_Restore.ipsw",
+            "macos_ipsw_build": "24A348",
+            "macos_ipsw_version": "15.0.1",
+            "macos_ipsw_apple_slug": "072-01423"
         }
     }
 }
