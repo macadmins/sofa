@@ -592,18 +592,15 @@ def fetch_security_releases(os_type: str, os_version: str, gdmf_data: dict) -> l
         print(f"Fetching data from {url}")
         response = requests.get(url)
 
-        if (
-            response.ok
-        ):  # TODO: any validation we want on the rest of this page we're parsing?
+        if response.ok:
             html_content = response.text
             soup = BeautifulSoup(html_content, "lxml")
             rows = soup.find_all("tr")
             
-            release_dates = []
             for row in rows:
                 cells = row.find_all("td")
                 if cells:
-                    name_info = cells[0].get_text(strip=True)  # TODO: example of this value?
+                    name_info = cells[0].get_text(strip=True)
                     os_version_info = process_os_version(os_type, os_version, name_info)
                     # Ensure os_version_info non-empty/matches the targeted version before proceeding
                     if os_version_info and os_version in os_version_info:  # Filter based on the targeted OS version
@@ -737,27 +734,28 @@ def fetch_cves(url: str) -> dict:
 def calculate_days_since_previous_release(release_dates: list) -> dict:
     """Calculate the days between each release date and the previous sequentially"""
     days_between_releases = {}
-    for i in range(len(release_dates) - 1):
-        try:
-            next_release_date = parse_flexible_date(release_dates[i])
-            current_release_date = parse_flexible_date(release_dates[i + 1])
-            days_difference = abs((next_release_date - current_release_date).days)
+    try:
+        date_objects = [parse_flexible_date(date) for date in release_dates]
+        date_objects.sort(reverse=True)
+        for i in range(len(date_objects) - 1):
+            days_difference = (date_objects[i] - date_objects[i + 1]).days
             days_between_releases[release_dates[i]] = days_difference
-        except ValueError as e:
-            print(f"Error parsing date: {e}")
+        # Handle the last element which will always have 0 days since previous release
+        if release_dates:
+            days_between_releases[release_dates[-1]] = 0
+    except ValueError as e:
+        print(f"Error parsing date: {e}")
     return days_between_releases
-
 
 def parse_flexible_date(date_str: str) -> datetime:
     """Parse a date string with flexible formats to sanitize data scraped from the webpage"""
-    formats = ["%Y-%m-%d", "%d %b %Y"]
+    formats = ["%Y-%m-%d", "%d %b %Y", "%B %d, %Y"]
     for fmt in formats:
         try:
             return datetime.strptime(date_str, fmt)
         except ValueError:
             continue
     raise ValueError(f"Date format not recognized: {date_str}")
-
 
 def add_compatible_machines(current_macos_full_version: str) -> list:
     """Add compatible machines for the given macOS version, only processed for macOS"""
@@ -807,7 +805,7 @@ def write_data_to_json(feed_structure: dict, filename: str):
             latest_dict["ExpirationDate"] = format_iso_date(latest_dict.get("ExpirationDate", ""))
             
             product_version = latest_dict["ProductVersion"]
-
+            
             # Store the latest version info for comparison
             latest_versions[product_version] = {
                 "latest_date": latest_dict["ReleaseDate"],
@@ -820,12 +818,12 @@ def write_data_to_json(feed_structure: dict, filename: str):
                 release["ProductVersion"] = release.get("ProductVersion", "")
                 release["ReleaseDate"] = release.get("ReleaseDate", "")
                 release["ReleaseDate"] = format_iso_date(release.get("ReleaseDate", ""))
-
+                
                 product_version = release["ProductVersion"]
                 if product_version in latest_versions:
                     # Update security date if the product version matches
                     latest_versions[product_version]["security_date"] = release["ReleaseDate"]
-
+    
     # Update all relevant Latest entries with their respective security dates
     for product_version, version_info in latest_versions.items():
         if "security_date" in version_info:
