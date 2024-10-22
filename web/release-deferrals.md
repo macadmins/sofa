@@ -13,8 +13,7 @@ This page provides an overview of the deferral periods for different macOS relea
 import ReleaseDeferralTable from './components/ReleaseDeferralTable.vue';
 
 const frontmatter = {
-  title: 'macOS Deferrals',
-  platform: 'macOS',
+  title: 'OS Deferrals'
 };
 </script>
 
