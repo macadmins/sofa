@@ -43,6 +43,12 @@ export default defineConfig({
         ],
       },
       {
+        text: 'OS Update planning',
+        items: [
+          { text: 'OS Deferral Overview', link: '/release-deferrals' }
+        ],
+      },
+      {
         text: 'Apple & Community',
         items: [
           { text: 'Essential Links', link: '/essential-info' }
