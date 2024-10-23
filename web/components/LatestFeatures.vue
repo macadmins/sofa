@@ -85,6 +85,7 @@
           </tr>
         </tbody>
       </table>
+      <p>View the full <a href="/release-deferrals.html" target="_blank">Release Deferral Table</a> for more details.</p>
     </div>
 
     <!-- Loading Data State -->
