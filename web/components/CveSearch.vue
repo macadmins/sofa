@@ -2,9 +2,9 @@
   <div class="cve-search">
     <h2>Search CVE</h2>
     <label class="quick-search-container">
-        <input type="checkbox" v-model="quickSearch" class="quick-search-checkbox" />
-        Quick Search
-      </label>
+      <input type="checkbox" v-model="quickSearch" class="quick-search-checkbox" />
+      Quick Search
+    </label>
     <div class="input-container">
       <input
         v-model="searchTerm"
@@ -23,7 +23,11 @@
       <h3>Search Results for "{{ searchTerm }}"</h3>
       <ul>
         <li v-for="(result, index) in searchResults" :key="index" class="cve-result">
-          <p><strong>CVE ID:</strong> {{ result.cveId }}</p>
+          <!-- Make CVE ID clickable -->
+          <p>
+            <strong>CVE ID: </strong> 
+            <a :href="`/cve-details.html?cveId=${result.cveId}`" class="cve-id-link">{{ result.cveId }} (detailed info)</a>
+          </p>
           <p><strong>OS Version(s):</strong> {{ formatOsVersionsWithFixes(result.osVersionDetails) }}</p>
           <p><strong>KEV:</strong> {{ result.isKev ? '🔥 Yes' : 'No' }}</p>
           <div v-if="result.urls.length">
@@ -39,8 +43,9 @@
             <ul class="external-links-list">
               <li><a :href="`https://www.cve.org/CVERecord?id=${result.cveId}`" target="_blank">View {{ result.cveId }} on CVE.org</a></li>
               <li><a :href="`https://nvd.nist.gov/vuln/detail/${result.cveId}`" target="_blank">View {{ result.cveId }} on NVD (NIST)</a></li>
-              <li><a :href="`https://www.opencve.io/cve/${result.cveId}`" target="_blank">View {{ result.cveId }} on OpenCVE</a></li>
               <li v-if="result.isKev"><a :href="`https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=${result.cveId}`" target="_blank">View {{ result.cveId }} on CISA KEV</a></li>
+              <li><a :href="`https://cvefeed.io/vuln/detail/${result.cveId}`" target="_blank">View {{ result.cveId }} on cvefeed.io</a></li>
+              <li><a :href="`https://www.opencve.io/cve/${result.cveId}`" target="_blank">View {{ result.cveId }} on OpenCVE</a></li>
             </ul>
           </div>
         </li>
@@ -289,6 +294,15 @@ export default {
 }
 
 .cve-search a:hover {
+  text-decoration: underline;
+}
+
+.view-details-link {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.view-details-link:hover {
   text-decoration: underline;
 }
 </style>

@@ -4,25 +4,31 @@
       <h3>Lookup Resources:</h3>
       <ul>
         <li>
-          For general CVE summary and references, inspect 
+          For general CVE summary and references: 
           <a :href="cveOrgUrl" target="_blank" rel="noopener noreferrer" class="link-color">
             "{{ cveId }}" on CVE.org
           </a>
         </li>
         <li>
-          Check severity scores, impact analysis, and details for 
+          Check severity scores, impact analysis, and details: 
           <a :href="nvdUrl" target="_blank" rel="noopener noreferrer" class="link-color">
             "{{ cveId }}" on NVD (NIST) 
           </a>
         </li>
         <li>
-          Discover community insights and discussions for 
+          Discover cvefeed summary: 
+          <a :href="cvefeedUrl" target="_blank" rel="noopener noreferrer" class="link-color">
+           "{{ cveId }}" on cvefeed.io 
+          </a>
+        </li>
+        <li>
+          See community insights: 
           <a :href="openCveUrl" target="_blank" rel="noopener noreferrer" class="link-color">
            "{{ cveId }}" on OpenCVE  
           </a>
         </li>
         <li>
-          Find known exploits and mitigation details for 
+          Find known exploits and mitigation details: 
           <a :href="kevUrl" target="_blank" rel="noopener noreferrer" class="link-color">
             "{{ cveId }}" on KEV (CISA) 
           </a>
@@ -81,6 +87,9 @@ export default {
     },
     nvdUrl() {
       return `https://nvd.nist.gov/vuln/detail/${this.cveId}`;
+    },
+    cvefeedUrl() {
+      return `https://cvefeed.io/vuln/detail/${this.cveId}`;
     },
     openCveUrl() {
       return `https://www.opencve.io/cve/${this.cveId}`;
