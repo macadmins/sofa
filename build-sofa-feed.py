@@ -567,9 +567,13 @@ def fetch_latest_os_version_info(
             )
         ]
     if filtered_versions:
+        # Sort by device count (descending) and then by PostingDate (latest first)
         latest_version = max(
             filtered_versions,
-            key=lambda os_vers: datetime.strptime(os_vers["PostingDate"], "%Y-%m-%d"),
+            key=lambda version: (
+                len(version.get("SupportedDevices", [])),  # Prioritize larger device counts
+                datetime.strptime(version["PostingDate"], "%Y-%m-%d")  # Then by latest date
+            )
         )
         return {
             "ProductVersion": latest_version.get("ProductVersion"),
