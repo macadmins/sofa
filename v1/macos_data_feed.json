@@ -1,5 +1,5 @@
 {
-    "UpdateHash": "aacbeb15e20c2c654a615a1502258ce9688109b35a3f7abec82be8ccbd82975e",
+    "UpdateHash": "8d8cf312212b75eed1a41b32fa7a3ee5a7dbcca595ea0f2d07a019817be637a1",
     "OSVersions": [
         {
             "OSVersion": "Sequoia 15",
@@ -500,7 +500,7 @@
                     "URL": "https://support.apple.com/en-ca/HT201862",
                     "Identifiers": {
                         "Mac15,13": "MacBook Air (15-inch, M3, 2024)",
-                        "Mac15,12": "MacBook Air (15-inch, M3, 2024)",
+                        "Mac15,12": "MacBook Air (13-inch, M3, 2024)",
                         "Mac14,15": "MacBook Air (15-inch, M2, 2023)",
                         "Mac14,2": "MacBook Air (M2, 2022)",
                         "MacBookAir10,1": "MacBook Air (M1, 2020)",
@@ -511,6 +511,11 @@
                     "Model": "MacBook Pro",
                     "URL": "https://support.apple.com/en-ca/HT201300",
                     "Identifiers": {
+                        "Mac16,1": "MacBook Pro (14-inch, 2024)",
+                        "Mac16,5": "MacBook Pro (14-inch, 2024)",
+                        "Mac16,6": "MacBook Pro (14-inch, 2024)",
+                        "Mac16,7": "MacBook Pro (14-inch, 2024)",
+                        "Mac16,8": "MacBook Pro (14-inch, 2024)",
                         "Mac15,3": "MacBook Pro (14-inch, Nov 2023)",
                         "Mac15,6": "MacBook Pro (14-inch, Nov 2023)",
                         "Mac15,8": "MacBook Pro (14-inch, Nov 2023)",
@@ -542,6 +547,8 @@
                     "Model": "Mac mini",
                     "URL": "https://support.apple.com/en-ca/HT201894",
                     "Identifiers": {
+                        "Mac16,15": "Mac mini (2024)",
+                        "Mac16,10": "Mac mini (2024)",
                         "Mac14,3": "Mac mini (2023)",
                         "Mac14,12": "Mac mini (2023)",
                         "Macmini9,1": "Mac mini (M1, 2020)",
@@ -562,6 +569,8 @@
                     "Model": "iMac",
                     "URL": "https://support.apple.com/en-ca/HT201634",
                     "Identifiers": {
+                        "Mac16,2": "iMac (24-inch, 2024, Two ports)",
+                        "Mac16,3": "iMac (24-inch, 2024, Four ports)",
                         "Mac15,5": "iMac (24-inch, 2023)",
                         "Mac15,4": "iMac (24-inch, 2023)",
                         "iMac21,1": "iMac (24-inch, M1, 2021)",
@@ -2319,7 +2328,7 @@
                     "URL": "https://support.apple.com/en-ca/HT201862",
                     "Identifiers": {
                         "Mac15,13": "MacBook Air (15-inch, M3, 2024)",
-                        "Mac15,12": "MacBook Air (15-inch, M3, 2024)",
+                        "Mac15,12": "MacBook Air (13-inch, M3, 2024)",
                         "Mac14,15": "MacBook Air (15-inch, M2, 2023)",
                         "Mac14,2": "MacBook Air (M2, 2022)",
                         "MacBookAir10,1": "MacBook Air (M1, 2020)",
@@ -7758,7 +7767,7 @@
             ]
         },
         "Mac15,12": {
-            "MarketingName": "MacBook Air (15-inch, M3, 2024)",
+            "MarketingName": "MacBook Air (13-inch, M3, 2024)",
             "SupportedOS": [
                 "Sequoia 15",
                 "Sonoma 14"
@@ -7824,6 +7833,51 @@
                 14,
                 13,
                 12
+            ]
+        },
+        "Mac16,1": {
+            "MarketingName": "MacBook Pro (14-inch, 2024)",
+            "SupportedOS": [
+                "Sequoia 15"
+            ],
+            "OSVersions": [
+                15
+            ]
+        },
+        "Mac16,5": {
+            "MarketingName": "MacBook Pro (14-inch, 2024)",
+            "SupportedOS": [
+                "Sequoia 15"
+            ],
+            "OSVersions": [
+                15
+            ]
+        },
+        "Mac16,6": {
+            "MarketingName": "MacBook Pro (14-inch, 2024)",
+            "SupportedOS": [
+                "Sequoia 15"
+            ],
+            "OSVersions": [
+                15
+            ]
+        },
+        "Mac16,7": {
+            "MarketingName": "MacBook Pro (14-inch, 2024)",
+            "SupportedOS": [
+                "Sequoia 15"
+            ],
+            "OSVersions": [
+                15
+            ]
+        },
+        "Mac16,8": {
+            "MarketingName": "MacBook Pro (14-inch, 2024)",
+            "SupportedOS": [
+                "Sequoia 15"
+            ],
+            "OSVersions": [
+                15
             ]
         },
         "Mac15,3": {
@@ -8169,6 +8223,24 @@
                 12
             ]
         },
+        "Mac16,15": {
+            "MarketingName": "Mac mini (2024)",
+            "SupportedOS": [
+                "Sequoia 15"
+            ],
+            "OSVersions": [
+                15
+            ]
+        },
+        "Mac16,10": {
+            "MarketingName": "Mac mini (2024)",
+            "SupportedOS": [
+                "Sequoia 15"
+            ],
+            "OSVersions": [
+                15
+            ]
+        },
         "Mac14,3": {
             "MarketingName": "Mac mini (2023)",
             "SupportedOS": [
@@ -8283,6 +8355,24 @@
                 14,
                 13,
                 12
+            ]
+        },
+        "Mac16,2": {
+            "MarketingName": "iMac (24-inch, 2024, Two ports)",
+            "SupportedOS": [
+                "Sequoia 15"
+            ],
+            "OSVersions": [
+                15
+            ]
+        },
+        "Mac16,3": {
+            "MarketingName": "iMac (24-inch, 2024, Four ports)",
+            "SupportedOS": [
+                "Sequoia 15"
+            ],
+            "OSVersions": [
+                15
             ]
         },
         "Mac15,5": {
