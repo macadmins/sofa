@@ -35,18 +35,13 @@ features:
 #    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
-<div style="margin: 20px 0; padding:0px;">
-  <p style="font-size: 1.2em; font-weight: bold; margin-bottom: 10px;">
-    👋 We’re thrilled to have you here!
-  </p>
-  <p style="margin: 0 0 15px; font-size: 1em;">
-    If you find value in this project, consider showing your support by starring us on GitHub! 🌟
-  </p>
-  <div style="display: inline-flex;">
+<div>
+  <p>👋 We’re thrilled to have you here!</p>
+  <p>If you find value in this project, consider showing your support by starring us on GitHub! 🌟</p>
+  <div>
     <a class="github-button" href="https://github.com/macadmins/sofa" 
        data-icon="octicon-star" data-size="large" data-show-count="true" 
-       aria-label="Star macadmins/sofa on GitHub" 
-       style="padding: 6px 10px; border: 1px solid currentColor; border-radius: 5px; text-decoration: none; color: inherit;">Star</a>
+       aria-label="Star macadmins/sofa on GitHub">Star</a>
   </div>
 </div>
 
