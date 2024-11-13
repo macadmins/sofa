@@ -511,7 +511,7 @@ def update_supported_devices_in_feed(data, supported_devices_data):
 def update_devices_dict(data, supported_devices_data):
     """Update the 'SupportedDevices' in a dictionary"""
     for key, value in data.items():
-        if key == 'SupportedDevices' and not value:
+        if key == 'SupportedDevices':
             update_supported_devices(data, supported_devices_data)
         else:
             update_supported_devices_in_feed(value, supported_devices_data)
@@ -524,13 +524,22 @@ def update_devices_list(data, supported_devices_data):
 
 
 def update_supported_devices(data, supported_devices_data):
-    """Update the 'SupportedDevices' key if it's empty"""
+    """Update the 'SupportedDevices' key only if the new list has different items"""
     os_version = data.get('ProductVersion', '').split('.')[0]
+
     for supported_device in supported_devices_data:
-        supported_os_version = supported_device.get('OSVersion').split('.')[0]
+        supported_os_version = supported_device.get('OSVersion', '').split('.')[0]
+
         if os_version == supported_os_version:
-            data['SupportedDevices'] = supported_device.get('SupportedDevices', [])
-            print(f"Updated {data.get('ProductVersion')} with SupportedDevices: {data['SupportedDevices']}")
+            current_supported_devices = data.get('SupportedDevices', [])
+            new_supported_devices = supported_device.get('SupportedDevices', [])
+
+            # Sort both lists and compare
+            if sorted(current_supported_devices) != sorted(new_supported_devices):
+                data['SupportedDevices'] = new_supported_devices
+                print(f"Updated {data.get('ProductVersion')} with SupportedDevices: {data['SupportedDevices']}")
+            else:
+                print(f"No update needed for {data.get('ProductVersion')} as the SupportedDevices lists are the same.")
 
 
 def save_updated_macos_data_feed(macos_data_feed):
