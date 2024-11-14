@@ -15,6 +15,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from urllib.request import urlopen
 from urllib.parse import urljoin
+import packaging.version
 
 import certifi  # included in requests, as provided in requirements.txt
 import requests
@@ -594,6 +595,8 @@ def update_supported_devices_in_feed(data, supported_devices_data):
 
     final_versions_lookup = {version_str: devices for entry in final_versions_data for version_str, devices in entry.items()}
 
+    # Sort OSVersions based on ProductVersion in chronological order
+    sorted_os_versions = []
     for os_version_data in data.get("OSVersions", []):
         for release_type in ["Latest", "SecurityReleases"]:
             releases = os_version_data.get(release_type)
@@ -601,13 +604,44 @@ def update_supported_devices_in_feed(data, supported_devices_data):
                 releases = releases if isinstance(releases, list) else [releases]
                 for release in releases:
                     product_version = release.get("ProductVersion")
-                    if product_version in final_versions_lookup:
-                        current_devices = set(release.get("SupportedDevices", []))
-                        consolidated_devices = merge_device_lists(current_devices, final_versions_lookup[product_version])
-                        added_devices = sorted(set(consolidated_devices) - current_devices)
-                        release["SupportedDevices"] = consolidated_devices
-                        if added_devices:
-                            print(f"Final update for {product_version} with added SupportedDevices: {added_devices}")
+                    if product_version:
+                        sorted_os_versions.append((packaging.version.parse(product_version), release))
+
+    # Sort the consolidated list of versions
+    sorted_os_versions.sort(key=lambda x: x[0])
+
+    # Track cumulative devices for each major version
+    cumulative_devices_by_major = {}
+
+    # Now loop through the sorted versions and update SupportedDevices
+    for _, release in sorted_os_versions:
+        product_version = release.get("ProductVersion")
+        major_version = product_version.split(".")[0]
+        
+        # Initialize cumulative devices for this major version if not present
+        if major_version not in cumulative_devices_by_major:
+            cumulative_devices_by_major[major_version] = set()
+
+        # Get current devices from release, default to empty if none
+        current_devices = set(release.get("SupportedDevices", []))
+
+        # Merge cumulative devices with current devices for this release
+        consolidated_devices = merge_device_lists(
+            cumulative_devices_by_major[major_version],  # cumulative up to this version
+            final_versions_lookup.get(product_version, [])  # additional devices from final lookup
+        )
+
+        # Update the release's SupportedDevices with the consolidated devices
+        added_devices = sorted(set(consolidated_devices) - current_devices)
+        release["SupportedDevices"] = sorted(consolidated_devices)
+        
+        # Update cumulative devices for this major version
+        cumulative_devices_by_major[major_version].update(consolidated_devices)
+
+        # Log added devices if any were added
+        if added_devices:
+            print(f"Final update for {product_version} with added SupportedDevices: {added_devices}")
+    
     return data
 
 
