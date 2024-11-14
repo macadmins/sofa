@@ -490,7 +490,9 @@ def load_supported_devices_data():
     """Load the supported devices data from the cache"""
     supported_devices_file = os.path.join('cache', 'supported_devices.json')
     with open(supported_devices_file, 'r', encoding='utf-8') as f:
-        return json.load(f)
+        data = json.load(f)
+    # Map OSVersion to SupportedDevices for easy lookup
+    return {str(entry["OSVersion"]): entry["SupportedDevices"] for entry in data}
 
 
 def load_macos_data_feed():
@@ -500,46 +502,72 @@ def load_macos_data_feed():
         return json.load(f)
 
 
+def extract_versions(data):
+    """Extract versions from the primary data."""
+    result = []
+    for os_version in data.get("OSVersions", []):
+        if isinstance(os_version, dict):
+            versions = []
+            if "Latest" in os_version:
+                latest = os_version["Latest"]
+                product_version = latest.get("ProductVersion")
+                if isinstance(product_version, str):
+                    versions.append((product_version, latest.get("SupportedDevices", [])))
+            if "SecurityReleases" in os_version:
+                for release in os_version["SecurityReleases"]:
+                    product_version = release.get("ProductVersion")
+                    if isinstance(product_version, str):
+                        versions.append((product_version, release.get("SupportedDevices", [])))
+            for version, devices in versions:
+                result.append({version: devices})
+    # Sort by major and minor versions
+    return sorted(result, key=lambda x: tuple(map(int, next(iter(x)).split("."))))
+
+
+def inject_supported_devices(versions, supported_devices_data):
+    """Inject supported devices into each OS version based on major version."""
+    injected_versions = {}
+    for version_dict in versions:
+        version_str, devices = next(iter(version_dict.items()))
+        major_version = version_str.split(".")[0]
+        if major_version in supported_devices_data and not devices:
+            devices.extend(supported_devices_data[major_version])
+            print(f"Injected supported devices for {version_str}: {supported_devices_data[major_version]}\n")
+        injected_versions[version_str] = devices
+    return versions
+
+
+def layer_supported_devices(versions):
+    """Layer supported devices within each major version."""
+    layered_versions = {}
+    for version_dict in versions:
+        version_str, devices = next(iter(version_dict.items()))
+        major_version = version_str.split(".")[0]
+        if major_version not in layered_versions:
+            layered_versions[major_version] = []
+        if devices and not layered_versions[major_version]:
+            layered_versions[major_version] = devices.copy()
+            version_dict[version_str] = devices.copy()
+            continue
+        new_devices = [device for device in layered_versions[major_version] if device not in devices]
+        if new_devices:
+            devices.extend(new_devices)
+        layered_versions[major_version] = devices.copy()
+        version_dict[version_str] = devices.copy()
+    return versions
+
+
 def update_supported_devices_in_feed(data, supported_devices_data):
-    """Recursively update the 'SupportedDevices' in the data feed"""
-    if isinstance(data, dict):
-        update_devices_dict(data, supported_devices_data)
-    elif isinstance(data, list):
-        update_devices_list(data, supported_devices_data)
+    original_data = data.copy()
+    """Update any 'SupportedDevices' key in `data` based on `final_versions_data`."""
+    # Step 1: Extract and sort versions
+    extracted_sorted_data = extract_versions(data)
 
+    # Step 2: Inject supported devices into each version based on major version
+    injected_versions_data = inject_supported_devices(extracted_sorted_data, supported_devices_data)
 
-def update_devices_dict(data, supported_devices_data):
-    """Update the 'SupportedDevices' in a dictionary"""
-    for key, value in data.items():
-        if key == 'SupportedDevices':
-            update_supported_devices(data, supported_devices_data)
-        else:
-            update_supported_devices_in_feed(value, supported_devices_data)
-
-
-def update_devices_list(data, supported_devices_data):
-    """Update the 'SupportedDevices' in a list"""
-    for item in data:
-        update_supported_devices_in_feed(item, supported_devices_data)
-
-
-def update_supported_devices(data, supported_devices_data):
-    """Update the 'SupportedDevices' key only if the new list has different items"""
-    os_version = data.get('ProductVersion', '').split('.')[0]
-
-    for supported_device in supported_devices_data:
-        supported_os_version = supported_device.get('OSVersion', '').split('.')[0]
-
-        if os_version == supported_os_version:
-            current_supported_devices = data.get('SupportedDevices', [])
-            new_supported_devices = supported_device.get('SupportedDevices', [])
-
-            # Sort both lists and compare
-            if sorted(current_supported_devices) != sorted(new_supported_devices):
-                data['SupportedDevices'] = new_supported_devices
-                print(f"Updated {data.get('ProductVersion')} with SupportedDevices: {data['SupportedDevices']}")
-            else:
-                print(f"No update needed for {data.get('ProductVersion')} as the SupportedDevices lists are the same.")
+    # Step 3: Layer supported devices within the same major versions
+    final_versions_data = layer_supported_devices(injected_versions_data)
 
 
 def save_updated_macos_data_feed(macos_data_feed):
