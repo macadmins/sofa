@@ -512,38 +512,36 @@ def load_macos_data_feed():
         return json.load(f)
 
 
+def merge_device_lists(current_devices, additional_devices):
+    """Merge two lists of devices, remove duplicates, and return them sorted."""
+    return sorted(set(current_devices).union(additional_devices))
+
+
 def extract_versions(data):
-    """Extract versions from the primary data."""
+    """Extract versions from the primary data, gathering SupportedDevices for each ProductVersion."""
     result = []
     for os_version in data.get("OSVersions", []):
         if isinstance(os_version, dict):
-            versions = []
-            if "Latest" in os_version:
-                latest = os_version["Latest"]
-                product_version = latest.get("ProductVersion")
-                if isinstance(product_version, str):
-                    versions.append((product_version, latest.get("SupportedDevices", [])))
-            if "SecurityReleases" in os_version:
-                for release in os_version["SecurityReleases"]:
-                    product_version = release.get("ProductVersion")
-                    if isinstance(product_version, str):
-                        versions.append((product_version, release.get("SupportedDevices", [])))
-            for version, devices in versions:
-                result.append({version: devices})
-    # Sort by major and minor versions
+            for release_type in ["Latest", "SecurityReleases"]:
+                releases = os_version.get(release_type)
+                if releases:
+                    releases = releases if isinstance(releases, list) else [releases]
+                    for release in releases:
+                        product_version = release.get("ProductVersion")
+                        if isinstance(product_version, str):
+                            devices = release.get("SupportedDevices", [])
+                            result.append({product_version: devices})
     return sorted(result, key=lambda x: tuple(map(int, next(iter(x)).split("."))))
 
 
 def inject_supported_devices(versions, supported_devices_data):
     """Inject supported devices into each OS version based on major version."""
-    injected_versions = {}
     for version_dict in versions:
         version_str, devices = next(iter(version_dict.items()))
         major_version = version_str.split(".")[0]
         if major_version in supported_devices_data and not devices:
             devices.extend(supported_devices_data[major_version])
-            print(f"Injected supported devices for {version_str}: {supported_devices_data[major_version]}\n")
-        injected_versions[version_str] = devices
+            print(f"Injected supported devices for {version_str}: {supported_devices_data[major_version]}")
     return versions
 
 
@@ -557,92 +555,59 @@ def layer_supported_devices(versions):
             layered_versions[major_version] = []
         if devices and not layered_versions[major_version]:
             layered_versions[major_version] = devices.copy()
-            version_dict[version_str] = devices.copy()
-            continue
-        new_devices = [device for device in layered_versions[major_version] if device not in devices]
-        if new_devices:
-            devices.extend(new_devices)
-        layered_versions[major_version] = devices.copy()
-        version_dict[version_str] = devices.copy()
+        else:
+            devices = merge_device_lists(layered_versions[major_version], devices)
+        layered_versions[major_version] = devices
+        version_dict[version_str] = devices
     return versions
 
 
 def merge_devices_from_cached_data(final_versions_data, cached_data):
-    """Update `final_versions_data` with any missing devices from `cached_data` for matching ProductVersion entries
-    across both 'PublicAssetSets' and 'AssetSets' in the cached data."""
-    
-    # Extract macOS data from both 'PublicAssetSets' and 'AssetSets'
+    """Update `final_versions_data` with missing devices from `cached_data` for matching ProductVersion entries."""
     cached_macos_versions = []
     for asset_set in ["PublicAssetSets", "AssetSets"]:
-        if asset_set in cached_data:
-            cached_macos_versions.extend(cached_data[asset_set].get("macOS", []))
+        cached_macos_versions.extend(cached_data.get(asset_set, {}).get("macOS", []))
     
-    # Iterate over each item in `final_versions_data`
     for version_data in final_versions_data:
         version_str, current_devices = next(iter(version_data.items()))
-        
-        # Check if any `ProductVersion` in cached data matches this version
         for cached_version in cached_macos_versions:
             if cached_version["ProductVersion"] == version_str:
                 cached_devices = cached_version.get("SupportedDevices", [])
-                
-                # Find devices in cached data that are missing in the current devices
                 missing_devices = [device for device in cached_devices if device not in current_devices]
-                
-                # Add missing devices to current list if any are found
                 if missing_devices:
-                    current_devices.extend(missing_devices)
-                    version_data[version_str] = current_devices  # Update with merged devices
-                    print(f"Updated {version_str} with missing devices from cached gmdf data: {missing_devices}")
-
+                    version_data[version_str] = merge_device_lists(current_devices, cached_devices)
+                    print(f"Updated {version_str} with missing devices from cached data: {missing_devices}")
     return final_versions_data
 
 
 def update_supported_devices_in_feed(data, supported_devices_data):
-    """Update any 'SupportedDevices' key in `data` based on `final_versions_data`."""
-    # Step 1: Extract and sort versions
+    """Update the 'SupportedDevices' in `data` by consolidating data from multiple sources."""
     extracted_sorted_data = extract_versions(data)
-
-    # Step 2: Inject supported devices into each version based on major version
     injected_versions_data = inject_supported_devices(extracted_sorted_data, supported_devices_data)
-
-    # Step 3: Layer supported devices within the same major versions
     layered_versions_data = layer_supported_devices(injected_versions_data)
+    
+    cached_data, _ = check_cache_file("cache/gdmf_cached.json", verbose=False)
+    if cached_data:
+        final_versions_data = merge_devices_from_cached_data(layered_versions_data, cached_data)
+    else:
+        final_versions_data = layered_versions_data
 
-    # Check if the cache file exists, is valid JSON, and output its content
-    cached_data, cached_etag = check_cache_file("cache/gdmf_cached.json", verbose=False)
-
-    # After performing all other updates
-    final_versions_data = merge_devices_from_cached_data(layered_versions_data, cached_data)
-
-    # pretty_print_json(original_data)
-    # pretty_print_json(final_versions_data)
-
-    # Create a lookup dictionary from `final_versions_data` for quick access by ProductVersion
     final_versions_lookup = {version_str: devices for entry in final_versions_data for version_str, devices in entry.items()}
 
-    # Iterate through each OS version entry in the data
     for os_version_data in data.get("OSVersions", []):
-        # Check for "Latest" and "SecurityReleases" keys where "SupportedDevices" might be present
         for release_type in ["Latest", "SecurityReleases"]:
-            if release_type in os_version_data:
-                # Handle "Latest" (a dict) and "SecurityReleases" (a list of dicts)
-                releases = os_version_data[release_type] if isinstance(os_version_data[release_type], list) else [os_version_data[release_type]]
-                
+            releases = os_version_data.get(release_type)
+            if releases:
+                releases = releases if isinstance(releases, list) else [releases]
                 for release in releases:
-                    # Only proceed if "SupportedDevices" exists in the release entry
                     product_version = release.get("ProductVersion")
-                    
-                    # Find and update SupportedDevices if a matching version is found in `final_versions_lookup`
                     if product_version in final_versions_lookup:
                         current_devices = set(release.get("SupportedDevices", []))
-                        new_devices = set(final_versions_lookup[product_version])
-                        
-                        # Merge any missing devices and sort alphabetically
-                        combined_devices = sorted(current_devices.union(new_devices))
-                        release["SupportedDevices"] = combined_devices
-                        print(f"Updated {product_version} with SupportedDevices: {release['SupportedDevices']}")
-    
+                        consolidated_devices = merge_device_lists(current_devices, final_versions_lookup[product_version])
+                        added_devices = sorted(set(consolidated_devices) - current_devices)
+                        release["SupportedDevices"] = consolidated_devices
+                        if added_devices:
+                            print(f"Final update for {product_version} with added SupportedDevices: {added_devices}")
     return data
 
 
