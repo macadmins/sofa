@@ -48,7 +48,7 @@ def main(os_types: list):
     supported_devices_data = load_supported_devices_data()
     macos_data_feed = load_macos_data_feed()
 
-    save_original_macos_data_feed(macos_data_feed)
+    # save_original_macos_data_feed(macos_data_feed)
 
     # Update macos data feed with supported devices data if necessary
     updated_feed_data = update_supported_devices_in_feed(macos_data_feed, supported_devices_data)
