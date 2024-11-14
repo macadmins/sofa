@@ -15,6 +15,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from urllib.request import urlopen
 from urllib.parse import urljoin
+import packaging.version
 
 import certifi  # included in requests, as provided in requirements.txt
 import requests
@@ -48,11 +49,13 @@ def main(os_types: list):
     supported_devices_data = load_supported_devices_data()
     macos_data_feed = load_macos_data_feed()
 
+    # save_original_macos_data_feed(macos_data_feed)
+
     # Update macos data feed with supported devices data if necessary
-    update_supported_devices_in_feed(macos_data_feed, supported_devices_data)
+    updated_feed_data = update_supported_devices_in_feed(macos_data_feed, supported_devices_data)
 
     # Save the updated macOS data feed
-    save_updated_macos_data_feed(macos_data_feed)
+    save_updated_macos_data_feed(updated_feed_data)
 
 
 def fetch_gdmf_data() -> dict:
@@ -114,24 +117,32 @@ def fetch_gdmf_data() -> dict:
     return live_data
 
 
-def check_cache_file(cache_file_path: str) -> tuple:
+def check_cache_file(cache_file_path: str, verbose: bool = True) -> tuple:
     """Check if the cache file exists and does not fail JSON decode.
     Return the data and 'etag' if valid."""
+    
     if os.path.exists(cache_file_path):
         try:
             with open(cache_file_path, "r", encoding="utf-8") as cache_file:
                 cache_content = json.load(cache_file)
+                
                 if "etag" in cache_content and "data" in cache_content:
-                    print("Cache file", cache_file_path, "is valid JSON.")
-                    print("Cache content:", cache_content["data"])
-                    if cache_content["data"] == {}:
+                    if verbose:
+                        print("Cache file", cache_file_path, "is valid JSON.")
+                        print("Cache content:", cache_content["data"])
+                    if cache_content["data"] == {} and verbose:
                         print("Cache content is empty.")
                     return cache_content["data"], cache_content["etag"]
-                print("Cache file structure is invalid.")
+                
+                if verbose:
+                    print("Cache file structure is invalid.")
         except (json.JSONDecodeError, IOError) as check_cache_err:
-            print(f"Failed to read cache file: {check_cache_err}")
+            if verbose:
+                print(f"Failed to read cache file: {check_cache_err}")
     else:
-        print(f"Cache file {cache_file_path} does not exist.")
+        if verbose:
+            print(f"Cache file {cache_file_path} does not exist.")
+    
     return None, None
 
 
@@ -490,7 +501,9 @@ def load_supported_devices_data():
     """Load the supported devices data from the cache"""
     supported_devices_file = os.path.join('cache', 'supported_devices.json')
     with open(supported_devices_file, 'r', encoding='utf-8') as f:
-        return json.load(f)
+        data = json.load(f)
+    # Map OSVersion to SupportedDevices for easy lookup
+    return {str(entry["OSVersion"]): entry["SupportedDevices"] for entry in data}
 
 
 def load_macos_data_feed():
@@ -500,51 +513,153 @@ def load_macos_data_feed():
         return json.load(f)
 
 
-def update_supported_devices_in_feed(data, supported_devices_data):
-    """Recursively update the 'SupportedDevices' in the data feed"""
-    if isinstance(data, dict):
-        update_devices_dict(data, supported_devices_data)
-    elif isinstance(data, list):
-        update_devices_list(data, supported_devices_data)
+def merge_device_lists(current_devices, additional_devices):
+    """Merge two lists of devices, remove duplicates, and return them sorted."""
+    return sorted(set(current_devices).union(additional_devices))
 
 
-def update_devices_dict(data, supported_devices_data):
-    """Update the 'SupportedDevices' in a dictionary"""
-    for key, value in data.items():
-        if key == 'SupportedDevices':
-            update_supported_devices(data, supported_devices_data)
+def extract_versions(data):
+    """Extract versions from the primary data, gathering SupportedDevices for each ProductVersion."""
+    result = []
+    for os_version in data.get("OSVersions", []):
+        if isinstance(os_version, dict):
+            for release_type in ["Latest", "SecurityReleases"]:
+                releases = os_version.get(release_type)
+                if releases:
+                    releases = releases if isinstance(releases, list) else [releases]
+                    for release in releases:
+                        product_version = release.get("ProductVersion")
+                        if isinstance(product_version, str):
+                            devices = release.get("SupportedDevices", [])
+                            result.append({product_version: devices})
+    return sorted(result, key=lambda x: tuple(map(int, next(iter(x)).split("."))))
+
+
+def inject_supported_devices(versions, supported_devices_data):
+    """Inject supported devices into each OS version based on major version."""
+    for version_dict in versions:
+        version_str, devices = next(iter(version_dict.items()))
+        major_version = version_str.split(".")[0]
+        if major_version in supported_devices_data and not devices:
+            devices.extend(supported_devices_data[major_version])
+            print(f"Injected supported devices for {version_str}: {supported_devices_data[major_version]}")
+    return versions
+
+
+def layer_supported_devices(versions):
+    """Layer supported devices within each major version."""
+    layered_versions = {}
+    for version_dict in versions:
+        version_str, devices = next(iter(version_dict.items()))
+        major_version = version_str.split(".")[0]
+        if major_version not in layered_versions:
+            layered_versions[major_version] = []
+        if devices and not layered_versions[major_version]:
+            layered_versions[major_version] = devices.copy()
         else:
-            update_supported_devices_in_feed(value, supported_devices_data)
+            devices = merge_device_lists(layered_versions[major_version], devices)
+        layered_versions[major_version] = devices
+        version_dict[version_str] = devices
+    return versions
 
 
-def update_devices_list(data, supported_devices_data):
-    """Update the 'SupportedDevices' in a list"""
-    for item in data:
-        update_supported_devices_in_feed(item, supported_devices_data)
+def merge_devices_from_cached_data(final_versions_data, cached_data):
+    """Update `final_versions_data` with missing devices from `cached_data` for matching ProductVersion entries."""
+    cached_macos_versions = []
+    for asset_set in ["PublicAssetSets", "AssetSets"]:
+        cached_macos_versions.extend(cached_data.get(asset_set, {}).get("macOS", []))
+    
+    for version_data in final_versions_data:
+        version_str, current_devices = next(iter(version_data.items()))
+        for cached_version in cached_macos_versions:
+            if cached_version["ProductVersion"] == version_str:
+                cached_devices = cached_version.get("SupportedDevices", [])
+                missing_devices = [device for device in cached_devices if device not in current_devices]
+                if missing_devices:
+                    version_data[version_str] = merge_device_lists(current_devices, cached_devices)
+                    print(f"Updated {version_str} with missing devices from cached data: {missing_devices}")
+    return final_versions_data
 
 
-def update_supported_devices(data, supported_devices_data):
-    """Update the 'SupportedDevices' key only if the new list has different items"""
-    os_version = data.get('ProductVersion', '').split('.')[0]
+def update_supported_devices_in_feed(data, supported_devices_data):
+    """Update the 'SupportedDevices' in `data` by consolidating data from multiple sources."""
+    extracted_sorted_data = extract_versions(data)
+    injected_versions_data = inject_supported_devices(extracted_sorted_data, supported_devices_data)
+    layered_versions_data = layer_supported_devices(injected_versions_data)
+    
+    cached_data, _ = check_cache_file("cache/gdmf_cached.json", verbose=False)
+    if cached_data:
+        final_versions_data = merge_devices_from_cached_data(layered_versions_data, cached_data)
+    else:
+        final_versions_data = layered_versions_data
 
-    for supported_device in supported_devices_data:
-        supported_os_version = supported_device.get('OSVersion', '').split('.')[0]
+    final_versions_lookup = {version_str: devices for entry in final_versions_data for version_str, devices in entry.items()}
 
-        if os_version == supported_os_version:
-            current_supported_devices = data.get('SupportedDevices', [])
-            new_supported_devices = supported_device.get('SupportedDevices', [])
+    # Sort OSVersions based on ProductVersion in chronological order
+    sorted_os_versions = []
+    for os_version_data in data.get("OSVersions", []):
+        for release_type in ["Latest", "SecurityReleases"]:
+            releases = os_version_data.get(release_type)
+            if releases:
+                releases = releases if isinstance(releases, list) else [releases]
+                for release in releases:
+                    product_version = release.get("ProductVersion")
+                    if product_version:
+                        sorted_os_versions.append((packaging.version.parse(product_version), release))
 
-            # Sort both lists and compare
-            if sorted(current_supported_devices) != sorted(new_supported_devices):
-                data['SupportedDevices'] = new_supported_devices
-                print(f"Updated {data.get('ProductVersion')} with SupportedDevices: {data['SupportedDevices']}")
-            else:
-                print(f"No update needed for {data.get('ProductVersion')} as the SupportedDevices lists are the same.")
+    # Sort the consolidated list of versions
+    sorted_os_versions.sort(key=lambda x: x[0])
+
+    # Track cumulative devices for each major version
+    cumulative_devices_by_major = {}
+
+    # Now loop through the sorted versions and update SupportedDevices
+    for _, release in sorted_os_versions:
+        product_version = release.get("ProductVersion")
+        major_version = product_version.split(".")[0]
+        
+        # Initialize cumulative devices for this major version if not present
+        if major_version not in cumulative_devices_by_major:
+            cumulative_devices_by_major[major_version] = set()
+
+        # Get current devices from release, default to empty if none
+        current_devices = set(release.get("SupportedDevices", []))
+
+        # Merge cumulative devices with current devices for this release
+        consolidated_devices = merge_device_lists(
+            cumulative_devices_by_major[major_version],  # cumulative up to this version
+            final_versions_lookup.get(product_version, [])  # additional devices from final lookup
+        )
+
+        # Update the release's SupportedDevices with the consolidated devices
+        added_devices = sorted(set(consolidated_devices) - current_devices)
+        release["SupportedDevices"] = sorted(consolidated_devices)
+        
+        # Update cumulative devices for this major version
+        cumulative_devices_by_major[major_version].update(consolidated_devices)
+
+        # Log added devices if any were added
+        if added_devices:
+            print(f"Final update for {product_version} with added SupportedDevices: {added_devices}")
+    
+    return data
+
+
+def pretty_print_json(data):
+    """Pretty print JSON data."""
+    print(json.dumps(data, indent=4))
 
 
 def save_updated_macos_data_feed(macos_data_feed):
     """Save the updated macOS data feed to the file"""
     macos_data_feed_file = 'macos_data_feed.json'
+    with open(macos_data_feed_file, 'w', encoding='utf-8') as f:
+        json.dump(macos_data_feed, f, indent=4)
+
+
+def save_original_macos_data_feed(macos_data_feed):
+    """Save the updated macOS data feed to the file"""
+    macos_data_feed_file = 'macos_data_feed_original.json'
     with open(macos_data_feed_file, 'w', encoding='utf-8') as f:
         json.dump(macos_data_feed, f, indent=4)
 
