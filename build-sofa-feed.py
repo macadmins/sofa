@@ -48,11 +48,13 @@ def main(os_types: list):
     supported_devices_data = load_supported_devices_data()
     macos_data_feed = load_macos_data_feed()
 
+    save_original_macos_data_feed(macos_data_feed)
+
     # Update macos data feed with supported devices data if necessary
-    update_supported_devices_in_feed(macos_data_feed, supported_devices_data)
+    updated_feed_data = update_supported_devices_in_feed(macos_data_feed, supported_devices_data)
 
     # Save the updated macOS data feed
-    save_updated_macos_data_feed(macos_data_feed)
+    save_updated_macos_data_feed(updated_feed_data)
 
 
 def fetch_gdmf_data() -> dict:
@@ -114,24 +116,32 @@ def fetch_gdmf_data() -> dict:
     return live_data
 
 
-def check_cache_file(cache_file_path: str) -> tuple:
+def check_cache_file(cache_file_path: str, verbose: bool = True) -> tuple:
     """Check if the cache file exists and does not fail JSON decode.
     Return the data and 'etag' if valid."""
+    
     if os.path.exists(cache_file_path):
         try:
             with open(cache_file_path, "r", encoding="utf-8") as cache_file:
                 cache_content = json.load(cache_file)
+                
                 if "etag" in cache_content and "data" in cache_content:
-                    print("Cache file", cache_file_path, "is valid JSON.")
-                    print("Cache content:", cache_content["data"])
-                    if cache_content["data"] == {}:
+                    if verbose:
+                        print("Cache file", cache_file_path, "is valid JSON.")
+                        print("Cache content:", cache_content["data"])
+                    if cache_content["data"] == {} and verbose:
                         print("Cache content is empty.")
                     return cache_content["data"], cache_content["etag"]
-                print("Cache file structure is invalid.")
+                
+                if verbose:
+                    print("Cache file structure is invalid.")
         except (json.JSONDecodeError, IOError) as check_cache_err:
-            print(f"Failed to read cache file: {check_cache_err}")
+            if verbose:
+                print(f"Failed to read cache file: {check_cache_err}")
     else:
-        print(f"Cache file {cache_file_path} does not exist.")
+        if verbose:
+            print(f"Cache file {cache_file_path} does not exist.")
+    
     return None, None
 
 
@@ -557,8 +567,38 @@ def layer_supported_devices(versions):
     return versions
 
 
+def merge_devices_from_cached_data(final_versions_data, cached_data):
+    """Update `final_versions_data` with any missing devices from `cached_data` for matching ProductVersion entries
+    across both 'PublicAssetSets' and 'AssetSets' in the cached data."""
+    
+    # Extract macOS data from both 'PublicAssetSets' and 'AssetSets'
+    cached_macos_versions = []
+    for asset_set in ["PublicAssetSets", "AssetSets"]:
+        if asset_set in cached_data:
+            cached_macos_versions.extend(cached_data[asset_set].get("macOS", []))
+    
+    # Iterate over each item in `final_versions_data`
+    for version_data in final_versions_data:
+        version_str, current_devices = next(iter(version_data.items()))
+        
+        # Check if any `ProductVersion` in cached data matches this version
+        for cached_version in cached_macos_versions:
+            if cached_version["ProductVersion"] == version_str:
+                cached_devices = cached_version.get("SupportedDevices", [])
+                
+                # Find devices in cached data that are missing in the current devices
+                missing_devices = [device for device in cached_devices if device not in current_devices]
+                
+                # Add missing devices to current list if any are found
+                if missing_devices:
+                    current_devices.extend(missing_devices)
+                    version_data[version_str] = current_devices  # Update with merged devices
+                    print(f"Updated {version_str} with missing devices from cached gmdf data: {missing_devices}")
+
+    return final_versions_data
+
+
 def update_supported_devices_in_feed(data, supported_devices_data):
-    original_data = data.copy()
     """Update any 'SupportedDevices' key in `data` based on `final_versions_data`."""
     # Step 1: Extract and sort versions
     extracted_sorted_data = extract_versions(data)
@@ -567,12 +607,60 @@ def update_supported_devices_in_feed(data, supported_devices_data):
     injected_versions_data = inject_supported_devices(extracted_sorted_data, supported_devices_data)
 
     # Step 3: Layer supported devices within the same major versions
-    final_versions_data = layer_supported_devices(injected_versions_data)
+    layered_versions_data = layer_supported_devices(injected_versions_data)
+
+    # Check if the cache file exists, is valid JSON, and output its content
+    cached_data, cached_etag = check_cache_file("cache/gdmf_cached.json", verbose=False)
+
+    # After performing all other updates
+    final_versions_data = merge_devices_from_cached_data(layered_versions_data, cached_data)
+
+    # pretty_print_json(original_data)
+    # pretty_print_json(final_versions_data)
+
+    # Create a lookup dictionary from `final_versions_data` for quick access by ProductVersion
+    final_versions_lookup = {version_str: devices for entry in final_versions_data for version_str, devices in entry.items()}
+
+    # Iterate through each OS version entry in the data
+    for os_version_data in data.get("OSVersions", []):
+        # Check for "Latest" and "SecurityReleases" keys where "SupportedDevices" might be present
+        for release_type in ["Latest", "SecurityReleases"]:
+            if release_type in os_version_data:
+                # Handle "Latest" (a dict) and "SecurityReleases" (a list of dicts)
+                releases = os_version_data[release_type] if isinstance(os_version_data[release_type], list) else [os_version_data[release_type]]
+                
+                for release in releases:
+                    # Only proceed if "SupportedDevices" exists in the release entry
+                    product_version = release.get("ProductVersion")
+                    
+                    # Find and update SupportedDevices if a matching version is found in `final_versions_lookup`
+                    if product_version in final_versions_lookup:
+                        current_devices = set(release.get("SupportedDevices", []))
+                        new_devices = set(final_versions_lookup[product_version])
+                        
+                        # Merge any missing devices and sort alphabetically
+                        combined_devices = sorted(current_devices.union(new_devices))
+                        release["SupportedDevices"] = combined_devices
+                        print(f"Updated {product_version} with SupportedDevices: {release['SupportedDevices']}")
+    
+    return data
+
+
+def pretty_print_json(data):
+    """Pretty print JSON data."""
+    print(json.dumps(data, indent=4))
 
 
 def save_updated_macos_data_feed(macos_data_feed):
     """Save the updated macOS data feed to the file"""
     macos_data_feed_file = 'macos_data_feed.json'
+    with open(macos_data_feed_file, 'w', encoding='utf-8') as f:
+        json.dump(macos_data_feed, f, indent=4)
+
+
+def save_original_macos_data_feed(macos_data_feed):
+    """Save the updated macOS data feed to the file"""
+    macos_data_feed_file = 'macos_data_feed_original.json'
     with open(macos_data_feed_file, 'w', encoding='utf-8') as f:
         json.dump(macos_data_feed, f, indent=4)
 
