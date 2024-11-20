@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# SOFA Use cases 
+# SOFA Use cases
 
 ::: warning IMPORTANT NOTE: Update Your Use of SOFA Feed
 
@@ -12,7 +12,7 @@ To optimize hosting and caching for SOFA, please implement a user-agent in your 
 
 **Update to the New Feed Location**
 
-Please update your scripts that are utilising the SOFA macOS and iOS feeds to point to https://sofafeed.macadmins.io/v1/macos_data_feed.json and https://sofafeed.macadmins.io/v1/ios_data_feed.json respectively. The old feed addresses of https://sofa.macadmins.io/v1/macos_data_feed.json and https://sofa.macadmins.io/v1/ios_data_feed.json are deprecated and will be removed soon.
+Please ensure your scripts that are utilising the SOFA macOS and iOS feeds to point to https://sofafeed.macadmins.io/v1/macos_data_feed.json and https://sofafeed.macadmins.io/v1/ios_data_feed.json respectively.
 
 :::
 
@@ -20,7 +20,7 @@ Please update your scripts that are utilising the SOFA macOS and iOS feeds to po
 
 Use [Osquery](https://osquery.io) with the MacAdmins Open Source (MAOS) [Osquery Extension](https://github.com/macadmins/osquery-extension) and the new SOFA tables to monitor unpatched CVEs on macOS. By leveraging the `sofa_unpatched_cves` and `sofa_info` tables, you can identify vulnerabilities and patch levels not addressed by current system updates across your fleet. This use case enhances security monitoring by providing insights into unpatched and actively exploited CVEs, ensuring systems are kept up to date and secure.
 
-For more details, visit the original blog post about SOFA and MacAdmins Osquery Extension [here](https://grahamgilbert.com/blog/2024/05/03/investigating-unpatched-cves-with-osquery-and-sofa/). 
+For more details, visit the original blog post about SOFA and MacAdmins Osquery Extension [here](https://grahamgilbert.com/blog/2024/05/03/investigating-unpatched-cves-with-osquery-and-sofa/).
 
 ## Nudge 2.0
 
@@ -37,6 +37,6 @@ For more details, visit the original blog posts here:
 - [SOFA, and how to use it with Jamf Pro](https://grahamrpugh.com/2024/04/29/sofa-and-jamf-pro.html)
 - [If you're using the SOFA feed, please take note!](https://grahamrpugh.com/2024/07/22/sofa-new-feed.html)
 
-## More use cases 
+## More use cases
 
 Check out further use case examples in our repo [here](https://github.com/macadmins/sofa/tree/main/tool-scripts).
