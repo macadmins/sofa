@@ -10,7 +10,7 @@ outline: deep
 
 To optimize hosting and caching for SOFA, please implement a user-agent in your integrations, tools, and workflows. This enhances performance and user interactions with SOFA.
 
-**Update to the New Feed Location**
+**Sofa Feed Usage**
 
 Please ensure your scripts that are utilising the SOFA macOS and iOS feeds to point to https://sofafeed.macadmins.io/v1/macos_data_feed.json and https://sofafeed.macadmins.io/v1/ios_data_feed.json respectively.
 
