@@ -161,7 +161,7 @@ export default {
         };
 
         const securityReleases = version.SecurityReleases?.filter(security => security.ProductVersion !== version.Latest.ProductVersion)
-          .slice(0, 2)
+          .slice(0, 4)
           .map(security => {
             const securityDeferralDates = this.calculateDeferralDates(security.ReleaseDate);
             return {
