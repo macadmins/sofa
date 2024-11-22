@@ -127,7 +127,7 @@ export default {
         };
 
         const securityReleases = version.SecurityReleases?.filter(security => security.ProductVersion !== version.Latest.ProductVersion)
-          .slice(0, 2) // Grab only the next two most recent versions
+          .slice(0, 4) // Grab only the next four most recent versions
           .map(security => {
             const securityDeferralDates = this.calculateDeferralDates(security.ReleaseDate);
             return {
