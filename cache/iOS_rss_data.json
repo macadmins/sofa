@@ -2141,6 +2141,47 @@
         "ReleaseDate": "2025-02-10T00:00:00Z",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-ca/122174",
+        "SupportedDevices": [],
+        "CVEs": {
+            "CVE-2025-24200": true
+        },
+        "ActivelyExploitedCVEs": [
+            "CVE-2025-24200"
+        ],
+        "UniqueCVEsCount": 1,
+        "DaysSincePreviousRelease": 14
+    },
+    {
+        "UpdateName": "iPadOS 17.7.5",
+        "ProductName": "iOS",
+        "ProductVersion": "17.7.5",
+        "ReleaseDate": "2025-02-10T00:00:00Z",
+        "ReleaseType": "OS",
+        "SecurityInfo": "https://support.apple.com/en-ca/122173",
+        "SupportedDevices": [
+            "iPad7,1",
+            "iPad7,2",
+            "iPad7,3",
+            "iPad7,4",
+            "iPad7,5",
+            "iPad7,6"
+        ],
+        "CVEs": {
+            "CVE-2025-24200": true
+        },
+        "ActivelyExploitedCVEs": [
+            "CVE-2025-24200"
+        ],
+        "UniqueCVEsCount": 1,
+        "DaysSincePreviousRelease": 14
+    },
+    {
+        "UpdateName": "iOS 18.3.2 and iPadOS 18.3.2",
+        "ProductName": "iOS",
+        "ProductVersion": "18.3.2",
+        "ReleaseDate": "2025-03-11T00:00:00Z",
+        "ReleaseType": "OS",
+        "SecurityInfo": "https://support.apple.com/en-ca/122281",
         "SupportedDevices": [
             "iPad11,1",
             "iPad11,2",
@@ -2225,36 +2266,12 @@
             "iPhone17,4"
         ],
         "CVEs": {
-            "CVE-2025-24200": true
+            "CVE-2025-24201": true
         },
         "ActivelyExploitedCVEs": [
-            "CVE-2025-24200"
+            "CVE-2025-24201"
         ],
         "UniqueCVEsCount": 1,
-        "DaysSincePreviousRelease": 14
-    },
-    {
-        "UpdateName": "iPadOS 17.7.5",
-        "ProductName": "iOS",
-        "ProductVersion": "17.7.5",
-        "ReleaseDate": "2025-02-10T00:00:00Z",
-        "ReleaseType": "OS",
-        "SecurityInfo": "https://support.apple.com/en-ca/122173",
-        "SupportedDevices": [
-            "iPad7,1",
-            "iPad7,2",
-            "iPad7,3",
-            "iPad7,4",
-            "iPad7,5",
-            "iPad7,6"
-        ],
-        "CVEs": {
-            "CVE-2025-24200": true
-        },
-        "ActivelyExploitedCVEs": [
-            "CVE-2025-24200"
-        ],
-        "UniqueCVEsCount": 1,
-        "DaysSincePreviousRelease": 14
+        "DaysSincePreviousRelease": 29
     }
 ]

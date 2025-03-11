@@ -1,12 +1,12 @@
 {
-    "UpdateHash": "80247a92b4312239c269e2a9d4ba56d91914ac39b139af9023b5eb639bc5d9a5",
+    "UpdateHash": "0bb65ce5d746624259905fd9a4a4cd038b17bb61e03c69cee138f420956077f4",
     "OSVersions": [
         {
             "OSVersion": "18",
             "Latest": {
-                "ProductVersion": "18.3.1",
-                "Build": "22D72",
-                "ReleaseDate": "2025-02-10T00:00:00Z",
+                "ProductVersion": "18.3.2",
+                "Build": "22D6082",
+                "ReleaseDate": "2025-03-11T00:00:00Z",
                 "ExpirationDate": "2025-06-09T00:00:00Z",
                 "SupportedDevices": [
                     "iPad11,1",
@@ -98,12 +98,12 @@
             },
             "SecurityReleases": [
                 {
-                    "UpdateName": "iOS 18.3.1 and iPadOS 18.3.1",
+                    "UpdateName": "iOS 18.3.2 and iPadOS 18.3.2",
                     "ProductName": "iOS",
-                    "ProductVersion": "18.3.1",
-                    "ReleaseDate": "2025-02-10T00:00:00Z",
+                    "ProductVersion": "18.3.2",
+                    "ReleaseDate": "2025-03-11T00:00:00Z",
                     "ReleaseType": "OS",
-                    "SecurityInfo": "https://support.apple.com/en-ca/122174",
+                    "SecurityInfo": "https://support.apple.com/en-ca/122281",
                     "SupportedDevices": [
                         "iPad11,1",
                         "iPad11,2",
@@ -187,6 +187,23 @@
                         "iPhone17,3",
                         "iPhone17,4"
                     ],
+                    "CVEs": {
+                        "CVE-2025-24201": true
+                    },
+                    "ActivelyExploitedCVEs": [
+                        "CVE-2025-24201"
+                    ],
+                    "UniqueCVEsCount": 1,
+                    "DaysSincePreviousRelease": 29
+                },
+                {
+                    "UpdateName": "iOS 18.3.1 and iPadOS 18.3.1",
+                    "ProductName": "iOS",
+                    "ProductVersion": "18.3.1",
+                    "ReleaseDate": "2025-02-10T00:00:00Z",
+                    "ReleaseType": "OS",
+                    "SecurityInfo": "https://support.apple.com/en-ca/122174",
+                    "SupportedDevices": [],
                     "CVEs": {
                         "CVE-2025-24200": true
                     },
