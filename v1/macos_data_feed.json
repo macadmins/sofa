@@ -1,5 +1,5 @@
 {
-    "UpdateHash": "4e701ec27bfd7413d81e48d35f15b0992076a9b21bf6084d65d73120ce092c18",
+    "UpdateHash": "13236dc10ab9e705932741ee6e28e78e912a68784a9756d43ef4ca2064dce89a",
     "OSVersions": [
         {
             "OSVersion": "Sequoia 15",
@@ -3080,6 +3080,8 @@
                     "Model": "MacBook Air",
                     "URL": "https://support.apple.com/en-ca/HT201862",
                     "Identifiers": {
+                        "Mac16,13": "MacBook Air (15-inch, M4, 2025)",
+                        "Mac16,12": "MacBook Air (13-inch, M4, 2025)",
                         "Mac15,13": "MacBook Air (15-inch, M3, 2024)",
                         "Mac15,12": "MacBook Air (13-inch, M3, 2024)",
                         "Mac14,15": "MacBook Air (15-inch, M2, 2023)",
@@ -3135,6 +3137,8 @@
                     "Model": "Mac Studio",
                     "URL": "https://support.apple.com/en-ca/HT213073",
                     "Identifiers": {
+                        "Mac16,9": "Mac Studio (2025)",
+                        "Mac15,14": "Mac Studio (2025)",
                         "Mac14,13": "Mac Studio (2023)",
                         "Mac14,14": "Mac Studio (2023)",
                         "Mac13,1": "Mac Studio (2022)",
@@ -9519,6 +9523,24 @@
                 12
             ]
         },
+        "Mac16,13": {
+            "MarketingName": "MacBook Air (15-inch, M4, 2025)",
+            "SupportedOS": [
+                "Sonoma 14"
+            ],
+            "OSVersions": [
+                14
+            ]
+        },
+        "Mac16,12": {
+            "MarketingName": "MacBook Air (13-inch, M4, 2025)",
+            "SupportedOS": [
+                "Sonoma 14"
+            ],
+            "OSVersions": [
+                14
+            ]
+        },
         "MacBookAir8,2": {
             "MarketingName": "MacBook Air (Retina, 13-inch, 2019)",
             "SupportedOS": [
@@ -9543,6 +9565,24 @@
                 14,
                 13,
                 12
+            ]
+        },
+        "Mac16,9": {
+            "MarketingName": "Mac Studio (2025)",
+            "SupportedOS": [
+                "Sonoma 14"
+            ],
+            "OSVersions": [
+                14
+            ]
+        },
+        "Mac15,14": {
+            "MarketingName": "Mac Studio (2025)",
+            "SupportedOS": [
+                "Sonoma 14"
+            ],
+            "OSVersions": [
+                14
             ]
         },
         "MacBookPro14,3": {
