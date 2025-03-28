@@ -138,9 +138,15 @@
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/kb/HT213220",
         "SupportedDevices": [],
-        "CVEs": {},
-        "ActivelyExploitedCVEs": [],
-        "UniqueCVEsCount": 0,
+        "CVEs": {
+            "CVE-2022-22675": true,
+            "CVE-2022-22674": true
+        },
+        "ActivelyExploitedCVEs": [
+            "CVE-2022-22675",
+            "CVE-2022-22674"
+        ],
+        "UniqueCVEsCount": 2,
         "DaysSincePreviousRelease": 17
     },
     {
