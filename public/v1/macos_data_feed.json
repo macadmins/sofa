@@ -1,5 +1,5 @@
 {
-    "UpdateHash": "79c6066a745ecc94df5c5de21d81c6aa77da245b5829c15313e152dc11fd6e07",
+    "UpdateHash": "3e58ede59fd29872e0f4308754d1b2f82d24e1187b6f2f49e3c526a4b8ddcd48",
     "OSVersions": [
         {
             "OSVersion": "Sequoia 15",
@@ -679,7 +679,7 @@
                     "ProductVersion": "15.3.1",
                     "ReleaseDate": "2025-02-10T00:00:00Z",
                     "ReleaseType": "OS",
-                    "SecurityInfo": "This update has no published CVE entries.",
+                    "SecurityInfo": "https://support.apple.com/en-ca/122900",
                     "SupportedDevices": [
                         "J132AP",
                         "J137AP",
@@ -734,9 +734,13 @@
                         "VMA2MACOSAP",
                         "VMM-x86_64"
                     ],
-                    "CVEs": {},
-                    "ActivelyExploitedCVEs": [],
-                    "UniqueCVEsCount": 0,
+                    "CVEs": {
+                        "CVE-2025-43200": true
+                    },
+                    "ActivelyExploitedCVEs": [
+                        "CVE-2025-43200"
+                    ],
+                    "UniqueCVEsCount": 1,
                     "DaysSincePreviousRelease": 14
                 },
                 {
@@ -1977,7 +1981,7 @@
                     "ProductVersion": "14.7.4",
                     "ReleaseDate": "2025-02-10T00:00:00Z",
                     "ReleaseType": "OS",
-                    "SecurityInfo": "This update has no published CVE entries.",
+                    "SecurityInfo": "https://support.apple.com/en-ca/122901",
                     "SupportedDevices": [
                         "J132AP",
                         "J137AP",
@@ -2036,9 +2040,13 @@
                         "VMA2MACOSAP",
                         "VMM-x86_64"
                     ],
-                    "CVEs": {},
-                    "ActivelyExploitedCVEs": [],
-                    "UniqueCVEsCount": 0,
+                    "CVEs": {
+                        "CVE-2025-43200": true
+                    },
+                    "ActivelyExploitedCVEs": [
+                        "CVE-2025-43200"
+                    ],
+                    "UniqueCVEsCount": 1,
                     "DaysSincePreviousRelease": 14
                 },
                 {
@@ -4375,7 +4383,7 @@
                     "ProductVersion": "13.7.4",
                     "ReleaseDate": "2025-02-10T00:00:00Z",
                     "ReleaseType": "OS",
-                    "SecurityInfo": "This update has no published CVE entries.",
+                    "SecurityInfo": "https://support.apple.com/en-ca/122902",
                     "SupportedDevices": [
                         "J132AP",
                         "J137AP",
@@ -4433,9 +4441,13 @@
                         "VMA2MACOSAP",
                         "VMM-x86_64"
                     ],
-                    "CVEs": {},
-                    "ActivelyExploitedCVEs": [],
-                    "UniqueCVEsCount": 0,
+                    "CVEs": {
+                        "CVE-2025-43200": true
+                    },
+                    "ActivelyExploitedCVEs": [
+                        "CVE-2025-43200"
+                    ],
+                    "UniqueCVEsCount": 1,
                     "DaysSincePreviousRelease": 14
                 },
                 {
