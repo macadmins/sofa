@@ -1,12 +1,12 @@
 {
-    "UpdateHash": "6b06a99d176520fafd37ffadd661133a395461343a13c49dd70786c6914a443b",
+    "UpdateHash": "ce0aa75f5cfb1bf09fa49498428fb12a098a48c30119605774f0c752a1fe1c8d",
     "OSVersions": [
         {
             "OSVersion": "Sequoia 15",
             "Latest": {
-                "ProductVersion": "15.5",
-                "Build": "24F74",
-                "ReleaseDate": "2025-05-12T00:00:00Z",
+                "ProductVersion": "15.6",
+                "Build": "24G84",
+                "ReleaseDate": "2025-07-29T00:00:00Z",
                 "ExpirationDate": "2025-10-27T00:00:00Z",
                 "SupportedDevices": [
                     "J132AP",
@@ -77,61 +77,16 @@
                     "VMA2MACOSAP",
                     "VMM-x86_64"
                 ],
-                "SecurityInfo": "https://support.apple.com/en-ca/122716",
+                "SecurityInfo": "https://support.apple.com/kb/HT213412",
                 "CVEs": {
-                    "CVE-2025-31246": false,
-                    "CVE-2025-31240": false,
-                    "CVE-2025-31237": false,
-                    "CVE-2025-31260": false,
-                    "CVE-2025-31251": false,
-                    "CVE-2025-31235": false,
-                    "CVE-2025-24222": false,
-                    "CVE-2025-31212": false,
-                    "CVE-2025-31208": false,
-                    "CVE-2025-31209": false,
-                    "CVE-2025-31239": false,
-                    "CVE-2025-31233": false,
-                    "CVE-2025-31236": false,
-                    "CVE-2025-30443": false,
-                    "CVE-2025-31226": false,
-                    "CVE-2025-31232": false,
-                    "CVE-2025-31241": false,
-                    "CVE-2025-31219": false,
-                    "CVE-2024-8176": false,
-                    "CVE-2025-30440": false,
-                    "CVE-2025-31222": false,
-                    "CVE-2025-24274": false,
-                    "CVE-2025-31218": false,
-                    "CVE-2025-31256": false,
-                    "CVE-2025-24142": false,
-                    "CVE-2025-26465": false,
-                    "CVE-2025-26466": false,
-                    "CVE-2025-31234": false,
-                    "CVE-2025-31245": false,
-                    "CVE-2025-31244": false,
-                    "CVE-2025-31258": false,
-                    "CVE-2025-31249": false,
-                    "CVE-2025-31224": false,
-                    "CVE-2025-31221": false,
-                    "CVE-2025-31213": false,
-                    "CVE-2025-31247": false,
-                    "CVE-2025-31259": false,
-                    "CVE-2025-31242": false,
-                    "CVE-2025-31250": false,
-                    "CVE-2025-31220": false,
-                    "CVE-2025-24213": false,
-                    "CVE-2025-31223": false,
-                    "CVE-2025-31238": false,
-                    "CVE-2025-31215": false,
-                    "CVE-2025-31204": false,
-                    "CVE-2025-24223": false,
-                    "CVE-2025-31206": false,
-                    "CVE-2025-31217": false,
-                    "CVE-2025-31205": false,
-                    "CVE-2025-31257": false
+                    "CVE-2022-32894": true,
+                    "CVE-2022-32893": true
                 },
-                "ActivelyExploitedCVEs": [],
-                "UniqueCVEsCount": 50
+                "ActivelyExploitedCVEs": [
+                    "CVE-2022-32894",
+                    "CVE-2022-32893"
+                ],
+                "UniqueCVEsCount": 2
             },
             "SecurityReleases": [
                 {
@@ -1557,9 +1512,9 @@
         {
             "OSVersion": "Sonoma 14",
             "Latest": {
-                "ProductVersion": "14.7.6",
-                "Build": "23H626",
-                "ReleaseDate": "2025-05-12T00:00:00Z",
+                "ProductVersion": "14.7.7",
+                "Build": "23H723",
+                "ReleaseDate": "2025-07-29T00:00:00Z",
                 "ExpirationDate": "2025-10-27T00:00:00Z",
                 "SupportedDevices": [
                     "J132AP",
@@ -1619,44 +1574,10 @@
                     "VMA2MACOSAP",
                     "VMM-x86_64"
                 ],
-                "SecurityInfo": "https://support.apple.com/en-ca/122717",
-                "CVEs": {
-                    "CVE-2025-31246": false,
-                    "CVE-2025-31240": false,
-                    "CVE-2025-31237": false,
-                    "CVE-2025-31251": false,
-                    "CVE-2025-31235": false,
-                    "CVE-2025-31208": false,
-                    "CVE-2025-31196": false,
-                    "CVE-2025-31209": false,
-                    "CVE-2025-31239": false,
-                    "CVE-2025-31233": false,
-                    "CVE-2025-30453": false,
-                    "CVE-2025-24258": false,
-                    "CVE-2025-30448": false,
-                    "CVE-2025-31232": false,
-                    "CVE-2025-24144": false,
-                    "CVE-2025-31219": false,
-                    "CVE-2025-31241": false,
-                    "CVE-2024-8176": false,
-                    "CVE-2025-30440": false,
-                    "CVE-2025-31222": false,
-                    "CVE-2025-24274": false,
-                    "CVE-2025-24142": false,
-                    "CVE-2025-26465": false,
-                    "CVE-2025-26466": false,
-                    "CVE-2025-31245": false,
-                    "CVE-2025-31224": false,
-                    "CVE-2025-31221": false,
-                    "CVE-2025-31213": false,
-                    "CVE-2025-31247": false,
-                    "CVE-2025-30442": false,
-                    "CVE-2025-31242": false,
-                    "CVE-2025-31220": false,
-                    "CVE-2025-24155": false
-                },
+                "SecurityInfo": "",
+                "UniqueCVEsCount": 0,
                 "ActivelyExploitedCVEs": [],
-                "UniqueCVEsCount": 33
+                "CVEs": {}
             },
             "SecurityReleases": [
                 {
@@ -3975,9 +3896,9 @@
         {
             "OSVersion": "Ventura 13",
             "Latest": {
-                "ProductVersion": "13.7.6",
-                "Build": "22H625",
-                "ReleaseDate": "2025-05-12T00:00:00Z",
+                "ProductVersion": "13.7.7",
+                "Build": "22H722",
+                "ReleaseDate": "2025-07-29T00:00:00Z",
                 "ExpirationDate": "2025-10-27T00:00:00Z",
                 "SupportedDevices": [
                     "J132AP",
@@ -4036,41 +3957,10 @@
                     "VMA2MACOSAP",
                     "VMM-x86_64"
                 ],
-                "SecurityInfo": "https://support.apple.com/en-ca/122718",
-                "CVEs": {
-                    "CVE-2025-31240": false,
-                    "CVE-2025-31237": false,
-                    "CVE-2025-31251": false,
-                    "CVE-2025-31235": false,
-                    "CVE-2025-31208": false,
-                    "CVE-2025-31196": false,
-                    "CVE-2025-31209": false,
-                    "CVE-2025-31239": false,
-                    "CVE-2025-31233": false,
-                    "CVE-2025-30453": false,
-                    "CVE-2025-24258": false,
-                    "CVE-2025-30448": false,
-                    "CVE-2025-31232": false,
-                    "CVE-2025-24144": false,
-                    "CVE-2025-31219": false,
-                    "CVE-2025-31241": false,
-                    "CVE-2024-8176": false,
-                    "CVE-2025-30440": false,
-                    "CVE-2025-31222": false,
-                    "CVE-2025-24274": false,
-                    "CVE-2025-24142": false,
-                    "CVE-2025-31245": false,
-                    "CVE-2025-31224": false,
-                    "CVE-2025-31221": false,
-                    "CVE-2025-31213": false,
-                    "CVE-2025-31247": false,
-                    "CVE-2025-30442": false,
-                    "CVE-2025-31242": false,
-                    "CVE-2025-31220": false,
-                    "CVE-2025-24155": false
-                },
+                "SecurityInfo": "",
+                "UniqueCVEsCount": 0,
                 "ActivelyExploitedCVEs": [],
-                "UniqueCVEsCount": 30
+                "CVEs": {}
             },
             "SecurityReleases": [
                 {
@@ -11021,10 +10911,10 @@
             }
         ],
         "LatestMacIPSW": {
-            "macos_ipsw_url": "https://updates.cdn-apple.com/2025SpringFCS/fullrestores/082-44534/CE6C1054-99A3-4F67-A823-3EE9E6510CDE/UniversalMac_15.5_24F74_Restore.ipsw",
-            "macos_ipsw_build": "24F74",
-            "macos_ipsw_version": "15.5",
-            "macos_ipsw_apple_slug": "082-44534"
+            "macos_ipsw_url": "https://updates.cdn-apple.com/2025SummerFCS/fullrestores/082-08674/51294E4D-A273-44BE-A280-A69FC347FB87/UniversalMac_15.6_24G84_Restore.ipsw",
+            "macos_ipsw_build": "24G84",
+            "macos_ipsw_version": "15.6",
+            "macos_ipsw_apple_slug": "082-08674"
         }
     }
 }
