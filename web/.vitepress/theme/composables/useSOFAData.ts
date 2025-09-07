@@ -41,7 +41,7 @@ const checkStaleness = (timestamp: string | null): boolean => {
 
 /**
  * Composable for fetching SOFA data with intelligent fallback
- * @param feedPath - Path to the feed (e.g., 'feeds/v2/macos_data_feed.json')
+ * @param feedPath - Path to the feed (e.g., 'v2/macos_data_feed.json')
  * @param options - Configuration options
  */
 export function useSOFAData<T = any>(
@@ -236,7 +236,7 @@ export function useManifest(options: SOFADataOptions = {}) {
       score: number
       staleness: Record<string, string>
     }
-  }>('manifest.json', {
+  }>('data/resources/sofa-status.json', {
     ...options,
     autoRefresh: true,
     refreshInterval: 5 * 60 * 1000 // Check every 5 minutes
@@ -248,7 +248,7 @@ export function useManifest(options: SOFADataOptions = {}) {
  */
 export async function checkForUpdates(): Promise<boolean> {
   try {
-    const response = await fetch(`${getAPIBase()}/manifest.json`)
+    const response = await fetch(`${getAPIBase()}/data/resources/sofa-status.json`)
     if (!response.ok) return false
     
     const manifest = await response.json()
