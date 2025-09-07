@@ -452,7 +452,8 @@ jobs:
           path: |
             processing/logs/
             processing/data/resources/
-            processing/data/feeds/
+            processing/v1/
+            processing/v2/
           retention-days: 7
           if-no-files-found: warn
           
