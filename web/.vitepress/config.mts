@@ -148,8 +148,8 @@ export default defineConfig({
         '@v2': resolve(__dirname, '../../v2'),
         
         // URL path mappings (for fetch requests - handled by serveDataPlugin)
-        '/v1': resolve(__dirname, '../../data/feeds/v1'),
-        '/v2': resolve(__dirname, '../../data/feeds/v2'),
+        '/v1': resolve(__dirname, '../../v1'),           // Changed from ../../data/feeds/v1
+        '/v2': resolve(__dirname, '../../v2'),           // Changed from ../../data/feeds/v2
         '/resources': resolve(__dirname, '../../data/resources'),
       },
     },
