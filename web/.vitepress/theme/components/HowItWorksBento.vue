@@ -277,7 +277,7 @@ const nextRun = ref('Calculating...')
 const currentStage = ref(1)
 
 // Use composable for status fetching
-const { data: feedMetadata } = useSOFAData('resources/sofa-status.json', {
+const { data: feedMetadata } = useSOFAData('data/resources/sofa-status.json', {
   autoRefresh: true,
   refreshInterval: 60000 // Refresh every minute
 })

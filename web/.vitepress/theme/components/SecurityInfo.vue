@@ -191,12 +191,12 @@ const checkAndExpandVersion = async () => {
 }
 
 // Use composable for data fetching
-const macosInfo = useSOFAData('feeds/v2/macos_data_feed.json')
-const iosInfo = useSOFAData('feeds/v2/ios_data_feed.json')
-const tvosInfo = useSOFAData('feeds/v2/tvos_data_feed.json')
-const watchosInfo = useSOFAData('feeds/v2/watchos_data_feed.json')
-const visionosInfo = useSOFAData('feeds/v2/visionos_data_feed.json')
-const safariInfo = useSOFAData('feeds/v2/safari_data_feed.json')
+const macosInfo = useSOFAData('v2/macos_data_feed.json')
+const iosInfo = useSOFAData('v2/ios_data_feed.json')
+const tvosInfo = useSOFAData('v2/tvos_data_feed.json')
+const watchosInfo = useSOFAData('v2/watchos_data_feed.json')
+const visionosInfo = useSOFAData('v2/visionos_data_feed.json')
+const safariInfo = useSOFAData('v2/safari_data_feed.json')
 
 // Track if initial load has happened
 const hasLoadedInitially = ref(false)

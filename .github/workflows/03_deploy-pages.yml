@@ -79,7 +79,11 @@ jobs:
         run: |
           echo "Copying data feeds to VitePress dist..."
           cp -r data web/.vitepress/dist/data || echo "Data directory not found"
-          ls -la web/.vitepress/dist/data/feeds/v2/ || echo "No v2 feeds found"
+          cp -r v1 web/.vitepress/dist/v1 || echo "v1 directory not found"
+          cp -r v2 web/.vitepress/dist/v2 || echo "v2 directory not found"
+          echo "Checking copied directories:"
+          ls -la web/.vitepress/dist/v2/ || echo "No v2 feeds found"
+          ls -la web/.vitepress/dist/v1/ || echo "No v1 feeds found"
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
