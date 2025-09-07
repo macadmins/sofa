@@ -60,7 +60,7 @@ jobs:
       
       - name: Install dependencies
         run: |
-          cd docs
+          cd web
           pnpm install --frozen-lockfile
       
       - name: Build site
@@ -72,19 +72,19 @@ jobs:
           # Set production API base for GitHub Pages deployment
           VITE_API_BASE_PROD: ${{ format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
         run: |
-          cd docs
+          cd web
           pnpm run build
       
       - name: Copy data feeds to dist
         run: |
           echo "Copying data feeds to VitePress dist..."
-          cp -r data docs/.vitepress/dist/data || echo "Data directory not found"
-          ls -la docs/.vitepress/dist/data/feeds/v2/ || echo "No v2 feeds found"
+          cp -r data web/.vitepress/dist/data || echo "Data directory not found"
+          ls -la web/.vitepress/dist/data/feeds/v2/ || echo "No v2 feeds found"
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist
+          path: web/.vitepress/dist
   
   deploy:
     needs: build
