@@ -1,0 +1,35 @@
+/* Layout and Ghost Element Fixes */
+
+/* Hide any ghost text elements that appear outside navbar */
+body::before,
+body::after,
+.VPApp::before,
+.VPApp::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Hide duplicate title elements */
+.title:not(.VPNavBarTitle .title) {
+  display: none !important;
+}
+
+/* Clean up any floating text */
+.VPApp > *:not(.VPNav):not(.VPLocalNav):not(.VPSidebar):not(.VPContent) {
+  display: none !important;
+}
+
+/* Ensure main content area is clean */
+.VPContent .content-container > *:first-child:not(.language-) {
+  margin-top: 0;
+}
+
+/* Fix any layout issues with beta components */
+.beta-features .grid-container .grid-item:empty {
+  display: none;
+}
+
+/* Hide loading skeleton if data loads */
+.beta-features .loading:has(~ .features-container) {
+  display: none;
+}

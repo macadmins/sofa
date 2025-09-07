@@ -1,0 +1,39 @@
+/* Custom SOFA Navbar Styling */
+
+/* Navbar logo and title styling */
+.VPNavBarTitle .title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.VPNavBarTitle .logo {
+  height: 32px;
+  width: auto;
+}
+
+/* Clean navbar title styling */
+.VPNavBarTitle span {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--vp-c-text-1);
+}
+
+/* Hide any ghost text that might appear */
+.VPNavBar .title::before,
+.VPNavBar .title::after,
+.VPNavBarTitle::before,
+.VPNavBarTitle::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Hide duplicate branding elements */
+.VPNav .title:not(.VPNavBarTitle .title) {
+  display: none !important;
+}
+
+/* Ensure only one SOFA branding appears in navbar */
+.VPNavBar .VPNavBarTitle ~ * {
+  display: none;
+}

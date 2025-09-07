@@ -1,14 +1,27 @@
 {
-  "devDependencies": {
-    "vitepress": "^1.4.1",
-    "vue": "^3.4.34"
-  },
+  "name": "sofa-2.0",
+  "version": "2.0.0",
+  "description": "Apple Security Data Platform",
+  "type": "module",
   "scripts": {
-    "docs:dev": "DEBUG=true vitepress dev web",
-    "docs:build": "DEBUG=true vitepress build web",
-    "docs:preview": "DEBUG=true vitepress preview web"
+    "dev": "cd docs && pnpm run dev",
+    "build": "cd docs && pnpm run build", 
+    "preview": "cd docs && pnpm run preview",
+    "setup": "cd docs && pnpm install && cd .. && chmod +x bin/* && chmod +x *.sh && echo '✅ Setup complete!'",
+    "test": "node scripts/test-data.js",
+    "update": "gh workflow run update-data.yml",
+    "install": "cd docs && pnpm install",
+    "clean": "cd docs && rm -rf node_modules .vitepress/cache && pnpm install"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "vitepress": "^1.0.0",
+    "vue": "^3.4.0"
   },
   "dependencies": {
-    "rollup": "^4.24.0"
+    "chart.js": "^4.4.0",
+    "dayjs": "^1.11.0",
+    "puppeteer": "^24.17.0",
+    "vue-chartjs": "^5.3.0"
   }
 }

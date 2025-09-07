@@ -1,119 +1,165 @@
-import { defineConfig } from 'vitepress';
-import { resolve } from 'path';
-import { extractHeadings } from './plugins/extractHeadings';
+import { defineConfig } from 'vitepress'
+import { resolve } from 'path'
+import { dataPlugin } from './dataPlugin.mts'
 
 export default defineConfig({
-  base: '/',
-  title: 'SOFA - by Mac Admins Open Source',
-  description: 'SOFA supports MacAdmins by efficiently tracking and surfacing information on updates for macOS and iOS.',
+  title: "SOFA",
+  titleTemplate: "SOFA - by Mac Admins Open Source",
+  description: "Simple Organized Feed for Apple Software Updates - by Mac Admins Open Source",
+  cleanUrls: true,
+  
+  // For custom domain (sofa.macadmin.me), use root path
+  base: '/',  // Root path for custom domain
+  
   themeConfig: {
-    logo: '/custom_logo.png',
-    head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+    // Navigation data for VitePress mobile menu
     nav: [
-      { text: 'Home', link: '/getting-started' },
-      { text: '✨ Sequoia', link: '/macOS_Sequoia' }, 
-      { text: 'Sonoma', link: '/macOS_Sonoma' },
-      { text: 'Ventura', link: '/macOS_Ventura' },
-      { text: 'Monterey', link: '/macOS_Monterey' },
-      { text: '✨ iOS 18', link: '/iOS_18' },
-      { text: 'iOS 17', link: '/iOS_17' },
-      { text: 'iOS 16', link: '/iOS_16' },
-      { text: 'Use Cases', link: '/use-cases' },
+      { text: 'macOS', link: '/macos/sequoia' },
+      { text: 'iOS/iPadOS', link: '/ios/ios18' },
+      { text: 'Safari', link: '/safari/safari18' },
+      { text: 'tvOS', link: '/tvos/tvos18' },
+      { text: 'visionOS', link: '/visionos/visionos2' },
+      { text: 'watchOS', link: '/watchos/watchos11' },
+      { text: 'How It Works', link: '/how-it-works' }
     ],
+    
+    // Ensure mobile navigation works
+    siteTitle: 'SOFA',
+    logo: '/custom_logo.png',
+    
+    // Disable next/prev page links if desired
+    docFooter: {
+      prev: true,
+      next: true,
+    },
+    
     sidebar: [
-      { text: 'Home', link: '/getting-started' },
-      { text: 'Search CVE Info', link: '/cve-search' },
-      { text: 'Search Model Info', link: '/model-identifier' },
+      {
+        text: 'Documentation',
+        items: [
+          { text: 'How It Works', link: '/how-it-works' },
+          { text: 'Scheduled Process', link: '/scheduled-process' }
+        ]
+      },
       {
         text: 'macOS',
         items: [
-          { text: 'Sequoia 15', link: '/macOS_Sequoia' },
-          { text: 'Sonoma 14', link: '/macOS_Sonoma' },
-          { text: 'Ventura 13', link: '/macOS_Ventura' },
-          { text: 'Monterey 12', link: '/macOS_Monterey' },
-          { text: 'macOS Installer - IPSW & PKG', link: '/macos_installer_info' },
-        ],
+          { text: 'macOS Tahoe 26', link: '/macos/tahoe26' },
+          { text: 'macOS Sequoia 15', link: '/macos/sequoia' },
+          { text: 'macOS Sonoma 14', link: '/macos/sonoma' },
+          { text: 'macOS Ventura 13', link: '/macos/ventura' },
+          { text: 'macOS Monterey 12', link: '/macos/monterey' },
+        ]
       },
       {
-        text: 'iOS',
+        text: 'iOS/iPadOS',
         items: [
-          { text: 'iOS 18', link: '/iOS_18' },
-          { text: 'iOS 17', link: '/iOS_17' },
-          { text: 'iOS 16', link: '/iOS_16' },
-        ],
+          { text: 'iOS/iPadOS 26', link: '/ios/ios26' },
+          { text: 'iOS/iPadOS 18', link: '/ios/ios18' },
+          { text: 'iOS/iPadOS 17', link: '/ios/ios17' },
+        ]
       },
       {
-        text: 'OS Update planning',
+        text: 'Safari',
         items: [
-          { text: 'OS Deferral Overview', link: '/release-deferrals' }
-        ],
+          { text: 'Safari 18', link: '/safari/safari18' },
+        ]
       },
       {
-        text: 'Apple & Community',
+        text: 'tvOS',
         items: [
-          { text: 'Essential Links', link: '/essential-info' }
-        ],
+          { text: 'tvOS 26', link: '/tvos/tvos26' },
+          { text: 'tvOS 18', link: '/tvos/tvos18' },
+          { text: 'tvOS 17', link: '/tvos/tvos17' },
+        ]
       },
       {
-        text: 'Info',
+        text: 'visionOS',
         items: [
-          { text: 'Getting Started', link: '/getting-started' },
-          { text: 'Self Hosted', link: '/self-hosted' },
-          { text: 'Contributors', link: '/team' },
-          { text: 'Commmunity', link: '/community' },
-        ],
+          { text: 'visionOS 2', link: '/visionos/visionos2' },
+        ]
       },
       {
-        text: 'Examples & Use Cases',
+        text: 'watchOS',
         items: [
-          { text: 'Examples', link: 'https://github.com/macadmins/sofa/tree/main/tool-scripts#examples' },
-          { text: 'Use Cases', link: '/use-cases' },
-        ],
+          { text: 'watchOS 26', link: '/watchos/watchos26' },
+          { text: 'watchOS 11', link: '/watchos/watchos11' },
+        ]
       },
+      {
+        text: 'Tools',
+        items: [
+          { text: 'CVE Search', link: '/cve-search' },
+          { text: 'Release Deferrals', link: '/release-deferrals' },
+          { text: 'Model Identifiers', link: '/model-identifier' },
+          { text: 'macOS Installers', link: '/macos-installer-info' },
+          { text: 'Beta Releases', link: '/beta-releases' },
+          { text: 'Essential Info', link: '/essential-info' }
+        ]
+      }
     ],
+
     socialLinks: [
       { icon: 'github', link: 'https://github.com/macadmins/sofa' },
     ],
     footer: {
       message: 'Released under the Apache 2.0 License.',
-      copyright: 'Copyright © 2024 by MacAdmins Open Source.',
+      copyright: 'Copyright © 2024 by Mac Admins Open Source.',
     },
   },
   vite: {
-    publicDir: '../public',
-    resolve: {
-      alias: {
-        '@components': resolve(__dirname, '../../web/components'),
-        '@cache': resolve(__dirname, '../../cache'),
-        '@images': resolve(__dirname, '../../web/images'),
-        '@v1': resolve(__dirname, '../../v1'),
-      },
-    },
-    ssr: {
-      noExternal: [
-        // Add any packages that should not be externalized in the SSR bundle
-      ],
+    define: {
+      // Make API base URLs available to the client
+      __API_BASE_PROD__: JSON.stringify(process.env.VITE_API_BASE_PROD || 'https://sofa-beta.macadmin.me'),
+      __API_BASE_DEV__: JSON.stringify(process.env.VITE_API_BASE_DEV || '/data'),
+      // GitHub repository configuration
+      __GITHUB_REPO__: JSON.stringify(process.env.GITHUB_REPOSITORY || process.env.VITE_GITHUB_REPO || 'macad-me/sofa-2.0-beta'),
+      __GITHUB_BRANCH__: JSON.stringify(process.env.GITHUB_REF_NAME || process.env.VITE_GITHUB_BRANCH || 'main'),
     },
     plugins: [
-      {
-        name: 'vitepress-config-logger',
-        configResolved(config) {
-          console.log('VitePress Config:', config);
-        }
-      }
+      dataPlugin() // Serve data files from source directories during dev
     ],
     build: {
       rollupOptions: {
-        output: {
-          // Ensure that CSS files have a static name without hash
-          assetFileNames: (assetInfo) => {
-            if (assetInfo.name && assetInfo.name.endsWith('.css')) {
-              return 'assets/[name].css';
-            }
-            return 'assets/[name][extname]';
-          }
-        }
+        external: [
+          // Prevent Vite from trying to bundle our data files
+          /^\.\.\/data\//
+        ]
       }
+    },
+    server: {
+      fs: {
+        allow: [
+          resolve(__dirname, '../..'), // Allow access to project root for data directories
+        ]
+      }
+    },
+    resolve: {
+      alias: {
+        // Component aliases
+        '@components': resolve(__dirname, './theme/components'),
+        
+        // Public assets
+        '@images': resolve(__dirname, '../public/'),
+        
+        // Data source directories (for imports)
+        '@data/feeds': resolve(__dirname, '../../data/feeds'),
+        '@data/resources': resolve(__dirname, '../../data/resources'),
+        '@v1': resolve(__dirname, '../../data/feeds/v1'),
+        '@v2': resolve(__dirname, '../../data/feeds/v2'),
+        '@resources': resolve(__dirname, '../../data/resources'),
+        
+        // URL path mappings (for fetch requests - handled by serveDataPlugin)
+        '/v1': resolve(__dirname, '../../data/feeds/v1'),
+        '/v2': resolve(__dirname, '../../data/feeds/v2'),
+        '/resources': resolve(__dirname, '../../data/resources'),
+      },
+    },
+    optimizeDeps: {
+      include: [
+        '@data/feeds/**/*.json',
+        '@data/resources/*.json'
+      ]
     }
-  },
-});
+  }
+})

@@ -1,0 +1,26 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@mdi/font": "^7.4.47",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@vicons/utils": "^0.1.4",
+    "autoprefixer": "^10.4.21",
+    "minisearch": "7",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.12",
+    "vitepress": "^1.6.3"
+  },
+  "scripts": {
+    "dev": "vitepress dev .",
+    "build": "vitepress build .",
+    "preview": "vitepress preview ."
+  },
+  "dependencies": {
+    "@fontsource/fira-code": "^5.2.5",
+    "@fontsource/inter": "^5.2.5",
+    "@iconify/vue": "^4.3.0",
+    "lucide-vue-next": "^0.539.0",
+    "puppeteer": "^24.16.1",
+    "vitepress-plugin-tabs": "^0.7.0"
+  }
+}
