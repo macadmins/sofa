@@ -1618,6 +1618,7 @@ const safariVersion = computed(() => {
 })
 
 const watchOSVersion = computed(() => {
+  // Try bulletin data first
   if (bulletinData.value?.latest_releases?.watchos) {
     const latest = bulletinData.value.latest_releases.watchos
     return {
@@ -1628,6 +1629,19 @@ const watchOSVersion = computed(() => {
       name: `watchOS ${latest.version}`
     }
   }
+
+  // Fallback to individual watchOS feed data
+  if (watchosData.value?.OSVersions && watchosData.value.OSVersions.length > 0) {
+    const latest = watchosData.value.OSVersions[0]
+    return {
+      version: latest.Latest.ProductVersion,
+      build: latest.Latest.Build || 'N/A',
+      releaseDate: formatDate(latest.Latest.ReleaseDate),
+      cves: latest.SecurityReleases?.reduce((total, release) => total + (release.CVEs?.length || 0), 0) || 0,
+      name: `watchOS ${latest.Latest.ProductVersion}`
+    }
+  }
+
   return null
 })
 
