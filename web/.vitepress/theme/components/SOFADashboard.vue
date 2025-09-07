@@ -1603,7 +1603,7 @@ const betaReleases = computed(() => {
 })
 
 const safariVersion = computed(() => {
-  // Get Safari data from bulletin
+  // Try bulletin data first
   if (bulletinData.value?.latest_releases?.safari) {
     const latest = bulletinData.value.latest_releases.safari
     return {
@@ -1614,12 +1614,25 @@ const safariVersion = computed(() => {
       name: `Safari ${latest.version}`
     }
   }
+
+  // Fallback to individual Safari feed data
+  if (safariData.value?.OSVersions && safariData.value.OSVersions.length > 0) {
+    const latest = safariData.value.OSVersions[0]
+    return {
+      version: latest.Latest.ProductVersion,
+      build: latest.Latest.Build || 'N/A',
+      releaseDate: formatDate(latest.Latest.ReleaseDate),
+      cves: latest.SecurityReleases?.reduce((total, release) => total + (release.CVEs?.length || 0), 0) || 0,
+      name: `Safari ${latest.Latest.ProductVersion}`
+    }
+  }
+
   return null
 })
 
 const watchOSVersion = computed(() => {
-  // Try bulletin data first
-  if (bulletinData.value?.latest_releases?.watchos) {
+  // Try bulletin data first (but only if it has actual data)
+  if (bulletinData.value?.latest_releases?.watchos?.version && bulletinData.value.latest_releases.watchos.version.trim() !== '') {
     const latest = bulletinData.value.latest_releases.watchos
     return {
       version: latest.version,
@@ -1646,6 +1659,7 @@ const watchOSVersion = computed(() => {
 })
 
 const tvOSVersion = computed(() => {
+  // Try bulletin data first
   if (bulletinData.value?.latest_releases?.tvos) {
     const latest = bulletinData.value.latest_releases.tvos
     return {
@@ -1656,10 +1670,24 @@ const tvOSVersion = computed(() => {
       name: `tvOS ${latest.version}`
     }
   }
+
+  // Fallback to individual tvOS feed data
+  if (tvosData.value?.OSVersions && tvosData.value.OSVersions.length > 0) {
+    const latest = tvosData.value.OSVersions[0]
+    return {
+      version: latest.Latest.ProductVersion,
+      build: latest.Latest.Build || 'N/A',
+      releaseDate: formatDate(latest.Latest.ReleaseDate),
+      cves: latest.SecurityReleases?.reduce((total, release) => total + (release.CVEs?.length || 0), 0) || 0,
+      name: `tvOS ${latest.Latest.ProductVersion}`
+    }
+  }
+
   return null
 })
 
 const visionOSVersion = computed(() => {
+  // Try bulletin data first
   if (bulletinData.value?.latest_releases?.visionos) {
     const latest = bulletinData.value.latest_releases.visionos
     return {
@@ -1670,6 +1698,19 @@ const visionOSVersion = computed(() => {
       name: `visionOS ${latest.version}`
     }
   }
+
+  // Fallback to individual visionOS feed data
+  if (visionosData.value?.OSVersions && visionosData.value.OSVersions.length > 0) {
+    const latest = visionosData.value.OSVersions[0]
+    return {
+      version: latest.Latest.ProductVersion,
+      build: latest.Latest.Build || 'N/A',
+      releaseDate: formatDate(latest.Latest.ReleaseDate),
+      cves: latest.SecurityReleases?.reduce((total, release) => total + (release.CVEs?.length || 0), 0) || 0,
+      name: `visionOS ${latest.Latest.ProductVersion}`
+    }
+  }
+
   return null
 })
 
