@@ -1125,7 +1125,7 @@
               <component :is="ExternalLinkIcon" class="h-3 w-3 opacity-50" />
             </a>
             <a 
-              href="/data/feeds/v1/rss_feed.xml" 
+              href="/v1/rss_feed.xml"
               target="_blank"
               class="text-xs text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1 transition-colors py-1 border-t border-gray-200 dark:border-gray-700 pt-1.5 mt-1"
             >
