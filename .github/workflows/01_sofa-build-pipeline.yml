@@ -248,8 +248,8 @@ jobs:
           export SOFA_BIN_PATH="./bin"
           export PATH="./bin:$HOME/.local/bin:$PATH"
 
-          echo "Running: uv run --script scripts/sofa_pipeline_clean.py run fetch"
-          if uv run --script scripts/sofa_pipeline_clean.py run fetch; then
+          echo "Running: uv run --script scripts/sofa_pipeline.py run fetch"
+          if uv run --script scripts/sofa_pipeline.py run fetch; then
             echo "✅ FETCH stage completed"
             echo "## ✅ Fetch Stage Success" >> $GITHUB_STEP_SUMMARY
           else
@@ -282,8 +282,8 @@ jobs:
           export SOFA_BIN_PATH="./bin"
           export PATH="./bin:$HOME/.local/bin:$PATH"
 
-          echo "Running: uv run --script scripts/sofa_pipeline_clean.py run build"
-          if uv run --script scripts/sofa_pipeline_clean.py run build; then
+          echo "Running: uv run --script scripts/sofa_pipeline.py run build"
+          if uv run --script scripts/sofa_pipeline.py run build; then
             echo "✅ BUILD stage completed"
             echo "## ✅ Build Stage Success" >> $GITHUB_STEP_SUMMARY
           else
@@ -438,7 +438,7 @@ jobs:
             Pipeline stage: ${{ github.event.inputs.pipeline_stage }} | Files: $TOTAL_CHANGES
             Updates: $CHANGE_SUMMARY
             
-            Generated with sofa_pipeline_clean.py v0.2.0 + v0.1.1-beta1 binaries"
+            Generated with sofa_pipeline.py v0.2.0 + v0.1.1-beta1 binaries"
             
             git push
             echo "✅ Detailed pipeline data committed to repository"
