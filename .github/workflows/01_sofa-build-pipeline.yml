@@ -225,8 +225,8 @@ jobs:
           ls -la data/resources/ || echo "No resources directory"
           
           # Use the clean, simple pipeline script  
-          echo "Running: uv run --script scripts/sofa_pipeline_clean.py run gather"
-          if uv run --script scripts/sofa_pipeline_clean.py run gather; then
+          echo "Running: uv run --script scripts/sofa_pipeline.py run gather"
+          if uv run --script scripts/sofa_pipeline.py run gather; then
             echo "✅ Pipeline GATHER stage completed"
             echo "## ✅ Gather Stage Success" >> $GITHUB_STEP_SUMMARY
             
