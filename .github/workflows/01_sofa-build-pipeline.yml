@@ -395,7 +395,8 @@ jobs:
           git add data/resources/xprotect.json && echo "✅ Added xprotect.json" || echo "❌ xprotect.json not found or unchanged"
           
           # Add all feeds and other resources  
-          git add data/feeds/ && echo "✅ Added feeds directory" || echo "❌ feeds directory not found or unchanged"
+          git add v1/ && echo "✅ Added v1 feeds" || echo "❌ v1 directory not found or unchanged"
+          git add v2/ && echo "✅ Added v2 feeds" || echo "❌ v2 directory not found or unchanged"
           git add data/resources/ && echo "✅ Added remaining resources" || echo "❌ resources directory not found or unchanged"
           
           if git diff --staged --quiet; then
@@ -409,8 +410,8 @@ jobs:
             echo "$CHANGED_FILES"
             
             # Count changes reliably
-            V1_COUNT=$(echo "$CHANGED_FILES" | grep -c "data/feeds/v1/" 2>/dev/null || echo "0")
-            V2_COUNT=$(echo "$CHANGED_FILES" | grep -c "data/feeds/v2/" 2>/dev/null || echo "0") 
+            V1_COUNT=$(echo "$CHANGED_FILES" | grep -c "^v1/" 2>/dev/null || echo "0")
+            V2_COUNT=$(echo "$CHANGED_FILES" | grep -c "^v2/" 2>/dev/null || echo "0")
             RESOURCES_COUNT=$(echo "$CHANGED_FILES" | grep -c "data/resources/" 2>/dev/null || echo "0")
             TOTAL_CHANGES=$(echo "$CHANGED_FILES" | wc -l)
             
