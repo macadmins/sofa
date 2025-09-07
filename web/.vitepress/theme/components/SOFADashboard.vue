@@ -917,8 +917,8 @@
         </template>
         <div class="space-y-2 flex-grow">
           <div class="grid grid-cols-1 gap-1.5">
-            <a 
-              href="/data/feeds/v2/macos_data_feed.json" 
+            <a
+              href="/v2/macos_data_feed.json"
               target="_blank"
               class="text-xs text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1 transition-colors py-1"
             >
@@ -927,7 +927,7 @@
               <component :is="ExternalLinkIcon" class="h-3 w-3 opacity-50" />
             </a>
             <a 
-              href="/data/feeds/v2/ios_data_feed.json" 
+              href="/v2/ios_data_feed.json"
               target="_blank"
               class="text-xs text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1 transition-colors py-1"
             >

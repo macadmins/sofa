@@ -290,8 +290,8 @@ const processMacOSInstallers = () => {
 }
 
 // Use composable for data fetching
-const historyInfo = useSOFAData('feeds/v1/apple-beta-os-history.json')
-const macosInfo = useSOFAData('feeds/v2/macos_data_feed.json')
+const historyInfo = useSOFAData('v1/apple-beta-os-history.json')
+const macosInfo = useSOFAData('v2/macos_data_feed.json')
 
 // Watch for data changes
 watch(() => historyInfo.data.value, (newData) => {
