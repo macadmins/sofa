@@ -1397,11 +1397,11 @@ const bentoDisplayOrder = {
 }
 
 // Use composable for data fetching with proper error handling and fallback
-const bulletin = useSOFAData('resources/bulletin_data.json')
-const macos = useSOFAData('feeds/v2/macos_data_feed.json')
-const ios = useSOFAData('feeds/v2/ios_data_feed.json')
-const beta = useSOFAData('feeds/v1/apple-beta-os-feed.json')
-const metadata = useSOFAData('resources/sofa-status.json', {
+const bulletin = useSOFAData('data/resources/bulletin_data.json')
+const macos = useSOFAData('v2/macos_data_feed.json')
+const ios = useSOFAData('v2/ios_data_feed.json')
+const beta = useSOFAData('v1/apple-beta-os-feed.json')
+const metadata = useSOFAData('data/resources/sofa-status.json', {
   autoRefresh: true,
   refreshInterval: 5 * 60 * 1000 // Check every 5 minutes
 })

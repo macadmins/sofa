@@ -271,15 +271,15 @@ import {
 
 // Data sources
 const manifest = useManifest()
-const macosData = useSOFAData('feeds/v2/macos_data_feed.json')
-const iosData = useSOFAData('feeds/v2/ios_data_feed.json', { 
-  autoRefresh: true, 
-  refreshInterval: 60000 
+const macosData = useSOFAData('v2/macos_data_feed.json')
+const iosData = useSOFAData('v2/ios_data_feed.json', {
+  autoRefresh: true,
+  refreshInterval: 60000
 })
-const tvosData = useSOFAData('feeds/v2/tvos_data_feed.json')
-const watchosData = useSOFAData('feeds/v2/watchos_data_feed.json')
-const visionosData = useSOFAData('feeds/v2/visionos_data_feed.json')
-const safariData = useSOFAData('feeds/v2/safari_data_feed.json')
+const tvosData = useSOFAData('v2/tvos_data_feed.json')
+const watchosData = useSOFAData('v2/watchos_data_feed.json')
+const visionosData = useSOFAData('v2/visionos_data_feed.json')
+const safariData = useSOFAData('v2/safari_data_feed.json')
 
 // State
 const testResults = ref<Array<{ time: string, message: string, type: string }>>([])

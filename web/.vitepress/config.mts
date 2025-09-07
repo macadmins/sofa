@@ -161,3 +161,9 @@ export default defineConfig({
     }
   }
 })
+
+const getGitHubRawURL = (feedPath: string) => {
+  const githubRepo = __GITHUB_REPO__
+  const githubBranch = __GITHUB_BRANCH__
+  return `https://raw.githubusercontent.com/${githubRepo}/${githubBranch}/${feedPath}`
+}

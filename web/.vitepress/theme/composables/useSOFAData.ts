@@ -29,7 +29,7 @@ const getGitHubRawURL = (feedPath: string) => {
   // Use build-time configuration (works with GitHub Pages)
   const githubRepo = __GITHUB_REPO__
   const githubBranch = __GITHUB_BRANCH__
-  return `https://raw.githubusercontent.com/${githubRepo}/${githubBranch}/data/${feedPath}`
+  return `https://raw.githubusercontent.com/${githubRepo}/${githubBranch}/${feedPath}`
 }
 
 // Check if data is stale (older than 6 hours)
@@ -156,9 +156,9 @@ export function useSOFAData<T = any>(
         // Final fallback to static data if enabled
         if (fallbackToStatic && import.meta.env.PROD) {
           try {
-            const fallbackUrl = `/data/${feedPath}`
+            const fallbackUrl = `/${feedPath}`
             console.log(`Trying static fallback: ${fallbackUrl}`)
-            
+
             const fallbackResponse = await fetch(fallbackUrl)
             if (fallbackResponse.ok) {
               const fallbackData = await fallbackResponse.json() as T
