@@ -291,7 +291,32 @@ jobs:
             echo "## ❌ Build Stage Failed" >> $GITHUB_STEP_SUMMARY
             exit 1
           fi
-          
+
+      - name: Bulletin stage
+        if: success() && (github.event_name == 'schedule' || contains(github.event.inputs.pipeline_stage, 'bulletin') || github.event.inputs.pipeline_stage == 'all')
+        run: |
+          echo "📋 BULLETIN stage..."
+          cd processing
+
+          export SOFA_BIN_PATH="./bin"
+          export PATH="./bin:$HOME/.local/bin:$PATH"
+
+          echo "Running: uv run --script scripts/sofa_pipeline.py run bulletin"
+          if uv run --script scripts/sofa_pipeline.py run bulletin; then
+            echo "✅ BULLETIN stage completed"
+            echo "## ✅ Bulletin Stage Success" >> $GITHUB_STEP_SUMMARY
+
+            # Show bulletin summary if available
+            if [ -f "data/resources/bulletin_data.json" ]; then
+              echo "📋 Bulletin data generated successfully"
+              echo "- **Bulletin Data**: ✅ Generated" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "❌ BULLETIN stage failed"
+            echo "## ❌ Bulletin Stage Failed" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+
       - name: Show generated files
         if: success() && (github.event_name == 'schedule' || contains(github.event.inputs.pipeline_stage, 'build') || github.event.inputs.pipeline_stage == 'all')
         run: |
