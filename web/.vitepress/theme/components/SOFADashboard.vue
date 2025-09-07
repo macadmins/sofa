@@ -1400,6 +1400,10 @@ const bentoDisplayOrder = {
 const bulletin = useSOFAData('data/resources/bulletin_data.json')
 const macos = useSOFAData('v2/macos_data_feed.json')
 const ios = useSOFAData('v2/ios_data_feed.json')
+const tvos = useSOFAData('v2/tvos_data_feed.json')
+const watchos = useSOFAData('v2/watchos_data_feed.json')
+const visionos = useSOFAData('v2/visionos_data_feed.json')
+const safari = useSOFAData('v2/safari_data_feed.json')
 const beta = useSOFAData('v1/apple-beta-os-feed.json')
 const metadata = useSOFAData('data/resources/sofa-status.json', {
   autoRefresh: true,
@@ -1424,6 +1428,29 @@ watch(() => ios.data.value, (newData) => {
 
 watch(() => beta.data.value, (newData) => {
   if (newData) betaDataRaw.value = newData
+})
+
+// Add refs for the new platform data
+const tvosData = ref({})
+const watchosData = ref({})
+const visionosData = ref({})
+const safariData = ref({})
+
+// Watch for new platform data changes
+watch(() => tvos.data.value, (newData) => {
+  if (newData) tvosData.value = newData
+})
+
+watch(() => watchos.data.value, (newData) => {
+  if (newData) watchosData.value = newData
+})
+
+watch(() => visionos.data.value, (newData) => {
+  if (newData) visionosData.value = newData
+})
+
+watch(() => safari.data.value, (newData) => {
+  if (newData) safariData.value = newData
 })
 
 watch(() => metadata.data.value, (newData) => {
