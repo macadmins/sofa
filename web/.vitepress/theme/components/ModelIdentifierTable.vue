@@ -129,60 +129,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 
-// Sample data structure - in production this would come from the cache files
-const mockData = {
-  'Sequoia 15': [
-    { model: 'MacBook Air', identifier: 'Mac15,12', description: 'M3 chip', url: '#' },
-    { model: 'MacBook Air', identifier: 'Mac15,13', description: 'M3 chip', url: '#' },
-    { model: 'MacBook Pro 14"', identifier: 'Mac15,3', description: 'M3 chip', url: '#' },
-    { model: 'MacBook Pro 14"', identifier: 'Mac15,6', description: 'M3 Pro chip', url: '#' },
-    { model: 'MacBook Pro 14"', identifier: 'Mac15,8', description: 'M3 Max chip', url: '#' },
-    { model: 'MacBook Pro 16"', identifier: 'Mac15,7', description: 'M3 Pro chip', url: '#' },
-    { model: 'MacBook Pro 16"', identifier: 'Mac15,9', description: 'M3 Max chip', url: '#' },
-    { model: 'iMac 24"', identifier: 'Mac15,4', description: 'M3 chip', url: '#' },
-    { model: 'iMac 24"', identifier: 'Mac15,5', description: 'M3 chip', url: '#' },
-    { model: 'Mac mini', identifier: 'Mac14,3', description: 'M2 chip', url: '#' },
-    { model: 'Mac mini', identifier: 'Mac14,12', description: 'M2 Pro chip', url: '#' },
-    { model: 'Mac Studio', identifier: 'Mac14,13', description: 'M2 Max chip', url: '#' },
-    { model: 'Mac Studio', identifier: 'Mac14,14', description: 'M2 Ultra chip', url: '#' },
-    { model: 'Mac Pro', identifier: 'Mac14,8', description: 'M2 Ultra chip', url: '#' },
-  ],
-  'Sonoma 14': [
-    { model: 'MacBook Air', identifier: 'Mac14,2', description: 'M2 chip', url: '#' },
-    { model: 'MacBook Air', identifier: 'Mac14,15', description: 'M2 chip (15-inch)', url: '#' },
-    { model: 'MacBook Pro 13"', identifier: 'Mac14,7', description: 'M2 chip', url: '#' },
-    { model: 'MacBook Pro 14"', identifier: 'Mac14,5', description: 'M2 Pro chip', url: '#' },
-    { model: 'MacBook Pro 14"', identifier: 'Mac14,9', description: 'M2 Max chip', url: '#' },
-    { model: 'MacBook Pro 16"', identifier: 'Mac14,6', description: 'M2 Pro chip', url: '#' },
-    { model: 'MacBook Pro 16"', identifier: 'Mac14,10', description: 'M2 Max chip', url: '#' },
-    { model: 'iMac 24"', identifier: 'iMac21,1', description: 'M1 chip', url: '#' },
-    { model: 'iMac 24"', identifier: 'iMac21,2', description: 'M1 chip', url: '#' },
-    { model: 'Mac mini', identifier: 'Macmini9,1', description: 'M1 chip', url: '#' },
-    { model: 'Mac Studio', identifier: 'Mac13,1', description: 'M1 Max chip', url: '#' },
-    { model: 'Mac Studio', identifier: 'Mac13,2', description: 'M1 Ultra chip', url: '#' },
-  ],
-  'Ventura 13': [
-    { model: 'MacBook Air', identifier: 'MacBookAir10,1', description: 'M1 chip', url: '#' },
-    { model: 'MacBook Pro 13"', identifier: 'MacBookPro17,1', description: 'M1 chip', url: '#' },
-    { model: 'MacBook Pro 13"', identifier: 'MacBookPro18,3', description: 'M1 Pro chip', url: '#' },
-    { model: 'MacBook Pro 14"', identifier: 'MacBookPro18,3', description: 'M1 Pro chip', url: '#' },
-    { model: 'MacBook Pro 14"', identifier: 'MacBookPro18,4', description: 'M1 Max chip', url: '#' },
-    { model: 'MacBook Pro 16"', identifier: 'MacBookPro18,1', description: 'M1 Pro chip', url: '#' },
-    { model: 'MacBook Pro 16"', identifier: 'MacBookPro18,2', description: 'M1 Max chip', url: '#' },
-    { model: 'iMac 24"', identifier: 'iMac21,1', description: 'M1 chip', url: '#' },
-    { model: 'Mac mini', identifier: 'Macmini9,1', description: 'M1 chip', url: '#' },
-    { model: 'Mac mini', identifier: 'Macmini8,1', description: 'Intel Core i7', url: '#' },
-  ],
-  'Monterey 12': [
-    { model: 'MacBook Air', identifier: 'MacBookAir9,1', description: 'Intel Core i5', url: '#' },
-    { model: 'MacBook Pro 13"', identifier: 'MacBookPro16,2', description: 'Intel Core i5', url: '#' },
-    { model: 'MacBook Pro 16"', identifier: 'MacBookPro16,1', description: 'Intel Core i9', url: '#' },
-    { model: 'iMac 27"', identifier: 'iMac20,1', description: 'Intel Core i5', url: '#' },
-    { model: 'iMac 27"', identifier: 'iMac20,2', description: 'Intel Core i9', url: '#' },
-    { model: 'Mac mini', identifier: 'Macmini8,1', description: 'Intel Core i7', url: '#' },
-    { model: 'Mac Pro', identifier: 'MacPro7,1', description: 'Intel Xeon W', url: '#' },
-  ]
-}
+// Real device data is now loaded from the unified database
 
 const loading = ref(false)
 const searchQuery = ref('')
@@ -226,28 +173,59 @@ const formatOSName = (osVersion) => {
   return `macOS ${osVersion}`
 }
 
+const formatOSVersionToName = (osVersion) => {
+  const osMap = {
+    'tahoe': 'Tahoe 26',
+    'sequoia': 'Sequoia 15',
+    'sonoma': 'Sonoma 14', 
+    'ventura': 'Ventura 13',
+    'monterey': 'Monterey 12',
+    'bigsur': 'Big Sur 11',
+    'catalina': 'Catalina 10.15',
+    'mojave': 'Mojave 10.14',
+    '15': 'Sequoia 15',
+    '14': 'Sonoma 14',
+    '13': 'Ventura 13', 
+    '12': 'Monterey 12',
+    '11': 'Big Sur 11'
+  }
+  
+  return osMap[osVersion] || null
+}
+
 const formatChipName = (description) => {
+  // Handle various processor formats from device data
+  if (description.includes('M4')) return 'Apple M4'
   if (description.includes('M3')) return 'Apple M3'
   if (description.includes('M2')) return 'Apple M2'
   if (description.includes('M1')) return 'Apple M1'
+  if (description.includes('T2')) return 'Apple T2'
+  if (description.includes('T1')) return 'Apple T1'
   if (description.includes('Intel')) return 'Intel'
   return description
 }
 
 const getChipClass = (description) => {
+  if (description.includes('M4')) return 'm4'
   if (description.includes('M3')) return 'm3'
   if (description.includes('M2')) return 'm2'
   if (description.includes('M1')) return 'm1'
+  if (description.includes('T2')) return 't2'
+  if (description.includes('T1')) return 't1'
   if (description.includes('Intel')) return 'intel'
   return ''
 }
 
 const getOSDetailsLink = (osVersion) => {
   const osLinks = {
+    'Tahoe 26': '/macos/tahoe26',
     'Sequoia 15': '/macos/sequoia',
     'Sonoma 14': '/macos/sonoma',
     'Ventura 13': '/macos/ventura',
     'Monterey 12': '/macos/monterey',
+    'Big Sur 11': '/macos/bigsur',
+    'Catalina 10.15': '/macos/catalina',
+    'Mojave 10.14': '/macos/mojave'
   }
   return osLinks[osVersion] || '#'
 }
@@ -278,38 +256,82 @@ const exportAsCSV = () => {
   document.body.removeChild(link)
 }
 
-const loadData = () => {
+const loadData = async () => {
   loading.value = true
   
-  // Transform mock data into the expected format
-  const combinedData = []
-  Object.entries(mockData).forEach(([osVersion, models]) => {
-    models.forEach(model => {
-      combinedData.push({
-        ...model,
-        osVersion
+  try {
+    // Load real device data from the unified database
+    const response = await fetch('/resources/all_devices_enhanced.json')
+    if (!response.ok) {
+      throw new Error('Failed to load device data')
+    }
+    
+    const deviceData = await response.json()
+    
+    // Transform device data into the expected format
+    const combinedData = []
+    
+    // Process all devices (skip _metadata)
+    Object.entries(deviceData).forEach(([deviceId, deviceInfo]) => {
+      if (deviceId.startsWith('_')) return // Skip metadata
+      
+      // Only process macOS devices for model identifier table
+      if (!deviceId.startsWith('Mac')) return
+      
+      const supportedMajor = deviceInfo.supportedMajor || []
+      
+      // Create entries for each supported OS version
+      supportedMajor.forEach(osVersion => {
+        const osName = formatOSVersionToName(osVersion)
+        if (osName) {
+          combinedData.push({
+            model: deviceInfo.marketingName || deviceInfo.Model,
+            identifier: deviceId,
+            description: `${deviceInfo.processorFamily} chip`,
+            url: deviceInfo.URL || '#',
+            osVersion: osName,
+            processorFamily: deviceInfo.processorFamily,
+            deviceType: deviceInfo.deviceType
+          })
+        }
       })
     })
-  })
-  
-  tableData.value = combinedData
-  
-  // Group by OS version
-  const grouped = combinedData.reduce((acc, entry) => {
-    const found = acc.find(group => group.osVersion === entry.osVersion)
-    if (found) {
-      found.entries.push(entry)
-    } else {
-      acc.push({ osVersion: entry.osVersion, entries: [entry] })
+    
+    tableData.value = combinedData
+    
+    // Group by OS version
+    const grouped = combinedData.reduce((acc, entry) => {
+      const found = acc.find(group => group.osVersion === entry.osVersion)
+      if (found) {
+        found.entries.push(entry)
+      } else {
+        acc.push({ osVersion: entry.osVersion, entries: [entry] })
+      }
+      return acc
+    }, [])
+    
+    // Sort by OS version (newest first)
+    const osOrder = { 
+      'Tahoe 26': 1, 
+      'Sequoia 15': 2, 
+      'Sonoma 14': 3, 
+      'Ventura 13': 4, 
+      'Monterey 12': 5,
+      'Big Sur 11': 6,
+      'Catalina 10.15': 7,
+      'Mojave 10.14': 8
     }
-    return acc
-  }, [])
-  
-  // Sort by OS version
-  groupedData.value = grouped.sort((a, b) => {
-    const osOrder = { 'Sequoia 15': 1, 'Sonoma 14': 2, 'Ventura 13': 3, 'Monterey 12': 4 }
-    return osOrder[a.osVersion] - osOrder[b.osVersion]
-  })
+    
+    groupedData.value = grouped.sort((a, b) => {
+      return (osOrder[a.osVersion] || 999) - (osOrder[b.osVersion] || 999)
+    })
+    
+  } catch (error) {
+    console.error('Failed to load device data:', error)
+    // Fallback to empty data
+    tableData.value = []
+    groupedData.value = []
+  }
   
   loading.value = false
 }
@@ -618,6 +640,11 @@ onMounted(() => {
   font-weight: 600;
 }
 
+.chip-badge.m4 {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(245, 158, 11, 0.1));
+  color: #f59e0b;
+}
+
 .chip-badge.m3 {
   background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1));
   color: #a855f7;
@@ -635,6 +662,16 @@ onMounted(() => {
 
 .chip-badge.intel {
   background: rgba(107, 114, 128, 0.1);
+  color: #6b7280;
+}
+
+.chip-badge.t2 {
+  background: rgba(156, 163, 175, 0.1);
+  color: #9ca3af;
+}
+
+.chip-badge.t1 {
+  background: rgba(156, 163, 175, 0.08);
   color: #6b7280;
 }
 
