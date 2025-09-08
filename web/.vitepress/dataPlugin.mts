@@ -48,14 +48,21 @@ export function dataPlugin(): Plugin {
             '/v1/rss.xml': 'feeds/v1/rss_feed.xml',
             '/v2/macos.json': 'feeds/v2/macos_data_feed.json', 
             '/v2/ios.json': 'feeds/v2/ios_data_feed.json',
-            '/resources/timestamp.json': 'feeds/v2/last_feed_timestamp.json',
+            '/resources/timestamp.json': '../../v1/timestamp.json',
             '/resources/bulletin.json': 'resources/bulletin_data.json',
             '/resources/links.json': 'resources/essential_links.json'
           }
           
           // Check aliases first
           if (aliases[url]) {
-            const fullPath = resolve(dataRoot, aliases[url])
+            let fullPath
+            if (aliases[url].startsWith('../../')) {
+              // For root-relative paths in aliases, resolve from plugin directory
+              fullPath = resolve(__dirname, aliases[url])
+            } else {
+              // For data-relative paths, use dataRoot
+              fullPath = resolve(dataRoot, aliases[url])
+            }
             console.log('🔗 DataPlugin - Alias mapping:', url, '→', aliases[url])
             console.log('🔍 DataPlugin: Looking for aliased file at:', fullPath)
             
