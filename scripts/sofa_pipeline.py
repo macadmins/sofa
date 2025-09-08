@@ -154,52 +154,68 @@ def run_fetch() -> StageResult:
 def run_bulletin() -> StageResult:
     """Generate bulletin data"""
     console.rule("[bold magenta]Bulletin Generation")
-    
+
     with console.status("[bold magenta]Generating bulletin data..."):
         cmd = [
             "./bin/sofa-build", "bulletin",
             "-i", "data/resources",
             "-b", "data/resources/bulletin_data.json"
         ]
-        
+
         result = run_binary_command(cmd, "bulletin", 60)
-        
+
         if result.success and Path("data/resources/bulletin_data.json").exists():
             size = Path("data/resources/bulletin_data.json").stat().st_size
             console.print(f"✅ Bulletin generated ({size:,} bytes)", style="green")
-            
+
             # Show summary if possible
             try:
                 with open("data/resources/bulletin_data.json") as f:
                     bulletin = json.load(f)
-                    
+
                 if "latest_releases" in bulletin:
                     table = Table(title="Latest Releases")
                     table.add_column("OS", style="cyan")
                     table.add_column("Version", style="yellow")
                     table.add_column("CVEs Fixed", style="green")
                     table.add_column("Exploited", style="red")
-                    
+
                     for os_name, info in bulletin["latest_releases"].items():
                         version = info.get("version", "")
                         if version:  # Only show if we have version data
                             cves_fixed = len(info.get("cves_fixed", []))
                             exploited = info.get("actively_exploited_count", 0)
-                            
+
                             table.add_row(
                                 os_name.upper(),
                                 version,
                                 str(cves_fixed),
                                 str(exploited)
                             )
-                    
+
                     if table.rows:  # Only show table if we have data
                         console.print(table)
                     else:
                         console.print("📋 No latest release data available yet", style="yellow")
             except:
                 pass  # Skip table if bulletin format is different
-    
+
+    # Additional step: Generate bulletin from v2 feeds to ensure latest data
+    if result.success and Path("v2").exists():
+        console.print("🔄 Updating bulletin with v2 feeds data...", style="cyan")
+        with console.status("[bold cyan]Updating bulletin from v2 feeds..."):
+            v2_cmd = [
+                "./bin/sofa-build", "bulletin",
+                "--feeds-dir", "./v2"
+            ]
+
+            v2_result = run_binary_command(v2_cmd, "bulletin-v2", 60)
+
+            if v2_result.success:
+                console.print("✅ Bulletin updated with v2 feeds data", style="green")
+            else:
+                console.print("⚠️ Failed to update bulletin with v2 feeds, using original", style="yellow")
+
     return result
 
 def run_rss() -> StageResult:
@@ -384,7 +400,7 @@ def run(
         elif stage_name == "fetch":
             result = run_fetch()
         elif stage_name == "build":
-            # Build all feeds with legacy mode in single call
+            # Here we build all feeds with legacy mode in single call
             console.rule("[bold blue]Build All Feeds")
             console.print("🔧 Building all feeds (v1 + v2) with legacy mode...")
             
