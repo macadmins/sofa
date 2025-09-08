@@ -716,12 +716,14 @@
   "Mac14,12": {
     "MarketingName": "Mac mini (2023)",
     "SupportedOS": [
+      "Monterey 12",
       "Sonoma 14",
       "Ventura 13",
       "Tahoe 26",
       "Sequoia 15"
     ],
     "OSVersions": [
+      12,
       13,
       14,
       15,
@@ -793,12 +795,14 @@
   "Mac14,3": {
     "MarketingName": "Mac mini (2023)",
     "SupportedOS": [
+      "Monterey 12",
       "Sonoma 14",
       "Ventura 13",
       "Tahoe 26",
       "Sequoia 15"
     ],
     "OSVersions": [
+      12,
       13,
       14,
       15,
@@ -838,14 +842,12 @@
   "Mac14,7": {
     "MarketingName": "MacBook Pro (13-inch, M2, 2022)",
     "SupportedOS": [
-      "Monterey 12",
       "Sonoma 14",
       "Ventura 13",
       "Tahoe 26",
       "Sequoia 15"
     ],
     "OSVersions": [
-      12,
       13,
       14,
       15,
@@ -1223,8 +1225,17 @@
       26
     ]
   },
+  "MacBookAir7,1": {
+    "MarketingName": "MacBook Air (11-inch, Early 2015)",
+    "SupportedOS": [
+      "Monterey 12"
+    ],
+    "OSVersions": [
+      12
+    ]
+  },
   "MacBookAir7,2": {
-    "MarketingName": "MacBook Air (13-inch, Mid 2017)",
+    "MarketingName": "MacBook Air (13-inch, Early 2015)",
     "SupportedOS": [
       "Monterey 12"
     ],
@@ -1273,6 +1284,60 @@
       14,
       15,
       26
+    ]
+  },
+  "MacBookPro11,4": {
+    "MarketingName": "MacBook Pro (Retina, 15-inch, Mid 2015)",
+    "SupportedOS": [
+      "Monterey 12"
+    ],
+    "OSVersions": [
+      12
+    ]
+  },
+  "MacBookPro11,5": {
+    "MarketingName": "MacBook Pro (Retina, 15-inch, Mid 2015)",
+    "SupportedOS": [
+      "Monterey 12"
+    ],
+    "OSVersions": [
+      12
+    ]
+  },
+  "MacBookPro12,1": {
+    "MarketingName": "MacBook Pro (Retina, 13-inch, Early 2015)",
+    "SupportedOS": [
+      "Monterey 12"
+    ],
+    "OSVersions": [
+      12
+    ]
+  },
+  "MacBookPro13,1": {
+    "MarketingName": "MacBook Pro (13-inch, 2016, Two Thunderbolt 3 ports)",
+    "SupportedOS": [
+      "Monterey 12"
+    ],
+    "OSVersions": [
+      12
+    ]
+  },
+  "MacBookPro13,2": {
+    "MarketingName": "MacBook Pro (13-inch, 2016, Four Thunderbolt 3 ports)",
+    "SupportedOS": [
+      "Monterey 12"
+    ],
+    "OSVersions": [
+      12
+    ]
+  },
+  "MacBookPro13,3": {
+    "MarketingName": "MacBook Pro (15-inch, 2016)",
+    "SupportedOS": [
+      "Monterey 12"
+    ],
+    "OSVersions": [
+      12
     ]
   },
   "MacBookPro14,1": {
@@ -1464,14 +1529,12 @@
   "MacBookPro18,1": {
     "MarketingName": "MacBook Pro (16-inch, 2021)",
     "SupportedOS": [
-      "Monterey 12",
       "Sonoma 14",
       "Ventura 13",
       "Tahoe 26",
       "Sequoia 15"
     ],
     "OSVersions": [
-      12,
       13,
       14,
       15,
@@ -1481,14 +1544,12 @@
   "MacBookPro18,2": {
     "MarketingName": "MacBook Pro (16-inch, 2021)",
     "SupportedOS": [
-      "Monterey 12",
       "Sonoma 14",
       "Ventura 13",
       "Tahoe 26",
       "Sequoia 15"
     ],
     "OSVersions": [
-      12,
       13,
       14,
       15,
@@ -1498,14 +1559,12 @@
   "MacBookPro18,3": {
     "MarketingName": "MacBook Pro (14-inch, 2021)",
     "SupportedOS": [
-      "Monterey 12",
       "Sonoma 14",
       "Ventura 13",
       "Tahoe 26",
       "Sequoia 15"
     ],
     "OSVersions": [
-      12,
       13,
       14,
       15,
@@ -1515,14 +1574,12 @@
   "MacBookPro18,4": {
     "MarketingName": "MacBook Pro (14-inch, 2021)",
     "SupportedOS": [
-      "Monterey 12",
       "Sonoma 14",
       "Ventura 13",
       "Tahoe 26",
       "Sequoia 15"
     ],
     "OSVersions": [
-      12,
       13,
       14,
       15,
@@ -1852,6 +1909,42 @@
     "MarketingName": "X86LEGACYAP",
     "SupportedOS": [],
     "OSVersions": []
+  },
+  "iMac15,1": {
+    "MarketingName": "iMac (Retina 5K, 27-inch, Mid 2015)",
+    "SupportedOS": [
+      "Monterey 12"
+    ],
+    "OSVersions": [
+      12
+    ]
+  },
+  "iMac16,1": {
+    "MarketingName": "iMac (21.5-inch, Late 2015)",
+    "SupportedOS": [
+      "Monterey 12"
+    ],
+    "OSVersions": [
+      12
+    ]
+  },
+  "iMac16,2": {
+    "MarketingName": "iMac (Retina 4K, 21.5-inch, Late 2015)",
+    "SupportedOS": [
+      "Monterey 12"
+    ],
+    "OSVersions": [
+      12
+    ]
+  },
+  "iMac17,1": {
+    "MarketingName": "iMac (Retina 5K, 27-inch, Late 2015)",
+    "SupportedOS": [
+      "Monterey 12"
+    ],
+    "OSVersions": [
+      12
+    ]
   },
   "iMac18,1": {
     "MarketingName": "iMac (21.5-inch, 2017)",
