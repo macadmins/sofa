@@ -576,7 +576,7 @@ onMounted(() => {
 
 .table-header {
   display: grid;
-  grid-template-columns: 2fr 1.5fr 1.5fr 0.5fr;
+  grid-template-columns: 3fr 1.2fr 1.2fr 0.6fr;
   padding: 0.75rem 1.25rem;
   background: var(--vp-c-bg-soft);
   border-bottom: 1px solid var(--vp-c-divider);
@@ -591,7 +591,7 @@ onMounted(() => {
 
 .table-row {
   display: grid;
-  grid-template-columns: 2fr 1.5fr 1.5fr 0.5fr;
+  grid-template-columns: 3fr 1.2fr 1.2fr 0.6fr;
   padding: 0.75rem 1.25rem;
   border-bottom: 1px solid var(--vp-c-divider-light);
   transition: background 0.2s ease;
