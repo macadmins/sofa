@@ -51,7 +51,8 @@ export function dataPlugin(): Plugin {
             '/resources/sofa-status.json': 'resources/sofa-status.json',
             '/resources/timestamp.json': '../../v1/timestamp.json',
             '/resources/bulletin.json': 'resources/bulletin_data.json',
-            '/resources/links.json': 'resources/essential_links.json'
+            '/resources/links.json': 'resources/essential_links.json',
+            '/resources/apple_beta_os_history.json': 'resources/apple_beta_os_history.json'
           }
           
           // Check aliases first

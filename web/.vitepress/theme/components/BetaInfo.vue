@@ -160,17 +160,6 @@
           </div>
         </a>
         
-        <a href="https://beta-feed.macadmin.me/" target="_blank" class="resource-link">
-          <div class="resource-icon">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"/>
-            </svg>
-          </div>
-          <div class="resource-content">
-            <h4>Beta Feed API</h4>
-            <p>JSON feed for beta releases</p>
-          </div>
-        </a>
       </div>
     </div>
   </div>
@@ -179,9 +168,9 @@
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
 import { useSOFAData } from '../composables/useSOFAData'
-import { Monitor, Smartphone, Tv, Watch as WatchIcon, Eye, Tablet } from 'lucide-vue-next'
+import { Monitor, Smartphone, Tv, Watch as WatchIcon, Eye, Tablet, Code } from 'lucide-vue-next'
 
-const platforms = ['All', 'macOS', 'iOS', 'iPadOS', 'tvOS', 'watchOS', 'visionOS']
+const platforms = ['All', 'macOS', 'iOS', 'iPadOS', 'tvOS', 'watchOS', 'visionOS', 'Xcode']
 const selectedPlatform = ref('All')
 const betaData = ref([])
 const macosInstallers = ref({})
@@ -224,6 +213,7 @@ const getPlatformIcon = (platform) => {
     'tvOS': Tv,
     'watchOS': WatchIcon,
     'visionOS': Eye,
+    'Xcode': Code,
     'All': Monitor
   }
   return icons[platform] || Monitor
@@ -246,8 +236,15 @@ const processBetaData = () => {
   
   return Array.from(betaMap.values())
     .sort((a, b) => {
-      // Sort by platform order first
-      const platformOrder = ['macOS', 'iOS', 'iPadOS', 'tvOS', 'watchOS', 'visionOS']
+      // Sort by release date first (newest first) to ensure all recent platforms appear
+      const dateA = new Date(a.released)
+      const dateB = new Date(b.released)
+      if (dateA.getTime() !== dateB.getTime()) {
+        return dateB - dateA
+      }
+      
+      // Then by platform order as secondary sort
+      const platformOrder = ['macOS', 'iOS', 'iPadOS', 'tvOS', 'watchOS', 'visionOS', 'Xcode']
       const aPlatformIndex = platformOrder.indexOf(a.platform)
       const bPlatformIndex = platformOrder.indexOf(b.platform)
       
@@ -255,17 +252,12 @@ const processBetaData = () => {
         return aPlatformIndex - bPlatformIndex
       }
       
-      // Then by version (descending)
+      // Finally by version (descending)
       const aVersion = parseFloat(a.version) || 0
       const bVersion = parseFloat(b.version) || 0
-      if (aVersion !== bVersion) {
-        return bVersion - aVersion
-      }
-      
-      // Finally by release date (newest first)
-      return new Date(b.released) - new Date(a.released)
+      return bVersion - aVersion
     })
-    .slice(0, 24) // Show latest 24 betas
+    .slice(0, 64) // Show all available betas from our merged history
 }
 
 const processMacOSInstallers = () => {
@@ -290,7 +282,7 @@ const processMacOSInstallers = () => {
 }
 
 // Use composable for data fetching
-const historyInfo = useSOFAData('v1/apple-beta-os-history.json')
+const historyInfo = useSOFAData('resources/apple_beta_os_history.json')
 const macosInfo = useSOFAData('v2/macos_data_feed.json')
 
 // Watch for data changes

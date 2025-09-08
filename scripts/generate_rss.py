@@ -81,7 +81,7 @@ def load_security_releases(data_dir: str = "data/resources") -> List[Dict]:
                     existing_releases[key]["url"] = release.get("url")
             else:
                 # Add new release not in bulletin data
-                release_date = release.get("date")
+                release_date = release.get("date") or release.get("release_date")
                 if not release_date or release_date == "null":
                     release_date = None
                     
@@ -157,22 +157,38 @@ def load_xprotect_updates(data_dir: str = "data/resources") -> List[Dict]:
 
     # Track previous versions to detect which actually changed
     # In a real implementation, this would compare against previous xprotect.json
+    component_offset = 0  # Minutes offset for each component
+    
     for version_key, info in components.items():
         version = data.get(version_key)
         if version:
             # Version exists in xprotect_entries for verification
             # data.get("xprotect_entries", {}).get(info["key"])
 
+            # Add small time offset for each component to spread them chronologically
+            component_date = release_date
+            if release_date and component_offset > 0:
+                try:
+                    # Parse the release_date and add offset
+                    base_dt = datetime.fromisoformat(release_date.replace('Z', '+00:00'))
+                    offset_dt = base_dt + timedelta(minutes=component_offset)
+                    component_date = offset_dt.isoformat().replace('+00:00', 'Z')
+                except:
+                    # If parsing fails, use original date
+                    component_date = release_date
+
             updates.append(
                 {
                     "name": info["name"],
                     "version": version,
-                    "date": release_date,
+                    "date": component_date,
                     "type": f"xprotect_{version_key.replace('_version', '')}",
                     "description": f"{info['desc']} updated to version {version}",
                     "url": "https://support.apple.com/en-us/100100",  # Apple security page
                 }
             )
+            
+            component_offset += 5  # Add 5 minutes between each component
 
     return updates
 
