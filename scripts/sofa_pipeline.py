@@ -206,7 +206,7 @@ def run_bulletin() -> StageResult:
         with console.status("[bold cyan]Updating bulletin from v2 feeds..."):
             v2_cmd = [
                 "./bin/sofa-build", "bulletin",
-                "--feeds-dir", "./v2"
+                "--feeds-dir", "."
             ]
 
             v2_result = run_binary_command(v2_cmd, "bulletin-v2", 60)
