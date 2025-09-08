@@ -48,6 +48,7 @@ export function dataPlugin(): Plugin {
             '/v1/rss.xml': 'feeds/v1/rss_feed.xml',
             '/v2/macos.json': 'feeds/v2/macos_data_feed.json', 
             '/v2/ios.json': 'feeds/v2/ios_data_feed.json',
+            '/resources/sofa-status.json': 'resources/sofa-status.json',
             '/resources/timestamp.json': '../../v1/timestamp.json',
             '/resources/bulletin.json': 'resources/bulletin_data.json',
             '/resources/links.json': 'resources/essential_links.json'
