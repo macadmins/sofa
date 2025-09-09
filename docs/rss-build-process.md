@@ -1,6 +1,6 @@
 # RSS Build Process & Capabilities Documentation
 
-The SOFA RSS system provides comprehensive RSS feed generation for Apple security updates, XProtect security framework updates, and beta releases. The system is built around a modern Python script that aggregates data from multiple sources and generates standards-compliant RSS 2.0 feeds.
+The SOFA RSS system provides comprehensive RSS feed generation for Apple security updates, XProtect security framework updates, and beta releases. The system is built around a modern Python uv based script that aggregates data from multiple sources within SOFA and generates standards-compliant RSS 2.0 feeds.
 
 ## RSS System Overview
 
@@ -114,11 +114,11 @@ Options:
 #### **3. Beta Release Items**
 ```xml
 <item>
-  <title>iOS 18.2 beta 2</title>
+  <title>iOS 26 beta 9</title>
   <link>https://developer.apple.com/news/releases/</link>
-  <description>iOS 18.2 (22C5125e) beta release</description>
+  <description>iOS 26 beta 9 (23A5336a)beta release</description>
   <guid isPermaLink="false">Beta_iOS_18.2_beta_2_18.2</guid>
-  <pubDate>Mon, 04 Nov 2024 18:00:00 +0000</pubDate>
+  <pubDate>Tue, 02 Sep 2025 18:00:00 +0000</pubDate>
 </item>
 ```
 
@@ -186,7 +186,6 @@ gather → fetch → build → bulletin → rss → transform_links
 
 ### **Feed Statistics**
 Recent feed contains:
-- **Total Items**: ~3,800+ entries
 - **Security Updates**: Major OS releases and security patches
 - **XProtect Updates**: Daily security framework updates
 - **Beta Releases**: Developer preview releases
@@ -212,7 +211,7 @@ Recent feed contains:
 - **Duplicate Prevention**: Hash-based deduplication
 - **Sorted Output**: Chronological ordering (newest first)
 
-The RSS system provides a comprehensive, reliable feed for Apple security updates and system changes, serving as a critical notification mechanism for system administrators and security professionals monitoring Apple environments.
+The RSS system provides a comprehensive feed for notifying subscribers about Apple security updates and OS changes, serving as a valuable notification mechanism for #MacAdmins, system administrators and security professionals responsible for securing and managing Apple environments - with love ❤️.
 
 ---
-Last updated: 2025-09-09
+Last updated: 2025-09-06
