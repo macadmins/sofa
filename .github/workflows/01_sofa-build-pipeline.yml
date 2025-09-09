@@ -347,8 +347,12 @@ jobs:
           
       - name: RSS generation with beta validation  
         if: success() && (github.event_name == 'schedule' || contains(github.event.inputs.pipeline_stage, 'rss') || github.event.inputs.pipeline_stage == 'all')
+        env:
+          SOFA_FQDN: ${{ secrets.SOFA_BASE_URL || 'https://sofa.macadmins.io' }}
+          SOFA_BASE_URL: ${{ secrets.SOFA_BASE_URL || 'https://sofa.macadmins.io' }}
         run: |
           echo "📡 RSS generation with beta validation..."
+          echo "🌐 Using SOFA_FQDN: $SOFA_FQDN"
           cd processing
           
           # Check for required input files
@@ -361,7 +365,7 @@ jobs:
             
             # Generate RSS with beta releases included for validation
             if uv run --script scripts/generate_rss.py \
-              --output v1/rss_feed.xml \
+              --output v1/feed.rss \
               --data-dir data/resources \
               --include-xprotect \
               --include-beta \
