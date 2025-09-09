@@ -454,7 +454,7 @@ jobs:
             git push
             echo "✅ Detailed pipeline data committed to repository"
           fi
-          
+
       - name: Upload debug artifacts
         if: always()
         uses: actions/upload-artifact@v4
