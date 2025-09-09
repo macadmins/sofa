@@ -610,20 +610,47 @@ export default {
             })
           }
           
-          // Add "About" link if exists
+          // Add all other relevant version-specific links
           Object.entries(versionLinks).forEach(([title, url]) => {
+            // Skip the ones we already added with custom titles
+            if (title === enterpriseKey || title === updatesKey) return
+            
+            // Add About links
             if (title.startsWith('About ')) {
+              wantedLinks.push({ title, url, platform: 'version' })
+            }
+            
+            // Add any other platform-specific documentation
+            if (title.includes('Release Notes') || title.includes('documentation') || 
+                title.includes('guide') || title.includes('deployment')) {
               wantedLinks.push({ title, url, platform: 'version' })
             }
           })
         }
         
-        // Add Developer Release Notes from general links
-        if (platformData.general && platformData.general['Developer Release Notes']) {
-          wantedLinks.push({ 
-            title: 'Developer Release Notes', 
-            url: platformData.general['Developer Release Notes'], 
-            platform: 'general' 
+        // Add general platform resources that apply to all versions
+        if (platformData.general) {
+          Object.entries(platformData.general).forEach(([title, url]) => {
+            wantedLinks.push({ title, url, platform: 'general' })
+          })
+        }
+        
+        // Add relevant general resources from _general_resources
+        if (essentialLinksData._general_resources) {
+          const relevantGeneral = essentialLinksData._general_resources.filter(resource => {
+            // Add security and platform-related general resources
+            return resource.title.includes('Security') || 
+                   resource.title.includes('Platform') ||
+                   resource.title.includes('Deployment') ||
+                   resource.title.includes('Training')
+          })
+          
+          relevantGeneral.slice(0, 4).forEach(resource => { // Limit to first 4 to avoid clutter
+            wantedLinks.push({ 
+              title: resource.title, 
+              url: resource.url, 
+              platform: 'general' 
+            })
           })
         }
       }
