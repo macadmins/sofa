@@ -433,7 +433,7 @@ def create_feed_item(
         # Enhanced XProtect update description
         desc_parts.append(release.get("description", f"{product_name} updated"))
         desc_parts.append("Malware protection and security definitions updated")
-        desc_parts.append("Track all XProtect components on SOFA: https://sofa.macadmins.io/macos/sequoia")
+        desc_parts.append('Track all XProtect components on SOFA: <a href="https://sofa.macadmins.io/macos/sequoia">https://sofa.macadmins.io/macos/sequoia</a>')
 
     elif release_type == "beta":
         # Rich beta release description
@@ -451,13 +451,12 @@ def create_feed_item(
             desc_parts.append(f"Release Notes: Available")
         
         # Add beta-specific guidance
-        desc_parts.append("BETA SOFTWARE WARNING: Use only on test devices")
         desc_parts.append("Bug Reporting: Use Feedback Assistant app")
         desc_parts.append("Access: Requires Apple Developer Program or Beta Software Program")
         
         # Add SOFA link for more details
         sofa_link = get_sofa_page_link(product_name, version, release_type)
-        desc_parts.append(f"More Details: {sofa_link}")
+        desc_parts.append(f'More Details: <a href="{sofa_link}">{sofa_link}</a>')
 
     else:
         # Security release description with CVE info
@@ -489,12 +488,12 @@ def create_feed_item(
         # Add Apple security bulletin link if available
         apple_security_url = release.get("url", "")
         if apple_security_url and apple_security_url.startswith("https://support.apple.com"):
-            desc_parts.append(f"Apple Security Bulletin: {apple_security_url}")
+            desc_parts.append(f'Apple Security Bulletin: <a href="{apple_security_url}">{apple_security_url}</a>')
         
         # Add SOFA link for more details
         if unique_cve_count > 0 or exploited_count > 0:
             sofa_link = get_sofa_page_link(product_name, version, release_type)
-            desc_parts.append(f"Security Details: {sofa_link}")
+            desc_parts.append(f'Security Details: <a href="{sofa_link}">{sofa_link}</a>')
 
     description.text = "<br>".join(desc_parts) if desc_parts else "Update"
 
