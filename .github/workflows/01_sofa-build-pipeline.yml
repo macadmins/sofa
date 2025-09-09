@@ -361,8 +361,8 @@ jobs:
             
             # Generate RSS with beta releases included for validation
             if uv run --script scripts/generate_rss.py \
+              --output v1/rss_feed.xml \
               --data-dir data/resources \
-              --output data/feeds/v1/rss_feed.xml \
               --include-xprotect \
               --include-beta \
               --verbose; then

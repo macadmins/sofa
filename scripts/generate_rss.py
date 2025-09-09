@@ -2,6 +2,10 @@
 #
 # /// script
 # requires-python = ">=3.12"
+# dependencies = [
+#     "rich>=13.7.0",
+#     "typer>=0.9.0",
+# ]
 # ///
 """
 Modern RSS feed generator for SOFA
@@ -15,21 +19,27 @@ from pathlib import Path
 from typing import Dict, List, Set, Optional
 from xml.etree.ElementTree import Element, SubElement, tostring
 from xml.dom import minidom
-import argparse
-import sys
+import typer
+from rich.console import Console
+from rich.progress import Progress, SpinnerColumn, TextColumn
+from rich.table import Table
+from rich.panel import Panel
+
+console = Console()
+app = typer.Typer(help="Modern RSS feed generator for SOFA")
 
 
 def load_json_file(filepath: Path) -> Optional[Dict]:
-    """Load and parse JSON file"""
+    """Load and parse JSON file with Rich output"""
     if not filepath.exists():
-        print(f"Warning: {filepath} not found")
+        console.print(f"⚠️ Warning: {filepath} not found", style="yellow")
         return None
 
     try:
         with open(filepath, "r", encoding="utf-8") as f:
             return json.load(f)
     except json.JSONDecodeError as e:
-        print(f"Error parsing {filepath}: {e}")
+        console.print(f"❌ Error parsing {filepath}: {e}", style="red")
         return None
 
 
@@ -126,7 +136,7 @@ def load_xprotect_updates(data_dir: str = "data/resources") -> List[Dict]:
     updates = []
     release_date = data.get("release_date", "")
 
-    # Component mapping with descriptions
+    # Component maping with descriptions
     components = {
         "config_version": {
             "name": "XProtect Configuration Data",
@@ -155,40 +165,25 @@ def load_xprotect_updates(data_dir: str = "data/resources") -> List[Dict]:
         },
     }
 
-    # Track previous versions to detect which actually changed
-    # In a real implementation, this would compare against previous xprotect.json
-    component_offset = 0  # Minutes offset for each component
-    
+    # Create a single consolidated XProtect update entry
+    component_details = []
     for version_key, info in components.items():
         version = data.get(version_key)
         if version:
-            # Version exists in xprotect_entries for verification
-            # data.get("xprotect_entries", {}).get(info["key"])
-
-            # Add small time offset for each component to spread them chronologically
-            component_date = release_date
-            if release_date and component_offset > 0:
-                try:
-                    # Parse the release_date and add offset
-                    base_dt = datetime.fromisoformat(release_date.replace('Z', '+00:00'))
-                    offset_dt = base_dt + timedelta(minutes=component_offset)
-                    component_date = offset_dt.isoformat().replace('+00:00', 'Z')
-                except:
-                    # If parsing fails, use original date
-                    component_date = release_date
-
-            updates.append(
-                {
-                    "name": info["name"],
-                    "version": version,
-                    "date": component_date,
-                    "type": f"xprotect_{version_key.replace('_version', '')}",
-                    "description": f"{info['desc']} updated to version {version}",
-                    "url": "https://support.apple.com/en-us/100100",  # Apple security page
-                }
-            )
-            
-            component_offset += 5  # Add 5 minutes between each component
+            # Extract component name for cleaner display
+            name = info['name'].replace('XProtect ', '').replace(' Data', '')
+            component_details.append(f"{name} ({version})")
+    
+    if component_details:
+        # Single XProtect entry with all component versions
+        updates.append({
+            "name": "XProtect Security Framework",
+            "version": f"Bundle Update",
+            "date": release_date,
+            "type": "xprotect",
+            "description": f"XProtect Security Framework updated: {', '.join(component_details)}",
+            "url": "https://support.apple.com/en-us/100100",
+        })
 
     return updates
 
@@ -262,9 +257,8 @@ def extract_cves(release: Dict, data_dir: str = "data/resources") -> Dict[str, b
 def format_release_date(date_str: str) -> str:
     """Format date string to RFC 822 format for RSS"""
     if not date_str or date_str == "null":
-        # Use a reasonable default for missing dates (7 days ago)
-        dt = datetime.now() - timedelta(days=7)
-        return dt.strftime("%a, %d %b %Y %H:%M:%S +0000")
+        # Return None for missing dates instead of fallback - let caller decide
+        return None
 
     # Try parsing different date formats
     formats = [
@@ -290,9 +284,8 @@ def format_release_date(date_str: str) -> str:
     ):
         return date_str
 
-    # Default to 7 days ago if can't parse
-    dt = datetime.now() - timedelta(days=7)
-    return dt.strftime("%a, %d %b %Y %H:%M:%S +0000")
+    # Return None for unparseable dates - let caller decide whether to include item
+    return None
 
 
 def create_feed_item(
@@ -306,6 +299,32 @@ def create_feed_item(
     release_type = release.get("type", "os")  # os, xprotect, beta
 
     if not product_name or not version:
+        return None
+
+    # Filter to only include relevant platforms
+    relevant_platforms = [
+        "macOS", "iOS", "iPadOS", "visionOS", "tvOS", "watchOS", "Safari", "Xcode",
+        "XProtect", "beta"  # Include XProtect and beta releases
+    ]
+    
+    # Check if product name contains any relevant platform
+    is_relevant = False
+    product_lower = product_name.lower()
+    
+    # Special handling for beta releases
+    if release_type == "beta" or "beta" in product_lower:
+        is_relevant = True
+    # Special handling for XProtect
+    elif release_type.startswith("xprotect") or "xprotect" in product_lower:
+        is_relevant = True
+    else:
+        # Check for platform names in product name
+        for platform in relevant_platforms:
+            if platform.lower() in product_lower:
+                is_relevant = True
+                break
+    
+    if not is_relevant:
         return None
 
     # Generate unique ID for deduplication
@@ -332,13 +351,79 @@ def create_feed_item(
         else:
             title.text = f"{product_name} {version}"
 
-    # Link - use SecurityInfo URL if available, otherwise SOFA homepage
+    # Smart Links to relevant SOFA pages
     link = SubElement(item, "link")
-    security_url = (release.get("url") or "").strip()
-    if security_url and security_url.startswith("https://"):
-        link.text = security_url
-    else:
-        link.text = "https://sofa.macadmins.io/"
+    
+    def get_sofa_page_link(product_name: str, version: str, release_type: str) -> str:
+        """Generate smart links to relevant SOFA pages based on platform and version"""
+        product_lower = product_name.lower()
+        
+        # Platform-specific page mappings
+        if "macos" in product_lower or "mac os" in product_lower:
+            if "sequoia" in product_lower or "15." in version or "15 " in version:
+                return "https://sofa.macadmins.io/macos/sequoia"
+            elif "sonoma" in product_lower or "14." in version:
+                return "https://sofa.macadmins.io/macos/sonoma"
+            elif "ventura" in product_lower or "13." in version:
+                return "https://sofa.macadmins.io/macos/ventura"
+            elif "monterey" in product_lower or "12." in version:
+                return "https://sofa.macadmins.io/macos/monterey"
+            else:
+                return "https://sofa.macadmins.io/macos/sequoia"  # Default to latest
+                
+        elif ("ios" in product_lower and "ipad" not in product_lower) or "iphone" in product_lower:
+            if "18." in version or "18 " in version:
+                return "https://sofa.macadmins.io/ios/ios18"
+            elif "17." in version or "17 " in version:
+                return "https://sofa.macadmins.io/ios/ios17"
+            else:
+                return "https://sofa.macadmins.io/ios/ios18"  # Default to latest
+                
+        elif "ipados" in product_lower or "ipad" in product_lower:
+            if "18." in version or "18 " in version:
+                return "https://sofa.macadmins.io/ios/ios18"
+            elif "17." in version or "17 " in version:
+                return "https://sofa.macadmins.io/ios/ios17"
+            else:
+                return "https://sofa.macadmins.io/ios/ios18"  # Default to latest
+                
+        elif "safari" in product_lower:
+            return "https://sofa.macadmins.io/safari/safari18"
+            
+        elif "tvos" in product_lower or "tv os" in product_lower:
+            if "18." in version or "18 " in version:
+                return "https://sofa.macadmins.io/tvos/tvos18"
+            elif "17." in version or "17 " in version:
+                return "https://sofa.macadmins.io/tvos/tvos17"
+            else:
+                return "https://sofa.macadmins.io/tvos/tvos18"  # Default to latest
+                
+        elif "watchos" in product_lower or "watch os" in product_lower:
+            if "11." in version or "11 " in version:
+                return "https://sofa.macadmins.io/watchos/watchos11"
+            else:
+                return "https://sofa.macadmins.io/watchos/watchos11"  # Default to latest
+            
+        elif "visionos" in product_lower or "vision os" in product_lower:
+            return "https://sofa.macadmins.io/visionos/visionos2"
+            
+        elif "xcode" in product_lower:
+            return "https://sofa.macadmins.io/beta-releases"  # Xcode betas tracked here
+            
+        elif "xprotect" in product_lower or release_type.startswith("xprotect"):
+            return "https://sofa.macadmins.io/how-it-works"  # XProtect info on How It Works
+            
+        elif release_type == "beta" or "beta" in product_lower:
+            return "https://sofa.macadmins.io/beta-releases"
+            
+        # Fallback to Apple's URL if available, otherwise SOFA home
+        apple_url = release.get("url", "")
+        if apple_url and apple_url.startswith("https://support.apple.com"):
+            return apple_url
+        else:
+            return "https://sofa.macadmins.io/"
+    
+    link.text = get_sofa_page_link(product_name, version, release_type)
 
     # Description - varies by type
     description = SubElement(item, "description")
@@ -394,11 +479,15 @@ def create_feed_item(
         product_type = product_name.split()[0] if product_name else "Unknown"
         guid.text = f"{product_type}_OS_{version}"
 
-    # Publication date
-    pub_date = SubElement(item, "pubDate")
+    # Publication date - skip items without valid dates
     formatted_date = format_release_date(date)
-    if formatted_date:
-        pub_date.text = formatted_date
+    if not formatted_date:
+        # Log skipped items for data quality monitoring
+        console.print(f"⚠️ Skipping '{product_name} {version}' - invalid release date: '{date}'", style="yellow")
+        return None
+        
+    pub_date = SubElement(item, "pubDate")
+    pub_date.text = formatted_date
 
     return item
 
@@ -549,85 +638,75 @@ def calculate_days_between_releases(releases: List[Dict]) -> None:
                     pass
 
 
-def main():
-    """Main function"""
-    parser = argparse.ArgumentParser(
-        description="Generate RSS feed for Apple security releases, XProtect, and beta updates"
-    )
-    parser.add_argument(
-        "--output",
-        type=str,
-        default="rss_feed.xml",
-        help="Output RSS file path (default: rss_feed.xml)",
-    )
-    parser.add_argument(
-        "--data-dir",
-        type=str,
-        default="data/resources",
-        help="Data directory containing JSON files (default: ../data/resources)",
-    )
-    parser.add_argument("--verbose", action="store_true", help="Enable verbose output")
-    parser.add_argument(
-        "--include-xprotect",
-        action="store_true",
-        default=True,
-        help="Include XProtect updates in feed (default: True)",
-    )
-    parser.add_argument(
-        "--include-beta",
-        action="store_true",
-        default=False,
-        help="Include beta releases in feed (default: False)",
-    )
-
-    args = parser.parse_args()
+def main(
+    output: str = typer.Option("v1/rss_feed.xml", "--output", help="Output RSS file path"),
+    data_dir: str = typer.Option("data/resources", "--data-dir", help="Data directory containing JSON files"),
+    verbose: bool = typer.Option(True, "--verbose/--quiet", help="Enable verbose output"),
+    include_xprotect: bool = typer.Option(True, "--include-xprotect/--no-xprotect", help="Include XProtect updates in feed"),
+    include_beta: bool = typer.Option(False, "--include-beta/--no-beta", help="Include beta releases in feed")
+):
+    """Generate optimized RSS feed for Apple security releases, XProtect, and beta updates"""
+    
+    console.print(Panel.fit(
+        "[bold blue]SOFA RSS Generator[/bold blue]\n"
+        "[dim]Creating filtered RSS feed for Apple platforms[/dim]",
+        border_style="blue"
+    ))
 
     all_releases = []
-
-    # Load security releases
-    if args.verbose:
-        print("Loading Apple security releases...")
-
-    releases = load_security_releases(args.data_dir)
-    if releases:
-        all_releases.extend(releases)
-        if args.verbose:
-            print(f"  ✓ Loaded {len(releases)} security releases")
-    else:
-        print("  ⚠️  No security releases found")
-
-    # Load XProtect updates
-    if args.include_xprotect:
-        if args.verbose:
-            print("Loading XProtect updates...")
-        xprotect = load_xprotect_updates(args.data_dir)
-        if xprotect:
-            all_releases.extend(xprotect)
-            if args.verbose:
-                print(f"  ✓ Loaded {len(xprotect)} XProtect components")
+    
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        console=console,
+    ) as progress:
+        
+        # Load security releases
+        task1 = progress.add_task("Loading Apple security releases...", total=1)
+        releases = load_security_releases(data_dir)
+        if releases:
+            all_releases.extend(releases)
+            progress.advance(task1)
+            if verbose:
+                console.print(f"✓ Loaded [cyan]{len(releases)}[/cyan] security releases")
         else:
-            if args.verbose:
-                print("  ⚠️  No XProtect data found")
+            progress.advance(task1)
+            console.print("⚠️ No security releases found", style="yellow")
 
-    # Load beta releases
-    if args.include_beta:
-        if args.verbose:
-            print("Loading beta releases...")
-        betas = load_beta_releases(args.data_dir)
-        if betas:
-            all_releases.extend(betas)
-            if args.verbose:
-                print(f"  ✓ Loaded {len(betas)} beta releases")
-        else:
-            if args.verbose:
-                print("  ⚠️  No beta releases found")
+        # Load XProtect updates
+        if include_xprotect:
+            task2 = progress.add_task("Loading XProtect updates...", total=1)
+            xprotect = load_xprotect_updates(data_dir)
+            if xprotect:
+                all_releases.extend(xprotect)
+                progress.advance(task2)
+                if verbose:
+                    console.print(f"✓ Loaded [cyan]{len(xprotect)}[/cyan] XProtect components")
+            else:
+                progress.advance(task2)
+                if verbose:
+                    console.print("⚠️ No XProtect data found", style="yellow")
+
+        # Load beta releases
+        if include_beta:
+            task3 = progress.add_task("Loading beta releases...", total=1)
+            betas = load_beta_releases(data_dir)
+            if betas:
+                all_releases.extend(betas)
+                progress.advance(task3)
+                if verbose:
+                    console.print(f"✓ Loaded [cyan]{len(betas)}[/cyan] beta releases")
+            else:
+                progress.advance(task3)
+                if verbose:
+                    console.print("⚠️ No beta releases found", style="yellow")
 
     if not all_releases:
-        print("❌ No data found to generate RSS feed", file=sys.stderr)
-        sys.exit(1)
+        console.print("❌ No data found to generate RSS feed", style="red")
+        raise typer.Exit(1)
 
-    if args.verbose:
-        print(f"\nTotal items to process: {len(all_releases)}")
+    if verbose:
+        console.print(f"\n📊 Total items to process: [cyan]{len(all_releases)}[/cyan]")
 
     # Calculate days between releases for OS updates
     os_releases = [r for r in all_releases if r.get("type", "os") == "os"]
@@ -635,15 +714,42 @@ def main():
         calculate_days_between_releases(os_releases)
 
     # Generate RSS feed
-    output_path = Path(args.output)
-    write_data_to_rss(all_releases, output_path, args.data_dir)
+    output_path = Path(output)
+    
+    with console.status(f"[bold green]Generating RSS feed..."):
+        write_data_to_rss(all_releases, output_path, data_dir)
 
-    # Also generate at the standard location for web serving
-    standard_path = Path("v1/rss_feed.xml")
-    if output_path != standard_path:
-        write_data_to_rss(all_releases, standard_path, args.data_dir)
-        print(f"✅ Also generated at: {standard_path}")
-
+    # Generate summary table
+    table = Table(title="RSS Generation Results")
+    table.add_column("Metric", style="cyan")
+    table.add_column("Count", style="green")
+    
+    if output_path.exists():
+        size = output_path.stat().st_size
+        
+        # Count actual items in generated RSS
+        try:
+            with open(output_path, 'r') as f:
+                content = f.read()
+                actual_items = content.count('<item>')
+            
+            duplicates_removed = len(all_releases) - actual_items
+            
+            table.add_row("Total Items", str(actual_items))
+            table.add_row("Security Updates", str(len(releases)))
+            if include_xprotect and 'xprotect' in locals():
+                table.add_row("XProtect Updates", str(len(xprotect)))
+            if include_beta and 'betas' in locals():
+                table.add_row("Beta Releases", str(len(betas)))
+            table.add_row("Duplicates Removed", str(duplicates_removed))
+            table.add_row("File Size", f"{size:,} bytes")
+            
+        except Exception as e:
+            table.add_row("File Size", f"{size:,} bytes")
+            console.print(f"⚠️ Error reading output: {e}", style="yellow")
+    
+    console.print(table)
+    console.print(f"✅ [bold green]RSS feed generated:[/bold green] {output_path}")
 
 if __name__ == "__main__":
-    main()
+    typer.run(main)

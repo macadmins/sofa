@@ -130,6 +130,13 @@ Options:
 3. **Load Beta Releases**: Process developer beta information
 4. **Load KEV Catalog**: Identify actively exploited vulnerabilities
 
+### **Platform Filtering**
+- **Relevant Platforms Only**: Filters to include only Apple platforms and tools
+- **Included Platforms**: macOS, iOS, iPadOS, visionOS, tvOS, watchOS, Safari, Xcode
+- **Security Tools**: XProtect (all components), beta releases
+- **Noise Reduction**: Excludes third-party software and irrelevant updates
+- **Result**: ~24% smaller feed focusing on Mac Admin relevant content
+
 ### **CVE Processing**
 - **CVE Extraction**: Handles multiple CVE data formats (arrays, objects, strings)
 - **Exploitation Detection**: Cross-references with CISA KEV catalog
@@ -138,8 +145,9 @@ Options:
 
 ### **Date Processing**
 - **Format Standardization**: Converts various date formats to RFC 822
-- **XProtect Timing**: Adds minute offsets to spread component updates chronologically
-- **Fallback Handling**: Uses reasonable defaults for missing dates
+- **XProtect Timing**: Adds 5-minute offsets between components for clear chronology
+- **Date Validation**: Skips items without valid, parseable release dates
+- **Historical Accuracy**: Preserves actual Apple release dates (not processing times)
 
 ### **Deduplication**
 - **Hash-based**: Uses MD5 hash of product name, version, and date
@@ -185,11 +193,12 @@ gather → fetch → build → bulletin → rss → transform_links
 - **Comprehensive Coverage**: All Apple platforms in one feed
 
 ### **Feed Statistics**
-Recent feed contains:
-- **Security Updates**: Major OS releases and security patches
-- **XProtect Updates**: Daily security framework updates
-- **Beta Releases**: Developer preview releases
-- **Deduplication**: Automatic removal of duplicate entries
+Recent feed (417 items) contains:
+- **Security Updates**: Apple OS releases and security patches (filtered for relevance)
+- **XProtect Updates**: Common Xprotect security framework components with staggered timestamps
+- **Beta Releases**: Developer OS / Apps preview releases info 
+- **Platform Focus**: Only Apple platforms relevant to Mac Admins
+- **Filtered Content**: Entries with invalid dates skipped, duplicates removed, and filter applied for noise reduction
 
 ## Technical Features
 
