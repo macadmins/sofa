@@ -351,79 +351,51 @@ def create_feed_item(
         else:
             title.text = f"{product_name} {version}"
 
-    # Smart Links to relevant SOFA pages
+    # Use Apple's official URLs as primary links for RSS compatibility
     link = SubElement(item, "link")
     
+    # Prioritize Apple's official URLs to avoid RSS reader loading issues
+    apple_url = release.get("url", "")
+    if apple_url and apple_url.startswith("https://support.apple.com"):
+        link.text = apple_url
+    elif apple_url and apple_url.startswith("https://developer.apple.com"):
+        link.text = apple_url  # For beta releases
+    else:
+        # Only use SOFA URLs when no Apple URL available
+        link.text = "https://sofa.macadmins.io/"
+
+    # Helper function for SOFA page mapping (for descriptions only)
     def get_sofa_page_link(product_name: str, version: str, release_type: str) -> str:
-        """Generate smart links to relevant SOFA pages based on platform and version"""
+        """Generate SOFA page links for description text"""
         product_lower = product_name.lower()
         
-        # Platform-specific page mappings
         if "macos" in product_lower or "mac os" in product_lower:
-            if "sequoia" in product_lower or "15." in version or "15 " in version:
+            if "sequoia" in product_lower or "15." in version:
                 return "https://sofa.macadmins.io/macos/sequoia"
             elif "sonoma" in product_lower or "14." in version:
                 return "https://sofa.macadmins.io/macos/sonoma"
             elif "ventura" in product_lower or "13." in version:
                 return "https://sofa.macadmins.io/macos/ventura"
-            elif "monterey" in product_lower or "12." in version:
-                return "https://sofa.macadmins.io/macos/monterey"
             else:
-                return "https://sofa.macadmins.io/macos/sequoia"  # Default to latest
-                
-        elif ("ios" in product_lower and "ipad" not in product_lower) or "iphone" in product_lower:
-            if "18." in version or "18 " in version:
-                return "https://sofa.macadmins.io/ios/ios18"
-            elif "17." in version or "17 " in version:
-                return "https://sofa.macadmins.io/ios/ios17"
-            else:
-                return "https://sofa.macadmins.io/ios/ios18"  # Default to latest
-                
+                return "https://sofa.macadmins.io/macos/sequoia"
+        elif "ios" in product_lower and "ipad" not in product_lower:
+            return "https://sofa.macadmins.io/ios/ios18" if "18." in version else "https://sofa.macadmins.io/ios/ios17"
         elif "ipados" in product_lower or "ipad" in product_lower:
-            if "18." in version or "18 " in version:
-                return "https://sofa.macadmins.io/ios/ios18"
-            elif "17." in version or "17 " in version:
-                return "https://sofa.macadmins.io/ios/ios17"
-            else:
-                return "https://sofa.macadmins.io/ios/ios18"  # Default to latest
-                
+            return "https://sofa.macadmins.io/ios/ios18" if "18." in version else "https://sofa.macadmins.io/ios/ios17"
         elif "safari" in product_lower:
             return "https://sofa.macadmins.io/safari/safari18"
-            
-        elif "tvos" in product_lower or "tv os" in product_lower:
-            if "18." in version or "18 " in version:
-                return "https://sofa.macadmins.io/tvos/tvos18"
-            elif "17." in version or "17 " in version:
-                return "https://sofa.macadmins.io/tvos/tvos17"
-            else:
-                return "https://sofa.macadmins.io/tvos/tvos18"  # Default to latest
-                
-        elif "watchos" in product_lower or "watch os" in product_lower:
-            if "11." in version or "11 " in version:
-                return "https://sofa.macadmins.io/watchos/watchos11"
-            else:
-                return "https://sofa.macadmins.io/watchos/watchos11"  # Default to latest
-            
-        elif "visionos" in product_lower or "vision os" in product_lower:
+        elif "tvos" in product_lower:
+            return "https://sofa.macadmins.io/tvos/tvos18" if "18." in version else "https://sofa.macadmins.io/tvos/tvos17"
+        elif "watchos" in product_lower:
+            return "https://sofa.macadmins.io/watchos/watchos11"
+        elif "visionos" in product_lower:
             return "https://sofa.macadmins.io/visionos/visionos2"
-            
-        elif "xcode" in product_lower:
-            return "https://sofa.macadmins.io/beta-releases"  # Xcode betas tracked here
-            
-        elif "xprotect" in product_lower or release_type.startswith("xprotect"):
-            return "https://sofa.macadmins.io/macos/sequoia"  # XProtect info on current macOS page
-            
-        elif release_type == "beta" or "beta" in product_lower:
+        elif "xcode" in product_lower or release_type == "beta":
             return "https://sofa.macadmins.io/beta-releases"
-            
-        # Fallback to Apple's URL if available, otherwise SOFA home
-        apple_url = release.get("url", "")
-        if apple_url and apple_url.startswith("https://support.apple.com"):
-            return apple_url
+        elif "xprotect" in product_lower or release_type.startswith("xprotect"):
+            return "https://sofa.macadmins.io/macos/sequoia"
         else:
             return "https://sofa.macadmins.io/"
-    
-    link.text = get_sofa_page_link(product_name, version, release_type)
 
     # Description - varies by type
     description = SubElement(item, "description")
