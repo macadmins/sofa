@@ -21,9 +21,16 @@
     <!-- Loaded Data View -->
     <div v-else-if="osData" class="features-container">     
       <div class="info-container">
-        <div class="tip custom-block">
+        <!-- Current Version Message -->
+        <div v-if="isLatestVersion" class="tip custom-block">
           <p class="custom-block-title">RECOMMENDED RELEASE FOR MOST UP-TO-DATE SECURITY</p>
           <p>This is the latest version of {{ platform }} that receives the most up-to-date security patches and updates, making it the recommended choice to protect your devices.</p>
+        </div>
+        
+        <!-- Legacy Version Message -->
+        <div v-else class="warning custom-block">
+          <p class="custom-block-title">LEGACY VERSION - LIMITED SECURITY SUPPORT</p>
+          <p>This is an older version of {{ platform }} that may receive limited security updates. Consider upgrading to the latest version for the most comprehensive security protection.</p>
         </div>
       </div>
 
@@ -445,6 +452,17 @@ export default {
         'visionOS': '/icons-sofa-mesh/visionos-subtle.png'
       }
       return platformMap[this.platform] || null
+    },
+    
+    isLatestVersion() {
+      const data = this.getPlatformData()
+      if (!data || !data.OSVersions || data.OSVersions.length === 0) return false
+      
+      const latestOS = data.OSVersions[0] // First item is latest
+      const currentVersion = this.title.split(' ')[1]
+      const latestVersion = latestOS.OSVersion.split(' ')[1]
+      
+      return currentVersion === latestVersion
     }
   },
   async mounted() {
@@ -657,6 +675,19 @@ export default {
       
       // Set the essential links
       this.essentialLinks = wantedLinks
+    },
+    
+    getPlatformData() {
+      // Helper method to get data for the current platform
+      switch (this.platform.toLowerCase()) {
+        case 'macos': return this.macOSData
+        case 'ios': return this.iOSData
+        case 'tvos': return this.tvOSData
+        case 'watchos': return this.watchOSData
+        case 'visionos': return this.visionOSData
+        case 'safari': return this.safariData
+        default: return null
+      }
     },
     loadData() {
       try {
