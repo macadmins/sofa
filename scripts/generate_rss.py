@@ -411,7 +411,7 @@ def create_feed_item(
             return "https://sofa.macadmins.io/beta-releases"  # Xcode betas tracked here
             
         elif "xprotect" in product_lower or release_type.startswith("xprotect"):
-            return "https://sofa.macadmins.io/how-it-works"  # XProtect info on How It Works
+            return "https://sofa.macadmins.io/macos/sequoia"  # XProtect info on current macOS page
             
         elif release_type == "beta" or "beta" in product_lower:
             return "https://sofa.macadmins.io/beta-releases"
@@ -430,12 +430,34 @@ def create_feed_item(
     desc_parts = []
 
     if release_type.startswith("xprotect"):
-        # XProtect update description
+        # Enhanced XProtect update description
         desc_parts.append(release.get("description", f"{product_name} updated"))
+        desc_parts.append("Malware protection and security definitions updated")
+        desc_parts.append("Track all XProtect components on SOFA: https://sofa.macadmins.io/macos/sequoia")
 
     elif release_type == "beta":
-        # Beta release description
-        desc_parts.append(release.get("description", "Beta release"))
+        # Rich beta release description
+        build_info = release.get("build", "")
+        platform = release.get("platform", product_name.split()[0] if product_name else "Unknown")
+        release_notes = release.get("release_notes_url", "")
+        
+        desc_parts.append(f"Developer Beta Release for {platform}")
+        desc_parts.append(f"New features and improvements preview")
+        
+        if build_info:
+            desc_parts.append(f"Build Number: {build_info}")
+        
+        if release_notes:
+            desc_parts.append(f"Release Notes: Available")
+        
+        # Add beta-specific guidance
+        desc_parts.append("BETA SOFTWARE WARNING: Use only on test devices")
+        desc_parts.append("Bug Reporting: Use Feedback Assistant app")
+        desc_parts.append("Access: Requires Apple Developer Program or Beta Software Program")
+        
+        # Add SOFA link for more details
+        sofa_link = get_sofa_page_link(product_name, version, release_type)
+        desc_parts.append(f"More Details: {sofa_link}")
 
     else:
         # Security release description with CVE info
@@ -463,6 +485,16 @@ def create_feed_item(
                         desc_parts.append(f"Days to Prev. Release: {days_diff}")
             except (ValueError, KeyError):
                 pass
+        
+        # Add Apple security bulletin link if available
+        apple_security_url = release.get("url", "")
+        if apple_security_url and apple_security_url.startswith("https://support.apple.com"):
+            desc_parts.append(f"Apple Security Bulletin: {apple_security_url}")
+        
+        # Add SOFA link for more details
+        if unique_cve_count > 0 or exploited_count > 0:
+            sofa_link = get_sofa_page_link(product_name, version, release_type)
+            desc_parts.append(f"Security Details: {sofa_link}")
 
     description.text = "<br>".join(desc_parts) if desc_parts else "Update"
 
@@ -639,7 +671,7 @@ def calculate_days_between_releases(releases: List[Dict]) -> None:
 
 
 def main(
-    output: str = typer.Option("v1/rss_feed.xml", "--output", help="Output RSS file path"),
+    output: str = typer.Option("v1/rss_feed.rss", "--output", help="Output RSS file path"),
     data_dir: str = typer.Option("data/resources", "--data-dir", help="Data directory containing JSON files"),
     verbose: bool = typer.Option(True, "--verbose/--quiet", help="Enable verbose output"),
     include_xprotect: bool = typer.Option(True, "--include-xprotect/--no-xprotect", help="Include XProtect updates in feed"),
