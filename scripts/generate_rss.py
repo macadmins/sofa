@@ -30,7 +30,7 @@ app = typer.Typer(help="Modern RSS feed generator for SOFA")
 
 # Configurable SOFA FQDN - can be set via environment variable
 import os
-SOFA_FQDN = os.getenv("SOFA_FQDN", os.getenv("SOFA_BASE_URL", "{SOFA_FQDN}"))
+SOFA_FQDN = os.getenv("SOFA_FQDN", os.getenv("SOFA_BASE_URL", "https://sofa.macadmins.io"))
 
 
 def load_json_file(filepath: Path) -> Optional[Dict]:
@@ -366,7 +366,7 @@ def create_feed_item(
         link.text = apple_url  # For beta releases
     else:
         # Only use SOFA URLs when no Apple URL available
-        link.text = "{SOFA_FQDN}/"
+        link.text = SOFA_FQDN
 
     # Helper function for SOFA page mapping (for descriptions only)
     def get_sofa_page_link(product_name: str, version: str, release_type: str) -> str:
@@ -375,31 +375,31 @@ def create_feed_item(
         
         if "macos" in product_lower or "mac os" in product_lower:
             if "sequoia" in product_lower or "15." in version:
-                return "{SOFA_FQDN}/macos/sequoia"
+                return f"{SOFA_FQDN}/macos/sequoia"
             elif "sonoma" in product_lower or "14." in version:
-                return "{SOFA_FQDN}/macos/sonoma"
+                return f"{SOFA_FQDN}/macos/sonoma"
             elif "ventura" in product_lower or "13." in version:
-                return "{SOFA_FQDN}/macos/ventura"
+                return f"{SOFA_FQDN}/macos/ventura"
             else:
-                return "{SOFA_FQDN}/macos/sequoia"
+                return f"{SOFA_FQDN}/macos/sequoia"
         elif "ios" in product_lower and "ipad" not in product_lower:
-            return "{SOFA_FQDN}/ios/ios18" if "18." in version else "{SOFA_FQDN}/ios/ios17"
+            return f"{SOFA_FQDN}/ios/ios18" if "18." in version else f"{SOFA_FQDN}/ios/ios17"
         elif "ipados" in product_lower or "ipad" in product_lower:
-            return "{SOFA_FQDN}/ios/ios18" if "18." in version else "{SOFA_FQDN}/ios/ios17"
+            return f"{SOFA_FQDN}/ios/ios18" if "18." in version else f"{SOFA_FQDN}/ios/ios17"
         elif "safari" in product_lower:
-            return "{SOFA_FQDN}/safari/safari18"
+            return f"{SOFA_FQDN}/safari/safari18"
         elif "tvos" in product_lower:
-            return "{SOFA_FQDN}/tvos/tvos18" if "18." in version else "{SOFA_FQDN}/tvos/tvos17"
+            return f"{SOFA_FQDN}/tvos/tvos18" if "18." in version else f"{SOFA_FQDN}/tvos/tvos17"
         elif "watchos" in product_lower:
-            return "{SOFA_FQDN}/watchos/watchos11"
+            return f"{SOFA_FQDN}/watchos/watchos11"
         elif "visionos" in product_lower:
-            return "{SOFA_FQDN}/visionos/visionos2"
+            return f"{SOFA_FQDN}/visionos/visionos2"
         elif "xcode" in product_lower or release_type == "beta":
-            return "{SOFA_FQDN}/beta-releases"
+            return f"{SOFA_FQDN}/beta-releases"
         elif "xprotect" in product_lower or release_type.startswith("xprotect"):
-            return "{SOFA_FQDN}/macos/sequoia"
+            return f"{SOFA_FQDN}/macos/sequoia"
         else:
-            return "{SOFA_FQDN}/"
+            return f"{SOFA_FQDN}/"
 
     # Description - varies by type
     description = SubElement(item, "description")
@@ -409,7 +409,7 @@ def create_feed_item(
         # Enhanced XProtect update description
         desc_parts.append(release.get("description", f"{product_name} updated"))
         desc_parts.append("Malware protection and security definitions updated")
-        desc_parts.append('Track all XProtect components on SOFA: <a href="{SOFA_FQDN}/macos/sequoia">{SOFA_FQDN}/macos/sequoia</a>')
+        desc_parts.append(f'Track all XProtect components on SOFA: <a href=f"{SOFA_FQDN}/macos/sequoia">{SOFA_FQDN}/macos/sequoia</a>')
 
     elif release_type == "beta":
         # Rich beta release description
@@ -513,7 +513,7 @@ def write_data_to_rss(all_releases: List[Dict], output_file: Path, data_dir: str
     title.text = "SOFA - RSS Update Feed"
 
     link = SubElement(channel, "link")
-    link.text = "{SOFA_FQDN}/"
+    link.text = SOFA_FQDN
 
     description = SubElement(channel, "description")
     description.text = "Simple Organized Feed for Apple Software Updates - Security releases and updates"
@@ -532,11 +532,11 @@ def write_data_to_rss(all_releases: List[Dict], output_file: Path, data_dir: str
     # Logo/image
     image = SubElement(channel, "image")
     image_url = SubElement(image, "url")
-    image_url.text = "{SOFA_FQDN}/images/custom_logo.png"
+    image_url.text = f"{SOFA_FQDN}/images/custom_logo.png"
     image_title = SubElement(image, "title")
     image_title.text = "SOFA"
     image_link = SubElement(image, "link")
-    image_link.text = "{SOFA_FQDN}/"
+    image_link.text = SOFA_FQDN
 
     # Sort releases by date (newest first), handling different date formats
     def get_sortable_date(release):
