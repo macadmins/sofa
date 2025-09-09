@@ -20,11 +20,11 @@ on:
         type: boolean
         default: true
   schedule:
-    # Monday, Tuesday, Thursday, and Friday every 1 hour from 5:00 PM to 8:00 PM CET
+    # Monday, Tuesday, Wednesday, Thursday, and Friday every 1 hour from 5:00 PM to 8:00 PM CET
     - cron: '0 17-20 * * 1,2,3,4,5'
 
-    # On every day every 4 hours
-    - cron: '30 */4 * * *'
+    # On every day every 6 hours
+    - cron: '30 */6 * * *'
 env:
   PYTHON_VERSION: '3.13'
 
@@ -402,27 +402,12 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "SOFA Pipeline"
           
-          # Explicitly add EVERY resource file (based on successful pipeline run)
-          echo "📁 Adding ALL expected resource files explicitly:"
-          git add data/resources/apple_beta_feed.json && echo "✅ Added apple_beta_feed.json" || echo "❌ apple_beta_feed.json not found or unchanged"
-          git add data/resources/apple_beta_os_history.json && echo "✅ Added apple_beta_os_history.json" || echo "❌ apple_beta_os_history.json not found or unchanged"
-          git add data/resources/apple_cves_with_context.ndjson && echo "✅ Added apple_cves_with_context.ndjson" || echo "❌ apple_cves_with_context.ndjson not found or unchanged"
-          git add data/resources/apple_security_releases.json && echo "✅ Added apple_security_releases.json" || echo "❌ apple_security_releases.json not found or unchanged"
-          git add data/resources/apple_security_releases.ndjson && echo "✅ Added apple_security_releases.ndjson" || echo "❌ apple_security_releases.ndjson not found or unchanged"
-          git add data/resources/gdmf_history.ndjson && echo "✅ Added gdmf_history.ndjson" || echo "❌ gdmf_history.ndjson not found or unchanged"
-          git add data/resources/gdmf_cached.json && echo "✅ Added gdmf_cached.json" || echo "❌ gdmf_cached.json not found or unchanged"
-          git add data/resources/gdmf_log.json && echo "✅ Added gdmf_log.json" || echo "❌ gdmf_log.json not found or unchanged"
-          git add data/resources/ipsw.json && echo "✅ Added ipsw.json" || echo "❌ ipsw.json not found or unchanged"
-          git add data/resources/kev_catalog.json && echo "✅ Added kev_catalog.json" || echo "❌ kev_catalog.json not found or unchanged"
-          git add data/resources/mac_models_mapping.json && echo "✅ Added mac_models_mapping.json" || echo "❌ mac_models_mapping.json not found or unchanged"
-          git add data/resources/sofa-status.json && echo "✅ Added sofa-status.json" || echo "❌ sofa-status.json not found or unchanged"
-          git add data/resources/uma_catalog.json && echo "✅ Added uma_catalog.json" || echo "❌ uma_catalog.json not found or unchanged"
-          git add data/resources/xprotect.json && echo "✅ Added xprotect.json" || echo "❌ xprotect.json not found or unchanged"
-          
-          # Add all feeds and other resources  
-          git add v1/ && echo "✅ Added v1 feeds" || echo "❌ v1 directory not found or unchanged"
+          # Add all feeds and resources
+          echo "📁 Adding feeds and resources:"
+          git add v1/macos_data_feed.json && echo "✅ Added v1/macos_data_feed.json" || echo "❌ v1/macos_data_feed.json not found or unchanged"
+          git add v1/ios_data_feed.json && echo "✅ Added v1/ios_data_feed.json" || echo "❌ v1/ios_data_feed.json not found or unchanged"
           git add v2/ && echo "✅ Added v2 feeds" || echo "❌ v2 directory not found or unchanged"
-          git add data/resources/ && echo "✅ Added remaining resources" || echo "❌ resources directory not found or unchanged"
+          git add data/resources/ && echo "✅ Added all resources" || echo "❌ resources directory not found or unchanged"
           
           if git diff --staged --quiet; then
             echo "📝 No new data to commit"
