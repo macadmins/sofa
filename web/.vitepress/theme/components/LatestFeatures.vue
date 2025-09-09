@@ -586,20 +586,26 @@ export default {
             })
           }
           
-          // Add "What's new for enterprise" if exists
-          if (versionLinks['What\'s new for enterprise']) {
+          // Add "What's new for enterprise" if exists (check multiple formats)
+          const enterpriseKey = Object.keys(versionLinks).find(key => 
+            key.includes('What\'s new for enterprise') || key === 'What\'s new for enterprise'
+          )
+          if (enterpriseKey) {
             wantedLinks.push({ 
               title: 'What\'s new for enterprise', 
-              url: versionLinks['What\'s new for enterprise'], 
+              url: versionLinks[enterpriseKey], 
               platform: 'version' 
             })
           }
           
-          // Add "What's new in updates" if exists
-          if (versionLinks['What\'s new in updates']) {
+          // Add "What's new in updates" if exists (check multiple formats)
+          const updatesKey = Object.keys(versionLinks).find(key => 
+            key.includes('What\'s new in the updates') || key === 'What\'s new in updates'
+          )
+          if (updatesKey) {
             wantedLinks.push({ 
               title: 'What\'s new in updates', 
-              url: versionLinks['What\'s new in updates'], 
+              url: versionLinks[updatesKey], 
               platform: 'version' 
             })
           }
