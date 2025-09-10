@@ -1,6 +1,7 @@
 ---
 title: watchOS 11
 platform: watchOS
+current: true
 layout: doc
 ---
 

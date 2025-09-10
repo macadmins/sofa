@@ -1,6 +1,7 @@
 ---
 title: Safari 18
 platform: Safari
+current: true
 layout: doc
 ---
 

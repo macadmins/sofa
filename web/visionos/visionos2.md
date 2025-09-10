@@ -1,6 +1,7 @@
 ---
 title: visionOS 2
 platform: visionOS
+current: true
 layout: doc
 ---
 
