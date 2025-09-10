@@ -392,7 +392,7 @@
 
     <!-- Loading Data State -->
     <div v-else class="loading-state">
-      <p>Loading data...</p>
+      <p>Loading data... or currently not available</p>
     </div>
   </div>
 </template>
