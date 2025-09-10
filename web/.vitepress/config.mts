@@ -95,7 +95,6 @@ export default defineConfig({
           { text: 'Model Identifiers', link: '/model-identifier' },
           { text: 'macOS Installers', link: '/macos-installer-info' },
           { text: 'Beta Releases', link: '/beta-releases' },
-          { text: 'Essential Info', link: '/essential-info' },
           { text: 'Essential Resources', link: '/essential-resources' }
         ]
       },
