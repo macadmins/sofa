@@ -6,10 +6,19 @@ SOFA (Simple Organized Feed for Apple Software Updates) runs an automated data p
 
 ## Schedule & Frequency
 
-The pipeline runs automatically via GitHub Actions:
+The pipeline runs automatically via GitHub Actions with a dual schedule:
 
-- **Frequency**: Every 6 hours
-- **Schedule**: 00:00, 06:00, 12:00, 18:00 UTC
+### Primary Schedule
+- **Frequency**: Every 6 hours daily
+- **Schedule**: 00:30, 06:30, 12:30, 18:30 UTC
+- **Cron**: `30 */6 * * *`
+
+### Intensive Schedule  
+- **Frequency**: Hourly during peak hours
+- **Schedule**: Monday-Friday, 17:00-20:00 CET (15:00-18:00 UTC)
+- **Cron**: `0 17-20 * * 1,2,3,4,5`
+
+### Additional Details
 - **Duration**: ~10-15 minutes per run
 - **Manual Trigger**: Available via GitHub Actions UI
 - **On-Demand**: Can be triggered by workflow completion or manually

@@ -89,16 +89,16 @@
             <p class="card-description">Automated GitHub Actions workflow</p>
             <div class="card-details">
               <div class="detail-item">
-                <span class="detail-label">Frequency:</span>
-                <span class="detail-value">Every 6 hours</span>
+                <span class="detail-label">Primary:</span>
+                <span class="detail-value">Every 6 hours (00:30, 06:30, 12:30, 18:30 UTC)</span>
               </div>
               <div class="detail-item">
-                <span class="detail-label">Times:</span>
-                <span class="detail-value">00:00, 06:00, 12:00, 18:00 UTC</span>
+                <span class="detail-label">Peak Hours:</span>
+                <span class="detail-value">Mon-Fri 17:00-20:00 CET (hourly)</span>
               </div>
               <div class="detail-item">
                 <span class="detail-label">Duration:</span>
-                <span class="detail-value">~5-10 minutes</span>
+                <span class="detail-value">~10-15 minutes</span>
               </div>
             </div>
           </div>
@@ -276,11 +276,9 @@ const lastUpdate = ref('Loading...')
 const nextRun = ref('Calculating...')
 const currentStage = ref(1)
 
-// Use composable for status fetching
-const { data: feedMetadata } = useSOFAData('data/resources/sofa-status.json', {
-  autoRefresh: true,
-  refreshInterval: 60000 // Refresh every minute
-})
+// Use composables for data fetching 
+const { data: feedMetadata } = useSOFAData('data/resources/sofa-status.json')
+const { data: securityReleases } = useSOFAData('data/resources/apple_security_releases.json')
 
 // Watch for metadata changes
 watch(() => feedMetadata.value, (newData) => {
@@ -313,9 +311,9 @@ watch(() => feedMetadata.value, (newData) => {
       metrics.value.runsToday = runsToday.toString()
     }
     
-    // Calculate next run based on pipeline schedule (every 4 hours)
+    // Calculate next run based on dual schedule (every 6 hours + peak hours)
     const lastRun = new Date(newData.generated)
-    const nextRunTime = new Date(lastRun.getTime() + (4 * 60 * 60 * 1000)) // Add 4 hours
+    const nextRunTime = new Date(lastRun.getTime() + (6 * 60 * 60 * 1000)) // Add 6 hours
     const now = new Date()
     
     if (nextRunTime > now) {
@@ -336,6 +334,31 @@ watch(() => feedMetadata.value, (newData) => {
   }
 })
 
+// Watch for security releases data to calculate actual stats
+watch(() => securityReleases.value, (newData) => {
+  if (newData?.releases) {
+    stats.value.releases = newData.releases.length.toLocaleString()
+    console.log(`Calculated releases: ${stats.value.releases}`)
+  }
+})
+
+// Calculate CVE count (estimated since NDJSON is large to parse in browser)
+onMounted(async () => {
+  try {
+    // Try to fetch CVE count from a smaller stats endpoint if available
+    const response = await fetch('/resources/apple_cves_with_context.ndjson')
+    if (response.ok) {
+      const text = await response.text()
+      const lines = text.trim().split('\n').filter(line => line.trim())
+      stats.value.cves = lines.length.toLocaleString()
+      console.log(`Calculated CVEs: ${stats.value.cves}`)
+    }
+  } catch (error) {
+    console.log('Using fallback CVE count')
+    // Keep the current accurate fallback value
+  }
+})
+
 // Load data
 const loadData = async () => {
   // Data is loaded automatically by the composable
@@ -343,12 +366,12 @@ const loadData = async () => {
     lastUpdate.value = formatTime(feedMetadata.value.generated)
   }
   
-  // Calculate next run
+  // Calculate next run (30 minutes past each 6-hour mark)
   const now = new Date()
   const hours = now.getUTCHours()
   const nextHour = Math.ceil(hours / 6) * 6
   const nextRunTime = new Date(now)
-  nextRunTime.setUTCHours(nextHour % 24, 0, 0, 0)
+  nextRunTime.setUTCHours(nextHour % 24, 30, 0, 0) // 30 minutes past the hour
   if (nextHour >= 24) {
     nextRunTime.setUTCDate(nextRunTime.getUTCDate() + 1)
   }
@@ -392,11 +415,11 @@ const dataSources = ref([
   { name: 'UMA', description: 'Update metadata', status: 'active' }
 ])
 
-// Statistics
+// Statistics (calculated from actual data files when component loads)
 const stats = ref({
-  cves: '2,451',
-  releases: '847',
-  platforms: '6'
+  cves: '3,039', // Fallback, will be calculated from NDJSON
+  releases: '587', // Fallback, will be calculated from security releases
+  platforms: '6'  // Static - supported platforms
 })
 
 const metrics = ref({
@@ -481,12 +504,12 @@ const handleScroll = () => {
 
 // Lifecycle
 onMounted(() => {
-  // Calculate next run time on mount
+  // Calculate next run time on mount (30 minutes past 6-hour intervals)
   const now = new Date()
   const hours = now.getUTCHours()
   const nextHour = Math.ceil(hours / 6) * 6
   const nextRunTime = new Date(now)
-  nextRunTime.setUTCHours(nextHour % 24, 0, 0, 0)
+  nextRunTime.setUTCHours(nextHour % 24, 30, 0, 0) // 30 minutes past the hour
   if (nextRunTime <= now) nextRunTime.setDate(nextRunTime.getDate() + 1)
   nextRun.value = formatTime(nextRunTime.toISOString())
   
