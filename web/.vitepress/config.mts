@@ -45,7 +45,7 @@ export default defineConfig({
       {
         text: 'macOS',
         items: [
-          { text: 'macOS Tahoe 26', link: '/macos/tahoe26' },
+          { text: 'macOS Tahoe 26', link: '/macos/tahoe' },
           { text: 'macOS Sequoia 15', link: '/macos/sequoia' },
           { text: 'macOS Sonoma 14', link: '/macos/sonoma' },
           { text: 'macOS Ventura 13', link: '/macos/ventura' },
@@ -77,6 +77,7 @@ export default defineConfig({
       {
         text: 'visionOS',
         items: [
+           { text: 'visionOS 26', link: '/visionos/visionos26' },
           { text: 'visionOS 2', link: '/visionos/visionos2' },
         ]
       },
