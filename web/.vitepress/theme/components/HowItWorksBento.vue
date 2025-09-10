@@ -209,7 +209,9 @@
         <!-- Bottom Stats Cards -->
         <div class="stats-card">
           <div class="stats-header">
-            <component :is="ActivityIcon" class="stats-icon" />
+            <div class="card-icon health">
+              <component :is="ActivityIcon" />
+            </div>
             <h3>Pipeline Health</h3>
           </div>
           <div class="health-metrics">
@@ -226,7 +228,9 @@
 
         <div class="stats-card">
           <div class="stats-header">
-            <component :is="DatabaseIcon" class="stats-icon" />
+            <div class="card-icon data">
+              <component :is="DatabaseIcon" />
+            </div>
             <h3>Data Volume</h3>
           </div>
           <div class="health-metrics">
@@ -738,6 +742,14 @@ onMounted(() => {
 
 .card-icon.deploy {
   background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.card-icon.health {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.card-icon.data {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
 }
 
 .card-header h3 {
