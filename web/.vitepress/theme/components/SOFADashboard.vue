@@ -1011,7 +1011,7 @@
         </div>
         <template #footer>
           <button
-            @click="copyToClipboard('https://beta-feed.macadmin.me/v1/apple-beta-os-feed.json', 'beta-footer')"
+            @click="copyToClipboard('https://sofafeed.macadmins.io/resources/apple_beta_feed.json', 'beta-footer')"
             class="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 flex items-center gap-1 transition-colors"
           >
             <component :is="copiedItem === 'beta-footer' ? CheckCircle2Icon : ClipboardIcon" class="h-3 w-3" :class="copiedItem === 'beta-footer' ? 'text-green-500' : ''" />
@@ -1416,7 +1416,7 @@ const tvos = useSOFAData('v2/tvos_data_feed.json')
 const watchos = useSOFAData('v2/watchos_data_feed.json')
 const visionos = useSOFAData('v2/visionos_data_feed.json')
 const safari = useSOFAData('v2/safari_data_feed.json')
-const beta = useSOFAData('v1/apple-beta-os-feed.json')
+const beta = useSOFAData('resources/apple_beta_feed.json')
 const metadata = useSOFAData('data/resources/sofa-status.json', {
   autoRefresh: true,
   refreshInterval: 5 * 60 * 1000 // Check every 5 minutes
