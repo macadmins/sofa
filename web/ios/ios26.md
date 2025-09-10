@@ -14,14 +14,6 @@ layout: doc
   platform="iOS"
 />
 
-## iPadOS 26 Beta
-
-<BetaFeatures 
-  title="iPadOS 26" 
-  platform="iPadOS"
-/>
-
-
 <LatestFeatures 
   title="iOS 26" 
   platform="iOS"

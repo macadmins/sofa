@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "cd docs && pnpm run dev",
-    "build": "cd docs && pnpm run build", 
+    "build": "cd docs && pnpm run build",
     "preview": "cd docs && pnpm run preview",
     "setup": "cd docs && pnpm install && cd .. && chmod +x bin/* && chmod +x *.sh && echo '✅ Setup complete!'",
     "test": "node scripts/test-data.js",
@@ -21,7 +21,7 @@
   "dependencies": {
     "chart.js": "^4.4.0",
     "dayjs": "^1.11.0",
-    "puppeteer": "^24.17.0",
+    "puppeteer": "^24.19.0",
     "vue-chartjs": "^5.3.0"
   }
 }

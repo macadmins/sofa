@@ -12,12 +12,16 @@
 
     <!-- Beta Info -->
     <div v-else-if="betaData" class="beta-card">
-      <div class="beta-header">
-        <h3>Latest {{ platform }} Beta</h3>
-        <span class="beta-badge">{{ betaData.version }}</span>
-      </div>
-      
-      <div class="beta-details">
+      <div class="beta-content">
+        <img :src="getBetaImage(platform)" alt="{{ platform }} Beta" class="os-hero-image" />
+        
+        <div class="beta-info">
+          <div class="beta-header">
+            <h3>Latest {{ platform }} Beta</h3>
+            <span class="beta-badge">{{ betaData.version }}</span>
+          </div>
+          
+          <div class="beta-details">
         <div class="detail-item">
           <span class="label">Build:</span>
           <span class="value">{{ betaData.build }}</span>
@@ -32,13 +36,15 @@
         </div>
       </div>
 
-      <div class="beta-links" v-if="betaData.release_notes_url || betaData.downloads_url">
-        <a v-if="betaData.release_notes_url" :href="betaData.release_notes_url" target="_blank" class="beta-link">
-          Release Notes
-        </a>
-        <a v-if="betaData.downloads_url" :href="betaData.downloads_url" target="_blank" class="beta-link">
-          Download
-        </a>
+          <div class="beta-links" v-if="betaData.release_notes_url || betaData.downloads_url">
+            <a v-if="betaData.release_notes_url" :href="betaData.release_notes_url" target="_blank" class="beta-link">
+              Release Notes
+            </a>
+            <a v-if="betaData.downloads_url" :href="betaData.downloads_url" target="_blank" class="beta-link">
+              Download
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -124,6 +130,30 @@ const getDaysAgo = (dateString) => {
   const now = new Date()
   const diffTime = Math.abs(now - date)
   return Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+}
+
+const getBetaImage = (platform) => {
+  // Simple mapping of platform to image
+  switch (platform.toLowerCase()) {
+    case 'tvos':
+      return '/tvos_26.png'
+    case 'watchos':
+      return '/watchos_26.png'
+    case 'ios':
+      return '/ios_26.png'
+    case 'ipados':
+      return '/ios_26.png'
+    case 'visionos':
+      return '/visionos_26.png'
+    case 'macos':
+      return '/macos_26.png'
+    case 'safari':
+      return '/safari_18.png'
+    case 'xcode':
+      return '/SWUpdate.png'
+    default:
+      return '/SWUpdate.png'
+  }
 }
 
 const loadBetaData = async () => {
@@ -215,6 +245,23 @@ onMounted(async () => {
   border-radius: 6px;
   font-size: 0.875rem;
   font-weight: 600;
+}
+
+.beta-content {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.os-hero-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.beta-info {
+  flex: 1;
 }
 
 .beta-details {
