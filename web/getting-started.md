@@ -11,7 +11,9 @@ layout: doc
 
 Hello 👋,
 
-**SOFA** supports MacAdmins by efficiently tracking and surfacing information on updates for macOS and iOS. It consists of a machine-readable feed and user-friendly web interface, providing continuously up-to-date information on XProtect data, OS updates, and the details bundled in those releases.
+**SOFA** supports MacAdmins by efficiently tracking and surfacing information on updates for macOS and iOS and now other Apple platforms. It consists of a machine-readable feed and user-friendly web interface, providing continuously up-to-date information on XProtect data, OS updates, and esential details and numbers bundled in Apple's security releases.
+
+🌟 Please star us on GitHub to show your support! If SOFA aids your daily work, consider to [become a sponsor to Mac Admins Open Source](https://github.com/sponsors/macadmins?o=esb) to help improve this and other free community resources.
 
 ## Web UI Overview
 
@@ -20,11 +22,11 @@ SOFA's modern interface provides comprehensive tracking across all Apple platfor
 ### Platform Coverage
 
 - **macOS** (Tahoe 26, Sequoia 15, Sonoma 14, Ventura 13, Monterey 12) - Complete version tracking with XProtect data
-- **iOS/iPadOS** (18, 17, 16) - Latest releases and security updates for mobile devices  
+- **iOS/iPadOS** (2618, 17) - Latest releases and security updates for mobile devices  
 - **Safari** (18) - Browser security updates across all platforms
-- **tvOS** (18, 17) - Apple TV platform updates and security fixes
-- **watchOS** (11, 10) - Apple Watch updates and compatibility tracking
-- **visionOS** (2) - Latest platform with comprehensive security tracking
+- **tvOS** (26, 18, 17) - Apple TV platform updates and security fixes
+- **watchOS** (26, 11) - Apple Watch updates and compatibility tracking
+- **visionOS** (26, 2) - Latest platform with comprehensive security tracking
 
 ### Latest Release Information
 
@@ -51,7 +53,7 @@ SOFA's modern interface provides comprehensive tracking across all Apple platfor
 ### API & Integration
 
 - **JSON Feeds:** Machine-readable v1 and v2 APIs for automation
-- **RSS Feeds:** Subscribe to security updates and release notifications
+- **RSS Feed:** Subscribe to security updates and release notifications
 - **Metadata Access:** Pipeline status, timestamps, and bulletin data for monitoring
 
 ## CVE Search and Enrichment
@@ -84,7 +86,7 @@ SOFA provides advanced vulnerability intelligence beyond basic security bulletin
 - **Programmatic Access:** Query CVE data via JSON APIs for automated security workflows
 - **RSS Notifications:** Subscribe to security alerts and vulnerability disclosures
 - **Export Capabilities:** CSV downloads for reporting and analysis tools
-- **Third-party Compatible:** Works with existing security tools and vulnerability scanners
+- **Third-party Compatible:** Ready to integrate with device management platforms and security tools
 
 ## Self-hosting
 

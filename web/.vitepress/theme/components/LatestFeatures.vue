@@ -1104,6 +1104,24 @@ export default {
   flex-grow: 1;
 }
 
+.warning.custom-block {
+  margin: 0;
+  flex-grow: 1;
+  padding: 0.625rem 0.875rem !important;
+}
+
+.warning.custom-block .custom-block-title {
+  color: #d97706 !important;
+  margin-bottom: 0.375rem !important;
+}
+
+.warning.custom-block p:last-child {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #78716c;
+}
+
 .custom-block-title {
   font-weight: 600;
   margin: 0 0 0.25rem 0;
