@@ -1,6 +1,7 @@
 ---
 title: tvOS 17
 platform: tvOS
+current: false
 layout: doc
 ---
 

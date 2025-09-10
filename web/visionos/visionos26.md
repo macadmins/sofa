@@ -1,6 +1,7 @@
 ---
 title: visionOS 26
 platform: visionOS
+current: true
 layout: doc
 ---
 

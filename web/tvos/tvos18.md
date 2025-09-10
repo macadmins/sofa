@@ -1,6 +1,7 @@
 ---
 title: tvOS 18
 platform: tvOS
+current: true
 layout: doc
 ---
 

@@ -455,14 +455,8 @@ export default {
     },
     
     isLatestVersion() {
-      const data = this.getPlatformData()
-      if (!data || !data.OSVersions || data.OSVersions.length === 0) return false
-      
-      const latestOS = data.OSVersions[0] // First item is latest
-      const currentVersion = this.title.split(' ')[1]
-      const latestVersion = latestOS.OSVersion.split(' ')[1]
-      
-      return currentVersion === latestVersion
+      // Use frontmatter flag for simple, explicit version status
+      return this.$frontmatter?.current === true
     }
   },
   async mounted() {
