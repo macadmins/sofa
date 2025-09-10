@@ -1416,7 +1416,7 @@ const tvos = useSOFAData('v2/tvos_data_feed.json')
 const watchos = useSOFAData('v2/watchos_data_feed.json')
 const visionos = useSOFAData('v2/visionos_data_feed.json')
 const safari = useSOFAData('v2/safari_data_feed.json')
-const beta = useSOFAData('resources/apple_beta_feed.json')
+const beta = useSOFAData('data/resources/apple_beta_feed.json')
 const metadata = useSOFAData('data/resources/sofa-status.json', {
   autoRefresh: true,
   refreshInterval: 5 * 60 * 1000 // Check every 5 minutes
