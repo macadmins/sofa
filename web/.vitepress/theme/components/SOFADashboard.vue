@@ -1187,6 +1187,18 @@
       -->
 
     </BentoGrid>
+    
+    <!-- RSS Feed Button -->
+    <div class="rss-feed-container">
+      <a href="/v1/rss_feed.xml" target="_blank" class="rss-feed-button">
+        <div class="rss-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+            <path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"/>
+          </svg>
+        </div>
+        <span class="rss-text">RSS Feed</span>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -2412,6 +2424,56 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   .sofa-logo {
     width: 80px;
     height: 80px;
+  }
+}
+
+/* RSS Feed Button */
+.rss-feed-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 1rem 0;
+}
+
+.rss-feed-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.2s ease;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+}
+
+.rss-feed-button:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.15));
+  color: white;
+}
+
+.rss-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.rss-text {
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+@media (max-width: 640px) {
+  .rss-feed-button {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8125rem;
   }
 }
 </style>
