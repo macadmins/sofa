@@ -33,7 +33,7 @@ layout: doc
 ### **macOS Versions**
 | Page | URL | Title | Data Source |
 |------|-----|-------|-------------|
-| macOS Tahoe 26 (Beta) | `/macos/tahoe26` | "Tahoe 26" | `/v2/macos_data_feed.json` |
+| macOS Tahoe 26 (Beta) | `/macos/tahoe` | "Tahoe 26" | `/v2/macos_data_feed.json` |
 | macOS Sequoia 15 | `/macos/sequoia` | "Sequoia 15" | `/v2/macos_data_feed.json` |
 | macOS Sonoma 14 | `/macos/sonoma` | "Sonoma 14" | `/v2/macos_data_feed.json` |
 | macOS Ventura 13 | `/macos/ventura` | "Ventura 13" | `/v2/macos_data_feed.json` |

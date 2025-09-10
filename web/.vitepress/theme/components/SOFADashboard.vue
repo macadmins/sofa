@@ -123,7 +123,7 @@
           <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">Beta</span>
         </template>
         <div class="grid grid-cols-1 gap-3 flex-grow">
-          <a v-if="bulletinData?.beta_releases?.macos" :href="`${baseUrl}/macos/tahoe26`" class="block">
+          <a v-if="bulletinData?.beta_releases?.macos" :href="`${baseUrl}/macos/tahoe`" class="block">
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-emerald-300 dark:hover:border-emerald-600 transition-all duration-150">
               <div class="space-y-1">
                 <div class="flex items-center gap-1">
@@ -1239,7 +1239,7 @@ const platforms = computed(() => {
   return [
     { name: 'macos', label: 'Sequoia 15', link: `${basePath}/macos/sequoia`, icon: MonitorIcon, color: 'blue' },
     { name: 'macos-sonoma', label: 'Sonoma 14', link: `${basePath}/macos/sonoma`, icon: MonitorIcon, color: 'blue' },
-    { name: 'macos-tahoe', label: 'Tahoe 26 Beta', link: `${basePath}/macos/tahoe26`, icon: MonitorIcon, color: 'orange' },
+    { name: 'macos-tahoe', label: 'Tahoe 26 Beta', link: `${basePath}/macos/tahoe`, icon: MonitorIcon, color: 'orange' },
     { name: 'ios', label: 'iOS/iPadOS 18', link: `${basePath}/ios/ios18`, icon: SmartphoneIcon, color: 'purple' },
     { name: 'ios-beta', label: 'iOS 26 Beta', link: `${basePath}/ios/ios26`, icon: SmartphoneIcon, color: 'orange' },
     { name: 'visionos', label: 'visionOS 2', link: `${basePath}/visionos/visionos2`, icon: EyeIcon, color: 'orange' },

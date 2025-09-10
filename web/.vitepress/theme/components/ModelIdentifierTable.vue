@@ -218,7 +218,7 @@ const getChipClass = (description) => {
 
 const getOSDetailsLink = (osVersion) => {
   const osLinks = {
-    'Tahoe 26': '/macos/tahoe26',
+    'Tahoe 26': '/macos/tahoe',
     'Sequoia 15': '/macos/sequoia',
     'Sonoma 14': '/macos/sonoma',
     'Ventura 13': '/macos/ventura',

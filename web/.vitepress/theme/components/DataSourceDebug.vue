@@ -87,7 +87,7 @@ const dataSources = computed(() => {
     )
     
     // Tahoe 26 page (beta features)
-    if (path.includes('/macos/tahoe26')) {
+    if (path.includes('/macos/tahoe')) {
       sources.push(
         { label: 'Beta History', path: '/resources/apple_beta_os_history.json', status: 'loaded' },
         { label: 'KEV Catalog', path: '/resources/kev_catalog.json', status: 'loaded' },
@@ -181,7 +181,7 @@ const activeComponents = computed(() => {
       { name: 'SecurityInfo', description: 'macOS security releases' }
     )
     
-    if (path.includes('/macos/tahoe26')) {
+    if (path.includes('/macos/tahoe')) {
       components.push(
         { name: 'BetaFeatures', description: 'Beta release info and history' }
       )
