@@ -863,11 +863,12 @@ export default {
         'iOS 17': '/ios_17.png',
         'iOS 16': '/ios_16.png',
         'watchOS 26': '/watchos_26.png',
+        'watchOS 11': '/watchos_11.png', // Use watchOS 26 image as fallback
         'tvOS 26': '/tvos_26.png',
-        'watchOS 11': '/watchos_26.png', // Use watchOS 26 image as fallback
-        'tvOS 18': '/tvos_26.png', // Use tvOS 26 image as fallback
-        'tvOS 17': '/tvos_26.png', // Use tvOS 26 image as fallback
-        'visionOS': '/ios_18.png', // Use iOS 18 as fallback for visionOS
+        'tvOS 18': '/tvos_18.png', // Use tvOS 26 image as fallback
+        'tvOS 17': '/tvos_17.png', // Use tvOS 26 image as fallback
+        'visionOS 26': '/visionos_26.png', // Use iOS 18 as fallback for visionOS
+        'visionOS 2': '/visionos_2.png', // Use iOS 18 as fallback for visionOS
         'Safari 18': '/safari_18.png', // Safari 18 specific image
         'Safari': '/safari_18.png', // Use Safari 18 image for Safari
         'default': '/SWUpdate.png', // Use SWUpdate as default fallback
