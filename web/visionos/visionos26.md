@@ -4,7 +4,13 @@ platform: visionOS
 layout: doc
 ---
 
-# visionOS 2
+# visionOS 26
+
+<BetaFeatures 
+  title="visionOS 26" 
+  platform="visionOS"
+/>
+
 
 <LatestFeatures 
   title="visionOS 26" 
