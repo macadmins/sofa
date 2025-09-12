@@ -1210,22 +1210,24 @@ html.dark .section-label {
   display: inline-flex;
   align-items: center;
   padding: 0.25rem 0.5rem;
-  background: #e5e7eb;
-  border: 1px solid #9ca3af;
+  background: #EBF4FF;
+  border: 1px solid #BFDBFE;
   border-radius: 6px;
   font-family: monospace;
   font-size: 0.75rem;
   font-weight: 600;
-  color: #1f2937;
+  color: #1E40AF;
   text-decoration: none;
   transition: all 0.15s ease;
   position: relative;
+  box-shadow: 0 1px 2px rgba(30, 64, 175, 0.08);
 }
 
 .cve-link:hover {
-  background: #d1d5db;
-  border-color: #6b7280;
-  color: #111827;
+  background: #DBEAFE;
+  border-color: #93C5FD;
+  color: #1D4ED8;
+  box-shadow: 0 2px 4px rgba(30, 64, 175, 0.15);
 }
 
 /* Specific styling for the dedicated actively exploited section */
