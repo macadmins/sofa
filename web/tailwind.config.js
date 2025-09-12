@@ -127,6 +127,21 @@ export default {
           DEFAULT: '#6366F1',
           light: '#A78BFA',
           dark: '#6D28D9'
+        },
+        safari: {
+          50: '#ECFEFF',
+          100: '#CFFAFE',
+          200: '#A5F3FC',
+          300: '#06B6D4',
+          400: '#0891B2',
+          500: '#0E7490',
+          600: '#0284C7',
+          700: '#0369A1',
+          800: '#075985',
+          900: '#0C4A6E',
+          DEFAULT: '#0E7490',
+          light: '#06B6D4',
+          dark: '#0369A1'
         }
       },
       // Apple OS Gradients - design elements for text coloring and highlights
@@ -160,6 +175,11 @@ export default {
           gradient: 'linear-gradient(135deg, #6366F1 0%, #A78BFA 100%)',
           start: '#6366F1',
           end: '#A78BFA'
+        },
+        'safari': {
+          gradient: 'linear-gradient(135deg, #0E7490 0%, #06B6D4 100%)',
+          start: '#0E7490',
+          end: '#06B6D4'
         }
       },
       fontFamily: {

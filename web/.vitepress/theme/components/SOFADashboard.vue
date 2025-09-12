@@ -1260,7 +1260,7 @@ const platforms = computed(() => {
     { name: 'tvos', label: 'tvOS 18', link: `${basePath}/tvos/tvos18`, icon: TvIcon, color: 'tvos' },
     { name: 'watchos-beta', label: 'watchOS 26', link: `${basePath}/watchos/watchos26`, icon: WatchIcon, color: 'watchos' },
     { name: 'watchos', label: 'watchOS 11', link: `${basePath}/watchos/watchos11`, icon: WatchIcon, color: 'watchos' },
-    { name: 'safari', label: 'Safari 18', link: `${basePath}/safari/safari18`, icon: GlobeIcon, color: 'apple-orange' }
+    { name: 'safari', label: 'Safari 18', link: `${basePath}/safari/safari18`, icon: GlobeIcon, color: 'safari' }
   ]
 })
 
@@ -2478,5 +2478,127 @@ const copyToClipboard = async (text: string, itemId?: string) => {
     padding: 0.625rem 1.25rem;
     font-size: 0.8125rem;
   }
+}
+
+/* Platform Button Gradient Borders */
+.platform-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.platform-btn:hover {
+  border-color: transparent !important;
+}
+
+.platform-btn:hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: var(--platform-gradient);
+  border-radius: 0.5rem;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+/* Platform-specific gradients */
+.platform-btn[data-platform="macos"] {
+  --platform-gradient: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
+}
+
+.platform-btn[data-platform="ios"] {
+  --platform-gradient: linear-gradient(135deg, #1E3A8A 0%, #60A5FA 100%);
+}
+
+.platform-btn[data-platform="tvos"] {
+  --platform-gradient: linear-gradient(135deg, #EA580C 0%, #FB923C 100%);
+}
+
+.platform-btn[data-platform="watchos"] {
+  --platform-gradient: linear-gradient(135deg, #166534 0%, #4ADE80 100%);
+}
+
+.platform-btn[data-platform="visionos"] {
+  --platform-gradient: linear-gradient(135deg, #7C2D92 0%, #C084FC 100%);
+}
+
+.platform-btn[data-platform="safari"] {
+  --platform-gradient: linear-gradient(135deg, #0E7490 0%, #06B6D4 100%);
+}
+
+/* Icon and text color changes on hover */
+.platform-btn:hover .platform-icon[data-platform="macos"] {
+  background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.platform-btn:hover .platform-icon-svg[data-platform="macos"] {
+  color: #E11D48;
+}
+
+.platform-btn:hover .platform-text[data-platform="macos"] {
+  background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.platform-btn:hover .platform-icon-svg[data-platform="ios"] {
+  color: #1E3A8A;
+}
+
+.platform-btn:hover .platform-text[data-platform="ios"] {
+  background: linear-gradient(135deg, #1E3A8A 0%, #60A5FA 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.platform-btn:hover .platform-icon-svg[data-platform="tvos"] {
+  color: #EA580C;
+}
+
+.platform-btn:hover .platform-text[data-platform="tvos"] {
+  background: linear-gradient(135deg, #EA580C 0%, #FB923C 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.platform-btn:hover .platform-icon-svg[data-platform="watchos"] {
+  color: #166534;
+}
+
+.platform-btn:hover .platform-text[data-platform="watchos"] {
+  background: linear-gradient(135deg, #166534 0%, #4ADE80 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.platform-btn:hover .platform-icon-svg[data-platform="visionos"] {
+  color: #7C2D92;
+}
+
+.platform-btn:hover .platform-text[data-platform="visionos"] {
+  background: linear-gradient(135deg, #7C2D92 0%, #C084FC 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.platform-btn:hover .platform-icon-svg[data-platform="safari"] {
+  color: #0E7490;
+}
+
+.platform-btn:hover .platform-text[data-platform="safari"] {
+  background: linear-gradient(135deg, #0E7490 0%, #06B6D4 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 </style>
