@@ -715,10 +715,10 @@
             </div>
             <div class="text-lg font-bold flex items-center gap-1"
                  :class="{
-                   'text-green-600 dark:text-green-400': macOSFeedStatus.color === 'green',
-                   'text-orange-400 dark:text-orange-300': macOSFeedStatus.color === 'yellow',
-                   'text-red-600 dark:text-red-300': macOSFeedStatus.color === 'red',
-                   'text-gray-600 dark:text-gray-300': macOSFeedStatus.color === 'gray'
+                   'status-green': macOSFeedStatus.color === 'green',
+                   'status-orange': macOSFeedStatus.color === 'yellow',
+                   'status-red': macOSFeedStatus.color === 'red',
+                   'status-gray': macOSFeedStatus.color === 'gray'
                  }">
               <span>{{ macOSFeedStatus.status }}</span>
               <span class="text-xs">{{ macOSFeedStatus.indicator }}</span>
@@ -779,12 +779,12 @@
                          }" />
               <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">API Status</span>
             </div>
-            <div class="text-lg font-bold"
+            <div class="text-lg font-bold api-status-text"
                  :class="{
-                   'text-green-700 dark:text-green-400': apiStatus.color === 'green',
-                   'text-yellow-600 dark:text-yellow-300': apiStatus.color === 'yellow',
-                   'text-red-600 dark:text-red-300': apiStatus.color === 'red',
-                   'text-gray-600 dark:text-gray-300': apiStatus.color === 'gray'
+                   'status-green': apiStatus.color === 'green',
+                   'status-orange': apiStatus.color === 'yellow',
+                   'status-red': apiStatus.color === 'red',
+                   'status-gray': apiStatus.color === 'gray'
                  }">
               {{ apiStatus.status }}
             </div>
@@ -3056,6 +3056,50 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 /* Remove all underlines from Bento card text */
 .bento-card * {
   text-decoration: none !important;
+}
+
+/* Force API Status to use traffic light colors, not platform colors */
+.api-status-text.text-green-600 {
+  color: var(--status-green) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+.dark .api-status-text.text-green-400 {
+  color: var(--status-green-dark) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+/* Clean Status Classes using CSS Custom Properties */
+.status-green {
+  color: var(--status-green) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+.dark .status-green {
+  color: var(--status-green-dark) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+.status-orange {
+  color: var(--status-orange) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+.dark .status-orange {
+  color: var(--status-orange-dark) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
 }
 
 /* Legacy gray text overrides - will be replaced by small-text class */
