@@ -2504,14 +2504,18 @@ html.dark .button-group button.active:hover {
 
 :root.dark .tip.custom-block p:last-child,
 .dark .tip.custom-block p:last-child {
-  color: #E5E7EB;
+  color: #F3F4F6;
+  line-height: 1.6;
 }
 
 /* Dark mode for warning block text */
 :root.dark .warning.custom-block p:last-child,
 .dark .warning.custom-block p:last-child {
-  color: #E5E7EB;
+  color: #F3F4F6;
+  line-height: 1.6;
 }
+
+/* Removed - main page titles should be handled in the layout/theme level, not component level */
 
 :root.dark .button-group,
 .dark .button-group {
