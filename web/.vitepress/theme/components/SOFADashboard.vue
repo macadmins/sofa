@@ -3104,21 +3104,21 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-color: rgba(16, 185, 129, 0.3) !important;
 }
 
-/* Unified Green System - Match Apple Beta Releases contrast level */
-[class*="bg-green"] {
+/* Universal Green Badge System - Match Apple Beta Releases exact styling */
+.bg-green-100 {
   background-color: #DCFCE7 !important;
 }
 
-.dark [class*="bg-green"] {
-  background-color: #15803D !important;
+.dark .bg-green-900 {
+  background-color: #0F172A !important;
 }
 
-[class*="text-green"] {
-  color: #059669 !important;
+.text-green-700 {
+  color: #15803D !important;
 }
 
-.dark [class*="text-green"] {
-  color: #22C55E !important;
+.dark .text-green-200 {
+  color: #4ADE80 !important;
 }
 
 /* Force ALL badge labels to use unified green - override all colors */
