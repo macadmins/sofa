@@ -715,10 +715,10 @@
             </div>
             <div class="text-lg font-bold flex items-center gap-1"
                  :class="{
-                   'text-green-700 dark:text-green-300': macOSFeedStatus.color === 'green',
-                   'text-yellow-700 dark:text-yellow-300': macOSFeedStatus.color === 'yellow',
-                   'text-red-700 dark:text-red-300': macOSFeedStatus.color === 'red',
-                   'text-gray-700 dark:text-gray-300': macOSFeedStatus.color === 'gray'
+                   'text-green-600 dark:text-green-300': macOSFeedStatus.color === 'green',
+                   'text-yellow-600 dark:text-yellow-300': macOSFeedStatus.color === 'yellow',
+                   'text-red-600 dark:text-red-300': macOSFeedStatus.color === 'red',
+                   'text-gray-600 dark:text-gray-300': macOSFeedStatus.color === 'gray'
                  }">
               <span>{{ macOSFeedStatus.status }}</span>
               <span class="text-xs">{{ macOSFeedStatus.indicator }}</span>
@@ -740,10 +740,10 @@
             </div>
             <div class="text-lg font-bold flex items-center gap-1"
                  :class="{
-                   'text-green-700 dark:text-green-300': iOSFeedStatus.color === 'green',
-                   'text-yellow-700 dark:text-yellow-300': iOSFeedStatus.color === 'yellow',
-                   'text-red-700 dark:text-red-300': iOSFeedStatus.color === 'red',
-                   'text-gray-700 dark:text-gray-300': iOSFeedStatus.color === 'gray'
+                   'text-green-600 dark:text-green-300': iOSFeedStatus.color === 'green',
+                   'text-yellow-600 dark:text-yellow-300': iOSFeedStatus.color === 'yellow',
+                   'text-red-600 dark:text-red-300': iOSFeedStatus.color === 'red',
+                   'text-gray-600 dark:text-gray-300': iOSFeedStatus.color === 'gray'
                  }">
               <span>{{ iOSFeedStatus.status }}</span>
               <span class="text-xs">{{ iOSFeedStatus.indicator }}</span>
@@ -781,10 +781,10 @@
             </div>
             <div class="text-lg font-bold"
                  :class="{
-                   'text-green-700 dark:text-green-300': apiStatus.color === 'green',
-                   'text-yellow-700 dark:text-yellow-300': apiStatus.color === 'yellow',
-                   'text-red-700 dark:text-red-300': apiStatus.color === 'red',
-                   'text-gray-700 dark:text-gray-300': apiStatus.color === 'gray'
+                   'text-green-600 dark:text-green-300': apiStatus.color === 'green',
+                   'text-yellow-600 dark:text-yellow-300': apiStatus.color === 'yellow',
+                   'text-red-600 dark:text-red-300': apiStatus.color === 'red',
+                   'text-gray-600 dark:text-gray-300': apiStatus.color === 'gray'
                  }">
               {{ apiStatus.status }}
             </div>
