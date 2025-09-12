@@ -99,12 +99,12 @@
       <a v-for="platform in platforms" 
          :key="platform.name"
          :href="platform.link"
-         class="group flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium transition-all duration-200 hover:shadow-sm"
-         :class="`hover:border-${platform.color}-300 dark:hover:border-${platform.color}-600`">
-        <div :class="`w-6 h-6 bg-${platform.color}-100 dark:bg-${platform.color}-900/30 rounded flex items-center justify-center`">
-          <component :is="platform.icon" :class="`h-3.5 w-3.5 text-${platform.color}-600`" />
+         class="platform-btn group flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium transition-all duration-200 hover:shadow-sm"
+         :data-platform="platform.color">
+        <div class="platform-icon w-6 h-6 rounded flex items-center justify-center" :data-platform="platform.color">
+          <component :is="platform.icon" class="platform-icon-svg h-3.5 w-3.5" :data-platform="platform.color" />
         </div>
-        <span :class="`text-gray-700 dark:text-gray-300 group-hover:text-${platform.color}-600 transition-colors`">
+        <span class="platform-text text-gray-700 dark:text-gray-300 transition-colors" :data-platform="platform.color">
           {{ platform.label }}
         </span>
       </a>
@@ -1249,15 +1249,18 @@ const platforms = computed(() => {
   const basePath = base.endsWith('/') ? base.slice(0, -1) : base
   
   return [
-    { name: 'macos', label: 'Sequoia 15', link: `${basePath}/macos/sequoia`, icon: MonitorIcon, color: 'blue' },
-    { name: 'macos-sonoma', label: 'Sonoma 14', link: `${basePath}/macos/sonoma`, icon: MonitorIcon, color: 'blue' },
-    { name: 'macos-tahoe', label: 'Tahoe 26 Beta', link: `${basePath}/macos/tahoe`, icon: MonitorIcon, color: 'orange' },
-    { name: 'ios', label: 'iOS/iPadOS 18', link: `${basePath}/ios/ios18`, icon: SmartphoneIcon, color: 'purple' },
-    { name: 'ios-beta', label: 'iOS 26 Beta', link: `${basePath}/ios/ios26`, icon: SmartphoneIcon, color: 'orange' },
-    { name: 'visionos', label: 'visionOS 2', link: `${basePath}/visionos/visionos2`, icon: EyeIcon, color: 'orange' },
-    { name: 'tvos', label: 'tvOS 18', link: `${basePath}/tvos/tvos18`, icon: TvIcon, color: 'green' },
-    { name: 'watchos', label: 'watchOS 11', link: `${basePath}/watchos/watchos11`, icon: WatchIcon, color: 'pink' },
-    { name: 'safari', label: 'Safari 18', link: `${basePath}/safari/safari18`, icon: GlobeIcon, color: 'cyan' }
+    { name: 'macos-tahoe', label: 'Tahoe 26', link: `${basePath}/macos/tahoe`, icon: MonitorIcon, color: 'macos' },
+    { name: 'macos', label: 'Sequoia 15', link: `${basePath}/macos/sequoia`, icon: MonitorIcon, color: 'macos' },
+    { name: 'macos-sonoma', label: 'Sonoma 14', link: `${basePath}/macos/sonoma`, icon: MonitorIcon, color: 'macos' },
+    { name: 'ios-beta', label: 'iOS/iPadOS 26', link: `${basePath}/ios/ios26`, icon: SmartphoneIcon, color: 'ios' },
+    { name: 'ios', label: 'iOS/iPadOS 18', link: `${basePath}/ios/ios18`, icon: SmartphoneIcon, color: 'ios' },
+    { name: 'visionos-beta', label: 'visionOS 26', link: `${basePath}/visionos/visionos26`, icon: EyeIcon, color: 'visionos' },
+    { name: 'visionos', label: 'visionOS 2', link: `${basePath}/visionos/visionos2`, icon: EyeIcon, color: 'visionos' },
+    { name: 'tvos-beta', label: 'tvOS 26', link: `${basePath}/tvos/tvos26`, icon: TvIcon, color: 'tvos' },
+    { name: 'tvos', label: 'tvOS 18', link: `${basePath}/tvos/tvos18`, icon: TvIcon, color: 'tvos' },
+    { name: 'watchos-beta', label: 'watchOS 26', link: `${basePath}/watchos/watchos26`, icon: WatchIcon, color: 'watchos' },
+    { name: 'watchos', label: 'watchOS 11', link: `${basePath}/watchos/watchos11`, icon: WatchIcon, color: 'watchos' },
+    { name: 'safari', label: 'Safari 18', link: `${basePath}/safari/safari18`, icon: GlobeIcon, color: 'apple-orange' }
   ]
 })
 
