@@ -182,7 +182,7 @@
                   <span class="text-xs small-text">{{ version.releaseDate }}</span>
                   <div class="flex items-center gap-1">
                     <component :is="ShieldIcon" class="h-3 w-3" :class="version.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
-                    <span class="text-xs text-gray-600 dark:text-gray-400">
+                    <span class="text-xs" :class="version.cves > 0 ? 'text-orange-600 dark:text-orange-300' : 'small-text'">
                       {{ version.cves === 0 ? 'No CVEs' : `${version.cves} CVEs fixed` }}
                     </span>
                   </div>
@@ -224,7 +224,7 @@
                   <span class="text-xs small-text">{{ version.releaseDate }}</span>
                   <div class="flex items-center gap-1">
                     <component :is="ShieldIcon" class="h-3 w-3" :class="version.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
-                    <span class="text-xs text-gray-600 dark:text-gray-400">
+                    <span class="text-xs" :class="version.cves > 0 ? 'text-orange-600 dark:text-orange-300' : 'small-text'">
                       {{ version.cves === 0 ? 'No CVEs' : `${version.cves} CVEs fixed` }}
                     </span>
                   </div>
@@ -711,7 +711,7 @@
                            'text-red-600': macOSFeedStatus.color === 'red',
                            'text-gray-600': macOSFeedStatus.color === 'gray'
                          }" />
-              <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">macOS Feed</span>
+              <span class="font-semibold small-text text-sm">macOS Feed</span>
             </div>
             <div class="text-lg font-bold flex items-center gap-1"
                  :class="{
@@ -736,7 +736,7 @@
                            'text-red-600': iOSFeedStatus.color === 'red',
                            'text-gray-600': iOSFeedStatus.color === 'gray'
                          }" />
-              <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">iOS Feed</span>
+              <span class="font-semibold small-text text-sm">iOS Feed</span>
             </div>
             <div class="text-lg font-bold flex items-center gap-1"
                  :class="{
@@ -3073,15 +3073,17 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background: none !important;
   -webkit-background-clip: unset !important;
   -webkit-text-fill-color: unset !important;
+  text-decoration: none !important;
 }
 
-.dark .bento-card div .text-orange-300,
-.dark .bento-card span .text-orange-300,
-.dark .bento-card .text-orange-300 {
+.dark .bento-card div .text-orange-400,
+.dark .bento-card span .text-orange-400,
+.dark .bento-card .text-orange-400 {
   color: #FB923C !important;
   background: none !important;
   -webkit-background-clip: unset !important;
   -webkit-text-fill-color: unset !important;
+  text-decoration: none !important;
 }
 
 /* Force traffic light colors to override platform colors - All variations */
