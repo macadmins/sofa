@@ -1,5 +1,5 @@
 <template>
-  <div class="latest-features">
+  <div class="latest-features" :data-platform="platform.toLowerCase()">
     <h2 class="latest-release-heading" :id="'latest-release-info'" tabindex="-1">
       Latest Release Info
       <a class="header-anchor" href="#latest-release-info" aria-hidden="true">#</a>
@@ -1268,23 +1268,40 @@ h2.card-title::after,
   content: none !important;
 }
 
-/* Platform-specific icon colors */
-.grid-item:nth-child(1) .card-icon {
-  background-color: rgba(59, 130, 246, 0.08);
-  color: #3b82f6;
+/* Platform-specific icon colors - Apple OS branded */
+.latest-features[data-platform="macos"] .card-icon {
+  background-color: #FCE7F3;
+  color: #BE185D;
 }
 
-.grid-item:nth-child(2) .card-icon {
-  background-color: rgba(16, 185, 129, 0.08);
-  color: #10b981;
+.latest-features[data-platform="ios"] .card-icon,
+.latest-features[data-platform="ipados"] .card-icon {
+  background-color: #EBF4FF;
+  color: #1E40AF;
 }
 
-.grid-item:nth-child(3) .card-icon {
-  background-color: rgba(245, 158, 11, 0.08);
-  color: #f59e0b;
+.latest-features[data-platform="tvos"] .card-icon {
+  background-color: #FFF7ED;
+  color: #EA580C;
 }
 
-.grid-item:nth-child(4) .card-icon {
+.latest-features[data-platform="watchos"] .card-icon {
+  background-color: #F0FDF4;
+  color: #166534;
+}
+
+.latest-features[data-platform="visionos"] .card-icon {
+  background-color: #F5F3FF;
+  color: #7C2D92;
+}
+
+.latest-features[data-platform="safari"] .card-icon {
+  background-color: #ECFEFF;
+  color: #0E7490;
+}
+
+/* Default fallback */
+.card-icon {
   background-color: rgba(99, 102, 241, 0.08);
   color: #6366f1;
 }
@@ -1578,8 +1595,23 @@ h2.card-title::after,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(99, 102, 241, 0.1);
   border-radius: 4px;
+}
+
+/* Platform-specific XProtect section icons */
+.latest-features[data-platform="macos"] .section-icon {
+  background: #FCE7F3;
+}
+
+.latest-features[data-platform="macos"] .section-icon svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: #BE185D;
+}
+
+/* Default fallback for other platforms */
+.section-icon {
+  background: rgba(99, 102, 241, 0.1);
 }
 
 .section-icon svg {
