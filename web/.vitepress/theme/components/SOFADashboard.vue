@@ -3056,12 +3056,37 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: #9CA3AF !important;
 }
 
-/* Exception: Keep functional colors for status indicators */
+/* Exception: Override universal system for functional status colors */
 .bento-card [class*="text-green"],
 .bento-card [class*="text-red"], 
 .bento-card [class*="text-yellow"],
 .bento-card [class*="text-orange"] {
   color: inherit !important;
+}
+
+/* Force traffic light colors to override platform colors */
+.bento-card .text-green-600 {
+  color: #16A34A !important;
+}
+
+.dark .bento-card .text-green-300 {
+  color: #86EFAC !important;
+}
+
+.bento-card .text-yellow-600 {
+  color: #D97706 !important;
+}
+
+.dark .bento-card .text-yellow-300 {
+  color: #FCD34D !important;
+}
+
+.bento-card .text-red-600 {
+  color: #DC2626 !important;
+}
+
+.dark .bento-card .text-red-300 {
+  color: #FCA5A5 !important;
 }
 
 /* Build text platform colors need to be applied in HTML or through more specific selectors
