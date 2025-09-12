@@ -1540,38 +1540,7 @@ h2.card-title::after,
   color: #F472B6 !important;
 }
 
-/* Dark mode section title text - all platforms */
-:root.dark .latest-features[data-platform="macos"] .section-title-text,
-.dark .latest-features[data-platform="macos"] .section-title-text {
-  color: #F472B6;
-}
-
-:root.dark .latest-features[data-platform="ios"] .section-title-text,
-.dark .latest-features[data-platform="ios"] .section-title-text,
-:root.dark .latest-features[data-platform="ipados"] .section-title-text,
-.dark .latest-features[data-platform="ipados"] .section-title-text {
-  color: #60A5FA !important;
-}
-
-:root.dark .latest-features[data-platform="tvos"] .section-title-text,
-.dark .latest-features[data-platform="tvos"] .section-title-text {
-  color: #FB923C !important;
-}
-
-:root.dark .latest-features[data-platform="watchos"] .section-title-text,
-.dark .latest-features[data-platform="watchos"] .section-title-text {
-  color: #4ADE80 !important;
-}
-
-:root.dark .latest-features[data-platform="visionos"] .section-title-text,
-.dark .latest-features[data-platform="visionos"] .section-title-text {
-  color: #C084FC !important;
-}
-
-:root.dark .latest-features[data-platform="safari"] .section-title-text,
-.dark .latest-features[data-platform="safari"] .section-title-text {
-  color: #06B6D4 !important;
-}
+/* Dark mode section title text - keep white for readability */
 
 /* Dark mode card titles - keep white for readability */
 
@@ -1975,6 +1944,33 @@ h2.card-title::after,
   flex: 1;
 }
 
+/* Platform-specific version text in light mode */
+.latest-features[data-platform="macos"] .version-text {
+  color: #BE185D !important;
+}
+
+.latest-features[data-platform="ios"] .version-text,
+.latest-features[data-platform="ipados"] .version-text {
+  color: #1E40AF !important;
+}
+
+.latest-features[data-platform="tvos"] .version-text {
+  color: #EA580C !important;
+}
+
+.latest-features[data-platform="watchos"] .version-text {
+  color: #166534 !important;
+}
+
+.latest-features[data-platform="visionos"] .version-text {
+  color: #7C2D92 !important;
+}
+
+.latest-features[data-platform="safari"] .version-text {
+  color: #0E7490 !important;
+}
+
+/* Default fallback */
 .version-text {
   font-size: 0.875rem;
   font-weight: 600;
@@ -2648,7 +2644,7 @@ h2.card-title::after,
 /* Dark mode Deferral styles */
 :root.dark .version-text,
 .dark .version-text {
-  color: #93c5fd;
+  color: #e5e7eb !important;
 }
 
 :root.dark .deferral-item,
