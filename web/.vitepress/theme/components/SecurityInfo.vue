@@ -1059,8 +1059,9 @@ html.dark .version-info h3:before {
 }
 
 .header-date {
-  color: #6b7280;
+  color: #4B5563;
   font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .header-stats {
@@ -1171,21 +1172,33 @@ html.dark .expand-icon {
 
 .summary-text {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
   font-size: 0.875rem;
   color: #1f2937;
-  margin-bottom: 0.375rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
 }
 
 .summary-icon {
   font-size: 1rem;
+  margin-top: 0.125rem;
+  flex-shrink: 0;
 }
 
 .recommendation-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
   font-size: 0.875rem;
   color: #dc2626;
-  margin-left: 1.5rem;
+  margin-left: 0;
+  line-height: 1.4;
+}
+
+.recommendation-text strong {
+  flex-shrink: 0;
+  margin-top: 0.125rem;
 }
 
 .security-context {
@@ -1193,8 +1206,9 @@ html.dark .expand-icon {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.8125rem;
-  color: #6b7280;
+  color: #374151;
   font-style: italic;
+  font-weight: 500;
 }
 
 .context-icon {
@@ -1241,8 +1255,8 @@ html.dark .security-context {
 }
 
 .section-label {
-  color: #6e6e73;
-  font-weight: 500;
+  color: #374151;
+  font-weight: 600;
   font-size: 0.875rem;
 }
 
@@ -1253,8 +1267,9 @@ html.dark .section-label {
 }
 
 .section-content {
-  color: #1d1d1f;
+  color: #111827;
   font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .section-content a {
