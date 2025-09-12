@@ -3018,4 +3018,98 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 .dark .bento-feed-ios .hover\\:text-blue-400:hover {
   color: #60A5FA !important;
 }
+
+/* Small icons in data feed cards - Platform harmonized */
+.bento-feed-macos .text-gray-600 {
+  color: #BE185D !important;
+}
+
+.dark .bento-feed-macos .text-gray-400 {
+  color: #F472B6 !important;
+}
+
+.bento-feed-macos .text-blue-600 {
+  color: #E11D48 !important;
+}
+
+.dark .bento-feed-macos .text-blue-400 {
+  color: #F472B6 !important;
+}
+
+.bento-feed-ios .text-gray-600 {
+  color: #1E40AF !important;
+}
+
+.dark .bento-feed-ios .text-gray-400 {
+  color: #60A5FA !important;
+}
+
+.bento-feed-ios .text-purple-600 {
+  color: #1E3A8A !important;
+}
+
+.dark .bento-feed-ios .text-purple-400 {
+  color: #60A5FA !important;
+}
+
+/* Clock, Globe, Shield icons in feeds */
+.bento-feed-macos [class*="h-3"]:not([class*="text-green"]):not([class*="text-red"]):not([class*="text-yellow"]) {
+  color: #BE185D !important;
+}
+
+.dark .bento-feed-macos [class*="h-3"]:not([class*="text-green"]):not([class*="text-red"]):not([class*="text-yellow"]) {
+  color: #F472B6 !important;
+}
+
+.bento-feed-ios [class*="h-3"]:not([class*="text-green"]):not([class*="text-red"]):not([class*="text-yellow"]) {
+  color: #1E40AF !important;
+}
+
+.dark .bento-feed-ios [class*="h-3"]:not([class*="text-green"]):not([class*="text-red"]):not([class*="text-yellow"]) {
+  color: #60A5FA !important;
+}
+
+/* Last Updated Card - Harmonized neutral icons with platform hints */
+.bento-card .text-gray-600:not([class*="text-green"]):not([class*="text-red"]):not([class*="text-yellow"]) {
+  color: #64748B !important;
+}
+
+.dark .bento-card .text-gray-400:not([class*="text-green"]):not([class*="text-red"]):not([class*="text-yellow"]) {
+  color: #94A3B8 !important;
+}
+
+/* Hash display platform colors */
+.bento-card .text-gray-700:has-text(macOS) {
+  color: #BE185D !important;
+}
+
+.dark .bento-card .text-gray-300:has-text(macOS) {
+  color: #F472B6 !important;
+}
+
+/* Individual hash colors for platform identification */
+.bento-card [title*="macOS"] {
+  color: #BE185D !important;
+}
+
+.dark .bento-card [title*="macOS"] {
+  color: #F472B6 !important;
+}
+
+.bento-card [title*="iOS"] {
+  color: #1E40AF !important;
+}
+
+.dark .bento-card [title*="iOS"] {
+  color: #60A5FA !important;
+}
+
+/* Shield icon for Hash Check - neutral but harmonious */
+.bento-card .text-gray-600[class*="h-3"] {
+  color: #6366F1 !important;
+}
+
+.dark .bento-card .text-gray-400[class*="h-3"] {
+  color: #A78BFA !important;
+}
 </style>
