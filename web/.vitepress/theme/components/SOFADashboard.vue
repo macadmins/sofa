@@ -3114,6 +3114,37 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: unset !important;
 }
 
+/* Force status dot colors with maximum specificity */
+.bento-card span.text-xs.status-green,
+.bento-card .status-green {
+  color: #16A34A !important;
+}
+
+.dark .bento-card span.text-xs.status-green,
+.dark .bento-card .status-green {
+  color: #4ADE80 !important;
+}
+
+.bento-card span.text-xs.status-orange,
+.bento-card .status-orange {
+  color: #EA580C !important;
+}
+
+.dark .bento-card span.text-xs.status-orange,
+.dark .bento-card .status-orange {
+  color: #FB923C !important;
+}
+
+.bento-card span.text-xs.status-red,
+.bento-card .status-red {
+  color: #DC2626 !important;
+}
+
+.dark .bento-card span.text-xs.status-red,
+.dark .bento-card .status-red {
+  color: #FCA5A5 !important;
+}
+
 .status-red {
   color: #DC2626 !important;
   background: none !important;
