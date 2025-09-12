@@ -225,8 +225,8 @@ def run_rss() -> StageResult:
     with console.status("[bold purple]Generating RSS feed..."):
         cmd = [
             "./scripts/generate_rss.py",
+            "--output", "v1/feed.rss",
             "--data-dir", "data/resources", 
-            "--output", "v1/rss_feed.xml",
             "--include-xprotect",
             "--include-beta",
             "--verbose"
@@ -235,7 +235,7 @@ def run_rss() -> StageResult:
         result = run_binary_command(cmd, "rss", 60)
         
         # Check for RSS feed in v1/ directory
-        rss_file = Path("v1/rss_feed.xml")
+        rss_file = Path("v1/feed.rss")
         
         if result.success and rss_file.exists():
             size = rss_file.stat().st_size
@@ -271,6 +271,7 @@ def run_transform_links() -> StageResult:
                 pass  # Skip summary if JSON parsing fails
     
     return result
+
 
 def verify_results() -> None:
     """Display comprehensive results verification"""
