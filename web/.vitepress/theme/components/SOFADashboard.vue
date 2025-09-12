@@ -99,7 +99,7 @@
       <a v-for="platform in platforms" 
          :key="platform.name"
          :href="platform.link"
-         class="platform-btn group flex items-center justify-center gap-2.5 px-3.5 py-2.5 bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 rounded-lg text-sm font-semibold transition-all duration-200 hover:shadow-sm min-w-0"
+         class="platform-btn group flex items-center justify-center gap-2.5 px-3.5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 hover:shadow-sm min-w-0"
          :data-platform="platform.color">
         <div class="platform-icon w-4 h-4 flex items-center justify-center flex-shrink-0" :data-platform="platform.color">
           <component :is="platform.icon" class="platform-icon-svg w-full h-full" :data-platform="platform.color" />
@@ -2502,32 +2502,127 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   }
 }
 
-/* Platform Button Gradient Borders */
+/* Platform Button Styling */
 .platform-btn {
   position: relative;
   overflow: hidden;
-  border-color: transparent !important;
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1.5px;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
 }
 
-.platform-btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  padding: 2px;
-  background: var(--platform-gradient);
-  border-radius: 0.5rem;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
+/* Light mode: Full colored backgrounds with white text */
+.platform-btn[data-platform="macos"] {
+  background: linear-gradient(135deg, rgba(225, 29, 72, 0.9) 0%, rgba(236, 72, 153, 0.9) 100%) !important;
+  color: white !important;
+  border: none !important;
+  text-decoration: none !important;
 }
 
-.platform-btn:hover::before {
-  opacity: 0.8;
+.platform-btn[data-platform="ios"] {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(59, 130, 246, 0.9) 100%) !important;
+  color: white !important;
+  border: none !important;
+  text-decoration: none !important;
 }
+
+.platform-btn[data-platform="tvos"] {
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.9) 0%, rgba(249, 115, 22, 0.9) 100%) !important;
+  color: white !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+
+.platform-btn[data-platform="watchos"] {
+  background: linear-gradient(135deg, rgba(22, 101, 52, 0.9) 0%, rgba(34, 197, 94, 0.9) 100%) !important;
+  color: white !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+
+.platform-btn[data-platform="visionos"] {
+  background: linear-gradient(135deg, rgba(124, 45, 146, 0.9) 0%, rgba(168, 85, 247, 0.9) 100%) !important;
+  color: white !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+
+.platform-btn[data-platform="safari"] {
+  background: linear-gradient(135deg, rgba(14, 116, 144, 0.9) 0%, rgba(8, 145, 178, 0.9) 100%) !important;
+  color: white !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+
+/* Light mode: Override text and icon colors to white */
+.platform-btn .platform-text {
+  color: white !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+.platform-btn .platform-icon-svg {
+  color: white !important;
+}
+
+/* Dark mode: Full colored backgrounds with white text */
+.dark .platform-btn[data-platform="macos"] {
+  background: linear-gradient(135deg, rgba(225, 29, 72, 0.9) 0%, rgba(236, 72, 153, 0.9) 100%) !important;
+  color: white !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+
+.dark .platform-btn[data-platform="ios"] {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(59, 130, 246, 0.9) 100%) !important;
+  color: white !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+
+.dark .platform-btn[data-platform="tvos"] {
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.9) 0%, rgba(249, 115, 22, 0.9) 100%) !important;
+  color: white !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+
+.dark .platform-btn[data-platform="watchos"] {
+  background: linear-gradient(135deg, rgba(22, 101, 52, 0.9) 0%, rgba(34, 197, 94, 0.9) 100%) !important;
+  color: white !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+
+.dark .platform-btn[data-platform="visionos"] {
+  background: linear-gradient(135deg, rgba(124, 45, 146, 0.9) 0%, rgba(168, 85, 247, 0.9) 100%) !important;
+  color: white !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+
+.dark .platform-btn[data-platform="safari"] {
+  background: linear-gradient(135deg, rgba(14, 116, 144, 0.9) 0%, rgba(8, 145, 178, 0.9) 100%) !important;
+  color: white !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+
+/* Dark mode: Override text and icon colors to white */
+.dark .platform-btn .platform-text {
+  color: white !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+.dark .platform-btn .platform-icon-svg {
+  color: white !important;
+}
+
+/* Removed old gradient border pseudo-elements that were causing thin lines */
 
 /* Platform-specific gradients and underline colors */
 .platform-btn[data-platform="macos"] {
@@ -2814,6 +2909,15 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: transparent;
 }
 
+/* Dark mode: Use lighter pink for macOS text */
+.dark .macos-version-card .text-base.font-bold {
+  background: linear-gradient(135deg, #F472B6 0%, #FBBF24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 .ios-version-card:hover {
   border-color: #60A5FA !important;
 }
@@ -2830,11 +2934,27 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: transparent;
 }
 
+/* Dark mode: Use lighter blue for iOS version text */
+.dark .ios-version-card .text-base.font-bold {
+  background: linear-gradient(135deg, #60A5FA 0%, #93C5FD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 /* Timeline Release Cards - Platform-specific colors */
 .timeline-macos:hover { border-color: #F472B6 !important; }
 .dark .timeline-macos:hover { border-color: #BE185D !important; }
 .timeline-macos .text-sm.font-bold {
   background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
+/* Dark mode: Use lighter pink for timeline macOS text */
+.dark .timeline-macos .text-sm.font-bold {
+  background: linear-gradient(135deg, #F472B6 0%, #FBBF24 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text; color: transparent;
 }
@@ -2847,10 +2967,24 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text; color: transparent;
 }
 
+/* Dark mode: Use lighter blue for timeline iOS text */
+.dark .timeline-ios .text-sm.font-bold {
+  background: linear-gradient(135deg, #60A5FA 0%, #93C5FD 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
 .timeline-tvos:hover { border-color: #FB923C !important; }
 .dark .timeline-tvos:hover { border-color: #EA580C !important; }
 .timeline-tvos .text-sm.font-bold {
   background: linear-gradient(135deg, #EA580C 0%, #FB923C 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
+/* Dark mode: Use lighter orange for timeline tvOS text */
+.dark .timeline-tvos .text-sm.font-bold {
+  background: linear-gradient(135deg, #FB923C 0%, #FCD34D 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text; color: transparent;
 }
@@ -2863,6 +2997,13 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text; color: transparent;
 }
 
+/* Dark mode: Use lighter green for timeline watchOS text */
+.dark .timeline-watchos .text-sm.font-bold {
+  background: linear-gradient(135deg, #4ADE80 0%, #86EFAC 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
 .timeline-visionos:hover { border-color: #C084FC !important; }
 .dark .timeline-visionos:hover { border-color: #9333EA !important; }
 .timeline-visionos .text-sm.font-bold {
@@ -2871,10 +3012,24 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text; color: transparent;
 }
 
+/* Dark mode: Use lighter purple for timeline visionOS text */
+.dark .timeline-visionos .text-sm.font-bold {
+  background: linear-gradient(135deg, #C084FC 0%, #DDD6FE 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
 .timeline-safari:hover { border-color: #06B6D4 !important; }
 .dark .timeline-safari:hover { border-color: #0284C7 !important; }
 .timeline-safari .text-sm.font-bold {
   background: linear-gradient(135deg, #0E7490 0%, #06B6D4 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
+/* Dark mode: Use lighter teal for timeline Safari text */
+.dark .timeline-safari .text-sm.font-bold {
+  background: linear-gradient(135deg, #06B6D4 0%, #67E8F9 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text; color: transparent;
 }
@@ -2888,10 +3043,24 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text; color: transparent;
 }
 
+/* Dark mode: Use lighter pink for beta macOS text */
+.dark .beta-macos .text-base.font-bold {
+  background: linear-gradient(135deg, #F472B6 0%, #FBBF24 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
 .beta-ios:hover { border-color: #60A5FA !important; }
 .dark .beta-ios:hover { border-color: #1D4ED8 !important; }
 .beta-ios .text-base.font-bold {
   background: linear-gradient(135deg, #1E3A8A 0%, #60A5FA 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
+/* Dark mode: Use lighter blue for beta iOS text */
+.dark .beta-ios .text-base.font-bold {
+  background: linear-gradient(135deg, #60A5FA 0%, #93C5FD 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text; color: transparent;
 }
@@ -2904,6 +3073,13 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text; color: transparent;
 }
 
+/* Dark mode: Use lighter orange for beta tvOS text */
+.dark .beta-tvos .text-base.font-bold {
+  background: linear-gradient(135deg, #FB923C 0%, #FCD34D 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
 .beta-watchos:hover { border-color: #4ADE80 !important; }
 .dark .beta-watchos:hover { border-color: #16A34A !important; }
 .beta-watchos .text-base.font-bold {
@@ -2912,10 +3088,24 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text; color: transparent;
 }
 
+/* Dark mode: Use lighter green for beta watchOS text */
+.dark .beta-watchos .text-base.font-bold {
+  background: linear-gradient(135deg, #4ADE80 0%, #86EFAC 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
 .beta-visionos:hover { border-color: #C084FC !important; }
 .dark .beta-visionos:hover { border-color: #9333EA !important; }
 .beta-visionos .text-base.font-bold {
   background: linear-gradient(135deg, #7C2D92 0%, #C084FC 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
+/* Dark mode: Use lighter purple for beta visionOS text */
+.dark .beta-visionos .text-base.font-bold {
+  background: linear-gradient(135deg, #C084FC 0%, #DDD6FE 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text; color: transparent;
 }
@@ -3004,12 +3194,13 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: #F472B6 !important;
 }
 
+/* iOS Data Feed - better contrast in dark mode */
 .bento-feed-ios .text-purple-700 {
   color: #1E40AF !important;
 }
 
 .dark .bento-feed-ios .text-purple-300 {
-  color: #60A5FA !important;
+  color: #93C5FD !important;
 }
 
 .bento-feed-ios .hover\\:text-blue-600:hover {
@@ -3017,7 +3208,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 }
 
 .dark .bento-feed-ios .hover\\:text-blue-400:hover {
-  color: #60A5FA !important;
+  color: #93C5FD !important;
 }
 
 /* Small icons in data feed cards - Platform harmonized */
