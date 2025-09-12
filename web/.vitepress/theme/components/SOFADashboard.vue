@@ -99,12 +99,12 @@
       <a v-for="platform in platforms" 
          :key="platform.name"
          :href="platform.link"
-         class="platform-btn group flex items-center gap-3 px-4 py-3 bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 rounded-lg text-sm font-semibold transition-all duration-200 hover:shadow-sm"
+         class="platform-btn group flex items-center justify-center gap-2.5 px-3.5 py-2.5 bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 rounded-lg text-sm font-semibold transition-all duration-200 hover:shadow-sm min-w-0"
          :data-platform="platform.color">
-        <div class="platform-icon w-5 h-5 rounded flex items-center justify-center flex-shrink-0" :data-platform="platform.color">
-          <component :is="platform.icon" class="platform-icon-svg h-4 w-4" :data-platform="platform.color" />
+        <div class="platform-icon w-4 h-4 flex items-center justify-center flex-shrink-0" :data-platform="platform.color">
+          <component :is="platform.icon" class="platform-icon-svg w-full h-full" :data-platform="platform.color" />
         </div>
-        <span class="platform-text text-gray-700 dark:text-gray-300 transition-colors leading-tight" :data-platform="platform.color">
+        <span class="platform-text transition-colors leading-none whitespace-nowrap" :data-platform="platform.color">
           {{ platform.label }}
         </span>
       </a>
@@ -2484,13 +2484,10 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 .platform-btn {
   position: relative;
   overflow: hidden;
-}
-
-.platform-btn:hover {
   border-color: transparent !important;
 }
 
-.platform-btn:hover::before {
+.platform-btn::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -2501,6 +2498,10 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-mask-composite: xor;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
+}
+
+.platform-btn:hover::before {
+  opacity: 0.8;
 }
 
 /* Platform-specific gradients */
@@ -2528,8 +2529,19 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   --platform-gradient: linear-gradient(135deg, #0E7490 0%, #06B6D4 100%);
 }
 
-/* Icon and text color changes on hover */
-.platform-btn:hover .platform-icon[data-platform="macos"] {
+/* Icon and text color changes - permanent */
+.platform-btn .platform-icon[data-platform="macos"] {
+  background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.platform-btn .platform-icon-svg[data-platform="macos"] {
+  color: #E11D48;
+}
+
+.platform-btn .platform-text[data-platform="macos"] {
   background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -2537,66 +2549,125 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 }
 
 .platform-btn:hover .platform-icon-svg[data-platform="macos"] {
-  color: #E11D48;
+  color: #F472B6;
 }
 
 .platform-btn:hover .platform-text[data-platform="macos"] {
-  background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
+  background: linear-gradient(135deg, #F472B6 0%, #E11D48 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 
-.platform-btn:hover .platform-icon-svg[data-platform="ios"] {
+.platform-btn .platform-icon-svg[data-platform="ios"] {
   color: #1E3A8A;
 }
 
-.platform-btn:hover .platform-text[data-platform="ios"] {
+.platform-btn .platform-text[data-platform="ios"] {
   background: linear-gradient(135deg, #1E3A8A 0%, #60A5FA 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 
-.platform-btn:hover .platform-icon-svg[data-platform="tvos"] {
+.platform-btn:hover .platform-icon-svg[data-platform="ios"] {
+  color: #60A5FA;
+}
+
+.platform-btn:hover .platform-text[data-platform="ios"] {
+  background: linear-gradient(135deg, #60A5FA 0%, #1E3A8A 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* tvOS */
+.platform-btn .platform-icon-svg[data-platform="tvos"] {
   color: #EA580C;
 }
 
-.platform-btn:hover .platform-text[data-platform="tvos"] {
+.platform-btn .platform-text[data-platform="tvos"] {
   background: linear-gradient(135deg, #EA580C 0%, #FB923C 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 
-.platform-btn:hover .platform-icon-svg[data-platform="watchos"] {
+.platform-btn:hover .platform-icon-svg[data-platform="tvos"] {
+  color: #FB923C;
+}
+
+.platform-btn:hover .platform-text[data-platform="tvos"] {
+  background: linear-gradient(135deg, #FB923C 0%, #EA580C 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* watchOS */
+.platform-btn .platform-icon-svg[data-platform="watchos"] {
   color: #166534;
 }
 
-.platform-btn:hover .platform-text[data-platform="watchos"] {
+.platform-btn .platform-text[data-platform="watchos"] {
   background: linear-gradient(135deg, #166534 0%, #4ADE80 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 
-.platform-btn:hover .platform-icon-svg[data-platform="visionos"] {
+.platform-btn:hover .platform-icon-svg[data-platform="watchos"] {
+  color: #4ADE80;
+}
+
+.platform-btn:hover .platform-text[data-platform="watchos"] {
+  background: linear-gradient(135deg, #4ADE80 0%, #166534 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* visionOS */
+.platform-btn .platform-icon-svg[data-platform="visionos"] {
   color: #7C2D92;
 }
 
-.platform-btn:hover .platform-text[data-platform="visionos"] {
+.platform-btn .platform-text[data-platform="visionos"] {
   background: linear-gradient(135deg, #7C2D92 0%, #C084FC 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 
-.platform-btn:hover .platform-icon-svg[data-platform="safari"] {
+.platform-btn:hover .platform-icon-svg[data-platform="visionos"] {
+  color: #C084FC;
+}
+
+.platform-btn:hover .platform-text[data-platform="visionos"] {
+  background: linear-gradient(135deg, #C084FC 0%, #7C2D92 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Safari */
+.platform-btn .platform-icon-svg[data-platform="safari"] {
   color: #0E7490;
 }
 
-.platform-btn:hover .platform-text[data-platform="safari"] {
+.platform-btn .platform-text[data-platform="safari"] {
   background: linear-gradient(135deg, #0E7490 0%, #06B6D4 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.platform-btn:hover .platform-icon-svg[data-platform="safari"] {
+  color: #06B6D4;
+}
+
+.platform-btn:hover .platform-text[data-platform="safari"] {
+  background: linear-gradient(135deg, #06B6D4 0%, #0E7490 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
