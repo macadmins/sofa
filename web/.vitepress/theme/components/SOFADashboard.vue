@@ -182,7 +182,7 @@
                   <span class="text-xs small-text">{{ version.releaseDate }}</span>
                   <div class="flex items-center gap-1">
                     <component :is="ShieldIcon" class="h-3 w-3" :class="version.cves > 0 ? 'text-orange-400 dark:text-orange-300' : 'text-gray-400'" />
-                    <span class="text-xs" :class="version.cves > 0 ? 'text-orange-400 dark:text-orange-300' : 'small-text'">
+                    <span class="text-xs" :class="version.cves > 0 ? 'cve-warning' : 'small-text'">
                       {{ version.cves === 0 ? 'No CVEs' : `${version.cves} CVEs fixed` }}
                     </span>
                   </div>
@@ -224,7 +224,7 @@
                   <span class="text-xs small-text">{{ version.releaseDate }}</span>
                   <div class="flex items-center gap-1">
                     <component :is="ShieldIcon" class="h-3 w-3" :class="version.cves > 0 ? 'text-orange-400 dark:text-orange-300' : 'text-gray-400'" />
-                    <span class="text-xs" :class="version.cves > 0 ? 'text-orange-400 dark:text-orange-300' : 'small-text'">
+                    <span class="text-xs" :class="version.cves > 0 ? 'cve-warning' : 'small-text'">
                       {{ version.cves === 0 ? 'No CVEs' : `${version.cves} CVEs fixed` }}
                     </span>
                   </div>
@@ -428,7 +428,7 @@
                 <span class="text-xs text-gray-500 dark:text-gray-400">{{ safariVersion.releaseDate }}</span>
                 <div class="flex items-center gap-1">
                   <component :is="ShieldIcon" class="h-3 w-3" :class="safariVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
-                  <span class="text-xs" :class="safariVersion.cves > 0 ? 'text-orange-400 dark:text-orange-300' : 'text-gray-600 dark:text-gray-400'">{{ safariVersion.cves > 0 ? `${safariVersion.cves} CVEs` : 'No CVEs' }}</span>
+                  <span class="text-xs" :class="safariVersion.cves > 0 ? 'cve-warning' : 'small-text'">{{ safariVersion.cves > 0 ? `${safariVersion.cves} CVEs` : 'No CVEs' }}</span>
                 </div>
               </div>
               <div>
@@ -449,7 +449,7 @@
                 <span class="text-xs text-gray-500 dark:text-gray-400">{{ tvOSVersion.releaseDate }}</span>
                 <div class="flex items-center gap-1">
                   <component :is="ShieldIcon" class="h-3 w-3" :class="tvOSVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
-                  <span class="text-xs" :class="tvOSVersion.cves > 0 ? 'text-orange-400 dark:text-orange-300' : 'text-gray-600 dark:text-gray-400'">{{ tvOSVersion.cves > 0 ? `${tvOSVersion.cves} CVEs` : 'No CVEs' }}</span>
+                  <span class="text-xs" :class="tvOSVersion.cves > 0 ? 'cve-warning' : 'small-text'">{{ tvOSVersion.cves > 0 ? `${tvOSVersion.cves} CVEs` : 'No CVEs' }}</span>
                 </div>
               </div>
               <div>
@@ -470,7 +470,7 @@
                 <span class="text-xs text-gray-500 dark:text-gray-400">{{ visionOSVersion.releaseDate }}</span>
                 <div class="flex items-center gap-1">
                   <component :is="ShieldIcon" class="h-3 w-3" :class="visionOSVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
-                  <span class="text-xs" :class="visionOSVersion.cves > 0 ? 'text-orange-400 dark:text-orange-300' : 'text-gray-600 dark:text-gray-400'">{{ visionOSVersion.cves > 0 ? `${visionOSVersion.cves} CVEs` : 'No CVEs' }}</span>
+                  <span class="text-xs" :class="visionOSVersion.cves > 0 ? 'cve-warning' : 'small-text'">{{ visionOSVersion.cves > 0 ? `${visionOSVersion.cves} CVEs` : 'No CVEs' }}</span>
                 </div>
               </div>
               <div>
