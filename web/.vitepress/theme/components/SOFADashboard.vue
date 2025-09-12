@@ -167,7 +167,7 @@
         :style="{ order: bentoDisplayOrder['macos'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">Latest</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md macos-badge">Latest</span>
         </template>
         <div class="grid grid-cols-1 gap-3 flex-grow">
           <a 
@@ -176,7 +176,7 @@
             :href="version.version.startsWith('14') ? `${baseUrl}/macos/sonoma` : `${baseUrl}/macos/sequoia`"
             class="block"
           >
-            <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-150">
+            <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-macos-300 dark:hover:border-macos-600 transition-all duration-150 macos-version-card">
               <div class="space-y-1.5">
                 <div class="flex items-center justify-between">
                   <span class="text-xs text-gray-500 dark:text-gray-400">{{ version.releaseDate }}</span>
@@ -209,7 +209,7 @@
         :style="{ order: bentoDisplayOrder['ios-ipados'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">Latest</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md ios-badge">Latest</span>
         </template>
         <div class="grid grid-cols-1 gap-3 flex-grow">
           <a 
@@ -218,7 +218,7 @@
             :href="version.version.startsWith('17') ? `${baseUrl}/ios/ios17` : `${baseUrl}/ios/ios18`"
             class="block"
           >
-            <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-150">
+            <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-ios-300 dark:hover:border-ios-600 transition-all duration-150 ios-version-card">
               <div class="space-y-1.5">
                 <div class="flex items-center justify-between">
                   <span class="text-xs text-gray-500 dark:text-gray-400">{{ version.releaseDate }}</span>
@@ -422,7 +422,7 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 flex-grow">
           <!-- Safari -->
-          <div v-if="safariVersion" class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all duration-150">
+          <div v-if="safariVersion" class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-safari-300 dark:hover:border-safari-600 transition-all duration-150 other-platform-safari">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
                 <span class="text-xs text-gray-500 dark:text-gray-400">{{ safariVersion.releaseDate }}</span>
@@ -443,7 +443,7 @@
           </div>
           
           <!-- tvOS -->
-          <div v-if="tvOSVersion" class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-green-300 dark:hover:border-green-600 transition-all duration-150">
+          <div v-if="tvOSVersion" class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-tvos-300 dark:hover:border-tvos-600 transition-all duration-150 other-platform-tvos">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
                 <span class="text-xs text-gray-500 dark:text-gray-400">{{ tvOSVersion.releaseDate }}</span>
@@ -464,7 +464,7 @@
           </div>
           
           <!-- visionOS -->
-          <div v-if="visionOSVersion" class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-green-300 dark:hover:border-green-600 transition-all duration-150">
+          <div v-if="visionOSVersion" class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-visionos-300 dark:hover:border-visionos-600 transition-all duration-150 other-platform-visionos">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
                 <span class="text-xs text-gray-500 dark:text-gray-400">{{ visionOSVersion.releaseDate }}</span>
@@ -485,7 +485,7 @@
           </div>
           
           <!-- watchOS -->
-          <div v-if="watchOSVersion" class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-green-300 dark:hover:border-green-600 transition-all duration-150">
+          <div v-if="watchOSVersion" class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-watchos-300 dark:hover:border-watchos-600 transition-all duration-150 other-platform-watchos">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
                 <span class="text-xs text-gray-500 dark:text-gray-400">{{ watchOSVersion.releaseDate }}</span>
@@ -2679,6 +2679,129 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .platform-btn:hover .platform-text[data-platform="safari"] {
   background: linear-gradient(135deg, #06B6D4 0%, #0E7490 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Bento Card Badge Colors */
+.macos-badge {
+  background-color: #FCE7F3 !important;
+  color: #BE185D !important;
+}
+
+.dark .macos-badge {
+  background-color: #831843 !important;
+  color: #F472B6 !important;
+}
+
+.ios-badge {
+  background-color: #BFDBFE !important;
+  color: #1E40AF !important;
+}
+
+.dark .ios-badge {
+  background-color: #1E293B !important;
+  color: #60A5FA !important;
+}
+
+/* Other Platform Update Cards - Individual Platform Colors */
+.other-platform-safari {
+  position: relative;
+}
+
+.other-platform-safari:hover {
+  border-color: #06B6D4 !important;
+}
+
+.dark .other-platform-safari:hover {
+  border-color: #0284C7 !important;
+}
+
+.other-platform-safari .text-lg.font-bold {
+  background: linear-gradient(135deg, #0E7490 0%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.other-platform-tvos:hover {
+  border-color: #FB923C !important;
+}
+
+.dark .other-platform-tvos:hover {
+  border-color: #EA580C !important;
+}
+
+.other-platform-tvos .text-lg.font-bold {
+  background: linear-gradient(135deg, #EA580C 0%, #FB923C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.other-platform-visionos:hover {
+  border-color: #C084FC !important;
+}
+
+.dark .other-platform-visionos:hover {
+  border-color: #9333EA !important;
+}
+
+.other-platform-visionos .text-lg.font-bold {
+  background: linear-gradient(135deg, #7C2D92 0%, #C084FC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.other-platform-watchos:hover {
+  border-color: #4ADE80 !important;
+}
+
+.dark .other-platform-watchos:hover {
+  border-color: #16A34A !important;
+}
+
+.other-platform-watchos .text-lg.font-bold {
+  background: linear-gradient(135deg, #166534 0%, #4ADE80 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Main Platform Version Cards */
+.macos-version-card:hover {
+  border-color: #F472B6 !important;
+}
+
+.dark .macos-version-card:hover {
+  border-color: #BE185D !important;
+}
+
+.macos-version-card .text-lg.font-bold {
+  background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.ios-version-card:hover {
+  border-color: #60A5FA !important;
+}
+
+.dark .ios-version-card:hover {
+  border-color: #1D4ED8 !important;
+}
+
+.ios-version-card .text-lg.font-bold {
+  background: linear-gradient(135deg, #1E3A8A 0%, #60A5FA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
