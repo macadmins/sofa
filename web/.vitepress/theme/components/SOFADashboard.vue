@@ -1057,7 +1057,7 @@
                   </div>
                   <a v-if="release.url" :href="release.url" target="_blank" rel="noopener noreferrer" 
                      class="text-xs text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1 mt-1">
-                    Details
+                    Security Details
                     <component :is="ExternalLinkIcon" class="h-2.5 w-2.5" />
                   </a>
                 </div>
@@ -2832,7 +2832,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 /* Timeline Release Cards - Platform-specific colors */
 .timeline-macos:hover { border-color: #F472B6 !important; }
 .dark .timeline-macos:hover { border-color: #BE185D !important; }
-.timeline-macos .text-lg.font-bold {
+.timeline-macos .text-sm.font-bold {
   background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text; color: transparent;
@@ -2840,7 +2840,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .timeline-ios:hover { border-color: #60A5FA !important; }
 .dark .timeline-ios:hover { border-color: #1D4ED8 !important; }
-.timeline-ios .text-lg.font-bold {
+.timeline-ios .text-sm.font-bold {
   background: linear-gradient(135deg, #1E3A8A 0%, #60A5FA 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text; color: transparent;
@@ -2848,7 +2848,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .timeline-tvos:hover { border-color: #FB923C !important; }
 .dark .timeline-tvos:hover { border-color: #EA580C !important; }
-.timeline-tvos .text-lg.font-bold {
+.timeline-tvos .text-sm.font-bold {
   background: linear-gradient(135deg, #EA580C 0%, #FB923C 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text; color: transparent;
@@ -2856,7 +2856,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .timeline-watchos:hover { border-color: #4ADE80 !important; }
 .dark .timeline-watchos:hover { border-color: #16A34A !important; }
-.timeline-watchos .text-lg.font-bold {
+.timeline-watchos .text-sm.font-bold {
   background: linear-gradient(135deg, #166534 0%, #4ADE80 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text; color: transparent;
@@ -2864,7 +2864,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .timeline-visionos:hover { border-color: #C084FC !important; }
 .dark .timeline-visionos:hover { border-color: #9333EA !important; }
-.timeline-visionos .text-lg.font-bold {
+.timeline-visionos .text-sm.font-bold {
   background: linear-gradient(135deg, #7C2D92 0%, #C084FC 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text; color: transparent;
@@ -2872,7 +2872,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .timeline-safari:hover { border-color: #06B6D4 !important; }
 .dark .timeline-safari:hover { border-color: #0284C7 !important; }
-.timeline-safari .text-lg.font-bold {
+.timeline-safari .text-sm.font-bold {
   background: linear-gradient(135deg, #0E7490 0%, #06B6D4 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text; color: transparent;
