@@ -258,7 +258,7 @@
                   <component :is="HeartIcon" class="h-3.5 w-3.5 text-red-500" />
                   <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">MAOS</span>
                 </div>
-                <div class="text-lg font-bold">
+                <div class="text-lg font-bold community-title">
                     Support SOFA creators
                 </div>
                 <div class="text-xs small-text">
@@ -274,7 +274,7 @@
                   <component :is="DollarSignIcon" class="h-3.5 w-3.5 text-green-500" />
                   <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">MacAdmins.org</span>
                 </div>
-                <div class="text-lg font-bold">
+                <div class="text-lg font-bold community-title">
                   MacAdmins Foundation
                 </div>
                 <div class="text-xs small-text">
@@ -3169,6 +3169,25 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .dark .cloudflare-metric {
   color: rgb(110, 231, 183) !important;
+}
+
+/* Community Cards - Subtle unified gradient without flare effects */
+.community-title {
+  background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.community-github-card:hover,
+.community-donate-card:hover {
+  border-color: #A78BFA !important;
+}
+
+.dark .community-github-card:hover,
+.dark .community-donate-card:hover {
+  border-color: #C4B5FD !important;
 }
 
 .status-red {
