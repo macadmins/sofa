@@ -130,7 +130,7 @@
                   <component :is="MonitorIcon" class="h-3.5 w-3.5 text-emerald-600" />
                   <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">macOS {{ bulletinData.beta_releases.macos.version }}</span>
                 </div>
-                <div class="text-lg font-bold text-emerald-700 dark:text-emerald-300">
+                <div class="text-lg font-bold text-emerald-700 cloudflare-metric">
                   Build {{ bulletinData.beta_releases.macos.build }}
                 </div>
                 <div class="text-xs small-text">
@@ -146,7 +146,7 @@
                   <component :is="SmartphoneIcon" class="h-3.5 w-3.5 text-emerald-600" />
                   <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">iOS {{ bulletinData.beta_releases.ios.version }}</span>
                 </div>
-                <div class="text-lg font-bold text-emerald-700 dark:text-emerald-300">
+                <div class="text-lg font-bold text-emerald-700 cloudflare-metric">
                   Build {{ bulletinData.beta_releases.ios.build }}
                 </div>
                 <div class="text-xs small-text">
@@ -831,7 +831,7 @@
               <component :is="GlobeIcon" class="h-3.5 w-3.5 text-emerald-600" />
               <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">Total Requests</span>
             </div>
-            <div class="text-lg font-bold text-emerald-700 dark:text-emerald-300">{{ metricsData?.volume?.metrics?.totalRequests?.formatted || metricsData?.metrics?.totalRequests?.formatted || '--' }}</div>
+            <div class="text-lg font-bold text-emerald-700 cloudflare-metric">{{ metricsData?.volume?.metrics?.totalRequests?.formatted || metricsData?.metrics?.totalRequests?.formatted || '--' }}</div>
             <div class="text-xs small-text">{{ metricsData?.periods?.volume?.days || metricsData?.period?.days || '--' }} day volume</div>
           </div>
           <div class="space-y-1">
@@ -839,7 +839,7 @@
               <component :is="UsersIcon" class="h-3.5 w-3.5 text-emerald-600" />
               <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">Cache Ratio</span>
             </div>
-            <div class="text-lg font-bold text-emerald-700 dark:text-emerald-300">{{ metricsData?.volume?.metrics?.cacheRatio?.formatted || metricsData?.metrics?.cacheRatio?.formatted || '--' }}</div>
+            <div class="text-lg font-bold text-emerald-700 cloudflare-metric">{{ metricsData?.volume?.metrics?.cacheRatio?.formatted || metricsData?.metrics?.cacheRatio?.formatted || '--' }}</div>
             <div class="text-xs small-text">Efficiency metric</div>
           </div>
           <div class="space-y-1">
@@ -847,7 +847,7 @@
               <component :is="ServerIcon" class="h-3.5 w-3.5 text-emerald-600" />
               <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">Bandwidth</span>
             </div>
-            <div class="text-lg font-bold text-emerald-700 dark:text-emerald-300">{{ metricsData?.volume?.metrics?.bandwidth?.formatted || metricsData?.metrics?.bandwidth?.formatted || '--' }}</div>
+            <div class="text-lg font-bold text-emerald-700 cloudflare-metric">{{ metricsData?.volume?.metrics?.bandwidth?.formatted || metricsData?.metrics?.bandwidth?.formatted || '--' }}</div>
             <div class="text-xs small-text">{{ metricsData?.periods?.volume?.days || metricsData?.period?.days || '--' }} day total</div>
           </div>
           <div class="space-y-1">
@@ -855,7 +855,7 @@
               <component :is="TrendingUpIcon" class="h-3.5 w-3.5 text-emerald-600" />
               <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">Daily Average</span>
             </div>
-            <div class="text-lg font-bold text-emerald-700 dark:text-emerald-300">
+            <div class="text-lg font-bold text-emerald-700 cloudflare-metric">
               {{ metricsData?.volume?.calculated?.dailyAverage?.formatted?.requests || metricsData?.calculated?.dailyAverage?.formatted?.requests || '--' }}
             </div>
             <div class="text-xs small-text">
@@ -3160,6 +3160,15 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .dark .bento-card .bg-green-900 {
   background-color: rgba(16, 185, 129, 0.2) !important;
+}
+
+/* Cloudflare metrics text - use the same green as Live badge */
+.cloudflare-metric {
+  color: #10B981 !important;
+}
+
+.dark .cloudflare-metric {
+  color: rgb(110, 231, 183) !important;
 }
 
 .status-red {
