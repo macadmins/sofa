@@ -2844,11 +2844,9 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 /* Other Platform Update Cards - Individual Platform Colors */
 /* Old individual other-platform cards - now covered by universal system */
 
-/* Universal Platform Card System - Applied to all Bento sections */
+/* Removed Universal Platform Card System - was causing conflicts with functional status colors */
 /* macOS Platform Cards */
-[class*="macos"]:hover, .macos-version-card:hover {
-  border-color: #F472B6 !important;
-}
+/* Specific styling only where needed - no universal overrides */
 
 .dark [class*="macos"]:hover, .dark .macos-version-card:hover {
   border-color: #BE185D !important;
@@ -3020,22 +3018,22 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   font-size: 1rem !important;
 }
 
-/* Universal Small Text Styling - Aggressive override for consistency */
-.bento-card .text-xs:not([class*="text-orange"]):not([class*="text-green"]):not([class*="text-red"]):not([class*="text-yellow"]) {
+/* Simplified text styling */
+.bento-card .text-xs {
   color: #6B7280 !important;
   font-weight: 500 !important;
 }
 
-.dark .bento-card .text-xs:not([class*="text-orange"]):not([class*="text-green"]):not([class*="text-red"]):not([class*="text-yellow"]) {
+.dark .bento-card .text-xs {
   color: #9CA3AF !important;
 }
 
-.bento-card .text-sm:not(.font-bold):not([class*="text-orange"]):not([class*="text-green"]):not([class*="text-red"]):not([class*="text-yellow"]) {
+.bento-card .text-sm:not(.font-bold) {
   color: #4B5563 !important;
   font-weight: 500 !important;
 }
 
-.dark .bento-card .text-sm:not(.font-bold):not([class*="text-orange"]):not([class*="text-green"]):not([class*="text-red"]):not([class*="text-yellow"]) {
+.dark .bento-card .text-sm:not(.font-bold) {
   color: #D1D5DB !important;
 }
 
@@ -3050,12 +3048,23 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: #9CA3AF !important;
 }
 
-/* Exception: Override universal system for functional status colors */
-.bento-card [class*="text-green"],
-.bento-card [class*="text-red"], 
-.bento-card [class*="text-yellow"],
-.bento-card [class*="text-orange"] {
-  color: inherit !important;
+/* Force functional status colors to override platform styling - Higher specificity */
+.bento-card div .text-orange-600,
+.bento-card span .text-orange-600,
+.bento-card .text-orange-600 {
+  color: #EA580C !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+.dark .bento-card div .text-orange-300,
+.dark .bento-card span .text-orange-300,
+.dark .bento-card .text-orange-300 {
+  color: #FB923C !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
 }
 
 /* Force traffic light colors to override platform colors - All variations */
