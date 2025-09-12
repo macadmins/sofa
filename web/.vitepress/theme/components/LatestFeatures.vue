@@ -1085,18 +1085,21 @@ export default {
 .info-container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  margin: 0.875rem 0;
-  background-color: #f9fafb;
-  border: 1px solid #e5e7eb;
-  padding: 0.875rem 1rem;
-  border-radius: 8px;
-  transition: all 0.15s ease;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+  border: 1px solid #E2E8F0;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.info-container:hover {
-  background-color: #f3f4f6;
-  border-color: #d1d5db;
+/* Dark mode for info container - lighter, consistent with dashboard */
+:root.dark .info-container,
+.dark .info-container {
+  background: rgba(31, 41, 55, 0.3);
+  border-color: rgba(75, 85, 99, 0.4);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .tip.custom-block {
