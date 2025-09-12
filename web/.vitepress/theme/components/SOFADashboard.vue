@@ -167,7 +167,7 @@
         :style="{ order: bentoDisplayOrder['macos'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md macos-badge">Latest</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200">Latest</span>
         </template>
         <div class="grid grid-cols-1 gap-3 flex-grow">
           <a 
@@ -209,7 +209,7 @@
         :style="{ order: bentoDisplayOrder['ios-ipados'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md ios-badge">Latest</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200">Latest</span>
         </template>
         <div class="grid grid-cols-1 gap-3 flex-grow">
           <a 
@@ -559,7 +559,7 @@
         :style="{ order: bentoDisplayOrder['macos-data-feed'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md macos-feed-badge">Live</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200">Live</span>
         </template>
         <div class="space-y-3 flex-grow">
           <div class="grid grid-cols-2 gap-3">
@@ -626,7 +626,7 @@
         :style="{ order: bentoDisplayOrder['ios-data-feed'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md ios-feed-badge">Live</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200">Live</span>
         </template>
         <div class="space-y-3 flex-grow">
           <div class="grid grid-cols-2 gap-3">
