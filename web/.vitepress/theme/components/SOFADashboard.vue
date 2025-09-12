@@ -987,7 +987,7 @@
           <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">Developer</span>
         </template>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 flex-grow">
-          <div v-for="(beta, idx) in betaReleases" :key="idx" class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all duration-150">
+          <div v-for="(beta, idx) in betaReleases" :key="idx" class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-all duration-150 beta-release-card" :class="getBetaPlatformClass(beta.platform)">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
                 <span class="text-xs text-gray-500 dark:text-gray-400">{{ beta.released }}</span>
@@ -1040,7 +1040,8 @@
         >
           <div class="flex gap-3 pb-2" style="min-width: max-content;">
             <div v-for="(release, idx) in recentReleases" :key="idx" 
-                 class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-green-300 dark:hover:border-green-600 transition-all duration-150 flex-shrink-0" 
+                 class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-all duration-150 flex-shrink-0 timeline-release-card" 
+                 :class="getTimelinePlatformClass(release.name)"
                  style="width: 200px;">
               <div class="space-y-1.5">
                 <div class="flex items-center justify-between">
@@ -1269,6 +1270,26 @@ const baseUrl = computed(() => {
   const base = import.meta.env.BASE_URL || '/'
   return base.endsWith('/') ? base.slice(0, -1) : base
 })
+
+// Function to determine platform class for timeline and beta cards
+const getTimelinePlatformClass = (releaseName) => {
+  if (releaseName.includes('macOS')) return 'timeline-macos'
+  if (releaseName.includes('iOS') || releaseName.includes('iPadOS')) return 'timeline-ios'
+  if (releaseName.includes('tvOS')) return 'timeline-tvos'
+  if (releaseName.includes('watchOS')) return 'timeline-watchos'
+  if (releaseName.includes('visionOS')) return 'timeline-visionos'
+  if (releaseName.includes('Safari')) return 'timeline-safari'
+  return 'timeline-default'
+}
+
+const getBetaPlatformClass = (betaPlatform) => {
+  if (betaPlatform.includes('macOS')) return 'beta-macos'
+  if (betaPlatform.includes('iOS') || betaPlatform.includes('iPadOS')) return 'beta-ios'
+  if (betaPlatform.includes('tvOS')) return 'beta-tvos'
+  if (betaPlatform.includes('watchOS')) return 'beta-watchos'
+  if (betaPlatform.includes('visionOS')) return 'beta-visionos'
+  return 'beta-default'
+}
 
 // Real data from JSON feeds
 const macosData = ref({})
@@ -2806,5 +2827,95 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+}
+
+/* Timeline Release Cards - Platform-specific colors */
+.timeline-macos:hover { border-color: #F472B6 !important; }
+.dark .timeline-macos:hover { border-color: #BE185D !important; }
+.timeline-macos .text-lg.font-bold {
+  background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
+.timeline-ios:hover { border-color: #60A5FA !important; }
+.dark .timeline-ios:hover { border-color: #1D4ED8 !important; }
+.timeline-ios .text-lg.font-bold {
+  background: linear-gradient(135deg, #1E3A8A 0%, #60A5FA 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
+.timeline-tvos:hover { border-color: #FB923C !important; }
+.dark .timeline-tvos:hover { border-color: #EA580C !important; }
+.timeline-tvos .text-lg.font-bold {
+  background: linear-gradient(135deg, #EA580C 0%, #FB923C 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
+.timeline-watchos:hover { border-color: #4ADE80 !important; }
+.dark .timeline-watchos:hover { border-color: #16A34A !important; }
+.timeline-watchos .text-lg.font-bold {
+  background: linear-gradient(135deg, #166534 0%, #4ADE80 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
+.timeline-visionos:hover { border-color: #C084FC !important; }
+.dark .timeline-visionos:hover { border-color: #9333EA !important; }
+.timeline-visionos .text-lg.font-bold {
+  background: linear-gradient(135deg, #7C2D92 0%, #C084FC 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
+.timeline-safari:hover { border-color: #06B6D4 !important; }
+.dark .timeline-safari:hover { border-color: #0284C7 !important; }
+.timeline-safari .text-lg.font-bold {
+  background: linear-gradient(135deg, #0E7490 0%, #06B6D4 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
+/* Beta Release Cards - Platform-specific colors */
+.beta-macos:hover { border-color: #F472B6 !important; }
+.dark .beta-macos:hover { border-color: #BE185D !important; }
+.beta-macos .text-base.font-bold {
+  background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
+.beta-ios:hover { border-color: #60A5FA !important; }
+.dark .beta-ios:hover { border-color: #1D4ED8 !important; }
+.beta-ios .text-base.font-bold {
+  background: linear-gradient(135deg, #1E3A8A 0%, #60A5FA 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
+.beta-tvos:hover { border-color: #FB923C !important; }
+.dark .beta-tvos:hover { border-color: #EA580C !important; }
+.beta-tvos .text-base.font-bold {
+  background: linear-gradient(135deg, #EA580C 0%, #FB923C 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
+.beta-watchos:hover { border-color: #4ADE80 !important; }
+.dark .beta-watchos:hover { border-color: #16A34A !important; }
+.beta-watchos .text-base.font-bold {
+  background: linear-gradient(135deg, #166534 0%, #4ADE80 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+
+.beta-visionos:hover { border-color: #C084FC !important; }
+.dark .beta-visionos:hover { border-color: #9333EA !important; }
+.beta-visionos .text-base.font-bold {
+  background: linear-gradient(135deg, #7C2D92 0%, #C084FC 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
 }
 </style>
