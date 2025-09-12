@@ -3032,8 +3032,8 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   --cve-warning-color-dark: #FB923C;
   --small-text-color: #6B7280;
   --small-text-color-dark: #9CA3AF;
-  --status-green: #059669;
-  --status-green-dark: #34D399;
+  --status-green: #10B981;
+  --status-green-dark: rgb(110, 231, 183);
   --status-orange: #EA580C;
   --status-orange-dark: #FB923C;
   --macos-color: #BE185D;
@@ -3117,12 +3117,12 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 /* Force status dot colors with maximum specificity */
 .bento-card span.text-xs.status-green,
 .bento-card .status-green {
-  color: #16A34A !important;
+  color: #10B981 !important;
 }
 
 .dark .bento-card span.text-xs.status-green,
 .dark .bento-card .status-green {
-  color: #4ADE80 !important;
+  color: rgb(110, 231, 183) !important;
 }
 
 .bento-card span.text-xs.status-orange,
@@ -3143,6 +3143,23 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 .dark .bento-card span.text-xs.status-red,
 .dark .bento-card .status-red {
   color: #FCA5A5 !important;
+}
+
+/* Force green badge text to use less neon colors */
+.bento-card .text-green-700 {
+  color: #10B981 !important;
+}
+
+.dark .bento-card .text-green-200 {
+  color: rgb(110, 231, 183) !important;
+}
+
+.bento-card .bg-green-100 {
+  background-color: #DCFCE7 !important;
+}
+
+.dark .bento-card .bg-green-900 {
+  background-color: rgba(16, 185, 129, 0.2) !important;
 }
 
 .status-red {
