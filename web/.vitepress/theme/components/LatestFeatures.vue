@@ -1087,11 +1087,11 @@ export default {
   flex-direction: column;
   gap: 0.75rem;
   margin: 1rem 0;
-  background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
-  border: 1px solid #E2E8F0;
+  background: #FAFBFC;
+  border: 1px solid #F1F5F9;
   padding: 1.25rem 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
 /* Dark mode for info container - lighter, consistent with dashboard */
@@ -1105,6 +1105,7 @@ export default {
 .tip.custom-block {
   margin: 0;
   flex-grow: 1;
+  padding: 0.625rem 0.875rem !important;
 }
 
 .warning.custom-block {
@@ -1127,7 +1128,7 @@ export default {
 
 .custom-block-title {
   font-weight: 600;
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.375rem 0;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.025em;
@@ -1226,7 +1227,7 @@ export default {
   align-items: center;
   gap: 0.5rem;
   margin-top: 0;
-  margin-bottom: 0.875rem;
+  margin-bottom: 1rem;
   padding: 0;
   border: none;
 }
@@ -2659,10 +2660,10 @@ html.dark .button-group button.active:hover {
   color: #93c5fd;
 }
 
-/* Dark mode Deferral styles */
+/* Dark mode Deferral styles - brighter version text */
 :root.dark .version-text,
 .dark .version-text {
-  color: #e5e7eb !important;
+  color: #F3F4F6 !important;
 }
 
 :root.dark .deferral-item,
