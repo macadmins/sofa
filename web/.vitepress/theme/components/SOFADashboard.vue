@@ -721,7 +721,11 @@
                    'status-gray': macOSFeedStatus.color === 'gray'
                  }">
               <span>{{ macOSFeedStatus.status }}</span>
-              <span class="text-xs">{{ macOSFeedStatus.indicator }}</span>
+              <span class="text-xs" :class="{
+                'status-green': macOSFeedStatus.color === 'green',
+                'status-orange': macOSFeedStatus.color === 'yellow', 
+                'status-red': macOSFeedStatus.color === 'red'
+              }">{{ macOSFeedStatus.indicator }}</span>
             </div>
             <div class="text-xs small-text">
               {{ macosTime.local.time }}
@@ -740,13 +744,17 @@
             </div>
             <div class="text-lg font-bold flex items-center gap-1"
                  :class="{
-                   'text-green-600 dark:text-green-400': iOSFeedStatus.color === 'green',
-                   'text-orange-400 dark:text-orange-300': iOSFeedStatus.color === 'yellow',
-                   'text-red-600 dark:text-red-300': iOSFeedStatus.color === 'red',
-                   'text-gray-600 dark:text-gray-300': iOSFeedStatus.color === 'gray'
+                   'status-green': iOSFeedStatus.color === 'green',
+                   'status-orange': iOSFeedStatus.color === 'yellow',
+                   'status-red': iOSFeedStatus.color === 'red',
+                   'status-gray': iOSFeedStatus.color === 'gray'
                  }">
               <span>{{ iOSFeedStatus.status }}</span>
-              <span class="text-xs">{{ iOSFeedStatus.indicator }}</span>
+              <span class="text-xs" :class="{
+                'status-green': iOSFeedStatus.color === 'green',
+                'status-orange': iOSFeedStatus.color === 'yellow',
+                'status-red': iOSFeedStatus.color === 'red'  
+              }">{{ iOSFeedStatus.indicator }}</span>
             </div>
             <div class="text-xs small-text">
               {{ iosTime.local.time }}
@@ -1911,11 +1919,11 @@ const getFeedFreshness = (timestamp) => {
   const diffMinutes = Math.floor((now - feedDate) / 60000)
   
   if (diffMinutes < 60) {
-    return { status: 'Live', color: 'green', indicator: '🟢' }
+    return { status: 'Live', color: 'green', indicator: '⬤' }
   } else if (diffMinutes < 1440) { // 24 hours
-    return { status: 'Recent', color: 'yellow', indicator: '🟡' }
+    return { status: 'Recent', color: 'yellow', indicator: '⬤' }
   } else {
-    return { status: 'Stale', color: 'red', indicator: '🔴' }
+    return { status: 'Stale', color: 'red', indicator: '⬤' }
   }
 }
 
@@ -3097,6 +3105,34 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .dark .status-orange {
   color: var(--status-orange-dark) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+.status-red {
+  color: #DC2626 !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+.dark .status-red {
+  color: #FCA5A5 !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+.status-gray {
+  color: #6B7280 !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+.dark .status-gray {
+  color: #9CA3AF !important;
   background: none !important;
   -webkit-background-clip: unset !important;
   -webkit-text-fill-color: unset !important;
