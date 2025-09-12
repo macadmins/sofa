@@ -3234,21 +3234,37 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: unset !important;
 }
 
-/* Platform-specific hash colors */
+/* Platform-specific hash colors - aggressive override */
 .macos-hash-color {
-  color: var(--macos-color) !important;
+  color: #BE185D !important;
+  font-weight: 500 !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
 }
 
 .dark .macos-hash-color {
-  color: var(--macos-color-dark) !important;
+  color: #F472B6 !important;
+  font-weight: 500 !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
 }
 
 .ios-hash-color {
-  color: var(--ios-color) !important;
+  color: #1E40AF !important;
+  font-weight: 500 !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
 }
 
 .dark .ios-hash-color {
-  color: var(--ios-color-dark) !important;
+  color: #60A5FA !important;
+  font-weight: 500 !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
 }
 
 /* Legacy gray text overrides - will be replaced by small-text class */
