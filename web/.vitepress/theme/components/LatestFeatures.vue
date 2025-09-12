@@ -1393,22 +1393,187 @@ h2.card-title::after,
   transform: none !important;
 }
 
-/* Platform-specific hover borders like bento cards */
-.grid-item:nth-child(1) .content-box:hover {
-  border-color: #bfdbfe;
+/* Platform-specific hover borders - Apple OS branded */
+.latest-features[data-platform="macos"] .content-box:hover {
+  border-color: #F472B6 !important;
 }
 
-.grid-item:nth-child(2) .content-box:hover {
-  border-color: #a7f3d0;
+.latest-features[data-platform="ios"] .content-box:hover,
+.latest-features[data-platform="ipados"] .content-box:hover {
+  border-color: #60A5FA !important;
 }
 
-.grid-item:nth-child(3) .content-box:hover {
-  border-color: #fcd34d;
+.latest-features[data-platform="tvos"] .content-box:hover {
+  border-color: #FB923C !important;
 }
 
-.grid-item:nth-child(4) .content-box:hover {
-  border-color: #c7d2fe;
+.latest-features[data-platform="watchos"] .content-box:hover {
+  border-color: #4ADE80 !important;
 }
+
+.latest-features[data-platform="visionos"] .content-box:hover {
+  border-color: #C084FC !important;
+}
+
+.latest-features[data-platform="safari"] .content-box:hover {
+  border-color: #06B6D4 !important;
+}
+
+/* Default fallback */
+.content-box:hover {
+  border-color: #d1d5db;
+}
+
+/* Dark mode support for platform-specific hover borders */
+:root.dark .latest-features[data-platform="macos"] .content-box:hover,
+.dark .latest-features[data-platform="macos"] .content-box:hover {
+  border-color: #BE185D;
+}
+
+:root.dark .latest-features[data-platform="ios"] .content-box:hover,
+.dark .latest-features[data-platform="ios"] .content-box:hover,
+:root.dark .latest-features[data-platform="ipados"] .content-box:hover,
+.dark .latest-features[data-platform="ipados"] .content-box:hover {
+  border-color: #1D4ED8;
+}
+
+:root.dark .latest-features[data-platform="tvos"] .content-box:hover,
+.dark .latest-features[data-platform="tvos"] .content-box:hover {
+  border-color: #EA580C !important;
+}
+
+:root.dark .latest-features[data-platform="watchos"] .content-box:hover,
+.dark .latest-features[data-platform="watchos"] .content-box:hover {
+  border-color: #16A34A;
+}
+
+:root.dark .latest-features[data-platform="visionos"] .content-box:hover,
+.dark .latest-features[data-platform="visionos"] .content-box:hover {
+  border-color: #9333EA;
+}
+
+:root.dark .latest-features[data-platform="safari"] .content-box:hover,
+.dark .latest-features[data-platform="safari"] .content-box:hover {
+  border-color: #0284C7;
+}
+
+/* Dark mode support for platform-specific icons */
+:root.dark .latest-features[data-platform="macos"] .card-icon,
+.dark .latest-features[data-platform="macos"] .card-icon {
+  background-color: rgba(131, 24, 67, 0.3) !important;
+  color: #F472B6 !important;
+}
+
+:root.dark .latest-features[data-platform="ios"] .card-icon,
+.dark .latest-features[data-platform="ios"] .card-icon,
+:root.dark .latest-features[data-platform="ipados"] .card-icon,
+.dark .latest-features[data-platform="ipados"] .card-icon {
+  background-color: rgba(30, 41, 59, 0.3);
+  color: #60A5FA !important;
+}
+
+:root.dark .latest-features[data-platform="tvos"] .card-icon,
+.dark .latest-features[data-platform="tvos"] .card-icon {
+  background-color: rgba(234, 88, 12, 0.3);
+  color: #FB923C !important;
+}
+
+:root.dark .latest-features[data-platform="watchos"] .card-icon,
+.dark .latest-features[data-platform="watchos"] .card-icon {
+  background-color: rgba(22, 101, 52, 0.3);
+  color: #4ADE80 !important;
+}
+
+:root.dark .latest-features[data-platform="visionos"] .card-icon,
+.dark .latest-features[data-platform="visionos"] .card-icon {
+  background-color: rgba(124, 45, 146, 0.3);
+  color: #C084FC !important;
+}
+
+:root.dark .latest-features[data-platform="safari"] .card-icon,
+.dark .latest-features[data-platform="safari"] .card-icon {
+  background-color: rgba(14, 116, 144, 0.3);
+  color: #06B6D4 !important;
+}
+
+/* Dark mode support for content box hover borders */
+:root.dark .latest-features[data-platform="macos"] .content-box:hover,
+.dark .latest-features[data-platform="macos"] .content-box:hover {
+  border-color: #BE185D !important;
+}
+
+:root.dark .latest-features[data-platform="ios"] .content-box:hover,
+.dark .latest-features[data-platform="ios"] .content-box:hover,
+:root.dark .latest-features[data-platform="ipados"] .content-box:hover,
+.dark .latest-features[data-platform="ipados"] .content-box:hover {
+  border-color: #1D4ED8;
+}
+
+:root.dark .latest-features[data-platform="tvos"] .content-box:hover,
+.dark .latest-features[data-platform="tvos"] .content-box:hover {
+  border-color: #EA580C !important;
+}
+
+:root.dark .latest-features[data-platform="watchos"] .content-box:hover,
+.dark .latest-features[data-platform="watchos"] .content-box:hover {
+  border-color: #16A34A;
+}
+
+:root.dark .latest-features[data-platform="visionos"] .content-box:hover,
+.dark .latest-features[data-platform="visionos"] .content-box:hover {
+  border-color: #9333EA;
+}
+
+:root.dark .latest-features[data-platform="safari"] .content-box:hover,
+.dark .latest-features[data-platform="safari"] .content-box:hover {
+  border-color: #0284C7;
+}
+
+/* Dark mode XProtect section icons */
+:root.dark .latest-features[data-platform="macos"] .section-icon,
+.dark .latest-features[data-platform="macos"] .section-icon {
+  background: rgba(131, 24, 67, 0.3) !important;
+}
+
+:root.dark .latest-features[data-platform="macos"] .section-icon svg,
+.dark .latest-features[data-platform="macos"] .section-icon svg {
+  color: #F472B6 !important;
+}
+
+/* Dark mode section title text - all platforms */
+:root.dark .latest-features[data-platform="macos"] .section-title-text,
+.dark .latest-features[data-platform="macos"] .section-title-text {
+  color: #F472B6;
+}
+
+:root.dark .latest-features[data-platform="ios"] .section-title-text,
+.dark .latest-features[data-platform="ios"] .section-title-text,
+:root.dark .latest-features[data-platform="ipados"] .section-title-text,
+.dark .latest-features[data-platform="ipados"] .section-title-text {
+  color: #60A5FA !important;
+}
+
+:root.dark .latest-features[data-platform="tvos"] .section-title-text,
+.dark .latest-features[data-platform="tvos"] .section-title-text {
+  color: #FB923C !important;
+}
+
+:root.dark .latest-features[data-platform="watchos"] .section-title-text,
+.dark .latest-features[data-platform="watchos"] .section-title-text {
+  color: #4ADE80 !important;
+}
+
+:root.dark .latest-features[data-platform="visionos"] .section-title-text,
+.dark .latest-features[data-platform="visionos"] .section-title-text {
+  color: #C084FC !important;
+}
+
+:root.dark .latest-features[data-platform="safari"] .section-title-text,
+.dark .latest-features[data-platform="safari"] .section-title-text {
+  color: #06B6D4 !important;
+}
+
+/* Dark mode card titles - keep white for readability */
 
 /* OS Info Styles */
 .os-showcase {
@@ -1550,6 +1715,76 @@ h2.card-title::after,
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
+/* Platform-specific action links */
+.latest-features[data-platform="macos"] .action-link.primary {
+  background: rgba(190, 24, 93, 0.08);
+  border-color: rgba(190, 24, 93, 0.15);
+  color: #BE185D;
+}
+
+.latest-features[data-platform="macos"] .action-link.primary:hover {
+  background: rgba(190, 24, 93, 0.12);
+  border-color: rgba(190, 24, 93, 0.25);
+}
+
+.latest-features[data-platform="ios"] .action-link.primary,
+.latest-features[data-platform="ipados"] .action-link.primary {
+  background: rgba(30, 64, 175, 0.08);
+  border-color: rgba(30, 64, 175, 0.15);
+  color: #1E40AF;
+}
+
+.latest-features[data-platform="ios"] .action-link.primary:hover,
+.latest-features[data-platform="ipados"] .action-link.primary:hover {
+  background: rgba(30, 64, 175, 0.12);
+  border-color: rgba(30, 64, 175, 0.25);
+}
+
+.latest-features[data-platform="tvos"] .action-link.primary {
+  background: rgba(234, 88, 12, 0.08);
+  border-color: rgba(234, 88, 12, 0.15);
+  color: #EA580C;
+}
+
+.latest-features[data-platform="tvos"] .action-link.primary:hover {
+  background: rgba(234, 88, 12, 0.12);
+  border-color: rgba(234, 88, 12, 0.25);
+}
+
+.latest-features[data-platform="watchos"] .action-link.primary {
+  background: rgba(22, 101, 52, 0.08);
+  border-color: rgba(22, 101, 52, 0.15);
+  color: #166534;
+}
+
+.latest-features[data-platform="watchos"] .action-link.primary:hover {
+  background: rgba(22, 101, 52, 0.12);
+  border-color: rgba(22, 101, 52, 0.25);
+}
+
+.latest-features[data-platform="visionos"] .action-link.primary {
+  background: rgba(124, 45, 146, 0.08);
+  border-color: rgba(124, 45, 146, 0.15);
+  color: #7C2D92;
+}
+
+.latest-features[data-platform="visionos"] .action-link.primary:hover {
+  background: rgba(124, 45, 146, 0.12);
+  border-color: rgba(124, 45, 146, 0.25);
+}
+
+.latest-features[data-platform="safari"] .action-link.primary {
+  background: rgba(14, 116, 144, 0.08);
+  border-color: rgba(14, 116, 144, 0.15);
+  color: #0E7490;
+}
+
+.latest-features[data-platform="safari"] .action-link.primary:hover {
+  background: rgba(14, 116, 144, 0.12);
+  border-color: rgba(14, 116, 144, 0.25);
+}
+
+/* Default fallback */
 .action-link.primary {
   background: rgba(59, 130, 246, 0.08);
   border-color: rgba(59, 130, 246, 0.15);
@@ -2169,26 +2404,7 @@ h2.card-title::after,
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Dark mode platform-specific hover borders */
-:root.dark .grid-item:nth-child(1) .content-box:hover,
-.dark .grid-item:nth-child(1) .content-box:hover {
-  border-color: rgba(59, 130, 246, 0.5);
-}
-
-:root.dark .grid-item:nth-child(2) .content-box:hover,
-.dark .grid-item:nth-child(2) .content-box:hover {
-  border-color: rgba(16, 185, 129, 0.5);
-}
-
-:root.dark .grid-item:nth-child(3) .content-box:hover,
-.dark .grid-item:nth-child(3) .content-box:hover {
-  border-color: rgba(245, 158, 11, 0.5);
-}
-
-:root.dark .grid-item:nth-child(4) .content-box:hover,
-.dark .grid-item:nth-child(4) .content-box:hover {
-  border-color: rgba(99, 102, 241, 0.5);
-}
+/* Removed old nth-child dark mode hover borders - now using platform-specific ones */
 
 :root.dark .section-title,
 .dark .section-title {
