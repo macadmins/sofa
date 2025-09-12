@@ -1122,7 +1122,7 @@ export default {
 .warning.custom-block p:last-child {
   margin: 0;
   font-size: 0.8125rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #78716c;
 }
 
@@ -1154,7 +1154,7 @@ export default {
 .tip.custom-block p:last-child {
   margin: 0;
   font-size: 0.8125rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #374151;
 }
 
@@ -2504,7 +2504,13 @@ html.dark .button-group button.active:hover {
 
 :root.dark .tip.custom-block p:last-child,
 .dark .tip.custom-block p:last-child {
-  color: #d1d5db;
+  color: #E5E7EB;
+}
+
+/* Dark mode for warning block text */
+:root.dark .warning.custom-block p:last-child,
+.dark .warning.custom-block p:last-child {
+  color: #E5E7EB;
 }
 
 :root.dark .button-group,
