@@ -1029,7 +1029,7 @@
         :style="{ order: bentoDisplayOrder['timeline'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">Timeline</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300">Timeline</span>
         </template>
         
         <div 
@@ -2826,25 +2826,17 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   font-size: 1rem !important;
 }
 
-/* Bento Card Badge Colors */
-.macos-badge {
-  background-color: #FCE7F3 !important;
-  color: #BE185D !important;
-}
-
-.dark .macos-badge {
-  background-color: #831843 !important;
-  color: #F472B6 !important;
-}
-
+/* Unified Status Badge Colors - Bright Green Theme */
+.macos-badge,
 .ios-badge {
-  background-color: #BFDBFE !important;
-  color: #1E40AF !important;
+  background-color: #DCFCE7 !important;
+  color: #16A34A !important;
 }
 
+.dark .macos-badge,
 .dark .ios-badge {
-  background-color: #1E293B !important;
-  color: #60A5FA !important;
+  background-color: rgba(34, 197, 94, 0.2) !important;
+  color: #22C55E !important;
 }
 
 /* Other Platform Update Cards - Individual Platform Colors */
@@ -3146,25 +3138,17 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: #EC4899 !important;
 }
 
-/* Data Feed Badges - Platform specific */
-.macos-feed-badge {
-  background-color: #FCE7F3 !important;
-  color: #BE185D !important;
-}
-
-.dark .macos-feed-badge {
-  background-color: #831843 !important;
-  color: #F472B6 !important;
-}
-
+/* Data Feed Badges - Present Green Theme */
+.macos-feed-badge,
 .ios-feed-badge {
-  background-color: #BFDBFE !important;
-  color: #1E40AF !important;
+  background-color: #DCFCE7 !important;
+  color: #15803D !important;
 }
 
+.dark .macos-feed-badge,
 .dark .ios-feed-badge {
-  background-color: #1E293B !important;
-  color: #60A5FA !important;
+  background-color: rgba(34, 197, 94, 0.2) !important;
+  color: #22C55E !important;
 }
 
 /* Data Feed Time and Hash Colors - Platform harmonized */
