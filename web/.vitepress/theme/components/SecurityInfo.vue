@@ -788,7 +788,7 @@ onMounted(async () => {
               </div>
             </div>
             
-            <div v-if="update.daysToPrevRelease" class="update-section">
+            <div v-if="update.daysToPrevRelease && update.daysToPrevRelease > 0" class="update-section">
               <div class="section-label">Days to Prev. Release:</div>
               <div class="section-content">{{ update.daysToPrevRelease }}</div>
             </div>
@@ -1139,7 +1139,7 @@ html.dark .version-info h3:before {
 .collapsed-extra {
   margin-top: 0.375rem;
   font-size: 0.75rem;
-  color: #9ca3af;
+  color: #4B5563;
 }
 
 .extra-info {
@@ -1182,8 +1182,9 @@ html.dark .expand-icon {
 
 .summary-icon {
   font-size: 1rem;
-  margin-top: 0.125rem;
+  margin-top: 0.075rem;
   flex-shrink: 0;
+  line-height: 1;
 }
 
 .recommendation-text {
@@ -1203,16 +1204,20 @@ html.dark .expand-icon {
 
 .security-context {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
   font-size: 0.8125rem;
   color: #374151;
   font-style: italic;
   font-weight: 500;
+  line-height: 1.4;
 }
 
 .context-icon {
   font-size: 0.875rem;
+  margin-top: 0.075rem;
+  flex-shrink: 0;
+  line-height: 1;
 }
 
 /* Dark mode for v2 summary */
@@ -1707,7 +1712,7 @@ html.dark .header-date {
 :root.dark .collapsed-extra,
 .dark .collapsed-extra,
 html.dark .collapsed-extra {
-  color: #6b7280;
+  color: #D1D5DB;
 }
 
 
