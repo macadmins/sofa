@@ -998,11 +998,13 @@ html.dark .security-update-card:hover,
   align-items: center;
   gap: 0.25rem;
   padding: 0.125rem 0.375rem;
-  background: #f3f4f6;
-  border-radius: 4px;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
   font-size: 0.75rem;
   font-weight: 500;
-  color: #6b7280;
+  color: #64748B;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .stat-badge::before {
@@ -1017,8 +1019,10 @@ html.dark .security-update-card:hover,
 }
 
 .stat-badge.has-cves {
-  background: rgba(59, 130, 246, 0.1);
-  color: #3b82f6;
+  background: #EBF4FF;
+  border: 1px solid #BFDBFE;
+  color: #1E40AF;
+  box-shadow: 0 1px 2px rgba(30, 64, 175, 0.1);
 }
 
 .stat-badge.has-cves::before {
@@ -1026,9 +1030,11 @@ html.dark .security-update-card:hover,
 }
 
 .stat-badge.kev-badge {
-  background: #fee2e2;
-  color: #dc2626;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  color: #DC2626;
   font-weight: 600;
+  box-shadow: 0 1px 2px rgba(220, 38, 38, 0.1);
 }
 
 .stat-badge.kev-badge::before {
