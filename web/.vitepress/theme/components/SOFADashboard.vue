@@ -120,7 +120,7 @@
         :icon="ShieldIcon"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-50 dark:bg-orange-950 text-orange-600 dark:text-orange-300">Beta</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-50 dark:bg-orange-950 text-orange-400 dark:text-orange-300">Beta</span>
         </template>
         <div class="grid grid-cols-1 gap-3 flex-grow">
           <a v-if="bulletinData?.beta_releases?.macos" :href="`${baseUrl}/macos/tahoe`" class="block">
@@ -181,8 +181,8 @@
                 <div class="flex items-center justify-between">
                   <span class="text-xs small-text">{{ version.releaseDate }}</span>
                   <div class="flex items-center gap-1">
-                    <component :is="ShieldIcon" class="h-3 w-3" :class="version.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
-                    <span class="text-xs" :class="version.cves > 0 ? 'text-orange-600 dark:text-orange-300' : 'small-text'">
+                    <component :is="ShieldIcon" class="h-3 w-3" :class="version.cves > 0 ? 'text-orange-400 dark:text-orange-300' : 'text-gray-400'" />
+                    <span class="text-xs" :class="version.cves > 0 ? 'text-orange-400 dark:text-orange-300' : 'small-text'">
                       {{ version.cves === 0 ? 'No CVEs' : `${version.cves} CVEs fixed` }}
                     </span>
                   </div>
@@ -223,8 +223,8 @@
                 <div class="flex items-center justify-between">
                   <span class="text-xs small-text">{{ version.releaseDate }}</span>
                   <div class="flex items-center gap-1">
-                    <component :is="ShieldIcon" class="h-3 w-3" :class="version.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
-                    <span class="text-xs" :class="version.cves > 0 ? 'text-orange-600 dark:text-orange-300' : 'small-text'">
+                    <component :is="ShieldIcon" class="h-3 w-3" :class="version.cves > 0 ? 'text-orange-400 dark:text-orange-300' : 'text-gray-400'" />
+                    <span class="text-xs" :class="version.cves > 0 ? 'text-orange-400 dark:text-orange-300' : 'small-text'">
                       {{ version.cves === 0 ? 'No CVEs' : `${version.cves} CVEs fixed` }}
                     </span>
                   </div>
@@ -716,7 +716,7 @@
             <div class="text-lg font-bold flex items-center gap-1"
                  :class="{
                    'text-green-600 dark:text-green-400': macOSFeedStatus.color === 'green',
-                   'text-orange-600 dark:text-orange-300': macOSFeedStatus.color === 'yellow',
+                   'text-orange-400 dark:text-orange-300': macOSFeedStatus.color === 'yellow',
                    'text-red-600 dark:text-red-300': macOSFeedStatus.color === 'red',
                    'text-gray-600 dark:text-gray-300': macOSFeedStatus.color === 'gray'
                  }">
@@ -741,7 +741,7 @@
             <div class="text-lg font-bold flex items-center gap-1"
                  :class="{
                    'text-green-600 dark:text-green-400': iOSFeedStatus.color === 'green',
-                   'text-orange-600 dark:text-orange-300': iOSFeedStatus.color === 'yellow',
+                   'text-orange-400 dark:text-orange-300': iOSFeedStatus.color === 'yellow',
                    'text-red-600 dark:text-red-300': iOSFeedStatus.color === 'red',
                    'text-gray-600 dark:text-gray-300': iOSFeedStatus.color === 'gray'
                  }">
@@ -3076,6 +3076,9 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   text-decoration: none !important;
 }
 
+.dark .bento-card div .text-orange-300,
+.dark .bento-card span .text-orange-300,
+.dark .bento-card .text-orange-300,
 .dark .bento-card div .text-orange-400,
 .dark .bento-card span .text-orange-400,
 .dark .bento-card .text-orange-400 {
