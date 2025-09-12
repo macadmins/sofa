@@ -422,7 +422,8 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 flex-grow">
           <!-- Safari -->
-          <div v-if="safariVersion" class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-safari-300 dark:hover:border-safari-600 transition-all duration-150 other-platform-safari">
+          <a v-if="safariVersion" :href="`${baseUrl}/safari/safari18`" class="block">
+            <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-safari-300 dark:hover:border-safari-600 transition-all duration-150 other-platform-safari">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
                 <span class="text-xs text-gray-500 dark:text-gray-400">{{ safariVersion.releaseDate }}</span>
@@ -440,10 +441,12 @@
                 </div>
               </div>
             </div>
-          </div>
+            </div>
+          </a>
           
           <!-- tvOS -->
-          <div v-if="tvOSVersion" class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-tvos-300 dark:hover:border-tvos-600 transition-all duration-150 other-platform-tvos">
+          <a v-if="tvOSVersion" :href="`${baseUrl}/tvos/tvos18`" class="block">
+            <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-tvos-300 dark:hover:border-tvos-600 transition-all duration-150 other-platform-tvos">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
                 <span class="text-xs text-gray-500 dark:text-gray-400">{{ tvOSVersion.releaseDate }}</span>
@@ -461,10 +464,12 @@
                 </div>
               </div>
             </div>
-          </div>
+            </div>
+          </a>
           
           <!-- visionOS -->
-          <div v-if="visionOSVersion" class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-visionos-300 dark:hover:border-visionos-600 transition-all duration-150 other-platform-visionos">
+          <a v-if="visionOSVersion" :href="`${baseUrl}/visionos/visionos2`" class="block">
+            <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-visionos-300 dark:hover:border-visionos-600 transition-all duration-150 other-platform-visionos">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
                 <span class="text-xs text-gray-500 dark:text-gray-400">{{ visionOSVersion.releaseDate }}</span>
@@ -482,10 +487,12 @@
                 </div>
               </div>
             </div>
-          </div>
+            </div>
+          </a>
           
           <!-- watchOS -->
-          <div v-if="watchOSVersion" class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-watchos-300 dark:hover:border-watchos-600 transition-all duration-150 other-platform-watchos">
+          <a v-if="watchOSVersion" :href="`${baseUrl}/watchos/watchos11`" class="block">
+            <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-watchos-300 dark:hover:border-watchos-600 transition-all duration-150 other-platform-watchos">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
                 <span class="text-xs text-gray-500 dark:text-gray-400">{{ watchOSVersion.releaseDate }}</span>
@@ -503,7 +510,8 @@
                 </div>
               </div>
             </div>
-          </div>
+            </div>
+          </a>
         </div>
       </BentoCard>
 
@@ -1246,6 +1254,8 @@ import {
   ChevronLeft as ChevronLeftIcon,
   ChevronRight as ChevronRightIcon,
   Cpu as CpuIcon,
+  DollarSign as DollarSignIcon,
+  Rss as RssIcon,
   Settings as SettingsIcon,
   ArrowUp as ArrowUpIcon,
   ArrowDown as ArrowDownIcon,
