@@ -515,17 +515,25 @@ h3.bento-card-title {
   @apply text-indigo-600 dark:text-indigo-400;
 }
 
-/* Data Feed Colors */
+/* Data Feed Colors - Platform harmonized */
 .bento-feed-macos {
   /* Remove platform-specific hover colors */
 }
 
 .bento-feed-macos .bento-card-icon {
-  @apply bg-cyan-50 dark:bg-cyan-900/30;
+  background-color: #FCE7F3 !important;
+}
+
+.dark .bento-feed-macos .bento-card-icon {
+  background-color: rgba(131, 24, 67, 0.3) !important;
 }
 
 .bento-feed-macos .bento-card-icon svg {
-  @apply text-cyan-600 dark:text-cyan-400;
+  color: #BE185D !important;
+}
+
+.dark .bento-feed-macos .bento-card-icon svg {
+  color: #F472B6 !important;
 }
 
 .bento-feed-ios {
@@ -533,11 +541,19 @@ h3.bento-card-title {
 }
 
 .bento-feed-ios .bento-card-icon {
-  @apply bg-blue-50 dark:bg-blue-900/30;
+  background-color: #BFDBFE !important;
+}
+
+.dark .bento-feed-ios .bento-card-icon {
+  background-color: rgba(30, 41, 59, 0.3) !important;
 }
 
 .bento-feed-ios .bento-card-icon svg {
-  @apply text-blue-600 dark:text-blue-400;
+  color: #1E40AF !important;
+}
+
+.dark .bento-feed-ios .bento-card-icon svg {
+  color: #60A5FA !important;
 }
 
 /* ===== INTERACTIVE ELEMENTS ===== */

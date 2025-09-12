@@ -559,7 +559,7 @@
         :style="{ order: bentoDisplayOrder['macos-data-feed'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">Live</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md macos-feed-badge">Live</span>
         </template>
         <div class="space-y-3 flex-grow">
           <div class="grid grid-cols-2 gap-3">
@@ -626,7 +626,7 @@
         :style="{ order: bentoDisplayOrder['ios-data-feed'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">Live</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md ios-feed-badge">Live</span>
         </template>
         <div class="space-y-3 flex-grow">
           <div class="grid grid-cols-2 gap-3">
@@ -2963,5 +2963,59 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .community-donate-card:hover .text-green-500 {
   color: #EC4899 !important;
+}
+
+/* Data Feed Badges - Platform specific */
+.macos-feed-badge {
+  background-color: #FCE7F3 !important;
+  color: #BE185D !important;
+}
+
+.dark .macos-feed-badge {
+  background-color: #831843 !important;
+  color: #F472B6 !important;
+}
+
+.ios-feed-badge {
+  background-color: #BFDBFE !important;
+  color: #1E40AF !important;
+}
+
+.dark .ios-feed-badge {
+  background-color: #1E293B !important;
+  color: #60A5FA !important;
+}
+
+/* Data Feed Time and Hash Colors - Platform harmonized */
+.bento-feed-macos .text-blue-700 {
+  color: #BE185D !important;
+}
+
+.dark .bento-feed-macos .text-blue-300 {
+  color: #F472B6 !important;
+}
+
+.bento-feed-macos .hover\\:text-blue-600:hover {
+  color: #E11D48 !important;
+}
+
+.dark .bento-feed-macos .hover\\:text-blue-400:hover {
+  color: #F472B6 !important;
+}
+
+.bento-feed-ios .text-purple-700 {
+  color: #1E40AF !important;
+}
+
+.dark .bento-feed-ios .text-purple-300 {
+  color: #60A5FA !important;
+}
+
+.bento-feed-ios .hover\\:text-blue-600:hover {
+  color: #1E3A8A !important;
+}
+
+.dark .bento-feed-ios .hover\\:text-blue-400:hover {
+  color: #60A5FA !important;
 }
 </style>
