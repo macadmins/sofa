@@ -1047,8 +1047,10 @@ html.dark .security-update-card:hover,
 }
 
 .risk-indicator.high-risk {
-  background: #dc2626;
+  background: #E11D48;
   color: white;
+  border: 1px solid #BE185D;
+  box-shadow: 0 1px 2px rgba(225, 29, 72, 0.15);
 }
 
 .collapsed-extra {
@@ -1580,7 +1582,9 @@ html.dark .stat-badge.kev-badge::before {
 :root.dark .risk-indicator.high-risk,
 .dark .risk-indicator.high-risk,
 html.dark .risk-indicator.high-risk {
-  background: #b91c1c;
+  background: #B91C1C;
+  border: 1px solid #991B1B;
+  box-shadow: 0 1px 2px rgba(185, 28, 28, 0.3);
 }
 
 :root.dark .header-divider,
