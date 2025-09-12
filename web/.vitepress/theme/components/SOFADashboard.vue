@@ -3018,14 +3018,44 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   font-size: 1rem !important;
 }
 
-/* Clean Small Text System - One class to rule them all */
+/* CSS Custom Properties - Clean System */
+:root {
+  --cve-warning-color: #EA580C;
+  --cve-warning-color-dark: #FB923C;
+  --small-text-color: #6B7280;
+  --small-text-color-dark: #9CA3AF;
+  --status-green: #16A34A;
+  --status-green-dark: #4ADE80;
+  --status-orange: #EA580C;
+  --status-orange-dark: #FB923C;
+}
+
+/* Clean Small Text System */
 .small-text {
-  color: #6B7280 !important;
+  color: var(--small-text-color) !important;
   font-weight: 500 !important;
+  text-decoration: none !important;
 }
 
 .dark .small-text {
-  color: #9CA3AF !important;
+  color: var(--small-text-color-dark) !important;
+  text-decoration: none !important;
+}
+
+/* CVE Warning System */
+.cve-warning {
+  color: var(--cve-warning-color) !important;
+  text-decoration: none !important;
+}
+
+.dark .cve-warning {
+  color: var(--cve-warning-color-dark) !important;
+  text-decoration: none !important;
+}
+
+/* Remove all underlines from Bento card text */
+.bento-card * {
+  text-decoration: none !important;
 }
 
 /* Legacy gray text overrides - will be replaced by small-text class */
