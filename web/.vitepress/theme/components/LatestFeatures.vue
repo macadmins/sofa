@@ -1927,12 +1927,27 @@ h2.card-title::after,
 }
 
 .button-group button.active {
-  background: #3b82f6;
+  background: #6B7280;
   color: white;
 }
 
 .button-group button.active:hover {
-  background: #2563eb;
+  background: #374151;
+}
+
+/* Dark mode for deferral buttons - aggressive override */
+:root.dark .button-group button.active,
+.dark .button-group button.active,
+html.dark .button-group button.active {
+  background: #6B7280 !important;
+  color: white !important;
+}
+
+:root.dark .button-group button.active:hover,
+.dark .button-group button.active:hover,
+html.dark .button-group button.active:hover {
+  background: #9CA3AF !important;
+  color: #1F2937 !important;
 }
 
 .button-group button:disabled {

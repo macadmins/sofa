@@ -788,7 +788,7 @@ onMounted(async () => {
               </div>
             </div>
             
-            <div v-if="update.daysToPrevRelease && update.daysToPrevRelease > 0" class="update-section">
+            <div v-if="update.daysToPrevRelease" class="update-section">
               <div class="section-label">Days to Prev. Release:</div>
               <div class="section-content">{{ update.daysToPrevRelease }}</div>
             </div>
