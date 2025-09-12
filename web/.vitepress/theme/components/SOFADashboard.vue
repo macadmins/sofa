@@ -1237,6 +1237,7 @@ import {
   History as HistoryIcon,
   ChevronLeft as ChevronLeftIcon,
   ChevronRight as ChevronRightIcon,
+  Cpu as CpuIcon,
   Settings as SettingsIcon,
   ArrowUp as ArrowUpIcon,
   ArrowDown as ArrowDownIcon,
