@@ -120,7 +120,7 @@
         :icon="ShieldIcon"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">Beta</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-50 dark:bg-orange-950 text-orange-600 dark:text-orange-300">Beta</span>
         </template>
         <div class="grid grid-cols-1 gap-3 flex-grow">
           <a v-if="bulletinData?.beta_releases?.macos" :href="`${baseUrl}/macos/tahoe`" class="block">
@@ -181,7 +181,7 @@
                 <div class="flex items-center justify-between">
                   <span class="text-xs text-gray-500 dark:text-gray-400">{{ version.releaseDate }}</span>
                   <div class="flex items-center gap-1">
-                    <component :is="ShieldIcon" class="h-3 w-3" :class="version.cves > 0 ? 'text-orange-500' : 'text-gray-400'" />
+                    <component :is="ShieldIcon" class="h-3 w-3" :class="version.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
                     <span class="text-xs text-gray-600 dark:text-gray-400">
                       {{ version.cves === 0 ? 'No CVEs' : `${version.cves} CVEs fixed` }}
                     </span>
@@ -223,7 +223,7 @@
                 <div class="flex items-center justify-between">
                   <span class="text-xs text-gray-500 dark:text-gray-400">{{ version.releaseDate }}</span>
                   <div class="flex items-center gap-1">
-                    <component :is="ShieldIcon" class="h-3 w-3" :class="version.cves > 0 ? 'text-orange-500' : 'text-gray-400'" />
+                    <component :is="ShieldIcon" class="h-3 w-3" :class="version.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
                     <span class="text-xs text-gray-600 dark:text-gray-400">
                       {{ version.cves === 0 ? 'No CVEs' : `${version.cves} CVEs fixed` }}
                     </span>
@@ -303,7 +303,7 @@
                 <div class="flex items-center justify-between">
                   <span class="text-xs text-gray-500 dark:text-gray-400">{{ watchOSVersion.releaseDate }}</span>
                   <div class="flex items-center gap-1">
-                    <component :is="ShieldIcon" class="h-3.5 w-3.5" :class="watchOSVersion.cves > 0 ? 'text-orange-500' : 'text-gray-400'" />
+                    <component :is="ShieldIcon" class="h-3.5 w-3.5" :class="watchOSVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
                     <span class="text-xs text-gray-600 dark:text-gray-400">
                       {{ watchOSVersion.cves === 0 ? 'No CVEs' : `${watchOSVersion.cves} CVEs` }}
                     </span>
@@ -326,7 +326,7 @@
                 <div class="flex items-center justify-between">
                   <span class="text-xs text-gray-500 dark:text-gray-400">{{ tvOSVersion.releaseDate }}</span>
                   <div class="flex items-center gap-1">
-                    <component :is="ShieldIcon" class="h-3.5 w-3.5" :class="tvOSVersion.cves > 0 ? 'text-orange-500' : 'text-gray-400'" />
+                    <component :is="ShieldIcon" class="h-3.5 w-3.5" :class="tvOSVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
                     <span class="text-xs text-gray-600 dark:text-gray-400">
                       {{ tvOSVersion.cves === 0 ? 'No CVEs' : `${tvOSVersion.cves} CVEs` }}
                     </span>
@@ -349,7 +349,7 @@
                 <div class="flex items-center justify-between">
                   <span class="text-xs text-gray-500 dark:text-gray-400">{{ visionOSVersion.releaseDate }}</span>
                   <div class="flex items-center gap-1">
-                    <component :is="ShieldIcon" class="h-3.5 w-3.5" :class="visionOSVersion.cves > 0 ? 'text-orange-500' : 'text-gray-400'" />
+                    <component :is="ShieldIcon" class="h-3.5 w-3.5" :class="visionOSVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
                     <span class="text-xs text-gray-600 dark:text-gray-400">
                       {{ visionOSVersion.cves === 0 ? 'No CVEs' : `${visionOSVersion.cves} CVEs` }}
                     </span>
@@ -427,8 +427,8 @@
               <div class="flex items-center justify-between">
                 <span class="text-xs text-gray-500 dark:text-gray-400">{{ safariVersion.releaseDate }}</span>
                 <div class="flex items-center gap-1">
-                  <component :is="ShieldIcon" class="h-3 w-3" :class="safariVersion.cves > 0 ? 'text-orange-500' : 'text-gray-400'" />
-                  <span class="text-xs" :class="safariVersion.cves > 0 ? 'text-orange-600 dark:text-orange-400' : 'text-gray-600 dark:text-gray-400'">{{ safariVersion.cves > 0 ? `${safariVersion.cves} CVEs` : 'No CVEs' }}</span>
+                  <component :is="ShieldIcon" class="h-3 w-3" :class="safariVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
+                  <span class="text-xs" :class="safariVersion.cves > 0 ? 'text-orange-400 dark:text-orange-300' : 'text-gray-600 dark:text-gray-400'">{{ safariVersion.cves > 0 ? `${safariVersion.cves} CVEs` : 'No CVEs' }}</span>
                 </div>
               </div>
               <div>
@@ -448,8 +448,8 @@
               <div class="flex items-center justify-between">
                 <span class="text-xs text-gray-500 dark:text-gray-400">{{ tvOSVersion.releaseDate }}</span>
                 <div class="flex items-center gap-1">
-                  <component :is="ShieldIcon" class="h-3 w-3" :class="tvOSVersion.cves > 0 ? 'text-orange-500' : 'text-gray-400'" />
-                  <span class="text-xs" :class="tvOSVersion.cves > 0 ? 'text-orange-600 dark:text-orange-400' : 'text-gray-600 dark:text-gray-400'">{{ tvOSVersion.cves > 0 ? `${tvOSVersion.cves} CVEs` : 'No CVEs' }}</span>
+                  <component :is="ShieldIcon" class="h-3 w-3" :class="tvOSVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
+                  <span class="text-xs" :class="tvOSVersion.cves > 0 ? 'text-orange-400 dark:text-orange-300' : 'text-gray-600 dark:text-gray-400'">{{ tvOSVersion.cves > 0 ? `${tvOSVersion.cves} CVEs` : 'No CVEs' }}</span>
                 </div>
               </div>
               <div>
@@ -469,8 +469,8 @@
               <div class="flex items-center justify-between">
                 <span class="text-xs text-gray-500 dark:text-gray-400">{{ visionOSVersion.releaseDate }}</span>
                 <div class="flex items-center gap-1">
-                  <component :is="ShieldIcon" class="h-3 w-3" :class="visionOSVersion.cves > 0 ? 'text-orange-500' : 'text-gray-400'" />
-                  <span class="text-xs" :class="visionOSVersion.cves > 0 ? 'text-orange-600 dark:text-orange-400' : 'text-gray-600 dark:text-gray-400'">{{ visionOSVersion.cves > 0 ? `${visionOSVersion.cves} CVEs` : 'No CVEs' }}</span>
+                  <component :is="ShieldIcon" class="h-3 w-3" :class="visionOSVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
+                  <span class="text-xs" :class="visionOSVersion.cves > 0 ? 'text-orange-400 dark:text-orange-300' : 'text-gray-600 dark:text-gray-400'">{{ visionOSVersion.cves > 0 ? `${visionOSVersion.cves} CVEs` : 'No CVEs' }}</span>
                 </div>
               </div>
               <div>
@@ -490,8 +490,8 @@
               <div class="flex items-center justify-between">
                 <span class="text-xs text-gray-500 dark:text-gray-400">{{ watchOSVersion.releaseDate }}</span>
                 <div class="flex items-center gap-1">
-                  <component :is="ShieldIcon" class="h-3 w-3" :class="watchOSVersion.cves > 0 ? 'text-orange-500' : 'text-gray-400'" />
-                  <span class="text-xs" :class="watchOSVersion.cves > 0 ? 'text-orange-600 dark:text-orange-400' : 'text-gray-600 dark:text-gray-400'">{{ watchOSVersion.cves > 0 ? `${watchOSVersion.cves} CVEs` : 'No CVEs' }}</span>
+                  <component :is="ShieldIcon" class="h-3 w-3" :class="watchOSVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
+                  <span class="text-xs" :class="watchOSVersion.cves > 0 ? 'text-orange-400 dark:text-orange-300' : 'text-gray-600 dark:text-gray-400'">{{ watchOSVersion.cves > 0 ? `${watchOSVersion.cves} CVEs` : 'No CVEs' }}</span>
                 </div>
               </div>
               <div>
@@ -984,7 +984,7 @@
         :style="{ order: bentoDisplayOrder['beta-releases'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">Developer</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-50 dark:bg-orange-950 text-orange-600 dark:text-orange-300">Developer</span>
         </template>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 flex-grow">
           <div v-for="(beta, idx) in betaReleases" :key="idx" class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-all duration-150 beta-release-card" :class="getBetaPlatformClass(beta.platform)">
@@ -992,8 +992,8 @@
               <div class="flex items-center justify-between">
                 <span class="text-xs text-gray-500 dark:text-gray-400">{{ beta.released }}</span>
                 <div class="flex items-center gap-1">
-                  <component :is="SparklesIcon" class="h-3 w-3 text-orange-500" />
-                  <span class="text-xs text-orange-600 dark:text-orange-400">
+                  <component :is="SparklesIcon" class="h-3 w-3 text-orange-400" />
+                  <span class="text-xs text-orange-400 dark:text-orange-300">
                     Beta
                   </span>
                 </div>
@@ -2663,7 +2663,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 .platform-btn .platform-icon-svg[data-platform="macos"] {
@@ -2680,7 +2680,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 .platform-btn .platform-icon-svg[data-platform="ios"] {
@@ -2694,7 +2694,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 .platform-btn:hover .platform-icon-svg[data-platform="ios"] {
@@ -2707,7 +2707,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 /* tvOS */
@@ -2722,7 +2722,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 .platform-btn:hover .platform-icon-svg[data-platform="tvos"] {
@@ -2736,7 +2736,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 /* watchOS */
@@ -2751,7 +2751,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 .platform-btn:hover .platform-icon-svg[data-platform="watchos"] {
@@ -2765,7 +2765,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 /* visionOS */
@@ -2780,7 +2780,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 .platform-btn:hover .platform-icon-svg[data-platform="visionos"] {
@@ -2794,7 +2794,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 /* Safari */
@@ -2809,7 +2809,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 .platform-btn:hover .platform-icon-svg[data-platform="safari"] {
@@ -2823,7 +2823,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 /* Bento Card Badge Colors */
@@ -2848,81 +2848,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 }
 
 /* Other Platform Update Cards - Individual Platform Colors */
-.other-platform-safari {
-  position: relative;
-}
-
-.other-platform-safari:hover {
-  border-color: #06B6D4 !important;
-}
-
-.dark .other-platform-safari:hover {
-  border-color: #0284C7 !important;
-}
-
-.other-platform-safari .text-lg.font-bold {
-  background: linear-gradient(135deg, #0E7490 0%, #06B6D4 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  line-height: 1.2;
-  font-size: 0.875rem !important;
-}
-
-.other-platform-tvos:hover {
-  border-color: #FB923C !important;
-}
-
-.dark .other-platform-tvos:hover {
-  border-color: #EA580C !important;
-}
-
-.other-platform-tvos .text-lg.font-bold {
-  background: linear-gradient(135deg, #EA580C 0%, #FB923C 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  line-height: 1.2;
-  font-size: 0.875rem !important;
-}
-
-.other-platform-visionos:hover {
-  border-color: #C084FC !important;
-}
-
-.dark .other-platform-visionos:hover {
-  border-color: #9333EA !important;
-}
-
-.other-platform-visionos .text-lg.font-bold {
-  background: linear-gradient(135deg, #7C2D92 0%, #C084FC 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  line-height: 1.2;
-  font-size: 0.875rem !important;
-}
-
-.other-platform-watchos:hover {
-  border-color: #4ADE80 !important;
-}
-
-.dark .other-platform-watchos:hover {
-  border-color: #16A34A !important;
-}
-
-.other-platform-watchos .text-lg.font-bold {
-  background: linear-gradient(135deg, #166534 0%, #4ADE80 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  line-height: 1.2;
-  font-size: 0.875rem !important;
-}
+/* Old individual other-platform cards - now covered by universal system */
 
 /* Universal Platform Card System - Applied to all Bento sections */
 /* macOS Platform Cards */
@@ -2941,8 +2867,8 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
+  font-size: 1rem !important;
 }
 
 .dark [class*="macos"] .text-base.font-bold, .dark [class*="macos"] .text-sm.font-bold, .dark [class*="macos"] .text-lg.font-bold {
@@ -2952,7 +2878,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 /* iOS Platform Cards */
@@ -2971,7 +2897,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 .dark [class*="ios"] .text-base.font-bold, .dark [class*="ios"] .text-sm.font-bold, .dark [class*="ios"] .text-lg.font-bold {
@@ -2981,7 +2907,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 /* tvOS Platform Cards */
@@ -3000,7 +2926,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 .dark [class*="tvos"] .text-base.font-bold, .dark [class*="tvos"] .text-sm.font-bold, .dark [class*="tvos"] .text-lg.font-bold {
@@ -3010,7 +2936,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 /* watchOS Platform Cards */
@@ -3029,7 +2955,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 .dark [class*="watchos"] .text-base.font-bold, .dark [class*="watchos"] .text-sm.font-bold, .dark [class*="watchos"] .text-lg.font-bold {
@@ -3039,7 +2965,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 /* visionOS Platform Cards */
@@ -3058,7 +2984,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 .dark [class*="visionos"] .text-base.font-bold, .dark [class*="visionos"] .text-sm.font-bold, .dark [class*="visionos"] .text-lg.font-bold {
@@ -3068,7 +2994,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 /* Safari Platform Cards */
@@ -3087,7 +3013,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 .dark [class*="safari"] .text-base.font-bold, .dark [class*="safari"] .text-sm.font-bold, .dark [class*="safari"] .text-lg.font-bold {
@@ -3097,8 +3023,49 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
+
+/* Universal Small Text Styling - Aggressive override for consistency */
+.bento-card .text-xs:not([class*="text-orange"]):not([class*="text-green"]):not([class*="text-red"]):not([class*="text-yellow"]) {
+  color: #6B7280 !important;
+  font-weight: 500 !important;
+}
+
+.dark .bento-card .text-xs:not([class*="text-orange"]):not([class*="text-green"]):not([class*="text-red"]):not([class*="text-yellow"]) {
+  color: #9CA3AF !important;
+}
+
+.bento-card .text-sm:not(.font-bold):not([class*="text-orange"]):not([class*="text-green"]):not([class*="text-red"]):not([class*="text-yellow"]) {
+  color: #4B5563 !important;
+  font-weight: 500 !important;
+}
+
+.dark .bento-card .text-sm:not(.font-bold):not([class*="text-orange"]):not([class*="text-green"]):not([class*="text-red"]):not([class*="text-yellow"]) {
+  color: #D1D5DB !important;
+}
+
+/* Specific overrides for common conflicting classes */
+.bento-card .text-gray-500,
+.bento-card .text-gray-600 {
+  color: #6B7280 !important;
+}
+
+.dark .bento-card .text-gray-400,
+.dark .bento-card .text-gray-300 {
+  color: #9CA3AF !important;
+}
+
+/* Exception: Keep functional colors for status indicators */
+.bento-card [class*="text-green"],
+.bento-card [class*="text-red"], 
+.bento-card [class*="text-yellow"],
+.bento-card [class*="text-orange"] {
+  color: inherit !important;
+}
+
+/* Build text platform colors need to be applied in HTML or through more specific selectors
+   The :contains() selector doesn't exist in CSS - we need to target specific elements */
 
 /* Old individual timeline cards - now covered by universal system */
 
@@ -3122,7 +3089,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 .community-donate-card:hover {
@@ -3142,7 +3109,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 /* Enhanced icon colors for community cards - SOFA theme */
