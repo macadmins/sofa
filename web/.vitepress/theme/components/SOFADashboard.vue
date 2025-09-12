@@ -716,7 +716,7 @@
             <div class="text-lg font-bold flex items-center gap-1"
                  :class="{
                    'text-green-600 dark:text-green-400': macOSFeedStatus.color === 'green',
-                   'text-yellow-600 dark:text-yellow-300': macOSFeedStatus.color === 'yellow',
+                   'text-orange-600 dark:text-orange-300': macOSFeedStatus.color === 'yellow',
                    'text-red-600 dark:text-red-300': macOSFeedStatus.color === 'red',
                    'text-gray-600 dark:text-gray-300': macOSFeedStatus.color === 'gray'
                  }">
@@ -741,7 +741,7 @@
             <div class="text-lg font-bold flex items-center gap-1"
                  :class="{
                    'text-green-600 dark:text-green-400': iOSFeedStatus.color === 'green',
-                   'text-yellow-600 dark:text-yellow-300': iOSFeedStatus.color === 'yellow',
+                   'text-orange-600 dark:text-orange-300': iOSFeedStatus.color === 'yellow',
                    'text-red-600 dark:text-red-300': iOSFeedStatus.color === 'red',
                    'text-gray-600 dark:text-gray-300': iOSFeedStatus.color === 'gray'
                  }">
