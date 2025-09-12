@@ -3032,8 +3032,8 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   --cve-warning-color-dark: #FB923C;
   --small-text-color: #6B7280;
   --small-text-color-dark: #9CA3AF;
-  --status-green: #16A34A;
-  --status-green-dark: #4ADE80;
+  --status-green: #059669;
+  --status-green-dark: #34D399;
   --status-orange: #EA580C;
   --status-orange-dark: #FB923C;
   --macos-color: #BE185D;
