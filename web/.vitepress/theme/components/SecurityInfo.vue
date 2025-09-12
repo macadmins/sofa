@@ -598,7 +598,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="security-info">
+  <div class="security-info" :data-platform="platform.toLowerCase()">
     <h2 class="vp-doc-heading" :id="'security-information'" tabindex="-1">
       Security Information
       <a class="header-anchor" href="#security-information" aria-hidden="true">#</a>
@@ -961,19 +961,77 @@ html.dark .security-update-card:hover,
   gap: 0.5rem;
 }
 
+/* Platform-specific version header shield icons */
+.security-info[data-platform="macos"] .version-info h3:before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #FCE7F3;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23BE185D' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z'/%3E%3C/svg%3E");
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.security-info[data-platform="ios"] .version-info h3:before,
+.security-info[data-platform="ipados"] .version-info h3:before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #EBF4FF;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%231E40AF' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z'/%3E%3C/svg%3E");
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Default for other platforms */
 .version-info h3:before {
   content: "";
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
   background-color: rgba(59, 130, 246, 0.1);
   border-radius: 0.375rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233b82f6' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z'/%3E%3C/svg%3E");
-  background-size: 0.875rem;
+  background-size: 1rem;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+/* Dark mode shield icons */
+:root.dark .security-info[data-platform="macos"] .version-info h3:before,
+.dark .security-info[data-platform="macos"] .version-info h3:before,
+html.dark .security-info[data-platform="macos"] .version-info h3:before {
+  background-color: rgba(131, 24, 67, 0.4);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23F472B6' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z'/%3E%3C/svg%3E");
+}
+
+:root.dark .security-info[data-platform="ios"] .version-info h3:before,
+.dark .security-info[data-platform="ios"] .version-info h3:before,
+html.dark .security-info[data-platform="ios"] .version-info h3:before,
+:root.dark .security-info[data-platform="ipados"] .version-info h3:before,
+.dark .security-info[data-platform="ipados"] .version-info h3:before,
+html.dark .security-info[data-platform="ipados"] .version-info h3:before {
+  background-color: rgba(30, 41, 59, 0.4);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2360A5FA' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z'/%3E%3C/svg%3E");
+}
+
+:root.dark .version-info h3:before,
+.dark .version-info h3:before,
+html.dark .version-info h3:before {
+  background-color: rgba(30, 41, 59, 0.4);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2360A5FA' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z'/%3E%3C/svg%3E");
 }
 
 .header-divider {
@@ -1551,8 +1609,10 @@ html.dark .section-content,
 :root.dark .stat-badge,
 .dark .stat-badge,
 html.dark .stat-badge {
-  background: rgba(55, 65, 81, 0.5);
-  color: #d1d5db;
+  background: rgba(51, 65, 85, 0.6);
+  border: 1px solid rgba(71, 85, 105, 0.6);
+  color: #CBD5E1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 :root.dark .stat-badge::before,
