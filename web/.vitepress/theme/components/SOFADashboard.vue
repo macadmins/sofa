@@ -99,12 +99,12 @@
       <a v-for="platform in platforms" 
          :key="platform.name"
          :href="platform.link"
-         class="platform-btn group flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium transition-all duration-200 hover:shadow-sm"
+         class="platform-btn group flex items-center gap-3 px-4 py-3 bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 rounded-lg text-sm font-semibold transition-all duration-200 hover:shadow-sm"
          :data-platform="platform.color">
-        <div class="platform-icon w-6 h-6 rounded flex items-center justify-center" :data-platform="platform.color">
-          <component :is="platform.icon" class="platform-icon-svg h-3.5 w-3.5" :data-platform="platform.color" />
+        <div class="platform-icon w-5 h-5 rounded flex items-center justify-center flex-shrink-0" :data-platform="platform.color">
+          <component :is="platform.icon" class="platform-icon-svg h-4 w-4" :data-platform="platform.color" />
         </div>
-        <span class="platform-text text-gray-700 dark:text-gray-300 transition-colors" :data-platform="platform.color">
+        <span class="platform-text text-gray-700 dark:text-gray-300 transition-colors leading-tight" :data-platform="platform.color">
           {{ platform.label }}
         </span>
       </a>
