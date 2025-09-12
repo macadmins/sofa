@@ -252,13 +252,13 @@
       >
         <div class="grid grid-cols-1 gap-3 flex-grow">
           <a href="https://github.com/sponsors/macadmins?o=esb" target="_blank" rel="noopener noreferrer" class="block">
-            <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-indigo-300 dark:hover:border-indigo-600 transition-all duration-150">
+            <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-red-300 dark:hover:border-red-500 transition-all duration-150 community-github-card">
               <div class="space-y-1">
                 <div class="flex items-center gap-1">
                   <component :is="HeartIcon" class="h-3.5 w-3.5 text-red-500" />
                   <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">MAOS</span>
                 </div>
-                <div class="text-lg font-bold text-indigo-700 dark:text-indigo-300">
+                <div class="text-lg font-bold">
                     Support SOFA creators
                 </div>
                 <div class="text-xs text-gray-500 dark:text-gray-400">
@@ -268,13 +268,13 @@
             </div>
           </a>
           <a href="https://www.macadmins.org/donate" target="_blank" rel="noopener noreferrer" class="block">
-            <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-indigo-300 dark:hover:border-indigo-600 transition-all duration-150">
+            <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-green-300 dark:hover:border-green-500 transition-all duration-150 community-donate-card">
               <div class="space-y-1">
                 <div class="flex items-center gap-1">
                   <component :is="DollarSignIcon" class="h-3.5 w-3.5 text-green-500" />
                   <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">MacAdmins.org</span>
                 </div>
-                <div class="text-lg font-bold text-indigo-700 dark:text-indigo-300">
+                <div class="text-lg font-bold">
                   MacAdmins Foundation
                 </div>
                 <div class="text-xs text-gray-500 dark:text-gray-400">
@@ -2917,5 +2917,51 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background: linear-gradient(135deg, #7C2D92 0%, #C084FC 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text; color: transparent;
+}
+
+/* MacAdmins Community Cards - SOFA brand inspired styling */
+.community-github-card:hover {
+  border-color: #8B5CF6 !important;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+.dark .community-github-card:hover {
+  border-color: #A78BFA !important;
+  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.25);
+}
+
+.community-github-card .text-lg.font-bold {
+  background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.community-donate-card:hover {
+  border-color: #EC4899 !important;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);
+}
+
+.dark .community-donate-card:hover {
+  border-color: #F472B6 !important;
+  box-shadow: 0 4px 12px rgba(244, 114, 182, 0.25);
+}
+
+.community-donate-card .text-lg.font-bold {
+  background: linear-gradient(135deg, #EC4899 0%, #7C3AED 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Enhanced icon colors for community cards - SOFA theme */
+.community-github-card:hover .text-red-500 {
+  color: #8B5CF6 !important;
+}
+
+.community-donate-card:hover .text-green-500 {
+  color: #EC4899 !important;
 }
 </style>
