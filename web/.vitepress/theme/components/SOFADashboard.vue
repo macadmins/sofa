@@ -167,7 +167,7 @@
         :style="{ order: bentoDisplayOrder['macos'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200">Latest</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">Latest</span>
         </template>
         <div class="grid grid-cols-1 gap-3 flex-grow">
           <a 
@@ -209,7 +209,7 @@
         :style="{ order: bentoDisplayOrder['ios-ipados'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200">Latest</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">Latest</span>
         </template>
         <div class="grid grid-cols-1 gap-3 flex-grow">
           <a 
@@ -417,7 +417,7 @@
         :style="{ order: bentoDisplayOrder['other-platforms-combined'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200">Latest</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">Latest</span>
         </template>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 flex-grow">
@@ -559,7 +559,7 @@
         :style="{ order: bentoDisplayOrder['macos-data-feed'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200">Live</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">Live</span>
         </template>
         <div class="space-y-3 flex-grow">
           <div class="grid grid-cols-2 gap-3">
@@ -626,7 +626,7 @@
         :style="{ order: bentoDisplayOrder['ios-data-feed'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200">Live</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">Live</span>
         </template>
         <div class="space-y-3 flex-grow">
           <div class="grid grid-cols-2 gap-3">
@@ -695,7 +695,7 @@
         <template #badge>
           <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md"
                 :class="{
-                  'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200': apiStatus.color === 'green',
+                  'bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200': apiStatus.color === 'green',
                   'bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200': apiStatus.color === 'yellow',
                   'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200': apiStatus.color === 'red',
                   'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400': apiStatus.color === 'gray'
@@ -814,7 +814,7 @@
       >
         <template #badge>
           <span v-if="metricsLoading" class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200">Loading</span>
-          <span v-else-if="metricsData && !metricsData.error" class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">Live</span>
+          <span v-else-if="metricsData && !metricsData.error" class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">Live</span>
           <span v-else class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">Offline</span>
         </template>
         <div v-if="metricsData && !metricsData.error" class="grid grid-cols-2 gap-3 flex-grow">
@@ -913,7 +913,7 @@
         :style="{ order: bentoDisplayOrder['v2-data-feeds'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200">Direct Access</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">Direct Access</span>
         </template>
         <div class="space-y-2 flex-grow">
           <div class="grid grid-cols-1 gap-1.5">
@@ -1029,7 +1029,7 @@
         :style="{ order: bentoDisplayOrder['timeline'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 timeline-badge">Timeline</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 timeline-badge">Timeline</span>
         </template>
         
         <div 
@@ -1103,7 +1103,7 @@
         :style="{ order: bentoDisplayOrder['v1-data-feeds'] || 12 }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200">Direct Access</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">Direct Access</span>
         </template>
         <div class="space-y-2 flex-grow">
           <div class="grid grid-cols-1 gap-1.5">
