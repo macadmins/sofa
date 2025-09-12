@@ -2662,6 +2662,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 .platform-btn .platform-icon-svg[data-platform="macos"] {
@@ -2677,6 +2678,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 .platform-btn .platform-icon-svg[data-platform="ios"] {
@@ -2689,6 +2691,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 .platform-btn:hover .platform-icon-svg[data-platform="ios"] {
@@ -2700,6 +2703,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 /* tvOS */
@@ -2713,6 +2717,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 .platform-btn:hover .platform-icon-svg[data-platform="tvos"] {
@@ -2725,6 +2730,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 /* watchOS */
@@ -2738,6 +2744,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 .platform-btn:hover .platform-icon-svg[data-platform="watchos"] {
@@ -2750,6 +2757,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 /* visionOS */
@@ -2763,6 +2771,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 .platform-btn:hover .platform-icon-svg[data-platform="visionos"] {
@@ -2775,6 +2784,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 /* Safari */
@@ -2788,6 +2798,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 .platform-btn:hover .platform-icon-svg[data-platform="safari"] {
@@ -2800,6 +2811,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 /* Bento Card Badge Colors */
@@ -2842,6 +2854,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 .other-platform-tvos:hover {
@@ -2858,6 +2871,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 .other-platform-visionos:hover {
@@ -2874,6 +2888,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 .other-platform-watchos:hover {
@@ -2890,225 +2905,175 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
-/* Main Platform Version Cards */
-.macos-version-card:hover {
+/* Universal Platform Card System - Applied to all Bento sections */
+/* macOS Platform Cards */
+[class*="macos"]:hover, .macos-version-card:hover {
   border-color: #F472B6 !important;
 }
 
-.dark .macos-version-card:hover {
+.dark [class*="macos"]:hover, .dark .macos-version-card:hover {
   border-color: #BE185D !important;
 }
 
-.macos-version-card .text-base.font-bold {
+[class*="macos"] .text-base.font-bold, [class*="macos"] .text-sm.font-bold, [class*="macos"] .text-lg.font-bold {
   background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
-/* Dark mode: Use lighter pink for macOS text */
-.dark .macos-version-card .text-base.font-bold {
-  background: linear-gradient(135deg, #F472B6 0%, #FBBF24 100%);
+.dark [class*="macos"] .text-base.font-bold, .dark [class*="macos"] .text-sm.font-bold, .dark [class*="macos"] .text-lg.font-bold {
+  background: linear-gradient(135deg, #F472B6 0%, #E879F9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
-.ios-version-card:hover {
+/* iOS Platform Cards */
+[class*="ios"]:hover, .ios-version-card:hover {
   border-color: #60A5FA !important;
 }
 
-.dark .ios-version-card:hover {
+.dark [class*="ios"]:hover, .dark .ios-version-card:hover {
   border-color: #1D4ED8 !important;
 }
 
-.ios-version-card .text-base.font-bold {
+[class*="ios"] .text-base.font-bold, [class*="ios"] .text-sm.font-bold, [class*="ios"] .text-lg.font-bold {
   background: linear-gradient(135deg, #1E3A8A 0%, #60A5FA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
-/* Dark mode: Use lighter blue for iOS version text */
-.dark .ios-version-card .text-base.font-bold {
+.dark [class*="ios"] .text-base.font-bold, .dark [class*="ios"] .text-sm.font-bold, .dark [class*="ios"] .text-lg.font-bold {
   background: linear-gradient(135deg, #60A5FA 0%, #93C5FD 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
-/* Timeline Release Cards - Platform-specific colors */
-.timeline-macos:hover { border-color: #F472B6 !important; }
-.dark .timeline-macos:hover { border-color: #BE185D !important; }
-.timeline-macos .text-sm.font-bold {
-  background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
+/* tvOS Platform Cards */
+[class*="tvos"]:hover {
+  border-color: #FB923C !important;
 }
 
-/* Dark mode: Use lighter pink for timeline macOS text */
-.dark .timeline-macos .text-sm.font-bold {
-  background: linear-gradient(135deg, #F472B6 0%, #FBBF24 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
+.dark [class*="tvos"]:hover {
+  border-color: #EA580C !important;
 }
 
-.timeline-ios:hover { border-color: #60A5FA !important; }
-.dark .timeline-ios:hover { border-color: #1D4ED8 !important; }
-.timeline-ios .text-sm.font-bold {
-  background: linear-gradient(135deg, #1E3A8A 0%, #60A5FA 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
-}
-
-/* Dark mode: Use lighter blue for timeline iOS text */
-.dark .timeline-ios .text-sm.font-bold {
-  background: linear-gradient(135deg, #60A5FA 0%, #93C5FD 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
-}
-
-.timeline-tvos:hover { border-color: #FB923C !important; }
-.dark .timeline-tvos:hover { border-color: #EA580C !important; }
-.timeline-tvos .text-sm.font-bold {
+[class*="tvos"] .text-base.font-bold, [class*="tvos"] .text-sm.font-bold, [class*="tvos"] .text-lg.font-bold {
   background: linear-gradient(135deg, #EA580C 0%, #FB923C 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
 }
 
-/* Dark mode: Use lighter orange for timeline tvOS text */
-.dark .timeline-tvos .text-sm.font-bold {
+.dark [class*="tvos"] .text-base.font-bold, .dark [class*="tvos"] .text-sm.font-bold, .dark [class*="tvos"] .text-lg.font-bold {
   background: linear-gradient(135deg, #FB923C 0%, #FCD34D 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
 }
 
-.timeline-watchos:hover { border-color: #4ADE80 !important; }
-.dark .timeline-watchos:hover { border-color: #16A34A !important; }
-.timeline-watchos .text-sm.font-bold {
+/* watchOS Platform Cards */
+[class*="watchos"]:hover {
+  border-color: #4ADE80 !important;
+}
+
+.dark [class*="watchos"]:hover {
+  border-color: #16A34A !important;
+}
+
+[class*="watchos"] .text-base.font-bold, [class*="watchos"] .text-sm.font-bold, [class*="watchos"] .text-lg.font-bold {
   background: linear-gradient(135deg, #166534 0%, #4ADE80 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
 }
 
-/* Dark mode: Use lighter green for timeline watchOS text */
-.dark .timeline-watchos .text-sm.font-bold {
+.dark [class*="watchos"] .text-base.font-bold, .dark [class*="watchos"] .text-sm.font-bold, .dark [class*="watchos"] .text-lg.font-bold {
   background: linear-gradient(135deg, #4ADE80 0%, #86EFAC 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
 }
 
-.timeline-visionos:hover { border-color: #C084FC !important; }
-.dark .timeline-visionos:hover { border-color: #9333EA !important; }
-.timeline-visionos .text-sm.font-bold {
+/* visionOS Platform Cards */
+[class*="visionos"]:hover {
+  border-color: #C084FC !important;
+}
+
+.dark [class*="visionos"]:hover {
+  border-color: #9333EA !important;
+}
+
+[class*="visionos"] .text-base.font-bold, [class*="visionos"] .text-sm.font-bold, [class*="visionos"] .text-lg.font-bold {
   background: linear-gradient(135deg, #7C2D92 0%, #C084FC 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
 }
 
-/* Dark mode: Use lighter purple for timeline visionOS text */
-.dark .timeline-visionos .text-sm.font-bold {
+.dark [class*="visionos"] .text-base.font-bold, .dark [class*="visionos"] .text-sm.font-bold, .dark [class*="visionos"] .text-lg.font-bold {
   background: linear-gradient(135deg, #C084FC 0%, #DDD6FE 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
 }
 
-.timeline-safari:hover { border-color: #06B6D4 !important; }
-.dark .timeline-safari:hover { border-color: #0284C7 !important; }
-.timeline-safari .text-sm.font-bold {
+/* Safari Platform Cards */
+[class*="safari"]:hover {
+  border-color: #06B6D4 !important;
+}
+
+.dark [class*="safari"]:hover {
+  border-color: #0284C7 !important;
+}
+
+[class*="safari"] .text-base.font-bold, [class*="safari"] .text-sm.font-bold, [class*="safari"] .text-lg.font-bold {
   background: linear-gradient(135deg, #0E7490 0%, #06B6D4 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
 }
 
-/* Dark mode: Use lighter teal for timeline Safari text */
-.dark .timeline-safari .text-sm.font-bold {
+.dark [class*="safari"] .text-base.font-bold, .dark [class*="safari"] .text-sm.font-bold, .dark [class*="safari"] .text-lg.font-bold {
   background: linear-gradient(135deg, #06B6D4 0%, #67E8F9 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
 }
 
-/* Beta Release Cards - Platform-specific colors */
-.beta-macos:hover { border-color: #F472B6 !important; }
-.dark .beta-macos:hover { border-color: #BE185D !important; }
-.beta-macos .text-base.font-bold {
-  background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
-}
+/* Old individual timeline cards - now covered by universal system */
 
-/* Dark mode: Use lighter pink for beta macOS text */
-.dark .beta-macos .text-base.font-bold {
-  background: linear-gradient(135deg, #F472B6 0%, #FBBF24 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
-}
-
-.beta-ios:hover { border-color: #60A5FA !important; }
-.dark .beta-ios:hover { border-color: #1D4ED8 !important; }
-.beta-ios .text-base.font-bold {
-  background: linear-gradient(135deg, #1E3A8A 0%, #60A5FA 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
-}
-
-/* Dark mode: Use lighter blue for beta iOS text */
-.dark .beta-ios .text-base.font-bold {
-  background: linear-gradient(135deg, #60A5FA 0%, #93C5FD 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
-}
-
-.beta-tvos:hover { border-color: #FB923C !important; }
-.dark .beta-tvos:hover { border-color: #EA580C !important; }
-.beta-tvos .text-base.font-bold {
-  background: linear-gradient(135deg, #EA580C 0%, #FB923C 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
-}
-
-/* Dark mode: Use lighter orange for beta tvOS text */
-.dark .beta-tvos .text-base.font-bold {
-  background: linear-gradient(135deg, #FB923C 0%, #FCD34D 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
-}
-
-.beta-watchos:hover { border-color: #4ADE80 !important; }
-.dark .beta-watchos:hover { border-color: #16A34A !important; }
-.beta-watchos .text-base.font-bold {
-  background: linear-gradient(135deg, #166534 0%, #4ADE80 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
-}
-
-/* Dark mode: Use lighter green for beta watchOS text */
-.dark .beta-watchos .text-base.font-bold {
-  background: linear-gradient(135deg, #4ADE80 0%, #86EFAC 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
-}
-
-.beta-visionos:hover { border-color: #C084FC !important; }
-.dark .beta-visionos:hover { border-color: #9333EA !important; }
-.beta-visionos .text-base.font-bold {
-  background: linear-gradient(135deg, #7C2D92 0%, #C084FC 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
-}
-
-/* Dark mode: Use lighter purple for beta visionOS text */
-.dark .beta-visionos .text-base.font-bold {
-  background: linear-gradient(135deg, #C084FC 0%, #DDD6FE 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; color: transparent;
-}
+/* Old individual beta cards - now covered by universal system */
 
 /* MacAdmins Community Cards - SOFA brand inspired styling */
 .community-github-card:hover {
@@ -3127,6 +3092,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 .community-donate-card:hover {
@@ -3145,6 +3111,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-height: 1.2;
 }
 
 /* Enhanced icon colors for community cards - SOFA theme */
