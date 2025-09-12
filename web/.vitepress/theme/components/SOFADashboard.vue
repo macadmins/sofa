@@ -3195,12 +3195,8 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 /* "Showing 10 most recent releases" text */
 .bento-timeline-gradient .flex.items-center.justify-between {
   margin-top: 0.5rem !important;
-  padding-top: 0.5rem !important;
-  border-top: 1px solid rgba(229, 231, 235, 0.5);
-}
-
-.dark .bento-timeline-gradient .flex.items-center.justify-between {
-  border-top-color: rgba(75, 85, 99, 0.5) !important;
+  padding-top: 0 !important;
+  border-top: none !important;
 }
 
 /* "Updated 3h ago" text */
