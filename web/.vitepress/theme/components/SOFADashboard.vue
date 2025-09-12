@@ -2663,6 +2663,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 .platform-btn .platform-icon-svg[data-platform="macos"] {
@@ -2679,6 +2680,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 .platform-btn .platform-icon-svg[data-platform="ios"] {
@@ -2692,6 +2694,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 .platform-btn:hover .platform-icon-svg[data-platform="ios"] {
@@ -2704,6 +2707,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 /* tvOS */
@@ -2718,6 +2722,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 .platform-btn:hover .platform-icon-svg[data-platform="tvos"] {
@@ -2731,6 +2736,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 /* watchOS */
@@ -2745,6 +2751,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 .platform-btn:hover .platform-icon-svg[data-platform="watchos"] {
@@ -2758,6 +2765,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 /* visionOS */
@@ -2772,6 +2780,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 .platform-btn:hover .platform-icon-svg[data-platform="visionos"] {
@@ -2785,6 +2794,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 /* Safari */
@@ -2799,6 +2809,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 .platform-btn:hover .platform-icon-svg[data-platform="safari"] {
@@ -2812,6 +2823,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 /* Bento Card Badge Colors */
@@ -2855,6 +2867,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 .other-platform-tvos:hover {
@@ -2872,6 +2885,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 .other-platform-visionos:hover {
@@ -2889,6 +2903,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 .other-platform-watchos:hover {
@@ -2906,6 +2921,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 /* Universal Platform Card System - Applied to all Bento sections */
@@ -2925,6 +2941,8 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
+  font-size: 0.875rem !important;
 }
 
 .dark [class*="macos"] .text-base.font-bold, .dark [class*="macos"] .text-sm.font-bold, .dark [class*="macos"] .text-lg.font-bold {
@@ -2934,6 +2952,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 /* iOS Platform Cards */
@@ -2952,6 +2971,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 .dark [class*="ios"] .text-base.font-bold, .dark [class*="ios"] .text-sm.font-bold, .dark [class*="ios"] .text-lg.font-bold {
@@ -2961,6 +2981,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 /* tvOS Platform Cards */
@@ -2979,6 +3000,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 .dark [class*="tvos"] .text-base.font-bold, .dark [class*="tvos"] .text-sm.font-bold, .dark [class*="tvos"] .text-lg.font-bold {
@@ -2988,6 +3010,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 /* watchOS Platform Cards */
@@ -3006,6 +3029,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 .dark [class*="watchos"] .text-base.font-bold, .dark [class*="watchos"] .text-sm.font-bold, .dark [class*="watchos"] .text-lg.font-bold {
@@ -3015,6 +3039,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 /* visionOS Platform Cards */
@@ -3033,6 +3058,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 .dark [class*="visionos"] .text-base.font-bold, .dark [class*="visionos"] .text-sm.font-bold, .dark [class*="visionos"] .text-lg.font-bold {
@@ -3042,6 +3068,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 /* Safari Platform Cards */
@@ -3060,6 +3087,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 .dark [class*="safari"] .text-base.font-bold, .dark [class*="safari"] .text-sm.font-bold, .dark [class*="safari"] .text-lg.font-bold {
@@ -3069,6 +3097,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 /* Old individual timeline cards - now covered by universal system */
@@ -3093,6 +3122,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 .community-donate-card:hover {
@@ -3112,6 +3142,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background-clip: text;
   color: transparent;
   line-height: 1.2;
+  font-size: 0.875rem !important;
 }
 
 /* Enhanced icon colors for community cards - SOFA theme */
