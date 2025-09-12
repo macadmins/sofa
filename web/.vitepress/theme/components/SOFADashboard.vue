@@ -1057,7 +1057,7 @@
                   </div>
                   <a v-if="release.url" :href="release.url" target="_blank" rel="noopener noreferrer" 
                      class="text-xs text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1 mt-1">
-                    Security Details
+                    Security details
                     <component :is="ExternalLinkIcon" class="h-2.5 w-2.5" />
                   </a>
                 </div>
@@ -2805,7 +2805,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   border-color: #BE185D !important;
 }
 
-.macos-version-card .text-lg.font-bold {
+.macos-version-card .text-base.font-bold {
   background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2821,7 +2821,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   border-color: #1D4ED8 !important;
 }
 
-.ios-version-card .text-lg.font-bold {
+.ios-version-card .text-base.font-bold {
   background: linear-gradient(135deg, #1E3A8A 0%, #60A5FA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
