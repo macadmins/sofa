@@ -3071,16 +3071,16 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: #4ADE80 !important;
 }
 
-.bento-card .text-yellow-600,
-.bento-card .text-yellow-700,
-.bento-card .text-yellow-800 {
-  color: #D97706 !important;
+.bento-card .text-orange-600,
+.bento-card .text-orange-700,
+.bento-card .text-orange-800 {
+  color: #EA580C !important;
 }
 
-.dark .bento-card .text-yellow-200,
-.dark .bento-card .text-yellow-300,
-.dark .bento-card .text-yellow-400 {
-  color: #FCD34D !important;
+.dark .bento-card .text-orange-200,
+.dark .bento-card .text-orange-300,
+.dark .bento-card .text-orange-400 {
+  color: #FB923C !important;
 }
 
 .bento-card .text-red-600,
