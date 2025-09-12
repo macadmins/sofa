@@ -832,20 +832,23 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   gap: 0.375rem;
-  padding: 0.4rem 0.75rem;
-  border-radius: 6px;
-  border: 1px solid #e5e7eb;
-  background-color: #ffffff;
+  padding: 0.5rem 0.875rem;
+  border-radius: 8px;
+  border: 1px solid #E2E8F0;
+  background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
   font-size: 0.75rem;
-  font-weight: 500;
-  color: #374151;
+  font-weight: 600;
+  color: #475569;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .control-button:hover {
-  background-color: #f9fafb;
-  border-color: #d1d5db;
+  background: linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%);
+  border-color: #CBD5E1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
 }
 
 .button-icon {
@@ -854,11 +857,16 @@ onMounted(async () => {
 }
 
 .expand-all .button-icon {
-  color: #059669;
+  color: #10B981;
 }
 
 .collapse-all .button-icon {
-  color: #6b7280;
+  color: #64748B;
+}
+
+.control-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .no-data {
