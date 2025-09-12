@@ -515,6 +515,57 @@ h3.bento-card-title {
   @apply text-indigo-600 dark:text-indigo-400;
 }
 
+/* Platforms Combined - Multi-platform neutral color */
+.bento-platforms-combined .bento-card-icon {
+  background-color: #F3F4F6 !important;
+}
+
+.dark .bento-platforms-combined .bento-card-icon {
+  background-color: rgba(75, 85, 99, 0.3) !important;
+}
+
+.bento-platforms-combined .bento-card-icon svg {
+  color: #6B7280 !important;
+}
+
+.dark .bento-platforms-combined .bento-card-icon svg {
+  color: #9CA3AF !important;
+}
+
+/* Timeline Gradient - for Recent Security Releases */
+.bento-timeline-gradient .bento-card-icon {
+  background-color: #DCFCE7 !important;
+}
+
+.dark .bento-timeline-gradient .bento-card-icon {
+  background-color: rgba(20, 83, 45, 0.3) !important;
+}
+
+.bento-timeline-gradient .bento-card-icon svg {
+  color: #16A34A !important;
+}
+
+.dark .bento-timeline-gradient .bento-card-icon svg {
+  color: #4ADE80 !important;
+}
+
+/* Last Updated - Neutral gray tinted */
+.bento-card:has([title="Last Updated"]) .bento-card-icon {
+  background-color: #F1F5F9 !important;
+}
+
+.dark .bento-card:has([title="Last Updated"]) .bento-card-icon {
+  background-color: rgba(71, 85, 105, 0.3) !important;
+}
+
+.bento-card:has([title="Last Updated"]) .bento-card-icon svg {
+  color: #64748B !important;
+}
+
+.dark .bento-card:has([title="Last Updated"]) .bento-card-icon svg {
+  color: #94A3B8 !important;
+}
+
 /* Data Feed Colors - Platform harmonized */
 .bento-feed-macos {
   /* Remove platform-specific hover colors */

@@ -3078,29 +3078,37 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: #94A3B8 !important;
 }
 
-/* Hash display platform colors */
-.bento-card .text-gray-700:has-text(macOS) {
+/* Hash display platform colors - target specific hash spans */
+.bento-card .text-gray-700.dark\\:text-gray-300:nth-of-type(1) {
   color: #BE185D !important;
 }
 
-.dark .bento-card .text-gray-300:has-text(macOS) {
+.dark .bento-card .text-gray-700.dark\\:text-gray-300:nth-of-type(1) {
   color: #F472B6 !important;
 }
 
-/* Individual hash colors for platform identification */
-.bento-card [title*="macOS"] {
-  color: #BE185D !important;
-}
-
-.dark .bento-card [title*="macOS"] {
-  color: #F472B6 !important;
-}
-
-.bento-card [title*="iOS"] {
+.bento-card .text-gray-700.dark\\:text-gray-300:nth-of-type(2) {
   color: #1E40AF !important;
 }
 
-.dark .bento-card [title*="iOS"] {
+.dark .bento-card .text-gray-700.dark\\:text-gray-300:nth-of-type(2) {
+  color: #60A5FA !important;
+}
+
+/* More specific hash targeting */
+.bento-card .text-sm.font-mono .text-gray-700:first-child {
+  color: #BE185D !important;
+}
+
+.dark .bento-card .text-sm.font-mono .text-gray-300:first-child {
+  color: #F472B6 !important;
+}
+
+.bento-card .text-sm.font-mono .text-gray-700:last-child {
+  color: #1E40AF !important;
+}
+
+.dark .bento-card .text-sm.font-mono .text-gray-300:last-child {
   color: #60A5FA !important;
 }
 
@@ -3111,5 +3119,92 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .dark .bento-card .text-gray-400[class*="h-3"] {
   color: #A78BFA !important;
+}
+
+/* Fix missing Bento card header icons */
+.bento-card .bento-card-icon svg[class*="h-4"] {
+  opacity: 1 !important;
+}
+
+/* Recent Security Releases - Timeline icon should match Timeline badge */
+.bento-timeline-gradient .bento-card-icon {
+  background-color: #DCFCE7 !important;
+}
+
+.dark .bento-timeline-gradient .bento-card-icon {
+  background-color: rgba(20, 83, 45, 0.3) !important;
+}
+
+.bento-timeline-gradient .bento-card-icon svg {
+  color: #16A34A !important;
+}
+
+.dark .bento-timeline-gradient .bento-card-icon svg {
+  color: #4ADE80 !important;
+}
+
+/* Cloudflare Cache - Statistics icon harmonious color */
+.bento-statistics .bento-card-icon {
+  background-color: #EBF4FF !important;
+}
+
+.dark .bento-statistics .bento-card-icon {
+  background-color: rgba(30, 41, 59, 0.3) !important;
+}
+
+.bento-statistics .bento-card-icon svg {
+  color: #3B82F6 !important;
+}
+
+.dark .bento-statistics .bento-card-icon svg {
+  color: #60A5FA !important;
+}
+
+/* Data feed clock icons - platform specific in individual cards */
+.bento-feed-macos .text-blue-600[class*="ClockIcon"] {
+  color: #BE185D !important;
+}
+
+.dark .bento-feed-macos .text-purple-600[class*="ClockIcon"] {
+  color: #F472B6 !important;
+}
+
+.bento-feed-ios .text-purple-600[class*="ClockIcon"] {
+  color: #1E40AF !important;
+}
+
+.dark .bento-feed-ios .text-purple-600[class*="ClockIcon"] {
+  color: #60A5FA !important;
+}
+
+/* Reduce excessive padding in footer text elements */
+.bento-card .text-xs.text-gray-500 {
+  padding: 0 !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0 !important;
+}
+
+/* Specific fixes for Recent Security Releases and Cloudflare Cache footers */
+.bento-timeline-gradient .text-xs.text-gray-500,
+.bento-statistics .text-xs.text-gray-500 {
+  padding: 0 !important;
+  margin: 0.25rem 0 0 0 !important;
+}
+
+/* "Showing 10 most recent releases" text */
+.bento-timeline-gradient .flex.items-center.justify-between {
+  margin-top: 0.5rem !important;
+  padding-top: 0.5rem !important;
+  border-top: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.dark .bento-timeline-gradient .flex.items-center.justify-between {
+  border-top-color: rgba(75, 85, 99, 0.5) !important;
+}
+
+/* "Updated 3h ago" text */
+.bento-statistics .text-xs.flex.items-center.gap-1 {
+  margin-top: 0.25rem !important;
+  padding-top: 0.25rem !important;
 }
 </style>
