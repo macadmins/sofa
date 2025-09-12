@@ -451,11 +451,19 @@ h3.bento-card-title {
 }
 
 .bento-community .bento-card-icon {
-  @apply bg-indigo-50 dark:bg-indigo-900/50;
+  background-color: #F3F4F6 !important;
+}
+
+.dark .bento-community .bento-card-icon {
+  background-color: rgba(75, 85, 99, 0.3) !important;
 }
 
 .bento-community .bento-card-icon svg {
-  @apply text-indigo-600 dark:text-indigo-400;
+  color: #6B7280 !important;
+}
+
+.dark .bento-community .bento-card-icon svg {
+  color: #9CA3AF !important;
 }
 
 /* ===== SPECIAL GRADIENT VARIANTS ===== */
@@ -480,11 +488,19 @@ h3.bento-card-title {
 }
 
 .bento-statistics .bento-card-icon {
-  @apply bg-emerald-50 dark:bg-emerald-900/50;
+  background-color: #F3F4F6 !important;
+}
+
+.dark .bento-statistics .bento-card-icon {
+  background-color: rgba(75, 85, 99, 0.3) !important;
 }
 
 .bento-statistics .bento-card-icon svg {
-  @apply text-emerald-600 dark:text-emerald-400;
+  color: #6B7280 !important;
+}
+
+.dark .bento-statistics .bento-card-icon svg {
+  color: #9CA3AF !important;
 }
 
 .bento-beta-gradient {
@@ -494,11 +510,19 @@ h3.bento-card-title {
 }
 
 .bento-beta-gradient .bento-card-icon {
-  @apply bg-orange-50 dark:bg-orange-900/30;
+  background-color: #F3F4F6 !important;
+}
+
+.dark .bento-beta-gradient .bento-card-icon {
+  background-color: rgba(75, 85, 99, 0.3) !important;
 }
 
 .bento-beta-gradient .bento-card-icon svg {
-  @apply text-orange-600 dark:text-orange-400;
+  color: #6B7280 !important;
+}
+
+.dark .bento-beta-gradient .bento-card-icon svg {
+  color: #9CA3AF !important;
 }
 
 .bento-community-gradient {
@@ -508,11 +532,19 @@ h3.bento-card-title {
 }
 
 .bento-community-gradient .bento-card-icon {
-  @apply bg-indigo-50 dark:bg-indigo-900/30;
+  background-color: #F3F4F6 !important;
+}
+
+.dark .bento-community-gradient .bento-card-icon {
+  background-color: rgba(75, 85, 99, 0.3) !important;
 }
 
 .bento-community-gradient .bento-card-icon svg {
-  @apply text-indigo-600 dark:text-indigo-400;
+  color: #6B7280 !important;
+}
+
+.dark .bento-community-gradient .bento-card-icon svg {
+  color: #9CA3AF !important;
 }
 
 /* Platforms Combined - Multi-platform neutral color */
@@ -605,6 +637,23 @@ h3.bento-card-title {
 
 .dark .bento-feed-ios .bento-card-icon svg {
   color: #60A5FA !important;
+}
+
+/* Data Feeds (V1/V2) - Neutral theme like Other Platform Updates */
+.bento-feeds .bento-card-icon {
+  background-color: #F3F4F6 !important;
+}
+
+.dark .bento-feeds .bento-card-icon {
+  background-color: rgba(75, 85, 99, 0.3) !important;
+}
+
+.bento-feeds .bento-card-icon svg {
+  color: #6B7280 !important;
+}
+
+.dark .bento-feeds .bento-card-icon svg {
+  color: #9CA3AF !important;
 }
 
 /* ===== INTERACTIVE ELEMENTS ===== */
