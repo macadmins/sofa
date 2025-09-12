@@ -417,7 +417,7 @@
         :style="{ order: bentoDisplayOrder['other-platforms-combined'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">Latest</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200">Latest</span>
         </template>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 flex-grow">
@@ -695,7 +695,7 @@
         <template #badge>
           <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md"
                 :class="{
-                  'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200': apiStatus.color === 'green',
+                  'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200': apiStatus.color === 'green',
                   'bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200': apiStatus.color === 'yellow',
                   'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200': apiStatus.color === 'red',
                   'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400': apiStatus.color === 'gray'
@@ -715,7 +715,7 @@
             </div>
             <div class="text-lg font-bold flex items-center gap-1"
                  :class="{
-                   'text-green-600 dark:text-green-300': macOSFeedStatus.color === 'green',
+                   'text-green-600 dark:text-green-400': macOSFeedStatus.color === 'green',
                    'text-yellow-600 dark:text-yellow-300': macOSFeedStatus.color === 'yellow',
                    'text-red-600 dark:text-red-300': macOSFeedStatus.color === 'red',
                    'text-gray-600 dark:text-gray-300': macOSFeedStatus.color === 'gray'
@@ -740,7 +740,7 @@
             </div>
             <div class="text-lg font-bold flex items-center gap-1"
                  :class="{
-                   'text-green-600 dark:text-green-300': iOSFeedStatus.color === 'green',
+                   'text-green-600 dark:text-green-400': iOSFeedStatus.color === 'green',
                    'text-yellow-600 dark:text-yellow-300': iOSFeedStatus.color === 'yellow',
                    'text-red-600 dark:text-red-300': iOSFeedStatus.color === 'red',
                    'text-gray-600 dark:text-gray-300': iOSFeedStatus.color === 'gray'
@@ -781,7 +781,7 @@
             </div>
             <div class="text-lg font-bold"
                  :class="{
-                   'text-green-600 dark:text-green-300': apiStatus.color === 'green',
+                   'text-green-700 dark:text-green-400': apiStatus.color === 'green',
                    'text-yellow-600 dark:text-yellow-300': apiStatus.color === 'yellow',
                    'text-red-600 dark:text-red-300': apiStatus.color === 'red',
                    'text-gray-600 dark:text-gray-300': apiStatus.color === 'gray'
@@ -913,7 +913,7 @@
         :style="{ order: bentoDisplayOrder['v2-data-feeds'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">Direct Access</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200">Direct Access</span>
         </template>
         <div class="space-y-2 flex-grow">
           <div class="grid grid-cols-1 gap-1.5">
@@ -984,7 +984,7 @@
         :style="{ order: bentoDisplayOrder['beta-releases'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-50 dark:bg-orange-950 text-orange-600 dark:text-orange-300">Developer</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">Developer</span>
         </template>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 flex-grow">
           <div v-for="(beta, idx) in betaReleases" :key="idx" class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-all duration-150 beta-release-card" :class="getBetaPlatformClass(beta.platform)">
@@ -1029,7 +1029,7 @@
         :style="{ order: bentoDisplayOrder['timeline'] }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300">Timeline</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 timeline-badge">Timeline</span>
         </template>
         
         <div 
@@ -1103,7 +1103,7 @@
         :style="{ order: bentoDisplayOrder['v1-data-feeds'] || 12 }"
       >
         <template #badge>
-          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">Direct Access</span>
+          <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200">Direct Access</span>
         </template>
         <div class="space-y-2 flex-grow">
           <div class="grid grid-cols-1 gap-1.5">
@@ -2826,17 +2826,19 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   font-size: 1rem !important;
 }
 
-/* Unified Status Badge Colors - Bright Green Theme */
+/* Universal Green Badge System - All Live/Latest/Online/Timeline badges */
 .macos-badge,
-.ios-badge {
+.ios-badge,
+.timeline-badge {
   background-color: #DCFCE7 !important;
   color: #16A34A !important;
 }
 
 .dark .macos-badge,
-.dark .ios-badge {
-  background-color: rgba(34, 197, 94, 0.2) !important;
-  color: #22C55E !important;
+.dark .ios-badge,
+.dark .timeline-badge {
+  background-color: rgba(16, 185, 129, 0.3) !important;
+  color: #10B981 !important;
 }
 
 /* Other Platform Update Cards - Individual Platform Colors */
@@ -3056,29 +3058,84 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: inherit !important;
 }
 
-/* Force traffic light colors to override platform colors */
-.bento-card .text-green-600 {
+/* Force traffic light colors to override platform colors - All variations */
+.bento-card .text-green-600,
+.bento-card .text-green-700,
+.bento-card .text-green-800 {
   color: #16A34A !important;
 }
 
-.dark .bento-card .text-green-300 {
-  color: #86EFAC !important;
+.dark .bento-card .text-green-200,
+.dark .bento-card .text-green-300,
+.dark .bento-card .text-green-400 {
+  color: #4ADE80 !important;
 }
 
-.bento-card .text-yellow-600 {
+.bento-card .text-yellow-600,
+.bento-card .text-yellow-700,
+.bento-card .text-yellow-800 {
   color: #D97706 !important;
 }
 
-.dark .bento-card .text-yellow-300 {
+.dark .bento-card .text-yellow-200,
+.dark .bento-card .text-yellow-300,
+.dark .bento-card .text-yellow-400 {
   color: #FCD34D !important;
 }
 
-.bento-card .text-red-600 {
+.bento-card .text-red-600,
+.bento-card .text-red-700,
+.bento-card .text-red-800 {
   color: #DC2626 !important;
 }
 
-.dark .bento-card .text-red-300 {
+.dark .bento-card .text-red-200,
+.dark .bento-card .text-red-300,
+.dark .bento-card .text-red-400 {
   color: #FCA5A5 !important;
+}
+
+/* Force green backgrounds to be consistent */
+.bento-card .bg-green-100 {
+  background-color: #DCFCE7 !important;
+}
+
+.dark .bento-card .bg-green-900 {
+  background-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Unified Green System - Match Apple Beta Releases contrast level */
+[class*="bg-green"] {
+  background-color: #DCFCE7 !important;
+}
+
+.dark [class*="bg-green"] {
+  background-color: #15803D !important;
+}
+
+[class*="text-green"] {
+  color: #059669 !important;
+}
+
+.dark [class*="text-green"] {
+  color: #22C55E !important;
+}
+
+/* Force ALL badge labels to use unified green - override all colors */
+.inline-flex.items-center[class*="bg-orange"],
+.inline-flex.items-center[class*="bg-blue"],  
+.inline-flex.items-center[class*="bg-yellow"],
+.inline-flex.items-center[class*="bg-purple"] {
+  background-color: #DCFCE7 !important;
+  color: #059669 !important;
+}
+
+.dark .inline-flex.items-center[class*="bg-orange"],
+.dark .inline-flex.items-center[class*="bg-blue"],
+.dark .inline-flex.items-center[class*="bg-yellow"], 
+.dark .inline-flex.items-center[class*="bg-purple"] {
+  background-color: rgba(34, 197, 94, 0.25) !important;
+  color: #34D399 !important;
 }
 
 /* Build text platform colors need to be applied in HTML or through more specific selectors
@@ -3147,8 +3204,8 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .dark .macos-feed-badge,
 .dark .ios-feed-badge {
-  background-color: rgba(34, 197, 94, 0.2) !important;
-  color: #22C55E !important;
+  background-color: rgba(16, 185, 129, 0.3) !important;
+  color: #10B981 !important;
 }
 
 /* Data Feed Time and Hash Colors - Platform harmonized */
