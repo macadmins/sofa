@@ -762,17 +762,17 @@
           </div>
           <div class="space-y-1">
             <div class="flex items-center gap-1">
-              <component :is="ShieldIcon" class="h-3.5 w-3.5 text-gray-600" />
-              <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">Hash Check</span>
+              <component :is="ShieldIcon" class="h-3.5 w-3.5 status-green" />
+              <span class="font-semibold small-text text-sm">Hash Check</span>
             </div>
-            <div class="text-sm font-mono text-gray-600 dark:text-gray-400">
+            <div class="text-sm font-mono">
               <div class="flex items-center gap-1">
-                <span class="text-xs">macOS:</span>
-                <span class="font-bold text-gray-700 dark:text-gray-300">{{ macosHashRef ? macosHashRef.substring(0, 8) : '--' }}</span>
+                <span class="text-xs small-text">macOS:</span>
+                <span class="font-bold macos-hash-color">{{ macosHashRef ? macosHashRef.substring(0, 8) : '--' }}</span>
               </div>
               <div class="flex items-center gap-1">
-                <span class="text-xs">iOS:</span>
-                <span class="font-bold text-gray-700 dark:text-gray-300">{{ iosHashRef ? iosHashRef.substring(0, 8) : '--' }}</span>
+                <span class="text-xs small-text">iOS:</span>
+                <span class="font-bold ios-hash-color">{{ iosHashRef ? iosHashRef.substring(0, 8) : '--' }}</span>
               </div>
             </div>
           </div>
@@ -3036,6 +3036,10 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   --status-green-dark: #4ADE80;
   --status-orange: #EA580C;
   --status-orange-dark: #FB923C;
+  --macos-color: #BE185D;
+  --macos-color-dark: #F472B6;
+  --ios-color: #1E40AF;
+  --ios-color-dark: #60A5FA;
 }
 
 /* Clean Small Text System */
@@ -3136,6 +3140,23 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   background: none !important;
   -webkit-background-clip: unset !important;
   -webkit-text-fill-color: unset !important;
+}
+
+/* Platform-specific hash colors */
+.macos-hash-color {
+  color: var(--macos-color) !important;
+}
+
+.dark .macos-hash-color {
+  color: var(--macos-color-dark) !important;
+}
+
+.ios-hash-color {
+  color: var(--ios-color) !important;
+}
+
+.dark .ios-hash-color {
+  color: var(--ios-color-dark) !important;
 }
 
 /* Legacy gray text overrides - will be replaced by small-text class */
