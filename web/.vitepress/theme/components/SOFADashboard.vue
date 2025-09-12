@@ -3172,7 +3172,8 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 }
 
 /* Community Cards - Subtle unified gradient without flare effects */
-.community-title {
+.community-github-card .text-lg.font-bold,
+.community-donate-card .text-lg.font-bold {
   background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -3384,45 +3385,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 /* Old individual beta cards - now covered by universal system */
 
 /* MacAdmins Community Cards - SOFA brand inspired styling */
-.community-github-card:hover {
-  border-color: #8B5CF6 !important;
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
-}
-
-.dark .community-github-card:hover {
-  border-color: #A78BFA !important;
-  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.25);
-}
-
-.community-github-card .text-lg.font-bold {
-  background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  line-height: 1.2;
-  font-size: 1rem !important;
-}
-
-.community-donate-card:hover {
-  border-color: #EC4899 !important;
-  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);
-}
-
-.dark .community-donate-card:hover {
-  border-color: #F472B6 !important;
-  box-shadow: 0 4px 12px rgba(244, 114, 182, 0.25);
-}
-
-.community-donate-card .text-lg.font-bold {
-  background: linear-gradient(135deg, #EC4899 0%, #7C3AED 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  line-height: 1.2;
-  font-size: 1rem !important;
-}
+/* Old community styling removed - now using unified subtle styling above */
 
 /* Enhanced icon colors for community cards - SOFA theme */
 .community-github-card:hover .text-red-500 {
