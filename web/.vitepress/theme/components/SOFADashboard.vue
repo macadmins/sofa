@@ -133,7 +133,7 @@
                 <div class="text-lg font-bold text-emerald-700 dark:text-emerald-300">
                   Build {{ bulletinData.beta_releases.macos.build }}
                 </div>
-                <div class="text-xs text-gray-500 dark:text-gray-400">
+                <div class="text-xs small-text">
                   Released {{ formatDate(bulletinData.beta_releases.macos.released) }}
                 </div>
               </div>
@@ -149,7 +149,7 @@
                 <div class="text-lg font-bold text-emerald-700 dark:text-emerald-300">
                   Build {{ bulletinData.beta_releases.ios.build }}
                 </div>
-                <div class="text-xs text-gray-500 dark:text-gray-400">
+                <div class="text-xs small-text">
                   Released {{ formatDate(bulletinData.beta_releases.ios.released) }}
                 </div>
               </div>
@@ -179,7 +179,7 @@
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-macos-300 dark:hover:border-macos-600 transition-all duration-150 macos-version-card">
               <div class="space-y-1.5">
                 <div class="flex items-center justify-between">
-                  <span class="text-xs text-gray-500 dark:text-gray-400">{{ version.releaseDate }}</span>
+                  <span class="text-xs small-text">{{ version.releaseDate }}</span>
                   <div class="flex items-center gap-1">
                     <component :is="ShieldIcon" class="h-3 w-3" :class="version.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
                     <span class="text-xs text-gray-600 dark:text-gray-400">
@@ -191,7 +191,7 @@
                   <div class="text-base font-bold text-gray-900 dark:text-gray-100">
                     macOS {{ version.version }}
                   </div>
-                  <div class="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
+                  <div class="text-xs small-text mt-0.5">
                     Build {{ version.build }}
                   </div>
                 </div>
@@ -221,7 +221,7 @@
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-ios-300 dark:hover:border-ios-600 transition-all duration-150 ios-version-card">
               <div class="space-y-1.5">
                 <div class="flex items-center justify-between">
-                  <span class="text-xs text-gray-500 dark:text-gray-400">{{ version.releaseDate }}</span>
+                  <span class="text-xs small-text">{{ version.releaseDate }}</span>
                   <div class="flex items-center gap-1">
                     <component :is="ShieldIcon" class="h-3 w-3" :class="version.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
                     <span class="text-xs text-gray-600 dark:text-gray-400">
@@ -233,7 +233,7 @@
                   <div class="text-base font-bold text-gray-900 dark:text-gray-100">
                     iOS {{ version.version }}
                   </div>
-                  <div class="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
+                  <div class="text-xs small-text mt-0.5">
                     Build {{ version.build }}
                   </div>
                 </div>
@@ -261,7 +261,7 @@
                 <div class="text-lg font-bold">
                     Support SOFA creators
                 </div>
-                <div class="text-xs text-gray-500 dark:text-gray-400">
+                <div class="text-xs small-text">
                   via GitHub Sponsors
                 </div>
               </div>
@@ -277,7 +277,7 @@
                 <div class="text-lg font-bold">
                   MacAdmins Foundation
                 </div>
-                <div class="text-xs text-gray-500 dark:text-gray-400">
+                <div class="text-xs small-text">
                   via direct donation
                 </div>
               </div>
@@ -301,7 +301,7 @@
             <div class="group/btn p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-green-300 dark:hover:border-green-600 transition-all duration-150">
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="text-xs text-gray-500 dark:text-gray-400">{{ watchOSVersion.releaseDate }}</span>
+                  <span class="text-xs small-text">{{ watchOSVersion.releaseDate }}</span>
                   <div class="flex items-center gap-1">
                     <component :is="ShieldIcon" class="h-3.5 w-3.5" :class="watchOSVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
                     <span class="text-xs text-gray-600 dark:text-gray-400">
@@ -313,7 +313,7 @@
                   <div class="text-lg font-bold text-gray-900 dark:text-gray-100">
                     {{ watchOSVersion.name }}
                   </div>
-                  <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  <div class="text-sm small-text mt-1">
                     Build {{ watchOSVersion.build }}
                   </div>
                 </div>
@@ -324,7 +324,7 @@
             <div class="group/btn p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-green-300 dark:hover:border-green-600 transition-all duration-150">
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="text-xs text-gray-500 dark:text-gray-400">{{ tvOSVersion.releaseDate }}</span>
+                  <span class="text-xs small-text">{{ tvOSVersion.releaseDate }}</span>
                   <div class="flex items-center gap-1">
                     <component :is="ShieldIcon" class="h-3.5 w-3.5" :class="tvOSVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
                     <span class="text-xs text-gray-600 dark:text-gray-400">
@@ -336,7 +336,7 @@
                   <div class="text-lg font-bold text-gray-900 dark:text-gray-100">
                     {{ tvOSVersion.name }}
                   </div>
-                  <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  <div class="text-sm small-text mt-1">
                     Build {{ tvOSVersion.build }}
                   </div>
                 </div>
@@ -347,7 +347,7 @@
             <div class="group/btn p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-green-300 dark:hover:border-green-600 transition-all duration-150">
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="text-xs text-gray-500 dark:text-gray-400">{{ visionOSVersion.releaseDate }}</span>
+                  <span class="text-xs small-text">{{ visionOSVersion.releaseDate }}</span>
                   <div class="flex items-center gap-1">
                     <component :is="ShieldIcon" class="h-3.5 w-3.5" :class="visionOSVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
                     <span class="text-xs text-gray-600 dark:text-gray-400">
@@ -359,7 +359,7 @@
                   <div class="text-lg font-bold text-gray-900 dark:text-gray-100">
                     {{ visionOSVersion.name }}
                   </div>
-                  <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  <div class="text-sm small-text mt-1">
                     Build {{ visionOSVersion.build }}
                   </div>
                 </div>
@@ -385,7 +385,7 @@
             <div class="group/btn p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all duration-150">
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="text-xs text-gray-500 dark:text-gray-400">{{ safariVersion.releaseDate }}</span>
+                  <span class="text-xs small-text">{{ safariVersion.releaseDate }}</span>
                   <div class="flex items-center gap-1">
                     <component :is="ShieldIcon" class="h-3.5 w-3.5 text-gray-400" />
                     <span class="text-xs text-gray-600 dark:text-gray-400">
@@ -397,7 +397,7 @@
                   <div class="text-lg font-bold text-gray-900 dark:text-gray-100">
                     {{ safariVersion.name }}
                   </div>
-                  <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  <div class="text-sm small-text mt-1">
                     Version {{ safariVersion.version }}
                   </div>
                 </div>
@@ -435,7 +435,7 @@
                 <div class="text-lg font-bold text-gray-900 dark:text-gray-100">
                   Safari {{ safariVersion.version }}
                 </div>
-                <div class="text-xs text-gray-500 dark:text-gray-400">
+                <div class="text-xs small-text">
                   Build {{ safariVersion.build }}
                 </div>
               </div>
@@ -456,7 +456,7 @@
                 <div class="text-lg font-bold text-gray-900 dark:text-gray-100">
                   tvOS {{ tvOSVersion.version }}
                 </div>
-                <div class="text-xs text-gray-500 dark:text-gray-400">
+                <div class="text-xs small-text">
                   Build {{ tvOSVersion.build }}
                 </div>
               </div>
@@ -477,7 +477,7 @@
                 <div class="text-lg font-bold text-gray-900 dark:text-gray-100">
                   visionOS {{ visionOSVersion.version }}
                 </div>
-                <div class="text-xs text-gray-500 dark:text-gray-400">
+                <div class="text-xs small-text">
                   Build {{ visionOSVersion.build }}
                 </div>
               </div>
@@ -498,7 +498,7 @@
                 <div class="text-lg font-bold text-gray-900 dark:text-gray-100">
                   watchOS {{ watchOSVersion.version }}
                 </div>
-                <div class="text-xs text-gray-500 dark:text-gray-400">
+                <div class="text-xs small-text">
                   Build {{ watchOSVersion.build }}
                 </div>
               </div>
@@ -525,7 +525,7 @@
                 <div class="text-lg font-bold text-indigo-700 dark:text-indigo-300">
                   macadmins/sofa
                 </div>
-                <div class="text-xs text-gray-500 dark:text-gray-400">
+                <div class="text-xs small-text">
                   {{ starCount || '264' }} stars • Open source
                 </div>
               </div>
@@ -541,7 +541,7 @@
                 <div class="text-lg font-bold text-indigo-700 dark:text-indigo-300">
                   #sofa
                 </div>
-                <div class="text-xs text-gray-500 dark:text-gray-400">
+                <div class="text-xs small-text">
                   Join the conversation
                 </div>
               </div>
@@ -571,7 +571,7 @@
               <div class="text-lg font-bold text-blue-700 dark:text-blue-300">
                 {{ macosTime.local.time }}
               </div>
-              <div class="text-xs text-gray-500 dark:text-gray-400">
+              <div class="text-xs small-text">
                 Local • {{ macosTime.local.date }}
               </div>
             </div>
@@ -583,7 +583,7 @@
               <div class="text-sm font-bold text-blue-700 dark:text-blue-300">
                 {{ macosTime.utc.full }}
               </div>
-              <div class="text-xs text-gray-500 dark:text-gray-400">
+              <div class="text-xs small-text">
                 Coordinated Universal Time
               </div>
             </div>
@@ -638,7 +638,7 @@
               <div class="text-lg font-bold text-purple-700 dark:text-purple-300">
                 {{ iosTime.local.time }}
               </div>
-              <div class="text-xs text-gray-500 dark:text-gray-400">
+              <div class="text-xs small-text">
                 Local • {{ iosTime.local.date }}
               </div>
             </div>
@@ -650,7 +650,7 @@
               <div class="text-sm font-bold text-purple-700 dark:text-purple-300">
                 {{ iosTime.utc.full }}
               </div>
-              <div class="text-xs text-gray-500 dark:text-gray-400">
+              <div class="text-xs small-text">
                 Coordinated Universal Time
               </div>
             </div>
@@ -723,7 +723,7 @@
               <span>{{ macOSFeedStatus.status }}</span>
               <span class="text-xs">{{ macOSFeedStatus.indicator }}</span>
             </div>
-            <div class="text-xs text-gray-500 dark:text-gray-400">
+            <div class="text-xs small-text">
               {{ macosTime.local.time }}
             </div>
           </div>
@@ -748,7 +748,7 @@
               <span>{{ iOSFeedStatus.status }}</span>
               <span class="text-xs">{{ iOSFeedStatus.indicator }}</span>
             </div>
-            <div class="text-xs text-gray-500 dark:text-gray-400">
+            <div class="text-xs small-text">
               {{ iosTime.local.time }}
             </div>
           </div>
@@ -788,7 +788,7 @@
                  }">
               {{ apiStatus.status }}
             </div>
-            <div class="text-xs text-gray-500 dark:text-gray-400">
+            <div class="text-xs small-text">
               {{ apiStatus.message }}
             </div>
           </div>
@@ -824,7 +824,7 @@
               <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">Total Requests</span>
             </div>
             <div class="text-lg font-bold text-emerald-700 dark:text-emerald-300">{{ metricsData?.volume?.metrics?.totalRequests?.formatted || metricsData?.metrics?.totalRequests?.formatted || '--' }}</div>
-            <div class="text-xs text-gray-500 dark:text-gray-400">{{ metricsData?.periods?.volume?.days || metricsData?.period?.days || '--' }} day volume</div>
+            <div class="text-xs small-text">{{ metricsData?.periods?.volume?.days || metricsData?.period?.days || '--' }} day volume</div>
           </div>
           <div class="space-y-1">
             <div class="flex items-center gap-1">
@@ -832,7 +832,7 @@
               <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">Cache Ratio</span>
             </div>
             <div class="text-lg font-bold text-emerald-700 dark:text-emerald-300">{{ metricsData?.volume?.metrics?.cacheRatio?.formatted || metricsData?.metrics?.cacheRatio?.formatted || '--' }}</div>
-            <div class="text-xs text-gray-500 dark:text-gray-400">Efficiency metric</div>
+            <div class="text-xs small-text">Efficiency metric</div>
           </div>
           <div class="space-y-1">
             <div class="flex items-center gap-1">
@@ -840,7 +840,7 @@
               <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">Bandwidth</span>
             </div>
             <div class="text-lg font-bold text-emerald-700 dark:text-emerald-300">{{ metricsData?.volume?.metrics?.bandwidth?.formatted || metricsData?.metrics?.bandwidth?.formatted || '--' }}</div>
-            <div class="text-xs text-gray-500 dark:text-gray-400">{{ metricsData?.periods?.volume?.days || metricsData?.period?.days || '--' }} day total</div>
+            <div class="text-xs small-text">{{ metricsData?.periods?.volume?.days || metricsData?.period?.days || '--' }} day total</div>
           </div>
           <div class="space-y-1">
             <div class="flex items-center gap-1">
@@ -850,7 +850,7 @@
             <div class="text-lg font-bold text-emerald-700 dark:text-emerald-300">
               {{ metricsData?.volume?.calculated?.dailyAverage?.formatted?.requests || metricsData?.calculated?.dailyAverage?.formatted?.requests || '--' }}
             </div>
-            <div class="text-xs text-gray-500 dark:text-gray-400">
+            <div class="text-xs small-text">
               Avg requests/day
             </div>
           </div>
@@ -1002,7 +1002,7 @@
                 <div class="text-base font-bold text-gray-900 dark:text-gray-100">
                   {{ beta.platform }} {{ beta.version }}
                 </div>
-                <div class="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
+                <div class="text-xs small-text mt-0.5">
                   Build {{ beta.build }}
                 </div>
               </div>
@@ -1045,14 +1045,14 @@
                  style="width: 200px;">
               <div class="space-y-1.5">
                 <div class="flex items-center justify-between">
-                  <span class="text-xs text-gray-500 dark:text-gray-400">{{ release.formattedDate }}</span>
+                  <span class="text-xs small-text">{{ release.formattedDate }}</span>
                   <component :is="CalendarDaysIcon" class="h-3 w-3 text-green-500" />
                 </div>
                 <div>
                   <div class="text-sm font-bold text-gray-900 dark:text-gray-100 truncate" :title="release.name">
                     {{ release.name }}
                   </div>
-                  <div class="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
+                  <div class="text-xs small-text mt-0.5">
                     Version {{ release.version }}
                   </div>
                   <a v-if="release.url" :href="release.url" target="_blank" rel="noopener noreferrer" 
@@ -1156,7 +1156,7 @@
                 <div class="text-lg font-bold text-indigo-700 dark:text-indigo-300">
                   Donate
                 </div>
-                <div class="text-xs text-gray-500 dark:text-gray-400">
+                <div class="text-xs small-text">
                   Open Source
                 </div>
               </div>
@@ -1172,7 +1172,7 @@
                 <div class="text-lg font-bold text-indigo-700 dark:text-indigo-300">
                   Support
                 </div>
-                <div class="text-xs text-gray-500 dark:text-gray-400">
+                <div class="text-xs small-text">
                   Foundation
                 </div>
               </div>
@@ -3018,13 +3018,30 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   font-size: 1rem !important;
 }
 
-/* Simplified text styling */
-.bento-card .text-xs {
+/* Clean Small Text System - One class to rule them all */
+.small-text {
   color: #6B7280 !important;
   font-weight: 500 !important;
 }
 
-.dark .bento-card .text-xs {
+.dark .small-text {
+  color: #9CA3AF !important;
+}
+
+/* Legacy gray text overrides - will be replaced by small-text class */
+.bento-card .text-xs,
+.bento-card .text-gray-400,
+.bento-card .text-gray-500,
+.bento-card .text-gray-600,
+.bento-card .text-gray-700 {
+  color: #6B7280 !important;
+  font-weight: 500 !important;
+}
+
+.dark .bento-card .text-xs,
+.dark .bento-card .text-gray-300,
+.dark .bento-card .text-gray-400,
+.dark .bento-card .text-gray-500 {
   color: #9CA3AF !important;
 }
 
