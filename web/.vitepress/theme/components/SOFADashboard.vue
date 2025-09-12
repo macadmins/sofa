@@ -2526,7 +2526,6 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: white !important;
   border: none !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 .platform-btn[data-platform="ios"] {
@@ -2534,7 +2533,6 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: white !important;
   border: none !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 .platform-btn[data-platform="tvos"] {
@@ -2542,7 +2540,6 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: white !important;
   border: none !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 .platform-btn[data-platform="watchos"] {
@@ -2550,7 +2547,6 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: white !important;
   border: none !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 .platform-btn[data-platform="visionos"] {
@@ -2558,7 +2554,6 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: white !important;
   border: none !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 .platform-btn[data-platform="safari"] {
@@ -2566,7 +2561,6 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: white !important;
   border: none !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 /* Light mode: Override text and icon colors to white */
@@ -2581,7 +2575,11 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: white !important;
 }
 
-/* Platform button hover/active effects - clean opacity change */
+/* Platform button opacity - only for navigation buttons */
+.platform-btn {
+  opacity: 0.8;
+}
+
 .platform-btn:hover {
   opacity: 0.9 !important;
 }
@@ -2596,7 +2594,6 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: white !important;
   border: none !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 .dark .platform-btn[data-platform="ios"] {
@@ -2604,7 +2601,6 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: white !important;
   border: none !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 .dark .platform-btn[data-platform="tvos"] {
@@ -2612,7 +2608,6 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: white !important;
   border: none !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 .dark .platform-btn[data-platform="watchos"] {
@@ -2620,7 +2615,6 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: white !important;
   border: none !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 .dark .platform-btn[data-platform="visionos"] {
@@ -2628,7 +2622,6 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: white !important;
   border: none !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 .dark .platform-btn[data-platform="safari"] {
@@ -2636,7 +2629,6 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: white !important;
   border: none !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 /* Dark mode: Override text and icon colors to white */
@@ -3068,32 +3060,27 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   color: var(--small-text-color) !important;
   font-weight: 500 !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 .dark .small-text {
   color: var(--small-text-color-dark) !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 /* CVE Warning System */
 .cve-warning {
   color: var(--cve-warning-color) !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 .dark .cve-warning {
   color: var(--cve-warning-color-dark) !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 /* Remove all underlines from Bento card text */
 .bento-card * {
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 /* Force API Status to use traffic light colors, not platform colors */
@@ -3310,7 +3297,6 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-background-clip: unset !important;
   -webkit-text-fill-color: unset !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 .dark .bento-card div .text-orange-300,
@@ -3324,7 +3310,6 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   -webkit-background-clip: unset !important;
   -webkit-text-fill-color: unset !important;
   text-decoration: none !important;
-  opacity: 0.8;
 }
 
 /* Force traffic light colors to override platform colors - All variations */
