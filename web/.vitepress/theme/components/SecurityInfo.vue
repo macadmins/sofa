@@ -885,6 +885,17 @@ onMounted(async () => {
   gap: 1rem;
 }
 
+/* Platform-specific security update cards */
+.security-info[data-platform="macos"] .security-update-card:hover {
+  border-color: #F472B6;
+}
+
+.security-info[data-platform="ios"] .security-update-card:hover,
+.security-info[data-platform="ipados"] .security-update-card:hover {
+  border-color: #60A5FA;
+}
+
+/* Default styling */
 .security-update-card {
   background-color: #ffffff;
   border-radius: 10px;
@@ -894,8 +905,7 @@ onMounted(async () => {
 }
 
 .security-update-card:hover {
-  border-color: #9ca3af;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  border-color: #A78BFA;
 }
 
 .security-update-card.highlight-version {
