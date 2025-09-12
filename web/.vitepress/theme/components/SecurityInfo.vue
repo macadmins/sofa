@@ -1381,21 +1381,25 @@ html.dark .cve-groups-title {
 }
 
 .cve-group {
-  border: 1px solid #f0f0f0;
-  border-radius: 6px;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .group-header {
   display: flex;
   align-items: center;
-  padding: 0.625rem 0.875rem;
-  background-color: #f9fafb;
+  padding: 0.75rem 1rem;
+  background: #F8FAFC;
+  border-bottom: 1px solid #E2E8F0;
   cursor: pointer;
+  transition: all 0.15s ease;
 }
 
 .group-header:hover {
-  background-color: #f3f4f6;
+  background: #F1F5F9;
+  border-bottom-color: #CBD5E1;
 }
 
 .group-name {
@@ -1704,15 +1708,16 @@ html.dark .exploited-dot,
 .dark .group-header,
 html.dark .group-header,
 .security-info:where(.dark, :root.dark, html.dark) .group-header {
-  background-color: #1f2937;
-  border-bottom: 1px solid #374151;
+  background: rgba(30, 41, 59, 0.6);
+  border-bottom: 1px solid rgba(71, 85, 105, 0.6);
 }
 
 :root.dark .group-header:hover,
 .dark .group-header:hover,
 html.dark .group-header:hover,
 .security-info:where(.dark, :root.dark, html.dark) .group-header:hover {
-  background-color: #374151;
+  background: rgba(51, 65, 85, 0.7);
+  border-bottom-color: rgba(100, 116, 139, 0.7);
 }
 
 :root.dark .group-cves,
