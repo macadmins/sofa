@@ -3389,10 +3389,10 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 /* MacAdmins Community Cards - SOFA brand inspired styling */
 /* Old community styling removed - now using unified subtle styling above */
 
-/* Enhanced icon colors for community cards */
+/* Enhanced icon colors for community cards - vibrant heart on hover */
 .community-github-card:hover .text-red-500 {
   color: #DC2626 !important;
-  filter: drop-shadow(0 0 2px rgba(220, 38, 38, 0.5));
+  filter: brightness(1.3) saturate(1.5) drop-shadow(0 0 3px rgba(220, 38, 38, 0.4));
 }
 
 .community-donate-card:hover .text-green-500 {
