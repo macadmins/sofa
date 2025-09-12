@@ -104,7 +104,7 @@
         <div class="platform-icon w-4 h-4 flex items-center justify-center flex-shrink-0" :data-platform="platform.color">
           <component :is="platform.icon" class="platform-icon-svg w-full h-full" :data-platform="platform.color" />
         </div>
-        <span class="platform-text transition-colors leading-none whitespace-nowrap" :data-platform="platform.color">
+        <span class="platform-text transition-colors leading-none whitespace-nowrap text-transparent" :data-platform="platform.color">
           {{ platform.label }}
         </span>
       </a>
@@ -2485,6 +2485,9 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   position: relative;
   overflow: hidden;
   border-color: transparent !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
 }
 
 .platform-btn::before {
@@ -2504,48 +2507,48 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   opacity: 0.8;
 }
 
-/* Platform-specific gradients */
+/* Platform-specific gradients and underline colors */
 .platform-btn[data-platform="macos"] {
   --platform-gradient: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
+  text-decoration-color: #E11D48;
 }
 
 .platform-btn[data-platform="ios"] {
   --platform-gradient: linear-gradient(135deg, #1E3A8A 0%, #60A5FA 100%);
+  text-decoration-color: #1E3A8A;
 }
 
 .platform-btn[data-platform="tvos"] {
   --platform-gradient: linear-gradient(135deg, #EA580C 0%, #FB923C 100%);
+  text-decoration-color: #EA580C;
 }
 
 .platform-btn[data-platform="watchos"] {
   --platform-gradient: linear-gradient(135deg, #166534 0%, #4ADE80 100%);
+  text-decoration-color: #166534;
 }
 
 .platform-btn[data-platform="visionos"] {
   --platform-gradient: linear-gradient(135deg, #7C2D92 0%, #C084FC 100%);
+  text-decoration-color: #7C2D92;
 }
 
 .platform-btn[data-platform="safari"] {
   --platform-gradient: linear-gradient(135deg, #0E7490 0%, #06B6D4 100%);
+  text-decoration-color: #0E7490;
 }
 
 /* Icon and text color changes - permanent */
-.platform-btn .platform-icon[data-platform="macos"] {
+.platform-btn .platform-text[data-platform="macos"] {
   background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
-  background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   color: transparent;
 }
 
 .platform-btn .platform-icon-svg[data-platform="macos"] {
   color: #E11D48;
-}
-
-.platform-btn .platform-text[data-platform="macos"] {
-  background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
 }
 
 .platform-btn:hover .platform-icon-svg[data-platform="macos"] {
@@ -2565,8 +2568,9 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .platform-btn .platform-text[data-platform="ios"] {
   background: linear-gradient(135deg, #1E3A8A 0%, #60A5FA 100%);
-  background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   color: transparent;
 }
 
@@ -2588,8 +2592,9 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .platform-btn .platform-text[data-platform="tvos"] {
   background: linear-gradient(135deg, #EA580C 0%, #FB923C 100%);
-  background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   color: transparent;
 }
 
@@ -2599,8 +2604,9 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .platform-btn:hover .platform-text[data-platform="tvos"] {
   background: linear-gradient(135deg, #FB923C 0%, #EA580C 100%);
-  background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   color: transparent;
 }
 
@@ -2611,8 +2617,9 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .platform-btn .platform-text[data-platform="watchos"] {
   background: linear-gradient(135deg, #166534 0%, #4ADE80 100%);
-  background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   color: transparent;
 }
 
@@ -2622,8 +2629,9 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .platform-btn:hover .platform-text[data-platform="watchos"] {
   background: linear-gradient(135deg, #4ADE80 0%, #166534 100%);
-  background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   color: transparent;
 }
 
@@ -2634,8 +2642,9 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .platform-btn .platform-text[data-platform="visionos"] {
   background: linear-gradient(135deg, #7C2D92 0%, #C084FC 100%);
-  background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   color: transparent;
 }
 
@@ -2645,8 +2654,9 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .platform-btn:hover .platform-text[data-platform="visionos"] {
   background: linear-gradient(135deg, #C084FC 0%, #7C2D92 100%);
-  background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   color: transparent;
 }
 
@@ -2657,8 +2667,9 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .platform-btn .platform-text[data-platform="safari"] {
   background: linear-gradient(135deg, #0E7490 0%, #06B6D4 100%);
-  background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   color: transparent;
 }
 
@@ -2668,8 +2679,9 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 
 .platform-btn:hover .platform-text[data-platform="safari"] {
   background: linear-gradient(135deg, #06B6D4 0%, #0E7490 100%);
-  background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   color: transparent;
 }
 </style>
