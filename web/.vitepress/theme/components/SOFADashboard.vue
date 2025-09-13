@@ -1215,6 +1215,15 @@
         </div>
         <span class="rss-text">RSS Feed</span>
       </a>
+      
+      <!-- Data commit info -->
+      <div v-if="dataCommitHash" class="data-commit-info">
+        Data: 
+        <a :href="`https://github.com/${githubRepo}/commit/${dataCommitHash}`" target="_blank" class="commit-link">
+          {{ dataCommitHash.substring(0, 8) }}
+        </a>
+        <span class="commit-time">• {{ formatDataCommitTime }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -1464,8 +1473,33 @@ const metadata = useSOFAData('resources/sofa-status.json', {
   autoRefresh: true,
   refreshInterval: 5 * 60 * 1000 // Check every 5 minutes
 })
-// Use proper data fetching for metrics
-const metrics = useSOFAData('resources/metrics.json')
+
+// Data commit info from metadata
+const githubRepo = computed(() => __GITHUB_REPO__)
+const dataCommitHash = computed(() => metadata.data.value?.pipeline?.build?.source_commit || null)
+const formatDataCommitTime = computed(() => {
+  const buildTime = metadata.data.value?.pipeline?.build?.last_run
+  if (!buildTime) return ''
+  
+  try {
+    const buildDate = new Date(buildTime)
+    const now = new Date()
+    const diffMinutes = Math.floor((now - buildDate) / 60000)
+    
+    if (diffMinutes < 60) {
+      return `${diffMinutes}m ago`
+    } else if (diffMinutes < 1440) {
+      return `${Math.floor(diffMinutes / 60)}h ago`
+    } else {
+      return buildDate.toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric'
+      })
+    }
+  } catch {
+    return buildTime
+  }
+})
 
 // Watch for data changes and update local refs
 watch(() => bulletin.data.value, (newData) => {
@@ -1998,23 +2032,23 @@ onMounted(async () => {
   } catch (error) {
     console.log('Could not fetch star count')
   }
-  
-  // Use proper data fetching system for metrics
-  const metrics = useSOFAData('resources/metrics.json')
-  
-  // Watch for metrics data changes
-  watch(() => metrics.data.value, (newData) => {
-    if (newData) {
-      metricsData.value = newData
-    } else if (metrics.error.value) {
-      metricsData.value = { error: true }
-    }
-  }, { immediate: true })
-  
-  watch(() => metrics.loading.value, (newLoading) => {
-    metricsLoading.value = newLoading
-  }, { immediate: true })
 })
+
+// Use proper data fetching system for metrics - moved outside onMounted
+const cloudflareMetrics = useSOFAData('resources/metrics.json')
+
+// Watch for metrics data changes
+watch(() => cloudflareMetrics.data.value, (newData) => {
+  if (newData) {
+    metricsData.value = newData
+  } else if (cloudflareMetrics.error.value) {
+    metricsData.value = { error: true }
+  }
+}, { immediate: true })
+
+watch(() => cloudflareMetrics.loading.value, (newLoading) => {
+  metricsLoading.value = newLoading
+}, { immediate: true })
 
 const copyToClipboard = async (text: string, itemId?: string) => {
   try {
@@ -2476,9 +2510,12 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 /* RSS Feed Button */
 .rss-feed-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin-top: 2rem;
   padding: 1rem 0;
+  gap: 0.75rem;
 }
 
 .rss-feed-button {
@@ -2516,10 +2553,44 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   letter-spacing: 0.025em;
 }
 
+/* Data commit info styling */
+.data-commit-info {
+  font-size: 0.75rem;
+  color: var(--vp-c-text-3);
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.commit-link {
+  color: var(--vp-c-brand);
+  text-decoration: none;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  font-weight: 600;
+  padding: 0.125rem 0.25rem;
+  border-radius: 3px;
+  background: var(--vp-c-brand-soft);
+  transition: all 0.2s ease;
+}
+
+.commit-link:hover {
+  background: var(--vp-c-brand);
+  color: white;
+}
+
+.commit-time {
+  color: var(--vp-c-text-3);
+  margin-left: 0.25rem;
+}
+
 @media (max-width: 640px) {
   .rss-feed-button {
     padding: 0.625rem 1.25rem;
     font-size: 0.8125rem;
+  }
+  
+  .data-commit-info {
+    font-size: 0.6875rem;
+    padding: 0.375rem 0;
   }
 }
 
