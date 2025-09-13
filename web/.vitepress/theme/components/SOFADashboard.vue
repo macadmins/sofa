@@ -2000,7 +2000,7 @@ onMounted(async () => {
   }
   
   // Use proper data fetching system for metrics
-  const metrics = useSOFAData('data/resources/metrics.json')
+  const metrics = useSOFAData('resources/metrics.json')
   
   // Watch for metrics data changes
   watch(() => metrics.data.value, (newData) => {
