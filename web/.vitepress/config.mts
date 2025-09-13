@@ -140,9 +140,22 @@ export default defineConfig({
     },
     server: {
       fs: {
+        strict: true,
         allow: [
           resolve(__dirname, '../..'), // Allow access to project root for data directories
+        ],
+        deny: [
+          '.env*',
+          '*.log',
+          'node_modules/**',
+          '.git/**',
+          '**/*.{key,pem,crt,p12}',
+          '**/.*' // Deny hidden files
         ]
+      },
+      cors: {
+        origin: ['http://localhost:5173', 'http://localhost:5174'],
+        credentials: false
       }
     },
     resolve: {
