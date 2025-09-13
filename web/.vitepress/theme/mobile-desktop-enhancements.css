@@ -162,6 +162,29 @@ a[href] {
 
 /* Mobile spacing adjustments */
 @media (max-width: 768px) {
+  /* Fix VitePress layout asymmetric padding causing mobile spacing issues */
+  .VPContent.is-home {
+    padding: 24px 24px !important;
+  }
+  
+  .vp-doc.container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  /* Fix SecurityInfo cards and other platform page content */
+  .security-info,
+  .latest-features,
+  .beta-features,
+  .vp-doc {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
   /* Adaptive padding */
   .content-box,
   .link-card {
