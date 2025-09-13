@@ -143,4 +143,4 @@ The pipeline creates `sofa-status.json` to show data freshness on the dashboard:
 
 *Last updated: 2025-08-31*  
 *Pipeline Version: 2.0-beta*  
-*SOFA CLI Version: v0.1.2-beta1*
+*SOFA CLI Version: v0.1.3-rc*
