@@ -122,7 +122,7 @@ export default defineConfig({
     define: {
       // Make API base URLs available to the client
       __API_BASE_PROD__: JSON.stringify(process.env.VITE_API_BASE_PROD || 'https://sofa-beta.macadmin.me'),
-      __API_BASE_DEV__: JSON.stringify(process.env.VITE_API_BASE_DEV || '/data'),
+      __API_BASE_DEV__: JSON.stringify(process.env.VITE_API_BASE_DEV || ''),
       // GitHub repository configuration
       __GITHUB_REPO__: JSON.stringify(process.env.GITHUB_REPOSITORY || process.env.VITE_GITHUB_REPO || 'macad-me/sofa-2.0-beta'),
       __GITHUB_BRANCH__: JSON.stringify(process.env.GITHUB_REF_NAME || process.env.VITE_GITHUB_BRANCH || 'main'),
