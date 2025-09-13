@@ -3090,9 +3090,10 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   text-decoration: none !important;
 }
 
-/* Remove all underlines from Bento card text */
+/* Remove all underlines from Bento card text - smooth transitions */
 .bento-card * {
   text-decoration: none !important;
+  transition: color 0.3s ease;
 }
 
 /* Force API Status to use traffic light colors, not platform colors */

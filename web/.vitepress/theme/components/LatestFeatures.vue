@@ -2147,13 +2147,30 @@ html.dark .button-group button.active:hover {
   color: #0051a3;
 }
 
-/* Loading State */
+/* Loading State - Smooth appearance */
 .loading-state {
   padding: 1rem;
   text-align: center;
   background-color: #f5f5f7;
   border-radius: 8px;
   color: var(--vp-c-text-2);
+  opacity: 0;
+  animation: fadeInLoading 0.3s ease-in-out 0.2s forwards;
+}
+
+@keyframes fadeInLoading {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Smooth transition between loading and content */
+.features-container {
+  animation: fadeInContent 0.4s ease-in-out;
+}
+
+@keyframes fadeInContent {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Enhanced Mobile UX - Smartphones */
