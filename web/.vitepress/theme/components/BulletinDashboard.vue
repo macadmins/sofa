@@ -179,7 +179,7 @@ import { ref, onMounted, watch } from 'vue'
 import { useSOFAData } from '../composables/useSOFAData'
 
 // Use composable for bulletin data fetching
-const { data, loading, error } = useSOFAData('data/resources/bulletin_data.json')
+const { data, loading, error } = useSOFAData('resources/bulletin_data.json')
 
 // Keep bulletinData ref for template compatibility
 const bulletinData = ref({})
