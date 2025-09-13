@@ -48,7 +48,7 @@
               <h2 class="card-title">Latest {{ title.toLowerCase().includes(platform.toLowerCase()) ? '' : platform + ' ' }}{{ title }}</h2>
             </div>
             <div class="os-showcase">
-              <img :src="osImage" alt="OS Image" class="os-hero-image" @error="handleImageError" />
+              <img :src="osImage" alt="OS Image" class="os-hero-image" loading="lazy" @error="handleImageError" />
             </div>
             
             <div class="os-details-grid">

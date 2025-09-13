@@ -131,11 +131,12 @@
 
 /* ===== CARD STRUCTURE ===== */
 
-/* Card backgrounds with proper contrast ratios */
+/* Card backgrounds with smooth theme transitions */
 .bento-card {
   @apply bg-white dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700/50 
          rounded-xl hover:border-gray-300 dark:hover:border-slate-600/60 
-         transition-colors duration-150 h-full;
+         h-full;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   backdrop-filter: blur(10px);
   box-sizing: border-box;
   max-width: 100%;

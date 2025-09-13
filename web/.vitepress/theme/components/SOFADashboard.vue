@@ -2520,7 +2520,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   }
 }
 
-/* Platform Button Styling */
+/* Platform Button Styling - Smooth theme transitions */
 .platform-btn {
   position: relative;
   overflow: hidden;
@@ -2528,6 +2528,7 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   text-underline-offset: 3px;
   text-decoration-thickness: 1.5px;
   background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+  transition: background-color 0.3s ease, color 0.3s ease, opacity 0.2s ease;
 }
 
 /* Light mode: Full colored backgrounds with white text - 90% transparency */
@@ -3065,11 +3066,12 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   --ios-color-dark: #60A5FA;
 }
 
-/* Clean Small Text System */
+/* Clean Small Text System - Smooth theme transitions */
 .small-text {
   color: var(--small-text-color) !important;
   font-weight: 500 !important;
   text-decoration: none !important;
+  transition: color 0.3s ease;
 }
 
 .dark .small-text {
