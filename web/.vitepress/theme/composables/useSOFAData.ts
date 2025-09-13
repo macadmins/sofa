@@ -15,13 +15,14 @@ interface DataResponse<T> {
   refresh: () => Promise<void>
 }
 
-// Determine API base based on environment configuration
+// Simple API base determination  
 const getAPIBase = () => {
-  // Use configured API base URLs from VitePress config
+  // In production, use the environment-configured URL or current origin
   if (import.meta.env.PROD) {
-    return __API_BASE_PROD__
+    return __API_BASE_PROD__ || window.location.origin
   }
-  return __API_BASE_DEV__
+  // In development, use local routing
+  return __API_BASE_DEV__ || ''
 }
 
 // GitHub raw URL fallback for real-time data
