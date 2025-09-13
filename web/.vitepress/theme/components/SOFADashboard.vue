@@ -3286,42 +3286,9 @@ const copyToClipboard = async (text: string, itemId?: string) => {
   border-color: #6B7280 !important;
 }
 
-/* Legacy gray text overrides - will be replaced by small-text class */
-.bento-card .text-xs,
-.bento-card .text-gray-400,
-.bento-card .text-gray-500,
-.bento-card .text-gray-600,
-.bento-card .text-gray-700 {
-  color: #6B7280 !important;
-  font-weight: 500 !important;
-}
+/* Legacy CSS removed - now handled by small-text class system */
 
-.dark .bento-card .text-xs,
-.dark .bento-card .text-gray-300,
-.dark .bento-card .text-gray-400,
-.dark .bento-card .text-gray-500 {
-  color: #9CA3AF !important;
-}
-
-.bento-card .text-sm:not(.font-bold) {
-  color: #4B5563 !important;
-  font-weight: 500 !important;
-}
-
-.dark .bento-card .text-sm:not(.font-bold) {
-  color: #D1D5DB !important;
-}
-
-/* Specific overrides for common conflicting classes */
-.bento-card .text-gray-500,
-.bento-card .text-gray-600 {
-  color: #6B7280 !important;
-}
-
-.dark .bento-card .text-gray-400,
-.dark .bento-card .text-gray-300 {
-  color: #9CA3AF !important;
-}
+/* Duplicate overrides removed - handled by small-text class */
 
 /* Force functional status colors to override platform styling - Higher specificity */
 .bento-card div .text-orange-600,
