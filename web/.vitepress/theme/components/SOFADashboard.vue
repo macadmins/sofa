@@ -1452,18 +1452,20 @@ const bentoDisplayOrder = {
 }
 
 // Use composable for data fetching with proper error handling and fallback
-const bulletin = useSOFAData('data/resources/bulletin_data.json')
+const bulletin = useSOFAData('resources/bulletin_data.json')
 const macos = useSOFAData('v2/macos_data_feed.json')
 const ios = useSOFAData('v2/ios_data_feed.json')
 const tvos = useSOFAData('v2/tvos_data_feed.json')
 const watchos = useSOFAData('v2/watchos_data_feed.json')
 const visionos = useSOFAData('v2/visionos_data_feed.json')
 const safari = useSOFAData('v2/safari_data_feed.json')
-const beta = useSOFAData('data/resources/apple_beta_feed.json')
-const metadata = useSOFAData('data/resources/sofa-status.json', {
+const beta = useSOFAData('resources/apple_beta_feed.json')
+const metadata = useSOFAData('resources/sofa-status.json', {
   autoRefresh: true,
   refreshInterval: 5 * 60 * 1000 // Check every 5 minutes
 })
+// Use proper data fetching for metrics
+const metrics = useSOFAData('resources/metrics.json')
 
 // Watch for data changes and update local refs
 watch(() => bulletin.data.value, (newData) => {
@@ -1997,20 +1999,21 @@ onMounted(async () => {
     console.log('Could not fetch star count')
   }
   
-  // Fetch metrics data from local file
-  try {
-    const response = await fetch('/data/resources/metrics.json')
-    if (response.ok) {
-      metricsData.value = await response.json()
-    } else {
+  // Use proper data fetching system for metrics
+  const metrics = useSOFAData('data/resources/metrics.json')
+  
+  // Watch for metrics data changes
+  watch(() => metrics.data.value, (newData) => {
+    if (newData) {
+      metricsData.value = newData
+    } else if (metrics.error.value) {
       metricsData.value = { error: true }
     }
-  } catch (error) {
-    console.error('Failed to fetch metrics:', error)
-    metricsData.value = { error: true }
-  } finally {
-    metricsLoading.value = false
-  }
+  }, { immediate: true })
+  
+  watch(() => metrics.loading.value, (newLoading) => {
+    metricsLoading.value = newLoading
+  }, { immediate: true })
 })
 
 const copyToClipboard = async (text: string, itemId?: string) => {
