@@ -68,27 +68,28 @@ export function useSOFAData<T = any>(
     error.value = null
 
     try {
-      // Try GitHub raw URL first for most current data
-      const githubRawUrl = getGitHubRawURL(feedPath)
-      console.log(`Fetching real-time data from GitHub: ${githubRawUrl}`)
+      // Priority 1: Try Cloudflare deployment first (most reliable)
+      const apiBase = getAPIBase()
+      const deployedUrl = `${apiBase}/${feedPath}`
       
-      const githubResponse = await fetch(githubRawUrl, {
-        cache: 'no-cache', // Always get fresh data from GitHub
+      console.log(`Fetching data from deployed site: ${deployedUrl}`)
+      
+      const response = await fetch(deployedUrl, {
+        cache: isStale.value ? 'reload' : 'default',
         headers: {
           'Accept': 'application/json'
         }
       })
 
-      if (!githubResponse.ok) {
-        throw new Error(`GitHub raw fetch failed: ${githubResponse.status}`)
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`)
       }
 
-      const jsonData = await githubResponse.json() as T
+      const jsonData = await response.json() as T
       data.value = jsonData
 
       // Extract last update from data if available
       if (jsonData && typeof jsonData === 'object') {
-        // Check for various timestamp fields including generated_at
         const timestamps = [
           (jsonData as any).LastCheck,
           (jsonData as any).generated,
@@ -100,35 +101,32 @@ export function useSOFAData<T = any>(
         if (timestamps.length > 0) {
           lastUpdated.value = timestamps[0]
         } else {
-          // Use current time as fallback
           lastUpdated.value = new Date().toISOString()
         }
       }
 
-      console.log(`✅ Successfully loaded ${feedPath} from GitHub`)
+      console.log(`✅ Successfully loaded ${feedPath} from deployed site`)
       
     } catch (primaryError) {
-      console.warn(`GitHub raw fetch failed for ${feedPath}:`, primaryError)
+      console.warn(`Deployed site failed for ${feedPath}:`, primaryError)
       
-      // Fallback to deployed site
+      // Priority 2: Fallback to GitHub raw URL
       try {
-        const apiBase = getAPIBase()
-        const deployedUrl = `${apiBase}/${feedPath}`
+        const githubRawUrl = getGitHubRawURL(feedPath)
+        console.log(`Trying GitHub fallback: ${githubRawUrl}`)
         
-        console.log(`Trying deployed site fallback: ${deployedUrl}`)
-        
-        const response = await fetch(deployedUrl, {
+        const githubResponse = await fetch(githubRawUrl, {
           cache: isStale.value ? 'reload' : 'default',
           headers: {
             'Accept': 'application/json'
           }
         })
 
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}: ${response.statusText}`)
+        if (!githubResponse.ok) {
+          throw new Error(`GitHub raw fetch failed: ${githubResponse.status}`)
         }
 
-        const jsonData = await response.json() as T
+        const jsonData = await githubResponse.json() as T
         data.value = jsonData
 
         // Extract last update from data if available
@@ -148,7 +146,7 @@ export function useSOFAData<T = any>(
           }
         }
 
-        console.log(`✅ Successfully loaded ${feedPath} from deployed site`)
+        console.log(`✅ Successfully loaded ${feedPath} from GitHub fallback`)
         
       } catch (deployedError) {
         console.warn(`Deployed site failed for ${feedPath}:`, deployedError)
