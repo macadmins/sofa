@@ -390,9 +390,22 @@
       </div>
     </div>
 
-    <!-- Loading Data State -->
-    <div v-else class="loading-state">
-      <p>Loading data... or currently not available</p>
+    <!-- Loading Data State - Skeleton -->
+    <div v-else class="loading-skeleton-container">
+      <div class="skeleton-info-box"></div>
+      <div class="skeleton-grid">
+        <div class="skeleton-card" v-for="i in 4" :key="i">
+          <div class="skeleton-header">
+            <div class="skeleton-icon"></div>
+            <div class="skeleton-title"></div>
+          </div>
+          <div class="skeleton-content">
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-line"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -467,31 +480,45 @@ export default {
   methods: {
     async loadAllData() {
       try {
-        // Use withBase to handle base URL in development
+        // Optimized parallel loading with timeout and error handling
         const base = import.meta.env.BASE_URL || '/'
-        const [macOS, iOS, tvOS, watchOS, visionOS, safari] = await Promise.all([
-          fetch(`${base}v2/macos_data_feed.json`).then(r => r.json()),
-          fetch(`${base}v2/ios_data_feed.json`).then(r => r.json()),
-          fetch(`${base}v2/tvos_data_feed.json`).then(r => r.json()),
-          fetch(`${base}v2/watchos_data_feed.json`).then(r => r.json()),
-          fetch(`${base}v2/visionos_data_feed.json`).then(r => r.json()),
-          fetch(`${base}v2/safari_data_feed.json`).then(r => r.json())
-        ])
-        this.macOSData = macOS
-        this.iOSData = iOS
-        this.tvOSData = tvOS
-        this.watchOSData = watchOS
-        this.visionOSData = visionOS
-        this.safariData = safari
         
-        // Try to load essential links, but don't fail if not found
-        try {
-          const base = import.meta.env.BASE_URL || '/'
-          this.essentialLinksData = await fetch(`${base}resources/essential_links.json`).then(r => r.json())
-        } catch (e) {
-          console.warn('Essential links data not found')
-          this.essentialLinksData = {}
+        const fetchWithTimeout = (url, timeout = 5000) => {
+          return Promise.race([
+            fetch(url).then(r => r.json()),
+            new Promise((_, reject) => 
+              setTimeout(() => reject(new Error('Timeout')), timeout)
+            )
+          ])
         }
+        
+        // Load all data in parallel with error resilience
+        const [macOS, iOS, tvOS, watchOS, visionOS, safari, essentialLinks] = await Promise.allSettled([
+          fetchWithTimeout(`${base}v2/macos_data_feed.json`),
+          fetchWithTimeout(`${base}v2/ios_data_feed.json`),
+          fetchWithTimeout(`${base}v2/tvos_data_feed.json`),
+          fetchWithTimeout(`${base}v2/watchos_data_feed.json`),
+          fetchWithTimeout(`${base}v2/visionos_data_feed.json`),
+          fetchWithTimeout(`${base}v2/safari_data_feed.json`),
+          fetchWithTimeout(`${base}resources/essential_links.json`)
+        ])
+        
+        // Process results with fallbacks
+        this.macOSData = macOS.status === 'fulfilled' ? macOS.value : {}
+        this.iOSData = iOS.status === 'fulfilled' ? iOS.value : {}
+        this.tvOSData = tvOS.status === 'fulfilled' ? tvOS.value : {}
+        this.watchOSData = watchOS.status === 'fulfilled' ? watchOS.value : {}
+        this.visionOSData = visionOS.status === 'fulfilled' ? visionOS.value : {}
+        this.safariData = safari.status === 'fulfilled' ? safari.value : {}
+        this.essentialLinksData = essentialLinks.status === 'fulfilled' ? essentialLinks.value : {}
+        
+        // Log any failed loads for debugging
+        const failed = [macOS, iOS, tvOS, watchOS, visionOS, safari, essentialLinks]
+          .filter(result => result.status === 'rejected')
+        if (failed.length > 0) {
+          console.warn(`Failed to load ${failed.length} data sources`)
+        }
+        
       } catch (e) {
         console.error('Failed to load data feeds:', e)
       }
@@ -2171,6 +2198,111 @@ html.dark .button-group button.active:hover {
 @keyframes fadeInContent {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Skeleton Loading System */
+.loading-skeleton-container {
+  animation: fadeInContent 0.3s ease-in-out;
+}
+
+.skeleton-info-box {
+  height: 80px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.875rem;
+  margin-top: 1rem;
+}
+
+.skeleton-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.25rem;
+  height: 200px;
+}
+
+.skeleton-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.skeleton-icon {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+  border-radius: 6px;
+}
+
+.skeleton-title {
+  height: 16px;
+  flex: 1;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+.skeleton-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton-line {
+  height: 12px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+  border-radius: 3px;
+}
+
+.skeleton-line.short {
+  width: 60%;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+/* Dark mode skeleton */
+:root.dark .skeleton-info-box,
+:root.dark .skeleton-icon,
+:root.dark .skeleton-title,
+:root.dark .skeleton-line {
+  background: linear-gradient(90deg, #2c2c2e 25%, #3c3c3e 50%, #2c2c2e 75%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+:root.dark .skeleton-card {
+  background: rgba(31, 41, 55, 0.6);
+  border-color: rgba(75, 85, 99, 0.6);
+}
+
+/* Mobile skeleton adjustments */
+@media (max-width: 768px) {
+  .skeleton-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .skeleton-card {
+    height: 150px;
+    padding: 1rem;
+  }
 }
 
 /* Enhanced Mobile UX - Smartphones */
