@@ -176,7 +176,7 @@
             :href="version.version.startsWith('14') ? `${baseUrl}/macos/sonoma` : `${baseUrl}/macos/sequoia`"
             class="block"
           >
-            <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-macos-300 dark:hover:border-macos-600 transition-all duration-150 macos-version-card">
+            <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-all duration-150 macos-version-card">
               <div class="space-y-1.5">
                 <div class="flex items-center justify-between">
                   <span class="text-xs small-text">{{ version.releaseDate }}</span>
@@ -304,7 +304,7 @@
                   <span class="text-xs small-text">{{ watchOSVersion.releaseDate }}</span>
                   <div class="flex items-center gap-1">
                     <component :is="ShieldIcon" class="h-3.5 w-3.5" :class="watchOSVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
-                    <span class="text-xs text-gray-600 dark:text-gray-400">
+                    <span class="text-xs" :class="watchOSVersion.cves > 0 ? 'cve-warning' : 'small-text'">
                       {{ watchOSVersion.cves === 0 ? 'No CVEs' : `${watchOSVersion.cves} CVEs` }}
                     </span>
                   </div>
@@ -426,7 +426,7 @@
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-safari-300 dark:hover:border-safari-600 transition-all duration-150 other-platform-safari">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
-                <span class="text-xs text-gray-500 dark:text-gray-400">{{ safariVersion.releaseDate }}</span>
+                <span class="text-xs small-text">{{ safariVersion.releaseDate }}</span>
                 <div class="flex items-center gap-1">
                   <component :is="ShieldIcon" class="h-3 w-3" :class="safariVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
                   <span class="text-xs" :class="safariVersion.cves > 0 ? 'cve-warning' : 'small-text'">{{ safariVersion.cves > 0 ? `${safariVersion.cves} CVEs` : 'No CVEs' }}</span>
@@ -449,7 +449,7 @@
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-tvos-300 dark:hover:border-tvos-600 transition-all duration-150 other-platform-tvos">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
-                <span class="text-xs text-gray-500 dark:text-gray-400">{{ tvOSVersion.releaseDate }}</span>
+                <span class="text-xs small-text">{{ tvOSVersion.releaseDate }}</span>
                 <div class="flex items-center gap-1">
                   <component :is="ShieldIcon" class="h-3 w-3" :class="tvOSVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
                   <span class="text-xs" :class="tvOSVersion.cves > 0 ? 'cve-warning' : 'small-text'">{{ tvOSVersion.cves > 0 ? `${tvOSVersion.cves} CVEs` : 'No CVEs' }}</span>
@@ -472,7 +472,7 @@
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-visionos-300 dark:hover:border-visionos-600 transition-all duration-150 other-platform-visionos">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
-                <span class="text-xs text-gray-500 dark:text-gray-400">{{ visionOSVersion.releaseDate }}</span>
+                <span class="text-xs small-text">{{ visionOSVersion.releaseDate }}</span>
                 <div class="flex items-center gap-1">
                   <component :is="ShieldIcon" class="h-3 w-3" :class="visionOSVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
                   <span class="text-xs" :class="visionOSVersion.cves > 0 ? 'cve-warning' : 'small-text'">{{ visionOSVersion.cves > 0 ? `${visionOSVersion.cves} CVEs` : 'No CVEs' }}</span>
@@ -495,10 +495,10 @@
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-watchos-300 dark:hover:border-watchos-600 transition-all duration-150 other-platform-watchos">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
-                <span class="text-xs text-gray-500 dark:text-gray-400">{{ watchOSVersion.releaseDate }}</span>
+                <span class="text-xs small-text">{{ watchOSVersion.releaseDate }}</span>
                 <div class="flex items-center gap-1">
                   <component :is="ShieldIcon" class="h-3 w-3" :class="watchOSVersion.cves > 0 ? 'text-orange-400' : 'text-gray-400'" />
-                  <span class="text-xs" :class="watchOSVersion.cves > 0 ? 'text-orange-400 dark:text-orange-300' : 'text-gray-600 dark:text-gray-400'">{{ watchOSVersion.cves > 0 ? `${watchOSVersion.cves} CVEs` : 'No CVEs' }}</span>
+                  <span class="text-xs" :class="watchOSVersion.cves > 0 ? 'cve-warning' : 'small-text'">{{ watchOSVersion.cves > 0 ? `${watchOSVersion.cves} CVEs` : 'No CVEs' }}</span>
                 </div>
               </div>
               <div>
@@ -602,7 +602,7 @@
               <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">Update Hash (SHA-256)</span>
             </div>
             <div class="flex items-center justify-between">
-              <span class="text-sm font-mono text-blue-700 dark:text-blue-300" :title="updateHash">
+              <span class="text-sm font-mono macos-hash-color" :title="updateHash">
                 {{ updateHash ? `${updateHash.substring(0, 12)}...${updateHash.slice(-12)}` : 'Loading...' }}
               </span>
               <button 
@@ -669,7 +669,7 @@
               <span class="font-semibold text-gray-900 dark:text-gray-100 text-sm">Update Hash (SHA-256)</span>
             </div>
             <div class="flex items-center justify-between">
-              <span class="text-sm font-mono text-purple-700 dark:text-purple-300" :title="iosUpdateHash">
+              <span class="text-sm font-mono ios-hash-color" :title="iosUpdateHash">
                 {{ iosUpdateHash ? `${iosUpdateHash.substring(0, 12)}...${iosUpdateHash.slice(-12)}` : 'Loading...' }}
               </span>
               <button 
@@ -1006,7 +1006,7 @@
           <div v-for="(beta, idx) in betaReleases" :key="idx" class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-all duration-150 beta-release-card" :class="getBetaPlatformClass(beta.platform)">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
-                <span class="text-xs text-gray-500 dark:text-gray-400">{{ beta.released }}</span>
+                <span class="text-xs small-text">{{ beta.released }}</span>
                 <div class="flex items-center gap-1">
                   <component :is="SparklesIcon" class="h-3 w-3 text-orange-400" />
                   <span class="text-xs text-orange-400 dark:text-orange-300">
@@ -1476,9 +1476,9 @@ const metadata = useSOFAData('resources/sofa-status.json', {
 
 // Data commit info from metadata
 const githubRepo = computed(() => __GITHUB_REPO__)
-const dataCommitHash = computed(() => metadata.data.value?.pipeline?.build?.source_commit || null)
+const dataCommitHash = computed(() => metadata.data.value?.data_repo?.commit || null)
 const formatDataCommitTime = computed(() => {
-  const buildTime = metadata.data.value?.pipeline?.build?.last_run
+  const buildTime = metadata.data.value?.generated
   if (!buildTime) return ''
   
   try {
@@ -2954,9 +2954,236 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 /* macOS Platform Cards */
 /* Specific styling only where needed - no universal overrides */
 
-/* Universal platform system completely removed - was causing text color conflicts */
+/* macOS card hover borders - aggressive override */
+.macos-version-card:hover,
+.macos-version-card.group\/btn:hover {
+  border-color: #F472B6 !important;
+}
 
-/* All universal platform selectors removed - clean slate */
+.dark .macos-version-card:hover,
+.dark .macos-version-card.group\/btn:hover {
+  border-color: #BE185D !important;
+}
+
+/* Timeline macOS releases - add missing platform styling */
+.timeline-macos:hover {
+  border-color: #F472B6 !important;
+}
+
+.dark .timeline-macos:hover {
+  border-color: #BE185D !important;
+}
+
+.timeline-macos .text-sm.font-bold {
+  background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: 1rem !important;
+  line-height: 1.2;
+}
+
+.dark .timeline-macos .text-sm.font-bold {
+  background: linear-gradient(135deg, #F472B6 0%, #E879F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Beta macOS releases - add missing platform styling */
+.beta-macos:hover {
+  border-color: #F472B6 !important;
+}
+
+.dark .beta-macos:hover {
+  border-color: #BE185D !important;
+}
+
+.beta-macos .text-base.font-bold {
+  background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: 1rem !important;
+  line-height: 1.2;
+}
+
+.dark .beta-macos .text-base.font-bold {
+  background: linear-gradient(135deg, #F472B6 0%, #E879F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+[class*="macos"] .text-base.font-bold, [class*="macos"] .text-sm.font-bold, [class*="macos"] .text-lg.font-bold {
+  background: linear-gradient(135deg, #E11D48 0%, #F472B6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+  font-size: 1rem !important;
+  font-size: 1rem !important;
+}
+
+.dark [class*="macos"] .text-base.font-bold, .dark [class*="macos"] .text-sm.font-bold, .dark [class*="macos"] .text-lg.font-bold {
+  background: linear-gradient(135deg, #F472B6 0%, #E879F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+  font-size: 1rem !important;
+}
+
+/* iOS Platform Cards */
+[class*="ios"]:hover, .ios-version-card:hover {
+  border-color: #60A5FA !important;
+}
+
+.dark [class*="ios"]:hover, .dark .ios-version-card:hover {
+  border-color: #1D4ED8 !important;
+}
+
+[class*="ios"] .text-base.font-bold, [class*="ios"] .text-sm.font-bold, [class*="ios"] .text-lg.font-bold {
+  background: linear-gradient(135deg, #1E3A8A 0%, #60A5FA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+  font-size: 1rem !important;
+}
+
+.dark [class*="ios"] .text-base.font-bold, .dark [class*="ios"] .text-sm.font-bold, .dark [class*="ios"] .text-lg.font-bold {
+  background: linear-gradient(135deg, #60A5FA 0%, #93C5FD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+  font-size: 1rem !important;
+}
+
+/* tvOS Platform Cards */
+[class*="tvos"]:hover {
+  border-color: #FB923C !important;
+}
+
+.dark [class*="tvos"]:hover {
+  border-color: #EA580C !important;
+}
+
+[class*="tvos"] .text-base.font-bold, [class*="tvos"] .text-sm.font-bold, [class*="tvos"] .text-lg.font-bold {
+  background: linear-gradient(135deg, #EA580C 0%, #FB923C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+  font-size: 1rem !important;
+}
+
+.dark [class*="tvos"] .text-base.font-bold, .dark [class*="tvos"] .text-sm.font-bold, .dark [class*="tvos"] .text-lg.font-bold {
+  background: linear-gradient(135deg, #FB923C 0%, #FCD34D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+  font-size: 1rem !important;
+}
+
+/* watchOS Platform Cards */
+[class*="watchos"]:hover {
+  border-color: #4ADE80 !important;
+}
+
+.dark [class*="watchos"]:hover {
+  border-color: #16A34A !important;
+}
+
+[class*="watchos"] .text-base.font-bold, [class*="watchos"] .text-sm.font-bold, [class*="watchos"] .text-lg.font-bold {
+  background: linear-gradient(135deg, #166534 0%, #4ADE80 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+  font-size: 1rem !important;
+}
+
+.dark [class*="watchos"] .text-base.font-bold, .dark [class*="watchos"] .text-sm.font-bold, .dark [class*="watchos"] .text-lg.font-bold {
+  background: linear-gradient(135deg, #4ADE80 0%, #86EFAC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+  font-size: 1rem !important;
+}
+
+/* visionOS Platform Cards */
+[class*="visionos"]:hover {
+  border-color: #C084FC !important;
+}
+
+.dark [class*="visionos"]:hover {
+  border-color: #9333EA !important;
+}
+
+[class*="visionos"] .text-base.font-bold, [class*="visionos"] .text-sm.font-bold, [class*="visionos"] .text-lg.font-bold {
+  background: linear-gradient(135deg, #7C2D92 0%, #C084FC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+  font-size: 1rem !important;
+}
+
+.dark [class*="visionos"] .text-base.font-bold, .dark [class*="visionos"] .text-sm.font-bold, .dark [class*="visionos"] .text-lg.font-bold {
+  background: linear-gradient(135deg, #C084FC 0%, #DDD6FE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+  font-size: 1rem !important;
+}
+
+/* Safari Platform Cards */
+[class*="safari"]:hover {
+  border-color: #06B6D4 !important;
+}
+
+.dark [class*="safari"]:hover {
+  border-color: #0284C7 !important;
+}
+
+[class*="safari"] .text-base.font-bold, [class*="safari"] .text-sm.font-bold, [class*="safari"] .text-lg.font-bold {
+  background: linear-gradient(135deg, #0E7490 0%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+  font-size: 1rem !important;
+}
+
+.dark [class*="safari"] .text-base.font-bold, .dark [class*="safari"] .text-sm.font-bold, .dark [class*="safari"] .text-lg.font-bold {
+  background: linear-gradient(135deg, #06B6D4 0%, #67E8F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+  font-size: 1rem !important;
+}
 
 /* CSS Custom Properties - Clean System */
 :root {
@@ -2975,26 +3202,33 @@ const copyToClipboard = async (text: string, itemId?: string) => {
 }
 
 /* Clean Small Text System - Smooth theme transitions */
+/* Optimized Small Text Design - Perfect for all supporting text */
 .small-text {
-  color: var(--small-text-color) !important;
+  color: #6B7280 !important;
   font-weight: 500 !important;
+  font-size: 0.75rem !important;
+  line-height: 1.4 !important;
   text-decoration: none !important;
   transition: color 0.3s ease;
 }
 
 .dark .small-text {
-  color: var(--small-text-color-dark) !important;
+  color: #9CA3AF !important;
   text-decoration: none !important;
 }
 
-/* CVE Warning System */
+/* CVE Warning System - Gray text like small-text, orange icon separate */
 .cve-warning {
-  color: var(--cve-warning-color) !important;
+  color: #6B7280 !important;
+  font-weight: 500 !important;
+  font-size: 0.75rem !important;
+  line-height: 1.4 !important;
   text-decoration: none !important;
+  transition: color 0.3s ease;
 }
 
 .dark .cve-warning {
-  color: var(--cve-warning-color-dark) !important;
+  color: #9CA3AF !important;
   text-decoration: none !important;
 }
 
