@@ -37,6 +37,7 @@ features:
 
 <div>
   <p>👋 We’re thrilled to have you here!</p>
+  <p>🎉 Stay tuned for upcomming SOFA 2.0 features soon become available here!</p>
   <p>If you find value in this project, consider showing your support by starring us on GitHub! 🌟</p>
   <div>
     <a class="github-button" href="https://github.com/macadmins/sofa" 
