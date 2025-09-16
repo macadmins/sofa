@@ -11,11 +11,13 @@ export default defineConfig({
     head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
     nav: [
       { text: 'Home', link: '/getting-started' },
-      { text: '✨ Sequoia', link: '/macOS_Sequoia' }, 
+      { text: 'Tahoe', link: '/macOS_Tahoe' }, 
+      { text: 'Sequoia', link: '/macOS_Sequoia' }, 
       { text: 'Sonoma', link: '/macOS_Sonoma' },
       { text: 'Ventura', link: '/macOS_Ventura' },
       { text: 'Monterey', link: '/macOS_Monterey' },
-      { text: '✨ iOS 18', link: '/iOS_18' },
+      { text: 'iOS 26', link: '/iOS_26' },
+      { text: 'iOS 18', link: '/iOS_18' },
       { text: 'iOS 17', link: '/iOS_17' },
       { text: 'iOS 16', link: '/iOS_16' },
       { text: 'Use Cases', link: '/use-cases' },
@@ -27,6 +29,7 @@ export default defineConfig({
       {
         text: 'macOS',
         items: [
+          { text: 'Tahoe 26', link: '/macOS_Tahoe' },
           { text: 'Sequoia 15', link: '/macOS_Sequoia' },
           { text: 'Sonoma 14', link: '/macOS_Sonoma' },
           { text: 'Ventura 13', link: '/macOS_Ventura' },
@@ -37,9 +40,9 @@ export default defineConfig({
       {
         text: 'iOS',
         items: [
+          { text: 'iOS 26', link: '/iOS_26' },
           { text: 'iOS 18', link: '/iOS_18' },
           { text: 'iOS 17', link: '/iOS_17' },
-          { text: 'iOS 16', link: '/iOS_16' },
         ],
       },
       {
@@ -58,7 +61,6 @@ export default defineConfig({
         text: 'Info',
         items: [
           { text: 'Getting Started', link: '/getting-started' },
-          { text: 'Self Hosted', link: '/self-hosted' },
           { text: 'Contributors', link: '/team' },
           { text: 'Commmunity', link: '/community' },
         ],
@@ -76,7 +78,7 @@ export default defineConfig({
     ],
     footer: {
       message: 'Released under the Apache 2.0 License.',
-      copyright: 'Copyright © 2024 by MacAdmins Open Source.',
+      copyright: 'Copyright © 2025 by MacAdmins Open Source.',
     },
   },
   vite: {
