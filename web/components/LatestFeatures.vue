@@ -245,10 +245,12 @@ export default {
     },
     getOsImage(platform, title) {
       const images = {
+        'Tahoe': 'Tahoe.png',
         'Sonoma': 'Sonoma.png',
         'Sequoia': 'Sequoia.png',
         'Ventura': 'Ventura.png',
         'Monterey': 'Monterey.png',
+        'iOS 26': 'ios_26.png',
         'iOS 18': 'ios_18.png',
         'iOS 17': 'ios_17.png',
         'iOS 16': 'ios_16.png',
