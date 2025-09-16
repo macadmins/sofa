@@ -278,6 +278,7 @@ def process_os_type(os_type: str, config: dict, gdmf_data: dict) -> list:
         feed_structure["XProtectPlistConfigData"] = plist_info
         # Load and tag model data
         model_files = [
+            ("model_identifier_tahoe.json", "macOS Tahoe 26"),
             ("model_identifier_sequoia.json", "macOS Sequoia 15"),
             ("model_identifier_sonoma.json", "macOS Sonoma 14"),
             ("model_identifier_ventura.json", "macOS Ventura 13"),
