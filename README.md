@@ -1,7 +1,7 @@
 # SOFA 
 **S**imple **O**rganized **F**eed for **A**pple Software Updates
 
-![Sofa logo](./images/custom_logo.png "Optional title")
+![Sofa logo](./docs/custom_logo.png "Optional title")
 
 Hello 👋,
 
@@ -36,6 +36,29 @@ SOFA supports a wide array of practical applications, whether for MacAdmin tooli
 - **Documentation Access**: Use links to quickly view relevant Apple documentation and check detailed CVE information CVE.org, CISA.gov and NVD, and correlate those CVE's across platforms or major versions
 - **Download Universal Mac Assistant**: Access the latest and all 'active' (currently signed) IPSW/Universal Mac Assistant (UMA) download links. These can be integrated into your custom reprovisioning workflows, such as EraseAndInstall, to streamline and enhance your device re-purpose/deployment processes
 - **Self-Hosting**: Take control of the SOFA feed by self-hosting. Establish your fork as the authoritative source in your environment. Tailor the feed to meet your specific needs and maintain complete autonomy over its data
+
+## SOFA 2.0 Overview
+
+SOFA 2.0 provides enhanced data feeds with richer security information and improved API access:
+
+### Feed Versions
+
+- **V1 Feeds** (`/v1/`): Legacy format with basic CVE boolean flags and essential OS data
+- **V2 Feeds** (`/v2/`): Enhanced format with detailed CVE metadata, NIST URLs, KEV status, severity ratings, and enriched security context
+
+### API Access
+
+- **Primary Feed URLs**: `https://site.com/v2/macos_data_feed.json` (cleaner root-level access)
+- **Fallback URLs**: `https://site.com/data/feeds/v2/macos_data_feed.json` (backward compatibility)
+- **Supported Platforms**: macOS, iOS/iPadOS, Safari, tvOS, watchOS, visionOS
+- **Additional Data**: Security releases, XProtect information, beta releases, CVE search, model identifiers
+
+### Technical Implementation
+
+- **Safe Build Process**: Stable build to `data/feeds` with post-build copying to root directories
+- **Path Resolution**: Uses absolute paths for reliable execution without dangerous directory changes
+- **Config Accessibility**: Maintains access to `config/` directory for proper binary operation
+- **Deployment Flexibility**: Environment-configurable URLs for GitHub repository and branch targeting
 
 ## Web UI Overview
 
@@ -80,4 +103,4 @@ Access the feed directly for integration with automated tools or scripts. For pr
 
 ## Self-Hosting SOFA
 
-We believe that organizations needing tight control and ownership of the data they rely on should consider self-hosting SOFA. By cloning the repository into your own GitHub account and activating GitHub Actions to automatically build the feed at set intervals — or implementing a similar setup on platforms like GitLab — you ensure full control over how the data is determined, updated, and utilized. Additional documentation on self-hosting will be available to guide you through this process.
+Organizations needing tight control and ownership of the data they rely on can consider self-hosting SOFA. The process of cloning the repository into your own GitHub account or implementing a similar setup on platforms like GitLab is beyond scope of what we can provide here. The legacy `build-sofa-feed.py` file is a great source of adapting the process.
