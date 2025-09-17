@@ -27,4 +27,6 @@ import ReleaseInfoTable from './components/ReleaseInstallerTable.vue';
 
 The table below shows the latest macOS releases and provides download links for the UMA and IPSW installation files.
 
+More IPSW files are available here [Apple DB an database of Apple software and devices](https://appledb.dev/firmware.html)
+
 <ReleaseInfoTable />
