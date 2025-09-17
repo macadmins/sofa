@@ -7,37 +7,92 @@ layout: doc
 
 **S**imple **O**rganized **F**eed for **A**pple Software Updates
 
-![Sofa logo](./images/custom_logo.png "SOFA logo")
+![Sofa logo](/custom_logo.png "SOFA logo")
 
 Hello 👋,
 
-**SOFA** supports MacAdmins by efficiently tracking and surfacing information on updates for macOS and iOS. It consists of a machine-readable feed and user-friendly web interface, providing continuously up-to-date information on XProtect data, OS updates, and the details bundled in those releases.
+**SOFA** supports MacAdmins by efficiently tracking and surfacing information on updates for macOS and iOS and now other Apple platforms. It consists of a machine-readable feed and user-friendly web interface, providing continuously up-to-date information on XProtect data, OS updates, and esential details and numbers bundled in Apple's security releases.
+
+🌟 Please star us on GitHub to show your support! If SOFA aids your daily work, consider to [become a sponsor to Mac Admins Open Source](https://github.com/sponsors/macadmins?o=esb) to help improve this and other free community resources.
 
 ## Web UI Overview
 
-### OS Version Section
+SOFA's modern interface provides comprehensive tracking across all Apple platforms with powerful tools for admins and developers.
 
-- **Latest OS Version:** View details for the latest macOS and iOS releases, including version numbers, build identifiers, and release dates
-- **Download Links:** Direct access to download latest installers like IPSW files (coming soon!) or Universal Mac Assistant (UMA) packages
-- **Security and Documentation Links:** Quick access to relevant Apple documentation and security advisories
+### Platform Coverage
 
-### XProtect Data Section (macOS Only)
+- **macOS** (Tahoe 26, Sequoia 15, Sonoma 14, Ventura 13, Monterey 12) - Complete version tracking with XProtect data
+- **iOS/iPadOS** (2618, 17) - Latest releases and security updates for mobile devices  
+- **Safari** (18) - Browser security updates across all platforms
+- **tvOS** (26, 18, 17) - Apple TV platform updates and security fixes
+- **watchOS** (26, 11) - Apple Watch updates and compatibility tracking
+- **visionOS** (26, 2) - Latest platform with comprehensive security tracking
 
-- **Latest Versions Information:** Track the most current versions of XProtect
-- **Verification Baseline:** Use as a baseline info for use in custom tools to ensure XProtect is up-to-date across your macOS fleet. This could be running compliance scripts or extension attributes. See some starter examples in [Tools](https://github.com/macadmins/sofa/tree/main/tool-scripts)
-- **Update Frequency Details:** See when XProtect was updated and the days since the latest release
+### Latest Release Information
 
-### Security Updates Listing
+- **Real-time Data:** Automatic updates every few hours with the latest Apple releases
+- **Release Details:** Version numbers, build identifiers, release dates, and security context
+- **Device Compatibility:** Supported device lists and compatibility matrices
+- **Enterprise Resources:** Direct links to Apple's "What's New for Enterprise" documentation
 
-- **Release Timelines:** Overview of the release dates and intervals between the latest security updates.
-- **Vulnerability Details:**  For each CVE, links are provided to view detailed records at CISA.gov or CVE.org. Use 'Command-click' to open a CVE record on the NVD website, highlighting detailed info on actively exploited vulnerabilities and related security advisories
-- **Search and Highlight**: Search for specific CVEs to identify which OS updates address the vulnerabilities
+### Security Intelligence
+
+- **CVE Tracking:** Detailed vulnerability information with NIST database links
+- **Exploited CVEs:** Highlighted actively exploited vulnerabilities requiring immediate attention
+- **Security Context:** Plain-language summaries of security implications and recommendations
+- **KEV Integration:** CISA Known Exploited Vulnerabilities catalog integration
+
+### Developer & Admin Tools
+
+- **CVE Search:** Find which OS updates address specific vulnerabilities
+- **Model Identifiers:** Comprehensive Mac device database with chip and compatibility info
+- **Release Deferrals:** Track Apple's software update deferral periods
+- **Beta Releases:** Historical and current beta tracking across all platforms
+- **XProtect Monitoring:** Real-time malware definition and security component tracking
+
+### API & Integration
+
+- **JSON Feeds:** Machine-readable v1 and v2 APIs for automation
+- **RSS Feed:** Subscribe to security updates and release notifications
+- **Metadata Access:** Pipeline status, timestamps, and bulletin data for monitoring
+
+## CVE Search and Enrichment
+
+SOFA provides advanced vulnerability intelligence beyond basic security bulletins, helping you understand and prioritize security updates.
+
+### Enhanced CVE Data
+
+- **Comprehensive Database:** Over 1,400+ CVEs tracked across all Apple platforms
+- **NIST Integration:** Direct links to detailed vulnerability records from the National Vulnerability Database
+- **KEV Catalog:** Automatic flagging of CISA Known Exploited Vulnerabilities for priority patching
+- **Severity Scoring:** CVE severity levels (Critical, High, Medium, Low) for risk assessment
+
+### Intelligent Search & Discovery
+
+- **Multi-Platform Search:** Find vulnerabilities across macOS, iOS, Safari, tvOS, watchOS, and visionOS
+- **Update Mapping:** Discover which specific OS updates address particular CVEs
+- **Exploit Intelligence:** Identify actively exploited vulnerabilities requiring immediate attention
+- **Historical Tracking:** Browse vulnerability trends and Apple's security response patterns
+
+### Security Context & Enrichment
+
+- **Plain Language Summaries:** Technical vulnerabilities explained in accessible terms
+- **Impact Assessment:** Understand real-world implications and recommended actions
+- **Update Recommendations:** Clear guidance on which devices need updates and when
+- **Compliance Mapping:** Support for security frameworks and audit requirements
+
+### Integration Ready
+
+- **Programmatic Access:** Query CVE data via JSON APIs for automated security workflows
+- **RSS Notifications:** Subscribe to security alerts and vulnerability disclosures
+- **Export Capabilities:** CSV downloads for reporting and analysis tools
+- **Third-party Compatible:** Ready to integrate with device management platforms and security tools
 
 ## Self-hosting
 
-For production use, we highly recommend self-hosting the feed to improve reliability and security. This can be easily done by forking this repository and setting up a GitHub Action to deploy the feed on your own webhost.
+While self-hosting remains available through our legacy build scripts, we're thrilled by the community's positive response to the hosted SOFA service! 🎉 
 
-For detailed instructions, check out our [Quick Start Guide to Self-Hosted SOFA](self-hosted.md).
+Our community site is optimized with Cloudflare caching for fast, reliable access worldwide. If you find SOFA valuable for your organization, consider [supporting Mac Admins Open Source](https://github.com/sponsors/macadmins?o=esb) to help us maintain and improve this free resource for the entire community.
 
 ## JSON Feed Data
 
@@ -51,14 +106,28 @@ For guidance on how to utilize and implement the feed in scripts, explore exampl
 
 ## RSS Overview
 
-Subsribe to the RSS feed here: https://sofa.macadmins.io/v1/rss_feed.xml
+Stay informed with SOFA's comprehensive RSS feed that delivers timely notifications across all Apple platforms and security updates.
 
-The RSS feed is generated using [feedgen](https://feedgen.kiesow.be/) by leveraging the same data generated for the data feed. It extracts `SecurityReleases` and injects them into individual entries, providing a streamlined and organized feed of the latest updates. The process involves:
+**Subscribe:** [https://sofa.macadmins.io/v1/rss_feed.xml](https://sofa.macadmins.io/v1/rss_feed.xml)
 
-1. **Loading Cache Data**: RSS data is loaded from cached JSON files from the `cache/` directory to ensure all previously fetched updates are considered.
-1. **Writing to Cache**: New or updated data is written back to the cache, sorted by `ReleaseDate`.
-1. **Diffing Data**: New feed results are compared against existing cached data to identify and handle new entries.
-1. **Generate New Cache**: Updating the current cache files with new entries if new entries exist.
-1. **Creating RSS Entries**: `SecurityReleases` from the data feed are used to create RSS entries, including handling specific data like `XProtect` configurations and payloads.
-1. **Writing RSS Feed**: The sorted and updated entries are written to an RSS feed file (`v1/rss_feed.xml`) using `feedgen`.
+### What's Included
+
+- **OS Security Updates:** macOS, iOS, iPadOS, tvOS, watchOS, and visionOS security releases with CVE details
+- **Beta Releases:** Developer and public beta announcements across all platforms
+- **XProtect Updates:** Malware definition updates with staggered timestamps for clear tracking
+- **Vulnerability Intelligence:** basic Info on actively exploited CVEs and critical security advisories
+
+### Smart Notifications
+
+- **Chronological Order:** Updates sorted by actual release dates, not processing times
+- **Rich Metadata:** Each entry includes CVE counts, exploit status, and security context
+- **Duplicate Prevention:** Intelligent deduplication ensures clean, focused updates
+- **Multi-Source Integration:** Combines security releases, beta tracking, and XProtect data
+
+### Stanadardized RSS
+
+- **RSS Readers:** Works with any standard RSS client or reader application
+- **Team Communication:** Subscribe to RSS and share updates to Slack, Teams, or other collaboration tools
+
+The RSS feed is automatically updated alongside our JSON APIs, ensuring you get note about critical Apple security updates and platform releases.
 

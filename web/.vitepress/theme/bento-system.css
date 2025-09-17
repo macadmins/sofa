@@ -1,0 +1,1030 @@
+@import 'tailwindcss' reference;
+
+/**
+ * SOFA Bento Grid System
+ * Tailwind CSS implementation for VitePress
+ * 
+ * Based on the VitePressRedesign specifications
+ * Supports 1→2→3 column responsive grid with equal height cards
+ */
+
+/* ===== BASE GRID SYSTEM ===== */
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  align-items: stretch;
+  /* Ensure the grid itself is centered within its container */
+  margin: 0 auto !important;
+  margin-bottom: 4rem !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  justify-self: center !important;
+  box-sizing: border-box;
+  /* Edge browser compatibility */
+  -ms-grid-columns: 1fr;
+  overflow: hidden;
+}
+
+/* Enable custom ordering for bento cards */
+.dashboard-container .bento-grid .bento-card {
+  order: var(--bento-order, 0);
+}
+
+@media (min-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* Edge browser compatibility */
+    -ms-grid-columns: 1fr 1.5rem 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(3, 1fr);
+    /* Edge browser compatibility */
+    -ms-grid-columns: 1fr 1.5rem 1fr 1.5rem 1fr;
+  }
+}
+
+/* Additional Edge-specific overflow prevention */
+@supports (-ms-ime-align: auto) {
+  .bento-grid {
+    overflow: hidden !important;
+    max-width: calc(100vw - 2rem) !important;
+    width: calc(100vw - 2rem) !important;
+  }
+  
+  .bento-card {
+    max-width: calc(100vw - 4rem) !important;
+    overflow: hidden !important;
+    min-width: 0 !important;
+  }
+  
+  .dashboard-container {
+    overflow: hidden !important;
+    max-width: 100vw !important;
+  }
+}
+
+/* Edge browser CSS Grid fallback - most aggressive fix */
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  .bento-grid {
+    display: block !important;
+    max-width: calc(100vw - 1rem) !important;
+    overflow: hidden !important;
+  }
+  
+  .bento-card {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1.5rem !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  
+  @media (min-width: 768px) {
+    .bento-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      -ms-grid-columns: 1fr 1.5rem 1fr !important;
+      gap: 1.5rem !important;
+      max-width: calc(100vw - 1rem) !important;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .bento-grid {
+      grid-template-columns: 1fr 1fr 1fr !important;
+      -ms-grid-columns: 1fr 1.5rem 1fr 1.5rem 1fr !important;
+    }
+  }
+}
+
+.bento-grid-section {
+  margin-bottom: 4rem;
+}
+
+/* Ensure dashboard bento grid is always centered */
+.dashboard-container .bento-grid {
+  margin: 0 auto !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: repeat(1, 1fr) !important;
+}
+
+@media (min-width: 768px) {
+  .dashboard-container .bento-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard-container .bento-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* ===== CARD STRUCTURE ===== */
+
+/* Card backgrounds with smooth theme transitions */
+.bento-card {
+  @apply bg-white dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700/50 
+         rounded-xl hover:border-gray-300 dark:hover:border-slate-600/60 
+         h-full;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  /* Edge browser specific fixes */
+  -ms-grid-row-align: stretch;
+  width: 100%;
+}
+
+.bento-card-content {
+  @apply p-6 h-full flex flex-col;
+}
+
+.bento-card-header {
+  @apply flex items-center gap-3 mb-4;
+  align-items: center !important;
+}
+
+.bento-card-icon {
+  @apply w-7 h-7 rounded-md flex items-center justify-center flex-shrink-0;
+}
+
+/* Dark mode adjustments for consistent theme - explicit for Tailwind 4 */
+.dark .bento-card,
+.dark .bento-statistics,
+.dark .bento-beta-gradient,
+.dark .bento-community-gradient,
+.dark .bento-quickboard,
+.dark .bento-macos,
+.dark .bento-ios,
+.dark .bento-watchos,
+.dark .bento-tvos,
+.dark .bento-visionos,
+.dark .bento-safari,
+.dark .bento-community,
+.dark .bento-feed-macos,
+.dark .bento-feed-ios {
+  background: rgba(30, 41, 59, 0.5) !important;
+  border-color: rgba(51, 65, 85, 0.5) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.dark .bento-card:hover,
+.dark .bento-statistics:hover,
+.dark .bento-beta-gradient:hover,
+.dark .bento-community-gradient:hover,
+.dark .bento-quickboard:hover,
+.dark .bento-macos:hover,
+.dark .bento-ios:hover,
+.dark .bento-watchos:hover,
+.dark .bento-tvos:hover,
+.dark .bento-visionos:hover,
+.dark .bento-safari:hover,
+.dark .bento-community:hover,
+.dark .bento-feed-macos:hover,
+.dark .bento-feed-ios:hover {
+  background: rgba(30, 41, 59, 0.7) !important;
+  border-color: rgba(71, 85, 105, 0.6) !important;
+}
+
+.bento-card-title {
+  @apply font-semibold text-gray-900 text-sm flex-shrink-0;
+}
+
+/* Fix dark mode text colors explicitly */
+.dark .bento-card-title,
+.dark .bento-card h3,
+.dark .bento-card h4 {
+  color: rgb(248, 250, 252) !important;
+}
+
+.dark .bento-card .text-gray-900 {
+  color: rgb(248, 250, 252) !important;
+}
+
+.dark .bento-card .text-gray-700 {
+  color: rgb(203, 213, 225) !important;
+}
+
+.dark .bento-card .text-gray-600,
+.dark .bento-card .text-gray-500 {
+  color: rgb(156, 163, 175) !important;
+}
+
+.dark .bento-card .text-gray-400 {
+  color: rgb(107, 114, 128) !important;
+}
+
+/* Fix inner cards within bento boxes (SOFADashboard group/btn elements) */
+.dark .group\\/btn,
+.dark .group,
+.dark [class*="group"] {
+  background: rgba(30, 41, 59, 0.6) !important;
+  border-color: rgba(71, 85, 105, 0.6) !important;
+  color: rgb(229, 231, 235) !important;
+}
+
+.dark .group\\/btn:hover,
+.dark .group:hover,
+.dark [class*="group"]:hover {
+  background: rgba(30, 41, 59, 0.8) !important;
+  border-color: rgba(71, 85, 105, 0.8) !important;
+}
+
+/* Fix any bg-white elements in dark mode */
+.dark [class*="bg-white"] {
+  background: rgba(30, 41, 59, 0.6) !important;
+  border-color: rgba(71, 85, 105, 0.6) !important;
+}
+
+.dark [class*="bg-white"]:hover {
+  background: rgba(30, 41, 59, 0.8) !important;
+}
+
+/* Fix platform navigation buttons at top - comprehensive text color fixes */
+.dark a[class*="bg-white"],
+.dark a[class*="border-gray"],
+.dark .platform-nav a,
+.dark .flex a {
+  background: rgba(30, 41, 59, 0.6) !important;
+  border-color: rgba(71, 85, 105, 0.6) !important;
+  color: rgb(229, 231, 235) !important;
+}
+
+.dark a[class*="bg-white"]:hover,
+.dark a[class*="border-gray"]:hover,
+.dark .platform-nav a:hover,
+.dark .flex a:hover {
+  background: rgba(30, 41, 59, 0.8) !important;
+  border-color: rgba(71, 85, 105, 0.8) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+/* Fix text specifically in platform navigation buttons */
+.dark .flex a span,
+.dark .flex a div,
+.dark a[class*="bg-white"] span,
+.dark a[class*="bg-white"] div:not([class*="bg-"]) {
+  color: rgb(229, 231, 235) !important;
+}
+
+.dark .flex a:hover span,
+.dark .flex a:hover div,
+.dark a[class*="bg-white"]:hover span,
+.dark a[class*="bg-white"]:hover div:not([class*="bg-"]) {
+  color: rgb(255, 255, 255) !important;
+}
+
+/* Fix all button-like elements and spans in dark mode */
+.dark .inline-flex,
+.dark .px-4,
+.dark .py-2,
+.dark [class*="px-"]:not([class*="text-"]):not([class*="bg-blue"]):not([class*="bg-green"]):not([class*="bg-orange"]):not([class*="bg-purple"]) {
+  background: rgba(30, 41, 59, 0.6) !important;
+  border-color: rgba(71, 85, 105, 0.6) !important;
+  color: rgb(229, 231, 235) !important;
+}
+
+.dark .inline-flex:hover,
+.dark .px-4:hover,
+.dark .py-2:hover {
+  background: rgba(30, 41, 59, 0.8) !important;
+}
+
+/* Fix Customize Layout preferences controls dark mode */
+.dark .preferences-btn {
+  background: rgba(30, 41, 59, 0.6) !important;
+  border-color: rgba(71, 85, 105, 0.6) !important;
+  color: rgb(156, 163, 175) !important;
+}
+
+.dark .preferences-btn:hover {
+  border-color: rgb(59, 130, 246) !important;
+  color: rgb(59, 130, 246) !important;
+}
+
+.dark .preferences-btn.active {
+  background: rgb(59, 130, 246) !important;
+  border-color: rgb(59, 130, 246) !important;
+  color: white !important;
+}
+
+.dark .preferences-panel {
+  background: rgba(30, 41, 59, 0.8) !important;
+  border-color: rgba(71, 85, 105, 0.6) !important;
+}
+
+.dark .move-btn {
+  background: rgba(30, 41, 59, 0.6) !important;
+  border-color: rgba(71, 85, 105, 0.6) !important;
+  color: rgb(156, 163, 175) !important;
+}
+
+.dark .move-btn:hover:not(.disabled) {
+  background: rgba(30, 41, 59, 0.8) !important;
+  color: rgb(229, 231, 235) !important;
+}
+
+.dark .reset-btn {
+  background: rgba(220, 38, 38, 0.8) !important;
+  color: white !important;
+}
+
+/* Disabled state for non-orderable cards */
+.order-item-disabled {
+  opacity: 0.5;
+}
+
+.order-item-disabled .order-item-name {
+  color: #9ca3af;
+}
+
+.dark .order-item-disabled .order-item-name {
+  color: #6b7280;
+}
+
+/* Reset h3 default styles for bento titles */
+h3.bento-card-title {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.bento-card-body {
+  @apply space-y-3 flex-grow;
+}
+
+/* ===== PLATFORM-SPECIFIC COLORS ===== */
+
+/* Universal Gray Icons - All Bento cards start with neutral gray */
+.bento-macos .bento-card-icon,
+.bento-ios .bento-card-icon {
+  background-color: #F3F4F6 !important;
+}
+
+.dark .bento-macos .bento-card-icon,
+.dark .bento-ios .bento-card-icon {
+  background-color: rgba(75, 85, 99, 0.3) !important;
+}
+
+/* macOS Bento card hover borders */
+.bento-macos:hover {
+  border-color: #F472B6 !important;
+}
+
+.dark .bento-macos:hover {
+  border-color: #BE185D !important;
+}
+
+.bento-macos .bento-card-icon svg,
+.bento-ios .bento-card-icon svg {
+  color: #6B7280 !important;
+}
+
+.dark .bento-macos .bento-card-icon svg,
+.dark .bento-ios .bento-card-icon svg {
+  color: #9CA3AF !important;
+}
+
+/* Other Platforms - Now neutral gray like everything else */
+.bento-watchos .bento-card-icon, 
+.bento-tvos .bento-card-icon, 
+.bento-visionos .bento-card-icon {
+  background-color: #F3F4F6 !important;
+}
+
+.dark .bento-watchos .bento-card-icon, 
+.dark .bento-tvos .bento-card-icon, 
+.dark .bento-visionos .bento-card-icon {
+  background-color: rgba(75, 85, 99, 0.3) !important;
+}
+
+.bento-watchos .bento-card-icon svg, 
+.bento-tvos .bento-card-icon svg, 
+.bento-visionos .bento-card-icon svg {
+  color: #6B7280 !important;
+}
+
+.dark .bento-watchos .bento-card-icon svg, 
+.dark .bento-tvos .bento-card-icon svg, 
+.dark .bento-visionos .bento-card-icon svg {
+  color: #9CA3AF !important;
+}
+
+/* Safari - Now neutral gray like everything else */
+.bento-safari .bento-card-icon {
+  background-color: #F3F4F6 !important;
+}
+
+.dark .bento-safari .bento-card-icon {
+  background-color: rgba(75, 85, 99, 0.3) !important;
+}
+
+.bento-safari .bento-card-icon svg {
+  color: #6B7280 !important;
+}
+
+.dark .bento-safari .bento-card-icon svg {
+  color: #9CA3AF !important;
+}
+
+/* Community (Indigo Theme) */
+.bento-community {
+  /* Remove platform-specific hover colors */
+}
+
+.bento-community .bento-card-icon {
+  background-color: #FEF2F2 !important;
+}
+
+.dark .bento-community .bento-card-icon {
+  background-color: rgba(220, 38, 38, 0.2) !important;
+}
+
+.bento-community .bento-card-icon svg {
+  color: #DC2626 !important;
+}
+
+.dark .bento-community .bento-card-icon svg {
+  color: #F87171 !important;
+}
+
+/* ===== SPECIAL GRADIENT VARIANTS ===== */
+
+.bento-quickboard {
+  @apply bg-white dark:bg-gray-900 
+         border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700;
+}
+
+.bento-quickboard .bento-card-icon {
+  @apply bg-emerald-50 dark:bg-emerald-900/50;
+}
+
+.bento-quickboard .bento-card-icon svg {
+  @apply text-emerald-600 dark:text-emerald-400;
+}
+
+.bento-statistics {
+  @apply bg-white dark:bg-slate-800/50 
+         border-gray-200 dark:border-slate-700/50 hover:border-gray-300 dark:hover:border-slate-600/60;
+  backdrop-filter: blur(10px);
+}
+
+.bento-statistics .bento-card-icon {
+  background-color: #F3F4F6 !important;
+}
+
+.dark .bento-statistics .bento-card-icon {
+  background-color: rgba(75, 85, 99, 0.3) !important;
+}
+
+.bento-statistics .bento-card-icon svg {
+  color: #6B7280 !important;
+}
+
+.dark .bento-statistics .bento-card-icon svg {
+  color: #9CA3AF !important;
+}
+
+.bento-beta-gradient {
+  @apply bg-white dark:bg-slate-800/50 
+         border-gray-200 dark:border-slate-700/50 hover:border-gray-300 dark:hover:border-slate-600/60;
+  backdrop-filter: blur(10px);
+}
+
+.bento-beta-gradient .bento-card-icon {
+  background-color: #F3F4F6 !important;
+}
+
+.dark .bento-beta-gradient .bento-card-icon {
+  background-color: rgba(75, 85, 99, 0.3) !important;
+}
+
+.bento-beta-gradient .bento-card-icon svg {
+  color: #6B7280 !important;
+}
+
+.dark .bento-beta-gradient .bento-card-icon svg {
+  color: #9CA3AF !important;
+}
+
+.bento-community-gradient {
+  @apply bg-white dark:bg-slate-800/50 
+         border-gray-200 dark:border-slate-700/50 hover:border-gray-300 dark:hover:border-slate-600/60;
+  backdrop-filter: blur(10px);
+}
+
+.bento-community-gradient .bento-card-icon {
+  background-color: #FEF2F2 !important;
+}
+
+.dark .bento-community-gradient .bento-card-icon {
+  background-color: rgba(220, 38, 38, 0.2) !important;
+}
+
+.bento-community-gradient .bento-card-icon svg {
+  color: #DC2626 !important;
+}
+
+.dark .bento-community-gradient .bento-card-icon svg {
+  color: #F87171 !important;
+}
+
+/* Platforms Combined - Multi-platform neutral color */
+.bento-platforms-combined .bento-card-icon {
+  background-color: #F3F4F6 !important;
+}
+
+.dark .bento-platforms-combined .bento-card-icon {
+  background-color: rgba(75, 85, 99, 0.3) !important;
+}
+
+.bento-platforms-combined .bento-card-icon svg {
+  color: #6B7280 !important;
+}
+
+.dark .bento-platforms-combined .bento-card-icon svg {
+  color: #9CA3AF !important;
+}
+
+/* Timeline Gradient - for Recent Security Releases - Now neutral gray */
+.bento-timeline-gradient .bento-card-icon {
+  background-color: #F3F4F6 !important;
+}
+
+.dark .bento-timeline-gradient .bento-card-icon {
+  background-color: rgba(75, 85, 99, 0.3) !important;
+}
+
+.bento-timeline-gradient .bento-card-icon svg {
+  color: #6B7280 !important;
+}
+
+.dark .bento-timeline-gradient .bento-card-icon svg {
+  color: #9CA3AF !important;
+}
+
+/* Last Updated - Neutral gray tinted */
+.bento-card:has([title="Last Updated"]) .bento-card-icon {
+  background-color: #F1F5F9 !important;
+}
+
+.dark .bento-card:has([title="Last Updated"]) .bento-card-icon {
+  background-color: rgba(71, 85, 105, 0.3) !important;
+}
+
+.bento-card:has([title="Last Updated"]) .bento-card-icon svg {
+  color: #64748B !important;
+}
+
+.dark .bento-card:has([title="Last Updated"]) .bento-card-icon svg {
+  color: #94A3B8 !important;
+}
+
+/* Data Feed Colors - Platform harmonized */
+.bento-feed-macos {
+  /* Remove platform-specific hover colors */
+}
+
+.bento-feed-macos .bento-card-icon,
+.bento-feed-ios .bento-card-icon {
+  background-color: #F3F4F6 !important;
+}
+
+.dark .bento-feed-macos .bento-card-icon,
+.dark .bento-feed-ios .bento-card-icon {
+  background-color: rgba(75, 85, 99, 0.3) !important;
+}
+
+.bento-feed-macos .bento-card-icon svg,
+.bento-feed-ios .bento-card-icon svg {
+  color: #6B7280 !important;
+}
+
+.dark .bento-feed-macos .bento-card-icon svg,
+.dark .bento-feed-ios .bento-card-icon svg {
+  color: #9CA3AF !important;
+}
+
+/* Data Feeds (V1/V2) - Neutral theme like Other Platform Updates */
+.bento-feeds .bento-card-icon {
+  background-color: #F3F4F6 !important;
+}
+
+.dark .bento-feeds .bento-card-icon {
+  background-color: rgba(75, 85, 99, 0.3) !important;
+}
+
+.bento-feeds .bento-card-icon svg {
+  color: #6B7280 !important;
+}
+
+.dark .bento-feeds .bento-card-icon svg {
+  color: #9CA3AF !important;
+}
+
+/* ===== INTERACTIVE ELEMENTS ===== */
+
+/* Button with accessible contrast */
+.bento-button {
+  @apply w-full text-left p-3.5 rounded-lg transition-all duration-150 text-sm cursor-pointer 
+         bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700/50
+         hover:border-gray-300 dark:hover:border-slate-600/60
+         text-gray-900 dark:text-gray-100;
+  backdrop-filter: blur(10px);
+}
+
+.dark .bento-button {
+  background: rgba(30, 41, 59, 0.5) !important;
+  border-color: rgba(51, 65, 85, 0.5) !important;
+  color: rgb(229, 231, 235) !important;
+}
+
+.dark .bento-button:hover {
+  background: rgba(30, 41, 59, 0.7) !important;
+  border-color: rgba(71, 85, 105, 0.6) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+/* Remove all platform-specific button hover colors for consistency */
+.bento-button-macos,
+.bento-button-ios,
+.bento-button-green,
+.bento-button-orange,
+.bento-button-emerald {
+  /* Use default button styling */
+}
+
+/* Copy URL Buttons */
+.bento-copy-url {
+  @apply flex items-center gap-1 px-2 py-1 text-gray-400 rounded transition-colors;
+}
+
+.bento-copy-url-macos {
+  @apply hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-900/20;
+}
+
+.bento-copy-url-ios {
+  @apply hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20;
+}
+
+/* ===== VERSION DISPLAY ===== */
+
+.bento-version-entry {
+  @apply flex items-center justify-between text-sm mb-2;
+}
+
+.bento-version-label {
+  @apply font-semibold text-gray-900 dark:text-white flex-shrink-0;
+}
+
+.bento-version-info {
+  @apply flex items-center gap-2;
+}
+
+.bento-version-details {
+  @apply text-sm text-gray-700 dark:text-gray-300 space-y-1 mt-1;
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+.bento-security-shield {
+  @apply h-3.5 w-3.5 text-gray-600 dark:text-gray-400;
+}
+
+.bento-timestamp {
+  @apply text-xs text-gray-700 dark:text-gray-300 font-mono leading-relaxed;
+}
+
+.bento-badge-tbd {
+  @apply text-xs px-2 py-0 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700;
+}
+
+/* ===== ANIMATIONS ===== */
+
+.bento-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.bento-hover-target {
+  /* Removed hover scale effect */
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+
+/* Very narrow screens - reduce gap to prevent overflow */
+@media (max-width: 480px) {
+  .bento-grid {
+    @apply gap-3;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .dashboard-container .bento-grid {
+    gap: 0.75rem !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  .bento-card {
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+
+/* Extra narrow screens - further reduce gap */
+@media (max-width: 360px) {
+  .bento-grid {
+    @apply gap-2;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .dashboard-container .bento-grid {
+    gap: 0.5rem !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  .bento-card {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .bento-card-content {
+    @apply p-2;
+  }
+}
+
+/* Very narrow screens - reduce gap to prevent overflow (Edge browser compatible) */
+@media (max-width: 480px) {
+  .bento-grid {
+    @apply gap-4;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+  
+  .dashboard-container .bento-grid {
+    gap: 1rem !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  
+  .bento-card {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+}
+
+/* Extra narrow screens - further reduce gap (Edge browser compatible) */
+@media (max-width: 360px) {
+  .bento-grid {
+    @apply gap-3;
+    max-width: calc(100vw - 1rem) !important;
+    overflow: hidden !important;
+  }
+  
+  .dashboard-container .bento-grid {
+    gap: 0.75rem !important;
+    max-width: calc(100vw - 1rem) !important;
+    overflow: hidden !important;
+  }
+  
+  .bento-card {
+    max-width: calc(100vw - 2rem) !important;
+    overflow: hidden !important;
+  }
+  
+  .bento-card-content {
+    @apply p-3;
+    overflow: hidden !important;
+    word-wrap: break-word !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-card-content {
+    @apply p-4;
+  }
+  
+  .bento-card-title {
+    @apply text-sm;
+  }
+  
+  .bento-card-header {
+    @apply gap-2 mb-3;
+  }
+  
+  .bento-card-icon {
+    @apply w-7 h-7;
+  }
+  
+  .bento-card-body {
+    @apply space-y-2;
+  }
+  
+  .bento-version-entry {
+    @apply text-xs mb-1;
+  }
+  
+  .bento-version-details {
+    @apply text-xs;
+  }
+  
+  .bento-button {
+    @apply p-2 text-xs;
+  }
+}
+
+/* ===== LATEST FEATURES BENTO STYLES ===== */
+
+/* Info displays for version information */
+.bento-info-display {
+  @apply text-sm text-gray-600 dark:text-gray-400 space-y-2;
+}
+
+.bento-info-item {
+  @apply flex justify-between items-start;
+}
+
+.bento-info-label {
+  @apply font-medium text-gray-800 dark:text-gray-200;
+}
+
+.bento-info-value {
+  @apply text-right text-gray-600 dark:text-gray-400;
+}
+
+/* Deferral table styling */
+.bento-deferral-table {
+  @apply w-full text-sm;
+}
+
+.bento-deferral-table th {
+  @apply text-left font-medium text-gray-800 dark:text-gray-200 pb-2 border-b border-gray-200 dark:border-gray-700;
+}
+
+.bento-deferral-table td {
+  @apply py-2 text-gray-600 dark:text-gray-400 border-b border-gray-100 dark:border-gray-800;
+}
+
+.bento-deferral-table tr:last-child td {
+  @apply border-b-0;
+}
+
+/* XProtect item styling */
+.bento-xprotect-item {
+  @apply flex justify-between items-start py-2 border-b border-gray-100 dark:border-gray-800 last:border-b-0;
+}
+
+.bento-xprotect-name {
+  @apply font-medium text-gray-800 dark:text-gray-200;
+}
+
+.bento-xprotect-version {
+  @apply text-sm text-gray-600 dark:text-gray-400;
+}
+
+/* Resource links styling */
+.bento-resource-link {
+  @apply block p-3 rounded-lg bg-white/30 dark:bg-gray-700/30 border border-gray-100 dark:border-gray-600/50 
+         hover:bg-white/60 dark:hover:bg-gray-700/60 hover:border-gray-200 dark:hover:border-gray-600 
+         transition-all duration-200 text-sm text-gray-800 dark:text-gray-200 no-underline mb-2;
+}
+
+.bento-resource-link:hover {
+  @apply text-gray-900 dark:text-white;
+}
+
+/* Resource section headers */
+.bento-info-display h4 {
+  @apply text-sm font-semibold text-gray-900 dark:text-gray-100 mt-4 mb-2 first:mt-0;
+}
+
+/* OS image container for bento layout */
+.os-image-container {
+  @apply flex justify-center mb-3;
+}
+
+.os-image {
+  @apply w-12 h-12 rounded-lg;
+}
+
+/* Version display styling for deferral controls */
+.deferral-controls {
+  @apply flex justify-between items-center mb-4 flex-wrap gap-3;
+}
+
+.version-display {
+  @apply flex items-center gap-2;
+}
+
+.version-label {
+  @apply text-sm font-medium text-gray-600 dark:text-gray-400;
+}
+
+.version-value {
+  @apply text-sm font-semibold text-gray-900 dark:text-gray-100;
+}
+
+/* Button group styling */
+.button-group {
+  @apply flex border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden;
+}
+
+.button-group button {
+  @apply px-3 py-1.5 text-sm font-medium bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 
+         border-r border-gray-200 dark:border-gray-600 last:border-r-0 hover:bg-gray-50 dark:hover:bg-gray-700 
+         transition-colors duration-200;
+}
+
+.button-group button.active {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.button-group button:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* XProtect meta styling */
+.xprotect-meta {
+  @apply mt-2 pt-2 border-t border-gray-200 dark:border-gray-700;
+}
+
+.meta-text {
+  @apply text-xs text-gray-500 dark:text-gray-400;
+}
+
+/* Security Info bento styling */
+.bento-card-title-section {
+  @apply flex-grow;
+}
+
+.bento-card-title-section .bento-card-title {
+  @apply text-base font-semibold text-gray-900 dark:text-white mb-1;
+}
+
+.release-date {
+  @apply text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1;
+}
+
+.warning-icon {
+  @apply text-sm;
+}
+
+.expand-icon {
+  @apply text-xl font-light text-gray-500 dark:text-gray-400 cursor-pointer ml-4;
+}
+
+/* CVE list styling for bento cards */
+.cve-list {
+  @apply flex flex-wrap gap-2 mt-2;
+}
+
+.cve-link {
+  @apply inline-flex items-center px-2 py-1 text-xs font-mono bg-blue-50 dark:bg-blue-900/30 
+         border border-blue-200 dark:border-blue-800 rounded text-blue-700 dark:text-blue-300 
+         hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors duration-200 no-underline;
+}
+
+.cve-link.exploited {
+  @apply bg-red-50 dark:bg-red-900/30 border-red-200 dark:border-red-800 
+         text-red-700 dark:text-red-300 hover:bg-red-100 dark:hover:bg-red-900/50;
+}
+
+/* ===== CUSTOM PROPERTIES FOR THEMING ===== */
+
+:root {
+  --bento-primary-blue: hsl(217, 91%, 60%);
+  --bento-primary-green: hsl(142, 76%, 36%);
+  --bento-primary-orange: hsl(24, 95%, 53%);
+  --bento-emerald: hsl(155, 76%, 36%);
+  --bento-indigo: hsl(231, 48%, 48%);
+}
+
+/* Dark mode adjustments */
+.dark {
+  --bento-primary-blue: hsl(217, 91%, 70%);
+  --bento-primary-green: hsl(142, 76%, 46%);
+  --bento-primary-orange: hsl(24, 95%, 63%);
+  --bento-emerald: hsl(155, 76%, 46%);
+  --bento-indigo: hsl(231, 48%, 58%);
+}

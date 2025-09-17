@@ -1,0 +1,9 @@
+name = "sofa-2-cf-deployment"
+compatibility_date = "2024-09-13"
+
+[assets]
+directory = ".vitepress/dist"
+
+[[routes]]
+pattern = "sofa.macadmins.io"
+custom_domain = true

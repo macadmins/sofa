@@ -1,0 +1,668 @@
+/* Custom Layout CSS - Hide default navbar and adjust spacing */
+
+/* Hide the default VitePress navbar content but keep structure for mobile */
+.VPNav .VPNavBar .content .container > * {
+  display: none !important;
+}
+
+/* Hide VitePress navbar title specifically */
+.VPNav .VPNavBar .title,
+.VPNav .VPNavBarTitle,
+.VPNavBarTitle .title {
+  display: none !important;
+}
+
+/* Show VitePress mobile hamburger menu */
+@media (max-width: 960px) {
+  .VPNav {
+    display: block !important;
+  }
+  
+  .VPNav .VPNavBarHamburger {
+    display: flex !important;
+  }
+  
+  .VPNavScreen {
+    display: block !important;
+  }
+}
+
+/* Hide sidebar on home page */
+.layout-home .VPSidebar {
+  display: none !important;
+}
+
+/* Show sidebar on all non-home pages */
+.VPContent:not(.is-home) + .VPSidebar,
+.VPDoc ~ .VPSidebar,
+body:not(.layout-home) .VPSidebar {
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Adjust content padding to account for custom navbar */
+.VPContent {
+  padding-top: 0 !important;
+}
+
+/* Add top margin to the actual document content, not the container */
+.VPDoc {
+  margin-top: calc(64px - 1px) !important; /* Account for navbar height minus border */
+}
+
+/* Add extra padding for h1 headings to prevent them being hidden behind navbar */
+.VPDoc h1:first-child {
+  padding-top: 1.5rem !important;
+  margin-top: 0 !important;
+}
+
+/* Specific fix for CVE pages and other detail pages */
+.VPDoc .vp-doc h1 {
+  scroll-margin-top: calc(64px + 2rem);
+}
+
+/* Additional fix specifically for CVE detail pages - ensure h1 is visible */
+.cve-details-container h1.cve-id {
+  padding-top: 1rem !important;
+  margin-top: 0 !important;
+}
+
+/* Adjust VitePress local navigation positioning */
+.VPLocalNav {
+  top: 64px !important;
+  position: fixed !important;
+  z-index: 20 !important;
+  background: var(--vp-c-bg) !important;
+  border-bottom: 1px solid var(--vp-c-divider) !important;
+}
+
+/* Add padding when local nav is present */
+.VPDoc.has-sidebar {
+  padding-top: calc(1.5rem + 48px) !important; /* Account for local nav height */
+}
+
+/* Home page needs top margin to account for navbar */
+.layout-home .VPContent {
+  padding-top: 64px !important; /* Account for navbar height */
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* Center home page content */
+.layout-home .VPHome {
+  width: 100% !important;
+  max-width: none !important;
+  display: flex !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding-top: 2rem !important; /* Extra padding for breathing room */
+}
+
+.layout-home .VPHomeContent {
+  width: 100% !important;
+  max-width: 1024px !important;
+  margin: 0 auto !important;
+}
+
+/* Remove extra margins and padding from vp-doc container on home */
+.is-home .vp-doc.container {
+  margin: 0 auto !important;
+  padding: 2rem 1rem !important; /* Add some padding */
+  max-width: 100% !important;
+}
+
+/* Ensure our custom navbar is properly positioned */
+.sofa-navbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* Fix sidebar styling and positioning - align with VitePress defaults */
+.VPSidebar {
+  position: fixed !important;
+  top: 64px !important; /* Match custom navbar height */
+  left: 0 !important;
+  height: calc(100vh - 64px) !important; /* Match custom navbar height */
+  width: 250px !important; /* Reduced sidebar width */
+  background: var(--vp-c-bg) !important;
+  border-right: 1px solid var(--vp-c-divider) !important;
+  padding: 0 !important;
+  z-index: 10 !important; /* Lower than navbar but visible */
+  display: block !important; /* Ensure it's visible */
+}
+
+/* Remove grey header box from sidebar */
+.VPSidebar .VPSidebarNav {
+  padding-top: 0 !important;
+}
+
+/* Hide any sidebar header elements */
+.VPSidebar .sidebar-top,
+.VPSidebar .nav-header,
+.VPSidebar .VPNavScreen,
+.VPSidebar .curtain {
+  display: none !important;
+}
+
+/* Align sidebar content with navbar logo */
+.VPSidebar .VPSidebarNav > .group:first-child {
+  margin-top: 0 !important;
+  padding-top: 1.5rem !important;
+  margin-left: 1.5rem !important; /* Align with navbar logo position */
+}
+
+/* Desktop: Adjust content when sidebar is present */
+@media (min-width: 960px) {
+  .VPContent:not(.is-home) {
+    margin-left: 250px !important; /* Reduced sidebar space */
+    padding: 0 !important;
+    width: calc(100% - 250px) !important;
+  }
+}
+
+/* Mobile: Full width content */
+@media (max-width: 959px) {
+  .VPContent:not(.is-home) {
+    margin-left: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+}
+
+/* Home page should not have sidebar margin */
+.VPContent.is-home {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Fix content container max-width */
+.VPContent .content-container {
+  max-width: none !important;
+}
+
+/* Ensure local nav aligns properly */
+@media (min-width: 960px) {
+  .VPLocalNav {
+    top: 64px !important;
+    left: 250px !important;
+    width: calc(100% - 250px) !important;
+  }
+}
+
+@media (max-width: 959px) {
+  .VPLocalNav {
+    top: 64px !important;
+    left: 0 !important;
+    width: 100% !important;
+  }
+}
+
+/* Home page local nav full width */
+.layout-home .VPLocalNav {
+  left: 0 !important;
+  width: 100% !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 960px) {
+  .VPSidebar {
+    transform: translateX(-100%) !important;
+    transition: transform 0.25s ease !important;
+  }
+  
+  .VPSidebar.open {
+    transform: translateX(0) !important;
+  }
+  
+  .VPContent:not(.layout-home .VPContent) {
+    margin-left: 0 !important;
+    padding-left: 1.5rem !important;
+  }
+  
+  .VPLocalNav {
+    left: 0 !important;
+    width: 100% !important;
+  }
+}
+
+/* Center footer content */
+.VPFooter {
+  margin-left: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.VPFooter .container {
+  max-width: 1024px !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  padding: 0 2rem !important;
+}
+
+/* Fix doc page layouts - optimize width usage */
+.VPDoc {
+  padding: 1.5rem !important;
+  padding-top: 1.5rem !important; /* Normal padding */
+  max-width: 100% !important;
+  margin-top: calc(64px - 1px) !important; /* Navbar height minus border */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Ensure VPDoc without aside works properly */
+.VPDoc:not(.has-aside) {
+  display: block !important;
+}
+
+.VPDoc:not(.has-aside) .container {
+  max-width: 100% !important;
+  padding-right: 0 !important;
+}
+
+/* Main content container - use more available width */
+.VPDoc .container {
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.VPDoc .content {
+  max-width: 100% !important;
+}
+
+/* Responsive adjustments for better width usage */
+@media (min-width: 768px) {
+  .VPDoc {
+    padding: 1.5rem 2rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .VPDoc {
+    padding: 2rem 2.5rem !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .VPDoc {
+    padding: 1.5rem 2rem !important; /* Balanced padding */
+    position: relative !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+  }
+  
+  .VPDoc .container {
+    max-width: 100% !important;
+    padding-right: 0 !important; /* No padding, aside is inline */
+    margin: 0 !important;
+  }
+}
+
+@media (min-width: 1380px) {
+  .VPDoc {
+    padding: 1.5rem 2.5rem !important; /* Better padding */
+    max-width: 1440px !important;
+  }
+  
+  .VPDoc .container {
+    max-width: 100% !important;
+    padding-right: 0 !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .VPDoc {
+    padding: 1.5rem 3rem !important; /* Good padding for large screens */
+    max-width: 1480px !important;
+  }
+  
+  .VPDoc .container {
+    max-width: 100% !important;
+    padding-right: 0 !important;
+  }
+}
+
+/* Override VitePress scoped styles for VPDocAside */
+.VPDoc .aside,
+.VPDoc .aside-container,
+.VPDoc .aside-content {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.VPDoc .VPDocAside,
+.VPDoc aside[class*="VPDocAside"],
+[data-v-a6882923].VPDocAside,
+[data-v-014f9d3d].VPDocAside {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Show "On this page" on appropriate screen sizes */
+@media (min-width: 1280px) {
+  .VPDoc.has-aside {
+    display: flex !important;
+    gap: 2rem !important;
+    position: relative !important;
+  }
+  
+  .VPDoc.has-aside .container {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+  
+  /* The aside wrapper */
+  .VPDoc.has-aside .aside {
+    display: block !important;
+    width: 200px !important;
+    flex-shrink: 0 !important;
+    order: 2 !important; /* Put aside on the right */
+  }
+  
+  .VPDoc.has-aside .aside-container {
+    position: sticky !important;
+    top: calc(64px + 48px + 16px) !important; /* Account for navbar (64px) + local nav (48px) + spacing */
+    height: calc(100vh - 64px - 48px - 32px) !important; /* Fixed height */
+    overflow: hidden !important; /* Container doesn't scroll */
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  /* Prevent horizontal scroll and style scrollbar */
+  .VPDoc.has-aside .aside-container::-webkit-scrollbar {
+    width: 6px !important;
+  }
+  
+  .VPDoc.has-aside .aside-container::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+  
+  .VPDoc.has-aside .aside-container::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.3) !important;
+    border-radius: 3px !important;
+  }
+  
+  .VPDoc.has-aside .aside-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(128, 128, 128, 0.5) !important;
+  }
+  
+  .VPDoc.has-aside .VPDocAside,
+  .VPDoc.has-aside aside[class*="VPDocAside"] {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    padding: 1rem !important;
+    padding-right: 0 !important;
+    font-size: 0.875rem !important;
+    background: transparent !important;
+  }
+  
+  .VPDocOutline {
+    position: relative !important;
+    top: 0 !important;
+    padding-top: 0 !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  /* Make the content area scrollable */
+  .VPDocOutlineDropdown,
+  .VPDocAsideOutline,
+  .outline-link {
+    flex: 1 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding-right: 0.5rem !important;
+    scrollbar-width: thin !important;
+    scroll-behavior: auto !important; /* Use normal scrolling speed */
+    -webkit-overflow-scrolling: touch !important; /* Smooth scrolling on iOS */
+  }
+  
+  /* Scrollbar styling for outline content */
+  .VPDocOutlineDropdown::-webkit-scrollbar,
+  .VPDocAsideOutline::-webkit-scrollbar,
+  .outline-link::-webkit-scrollbar {
+    width: 6px !important;
+  }
+  
+  .VPDocOutlineDropdown::-webkit-scrollbar-track,
+  .VPDocAsideOutline::-webkit-scrollbar-track,
+  .outline-link::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+  
+  .VPDocOutlineDropdown::-webkit-scrollbar-thumb,
+  .VPDocAsideOutline::-webkit-scrollbar-thumb,
+  .outline-link::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.3) !important;
+    border-radius: 3px !important;
+  }
+  
+  .VPDocOutlineDropdown::-webkit-scrollbar-thumb:hover,
+  .VPDocAsideOutline::-webkit-scrollbar-thumb:hover,
+  .outline-link::-webkit-scrollbar-thumb:hover {
+    background: rgba(128, 128, 128, 0.5) !important;
+  }
+}
+
+/* Maintain aside on very large screens */
+@media (min-width: 1440px) {
+  .VPDoc.has-aside .aside {
+    width: 220px !important; /* Slightly wider on large screens */
+  }
+}
+
+/* Hide aside on smaller screens */
+@media (max-width: 1279px) {
+  .VPDoc .aside {
+    display: none !important;
+  }
+  
+  .VPDoc {
+    display: block !important;
+  }
+  
+  .VPDoc .container {
+    max-width: 100% !important;
+    padding-right: 0 !important;
+  }
+}
+
+/* Style the "On this page" title */
+.VPDocOutlineTitle,
+.outline-title {
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  margin-bottom: 0.5rem !important;
+  color: var(--vp-c-text-1) !important;
+  position: sticky !important;
+  top: 0 !important;
+  background: var(--vp-c-bg) !important;
+  padding-bottom: 0.5rem !important;
+  z-index: 1 !important;
+}
+
+/* Style outline links */
+.VPDocOutlineItem {
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Ensure outline content area has proper scroll */
+.VPDocOutlineContent,
+.outline-link {
+  display: block !important;
+}
+
+.VPDocOutlineItem a {
+  color: var(--vp-c-text-2) !important;
+  text-decoration: none !important;
+}
+
+.VPDocOutlineItem a:hover {
+  color: var(--vp-c-brand) !important;
+}
+
+.VPDocOutlineItem.active a {
+  color: var(--vp-c-brand) !important;
+  font-weight: 500 !important;
+}
+
+/* Enable smooth scrolling for anchor links only when navigating */
+html:not(.scrolling-sidebar) {
+  scroll-behavior: smooth !important;
+}
+
+/* Normal scroll speed for manual scrolling */
+.VPDocAside *,
+.aside-container * {
+  scroll-behavior: auto !important;
+}
+
+/* Ensure proper scroll margin for anchored elements */
+[id] {
+  scroll-margin-top: calc(64px + 48px + 1rem) !important;
+}
+
+/* Special handling for h1, h2, h3 with ids */
+h1[id], h2[id], h3[id] {
+  scroll-margin-top: calc(64px + 48px + 2rem) !important;
+}
+
+/* VitePress auto-generated h1 from markdown */
+.VPDoc h1:first-of-type {
+  scroll-margin-top: calc(64px + 48px + 2rem) !important;
+}
+
+/* Hide aside on smaller screens */
+@media (max-width: 1380px) {
+  .VPDocAside {
+    display: none !important;
+  }
+  
+  .VPDoc .container {
+    max-width: 100% !important;
+    padding-right: 0 !important;
+  }
+}
+
+/* Better sizing for medium screens */
+@media (min-width: 960px) and (max-width: 1279px) {
+  .VPDoc {
+    padding: 2rem 2rem !important;
+    display: block !important;
+  }
+  
+  .VPDoc .container {
+    max-width: 100% !important;
+    padding-right: 0 !important;
+  }
+}
+
+/* Specific optimization for ~1400px screens */
+@media (min-width: 1350px) and (max-width: 1450px) {
+  .VPDoc {
+    padding: 1.5rem 2.5rem !important;
+    max-width: 1440px !important;
+  }
+  
+  .VPDoc .container {
+    max-width: 100% !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+/* Additional sidebar content styling */
+.VPSidebar .group + .group {
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 1rem;
+}
+
+/* Sidebar link styling */
+.VPSidebar .VPSidebarItem {
+  margin-left: 1.5rem !important; /* Maintain alignment */
+}
+
+/* Remove any unwanted backgrounds */
+.VPSidebar .VPSidebarNav::before,
+.VPSidebar::before {
+  display: none !important;
+}
+
+/* More aggressive removal of sidebar header elements */
+.VPSidebar .nav-screen-menu,
+.VPSidebar .VPNavScreenMenu,
+.VPSidebar .menu,
+.VPSidebar .VPNavBar,
+.VPSidebar .nav-bar,
+.VPSidebar .title {
+  display: none !important;
+}
+
+/* Clean sidebar container */
+.VPSidebar .container {
+  padding: 0 !important;
+}
+
+/* Ensure sidebar nav is clean */
+.VPSidebar nav {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+/* Remove top margin from first sidebar group */
+.VPSidebar .VPSidebarNav .group:first-of-type {
+  margin-top: 0 !important;
+  padding-top: 1.5rem !important;
+}
+
+/* Adjust sidebar item alignment to match navbar logo exactly */
+.VPSidebar .VPSidebarNav .group {
+  padding-left: 1.5rem !important; /* Match navbar container padding */
+}
+
+/* Remove any overlay or backdrop elements */
+.VPSidebar .backdrop,
+.VPSidebar .overlay {
+  display: none !important;
+}
+
+/* Remove any unwanted active state borders */
+.VPSidebar .VPSidebarItem.active,
+.VPSidebar .VPSidebarItem.active::before,
+.VPSidebar .VPSidebarItem.active::after,
+.VPSidebar .active {
+  border-left: none !important;
+  border-right: none !important;
+  border-color: transparent !important;
+}
+
+/* Ensure no green or colored borders on sidebar elements */
+.VPSidebar *,
+.VPSidebar::before,
+.VPSidebar::after {
+  border-color: var(--vp-c-divider) !important;
+}
+
+/* Override any VitePress active link styling */
+.VPSidebarItem.active .link {
+  border-left: none !important;
+}
+
+/* Hide sidebar completely on home page - stronger override */
+.is-home .VPSidebar,
+.layout-home .VPSidebar,
+body.layout-home .VPSidebar {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
