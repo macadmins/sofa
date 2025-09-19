@@ -1,140 +1,7 @@
 {
   "Version": "2.0",
-  "UpdateHash": "8da9404e011aa6c72f226d1926342a174d65feff8d46d7a6a8ef7b032583ff12",
+  "UpdateHash": "992ee66f36335f6a02514a42390b3053cf8080cc5874430346dfb31c844b4864",
   "AppVersions": [
-    {
-      "AppVersion": "Safari 26",
-      "Latest": {
-        "ProductVersion": "26.0",
-        "UpdateName": "Safari 26",
-        "ProductName": "Safari",
-        "ReleaseDate": "2025-09-15T00:00:00Z",
-        "ReleaseType": "Safari",
-        "SecurityInfo": "https://support.apple.com/en-us/125113",
-        "CVEs": {
-          "CVE-2025-31254": {
-            "exploited": false,
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-31254",
-            "tags": [
-              "webkit"
-            ]
-          },
-          "CVE-2025-43272": {
-            "exploited": false,
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43272",
-            "tags": [
-              "webkit"
-            ]
-          },
-          "CVE-2025-43327": {
-            "exploited": false,
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43327",
-            "tags": [
-              "safari"
-            ]
-          },
-          "CVE-2025-43342": {
-            "exploited": false,
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43342",
-            "tags": [
-              "safari",
-              "use-after-free",
-              "webkit"
-            ]
-          },
-          "CVE-2025-43343": {
-            "exploited": false,
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43343",
-            "tags": [
-              "webkit"
-            ]
-          },
-          "CVE-2025-43356": {
-            "exploited": false,
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43356",
-            "tags": [
-              "safari",
-              "webkit"
-            ]
-          },
-          "CVE-2025-43368": {
-            "exploited": false,
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43368",
-            "tags": [
-              "safari"
-            ]
-          }
-        },
-        "ActivelyExploitedCVEs": [],
-        "UniqueCVEsCount": 7
-      },
-      "SecurityReleases": [
-        {
-          "ProductVersion": "26.0",
-          "UpdateName": "Safari 26",
-          "ProductName": "Safari",
-          "ReleaseDate": "2025-09-15T00:00:00Z",
-          "ReleaseType": "Safari",
-          "SecurityInfo": "https://support.apple.com/en-us/125113",
-          "CVEs": {
-            "CVE-2025-31254": {
-              "exploited": false,
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-31254",
-              "tags": [
-                "webkit"
-              ]
-            },
-            "CVE-2025-43272": {
-              "exploited": false,
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43272",
-              "tags": [
-                "webkit"
-              ]
-            },
-            "CVE-2025-43327": {
-              "exploited": false,
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43327",
-              "tags": [
-                "safari"
-              ]
-            },
-            "CVE-2025-43342": {
-              "exploited": false,
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43342",
-              "tags": [
-                "safari",
-                "use-after-free",
-                "webkit"
-              ]
-            },
-            "CVE-2025-43343": {
-              "exploited": false,
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43343",
-              "tags": [
-                "webkit"
-              ]
-            },
-            "CVE-2025-43356": {
-              "exploited": false,
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43356",
-              "tags": [
-                "safari",
-                "webkit"
-              ]
-            },
-            "CVE-2025-43368": {
-              "exploited": false,
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43368",
-              "tags": [
-                "safari"
-              ]
-            }
-          },
-          "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 7
-        }
-      ]
-    },
     {
       "AppVersion": "Safari 18",
       "Latest": {
@@ -955,6 +822,479 @@
             "CVE-2023-41993"
           ],
           "UniqueCVEsCount": 11
+        }
+      ]
+    },
+    {
+      "AppVersion": "Safari 16",
+      "Latest": {
+        "ProductVersion": "16.6.1",
+        "UpdateName": "Safari 16.6.1",
+        "ProductName": "Safari",
+        "ReleaseDate": "2023-09-21T00:00:00Z",
+        "ReleaseType": "Safari",
+        "SecurityInfo": "https://support.apple.com/kb/HT213930",
+        "CVEs": {
+          "CVE-2023-41993": {
+            "exploited": true,
+            "kev": true,
+            "matched_pattern": "CISA KEV catalog",
+            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-41993"
+          }
+        },
+        "ActivelyExploitedCVEs": [
+          "CVE-2023-41993"
+        ],
+        "UniqueCVEsCount": 1,
+        "DaysSincePreviousRelease": 59
+      },
+      "SecurityReleases": [
+        {
+          "ProductVersion": "16.6.1",
+          "UpdateName": "Safari 16.6.1",
+          "ProductName": "Safari",
+          "ReleaseDate": "2023-09-21T00:00:00Z",
+          "ReleaseType": "Safari",
+          "SecurityInfo": "https://support.apple.com/kb/HT213930",
+          "CVEs": {
+            "CVE-2023-41993": {
+              "exploited": true,
+              "kev": true,
+              "matched_pattern": "CISA KEV catalog",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-41993"
+            }
+          },
+          "ActivelyExploitedCVEs": [
+            "CVE-2023-41993"
+          ],
+          "UniqueCVEsCount": 1,
+          "DaysSincePreviousRelease": 59
+        },
+        {
+          "ProductVersion": "16.6",
+          "UpdateName": "Safari 16.6",
+          "ProductName": "Safari",
+          "ReleaseDate": "2023-07-24T00:00:00Z",
+          "ReleaseType": "Safari",
+          "SecurityInfo": "https://support.apple.com/kb/HT213847",
+          "CVEs": {
+            "CVE-2023-32445": {
+              "entry_added_date": "2023-07-27",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-32445",
+              "tags": [
+                "arbitrary-code",
+                "webkit"
+              ]
+            },
+            "CVE-2023-38133": {
+              "entry_added_date": "2023-07-27",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-38133",
+              "tags": [
+                "webkit"
+              ]
+            },
+            "CVE-2023-38572": {},
+            "CVE-2023-38592": {
+              "entry_added_date": "2023-07-27",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-38592",
+              "tags": [
+                "webkit"
+              ]
+            },
+            "CVE-2023-38594": {},
+            "CVE-2023-38595": {},
+            "CVE-2023-38597": {},
+            "CVE-2023-38599": {
+              "entry_added_date": "2023-07-27",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-38599",
+              "tags": [
+                "webkit"
+              ]
+            },
+            "CVE-2023-38600": {},
+            "CVE-2023-38611": {},
+            "CVE-2023-42866": {
+              "entry_added_date": "2023-12-21",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-42866",
+              "tags": [
+                "arbitrary-code",
+                "webkit"
+              ]
+            }
+          },
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 11,
+          "DaysSincePreviousRelease": 14
+        },
+        {
+          "ProductVersion": "16.5.2",
+          "UpdateName": "Safari 16.5.2",
+          "ProductName": "Safari",
+          "ReleaseDate": "2023-07-10T00:00:00Z",
+          "ReleaseType": "Safari",
+          "SecurityInfo": "https://support.apple.com/kb/HT213826",
+          "CVEs": {
+            "CVE-2023-37450": {
+              "exploited": true,
+              "kev": true,
+              "matched_pattern": "CISA KEV catalog",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-37450"
+            }
+          },
+          "ActivelyExploitedCVEs": [
+            "CVE-2023-37450"
+          ],
+          "UniqueCVEsCount": 1,
+          "DaysSincePreviousRelease": 19
+        },
+        {
+          "ProductVersion": "16.5.1",
+          "UpdateName": "Safari 16.5.1",
+          "ProductName": "Safari",
+          "ReleaseDate": "2023-06-21T00:00:00Z",
+          "ReleaseType": "Safari",
+          "SecurityInfo": "https://support.apple.com/kb/HT213816",
+          "CVEs": {
+            "CVE-2023-32439": {
+              "exploited": true,
+              "kev": true,
+              "matched_pattern": "CISA KEV catalog",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-32439"
+            }
+          },
+          "ActivelyExploitedCVEs": [
+            "CVE-2023-32439"
+          ],
+          "UniqueCVEsCount": 1,
+          "DaysSincePreviousRelease": 34
+        },
+        {
+          "ProductVersion": "16.5",
+          "UpdateName": "Safari 16.5",
+          "ProductName": "Safari",
+          "ReleaseDate": "2023-05-18T00:00:00Z",
+          "ReleaseType": "Safari",
+          "SecurityInfo": "https://support.apple.com/kb/HT213762",
+          "CVEs": {
+            "CVE-2023-28204": {
+              "exploited": true,
+              "kev": true,
+              "matched_pattern": "CISA KEV catalog",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-28204",
+              "tags": [
+                "actively-exploited",
+                "arbitrary-code",
+                "use-after-free",
+                "webkit"
+              ]
+            },
+            "CVE-2023-32373": {
+              "exploited": true,
+              "kev": true,
+              "matched_pattern": "CISA KEV catalog",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-32373"
+            },
+            "CVE-2023-32402": {},
+            "CVE-2023-32409": {
+              "exploited": true,
+              "kev": true,
+              "matched_pattern": "CISA KEV catalog",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-32409",
+              "tags": [
+                "actively-exploited",
+                "security",
+                "webkit"
+              ]
+            },
+            "CVE-2023-32423": {}
+          },
+          "ActivelyExploitedCVEs": [
+            "CVE-2023-32409",
+            "CVE-2023-32373",
+            "CVE-2023-28204"
+          ],
+          "UniqueCVEsCount": 5,
+          "DaysSincePreviousRelease": 41
+        },
+        {
+          "ProductVersion": "16.4.1",
+          "UpdateName": "Safari 16.4.1",
+          "ProductName": "Safari",
+          "ReleaseDate": "2023-04-07T00:00:00Z",
+          "ReleaseType": "Safari",
+          "SecurityInfo": "https://support.apple.com/kb/HT213722",
+          "CVEs": {
+            "CVE-2023-28205": {
+              "exploited": true,
+              "kev": true,
+              "matched_pattern": "CISA KEV catalog",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-28205",
+              "tags": [
+                "security"
+              ]
+            }
+          },
+          "ActivelyExploitedCVEs": [
+            "CVE-2023-28205"
+          ],
+          "UniqueCVEsCount": 1,
+          "DaysSincePreviousRelease": 11
+        },
+        {
+          "ProductVersion": "16.4",
+          "UpdateName": "Safari 16.4",
+          "ProductName": "Safari",
+          "ReleaseDate": "2023-03-27T00:00:00Z",
+          "ReleaseType": "Safari",
+          "SecurityInfo": "https://support.apple.com/kb/HT213671",
+          "CVEs": {
+            "CVE-2014-1745": {
+              "entry_added_date": "2023-12-21",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2014-1745",
+              "tags": [
+                "arbitrary-code",
+                "webkit"
+              ]
+            },
+            "CVE-2023-27932": {},
+            "CVE-2023-27954": {},
+            "CVE-2023-28198": {
+              "entry_added_date": "2023-12-21",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-28198",
+              "tags": [
+                "security",
+                "webkit"
+              ]
+            },
+            "CVE-2023-28201": {
+              "entry_added_date": "2023-05-01",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-28201",
+              "tags": [
+                "network"
+              ]
+            },
+            "CVE-2023-32370": {
+              "entry_added_date": "2023-12-21",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-32370",
+              "tags": [
+                "arbitrary-code",
+                "webkit"
+              ]
+            },
+            "CVE-2023-32435": {
+              "entry_added_date": "2023-06-21",
+              "exploited": true,
+              "kev": true,
+              "matched_pattern": "CISA KEV catalog",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-32435",
+              "tags": [
+                "bypass",
+                "webkit"
+              ]
+            }
+          },
+          "ActivelyExploitedCVEs": [
+            "CVE-2023-32435"
+          ],
+          "UniqueCVEsCount": 7,
+          "DaysSincePreviousRelease": 63
+        },
+        {
+          "ProductVersion": "16.3",
+          "UpdateName": "Safari 16.3",
+          "ProductName": "Safari",
+          "ReleaseDate": "2023-01-23T00:00:00Z",
+          "ReleaseType": "Safari",
+          "SecurityInfo": "https://support.apple.com/kb/HT213638",
+          "CVEs": {
+            "CVE-2022-0108": {
+              "entry_added_date": "2023-03-16",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-0108",
+              "tags": [
+                "actively-exploited",
+                "arbitrary-code",
+                "webkit"
+              ]
+            },
+            "CVE-2023-23496": {
+              "entry_added_date": "2023-03-16",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-23496",
+              "tags": [
+                "webkit"
+              ]
+            },
+            "CVE-2023-23517": {
+              "entry_added_date": "2023-03-16",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-23517",
+              "tags": [
+                "webkit"
+              ]
+            },
+            "CVE-2023-23518": {
+              "entry_added_date": "2023-03-16",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-23518",
+              "tags": [
+                "webkit"
+              ]
+            },
+            "CVE-2023-23529": {
+              "entry_added_date": "2023-03-16",
+              "exploited": true,
+              "kev": true,
+              "matched_pattern": "CISA KEV catalog",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-23529",
+              "tags": [
+                "webkit"
+              ]
+            }
+          },
+          "ActivelyExploitedCVEs": [
+            "CVE-2023-23529"
+          ],
+          "UniqueCVEsCount": 5,
+          "DaysSincePreviousRelease": 0
+        },
+        {
+          "ProductVersion": "16.3",
+          "UpdateName": "Safari 16.3",
+          "ProductName": "Safari",
+          "ReleaseDate": "2023-01-23T00:00:00Z",
+          "ReleaseType": "Safari",
+          "SecurityInfo": "https://support.apple.com/kb/HT213600",
+          "CVEs": {
+            "CVE-2023-23496": {
+              "exploited": false,
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-23496",
+              "tags": [
+                "arbitrary-code",
+                "webkit"
+              ]
+            },
+            "CVE-2023-23517": {
+              "exploited": false,
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-23517",
+              "tags": [
+                "webkit"
+              ]
+            },
+            "CVE-2023-23518": {
+              "exploited": false,
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-23518",
+              "tags": [
+                "webkit"
+              ]
+            }
+          },
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 3,
+          "DaysSincePreviousRelease": 41
+        },
+        {
+          "ProductVersion": "16.2",
+          "UpdateName": "Safari 16.2",
+          "ProductName": "Safari",
+          "ReleaseDate": "2022-12-13T00:00:00Z",
+          "ReleaseType": "Safari",
+          "SecurityInfo": "https://support.apple.com/kb/HT213537",
+          "CVEs": {
+            "CVE-2022-42852": {},
+            "CVE-2022-42856": {
+              "exploited": true,
+              "kev": true,
+              "matched_pattern": "CISA KEV catalog",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-42856",
+              "tags": [
+                "webkit"
+              ]
+            },
+            "CVE-2022-42863": {},
+            "CVE-2022-42867": {},
+            "CVE-2022-46691": {},
+            "CVE-2022-46692": {},
+            "CVE-2022-46696": {},
+            "CVE-2022-46698": {},
+            "CVE-2022-46699": {},
+            "CVE-2022-46700": {},
+            "CVE-2022-46705": {
+              "entry_added_date": "2022-12-22",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-46705",
+              "tags": [
+                "arbitrary-code",
+                "webkit"
+              ]
+            }
+          },
+          "ActivelyExploitedCVEs": [
+            "CVE-2022-42856"
+          ],
+          "UniqueCVEsCount": 11,
+          "DaysSincePreviousRelease": 50
+        },
+        {
+          "ProductVersion": "16.1",
+          "UpdateName": "Safari 16.1",
+          "ProductName": "Safari",
+          "ReleaseDate": "2022-10-24T00:00:00Z",
+          "ReleaseType": "Safari",
+          "SecurityInfo": "https://support.apple.com/kb/HT213495",
+          "CVEs": {
+            "CVE-2022-32922": {},
+            "CVE-2022-32923": {
+              "entry_added_date": "2022-10-27",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-32923",
+              "tags": [
+                "arbitrary-code",
+                "pdf",
+                "webkit"
+              ]
+            },
+            "CVE-2022-42799": {},
+            "CVE-2022-42823": {},
+            "CVE-2022-42824": {},
+            "CVE-2022-42826": {
+              "entry_added_date": "2022-12-22",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-42826",
+              "tags": [
+                "webkit"
+              ]
+            }
+          },
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 6,
+          "DaysSincePreviousRelease": 42
+        },
+        {
+          "ProductVersion": "16.0",
+          "UpdateName": "Safari 16",
+          "ProductName": "Safari",
+          "ReleaseDate": "2022-09-12T00:00:00Z",
+          "ReleaseType": "Safari",
+          "SecurityInfo": "https://support.apple.com/kb/HT213442",
+          "CVEs": {
+            "CVE-2022-32833": {
+              "entry_added_date": "2022-12-22",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-32833",
+              "tags": [
+                "security"
+              ]
+            },
+            "CVE-2022-32868": {},
+            "CVE-2022-32886": {},
+            "CVE-2022-32891": {},
+            "CVE-2022-32892": {
+              "entry_added_date": "2022-10-27",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-32892",
+              "tags": [
+                "bypass",
+                "privacy",
+                "security",
+                "webkit"
+              ]
+            },
+            "CVE-2022-32912": {}
+          },
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 6
         }
       ]
     }
