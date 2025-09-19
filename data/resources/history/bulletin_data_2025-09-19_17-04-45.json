@@ -1,7 +1,7 @@
 {
-  "content_hash": "acd0fadea2c99db4bb08c695a44eaf3ac89f462d942006ec2502dd69a2aa4789",
+  "content_hash": "a7f17ab87d0f3f7c93b7bc621856b3248251812c0c3f762e15fccb50ba673856",
   "content_changed": true,
-  "generated_at": "2025-09-17T20:04:51.679533218Z",
+  "generated_at": "2025-09-19T17:04:45.519484008Z",
   "latest_releases": {
     "macos": {
       "version": "26.0",
@@ -200,33 +200,13 @@
       "updates_link": null
     },
     "watchos": {
-      "version": "26.0",
-      "build": "23R6352",
-      "release_date": "2025-09-15",
-      "url": "https://support.apple.com/en-us/125116",
-      "cves_fixed": [
-        "CVE-2025-31255",
-        "CVE-2025-43190",
-        "CVE-2025-43272",
-        "CVE-2025-43302",
-        "CVE-2025-43303",
-        "CVE-2025-43317",
-        "CVE-2025-43329",
-        "CVE-2025-43342",
-        "CVE-2025-43343",
-        "CVE-2025-43344",
-        "CVE-2025-43346",
-        "CVE-2025-43347",
-        "CVE-2025-43349",
-        "CVE-2025-43354",
-        "CVE-2025-43355",
-        "CVE-2025-43356",
-        "CVE-2025-43359",
-        "CVE-2025-43372",
-        "CVE-2025-6965"
-      ],
+      "version": "26.0.1",
+      "build": "23R8352",
+      "release_date": "2025-09-18",
+      "url": "https://support.apple.com/en-us/100100",
+      "cves_fixed": [],
       "actively_exploited_count": 0,
-      "total_cve_count": 19,
+      "total_cve_count": 0,
       "enterprise_link": null,
       "updates_link": null
     },
@@ -283,7 +263,7 @@
   "security_summary": {
     "unique_cves_fixed": 82,
     "kev_matches": 0,
-    "latest_wave_date": "2025-09-15T00:00:00Z",
+    "latest_wave_date": "2025-09-18",
     "kev_cve_list": []
   },
   "beta_releases": {
@@ -300,6 +280,13 @@
     "visionos": null
   },
   "recent_releases": [
+    {
+      "release_date": "2025-09-18",
+      "name": "watchOS 26.0.1",
+      "platform": "watchos",
+      "version": "26.0.1",
+      "url": "https://support.apple.com/en-us/100100"
+    },
     {
       "release_date": "2025-09-15",
       "name": "Safari 26",
@@ -370,13 +357,6 @@
       "platform": "macos",
       "version": "",
       "url": "https://support.apple.com/en-us/125110"
-    },
-    {
-      "release_date": "2025-09-15",
-      "name": "tvOS 26",
-      "platform": "tvos",
-      "version": "",
-      "url": "https://support.apple.com/en-us/125114"
     }
   ]
 }
