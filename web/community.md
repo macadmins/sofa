@@ -14,7 +14,7 @@ GitHub: https://github.com/macadmins
 HomePage: https://macadmins.io
 
 ## MacAdmins Foundation
-<img src="./images/maf_logo.png" alt="Image Alt Text" width="20%">
+<img src="/maf_logo.png" alt="Mac Admins Foundation Logo" width="20%">
 
 The Mac Admins Foundation is a 501(c)3 non-profit organization, for the betterment of the Mac Admins Community.
 
