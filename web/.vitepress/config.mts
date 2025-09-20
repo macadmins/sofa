@@ -63,7 +63,10 @@ export default defineConfig({
       {
         text: 'Safari',
         items: [
+<<<<<<< HEAD
           { text: 'Safari 26', link: '/safari/safari26' },
+=======
+>>>>>>> origin/250830-dev-sofa-2.0
           { text: 'Safari 18', link: '/safari/safari18' },
         ]
       },
@@ -125,7 +128,11 @@ export default defineConfig({
       __API_BASE_PROD__: JSON.stringify(process.env.VITE_API_BASE_PROD || 'https://sofa.macadmins.io'),
       __API_BASE_DEV__: JSON.stringify(process.env.VITE_API_BASE_DEV || ''),
       // GitHub repository configuration
+<<<<<<< HEAD
       __GITHUB_REPO__: JSON.stringify(process.env.GITHUB_REPOSITORY || process.env.VITE_GITHUB_REPO || 'headmin/sofa-2.0-CF-deployment'),
+=======
+      __GITHUB_REPO__: JSON.stringify(process.env.GITHUB_REPOSITORY || process.env.VITE_GITHUB_REPO || 'macadmins/sofa'),
+>>>>>>> origin/250830-dev-sofa-2.0
       __GITHUB_BRANCH__: JSON.stringify(process.env.GITHUB_REF_NAME || process.env.VITE_GITHUB_BRANCH || 'main'),
     },
     plugins: [
