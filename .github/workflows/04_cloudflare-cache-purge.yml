@@ -23,10 +23,10 @@ on:
         - files
       hostname:
         description: 'Hostname to purge (for hostname purge)'
-        default: 'sofa-beta.macadmin.me'
+        default: 'sofa.macadmins.io'
       files:
         description: 'Specific files to purge (JSON array for files purge)'
-        default: '["https://sofa-beta.macadmin.me/data/resources/sofa-status.json","https://sofa-beta.macadmin.me/v2/macos_data_feed.json","https://sofa-beta.macadmin.me/v2/ios_data_feed.json"]'
+        default: '["https://sofa.macadmins.io/data/resources/sofa-status.json","https://sofa.macadmins.io/v2/macos_data_feed.json","https://sofa.macadmins.io/v2/ios_data_feed.json"]'
 
 env:
   CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
@@ -110,19 +110,19 @@ jobs:
 
           # Define all SOFA JSON endpoints that need purging
           json_files='[
-            "https://sofa-beta.macadmin.me/data/resources/sofa-status.json",
-            "https://sofa-beta.macadmin.me/data/resources/bulletin_data.json",
-            "https://sofa-beta.macadmin.me/data/resources/metrics.json",
-            "https://sofa-beta.macadmin.me/v1/ios_data_feed.json",
-            "https://sofa-beta.macadmin.me/v1/macos_data_feed.json",
-            "https://sofa-beta.macadmin.me/v1/timestamp.json",
-            "https://sofa-beta.macadmin.me/v1/rss_feed.xml",
-            "https://sofa-beta.macadmin.me/v2/ios_data_feed.json",
-            "https://sofa-beta.macadmin.me/v2/macos_data_feed.json",
-            "https://sofa-beta.macadmin.me/v2/safari_data_feed.json",
-            "https://sofa-beta.macadmin.me/v2/tvos_data_feed.json",
-            "https://sofa-beta.macadmin.me/v2/watchos_data_feed.json",
-            "https://sofa-beta.macadmin.me/v2/visionos_data_feed.json"
+            "https://sofa.macadmins.io/data/resources/sofa-status.json",
+            "https://sofa.macadmins.io/data/resources/bulletin_data.json",
+            "https://sofa.macadmins.io/data/resources/metrics.json",
+            "https://sofa.macadmins.io/v1/ios_data_feed.json",
+            "https://sofa.macadmins.io/v1/macos_data_feed.json",
+            "https://sofa.macadmins.io/v1/timestamp.json",
+            "https://sofa.macadmins.io/v1/rss_feed.xml",
+            "https://sofa.macadmins.io/v2/ios_data_feed.json",
+            "https://sofa.macadmins.io/v2/macos_data_feed.json",
+            "https://sofa.macadmins.io/v2/safari_data_feed.json",
+            "https://sofa.macadmins.io/v2/tvos_data_feed.json",
+            "https://sofa.macadmins.io/v2/watchos_data_feed.json",
+            "https://sofa.macadmins.io/v2/visionos_data_feed.json"
           ]'
 
           # Purge specific JSON files only
