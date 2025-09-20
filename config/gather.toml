@@ -1,0 +1,45 @@
+# SOFA Gather Configuration
+# Standard directory structure: bin/, config/, data/
+
+[output]
+directory = "./data/resources"
+history_enabled = true
+timestamp_tracking = true
+preserve_history = false
+max_history_files = 10
+
+[urls]
+kev_catalog = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+gdmf_pmv = "https://gdmf.apple.com/v2/pmv"
+apple_catalog = "https://swscan.apple.com/content/catalogs/others/index-15-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog"
+rapid_security_response = "https://support.apple.com/en-us/HT213532"
+rss_feed = "https://developer.apple.com/news/releases/rss/releases.rss"
+apple_beta_rss = "https://developer.apple.com/rss/betas.rss"
+uma_catalog = "https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog"
+mesu_catalog = "https://mesu.apple.com/assets/macos/com_apple_macOSIPSW/com_apple_macOSIPSW.xml"
+ipsw_api = "https://api.ipsw.me/v4"
+ipsw_devices = "https://api.ipsw.me/v4/devices"
+ipsw_version = "https://api.ipsw.me/v4/version"
+ipsw_device_info = "https://api.ipsw.me/v4/device/"
+ipsw_firmware_info = "https://api.ipsw.me/v4/ipsw/"
+apple_developer_releases = "https://developer.apple.com/news/releases/"
+
+[features]
+fetch_kev = true
+fetch_gdmf = true
+fetch_ipsw = true
+fetch_beta = true
+fetch_uma = true
+fetch_xprotect = true
+
+[cache]
+enabled = true
+directory = "./data/cache"
+ttl_seconds = 21600
+preserve_history = false
+
+[certificates]
+apple_root_cert = "config/AppleRoot.pem"
+verify_ssl = true
+
+# Binary path is not needed in TOML as binaries are in bin/ directory

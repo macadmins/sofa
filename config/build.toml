@@ -1,0 +1,81 @@
+# SOFA Assembly Configuration
+
+# Input configuration
+[input]
+directory = "./data/resources"
+models_directory = "./data/models/legacy"
+required_files = ["apple_security_releases.ndjson", "apple_cves_with_context.ndjson", "kev_catalog.json"]
+
+# Output configuration  
+[output]
+directory = "./"
+preserve_history = false
+max_history_files = 10
+
+# Feed configuration
+[feeds]
+include_models = true
+include_xprotect = true
+include_installation_apps = true
+generate_v1 = true
+generate_v2 = true
+v1_output_dir = "v1"
+v2_output_dir = "v2"
+
+# Version filtering configuration
+[feeds.version_filtering]
+enabled = true
+
+# Minimum versions to include
+[feeds.version_filtering.minimum_versions]
+macos = "12.0"
+ios = "16.0"
+ipados = "16.0"
+watchos = "11.0"
+tvos = "18.0"
+visionos = "2.0"
+safari = "17.0"
+
+# Enabled OS feeds
+[feeds.version_filtering.enabled_os_feeds]
+macos = true
+ios = true
+ipados = true
+watchos = true
+tvos = true
+visionos = true
+safari = true
+
+# Retention policy (number of major versions to keep, omitted = keep all)
+[feeds.version_filtering.retention_policy]
+ios = 3
+ipados = 3
+watchos = 2
+tvos = 2
+safari = 3
+
+# Templates configuration
+[templates]
+directory = "templates"
+macos_template = "macos_feed.hbs"
+ios_template = "ios_feed_v1.hbs"
+use_templates = false
+
+# Feed settings
+[feed_settings]
+include_xprotect = true
+include_models = true
+include_installation_apps = true
+layer_device_support = false
+inherit_devices = false
+
+# CVE database configuration
+[cve]
+database_path = "./data/resources/apple_cves_with_context.ndjson"
+kev_path = "./data/resources/kev_catalog.json"
+cache_directory = "./data/cache/html"
+
+# Logging configuration
+[logging]
+level = "info"
+format = "pretty"

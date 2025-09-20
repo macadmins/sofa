@@ -1,0 +1,36 @@
+# OS Priority Configuration for SOFA
+# Lower numbers = higher priority in sorting
+# This file is optional - defaults are used if not present
+
+[priority]
+# Desktop OS
+macOS = 1
+
+# Mobile/Tablet OS
+iOS = 2
+iPadOS = 2
+
+# Browser
+Safari = 3
+
+# Other Apple OS
+watchOS = 4
+tvOS = 5
+visionOS = 6
+audioOS = 7
+bridgeOS = 8
+homeOS = 9
+
+# Default for unknown OS types
+default = 99
+
+# Version ranges to include in reports (optional)
+[versions]
+# These define which OS versions to include in essential links
+# Can be numeric ranges or named versions
+macOS = ["Tahoe", "Sequoia", "Sonoma", "Ventura", "Monterey", "Big Sur"]
+iOS = ["26", "18", "17", "16", "15"]
+iPadOS = ["26", "18", "17", "16", "15"]
+watchOS = ["26", "11", "10", "9"]
+tvOS = ["26", "18", "17", "16"]
+visionOS = ["26","2", "1"]
