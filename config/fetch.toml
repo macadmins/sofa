@@ -1,0 +1,29 @@
+# SOFA Fetch Configuration
+# Standard directory structure: bin/, config/, data/
+
+index_urls = [
+    "https://support.apple.com/en-us/100100",
+    "https://support.apple.com/en-us/121012",
+    "https://support.apple.com/en-us/120989"
+]
+
+cache_dir = "./data/cache/html"
+cache_ttl_seconds = 10
+max_concurrent_requests = 10
+user_agent = "sofa-rust-fetcher/1.0"
+request_timeout_seconds = 30
+max_retries = 3
+
+[output]
+directory = "./data/resources"
+preserve_history = true
+max_history_files = 10
+
+# CVE Enrichment Sources (optional)
+[cve_enrichment]
+# CISA Known Exploited Vulnerabilities catalog
+kev_catalog_url = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+
+# VulnCheck API for enhanced CVE details (Community tier uses backup endpoint)
+vulncheck_api_url = "https://api.vulncheck.com/v3/backup/nist-nvd2"
+# Set VULNCHECK_API_KEY environment variable or use --vulncheck-api-key flag

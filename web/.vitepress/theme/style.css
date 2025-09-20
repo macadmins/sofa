@@ -1,139 +1,225 @@
-/**
- * Customize default theme styling by overriding CSS variables:
- * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
- */
+/* Import mobile-desktop enhancements */
+@import './mobile-desktop-enhancements.css';
 
-/**
- * Colors
- *
- * Each colors have exact same color scale system with 3 levels of solid
- * colors with different brightness, and 1 soft color.
- * 
- * - `XXX-1`: The most solid color used mainly for colored text. It must
- *   satisfy the contrast ratio against when used on top of `XXX-soft`.
- *
- * - `XXX-2`: The color used mainly for hover state of the button.
- *
- * - `XXX-3`: The color for solid background, such as bg color of the button.
- *   It must satisfy the contrast ratio with pure white (#ffffff) text on
- *   top of it.
- *
- * - `XXX-soft`: The color used for subtle background such as custom container
- *   or badges. It must satisfy the contrast ratio when putting `XXX-1` colors
- *   on top of it.
- *
- *   The soft color must be semi transparent alpha channel. This is crucial
- *   because it allows adding multiple "soft" colors on top of each other
- *   to create a accent, such as when having inline code block inside
- *   custom containers.
- *
- * - `default`: The color used purely for subtle indication without any
- *   special meanings attched to it such as bg color for menu hover state.
- *
- * - `brand`: Used for primary brand colors, such as link text, button with
- *   brand theme, etc.
- *
- * - `tip`: Used to indicate useful information. The default theme uses the
- *   brand color for this by default.
- *
- * - `warning`: Used to indicate warning to the users. Used in custom
- *   container, badges, etc.
- *
- * - `danger`: Used to show error, or dangerous message to the users. Used
- *   in custom container, badges, etc.
- * -------------------------------------------------------------------------- */
-
- :root {
-  --vp-c-default-1: var(--vp-c-gray-1);
-  --vp-c-default-2: var(--vp-c-gray-2);
-  --vp-c-default-3: var(--vp-c-gray-3);
-  --vp-c-default-soft: var(--vp-c-gray-soft);
-
-  --vp-c-brand-1: var(--vp-c-indigo-1);
-  --vp-c-brand-2: var(--vp-c-indigo-2);
-  --vp-c-brand-3: var(--vp-c-indigo-3);
-  --vp-c-brand-soft: var(--vp-c-indigo-soft);
-
-  --vp-c-tip-1: var(--vp-c-brand-1);
-  --vp-c-tip-2: var(--vp-c-brand-2);
-  --vp-c-tip-3: var(--vp-c-brand-3);
-  --vp-c-tip-soft: var(--vp-c-brand-soft);
-
-  --vp-c-warning-1: var(--vp-c-yellow-1);
-  --vp-c-warning-2: var(--vp-c-yellow-2);
-  --vp-c-warning-3: var(--vp-c-yellow-3);
-  --vp-c-warning-soft: var(--vp-c-yellow-soft);
-
-  --vp-c-danger-1: var(--vp-c-red-1);
-  --vp-c-danger-2: var(--vp-c-red-2);
-  --vp-c-danger-3: var(--vp-c-red-3);
-  --vp-c-danger-soft: var(--vp-c-red-soft);
-}
-
-/**
- * Component: Button
- * -------------------------------------------------------------------------- */
-
+/* Your base styles */
 :root {
-  --vp-button-brand-border: transparent;
-  --vp-button-brand-text: var(--vp-c-white);
-  --vp-button-brand-bg: var(--vp-c-brand-3);
-  --vp-button-brand-hover-border: transparent;
-  --vp-button-brand-hover-text: var(--vp-c-white);
-  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
-  --vp-button-brand-active-border: transparent;
-  --vp-button-brand-active-text: var(--vp-c-white);
-  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+  --vp-c-brand: #646cff;
+  --vp-c-brand-light: #747bff;
+  --vp-c-brand-lighter: #9499ff;
+  --vp-c-brand-dark: #535bf2;
+  --vp-c-brand-darker: #454ce1;
+  --vp-c-brand-soft: rgba(100, 108, 255, 0.14);
+
+  /* Adjust layout widths */
+  --vp-sidebar-width: 272px;
+  --vp-layout-max-width: 1440px;
 }
 
-/**
- * Component: Home
- * -------------------------------------------------------------------------- */
-
-:root {
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    120deg,
-    #bd34fe 30%,
-    #41d1ff
-  );
-
-  --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
-    #bd34fe 50%,
-    #47caff 50%
-  );
-  --vp-home-hero-image-filter: blur(44px);
+/* Dark mode background colors to match bento and nav */
+.dark {
+  --vp-c-bg: #0f172a;
+  --vp-c-bg-soft: #1e293b;
+  --vp-c-bg-mute: #334155;
+  --vp-c-bg-alt: #0f172a;
 }
 
-@media (min-width: 640px) {
-  :root {
-    --vp-home-hero-image-filter: blur(56px);
-  }
+/* Custom navbar styling */
+.VPNavBar {
+  background-color: var(--vp-c-bg);
+  border-bottom: 1px solid var(--vp-c-divider);
+  min-height: 64px;
+}
+
+.VPNavBar .container {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+/* Custom site title styling */
+.VPNavBarTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.25s;
+}
+
+.VPNavBarTitle:hover {
+  background-color: var(--vp-c-bg-soft);
+}
+
+.VPNavBarTitle .logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.VPNavBarTitle .title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--vp-c-text-1);
+}
+
+/* Subtitle styling */
+.VPNavBar .container {
+  position: relative;
+}
+
+.VPNavBar .container::after {
+  content: "by Mac Admins Open Source";
+  position: absolute;
+  left: 62px;
+  top: 40px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--vp-c-text-2);
+  opacity: 0.7;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Feature section styling */
+.VPFeatures {
+  padding: 24px;
+}
+
+.VPFeatures .container {
+  margin: 0 auto;
+  max-width: 1152px;
+}
+
+.VPFeatures .items {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
 }
 
 @media (min-width: 960px) {
-  :root {
-    --vp-home-hero-image-filter: blur(68px);
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/**
- * Component: Custom Block
- * -------------------------------------------------------------------------- */
-
-:root {
-  --vp-custom-block-tip-border: transparent;
-  --vp-custom-block-tip-text: var(--vp-c-text-1);
-  --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
-  --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+.VPFeature {
+  display: block;
+  border: 1px solid var(--vp-c-bg-soft);
+  border-radius: 12px;
+  height: 100%;
+  background-color: var(--vp-c-bg-soft);
+  transition: border-color 0.25s, background-color 0.25s;
 }
 
-/**
- * Component: Algolia
- * -------------------------------------------------------------------------- */
-
-.DocSearch {
-  --docsearch-primary-color: var(--vp-c-brand-1) !important;
+.VPFeature:hover {
+  border-color: var(--vp-c-brand);
+  background-color: var(--vp-c-bg);
 }
 
+.VPFeature .box {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  height: 100%;
+}
+
+.VPFeature .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  background-color: var(--vp-c-bg);
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  transition: background-color 0.25s;
+}
+
+.VPFeature:hover .icon {
+  background-color: var(--vp-c-bg-soft);
+}
+
+.VPFeature .title {
+  margin: 0 0 8px;
+  border-bottom: none;
+  padding-bottom: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.VPFeature .details {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--vp-c-text-2);
+}
+
+.VPFeature .box-footer {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.VPFeature .link {
+  color: var(--vp-c-brand);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.VPFeature .link:hover {
+  color: var(--vp-c-brand-dark);
+}
+
+/* Adjust TOC styles */
+.VPDocAside {
+  padding-left: 16px !important;
+  background-color: var(--vp-c-bg);
+}
+
+/* Remove sidebar divider */
+.VPSidebar {
+  border-right: none !important;
+  background-color: var(--vp-c-bg) !important;
+}
+
+/* Optional: Adjust content width when sidebar is present */
+.VPDoc.has-aside .content-container {
+  max-width: 800px !important;
+}
+
+/* Restore and properly position right sidebar (TOC/outline) */
+.VPDocAside.right {
+  display: block !important;
+  position: fixed !important;
+  right: 0 !important;
+  top: 64px !important;
+  height: calc(100vh - 64px) !important;
+  width: 256px !important;
+  padding: 1rem !important;
+  background: var(--vp-c-bg) !important;
+  border-left: 1px solid var(--vp-c-divider) !important;
+  z-index: 800;
+  overflow-y: auto;
+}
+
+/* Hide right TOC on smaller screens */
+@media (max-width: 1280px) {
+  .VPDocAside.right {
+    display: none !important;
+  }
+  
+  .VPDoc.has-aside .VPContent:not(.layout-home .VPContent) {
+    margin-right: 0 !important;
+  }
+}
