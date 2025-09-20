@@ -1,0 +1,226 @@
+name: 04 Cloudflare Cache Purge
+
+on:
+  # Trigger after successful DigitalOcean deployment
+  workflow_run:
+    workflows: ["03 - SOFA Feed Deployment DO"]
+    types:
+      - completed
+    branches:
+      - main
+      - 250830-dev-sofa-2.0
+
+  # Allow manual cache purging
+  workflow_dispatch:
+    inputs:
+      purge_type:
+        description: 'Cache purge type'
+        type: choice
+        default: 'hostname'
+        options:
+        - hostname
+        - everything
+        - files
+      hostname:
+        description: 'Hostname to purge (for hostname purge)'
+        default: 'sofa-beta.macadmin.me'
+      files:
+        description: 'Specific files to purge (JSON array for files purge)'
+        default: '["https://sofa-beta.macadmin.me/data/resources/sofa-status.json","https://sofa-beta.macadmin.me/v2/macos_data_feed.json","https://sofa-beta.macadmin.me/v2/ios_data_feed.json"]'
+
+env:
+  CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+jobs:
+  purge-cache:
+    name: Purge Cloudflare Cache
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch'
+
+    steps:
+      - name: Setup cache purge environment
+        run: |
+          echo "Setting up Cloudflare cache purge..."
+          echo "## 🧹 Cloudflare Cache Purge" >> $GITHUB_STEP_SUMMARY
+          echo "**Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Timestamp:** $(date -u)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+      - name: Validate Cloudflare credentials
+        run: |
+          if [ -z "$CLOUDFLARE_ZONE_ID" ] || [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "❌ Missing Cloudflare credentials"
+            echo "Please set CLOUDFLARE_ZONE_ID and CLOUDFLARE_API_TOKEN secrets"
+            echo "CLOUDFLARE_ZONE_ID set: $([ -n "$CLOUDFLARE_ZONE_ID" ] && echo 'Yes' || echo 'No')"
+            echo "CLOUDFLARE_API_TOKEN set: $([ -n "$CLOUDFLARE_API_TOKEN" ] && echo 'Yes' || echo 'No')"
+            exit 1
+          fi
+          echo "✅ Cloudflare credentials validated"
+
+          # Test API token with a simple zone list call
+          echo "🧪 Testing API token..."
+          test_response=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones" \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            -H "Content-Type: application/json")
+
+          test_success=$(echo "$test_response" | jq -r '.success // false')
+          if [ "$test_success" = "true" ]; then
+            echo "✅ API token is valid"
+
+            # Test if the specific zone is accessible
+            echo "🔍 Verifying zone access..."
+            zone_response=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE_ID" \
+              -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+              -H "Content-Type: application/json")
+
+            zone_success=$(echo "$zone_response" | jq -r '.success // false')
+            if [ "$zone_success" = "true" ]; then
+              zone_name=$(echo "$zone_response" | jq -r '.result.name // "unknown"')
+              echo "✅ Zone access confirmed: $zone_name"
+            else
+              echo "❌ Zone access failed"
+              echo "Zone response: $zone_response"
+              echo ""
+              echo "Please check:"
+              echo "- Zone ID is correct: $CLOUDFLARE_ZONE_ID"
+              echo "- API token has permission for this specific zone"
+              echo "- API token permissions include: Zone:Zone:Read, Zone:Cache Purge:Edit"
+              exit 1
+            fi
+          else
+            echo "❌ API token test failed"
+            echo "Response: $test_response"
+            echo ""
+            echo "Please check that your API token has the following permissions:"
+            echo "- Zone:Zone:Read"
+            echo "- Zone:Cache Purge:Edit"
+            echo ""
+            echo "Error code 10000 usually means:"
+            echo "1. Invalid API token"
+            echo "2. Missing permissions"
+            echo "3. Zone ID belongs to different account"
+            exit 1
+          fi
+
+      - name: Purge JSON data files (automatic)
+        if: github.event_name == 'workflow_run'
+        run: |
+          echo "🧹 Purging JSON data files (preserving website assets)"
+
+          # Define all SOFA JSON endpoints that need purging
+          json_files='[
+            "https://sofa-beta.macadmin.me/data/resources/sofa-status.json",
+            "https://sofa-beta.macadmin.me/data/resources/bulletin_data.json",
+            "https://sofa-beta.macadmin.me/data/resources/metrics.json",
+            "https://sofa-beta.macadmin.me/v1/ios_data_feed.json",
+            "https://sofa-beta.macadmin.me/v1/macos_data_feed.json",
+            "https://sofa-beta.macadmin.me/v1/timestamp.json",
+            "https://sofa-beta.macadmin.me/v1/rss_feed.xml",
+            "https://sofa-beta.macadmin.me/v2/ios_data_feed.json",
+            "https://sofa-beta.macadmin.me/v2/macos_data_feed.json",
+            "https://sofa-beta.macadmin.me/v2/safari_data_feed.json",
+            "https://sofa-beta.macadmin.me/v2/tvos_data_feed.json",
+            "https://sofa-beta.macadmin.me/v2/watchos_data_feed.json",
+            "https://sofa-beta.macadmin.me/v2/visionos_data_feed.json"
+          ]'
+
+          # Purge specific JSON files only
+          response=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE_ID/purge_cache" \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data "{\"files\": $json_files}")
+
+          # Check if request was successful
+          success=$(echo "$response" | jq -r '.success')
+          if [ "$success" = "true" ]; then
+            echo "✅ Successfully purged JSON data files"
+            echo "- **Data Files Purge**: ✅ 13 JSON/XML files purged" >> $GITHUB_STEP_SUMMARY
+            echo "- **Website Assets**: ✅ Preserved (CSS, JS, images)" >> $GITHUB_STEP_SUMMARY
+
+            # Show purge ID for reference
+            purge_id=$(echo "$response" | jq -r '.result.id // "N/A"')
+            echo "- **Purge ID**: $purge_id" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Failed to purge JSON data files"
+            echo "Response: $response"
+            echo "- **Data Files Purge**: ❌ Failed" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+
+      - name: Purge custom cache (manual)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          PURGE_TYPE="${{ github.event.inputs.purge_type }}"
+          echo "🧹 Manual cache purge: $PURGE_TYPE"
+
+          case $PURGE_TYPE in
+            "hostname")
+              HOSTNAME="${{ github.event.inputs.hostname }}"
+              echo "Purging cache for hostname: $HOSTNAME"
+
+              response=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE_ID/purge_cache" \
+                -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+                -H "Content-Type: application/json" \
+                --data "{\"hosts\": [\"$HOSTNAME\"]}")
+
+              success=$(echo "$response" | jq -r '.success')
+              if [ "$success" = "true" ]; then
+                echo "✅ Successfully purged cache for $HOSTNAME"
+                echo "- **Manual Hostname Purge**: ✅ $HOSTNAME" >> $GITHUB_STEP_SUMMARY
+              else
+                echo "❌ Failed to purge hostname cache"
+                echo "Response: $response"
+                exit 1
+              fi
+              ;;
+
+            "everything")
+              echo "⚠️  Purging ALL cache (everything)"
+
+              response=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE_ID/purge_cache" \
+                -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+                -H "Content-Type: application/json" \
+                --data '{"purge_everything": true}')
+
+              success=$(echo "$response" | jq -r '.success')
+              if [ "$success" = "true" ]; then
+                echo "✅ Successfully purged ALL cache"
+                echo "- **Everything Purge**: ✅ All cache cleared" >> $GITHUB_STEP_SUMMARY
+              else
+                echo "❌ Failed to purge all cache"
+                echo "Response: $response"
+                exit 1
+              fi
+              ;;
+
+            "files")
+              FILES='${{ github.event.inputs.files }}'
+              echo "Purging specific files: $FILES"
+
+              response=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE_ID/purge_cache" \
+                -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+                -H "Content-Type: application/json" \
+                --data "{\"files\": $FILES}")
+
+              success=$(echo "$response" | jq -r '.success')
+              if [ "$success" = "true" ]; then
+                echo "✅ Successfully purged specific files"
+                echo "- **Files Purge**: ✅ Custom files cleared" >> $GITHUB_STEP_SUMMARY
+              else
+                echo "❌ Failed to purge specific files"
+                echo "Response: $response"
+                exit 1
+              fi
+              ;;
+          esac
+
+      - name: Purge summary
+        if: always()
+        run: |
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## Cache Purge Results" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Completed:** $(date -u)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Cache has been purged. New content should be available within 30 seconds globally." >> $GITHUB_STEP_SUMMARY
