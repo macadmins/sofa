@@ -237,16 +237,37 @@ const getPlatformIcon = (platform) => {
 }
 
 const getPlatformLink = (system) => {
-  const links = {
-    'macOS': '/macos/sequoia',
-    'iOS': '/ios/ios18',
-    'iPadOS': '/ios/ios18',
-    'Safari': '/safari/safari18',
-    'tvOS': '/tvos/tvos18',
-    'watchOS': '/watchos/watchos11',
-    'visionOS': '/visionos/visionos2'
+  // Check version to determine correct link
+  const version = system.version || ''
+
+  // Helper function to get macOS link based on version
+  const getMacOSLink = (ver) => {
+    if (ver.startsWith('26')) return '/macos/tahoe'
+    if (ver.startsWith('15')) return '/macos/sequoia'
+    if (ver.startsWith('14')) return '/macos/sonoma'
+    if (ver.startsWith('13')) return '/macos/ventura'
+    if (ver.startsWith('12')) return '/macos/monterey'
+    return '/macos/sequoia' // Default to latest stable
   }
-  
+
+  // Helper function to get iOS/iPadOS link based on version
+  const getiOSLink = (ver) => {
+    if (ver.startsWith('26')) return '/ios/ios26'
+    if (ver.startsWith('18')) return '/ios/ios18'
+    if (ver.startsWith('17')) return '/ios/ios17'
+    return '/ios/ios18' // Default to latest stable
+  }
+
+  const links = {
+    'macOS': getMacOSLink(version),
+    'iOS': getiOSLink(version),
+    'iPadOS': getiOSLink(version),
+    'Safari': version.startsWith('26') ? '/safari/safari26' : version.startsWith('18') ? '/safari/safari18' : '/safari/safari18',
+    'tvOS': version.startsWith('26') ? '/tvos/tvos26' : version.startsWith('18') ? '/tvos/tvos18' : version.startsWith('17') ? '/tvos/tvos17' : '/tvos/tvos18',
+    'watchOS': version.startsWith('26') ? '/watchos/watchos26' : version.startsWith('11') ? '/watchos/watchos11' : '/watchos/watchos11',
+    'visionOS': version.startsWith('26') ? '/visionos/visionos26' : version.startsWith('2') ? '/visionos/visionos2' : '/visionos/visionos2'
+  }
+
   const basePath = links[system.platform] || '/'
   // Add version as query parameter if available
   const url = system.version ? `${basePath}?version=${encodeURIComponent(system.version)}` : basePath
