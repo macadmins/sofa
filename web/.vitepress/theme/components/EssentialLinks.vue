@@ -174,13 +174,27 @@ onMounted(async () => {
 }
 
 .link-item a {
-  color: var(--vp-c-brand);
+  color: #2563eb;
   text-decoration: none;
   font-size: 1rem;
 }
 
 .link-item a:hover {
   text-decoration: underline;
+  color: #1d4ed8;
+}
+
+/* Dark mode link styles - brighter colors */
+:root.dark .link-item a,
+.dark .link-item a,
+html.dark .link-item a {
+  color: #60a5fa;
+}
+
+:root.dark .link-item a:hover,
+.dark .link-item a:hover,
+html.dark .link-item a:hover {
+  color: #93c5fd;
 }
 
 /* Dark mode support */
