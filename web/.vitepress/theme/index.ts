@@ -12,6 +12,7 @@ import SecurityInfo from './components/SecurityInfo.vue';
 import SOFADashboard from './components/SOFADashboard.vue';
 import SOFALogo from './components/SOFALogo.vue';
 import SOFALogoSVG from './components/SOFALogoSVG.vue';
+import NotificationBanner from './components/NotificationBanner.vue';
 import BentoGrid from './components/BentoGrid.vue';
 import BentoCard from './components/BentoCard.vue';
 import BentoButton from './components/BentoButton.vue';
@@ -43,6 +44,7 @@ export default {
     app.component('SOFADashboard', SOFADashboard);
     app.component('SOFALogo', SOFALogo);
     app.component('SOFALogoSVG', SOFALogoSVG);
+    app.component('NotificationBanner', NotificationBanner);
     app.component('BentoGrid', BentoGrid);
     app.component('BentoCard', BentoCard);
     app.component('BentoButton', BentoButton);
