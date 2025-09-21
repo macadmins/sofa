@@ -1,0 +1,33 @@
+{
+  "notifications": [
+    {
+      "id": "sofa-2-launch-2025",
+      "message": "🎉 We're excited to launch <strong>SOFA 2.0!</strong> Support us by spreading the word or become a sponsor for Mac Admins Open Source (MAOS) and our projects.",
+      "link": "https://github.com/sponsors/macadmins",
+      "linkText": "Become a Sponsor",
+      "expiresAt": "2025-10-22T18:00:00",
+      "priority": 1,
+      "dismissText": "Dismiss",
+      "showOnce": true
+    }
+  ],
+  "_comment": "Add new notifications to the array above. Set unique ID, message, link, expiration date, and priority. Higher priority shows first.",
+  "_examples": [
+    {
+      "id": "holiday-2025",
+      "message": "🎄 Happy Holidays from MAOS!",
+      "link": "https://github.com/macadmins",
+      "linkText": "Chcek out our GitHub org",
+      "expiresAt": "2026-01-15T00:00:00",
+      "priority": 1,
+      "showOnce": true
+    },
+    {
+      "id": "maintenance-notice",
+      "message": "🔧 Scheduled maintenance on Nov 5, 2025 from 2-4 PM UTC",
+      "expiresAt": "2025-11-05T16:00:00",
+      "priority": 2,
+      "showOnce": false
+    }
+  ]
+}
