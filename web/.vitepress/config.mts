@@ -8,9 +8,17 @@ export default defineConfig({
   titleTemplate: "SOFA - by Mac Admins Open Source",
   description: "Simple Organized Feed for Apple Software Updates - by Mac Admins Open Source",
   cleanUrls: true,
-  
+
   // For custom domain (sofa.macadmins.io), use root path
   base: '/',  // Root path for custom domain
+
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' }],
+    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
+    ['link', { rel: 'manifest', href: '/site.webmanifest' }],
+  ],
   
   themeConfig: {
     // Navigation data for VitePress mobile menu
