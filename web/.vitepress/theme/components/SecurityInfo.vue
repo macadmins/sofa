@@ -697,7 +697,12 @@ onMounted(async () => {
               <div class="section-label">Vulnerabilities Addressed:</div>
               <div class="section-content">{{ update.vulnerabilitiesCount }}</div>
             </div>
-            
+
+            <div v-if="update.daysToPrevRelease" class="update-section">
+              <div class="section-label">Days to Prev. Release:</div>
+              <div class="section-content">{{ update.daysToPrevRelease }}</div>
+            </div>
+
             <div v-if="update.activelyExploited && update.activelyExploited.length > 0" class="update-section">
               <div class="section-label">Actively Exploited Vulnerabilities (KEV):</div>
               <div class="section-content">
@@ -787,12 +792,7 @@ onMounted(async () => {
                 </template>
               </div>
             </div>
-            
-            <div v-if="update.daysToPrevRelease" class="update-section">
-              <div class="section-label">Days to Prev. Release:</div>
-              <div class="section-content">{{ update.daysToPrevRelease }}</div>
-            </div>
-            
+
             <!-- Slot for custom content -->
             <slot name="update-extra" :update="update"></slot>
           </div>
