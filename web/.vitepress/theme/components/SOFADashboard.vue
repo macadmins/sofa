@@ -173,7 +173,7 @@
           <a 
             v-for="(version, idx) in macosVersions.slice(0, 2)"
             :key="idx"
-            :href="version.version.startsWith('14') ? `${baseUrl}/macos/sonoma` : `${baseUrl}/macos/sequoia`"
+            :href="version.version.startsWith('26') ? `${baseUrl}/macos/tahoe` : version.version.startsWith('14') ? `${baseUrl}/macos/sonoma` : `${baseUrl}/macos/sequoia`"
             class="block"
           >
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-all duration-150 macos-version-card">
@@ -215,7 +215,7 @@
           <a 
             v-for="(version, idx) in iosVersions.slice(0, 2)"
             :key="idx"
-            :href="version.version.startsWith('17') ? `${baseUrl}/ios/ios17` : `${baseUrl}/ios/ios18`"
+            :href="version.version.startsWith('26') ? `${baseUrl}/ios/ios26` : version.version.startsWith('17') ? `${baseUrl}/ios/ios17` : `${baseUrl}/ios/ios18`"
             class="block"
           >
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-ios-300 dark:hover:border-ios-600 transition-all duration-150 ios-version-card">
