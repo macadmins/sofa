@@ -16,10 +16,8 @@ on:
       environment:
         description: 'Deployment environment'
         type: choice
-        default: 'beta'
+        default: 'production'
         options:
-        - both
-        - beta
         - production
 
 env:
@@ -41,7 +39,7 @@ jobs:
         run: |
           echo "Setting up feed deployment environment..."
           echo "## 🚀 Feed Deployment" >> $GITHUB_STEP_SUMMARY
-          echo "**Environment:** ${{ github.event.inputs.environment || 'both' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Environment:** ${{ github.event.inputs.environment || 'production' }}" >> $GITHUB_STEP_SUMMARY
           echo "**Timestamp:** $(date -u)" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
@@ -109,13 +107,13 @@ jobs:
           echo "V2 feeds:"
           ls -lh v2/*.json
 
-      # - name: Set up S3cmd cli tool
-      #   uses: s3-actions/s3cmd@ef6ce583c6f4e5c121c53777f2f17740c36243be #v1.6.1
-      #   with:
-      #     provider: digitalocean
-      #     region: 'nyc3'
-      #     access_key: ${{ secrets.DO_S3_ACCESS_KEY }}
-      #     secret_key: ${{ secrets.DO_S3_SECRET_KEY }}
+      - name: Set up S3cmd cli tool
+        uses: s3-actions/s3cmd@ef6ce583c6f4e5c121c53777f2f17740c36243be #v1.6.1
+        with:
+          provider: digitalocean
+          region: 'nyc3'
+          access_key: ${{ secrets.DO_S3_ACCESS_KEY }}
+          secret_key: ${{ secrets.DO_S3_SECRET_KEY }}
 
       - name: Create gzipped jsons
         run: |
@@ -156,34 +154,8 @@ jobs:
             echo "  $feed: $original → $compressed bytes (${ratio}% of original)"
           done
 
-      - name: Upload to Digital Ocean (Beta Feed)
-        if: github.event.inputs.environment == 'beta' || github.event.inputs.environment == 'both' || github.event_name == 'workflow_run'
-        run: |
-          echo "🚀 Uploading to DigitalOcean beta environment..."
-          
-          # Upload V1 feeds to beta
-          echo "Uploading V1 feeds to beta..."
-          V1_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "timestamp.json")
-          for feed in "${V1_FEEDS[@]}"; do
-            echo "  Uploading v1/$feed"
-            s3cmd put "v1/$feed" --mime-type 'application/json' --acl-public "s3://sofafeed.macadmins.io/beta/v1/${feed%.*}_uncompressed.json"
-            s3cmd put "v1/${feed%.*}_compressed.json" --mime-type 'application/json' --add-header='Content-Encoding:gzip' --add-header='Cache-control:public, no-transform' --acl-public "s3://sofafeed.macadmins.io/beta/v1/$feed"
-          done
-          
-          # Upload V2 feeds to beta
-          echo "Uploading V2 feeds to beta..."
-          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json")
-          for feed in "${V2_FEEDS[@]}"; do
-            echo "  Uploading v2/$feed"
-            s3cmd put "v2/$feed" --mime-type 'application/json' --acl-public "s3://sofafeed.macadmins.io/beta/v2/${feed%.*}_uncompressed.json"
-            s3cmd put "v2/${feed%.*}_compressed.json" --mime-type 'application/json' --add-header='Content-Encoding:gzip' --add-header='Cache-control:public, no-transform' --acl-public "s3://sofafeed.macadmins.io/beta/v2/$feed"
-          done
-          
-          echo "✅ Beta feeds (V1 + V2) uploaded to DigitalOcean"
-          echo "- **Beta Deployment**: ✅ Complete (V1: 3 feeds, V2: 6 feeds)" >> $GITHUB_STEP_SUMMARY
-
       - name: Upload to Digital Ocean (Production Feed)
-        if: github.event.inputs.environment == 'production' || github.event.inputs.environment == 'both' || github.event_name == 'workflow_run'
+        if: github.event.inputs.environment == 'production' || github.event_name == 'workflow_run'
         run: |
           echo "🌍 Uploading to DigitalOcean production environment..."
           
