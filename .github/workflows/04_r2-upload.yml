@@ -1,0 +1,319 @@
+name: 04 - Upload to R2 Storage
+
+on:
+  workflow_dispatch:
+
+  workflow_run:
+    workflows: ["01 - SOFA Build Pipeline"]
+    types:
+      - completed
+
+env:
+  R2_BUCKET: sofafeed2
+
+jobs:
+  upload-to-r2:
+    name: Upload SOFA Feeds to R2
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔍 Verify feed files exist
+        run: |
+          echo "Verifying required feed files..."
+
+          # Check for essential V1 files
+          V1_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "timestamp.json" "rss_feed.xml")
+          for feed in "${V1_FEEDS[@]}"; do
+            if [ ! -f "v1/$feed" ]; then
+              echo "❌ v1/$feed not found"
+              exit 1
+            fi
+          done
+
+          # Check for V2 feeds
+          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json")
+          for feed in "${V2_FEEDS[@]}"; do
+            if [ ! -f "v2/$feed" ]; then
+              echo "❌ v2/$feed not found"
+              exit 1
+            fi
+          done
+
+          echo "✅ All required feed files found"
+
+      - name: 🗜️ Minify JSON files
+        run: |
+          echo "Minifying JSON files for production..."
+
+          # Minify V1 feeds
+          echo "Processing V1 feeds..."
+          V1_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "timestamp.json")
+          for feed in "${V1_FEEDS[@]}"; do
+            echo "  Minifying v1/$feed"
+            jq -c . "v1/$feed" > "v1/${feed}.tmp"
+            mv "v1/${feed}.tmp" "v1/$feed"
+          done
+
+          # Minify V2 feeds
+          echo "Processing V2 feeds..."
+          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json")
+          for feed in "${V2_FEEDS[@]}"; do
+            echo "  Minifying v2/$feed"
+            jq -c . "v2/$feed" > "v2/${feed}.tmp"
+            mv "v2/${feed}.tmp" "v2/$feed"
+          done
+
+          echo "✅ All JSON files minified"
+
+      - name: 📦 Create gzipped versions
+        run: |
+          echo "Creating gzipped versions for compression..."
+
+          # Compress V1 feeds
+          echo "Compressing V1 feeds..."
+          V1_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "timestamp.json")
+          for feed in "${V1_FEEDS[@]}"; do
+            echo "  Compressing v1/$feed"
+            gzip -9 -k "v1/$feed"
+          done
+
+          # Compress RSS feed
+          if [ -f "v1/rss_feed.xml" ]; then
+            echo "  Compressing v1/rss_feed.xml"
+            gzip -9 -k "v1/rss_feed.xml"
+          fi
+
+          # Compress V2 feeds
+          echo "Compressing V2 feeds..."
+          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json")
+          for feed in "${V2_FEEDS[@]}"; do
+            echo "  Compressing v2/$feed"
+            gzip -9 -k "v2/$feed"
+          done
+
+          # Compress resources (selective)
+          echo "Compressing resources..."
+          RESOURCE_FILES=(
+            "sofa-status.json"
+            "bulletin_data.json"
+            "essential_links.json"
+            "apple_beta_feed.json"
+            "metrics.json"
+            "notifications.json"
+            "gdmf_cached.json"
+            "xprotect.json"
+            "all_devices_enhanced.json"
+            "apple_security_releases.json"
+          )
+
+          for filename in "${RESOURCE_FILES[@]}"; do
+            if [ -f "data/resources/$filename" ]; then
+              echo "  Minifying and compressing resources/$filename"
+              # Minify JSON resources
+              jq -c . "data/resources/$filename" > "data/resources/${filename}.tmp"
+              mv "data/resources/${filename}.tmp" "data/resources/$filename"
+              # Compress
+              gzip -9 -k "data/resources/$filename"
+            fi
+          done
+
+          echo "✅ All files compressed"
+
+      - name: 🔧 Configure AWS CLI for R2
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.R2_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          aws configure set region auto
+
+      - name: 📤 Upload v1 feeds to R2
+        run: |
+          echo "📂 Uploading v1 feeds..."
+
+          # Upload minified JSON files with gzip encoding
+          V1_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "timestamp.json")
+          for feed in "${V1_FEEDS[@]}"; do
+            if [ -f "v1/${feed}.gz" ]; then
+              echo "  ↑ Uploading v1/$feed (gzipped)"
+              # Upload gzipped version with content-encoding header
+              aws s3api put-object \
+                --endpoint-url https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com \
+                --bucket ${{ env.R2_BUCKET }} \
+                --key "v1/$feed" \
+                --body "v1/${feed}.gz" \
+                --content-type "application/json" \
+                --content-encoding "gzip" \
+                --cache-control "public, max-age=300, no-transform"
+            fi
+
+            # Also upload uncompressed version with different name
+            if [ -f "v1/$feed" ]; then
+              echo "  ↑ Uploading v1/${feed%.json}_uncompressed.json"
+              aws s3api put-object \
+                --endpoint-url https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com \
+                --bucket ${{ env.R2_BUCKET }} \
+                --key "v1/${feed%.json}_uncompressed.json" \
+                --body "v1/$feed" \
+                --content-type "application/json" \
+                --cache-control "public, max-age=300"
+            fi
+          done
+
+          # Upload RSS feed
+          if [ -f "v1/rss_feed.xml.gz" ]; then
+            echo "  ↑ Uploading v1/rss_feed.xml (gzipped)"
+            aws s3api put-object \
+              --endpoint-url https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com \
+              --bucket ${{ env.R2_BUCKET }} \
+              --key "v1/rss_feed.xml" \
+              --body "v1/rss_feed.xml.gz" \
+              --content-type "application/xml" \
+              --content-encoding "gzip" \
+              --cache-control "public, max-age=300, no-transform"
+          fi
+
+      - name: 📤 Upload v2 feeds to R2
+        run: |
+          echo "📂 Uploading v2 feeds..."
+
+          # Upload minified JSON files with gzip encoding
+          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json")
+          for feed in "${V2_FEEDS[@]}"; do
+            if [ -f "v2/${feed}.gz" ]; then
+              echo "  ↑ Uploading v2/$feed (gzipped)"
+              # Upload gzipped version with content-encoding header
+              aws s3api put-object \
+                --endpoint-url https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com \
+                --bucket ${{ env.R2_BUCKET }} \
+                --key "v2/$feed" \
+                --body "v2/${feed}.gz" \
+                --content-type "application/json" \
+                --content-encoding "gzip" \
+                --cache-control "public, max-age=300, no-transform"
+            fi
+
+            # Also upload uncompressed version with different name
+            if [ -f "v2/$feed" ]; then
+              echo "  ↑ Uploading v2/${feed%.json}_uncompressed.json"
+              aws s3api put-object \
+                --endpoint-url https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com \
+                --bucket ${{ env.R2_BUCKET }} \
+                --key "v2/${feed%.json}_uncompressed.json" \
+                --body "v2/$feed" \
+                --content-type "application/json" \
+                --cache-control "public, max-age=300"
+            fi
+          done
+
+      - name: 📤 Upload resources to R2
+        run: |
+          echo "📂 Uploading resources..."
+
+          # Define which resource files to upload
+          RESOURCE_FILES=(
+            "sofa-status.json"
+            "bulletin_data.json"
+            "essential_links.json"
+            "apple_beta_feed.json"
+            "metrics.json"
+            "notifications.json"
+            "gdmf_cached.json"
+            "xprotect.json"
+            "all_devices_enhanced.json"
+            "apple_security_releases.json"
+          )
+
+          for filename in "${RESOURCE_FILES[@]}"; do
+            # Upload gzipped version
+            if [ -f "data/resources/${filename}.gz" ]; then
+              echo "  ↑ Uploading resources/$filename (gzipped)"
+
+              content_type="application/json"
+              if [[ $filename == *.ndjson ]]; then
+                content_type="application/x-ndjson"
+              fi
+
+              aws s3api put-object \
+                --endpoint-url https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com \
+                --bucket ${{ env.R2_BUCKET }} \
+                --key "resources/$filename" \
+                --body "data/resources/${filename}.gz" \
+                --content-type "$content_type" \
+                --content-encoding "gzip" \
+                --cache-control "public, max-age=300, no-transform"
+            fi
+
+            # Also upload uncompressed version with different name
+            if [ -f "data/resources/$filename" ]; then
+              echo "  ↑ Uploading resources/${filename%.json}_uncompressed.json"
+
+              content_type="application/json"
+              if [[ $filename == *.ndjson ]]; then
+                content_type="application/x-ndjson"
+              fi
+
+              aws s3api put-object \
+                --endpoint-url https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com \
+                --bucket ${{ env.R2_BUCKET }} \
+                --key "resources/${filename%.json}_uncompressed.json" \
+                --body "data/resources/$filename" \
+                --content-type "$content_type" \
+                --cache-control "public, max-age=300"
+            fi
+          done
+
+      - name: 📝 Create and upload manifest
+        run: |
+          # Get list of uploaded files
+          V1_FILES=$(ls -1 v1/*.json 2>/dev/null | xargs -n1 basename | jq -R . | jq -s . || echo "[]")
+          V2_FILES=$(ls -1 v2/*.json 2>/dev/null | xargs -n1 basename | jq -R . | jq -s . || echo "[]")
+
+          # Create manifest
+          cat > manifest.json <<EOF
+          {
+            "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "github_run_id": "${{ github.run_id }}",
+            "github_sha": "${{ github.sha }}",
+            "files": {
+              "v1": $V1_FILES,
+              "v2": $V2_FILES
+            }
+          }
+          EOF
+
+          # Upload manifest
+          aws s3api put-object \
+            --endpoint-url https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com \
+            --bucket ${{ env.R2_BUCKET }} \
+            --key "_manifest.json" \
+            --body manifest.json \
+            --content-type "application/json" \
+            --cache-control "no-cache"
+
+      - name: 🔄 Purge Cloudflare Cache (optional)
+        if: vars.CLOUDFLARE_ZONE_ID && vars.CLOUDFLARE_API_TOKEN
+        run: |
+          echo "🔄 Purging Cloudflare cache..."
+
+          curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ vars.CLOUDFLARE_ZONE_ID }}/purge_cache" \
+            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}'
+
+      - name: 📊 Summary
+        run: |
+          echo "## ✅ R2 Upload Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Bucket:** ${{ env.R2_BUCKET }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Timestamp:** $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Run ID:** ${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📍 Access URLs" >> $GITHUB_STEP_SUMMARY
+          echo "- [macOS Feed](https://sofafeed2.macadmins.io/v2/macos_data_feed.json)" >> $GITHUB_STEP_SUMMARY
+          echo "- [iOS Feed](https://sofafeed2.macadmins.io/v2/ios_data_feed.json)" >> $GITHUB_STEP_SUMMARY
+          echo "- [RSS Feed](https://sofafeed2.macadmins.io/v1/rss_feed.xml)" >> $GITHUB_STEP_SUMMARY
+          echo "- [SOFA Status](https://sofafeed2.macadmins.io/resources/sofa-status.json)" >> $GITHUB_STEP_SUMMARY
+          echo "- [Manifest](https://sofafeed2.macadmins.io/_manifest.json)" >> $GITHUB_STEP_SUMMARY
