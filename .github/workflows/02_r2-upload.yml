@@ -15,7 +15,7 @@ jobs:
   upload-to-r2:
     name: Upload SOFA Feeds to R2
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    if: github.event.repository.fork == false && (github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success')
 
     steps:
       - name: 📥 Checkout repository
