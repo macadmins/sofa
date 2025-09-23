@@ -29,7 +29,8 @@ concurrency:
 jobs:
   fetch-metrics:
     runs-on: ubuntu-latest
-    
+    if: github.event.repository.fork == false
+
     env:
       PRIVATE_REPO_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
       METRICS_PATH: ${{ inputs.metrics_path || vars.METRICS_OUTPUT_PATH || 'data/resources/metrics.json' }}
