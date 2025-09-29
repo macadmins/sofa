@@ -1,57 +1,39 @@
 {
   "OSName": "tvOS",
   "Version": "2.0",
-  "UpdateHash": "350de9d5e9ad46de280a96eb08cb463b958f85501441340d2b0bb9bd7641fc98",
-  "LastCheck": "2025-09-29T17:08:37.818125439+00:00",
+  "UpdateHash": "2719ab7924486581b6749ad4075be9fcc249272bc5c61fc780a6090fa0b8a5c4",
+  "LastCheck": "2025-09-29T18:12:32.181279427+00:00",
   "OSVersions": [
     {
       "OSVersion": "tvOS 26",
       "Latest": {
-        "UpdateName": "tvOS 26",
+        "UpdateName": "tvOS 26.0.1",
         "ProductName": "tvOS",
-        "ProductVersion": "26.0",
-        "Build": "23J6353",
+        "ProductVersion": "26.0.1",
+        "Build": "23J6362",
         "AllBuilds": [
-          "23J6353",
-          "23J353"
+          "23J6362",
+          "23J362"
         ],
-        "ReleaseDate": "2025-09-15",
+        "ReleaseDate": "2025-09-29",
         "ExpirationDate": "2025-12-28",
         "ReleaseType": "OS",
-        "SecurityInfo": "https://support.apple.com/en-us/125114",
-        "SecurityInfoContext": "tvOS has been updated to version 26.0, which was released on September 15, 2025. This update addresses 17 security issues and is the most recent approved version.",
+        "SecurityInfo": "https://support.apple.com/en-us/100100",
+        "SecurityInfoContext": "tvOS has been updated to version 26.0.1, which was released on September 29, 2025. This update has no published CVE entries and is the most recent approved version.",
         "SupportedDevices": [
           "AppleTV11,1",
           "AppleTV14,1",
           "AppleTV5,3",
           "AppleTV6,2"
         ],
-        "CVEs": {
-          "CVE-2025-31255": {},
-          "CVE-2025-43302": {},
-          "CVE-2025-43303": {},
-          "CVE-2025-43317": {},
-          "CVE-2025-43329": {},
-          "CVE-2025-43342": {},
-          "CVE-2025-43343": {},
-          "CVE-2025-43344": {},
-          "CVE-2025-43346": {},
-          "CVE-2025-43347": {},
-          "CVE-2025-43349": {},
-          "CVE-2025-43354": {},
-          "CVE-2025-43355": {},
-          "CVE-2025-43356": {},
-          "CVE-2025-43359": {},
-          "CVE-2025-43372": {},
-          "CVE-2025-6965": {}
-        },
+        "CVEs": {},
         "ActivelyExploitedCVEs": [],
-        "UniqueCVEsCount": 17,
-        "DaysSincePreviousRelease": 0,
+        "UniqueCVEsCount": 0,
+        "DaysSincePreviousRelease": 14,
         "update_summary": {
-          "priority": "high",
-          "summary": "Addresses 17 security issues",
-          "recommendation": "Update to stay secure - security fixes available",
+          "priority": "low",
+          "summary": "Maintenance update with no published CVE entries",
+          "recommendation": "Update recommended - may include unpublished security improvements",
           "stats": {
             "exploited": 0,
             "critical": 0,
@@ -59,11 +41,50 @@
             "medium": 0,
             "low": 0,
             "remote": 0,
-            "total": 17
+            "total": 0
           }
         }
       },
       "SecurityReleases": [
+        {
+          "UpdateName": "tvOS 26.0.1",
+          "ProductName": "tvOS",
+          "ProductVersion": "26.0.1",
+          "Build": "23J6362",
+          "AllBuilds": [
+            "23J6362",
+            "23J362"
+          ],
+          "ReleaseDate": "2025-09-29",
+          "ExpirationDate": "2025-12-28",
+          "ReleaseType": "OS",
+          "SecurityInfo": "https://support.apple.com/en-us/100100",
+          "SecurityInfoContext": "tvOS has been updated to version 26.0.1, which was released on September 29, 2025. This update has no published CVE entries and is the most recent approved version.",
+          "SupportedDevices": [
+            "AppleTV11,1",
+            "AppleTV14,1",
+            "AppleTV5,3",
+            "AppleTV6,2"
+          ],
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
+          "DaysSincePreviousRelease": 14,
+          "update_summary": {
+            "priority": "low",
+            "summary": "Maintenance update with no published CVE entries",
+            "recommendation": "Update recommended - may include unpublished security improvements",
+            "stats": {
+              "exploited": 0,
+              "critical": 0,
+              "high": 0,
+              "medium": 0,
+              "low": 0,
+              "remote": 0,
+              "total": 0
+            }
+          }
+        },
         {
           "UpdateName": "tvOS 26",
           "ProductName": "tvOS",
@@ -77,7 +98,7 @@
           "ExpirationDate": "2025-12-28",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125114",
-          "SecurityInfoContext": "tvOS has been updated to version 26.0, which was released on September 15, 2025. This update addresses 17 security issues and is the most recent approved version.",
+          "SecurityInfoContext": "tvOS 26.0 was released on September 15, 2025. This release addressed 17 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "AppleTV11,1",
             "AppleTV14,1",

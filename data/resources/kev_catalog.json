@@ -1,9 +1,85 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.09.25",
-  "dateReleased": "2025-09-25T16:17:38.0447Z",
-  "count": 1417,
+  "catalogVersion": "2025.09.29",
+  "dateReleased": "2025-09-29T17:00:52.3574Z",
+  "count": 1422,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-32463",
+      "vendorProject": "Sudo",
+      "product": "Sudo",
+      "vulnerabilityName": "Sudo Inclusion of Functionality from Untrusted Control Sphere Vulnerability",
+      "dateAdded": "2025-09-29",
+      "shortDescription": "Sudo contains an inclusion of functionality from untrusted control sphere vulnerability. This vulnerability could allow local attacker to leverage sudo’s -R (--chroot) option to run arbitrary commands as root, even if they are not listed in the sudoers file.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-10-20",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://www.sudo.ws/security/advisories/chroot_bug/ ; https://nvd.nist.gov/vuln/detail/CVE-2025-32463",
+      "cwes": [
+        "CWE-829"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-59689",
+      "vendorProject": "Libraesva",
+      "product": "Email Security Gateway",
+      "vulnerabilityName": "Libraesva Email Security Gateway Command Injection Vulnerability",
+      "dateAdded": "2025-09-29",
+      "shortDescription": "Libraesva Email Security Gateway (ESG) contains a command injection vulnerability which allows command injection via a compressed e-mail attachment.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-10-20",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://docs.libraesva.com/knowledgebase/security-advisory-command-injection-vulnerability-cve-2025-59689/ ; https://nvd.nist.gov/vuln/detail/CVE-2025-59689",
+      "cwes": [
+        "CWE-77"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-10035",
+      "vendorProject": "Fortra",
+      "product": "GoAnywhere MFT",
+      "vulnerabilityName": "Fortra GoAnywhere MFT Deserialization of Untrusted Data Vulnerability",
+      "dateAdded": "2025-09-29",
+      "shortDescription": "Fortra GoAnywhere MFT contains a deserialization of untrusted data vulnerability allows an actor with a validly forged license response signature to deserialize an arbitrary actor-controlled object, possibly leading to command injection.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-10-20",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.fortra.com/security/advisories/product-security/fi-2025-012 ; https://nvd.nist.gov/vuln/detail/CVE-2025-10035",
+      "cwes": [
+        "CWE-502",
+        "CWE-77"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-20352",
+      "vendorProject": "Cisco",
+      "product": "IOS and IOS XE",
+      "vulnerabilityName": "Cisco IOS and IOS XE Stack-based Buffer Overflow Vulnerability",
+      "dateAdded": "2025-09-29",
+      "shortDescription": "Cisco IOS and IOS XE contains a stack-based buffer overflow vulnerability in the Simple Network Management Protocol (SNMP) subsystem that could allow for denial of service or remote code execution. A successful exploit could allow a low-privileged attacker to cause the affected system to reload, resulting in a DoS condition, or allow a high-privileged attacker to execute arbitrary code as the root user and obtain full control of the affected system.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-10-20",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-snmp-x4LPhte ; https://nvd.nist.gov/vuln/detail/CVE-2025-20352",
+      "cwes": [
+        "CWE-121"
+      ]
+    },
+    {
+      "cveID": "CVE-2021-21311",
+      "vendorProject": "Adminer",
+      "product": "Adminer",
+      "vulnerabilityName": "Adminer Server-Side Request Forgery Vulnerability",
+      "dateAdded": "2025-09-29",
+      "shortDescription": "Adminer contains a server-side request forgery vulnerability that, when exploited, allows a remote attacker to obtain potentially sensitive information.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-10-20",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://github.com/vrana/adminer/security/advisories/GHSA-x5r2-hj5c-8jx6 ; https://nvd.nist.gov/vuln/detail/CVE-2021-21311",
+      "cwes": [
+        "CWE-918"
+      ]
+    },
     {
       "cveID": "CVE-2025-20362",
       "vendorProject": "Cisco",
@@ -21041,5 +21117,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-09-29T17:08:07.054499781Z"
+  "fetchTimestamp": "2025-09-29T18:12:12.696903410Z"
 }
