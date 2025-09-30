@@ -646,7 +646,7 @@ def calculate_days_between_releases(releases: List[Dict]) -> None:
 
 
 def main(
-    output: str = typer.Option("v1/feed.rss", "--output", help="Output RSS file path"),
+    output: str = typer.Option("v1/rss_feed.xml", "--output", help="Output RSS file path"),
     data_dir: str = typer.Option("data/resources", "--data-dir", help="Data directory containing JSON files"),
     verbose: bool = typer.Option(True, "--verbose/--quiet", help="Enable verbose output"),
     include_xprotect: bool = typer.Option(True, "--include-xprotect/--no-xprotect", help="Include XProtect updates in feed"),
