@@ -1,7 +1,7 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
   "catalogVersion": "2025.09.29",
-  "dateReleased": "2025-09-29T17:00:52.3574Z",
+  "dateReleased": "2025-09-29T20:00:02.7721Z",
   "count": 1422,
   "vulnerabilities": [
     {
@@ -54,7 +54,7 @@
       "cveID": "CVE-2025-20352",
       "vendorProject": "Cisco",
       "product": "IOS and IOS XE",
-      "vulnerabilityName": "Cisco IOS and IOS XE Stack-based Buffer Overflow Vulnerability",
+      "vulnerabilityName": "Cisco IOS and IOS XE Software SNMP Denial of Service and Remote Code Execution Vulnerability",
       "dateAdded": "2025-09-29",
       "shortDescription": "Cisco IOS and IOS XE contains a stack-based buffer overflow vulnerability in the Simple Network Management Protocol (SNMP) subsystem that could allow for denial of service or remote code execution. A successful exploit could allow a low-privileged attacker to cause the affected system to reload, resulting in a DoS condition, or allow a high-privileged attacker to execute arbitrary code as the root user and obtain full control of the affected system.",
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
@@ -21117,5 +21117,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-09-29T20:08:44.066930103Z"
+  "fetchTimestamp": "2025-09-30T00:50:14.212062272Z"
 }
