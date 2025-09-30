@@ -80,7 +80,6 @@ export default defineConfig({
         items: [
           { text: 'tvOS 26', link: '/tvos/tvos26' },
           { text: 'tvOS 18', link: '/tvos/tvos18' },
-          { text: 'tvOS 17', link: '/tvos/tvos17' },
         ]
       },
       {
