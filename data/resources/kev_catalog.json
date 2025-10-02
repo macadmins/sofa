@@ -1,9 +1,83 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.09.30",
-  "dateReleased": "2025-09-30T12:35:25.4401Z",
-  "count": 1422,
+  "catalogVersion": "2025.10.02",
+  "dateReleased": "2025-10-02T14:59:13.7696Z",
+  "count": 1427,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2014-6278",
+      "vendorProject": "GNU",
+      "product": "GNU Bash",
+      "vulnerabilityName": "GNU Bash OS Command Injection Vulnerability",
+      "dateAdded": "2025-10-02",
+      "shortDescription": "GNU Bash contains an OS command injection vulnerability which allows remote attackers to execute arbitrary commands via a crafted environment.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable. ",
+      "dueDate": "2025-10-23",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: http://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-027 ; https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/23467 ; https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20140926-bash ; https://www.ibm.com/support/pages/security-bulletin-update-vulnerabilities-bash-affect-aix-toolbox-linux-applications-cve-2014-6271-cve-2014-6277-cve-2014-6278-cve-2014-7169-cve-2014-7186-and-cve-2014-7187 ; https://nvd.nist.gov/vuln/detail/CVE-2014-6278",
+      "cwes": [
+        "CWE-78"
+      ]
+    },
+    {
+      "cveID": "CVE-2017-1000353",
+      "vendorProject": "Jenkins",
+      "product": "Jenkins",
+      "vulnerabilityName": "Jenkins Remote Code Execution Vulnerability",
+      "dateAdded": "2025-10-02",
+      "shortDescription": "Jenkins contains a remote code execution vulnerability. This vulnerability that could allowed attackers to transfer a serialized Java SignedObject object to the remoting-based Jenkins CLI, that would be deserialized using a new ObjectInputStream, bypassing the existing blocklist-based protection mechanism.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-10-23",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.jenkins.io/security/advisory/2017-04-26/ ; https://nvd.nist.gov/vuln/detail/CVE-2017-1000353",
+      "cwes": []
+    },
+    {
+      "cveID": "CVE-2015-7755",
+      "vendorProject": "Juniper",
+      "product": "ScreenOS",
+      "vulnerabilityName": "Juniper ScreenOS Improper Authentication Vulnerability",
+      "dateAdded": "2025-10-02",
+      "shortDescription": "Juniper ScreenOS contains an improper authentication vulnerability that could allow unauthorized remote administrative access to the device.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-10-23",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://supportportal.juniper.net/s/article/2015-12-Out-of-Cycle-Security-Bulletin-ScreenOS-Multiple-Security-issues-with-ScreenOS-CVE-2015-7755-CVE-2015-7756 ; https://nvd.nist.gov/vuln/detail/CVE-2015-7755",
+      "cwes": [
+        "CWE-287"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-21043",
+      "vendorProject": "Samsung",
+      "product": "Mobile Devices",
+      "vulnerabilityName": "Samsung Mobile Devices Out-of-Bounds Write Vulnerability",
+      "dateAdded": "2025-10-02",
+      "shortDescription": "Samsung mobile devices contain an out-of-bounds write vulnerability in libimagecodec.quram.so which allows remote attackers to execute arbitrary code.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-10-23",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://security.samsungmobile.com/securityUpdate.smsb?year=2025&month=09 ; https://nvd.nist.gov/vuln/detail/CVE-2025-21043",
+      "cwes": [
+        "CWE-787"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-4008",
+      "vendorProject": "Smartbedded",
+      "product": "Meteobridge",
+      "vulnerabilityName": "Smartbedded Meteobridge Command Injection Vulnerability",
+      "dateAdded": "2025-10-02",
+      "shortDescription": "Smartbedded Meteobridge contains a command injection vulnerability that could allow remote unauthenticated attackers to gain arbitrary command execution with elevated privileges (root) on affected devices.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-10-23",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://forum.meteohub.de/viewtopic.php?t=18687 ; https://nvd.nist.gov/vuln/detail/CVE-2025-4008",
+      "cwes": [
+        "CWE-306",
+        "CWE-77"
+      ]
+    },
     {
       "cveID": "CVE-2025-32463",
       "vendorProject": "Sudo",
@@ -21117,5 +21191,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-10-02T12:47:18.975147711Z"
+  "fetchTimestamp": "2025-10-02T17:06:58.031686729Z"
 }
