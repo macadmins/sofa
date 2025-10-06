@@ -1,9 +1,102 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.10.02",
-  "dateReleased": "2025-10-02T14:59:13.7696Z",
-  "count": 1427,
+  "catalogVersion": "2025.10.06",
+  "dateReleased": "2025-10-06T17:05:34.8177Z",
+  "count": 1434,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-61882",
+      "vendorProject": "Oracle",
+      "product": "E-Business Suite",
+      "vulnerabilityName": "Oracle E-Business Suite Unspecified Vulnerability",
+      "dateAdded": "2025-10-07",
+      "shortDescription": "Oracle E-Business Suite contains an unspecified vulnerability in the BI Publisher Integration component. The vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Concurrent Processing. Successful attacks can result in takeover of Oracle Concurrent Processing.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-10-28",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.oracle.com/security-alerts/alert-cve-2025-61882.html ; https://nvd.nist.gov/vuln/detail/CVE-2025-61882",
+      "cwes": []
+    },
+    {
+      "cveID": "CVE-2021-22555",
+      "vendorProject": "Linux",
+      "product": "Kernel",
+      "vulnerabilityName": "Linux Kernel Heap Out-of-Bounds Write Vulnerability",
+      "dateAdded": "2025-10-06",
+      "shortDescription": "Linux Kernel contains a heap out-of-bounds write vulnerability that could allow an attacker to gain privileges or cause a DoS (via heap memory corruption) through user name space.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-10-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/net/netfilter/x_tables.c?id=9fa492cdc160cd27ce1046cb36f47d3b2b1efa21 ; https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/net/netfilter/x_tables.c?id=b29c457a6511435960115c0f548c4360d5f4801d ; https://security.netapp.com/advisory/ntap-20210805-0010/ ; https://github.com/google/security-research/security/advisories/GHSA-xxx5-8mvq-3528 ; https://nvd.nist.gov/vuln/detail/CVE-2021-22555",
+      "cwes": [
+        "CWE-787"
+      ]
+    },
+    {
+      "cveID": "CVE-2010-3962",
+      "vendorProject": "Microsoft",
+      "product": "Internet Explorer",
+      "vulnerabilityName": "Microsoft Internet Explorer Uninitialized Memory Corruption Vulnerability",
+      "dateAdded": "2025-10-06",
+      "shortDescription": "Microsoft Internet Explorer contains an uninitialized memory corruption vulnerability that could allow for remote code execution. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-10-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://learn.microsoft.com/en-us/security-updates/SecurityAdvisories/2010/2458511?redirectedfrom=MSDN ; https://nvd.nist.gov/vuln/detail/CVE-2010-3962",
+      "cwes": []
+    },
+    {
+      "cveID": "CVE-2021-43226",
+      "vendorProject": "Microsoft",
+      "product": "Windows",
+      "vulnerabilityName": "Microsoft Windows Privilege Escalation Vulnerability",
+      "dateAdded": "2025-10-06",
+      "shortDescription": "Microsoft Windows Common Log File System Driver contains a privilege escalation vulnerability that could allow a local, privileged attacker to bypass certain security mechanisms.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-10-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-43226 ; https://nvd.nist.gov/vuln/detail/CVE-2021-43226",
+      "cwes": []
+    },
+    {
+      "cveID": "CVE-2013-3918",
+      "vendorProject": "Microsoft",
+      "product": "Windows",
+      "vulnerabilityName": "Microsoft Windows Out-of-Bounds Write Vulnerability",
+      "dateAdded": "2025-10-06",
+      "shortDescription": "Microsoft Windows contains a n out-of-bounds write vulnerability in the InformationCardSigninHelper Class ActiveX control, icardie.dll. An attacker could exploit the vulnerability by constructing a specially crafted webpage. When a user views the webpage, the vulnerability could allow remote code execution. An attacker who successfully exploited this vulnerability could gain the same user rights as the current user. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-10-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2013/ms13-090 ; https://nvd.nist.gov/vuln/detail/CVE-2013-3918",
+      "cwes": []
+    },
+    {
+      "cveID": "CVE-2011-3402",
+      "vendorProject": "Microsoft",
+      "product": "Windows",
+      "vulnerabilityName": "Microsoft Windows Remote Code Execution Vulnerability",
+      "dateAdded": "2025-10-06",
+      "shortDescription": "Microsoft Windows Kernel contains an unspecified vulnerability in the TrueType font parsing engine in win32k.sys in the kernel-mode drivers that allows remote attackers to execute arbitrary code via crafted font data in a Word document or web page.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-10-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2011/ms11-087 ; https://nvd.nist.gov/vuln/detail/CVE-2011-3402",
+      "cwes": []
+    },
+    {
+      "cveID": "CVE-2010-3765",
+      "vendorProject": "Mozilla",
+      "product": "Multiple Products",
+      "vulnerabilityName": "Mozilla Multiple Products Remote Code Execution Vulnerability",
+      "dateAdded": "2025-10-06",
+      "shortDescription": "Mozilla Firefox, SeaMonkey, and Thunderbird contain an unspecified vulnerability when JavaScript is enabled. This allows remote attackers to execute arbitrary code via vectors related to nsCSSFrameConstructor::ContentAppended, the appendChild method, incorrect index tracking, and the creation of multiple frames, which triggers memory corruption.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-10-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.mozilla.org/en-US/security/advisories/mfsa2010-73 ; https://nvd.nist.gov/vuln/detail/CVE-2010-3765",
+      "cwes": []
+    },
     {
       "cveID": "CVE-2014-6278",
       "vendorProject": "GNU",
@@ -21191,5 +21284,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-10-06T12:47:38.788455864Z"
+  "fetchTimestamp": "2025-10-06T17:07:56.334041628Z"
 }
