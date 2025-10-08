@@ -1,7 +1,7 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.10.07",
-  "dateReleased": "2025-10-07T21:07:50.8979Z",
+  "catalogVersion": "2025.10.08",
+  "dateReleased": "2025-10-08T15:06:53.3731Z",
   "count": 1435,
   "vulnerabilities": [
     {
@@ -5313,7 +5313,7 @@
       "shortDescription": "Microsoft Windows Internet Shortcut Files contains an unspecified vulnerability that allows for a security feature bypass.",
       "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2024-03-05",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2024-21412; https://nvd.nist.gov/vuln/detail/CVE-2024-21412",
       "cwes": [
         "CWE-693"
@@ -5403,8 +5403,8 @@
       "shortDescription": "Ivanti Connect Secure (ICS, formerly known as Pulse Connect Secure), Ivanti Policy Secure, and Ivanti Neurons contain a server-side request forgery (SSRF) vulnerability in the SAML component that allows an attacker to access certain restricted resources without authentication.",
       "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2024-02-02",
-      "knownRansomwareCampaignUse": "Unknown",
-      "notes": "https://forums.ivanti.com/s/article/KB-CVE-2023-46805-Authentication-Bypass-CVE-2024-21887-Command-Injection-for-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Gateways?language=en_US;  https://nvd.nist.gov/vuln/detail/CVE-2024-21893",
+      "knownRansomwareCampaignUse": "Known",
+      "notes": "https://forums.ivanti.com/s/article/KB-CVE-2023-46805-Authentication-Bypass-CVE-2024-21887-Command-Injection-for-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Gateways?language=en_US ; https://nvd.nist.gov/vuln/detail/CVE-2024-21893",
       "cwes": [
         "CWE-918"
       ]
@@ -5553,7 +5553,7 @@
       "shortDescription": "Ivanti Connect Secure (ICS, formerly known as Pulse Connect Secure) and Ivanti Policy Secure gateways contain an authentication bypass vulnerability in the web component that allows an attacker to access restricted resources by bypassing control checks. This vulnerability can be leveraged in conjunction with CVE-2024-21887, a command injection vulnerability.",
       "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2024-01-22",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "Please apply mitigations per vendor instructions. For more information, please see: https://forums.ivanti.com/s/article/KB-CVE-2023-46805-Authentication-Bypass-CVE-2024-21887-Command-Injection-for-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Gateways?language=en_US ;  https://nvd.nist.gov/vuln/detail/CVE-2023-46805",
       "cwes": [
         "CWE-287"
@@ -5568,7 +5568,7 @@
       "shortDescription": "Ivanti Connect Secure (ICS, formerly known as Pulse Connect Secure) and Ivanti Policy Secure contain a command injection vulnerability in the web components of these products, which can allow an authenticated administrator to send crafted requests to execute code on affected appliances. This vulnerability can be leveraged in conjunction with CVE-2023-46805, an authenticated bypass issue.",
       "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2024-01-22",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "Please apply mitigations per vendor instructions. For more information, please see: https://forums.ivanti.com/s/article/KB-CVE-2023-46805-Authentication-Bypass-CVE-2024-21887-Command-Injection-for-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Gateways?language=en_US ; https://nvd.nist.gov/vuln/detail/CVE-2024-21887",
       "cwes": [
         "CWE-77"
@@ -21299,5 +21299,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-10-08T12:47:39.030758347Z"
+  "fetchTimestamp": "2025-10-08T17:07:37.196168167Z"
 }
