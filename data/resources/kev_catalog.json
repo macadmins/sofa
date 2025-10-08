@@ -1,7 +1,7 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
   "catalogVersion": "2025.10.07",
-  "dateReleased": "2025-10-07T17:09:43.4312Z",
+  "dateReleased": "2025-10-07T21:07:50.8979Z",
   "count": 1435,
   "vulnerabilities": [
     {
@@ -66,7 +66,7 @@
       "product": "Windows",
       "vulnerabilityName": "Microsoft Windows Out-of-Bounds Write Vulnerability",
       "dateAdded": "2025-10-06",
-      "shortDescription": "Microsoft Windows contains a n out-of-bounds write vulnerability in the InformationCardSigninHelper Class ActiveX control, icardie.dll. An attacker could exploit the vulnerability by constructing a specially crafted webpage. When a user views the webpage, the vulnerability could allow remote code execution. An attacker who successfully exploited this vulnerability could gain the same user rights as the current user. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
+      "shortDescription": "Microsoft Windows contains an out-of-bounds write vulnerability in the InformationCardSigninHelper Class ActiveX control, icardie.dll. An attacker could exploit the vulnerability by constructing a specially crafted webpage. When a user views the webpage, the vulnerability could allow remote code execution. An attacker who successfully exploited this vulnerability could gain the same user rights as the current user. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2025-10-27",
       "knownRansomwareCampaignUse": "Unknown",
@@ -21299,5 +21299,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-10-07T20:08:36.648512311Z"
+  "fetchTimestamp": "2025-10-08T00:50:13.448034970Z"
 }
