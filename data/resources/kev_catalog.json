@@ -1,9 +1,84 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.10.09",
-  "dateReleased": "2025-10-09T16:52:28.6547Z",
-  "count": 1436,
+  "catalogVersion": "2025.10.14",
+  "dateReleased": "2025-10-14T17:11:17.0905Z",
+  "count": 1441,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-47827",
+      "vendorProject": "IGEL",
+      "product": "IGEL OS",
+      "vulnerabilityName": "IGEL OS Use of a Key Past its Expiration Date Vulnerability",
+      "dateAdded": "2025-10-14",
+      "shortDescription": "IGEL OS contains a use of a key past its expiration date vulnerability that allows for Secure Boot bypass. The igel-flash-driver module improperly verifies a cryptographic signature. Ultimately, a crafted root filesystem can be mounted from an unverified SquashFS image.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-11-04",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2025-47827 ; https://nvd.nist.gov/vuln/detail/CVE-2025-47827",
+      "cwes": [
+        "CWE-324"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-24990",
+      "vendorProject": "Microsoft",
+      "product": "Windows",
+      "vulnerabilityName": "Microsoft Windows Untrusted Pointer Dereference Vulnerability",
+      "dateAdded": "2025-10-14",
+      "shortDescription": "Microsoft Windows Agere Modem Driver contains an untrusted pointer dereference vulnerability that allows for privilege escalation. An attacker who successfully exploited this vulnerability could gain administrator privileges.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-11-04",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2025-24990 ; https://nvd.nist.gov/vuln/detail/CVE-2025-24990",
+      "cwes": [
+        "CWE-822"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-59230",
+      "vendorProject": "Microsoft",
+      "product": "Windows",
+      "vulnerabilityName": "Microsoft Windows Improper Access Control Vulnerability",
+      "dateAdded": "2025-10-14",
+      "shortDescription": "Microsoft Windows contains an improper access control vulnerability in Windows Remote Access Connection Manager which could allow an authorized attacker to elevate privileges locally.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-11-04",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2025-59230 ; https://nvd.nist.gov/vuln/detail/CVE-2025-59230",
+      "cwes": [
+        "CWE-284"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-6264",
+      "vendorProject": "Rapid7",
+      "product": "Velociraptor",
+      "vulnerabilityName": "Rapid7 Velociraptor Incorrect Default Permissions Vulnerability",
+      "dateAdded": "2025-10-14",
+      "shortDescription": "Rapid7 Velociraptor contains an incorrect default permissions vulnerability that can lead to arbitrary command execution and endpoint takeover. To successfully exploit this vulnerability the user must already have access to collect artifacts from the endpoint.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-11-04",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://docs.velociraptor.app/announcements/advisories/cve-2025-6264/ ; https://nvd.nist.gov/vuln/detail/CVE-2025-6264",
+      "cwes": [
+        "CWE-276"
+      ]
+    },
+    {
+      "cveID": "CVE-2016-7836",
+      "vendorProject": "SKYSEA",
+      "product": "Client View",
+      "vulnerabilityName": "SKYSEA Client View Improper Authentication Vulnerability",
+      "dateAdded": "2025-10-14",
+      "shortDescription": "SKYSEA Client View contains an improper authentication vulnerability that allows remote code execution via a flaw in processing authentication on the TCP connection with the management console program.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-11-04",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.skyseaclientview.net/news/161221/ ; https://nvd.nist.gov/vuln/detail/CVE-2016-7836",
+      "cwes": [
+        "CWE-287"
+      ]
+    },
     {
       "cveID": "CVE-2021-43798",
       "vendorProject": "Grafana Labs",
@@ -21314,5 +21389,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-10-14T17:08:04.222099684Z"
+  "fetchTimestamp": "2025-10-14T18:11:58.850503717Z"
 }
