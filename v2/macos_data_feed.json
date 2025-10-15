@@ -1,7 +1,7 @@
 {
   "Version": "2.0",
-  "UpdateHash": "03f01ac6a33e8cc6c80fa6df31ea96c07ecd875fbd1f92126da0fa07107634cc",
-  "LastCheck": "2025-10-15T19:07:18.989107879+00:00",
+  "UpdateHash": "5779b61a7eda352c40ba1ee897783897027168864de9633eff768df0d31c89e1",
+  "LastCheck": "2025-10-15T20:09:29.156536068+00:00",
   "OSVersions": [
     {
       "OSVersion": "macOS 26",
@@ -827,7 +827,7 @@
           "ExpirationDate": "2025-11-18",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/124149",
-          "SecurityInfoContext": "macOS 15.6 was released on July 29, 2025. This release addressed 92 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "macOS 15.6 was released on July 29, 2025. This release addressed 88 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "J132AP",
             "J137AP",
@@ -982,24 +982,20 @@
             "CVE-2025-43275": {},
             "CVE-2025-43276": {},
             "CVE-2025-43277": {},
-            "CVE-2025-43281": {},
-            "CVE-2025-43282": {},
             "CVE-2025-43284": {},
-            "CVE-2025-43313": {},
             "CVE-2025-6558": {
               "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6558",
               "actively_exploited": true,
               "in_kev": true,
               "severity": "Critical"
             },
-            "CVE-2025-6965": {},
             "CVE-2025-7424": {},
             "CVE-2025-7425": {}
           },
           "ActivelyExploitedCVEs": [
             "CVE-2025-6558"
           ],
-          "UniqueCVEsCount": 92,
+          "UniqueCVEsCount": 88,
           "DaysSincePreviousRelease": 78,
           "update_summary": {
             "priority": "critical",
@@ -1012,7 +1008,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 92
+              "total": 88
             }
           }
         },
@@ -2985,7 +2981,7 @@
           "ExpirationDate": "2025-11-18",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/124150",
-          "SecurityInfoContext": "macOS 14.7.7 was released on July 29, 2025. This release addressed 50 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "macOS 14.7.7 was released on July 29, 2025. This release addressed 52 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "J132AP",
             "J137AP",
@@ -3093,15 +3089,17 @@
             "CVE-2025-43266": {},
             "CVE-2025-43270": {},
             "CVE-2025-43275": {},
+            "CVE-2025-43282": {},
             "CVE-2025-43284": {},
+            "CVE-2025-43313": {},
             "CVE-2025-7424": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 50,
+          "UniqueCVEsCount": 52,
           "DaysSincePreviousRelease": 78,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 50 security issues",
+            "summary": "Addresses 52 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -3110,7 +3108,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 50
+              "total": 52
             }
           }
         },
@@ -13067,7 +13065,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/kb/HT212622",
+          "SecurityInfo": "https://support.apple.com/kb/HT213724",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "J132AP",
@@ -13152,13 +13150,13 @@
     }
   ],
   "XProtectPlistConfigData": {
-    "ReleaseDate": "2025-10-08T18:36:54Z",
-    "com.apple.XProtect": "5318"
+    "ReleaseDate": "2025-10-15T19:05:05Z",
+    "com.apple.XProtect": "5319"
   },
   "XProtectPayloads": {
-    "com.apple.XprotectFramework.PluginService": "74",
     "com.apple.XProtectFramework.XProtect": "153",
-    "ReleaseDate": "2025-10-08T18:36:54Z"
+    "com.apple.XprotectFramework.PluginService": "74",
+    "ReleaseDate": "2025-10-15T19:05:05Z"
   },
   "InstallationApps": {
     "LatestUMA": {

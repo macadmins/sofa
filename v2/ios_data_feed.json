@@ -1,7 +1,7 @@
 {
   "Version": "2.0",
-  "UpdateHash": "ce8b177efa716f9c9876586ffda796497626131c2484242d5db2e8aed13dd603",
-  "LastCheck": "2025-10-15T19:07:19.004818407+00:00",
+  "UpdateHash": "09e7b28b701f96236418406edf1dce4fef5405e6a554ac7346740d00300b5c91",
+  "LastCheck": "2025-10-15T20:09:29.172104479+00:00",
   "OSVersions": [
     {
       "OSVersion": "26",
@@ -1016,7 +1016,7 @@
           "ExpirationDate": "2025-12-14",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/124147",
-          "SecurityInfoContext": "iOS 18.6 was released on July 29, 2025. This release addressed 29 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "iOS 18.6 was released on July 29, 2025. This release addressed 32 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "iPad11,1",
             "iPad11,2",
@@ -1134,23 +1134,26 @@
             "CVE-2025-43234": {},
             "CVE-2025-43265": {},
             "CVE-2025-43277": {},
+            "CVE-2025-43280": {},
+            "CVE-2025-43282": {},
             "CVE-2025-6558": {
               "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6558",
               "actively_exploited": true,
               "in_kev": true,
               "severity": "Critical"
             },
+            "CVE-2025-6965": {},
             "CVE-2025-7424": {},
             "CVE-2025-7425": {}
           },
           "ActivelyExploitedCVEs": [
             "CVE-2025-6558"
           ],
-          "UniqueCVEsCount": 29,
+          "UniqueCVEsCount": 32,
           "DaysSincePreviousRelease": 78,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 29 security issues",
+            "summary": "Addresses 32 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -1159,7 +1162,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 29
+              "total": 32
             }
           }
         },
@@ -2088,7 +2091,7 @@
           "ExpirationDate": "2025-11-18",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/124148",
-          "SecurityInfoContext": "iOS 17.7.9 was released on July 29, 2025. This release addressed 19 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "iOS 17.7.9 was released on July 29, 2025. This release addressed 18 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "iPad7,1",
             "iPad7,2",
@@ -2114,7 +2117,6 @@
             "CVE-2025-43225": {},
             "CVE-2025-43226": {},
             "CVE-2025-43230": {},
-            "CVE-2025-43282": {},
             "CVE-2025-6558": {
               "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6558",
               "actively_exploited": true,
@@ -2126,11 +2128,11 @@
           "ActivelyExploitedCVEs": [
             "CVE-2025-6558"
           ],
-          "UniqueCVEsCount": 19,
+          "UniqueCVEsCount": 18,
           "DaysSincePreviousRelease": 71,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 19 security issues",
+            "summary": "Addresses 18 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -2139,7 +2141,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 19
+              "total": 18
             }
           }
         },

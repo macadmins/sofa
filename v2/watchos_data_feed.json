@@ -1,8 +1,8 @@
 {
   "OSName": "watchOS",
   "Version": "2.0",
-  "UpdateHash": "afcd458a151f5f14355499016d6980ed7094f81fa64de2493e6ed64180e37d73",
-  "LastCheck": "2025-10-15T19:07:19.051493578+00:00",
+  "UpdateHash": "16a98f5c71cab3560a7a490c4fb6de7d70ee2d384ebf013c7dbd3980f9e08f9f",
+  "LastCheck": "2025-10-15T20:09:29.218511896+00:00",
   "OSVersions": [
     {
       "OSVersion": "watchOS 26",
@@ -406,7 +406,7 @@
           "ExpirationDate": "2026-01-13",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/124155",
-          "SecurityInfoContext": "watchOS 11.6 was released on July 29, 2025. This release addressed 21 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "watchOS 11.6 was released on July 29, 2025. This release addressed 23 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "Watch6,1",
             "Watch6,10",
@@ -454,22 +454,24 @@
             "CVE-2025-43234": {},
             "CVE-2025-43265": {},
             "CVE-2025-43277": {},
+            "CVE-2025-43282": {},
             "CVE-2025-6558": {
               "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6558",
               "in_kev": true,
               "severity": "High"
             },
+            "CVE-2025-6965": {},
             "CVE-2025-7424": {},
             "CVE-2025-7425": {}
           },
           "ActivelyExploitedCVEs": [
             "CVE-2025-6558"
           ],
-          "UniqueCVEsCount": 21,
+          "UniqueCVEsCount": 23,
           "DaysSincePreviousRelease": 78,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 21 security issues",
+            "summary": "Addresses 23 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -478,7 +480,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 21
+              "total": 23
             }
           }
         },
