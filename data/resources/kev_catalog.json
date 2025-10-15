@@ -1,9 +1,22 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.10.14",
-  "dateReleased": "2025-10-14T18:00:15.9368Z",
-  "count": 1441,
+  "catalogVersion": "2025.10.15",
+  "dateReleased": "2025-10-15T17:18:02.7152Z",
+  "count": 1442,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-54253",
+      "vendorProject": "Adobe",
+      "product": "Experience Manager (AEM) Forms",
+      "vulnerabilityName": "Adobe Experience Manager Forms Code Execution Vulnerability",
+      "dateAdded": "2025-10-16",
+      "shortDescription": "Adobe Experience Manager Forms in JEE contains an unspecified vulnerability that allows for arbitrary code execution.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-11-06",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://helpx.adobe.com/security/products/aem-forms/apsb25-82.html ; https://nvd.nist.gov/vuln/detail/CVE-2025-54253",
+      "cwes": []
+    },
     {
       "cveID": "CVE-2025-47827",
       "vendorProject": "IGEL",
@@ -21389,5 +21402,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-10-15T17:07:34.737836975Z"
+  "fetchTimestamp": "2025-10-15T18:12:09.965995254Z"
 }
