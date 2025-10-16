@@ -1,8 +1,8 @@
 {
   "OSName": "tvOS",
   "Version": "2.0",
-  "UpdateHash": "21d9fc3ee954be87f864afd7e2e91ae5e48d802b64d8e8a963168f2e078603f0",
-  "LastCheck": "2025-10-16T00:50:32.399061139+00:00",
+  "UpdateHash": "ac86a1bd3b60807a263c9570b7c72ade031b59cb0e0b97d9dccfde84c9b88028",
+  "LastCheck": "2025-10-16T06:42:38.787305989+00:00",
   "OSVersions": [
     {
       "OSVersion": "tvOS 26",
@@ -159,7 +159,7 @@
         "ExpirationDate": "2025-12-14",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/124153",
-        "SecurityInfoContext": "tvOS has been updated to version 18.6, which was released on July 29, 2025. This update addresses 24 security issues and is the most recent approved version.",
+        "SecurityInfoContext": "tvOS has been updated to version 18.6, which was released on July 29, 2025. This update addresses 26 security issues and is the most recent approved version.",
         "SupportedDevices": [
           "AppleTV11,1",
           "AppleTV14,1",
@@ -188,22 +188,24 @@
           "CVE-2025-43234": {},
           "CVE-2025-43265": {},
           "CVE-2025-43277": {},
+          "CVE-2025-43282": {},
           "CVE-2025-6558": {
             "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6558",
             "in_kev": true,
             "severity": "High"
           },
+          "CVE-2025-6965": {},
           "CVE-2025-7424": {},
           "CVE-2025-7425": {}
         },
         "ActivelyExploitedCVEs": [
           "CVE-2025-6558"
         ],
-        "UniqueCVEsCount": 24,
+        "UniqueCVEsCount": 26,
         "DaysSincePreviousRelease": 78,
         "update_summary": {
           "priority": "high",
-          "summary": "Addresses 24 security issues",
+          "summary": "Addresses 26 security issues",
           "recommendation": "Update to stay secure - security fixes available",
           "stats": {
             "exploited": 0,
@@ -212,7 +214,7 @@
             "medium": 0,
             "low": 0,
             "remote": 0,
-            "total": 24
+            "total": 26
           }
         }
       },
@@ -230,7 +232,7 @@
           "ExpirationDate": "2025-12-14",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/124153",
-          "SecurityInfoContext": "tvOS has been updated to version 18.6, which was released on July 29, 2025. This update addresses 24 security issues and is the most recent approved version.",
+          "SecurityInfoContext": "tvOS has been updated to version 18.6, which was released on July 29, 2025. This update addresses 26 security issues and is the most recent approved version.",
           "SupportedDevices": [
             "AppleTV11,1",
             "AppleTV14,1",
@@ -259,22 +261,24 @@
             "CVE-2025-43234": {},
             "CVE-2025-43265": {},
             "CVE-2025-43277": {},
+            "CVE-2025-43282": {},
             "CVE-2025-6558": {
               "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6558",
               "in_kev": true,
               "severity": "High"
             },
+            "CVE-2025-6965": {},
             "CVE-2025-7424": {},
             "CVE-2025-7425": {}
           },
           "ActivelyExploitedCVEs": [
             "CVE-2025-6558"
           ],
-          "UniqueCVEsCount": 24,
+          "UniqueCVEsCount": 26,
           "DaysSincePreviousRelease": 78,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 24 security issues",
+            "summary": "Addresses 26 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -283,7 +287,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 24
+              "total": 26
             }
           }
         },
