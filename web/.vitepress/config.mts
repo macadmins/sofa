@@ -35,11 +35,11 @@ export default defineConfig({
     // Ensure mobile navigation works
     siteTitle: 'SOFA',
     logo: '/custom_logo.png',
-    
-    // Disable next/prev page links if desired
+
+    // Disable next/prev page links if desired by setting values to false. Comment out docFooter for default values of 'Previous page' and 'Next page'
     docFooter: {
-      prev: true,
-      next: true,
+      prev: 'Previous',
+      next: 'Next',
     },
     
     sidebar: [
