@@ -455,7 +455,6 @@ const v1Feeds = ref([
 
 const metaFeeds = ref([
   { name: 'sofa-status.json', url: '/resources/sofa-status.json', important: true },
-  // when testing locally, the shortened url seem to work but on sofa.macadmins.io they don't seem to. Something with the deployment, I would guess.
   { name: 'bulletin_data.json', url: '/resources/bulletin_data.json', important: true },
   { name: 'essential_links.json', url: '/resources/essential_links.json', important: true },
   { name: 'timestamp.json', url: '/resources/timestamp.json'}
