@@ -1,7 +1,7 @@
 {
   "Version": "2.0",
-  "UpdateHash": "09e7b28b701f96236418406edf1dce4fef5405e6a554ac7346740d00300b5c91",
-  "LastCheck": "2025-10-15T20:09:29.172104479+00:00",
+  "UpdateHash": "4e3a37df5f94a53cff108d3e9d5351d551adb24ef4dff91603583fe0984913e4",
+  "LastCheck": "2025-10-16T00:50:32.363201404+00:00",
   "OSVersions": [
     {
       "OSVersion": "26",
@@ -14,11 +14,13 @@
           "23R8352",
           "23J6362",
           "23J362",
+          "23A9464",
+          "23A8464",
           "23A6355",
           "23A355"
         ],
         "ReleaseDate": "2025-09-29T00:00:00Z",
-        "ExpirationDate": "2026-01-13",
+        "ExpirationDate": "2026-01-14",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/125326",
         "SecurityInfoContext": "iOS has been updated to version 26.0.1, which was released on September 29, 2025. This update addresses one security issue and is the most recent approved version.",
@@ -67,6 +69,10 @@
           "iPad16,4",
           "iPad16,5",
           "iPad16,6",
+          "iPad17,1",
+          "iPad17,2",
+          "iPad17,3",
+          "iPad17,4",
           "iPad8,1",
           "iPad8,10",
           "iPad8,11",
@@ -141,11 +147,13 @@
             "23R8352",
             "23J6362",
             "23J362",
+            "23A9464",
+            "23A8464",
             "23A6355",
             "23A355"
           ],
           "ReleaseDate": "2025-09-29T00:00:00Z",
-          "ExpirationDate": "2026-01-13",
+          "ExpirationDate": "2026-01-14",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125326",
           "SecurityInfoContext": "iOS has been updated to version 26.0.1, which was released on September 29, 2025. This update addresses one security issue and is the most recent approved version.",
@@ -194,6 +202,10 @@
             "iPad16,4",
             "iPad16,5",
             "iPad16,6",
+            "iPad17,1",
+            "iPad17,2",
+            "iPad17,3",
+            "iPad17,4",
             "iPad8,1",
             "iPad8,10",
             "iPad8,11",
@@ -427,7 +439,7 @@
           "22H31"
         ],
         "ReleaseDate": "2025-09-29T00:00:00Z",
-        "ExpirationDate": "2026-01-13",
+        "ExpirationDate": "2026-01-14",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/125327",
         "SecurityInfoContext": "iOS has been updated to version 18.7.1, which was released on September 29, 2025. This update addresses one security issue and is the most recent approved version.",
@@ -553,7 +565,7 @@
             "22H31"
           ],
           "ReleaseDate": "2025-09-29T00:00:00Z",
-          "ExpirationDate": "2026-01-13",
+          "ExpirationDate": "2026-01-14",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125327",
           "SecurityInfoContext": "iOS has been updated to version 18.7.1, which was released on September 29, 2025. This update addresses one security issue and is the most recent approved version.",
@@ -814,7 +826,7 @@
             "22G100"
           ],
           "ReleaseDate": "2025-08-20T00:00:00Z",
-          "ExpirationDate": "2026-01-13",
+          "ExpirationDate": "2026-01-14",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/124925",
           "SecurityInfoContext": "iOS 18.6.2 was released on August 20, 2025. This release addressed one security issue. Newer updates are now available, so please check to see if they apply to your devices.",
@@ -1987,7 +1999,7 @@
           "21H450"
         ],
         "ReleaseDate": "2025-08-20T00:00:00Z",
-        "ExpirationDate": "2026-01-13",
+        "ExpirationDate": "2026-01-14",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/124926",
         "SecurityInfoContext": "iOS has been updated to version 17.7.10, which was released on August 20, 2025. This update addresses one security issue and is the most recent approved version.",
@@ -2038,7 +2050,7 @@
             "21H450"
           ],
           "ReleaseDate": "2025-08-20T00:00:00Z",
-          "ExpirationDate": "2026-01-13",
+          "ExpirationDate": "2026-01-14",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/124926",
           "SecurityInfoContext": "iOS has been updated to version 17.7.10, which was released on August 20, 2025. This update addresses one security issue and is the most recent approved version.",
@@ -2091,7 +2103,7 @@
           "ExpirationDate": "2025-11-18",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/124148",
-          "SecurityInfoContext": "iOS 17.7.9 was released on July 29, 2025. This release addressed 18 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "iOS 17.7.9 was released on July 29, 2025. This release addressed 19 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "iPad7,1",
             "iPad7,2",
@@ -2117,6 +2129,7 @@
             "CVE-2025-43225": {},
             "CVE-2025-43226": {},
             "CVE-2025-43230": {},
+            "CVE-2025-43282": {},
             "CVE-2025-6558": {
               "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6558",
               "actively_exploited": true,
@@ -2128,11 +2141,11 @@
           "ActivelyExploitedCVEs": [
             "CVE-2025-6558"
           ],
-          "UniqueCVEsCount": 18,
+          "UniqueCVEsCount": 19,
           "DaysSincePreviousRelease": 71,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 18 security issues",
+            "summary": "Addresses 19 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -2141,7 +2154,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 18
+              "total": 19
             }
           }
         },

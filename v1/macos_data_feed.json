@@ -1,13 +1,13 @@
 {
-  "UpdateHash": "d91c964ee00c474b41c5e7f745f8f8ab3b323b9f4ed51de07e0454f6fa92d150",
+  "UpdateHash": "e5a29b085962236ec1666241abfa410a524a10d2377e8b7b0d69391f3efdd930",
   "OSVersions": [
     {
       "OSVersion": "Tahoe 26",
       "Latest": {
         "ProductVersion": "26.0.1",
-        "Build": "25A362",
+        "Build": "25A8364",
         "ReleaseDate": "2025-09-29T00:00:00Z",
-        "ExpirationDate": "2026-01-13T00:00:00Z",
+        "ExpirationDate": "2026-01-14T00:00:00Z",
         "SupportedDevices": [
           "J152FAP",
           "J160AP",
@@ -58,6 +58,7 @@
           "J616sAP",
           "J623AP",
           "J624AP",
+          "J704AP",
           "J713AP",
           "J715AP",
           "J773gAP",
@@ -130,6 +131,7 @@
             "J616sAP",
             "J623AP",
             "J624AP",
+            "J704AP",
             "J713AP",
             "J715AP",
             "J773gAP",
@@ -201,6 +203,7 @@
             "J616sAP",
             "J623AP",
             "J624AP",
+            "J704AP",
             "J713AP",
             "J715AP",
             "J773gAP",
@@ -391,7 +394,7 @@
         "ProductVersion": "15.7.1",
         "Build": "24G231",
         "ReleaseDate": "2025-09-29T00:00:00Z",
-        "ExpirationDate": "2026-01-13T00:00:00Z",
+        "ExpirationDate": "2026-01-14T00:00:00Z",
         "SupportedDevices": [
           "J132AP",
           "J137AP",
@@ -915,15 +918,19 @@
             "CVE-2025-43275": false,
             "CVE-2025-43276": false,
             "CVE-2025-43277": false,
+            "CVE-2025-43281": false,
+            "CVE-2025-43282": false,
             "CVE-2025-43284": false,
+            "CVE-2025-43313": false,
             "CVE-2025-6558": true,
+            "CVE-2025-6965": false,
             "CVE-2025-7424": false,
             "CVE-2025-7425": false
           },
           "ActivelyExploitedCVEs": [
             "CVE-2025-6558"
           ],
-          "UniqueCVEsCount": 88,
+          "UniqueCVEsCount": 92,
           "DaysSincePreviousRelease": 78
         },
         {
@@ -2498,7 +2505,7 @@
         "ProductVersion": "14.8.1",
         "Build": "23J30",
         "ReleaseDate": "2025-09-29T00:00:00Z",
-        "ExpirationDate": "2026-01-13T00:00:00Z",
+        "ExpirationDate": "2026-01-14T00:00:00Z",
         "SupportedDevices": [
           "J132AP",
           "J137AP",
@@ -5264,7 +5271,7 @@
         "ProductVersion": "13.7.8",
         "Build": "22H730",
         "ReleaseDate": "2025-08-20T00:00:00Z",
-        "ExpirationDate": "2026-01-13T00:00:00Z",
+        "ExpirationDate": "2026-01-14T00:00:00Z",
         "SupportedDevices": [
           "J132AP",
           "J137AP",
@@ -5510,10 +5517,12 @@
             "CVE-2025-43266": false,
             "CVE-2025-43270": false,
             "CVE-2025-43275": false,
-            "CVE-2025-43284": false
+            "CVE-2025-43282": false,
+            "CVE-2025-43284": false,
+            "CVE-2025-43313": false
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 41,
+          "UniqueCVEsCount": 43,
           "DaysSincePreviousRelease": 78
         },
         {
@@ -8658,7 +8667,7 @@
         "ProductVersion": "12.7.6",
         "Build": "21H1320",
         "ReleaseDate": "2024-07-29T00:00:00Z",
-        "ExpirationDate": "2026-01-13T00:00:00Z",
+        "ExpirationDate": "2026-01-14T00:00:00Z",
         "SupportedDevices": [
           "J132AP",
           "J137AP",
@@ -12805,6 +12814,15 @@
       "size": 16954679325
     },
     "AllPreviousUMA": [
+      {
+        "title": "macOS Tahoe",
+        "version": "26.0.1",
+        "build": "25A8364",
+        "apple_slug": "093-49299",
+        "url": "https://swcdn.apple.com/content/downloads/37/03/093-49299-A_MZ8OHDOFLQ/d8m9w3lyshl2vrb2u1h1peyjrazmx1jrzt/InstallAssistant.pkg",
+        "posting_date": "2025-10-16T00:11:31Z",
+        "size": 14393012429
+      },
       {
         "title": "macOS Tahoe",
         "version": "26.0",
