@@ -1,7 +1,7 @@
 {
   "Version": "2.0",
-  "UpdateHash": "e854c165bb23d034a3c5246a9b4f0ff1886c9bd7545c080428fc092b9c904877",
-  "LastCheck": "2025-10-20T12:48:00.927832089+00:00",
+  "UpdateHash": "0a1b470fc0a4dea9004e40d2ed188efeb210e4752d3c3a10feadb8cf71a826e0",
+  "LastCheck": "2025-10-20T17:08:05.383069426+00:00",
   "OSVersions": [
     {
       "OSVersion": "macOS 26",
@@ -12084,20 +12084,26 @@
             "CVE-2022-42805": {},
             "CVE-2022-42858": {},
             "CVE-2022-46708": {},
-            "CVE-2022-48503": {},
+            "CVE-2022-48503": {
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-48503",
+              "actively_exploited": true,
+              "in_kev": true,
+              "severity": "Critical"
+            },
             "CVE-2022-48578": {}
           },
           "ActivelyExploitedCVEs": [
+            "CVE-2022-48503",
             "CVE-2022-2294"
           ],
           "UniqueCVEsCount": 71,
           "DaysSincePreviousRelease": 65,
           "update_summary": {
             "priority": "critical",
-            "summary": "Contains 1 actively exploited vulnerability",
+            "summary": "Contains 2 actively exploited vulnerabilities",
             "recommendation": "Update immediately - actively exploited vulnerabilities",
             "stats": {
-              "exploited": 1,
+              "exploited": 2,
               "critical": 0,
               "high": 0,
               "medium": 0,
@@ -13075,7 +13081,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/en-us/121234",
+          "SecurityInfo": "https://support.apple.com/en-us/120912",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "J132AP",
@@ -13165,8 +13171,8 @@
   },
   "XProtectPayloads": {
     "com.apple.XProtectFramework.XProtect": "153",
-    "com.apple.XprotectFramework.PluginService": "74",
-    "ReleaseDate": "2025-10-15T19:05:05Z"
+    "ReleaseDate": "2025-10-15T19:05:05Z",
+    "com.apple.XprotectFramework.PluginService": "74"
   },
   "InstallationApps": {
     "LatestUMA": {

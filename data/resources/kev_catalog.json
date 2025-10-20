@@ -1,9 +1,82 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.10.15",
-  "dateReleased": "2025-10-15T18:34:38.9479Z",
-  "count": 1442,
+  "catalogVersion": "2025.10.20",
+  "dateReleased": "2025-10-20T13:56:54.0593Z",
+  "count": 1447,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2022-48503",
+      "vendorProject": "Apple",
+      "product": "Multiple Products",
+      "vulnerabilityName": "Apple Multiple Products Unspecified Vulnerability",
+      "dateAdded": "2025-10-20",
+      "shortDescription": "Apple macOS, iOS, tvOS, Safari, and watchOS contain an unspecified vulnerability in JavaScriptCore that when processing web content may lead to arbitrary code execution. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-11-10",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://support.apple.com/en-us/HT213340 ; https://support.apple.com/en-us/HT213341 ; https://support.apple.com/en-us/HT213342 ; https://support.apple.com/en-us/HT213345 ; https://support.apple.com/en-us/HT213346 ; https://nvd.nist.gov/vuln/detail/CVE-2022-48503",
+      "cwes": []
+    },
+    {
+      "cveID": "CVE-2025-2746",
+      "vendorProject": "Kentico",
+      "product": "Xperience CMS",
+      "vulnerabilityName": "Kentico Xperience CMS Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "dateAdded": "2025-10-20",
+      "shortDescription": "Kentico Xperience CMS contains an authentication bypass using an alternate path or channel vulnerability that could allow an attacker to control administrative objects.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-11-10",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://devnet.kentico.com/download/hotfixes ; https://nvd.nist.gov/vuln/detail/CVE-2025-2746",
+      "cwes": [
+        "CWE-288"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-2747",
+      "vendorProject": "Kentico",
+      "product": "Xperience CMS",
+      "vulnerabilityName": "Kentico Xperience CMS Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "dateAdded": "2025-10-20",
+      "shortDescription": "Kentico Xperience CMS contains an authentication bypass using an alternate path or channel vulnerability that could allow an attacker to control administrative objects.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-11-10",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://devnet.kentico.com/download/hotfixes ; https://nvd.nist.gov/vuln/detail/CVE-2025-2747",
+      "cwes": [
+        "CWE-288"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-33073",
+      "vendorProject": "Microsoft",
+      "product": "Windows",
+      "vulnerabilityName": "Microsoft Windows SMB Client Improper Access Control Vulnerability",
+      "dateAdded": "2025-10-20",
+      "shortDescription": "Microsoft Windows SMB Client contains an improper access control vulnerability that could allow for privilege escalation. An attacker could execute a specially crafted malicious script to coerce the victim machine to connect back to the attack system using SMB and authenticate.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-11-10",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2025-33073 ; https://nvd.nist.gov/vuln/detail/CVE-2025-33073",
+      "cwes": [
+        "CWE-284"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-61884",
+      "vendorProject": "Oracle",
+      "product": "E-Business Suite",
+      "vulnerabilityName": "Oracle E-Business Suite Server-Side Request Forgery (SSRF) Vulnerability",
+      "dateAdded": "2025-10-20",
+      "shortDescription": "Oracle E-Business Suite contains a server-side request forgery (SSRF) vulnerability in the Runtime component of Oracle Configurator. This vulnerability is remotely exploitable without authentication.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-11-10",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.oracle.com/security-alerts/alert-cve-2025-61884.html ; https://nvd.nist.gov/vuln/detail/CVE-2025-61884",
+      "cwes": [
+        "CWE-918"
+      ]
+    },
     {
       "cveID": "CVE-2025-54253",
       "vendorProject": "Adobe",
@@ -21402,5 +21475,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-10-20T12:47:41.253124326Z"
+  "fetchTimestamp": "2025-10-20T17:07:43.429459546Z"
 }
