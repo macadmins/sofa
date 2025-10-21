@@ -1,7 +1,7 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.10.20",
-  "dateReleased": "2025-10-20T13:56:54.0593Z",
+  "catalogVersion": "2025.10.21",
+  "dateReleased": "2025-10-21T18:29:57.9874Z",
   "count": 1447,
   "vulnerabilities": [
     {
@@ -71,7 +71,7 @@
       "shortDescription": "Oracle E-Business Suite contains a server-side request forgery (SSRF) vulnerability in the Runtime component of Oracle Configurator. This vulnerability is remotely exploitable without authentication.",
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2025-11-10",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://www.oracle.com/security-alerts/alert-cve-2025-61884.html ; https://nvd.nist.gov/vuln/detail/CVE-2025-61884",
       "cwes": [
         "CWE-918"
@@ -21475,5 +21475,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-10-21T18:42:20.709954939Z"
+  "fetchTimestamp": "2025-10-21T19:07:29.268188455Z"
 }
