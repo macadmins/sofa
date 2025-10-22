@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.10.21",
-  "dateReleased": "2025-10-21T18:29:57.9874Z",
+  "catalogVersion": "2025.10.22",
+  "dateReleased": "2025-10-22T17:24:42.9503Z",
   "count": 1447,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-61932",
+      "vendorProject": "Motex",
+      "product": "LANSCOPE Endpoint Manager",
+      "vulnerabilityName": "Motex LANSCOPE Endpoint Manager Improper Verification of Source of a Communication Channel Vulnerability",
+      "dateAdded": "2025-10-22",
+      "shortDescription": "Motex LANSCOPE Endpoint Manager contains an improper verification of source of a communication channel vulnerability allowing an attacker to execute arbitrary code by sending specially crafted packets.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-11-12",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.motex.co.jp/news/notice/2025/release251020/ ; https://nvd.nist.gov/vuln/detail/CVE-2025-61932",
+      "cwes": [
+        "CWE-940"
+      ]
+    },
     {
       "cveID": "CVE-2022-48503",
       "vendorProject": "Apple",
@@ -133,21 +148,6 @@
       "notes": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2025-59230 ; https://nvd.nist.gov/vuln/detail/CVE-2025-59230",
       "cwes": [
         "CWE-284"
-      ]
-    },
-    {
-      "cveID": "CVE-2025-6264",
-      "vendorProject": "Rapid7",
-      "product": "Velociraptor",
-      "vulnerabilityName": "Rapid7 Velociraptor Incorrect Default Permissions Vulnerability",
-      "dateAdded": "2025-10-14",
-      "shortDescription": "Rapid7 Velociraptor contains an incorrect default permissions vulnerability that can lead to arbitrary command execution and endpoint takeover. To successfully exploit this vulnerability the user must already have access to collect artifacts from the endpoint.",
-      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-      "dueDate": "2025-11-04",
-      "knownRansomwareCampaignUse": "Known",
-      "notes": "https://docs.velociraptor.app/announcements/advisories/cve-2025-6264/ ; https://nvd.nist.gov/vuln/detail/CVE-2025-6264",
-      "cwes": [
-        "CWE-276"
       ]
     },
     {
@@ -21475,5 +21475,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-10-22T17:08:17.063321752Z"
+  "fetchTimestamp": "2025-10-22T18:12:43.433419955Z"
 }
