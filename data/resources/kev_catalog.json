@@ -1,9 +1,39 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.10.22",
-  "dateReleased": "2025-10-22T17:24:42.9503Z",
-  "count": 1447,
+  "catalogVersion": "2025.10.24",
+  "dateReleased": "2025-10-24T16:55:58.321Z",
+  "count": 1449,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-54236",
+      "vendorProject": "Adobe",
+      "product": "Commerce and Magento",
+      "vulnerabilityName": "Adobe Commerce and Magento Improper Input Validation Vulnerability",
+      "dateAdded": "2025-10-24",
+      "shortDescription": "Adobe Commerce and Magento Open Source contain an improper input validation vulnerability that could allow an attacker to take over customer accounts through the Commerce REST API.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-11-14",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://experienceleague.adobe.com/en/docs/experience-cloud-kcs/kbarticles/ka-27397 ; https://nvd.nist.gov/vuln/detail/CVE-2025-54236",
+      "cwes": [
+        "CWE-20"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-59287",
+      "vendorProject": "Microsoft",
+      "product": "Windows",
+      "vulnerabilityName": "Microsoft Windows Server Update Service (WSUS) Deserialization of Untrusted Data Vulnerability",
+      "dateAdded": "2025-10-24",
+      "shortDescription": "Microsoft Windows Server Update Service (WSUS) contains a deserialization of untrusted data vulnerability that allows for remote code execution.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-11-14",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2025-59287 ; https://nvd.nist.gov/vuln/detail/CVE-2025-59287",
+      "cwes": [
+        "CWE-502"
+      ]
+    },
     {
       "cveID": "CVE-2025-61932",
       "vendorProject": "Motex",
@@ -21475,5 +21505,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-10-24T17:07:31.068098477Z"
+  "fetchTimestamp": "2025-10-24T18:11:32.895190144Z"
 }
