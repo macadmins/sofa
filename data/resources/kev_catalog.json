@@ -1,7 +1,7 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.10.28",
-  "dateReleased": "2025-10-28T16:56:01.1721Z",
+  "catalogVersion": "2025.10.29",
+  "dateReleased": "2025-10-29T18:39:31.8373Z",
   "count": 1451,
   "vulnerabilities": [
     {
@@ -3489,7 +3489,7 @@
       "shortDescription": "Palo Alto Networks PAN-OS contains an OS command injection vulnerability that allows for privilege escalation through the web-based management interface for several PAN products, including firewalls and VPN concentrators.",
       "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable. Additionally, the management interfaces for affected devices should not be exposed to untrusted networks, including the internet.",
       "dueDate": "2024-12-09",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://security.paloaltonetworks.com/CVE-2024-9474 ; https://nvd.nist.gov/vuln/detail/CVE-2024-9474",
       "cwes": [
         "CWE-77"
@@ -21535,5 +21535,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-10-29T19:08:23.087496238Z"
+  "fetchTimestamp": "2025-10-29T20:10:24.946639604Z"
 }
