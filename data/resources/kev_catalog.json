@@ -1,9 +1,39 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.10.29",
-  "dateReleased": "2025-10-29T18:39:31.8373Z",
-  "count": 1451,
+  "catalogVersion": "2025.10.30",
+  "dateReleased": "2025-10-30T16:58:33.5804Z",
+  "count": 1453,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-41244",
+      "vendorProject": "Broadcom",
+      "product": "VMware Aria Operations and VMware Tools",
+      "vulnerabilityName": "Broadcom VMware Aria Operations and VMware Tools Privilege Defined with Unsafe Actions Vulnerability",
+      "dateAdded": "2025-10-30",
+      "shortDescription": "Broadcom VMware Aria Operations and VMware Tools contain a privilege defined with unsafe actions vulnerability. A malicious local actor with non-administrative privileges having access to a VM with VMware Tools installed and managed by Aria Operations with SDMP enabled may exploit this vulnerability to escalate privileges to root on the same VM.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-11-20",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/36149 ; https://nvd.nist.gov/vuln/detail/CVE-2025-41244",
+      "cwes": [
+        "CWE-267"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-24893",
+      "vendorProject": "XWiki",
+      "product": "Platform",
+      "vulnerabilityName": "XWiki Platform Eval Injection Vulnerability",
+      "dateAdded": "2025-10-30",
+      "shortDescription": "XWiki Platform contains an eval injection vulnerability that could allow any guest to perform arbitrary remote code execution through a request to SolrSearch.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-11-20",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://github.com/xwiki/xwiki-platform/security/advisories/GHSA-rr6p-3pfg-562j ; https://nvd.nist.gov/vuln/detail/CVE-2025-24893",
+      "cwes": [
+        "CWE-95"
+      ]
+    },
     {
       "cveID": "CVE-2025-6204",
       "vendorProject": "Dassault Systèmes",
@@ -21535,5 +21565,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-10-30T17:08:02.079361522Z"
+  "fetchTimestamp": "2025-10-30T18:11:26.083276332Z"
 }
