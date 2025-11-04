@@ -1,6 +1,6 @@
 {
   "Version": "2.0",
-  "UpdateHash": "f9d78fecdd3d61a28bb61929719ed4a9ff7e3ed7d681aa33a9025216d9416c4f",
+  "UpdateHash": "ddd42c3b9e09cb887143235e7659e7383fc292f7173380362f8d06f5bd8687cc",
   "AppVersions": [
     {
       "AppVersion": "Safari 26",
@@ -347,61 +347,31 @@
           "ReleaseType": "Safari",
           "SecurityInfo": "https://support.apple.com/en-us/125113",
           "CVEs": {
-            "CVE-2025-31254": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-31254"
-            },
-            "CVE-2025-43272": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43272"
-            },
-            "CVE-2025-43327": {
-              "exploited": false,
-              "tags": [
-                "safari"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43327"
-            },
-            "CVE-2025-43342": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "use-after-free",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43342"
-            },
-            "CVE-2025-43343": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43343"
-            },
-            "CVE-2025-43356": {
-              "exploited": false,
+            "CVE-2025-31254": {},
+            "CVE-2025-43272": {},
+            "CVE-2025-43327": {},
+            "CVE-2025-43342": {},
+            "CVE-2025-43343": {},
+            "CVE-2025-43356": {},
+            "CVE-2025-43368": {},
+            "CVE-2025-43376": {
+              "entry_added_date": "2025-11-03",
               "tags": [
                 "safari",
                 "webkit"
               ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43356"
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43376"
             },
-            "CVE-2025-43368": {
-              "exploited": false,
+            "CVE-2025-43419": {
+              "entry_added_date": "2025-11-03",
               "tags": [
-                "safari"
+                "webkit"
               ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43368"
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43419"
             }
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 7
+          "UniqueCVEsCount": 9
         }
       ]
     },
