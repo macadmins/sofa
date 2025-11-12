@@ -1,8 +1,8 @@
 {
   "OSName": "watchOS",
   "Version": "2.0",
-  "UpdateHash": "1477bce001b413a0543a9490b92b4cdd898049cd0f06b637afd0404986ca6490",
-  "LastCheck": "2025-11-12T00:50:50.700765829+00:00",
+  "UpdateHash": "bc7a8edf69374f4332d971bf6a314b9fa2fbf4dd7632a085363cab25ff46eb1c",
+  "LastCheck": "2025-11-12T06:44:22.637332779+00:00",
   "OSVersions": [
     {
       "OSVersion": "watchOS 26",
@@ -333,7 +333,7 @@
           "ExpirationDate": "2025-12-28",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125116",
-          "SecurityInfoContext": "watchOS 26.0 was released on September 15, 2025. This release addressed 24 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "watchOS 26.0 was released on September 15, 2025. This release addressed 19 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "Watch6,1",
             "Watch6,10",
@@ -377,12 +377,10 @@
             "CVE-2025-43302": {},
             "CVE-2025-43303": {},
             "CVE-2025-43317": {},
-            "CVE-2025-43323": {},
             "CVE-2025-43329": {},
             "CVE-2025-43342": {},
             "CVE-2025-43343": {},
             "CVE-2025-43344": {},
-            "CVE-2025-43345": {},
             "CVE-2025-43346": {},
             "CVE-2025-43347": {},
             "CVE-2025-43349": {},
@@ -390,18 +388,15 @@
             "CVE-2025-43355": {},
             "CVE-2025-43356": {},
             "CVE-2025-43359": {},
-            "CVE-2025-43361": {},
             "CVE-2025-43372": {},
-            "CVE-2025-43376": {},
-            "CVE-2025-43419": {},
             "CVE-2025-6965": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 24,
+          "UniqueCVEsCount": 19,
           "DaysSincePreviousRelease": 0,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 24 security issues",
+            "summary": "Addresses 19 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -410,7 +405,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 24
+              "total": 19
             }
           }
         }
@@ -694,7 +689,7 @@
           "ReleaseDate": "2025-04-01",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/122376",
-          "SecurityInfoContext": "watchOS 11.4 was released on April 01, 2025. This release addressed 51 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "watchOS 11.4 was released on April 01, 2025. This release addressed 50 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2024-48958": {},
@@ -715,7 +710,6 @@
               "in_kev": true,
               "severity": "High"
             },
-            "CVE-2025-24203": {},
             "CVE-2025-24209": {},
             "CVE-2025-24210": {},
             "CVE-2025-24212": {},
@@ -756,11 +750,11 @@
           "ActivelyExploitedCVEs": [
             "CVE-2025-24201"
           ],
-          "UniqueCVEsCount": 51,
+          "UniqueCVEsCount": 50,
           "DaysSincePreviousRelease": 50,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 51 security issues",
+            "summary": "Addresses 50 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -769,7 +763,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 51
+              "total": 50
             }
           }
         },
