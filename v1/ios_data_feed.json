@@ -1,5 +1,5 @@
 {
-  "UpdateHash": "cd4efb4a59279f17a67e621373bf49ac8378577ed116ffc97663c56fde9da5a0",
+  "UpdateHash": "798e7d85f93f5253a2a52733ab2bad613a109b7cd6ba7f5aaf3e9738b7b82cf7",
   "OSVersions": [
     {
       "OSVersion": "26",
@@ -172,22 +172,18 @@
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2025-30468": false,
-            "CVE-2025-31254": false,
+            "CVE-2025-31254": true,
             "CVE-2025-31255": false,
             "CVE-2025-43190": false,
             "CVE-2025-43203": false,
             "CVE-2025-43272": false,
             "CVE-2025-43302": false,
             "CVE-2025-43303": false,
-            "CVE-2025-43309": false,
             "CVE-2025-43317": false,
-            "CVE-2025-43323": false,
             "CVE-2025-43329": false,
-            "CVE-2025-43338": false,
             "CVE-2025-43342": false,
             "CVE-2025-43343": false,
             "CVE-2025-43344": false,
-            "CVE-2025-43345": false,
             "CVE-2025-43346": false,
             "CVE-2025-43347": false,
             "CVE-2025-43349": false,
@@ -197,18 +193,15 @@
             "CVE-2025-43357": false,
             "CVE-2025-43358": false,
             "CVE-2025-43359": false,
-            "CVE-2025-43360": false,
-            "CVE-2025-43361": false,
             "CVE-2025-43362": false,
-            "CVE-2025-43365": false,
             "CVE-2025-43368": false,
             "CVE-2025-43372": false,
-            "CVE-2025-43376": false,
-            "CVE-2025-43419": false,
             "CVE-2025-6965": false
           },
-          "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 35,
+          "ActivelyExploitedCVEs": [
+            "CVE-2025-31254"
+          ],
+          "UniqueCVEsCount": 26,
           "DaysSincePreviousRelease": 0
         }
       ]
@@ -342,6 +335,7 @@
             "CVE-2025-43299": false,
             "CVE-2025-43302": false,
             "CVE-2025-43342": false,
+            "CVE-2025-43345": false,
             "CVE-2025-43346": false,
             "CVE-2025-43349": false,
             "CVE-2025-43355": false,
@@ -351,7 +345,7 @@
             "CVE-2025-43362": false
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 12,
+          "UniqueCVEsCount": 13,
           "DaysSincePreviousRelease": 26
         },
         {
