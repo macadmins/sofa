@@ -1,7 +1,7 @@
 {
   "Version": "2.0",
-  "UpdateHash": "e83c48abce5b80cacf943d04dfffeeddfa43cdbcb98e21b75241b1d0f3a43855",
-  "LastCheck": "2025-11-12T12:48:23.503414135+00:00",
+  "UpdateHash": "6ab6dd892511b336a5607fcc925334a910e8d4e9c13e43a55501c650c22c5412",
+  "LastCheck": "2025-11-12T17:08:55.836489342+00:00",
   "OSVersions": [
     {
       "OSVersion": "26",
@@ -532,7 +532,7 @@
           "ExpirationDate": "2025-12-28",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125108",
-          "SecurityInfoContext": "iOS 26.0 was released on September 15, 2025. This release addressed 26 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "iOS 26.0 was released on September 15, 2025. This release addressed 35 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "iPad11,1",
             "iPad11,2",
@@ -630,11 +630,15 @@
             "CVE-2025-43272": {},
             "CVE-2025-43302": {},
             "CVE-2025-43303": {},
+            "CVE-2025-43309": {},
             "CVE-2025-43317": {},
+            "CVE-2025-43323": {},
             "CVE-2025-43329": {},
+            "CVE-2025-43338": {},
             "CVE-2025-43342": {},
             "CVE-2025-43343": {},
             "CVE-2025-43344": {},
+            "CVE-2025-43345": {},
             "CVE-2025-43346": {},
             "CVE-2025-43347": {},
             "CVE-2025-43349": {},
@@ -644,17 +648,22 @@
             "CVE-2025-43357": {},
             "CVE-2025-43358": {},
             "CVE-2025-43359": {},
+            "CVE-2025-43360": {},
+            "CVE-2025-43361": {},
             "CVE-2025-43362": {},
+            "CVE-2025-43365": {},
             "CVE-2025-43368": {},
             "CVE-2025-43372": {},
+            "CVE-2025-43376": {},
+            "CVE-2025-43419": {},
             "CVE-2025-6965": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 26,
+          "UniqueCVEsCount": 35,
           "DaysSincePreviousRelease": 0,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 26 security issues",
+            "summary": "Addresses 35 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -663,7 +672,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 26
+              "total": 35
             }
           }
         }
@@ -1732,7 +1741,7 @@
           "ReleaseDate": "2025-03-31T00:00:00Z",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/122371",
-          "SecurityInfoContext": "iOS 18.4 was released on March 31, 2025. This release addressed 76 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "iOS 18.4 was released on March 31, 2025. This release addressed 77 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2024-48958": {},
@@ -1753,6 +1762,7 @@
             "CVE-2025-24194": {},
             "CVE-2025-24198": {},
             "CVE-2025-24202": {},
+            "CVE-2025-24203": {},
             "CVE-2025-24205": {},
             "CVE-2025-24206": {},
             "CVE-2025-24208": {},
@@ -1813,11 +1823,11 @@
             "CVE-2025-43205": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 76,
+          "UniqueCVEsCount": 77,
           "DaysSincePreviousRelease": 20,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 76 security issues",
+            "summary": "Addresses 77 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -1826,7 +1836,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 76
+              "total": 77
             }
           }
         },

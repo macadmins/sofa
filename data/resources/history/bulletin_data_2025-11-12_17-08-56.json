@@ -1,7 +1,7 @@
 {
-  "content_hash": "ad351e15509e2934bd08e868537519e5bd7132d63ad10ea52e0d0e9563a340e5",
+  "content_hash": "711a0efb9a4ec1b0767bf64f2a686d4d5d593a70cce5fa60895dc288d30a4959",
   "content_changed": true,
-  "generated_at": "2025-11-03T22:45:41.899726213Z",
+  "generated_at": "2025-11-12T17:08:56.391837412Z",
   "latest_releases": {
     "macos": {
       "version": "26.1",
@@ -397,49 +397,102 @@
       "updates_link": null
     },
     "safari": {
-      "version": "26.0",
-      "build": "26.0",
-      "release_date": "2025-09-15T00:00:00Z",
-      "url": "https://support.apple.com/en-us/125113",
+      "version": "26.1",
+      "build": "26.1",
+      "release_date": "2025-11-03T00:00:00Z",
+      "url": "https://support.apple.com/en-us/125640",
       "cves_fixed": [
-        "CVE-2025-31254",
-        "CVE-2025-43272",
-        "CVE-2025-43327",
-        "CVE-2025-43342",
-        "CVE-2025-43343",
-        "CVE-2025-43356",
-        "CVE-2025-43368"
+        "CVE-2025-43392",
+        "CVE-2025-43421",
+        "CVE-2025-43425",
+        "CVE-2025-43427",
+        "CVE-2025-43429",
+        "CVE-2025-43430",
+        "CVE-2025-43431",
+        "CVE-2025-43432",
+        "CVE-2025-43433",
+        "CVE-2025-43434",
+        "CVE-2025-43435",
+        "CVE-2025-43438",
+        "CVE-2025-43440",
+        "CVE-2025-43441",
+        "CVE-2025-43443",
+        "CVE-2025-43457",
+        "CVE-2025-43458",
+        "CVE-2025-43480",
+        "CVE-2025-43493",
+        "CVE-2025-43502",
+        "CVE-2025-43503"
       ],
       "actively_exploited_count": 0,
-      "total_cve_count": 7,
+      "total_cve_count": 21,
       "enterprise_link": null,
       "updates_link": null
     }
   },
   "security_summary": {
-    "unique_cves_fixed": 125,
+    "unique_cves_fixed": 118,
     "kev_matches": 0,
     "latest_wave_date": "2025-11-03T00:00:00Z",
     "kev_cve_list": []
   },
   "beta_releases": {
-    "latest_wave": "2025-11-03",
-    "macos": null,
+    "latest_wave": "2025-11-11",
+    "macos": {
+      "version": "26.2 beta",
+      "build": "25C5031i",
+      "released": "2025-11-06"
+    },
     "ios": {
-      "version": "18.7.2 RC",
-      "build": "22H123",
-      "released": "2025-10-28"
+      "version": "26.2 beta",
+      "build": "23C5027f",
+      "released": "2025-11-04"
     },
     "ipados": {
-      "version": "18.7.2 RC",
-      "build": "22H123",
-      "released": "2025-10-28"
+      "version": "26.2 beta",
+      "build": "23C5027f",
+      "released": "2025-11-04"
     },
-    "tvos": null,
-    "watchos": null,
-    "visionos": null
+    "tvos": {
+      "version": "26.2 beta",
+      "build": "23K5029e",
+      "released": "2025-11-04"
+    },
+    "watchos": {
+      "version": "26.2 beta",
+      "build": "23S5280e",
+      "released": "2025-11-04"
+    },
+    "visionos": {
+      "version": "26.2 beta",
+      "build": "23N5279e",
+      "released": "2025-11-04"
+    }
   },
   "recent_releases": [
+    {
+      "release_date": "2025-11-05",
+      "name": "iOS 18.7.2 and iPadOS 18.7.2",
+      "platform": "ios",
+      "version": "18.7.2",
+      "url": "https://support.apple.com/en-us/125633",
+      "enterprise_link": "https://support.apple.com/en-ca/121158",
+      "updates_link": "https://support.apple.com/en-ca/121161"
+    },
+    {
+      "release_date": "2025-11-03",
+      "name": "Safari 26.1",
+      "platform": "safari",
+      "version": "26.1",
+      "url": "https://support.apple.com/en-us/125640"
+    },
+    {
+      "release_date": "2025-11-03",
+      "name": "Xcode 26.1",
+      "platform": "other",
+      "version": "26.1",
+      "url": "https://support.apple.com/en-us/125641"
+    },
     {
       "release_date": "2025-11-03",
       "name": "iOS 26.1 and iPadOS 26.1",
@@ -492,31 +545,6 @@
       "platform": "watchos",
       "version": "26.1",
       "url": "https://support.apple.com/en-us/125639"
-    },
-    {
-      "release_date": "2025-09-29",
-      "name": "iOS 18.7.1 and iPadOS 18.7.1",
-      "platform": "ios",
-      "version": "18.7.1",
-      "url": "https://support.apple.com/en-us/125327",
-      "enterprise_link": "https://support.apple.com/en-ca/121158",
-      "updates_link": "https://support.apple.com/en-ca/121161"
-    },
-    {
-      "release_date": "2025-09-29",
-      "name": "iOS 26.0.1 and iPadOS 26.0.1",
-      "platform": "ios",
-      "version": "26.0.1",
-      "url": "https://support.apple.com/en-us/125326"
-    },
-    {
-      "release_date": "2025-09-29",
-      "name": "macOS Sequoia 15.7.1",
-      "platform": "macos",
-      "version": "15.7.1",
-      "url": "https://support.apple.com/en-us/125329",
-      "enterprise_link": "https://support.apple.com/en-ca/121011",
-      "updates_link": "https://support.apple.com/en-ca/120283"
     }
   ]
 }

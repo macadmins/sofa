@@ -1,9 +1,54 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.11.10",
-  "dateReleased": "2025-11-10T17:48:31.0345Z",
-  "count": 1456,
+  "catalogVersion": "2025.11.12",
+  "dateReleased": "2025-11-12T14:50:28.4244Z",
+  "count": 1459,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-12480",
+      "vendorProject": "Gladinet",
+      "product": "Triofox",
+      "vulnerabilityName": "Gladinet Triofox Improper Access Control Vulnerability",
+      "dateAdded": "2025-11-12",
+      "shortDescription": "Gladinet Triofox contains an improper access control vulnerability that allows access to initial setup pages even after setup is complete.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-12-03",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://access.triofox.com/releases_history ; https://nvd.nist.gov/vuln/detail/CVE-2025-12480",
+      "cwes": [
+        "CWE-284"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-62215",
+      "vendorProject": "Microsoft",
+      "product": "Windows",
+      "vulnerabilityName": "Microsoft Windows Race Condition Vulnerability",
+      "dateAdded": "2025-11-12",
+      "shortDescription": "Microsoft Windows Kernel contains a race condition vulnerability that allows a local attacker with low-level privileges to escalate privileges. Successful exploitation of this vulnerability could enable the attacker to gain SYSTEM-level access.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-12-03",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2025-62215 ; https://nvd.nist.gov/vuln/detail/CVE-2025-62215",
+      "cwes": [
+        "CWE-362"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-9242",
+      "vendorProject": "WatchGuard",
+      "product": "Firebox",
+      "vulnerabilityName": "WatchGuard Firebox Out-of-Bounds Write Vulnerability",
+      "dateAdded": "2025-11-12",
+      "shortDescription": "WatchGuard Firebox contains an out-of-bounds write vulnerability in the OS iked process that may allow a remote unauthenticated attacker to execute arbitrary code.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-12-03",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.watchguard.com/wgrd-psirt/advisory/wgsa-2025-00015 ; https://nvd.nist.gov/vuln/detail/CVE-2025-9242",
+      "cwes": [
+        "CWE-787"
+      ]
+    },
     {
       "cveID": "CVE-2025-21042",
       "vendorProject": "Samsung",
@@ -21610,5 +21655,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-11-12T12:47:56.402083761Z"
+  "fetchTimestamp": "2025-11-12T17:08:29.762594554Z"
 }
