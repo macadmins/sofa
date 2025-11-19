@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.11.18",
-  "dateReleased": "2025-11-18T20:22:16.4534Z",
-  "count": 1461,
+  "catalogVersion": "2025.11.19",
+  "dateReleased": "2025-11-19T18:00:42.0859Z",
+  "count": 1462,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-13223",
+      "vendorProject": "Google",
+      "product": "Chromium V8",
+      "vulnerabilityName": "Google Chromium V8 Type Confusion Vulnerability",
+      "dateAdded": "2025-11-19",
+      "shortDescription": "Google Chromium V8 contains a type confusion vulnerability that allows for heap corruption.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-12-10",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://chromereleases.googleblog.com/2025/11/stable-channel-update-for-desktop_17.html ; https://nvd.nist.gov/vuln/detail/CVE-2025-13223",
+      "cwes": [
+        "CWE-843"
+      ]
+    },
     {
       "cveID": "CVE-2025-58034",
       "vendorProject": "Fortinet",
@@ -21685,5 +21700,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-11-19T18:42:47.657799040Z"
+  "fetchTimestamp": "2025-11-19T19:07:01.838678834Z"
 }
