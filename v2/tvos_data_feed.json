@@ -1,8 +1,8 @@
 {
   "OSName": "tvOS",
   "Version": "2.0",
-  "UpdateHash": "9d78df099db30449b7d1ebbd4d4fa7a523d552c4d2663be15f3d65d7e2f60315",
-  "LastCheck": "2025-11-21T20:09:48.850187986+00:00",
+  "UpdateHash": "3f721966db3a0db2ef262112ab501cc99e7dc0345dff08dc791e45b9ee328acc",
+  "LastCheck": "2025-11-22T00:50:31.023265553+00:00",
   "OSVersions": [
     {
       "OSVersion": "tvOS 26",
@@ -16,7 +16,7 @@
           "23J582"
         ],
         "ReleaseDate": "2025-11-03",
-        "ExpirationDate": "2026-02-19",
+        "ExpirationDate": "2026-02-20",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/125637",
         "SecurityInfoContext": "tvOS has been updated to version 26.1, which was released on November 03, 2025. This update addresses 29 security issues and is the most recent approved version.",
@@ -86,7 +86,7 @@
             "23J582"
           ],
           "ReleaseDate": "2025-11-03",
-          "ExpirationDate": "2026-02-19",
+          "ExpirationDate": "2026-02-20",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125637",
           "SecurityInfoContext": "tvOS has been updated to version 26.1, which was released on November 03, 2025. This update addresses 29 security issues and is the most recent approved version.",
@@ -404,7 +404,7 @@
           "ReleaseDate": "2025-05-12",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/122720",
-          "SecurityInfoContext": "tvOS 18.5 was released on May 12, 2025. This release addressed 25 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "tvOS 18.5 was released on May 12, 2025. This release addressed 27 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2024-8176": {},
@@ -429,16 +429,18 @@
             "CVE-2025-31238": {},
             "CVE-2025-31239": {},
             "CVE-2025-31241": {},
+            "CVE-2025-31242": {},
             "CVE-2025-31245": {},
             "CVE-2025-31251": {},
-            "CVE-2025-31257": {}
+            "CVE-2025-31257": {},
+            "CVE-2025-43374": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 25,
+          "UniqueCVEsCount": 27,
           "DaysSincePreviousRelease": 26,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 25 security issues",
+            "summary": "Addresses 27 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -447,7 +449,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 25
+              "total": 27
             }
           }
         },

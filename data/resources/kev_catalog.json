@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.11.19",
-  "dateReleased": "2025-11-19T18:00:42.0859Z",
-  "count": 1462,
+  "catalogVersion": "2025.11.21",
+  "dateReleased": "2025-11-21T20:48:10.4148Z",
+  "count": 1463,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-61757",
+      "vendorProject": "Oracle",
+      "product": "Fusion Middleware",
+      "vulnerabilityName": "Oracle Fusion Middleware Missing Authentication for Critical Function Vulnerability",
+      "dateAdded": "2025-11-21",
+      "shortDescription": "Oracle Fusion Middleware contains a missing authentication for critical function vulnerability, allowing unauthenticated remote attackers to take over Identity Manager.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-12-12",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.oracle.com/security-alerts/cpuoct2025.html ; https://nvd.nist.gov/vuln/detail/CVE-2025-61757",
+      "cwes": [
+        "CWE-306"
+      ]
+    },
     {
       "cveID": "CVE-2025-13223",
       "vendorProject": "Google",
@@ -10590,10 +10605,10 @@
     {
       "cveID": "CVE-2011-2462",
       "vendorProject": "Adobe",
-      "product": "Acrobat and Reader",
-      "vulnerabilityName": "Adobe Acrobat and Reader Universal 3D Memory Corruption Vulnerability",
+      "product": "Reader and Acrobat",
+      "vulnerabilityName": "Adobe Reader and Acrobat Universal 3D Memory Corruption Vulnerability",
       "dateAdded": "2022-06-08",
-      "shortDescription": "The Universal 3D (U3D) component in Adobe Acrobat and Reader contains a memory corruption vulnerability which could allow remote attackers to execute code or cause denial-of-service (DoS).",
+      "shortDescription": "The Universal 3D (U3D) component in Adobe Reader and Acrobat contains a memory corruption vulnerability which could allow remote attackers to execute code or cause denial-of-service (DoS).",
       "requiredAction": "Apply updates per vendor instructions.",
       "dueDate": "2022-06-22",
       "knownRansomwareCampaignUse": "Unknown",
@@ -11079,10 +11094,10 @@
     {
       "cveID": "CVE-2014-0546",
       "vendorProject": "Adobe",
-      "product": "Acrobat and Reader",
-      "vulnerabilityName": "Adobe Acrobat and Reader Sandbox Bypass Vulnerability",
+      "product": "Reader and Acrobat",
+      "vulnerabilityName": "Adobe Reader and Acrobat Sandbox Bypass Vulnerability",
       "dateAdded": "2022-05-25",
-      "shortDescription": "Adobe Acrobat and Reader on Windows allow attackers to bypass a sandbox protection mechanism, and consequently execute native code in a privileged context.",
+      "shortDescription": "Adobe Reader and Acrobat on Windows allow attackers to bypass a sandbox protection mechanism, and consequently execute native code in a privileged context.",
       "requiredAction": "Apply updates per vendor instructions.",
       "dueDate": "2022-06-15",
       "knownRansomwareCampaignUse": "Unknown",
@@ -21700,5 +21715,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-11-21T20:09:22.336506890Z"
+  "fetchTimestamp": "2025-11-22T00:50:03.254652313Z"
 }

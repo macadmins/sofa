@@ -1,6 +1,6 @@
 {
   "Version": "2.0",
-  "UpdateHash": "ddd42c3b9e09cb887143235e7659e7383fc292f7173380362f8d06f5bd8687cc",
+  "UpdateHash": "ad9f8904d97de5762bd6eeca233d765f388c5495b2f9e938b8d34f374ea83544",
   "AppVersions": [
     {
       "AppVersion": "Safari 26",
@@ -460,88 +460,28 @@
           "ReleaseType": "Safari",
           "SecurityInfo": "https://support.apple.com/en-us/122719",
           "CVEs": {
-            "CVE-2025-24213": {
-              "exploited": false,
+            "CVE-2025-24213": {},
+            "CVE-2025-24223": {},
+            "CVE-2025-31204": {},
+            "CVE-2025-31205": {},
+            "CVE-2025-31206": {},
+            "CVE-2025-31215": {},
+            "CVE-2025-31217": {},
+            "CVE-2025-31223": {},
+            "CVE-2025-31238": {},
+            "CVE-2025-31257": {},
+            "CVE-2025-31266": {
+              "entry_added_date": "2025-11-21",
               "tags": [
                 "memory-corruption",
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-24213"
-            },
-            "CVE-2025-24223": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-24223"
-            },
-            "CVE-2025-31204": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-31204"
-            },
-            "CVE-2025-31205": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-31205"
-            },
-            "CVE-2025-31206": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-31206"
-            },
-            "CVE-2025-31215": {
-              "exploited": false,
-              "tags": [
-                "safari",
                 "type-confusion",
                 "webkit"
               ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-31215"
-            },
-            "CVE-2025-31217": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-31217"
-            },
-            "CVE-2025-31223": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-31223"
-            },
-            "CVE-2025-31238": {
-              "exploited": false,
-              "tags": [
-                "memory-corruption",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-31238"
-            },
-            "CVE-2025-31257": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-31257"
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-31266"
             }
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 10,
+          "UniqueCVEsCount": 11,
           "DaysSincePreviousRelease": 42
         },
         {

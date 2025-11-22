@@ -1,8 +1,8 @@
 {
   "OSName": "visionOS",
   "Version": "2.0",
-  "UpdateHash": "e02be42de677a7aa6fb9c28c9a307ca9b6f90c9500fe617db46994d6e37cbaf1",
-  "LastCheck": "2025-11-21T20:09:48.876201305+00:00",
+  "UpdateHash": "5ab87a2cb88ad7da6eec03bc2232d205faea3ed4007f68ad880f885355d741cc",
+  "LastCheck": "2025-11-22T00:50:31.056951883+00:00",
   "OSVersions": [
     {
       "OSVersion": "visionOS 26",
@@ -16,7 +16,7 @@
           "23N49"
         ],
         "ReleaseDate": "2025-11-03",
-        "ExpirationDate": "2026-02-19",
+        "ExpirationDate": "2026-02-20",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/125638",
         "SecurityInfoContext": "visionOS has been updated to version 26.1, which was released on November 03, 2025. This update addresses 43 security issues and is the most recent approved version.",
@@ -98,7 +98,7 @@
             "23N49"
           ],
           "ReleaseDate": "2025-11-03",
-          "ExpirationDate": "2026-02-19",
+          "ExpirationDate": "2026-02-20",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125638",
           "SecurityInfoContext": "visionOS has been updated to version 26.1, which was released on November 03, 2025. This update addresses 43 security issues and is the most recent approved version.",
@@ -422,7 +422,7 @@
           "ReleaseDate": "2025-05-12",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/122721",
-          "SecurityInfoContext": "visionOS 2.5 was released on May 12, 2025. This release addressed 26 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "visionOS 2.5 was released on May 12, 2025. This release addressed 28 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2024-8176": {},
@@ -448,16 +448,18 @@
             "CVE-2025-31238": {},
             "CVE-2025-31239": {},
             "CVE-2025-31241": {},
+            "CVE-2025-31242": {},
             "CVE-2025-31245": {},
             "CVE-2025-31251": {},
-            "CVE-2025-31257": {}
+            "CVE-2025-31257": {},
+            "CVE-2025-43374": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 26,
+          "UniqueCVEsCount": 28,
           "DaysSincePreviousRelease": 26,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 26 security issues",
+            "summary": "Addresses 28 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -466,7 +468,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 26
+              "total": 28
             }
           }
         },
