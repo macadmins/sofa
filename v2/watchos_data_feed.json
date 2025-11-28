@@ -1,8 +1,8 @@
 {
   "OSName": "watchOS",
   "Version": "2.0",
-  "UpdateHash": "4043f99fc50c77a77bde644f7c55afc203462c85957f19382141ea9fbc64cbbe",
-  "LastCheck": "2025-11-28T17:08:08.230286057+00:00",
+  "UpdateHash": "2d4358e97614f4fe4fa583ed780422cce9fc00c5fbe3f4e79ed85080e23a5e7c",
+  "LastCheck": "2025-11-28T18:11:31.301687602+00:00",
   "OSVersions": [
     {
       "OSVersion": "watchOS 26",
@@ -611,7 +611,7 @@
           "ReleaseDate": "2025-05-12",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/122722",
-          "SecurityInfoContext": "watchOS 11.5 was released on May 12, 2025. This release addressed 24 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "watchOS 11.5 was released on May 12, 2025. This release addressed 26 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2024-8176": {},
@@ -640,17 +640,19 @@
             "CVE-2025-31238": {},
             "CVE-2025-31239": {},
             "CVE-2025-31241": {},
+            "CVE-2025-31242": {},
             "CVE-2025-31251": {},
-            "CVE-2025-31257": {}
+            "CVE-2025-31257": {},
+            "CVE-2025-43374": {}
           },
           "ActivelyExploitedCVEs": [
             "CVE-2025-31200"
           ],
-          "UniqueCVEsCount": 24,
+          "UniqueCVEsCount": 26,
           "DaysSincePreviousRelease": 41,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 24 security issues",
+            "summary": "Addresses 26 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -659,7 +661,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 24
+              "total": 26
             }
           }
         },
