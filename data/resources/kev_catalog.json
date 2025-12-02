@@ -1,9 +1,35 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.11.28",
-  "dateReleased": "2025-11-28T17:48:26.2003Z",
-  "count": 1464,
+  "catalogVersion": "2025.12.02",
+  "dateReleased": "2025-12-02T18:01:27.3987Z",
+  "count": 1466,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-48633",
+      "vendorProject": "Android",
+      "product": "Framework",
+      "vulnerabilityName": "Android Framework Information Disclosure Vulnerability",
+      "dateAdded": "2025-12-02",
+      "shortDescription": "Android Framework contains an unspecified vulnerability that allows for information disclosure.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-12-23",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://source.android.com/docs/security/bulletin/2025-12-01 ; https://nvd.nist.gov/vuln/detail/CVE-2025-48633",
+      "cwes": []
+    },
+    {
+      "cveID": "CVE-2025-48572",
+      "vendorProject": "Android",
+      "product": "Framework",
+      "vulnerabilityName": "Android Framework Privilege Escalation Vulnerability",
+      "dateAdded": "2025-12-02",
+      "shortDescription": "Android Framework contains an unspecified vulnerability that allows for privilege escalation.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-12-23",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://source.android.com/docs/security/bulletin/2025-12-01 ; https://nvd.nist.gov/vuln/detail/CVE-2025-48572",
+      "cwes": []
+    },
     {
       "cveID": "CVE-2021-26829",
       "vendorProject": "OpenPLC",
@@ -21730,5 +21756,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-12-02T12:48:02.433577932Z"
+  "fetchTimestamp": "2025-12-02T18:12:51.246988187Z"
 }
