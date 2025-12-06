@@ -1,8 +1,8 @@
 {
   "OSName": "watchOS",
   "Version": "2.0",
-  "UpdateHash": "906ef208baa228d085aba21a85516709bedac1c434bf265e70290e44bc178b5b",
-  "LastCheck": "2025-12-05T20:09:50.105513767+00:00",
+  "UpdateHash": "7308abf5670c094bcc39122eb914befb3f156e362164a198b09c85f70ed1fa90",
+  "LastCheck": "2025-12-06T00:50:33.891701190+00:00",
   "OSVersions": [
     {
       "OSVersion": "watchOS 26",
@@ -16,7 +16,7 @@
           "23S37"
         ],
         "ReleaseDate": "2025-11-03",
-        "ExpirationDate": "2026-03-05",
+        "ExpirationDate": "2026-03-06",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/125639",
         "SecurityInfoContext": "watchOS has been updated to version 26.1, which was released on November 03, 2025. This update addresses 32 security issues and is the most recent approved version.",
@@ -120,7 +120,7 @@
             "23S37"
           ],
           "ReleaseDate": "2025-11-03",
-          "ExpirationDate": "2026-03-05",
+          "ExpirationDate": "2026-03-06",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125639",
           "SecurityInfoContext": "watchOS has been updated to version 26.1, which was released on November 03, 2025. This update addresses 32 security issues and is the most recent approved version.",
@@ -428,7 +428,7 @@
           "22U6090"
         ],
         "ReleaseDate": "2025-08-14",
-        "ExpirationDate": "2026-03-05",
+        "ExpirationDate": "2026-03-06",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/100100",
         "SecurityInfoContext": "watchOS has been updated to version 11.6.1, which was released on August 14, 2025. This update has no published CVE entries and is the most recent approved version.",
@@ -486,7 +486,7 @@
             "22U6090"
           ],
           "ReleaseDate": "2025-08-14",
-          "ExpirationDate": "2026-03-05",
+          "ExpirationDate": "2026-03-06",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/100100",
           "SecurityInfoContext": "watchOS has been updated to version 11.6.1, which was released on August 14, 2025. This update has no published CVE entries and is the most recent approved version.",
@@ -543,7 +543,7 @@
             "22U6084"
           ],
           "ReleaseDate": "2025-07-29",
-          "ExpirationDate": "2026-03-05",
+          "ExpirationDate": "2026-03-06",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/124155",
           "SecurityInfoContext": "watchOS 11.6 was released on July 29, 2025. This release addressed 23 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
@@ -611,7 +611,7 @@
           "ReleaseDate": "2025-05-12",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/122722",
-          "SecurityInfoContext": "watchOS 11.5 was released on May 12, 2025. This release addressed 24 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "watchOS 11.5 was released on May 12, 2025. This release addressed 26 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2024-8176": {},
@@ -640,17 +640,19 @@
             "CVE-2025-31238": {},
             "CVE-2025-31239": {},
             "CVE-2025-31241": {},
+            "CVE-2025-31242": {},
             "CVE-2025-31251": {},
-            "CVE-2025-31257": {}
+            "CVE-2025-31257": {},
+            "CVE-2025-43374": {}
           },
           "ActivelyExploitedCVEs": [
             "CVE-2025-31200"
           ],
-          "UniqueCVEsCount": 24,
+          "UniqueCVEsCount": 26,
           "DaysSincePreviousRelease": 41,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 24 security issues",
+            "summary": "Addresses 26 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -659,7 +661,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 24
+              "total": 26
             }
           }
         },
