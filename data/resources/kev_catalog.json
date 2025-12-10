@@ -1,7 +1,7 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
   "catalogVersion": "2025.12.09",
-  "dateReleased": "2025-12-09T18:19:14.0118Z",
+  "dateReleased": "2025-12-09T21:45:47.0432Z",
   "count": 1472,
   "vulnerabilities": [
     {
@@ -70,11 +70,11 @@
       "product": "React Server Components",
       "vulnerabilityName": "Meta React Server Components Remote Code Execution Vulnerability",
       "dateAdded": "2025-12-05",
-      "shortDescription": "Meta React Server Components contains a remote code execution vulnerability that could allow unauthenticated remote code execution by exploiting a flaw in how React decodes payloads sent to React Server Function endpoints.",
+      "shortDescription": "Meta React Server Components contains a remote code execution vulnerability that could allow unauthenticated remote code execution by exploiting a flaw in how React decodes payloads sent to React Server Function endpoints. Please note CVE-2025-66478 has been rejected, but it is associated with CVE-2025- 55182.",
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-      "dueDate": "2025-12-26",
+      "dueDate": "2025-12-12",
       "knownRansomwareCampaignUse": "Unknown",
-      "notes": "https://react.dev/blog/2025/12/03/critical-security-vulnerability-in-react-server-components ; https://nvd.nist.gov/vuln/detail/CVE-2025-55182",
+      "notes": "Check for signs of potential compromise on all internet accessible REACT instances after applying mitigations. For more information, please see: https://react.dev/blog/2025/12/03/critical-security-vulnerability-in-react-server-components ; https://github.com/vercel-labs/fix-react2shell-next?tab=readme-ov-file ; https://nvd.nist.gov/vuln/detail/CVE-2025-55182",
       "cwes": []
     },
     {
@@ -21844,5 +21844,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-12-09T20:08:42.637902475Z"
+  "fetchTimestamp": "2025-12-10T00:50:30.139458009Z"
 }
