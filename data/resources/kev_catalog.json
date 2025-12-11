@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.12.09",
-  "dateReleased": "2025-12-09T21:45:47.0432Z",
-  "count": 1472,
+  "catalogVersion": "2025.12.11",
+  "dateReleased": "2025-12-11T19:12:53.4105Z",
+  "count": 1473,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-58360",
+      "vendorProject": "OSGeo",
+      "product": "GeoServer",
+      "vulnerabilityName": "OSGeo GeoServer Improper Restriction of XML External Entity Reference Vulnerability",
+      "dateAdded": "2025-12-11",
+      "shortDescription": "OSGeo GeoServer contains an improper restriction of XML external entity reference vulnerability that occurs when the application accepts XML input through a specific endpoint /geoserver/wms operation GetMap and could allow an attacker to define external entities within the XML request.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-01-01",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "This vulnerability affects an open-source component, third-party library, or a protocol used by different products. For more information, please see: https://github.com/geoserver/geoserver/security/advisories/GHSA-fjf5-xgmq-5525 ; https://osgeo-org.atlassian.net/browse/GEOS-11922 ; https://nvd.nist.gov/vuln/detail/CVE-2025-58360",
+      "cwes": [
+        "CWE-611"
+      ]
+    },
     {
       "cveID": "CVE-2025-6218",
       "vendorProject": "RARLAB",
@@ -21844,5 +21859,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-12-11T19:09:18.030125273Z"
+  "fetchTimestamp": "2025-12-11T20:10:25.262572994Z"
 }
