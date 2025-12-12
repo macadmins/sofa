@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
   "catalogVersion": "2025.12.12",
-  "dateReleased": "2025-12-12T17:32:31.6363Z",
-  "count": 1473,
+  "dateReleased": "2025-12-12T17:59:39.2209Z",
+  "count": 1474,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2018-4063",
+      "vendorProject": "Sierra Wireless",
+      "product": "AirLink ALEOS",
+      "vulnerabilityName": "Sierra Wireless AirLink ALEOS Unrestricted Upload of File with Dangerous Type Vulnerability",
+      "dateAdded": "2025-12-12",
+      "shortDescription": "Sierra Wireless AirLink ALEOS contains an unrestricted upload of file with dangerous type vulnerability. A specially crafted HTTP request can upload a file, resulting in executable code being uploaded, and routable, to the webserver. An attacker can make an authenticated HTTP request to trigger this vulnerability. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-01-02",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.cisa.gov/news-events/ics-advisories/icsa-19-122-03 ; https://source.sierrawireless.com/resources/airlink/software_reference_docs/technical-bulletin/sierra-wireless-technical-bulletin---swi-psa-2019-003 ; https://source.sierrawireless.com/resources/airlink/hardware_reference_docs/airlink_es450_eol ; https://nvd.nist.gov/vuln/detail/CVE-2018-4063",
+      "cwes": [
+        "CWE-434"
+      ]
+    },
     {
       "cveID": "CVE-2025-58360",
       "vendorProject": "OSGeo",
@@ -21859,5 +21874,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-12-12T18:44:55.187904873Z"
+  "fetchTimestamp": "2025-12-12T19:07:31.236387150Z"
 }
