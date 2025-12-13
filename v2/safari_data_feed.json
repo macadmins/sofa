@@ -1,6 +1,6 @@
 {
   "Version": "2.0",
-  "UpdateHash": "05333e05880912022ffef8bb16cd5e52b678d546df3f21f54b2ee3bad4a6be16",
+  "UpdateHash": "c9c25c8b9cb57aa9806852d54c1213d00a186065dfee4d4408422dbdf55008c6",
   "AppVersions": [
     {
       "AppVersion": "Safari 26",
@@ -15,14 +15,15 @@
           "CVE-2024-8906": {},
           "CVE-2025-14174": {
             "exploited": true,
+            "kev": true,
             "severity": "high",
             "remote": true,
-            "matched_pattern": "exploit: apple is aware of a report that this issue may have been exploited; severity: arbitrary code execution; remote: maliciously crafted",
+            "matched_pattern": "CISA KEV catalog; exploit: apple is aware of a report that this issue may have been exploited; severity: arbitrary code execution; remote: maliciously crafted",
+            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14174",
             "tags": [
               "use-after-free",
               "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14174"
+            ]
           },
           "CVE-2025-43501": {},
           "CVE-2025-43511": {},
@@ -52,14 +53,15 @@
             "CVE-2024-8906": {},
             "CVE-2025-14174": {
               "exploited": true,
+              "kev": true,
               "severity": "high",
               "remote": true,
-              "matched_pattern": "exploit: apple is aware of a report that this issue may have been exploited; severity: arbitrary code execution; remote: maliciously crafted",
+              "matched_pattern": "CISA KEV catalog; exploit: apple is aware of a report that this issue may have been exploited; severity: arbitrary code execution; remote: maliciously crafted",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14174",
               "tags": [
                 "use-after-free",
                 "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14174"
+              ]
             },
             "CVE-2025-43501": {},
             "CVE-2025-43511": {},

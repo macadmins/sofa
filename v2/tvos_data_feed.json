@@ -1,8 +1,8 @@
 {
   "OSName": "tvOS",
   "Version": "2.0",
-  "UpdateHash": "1180c82db4f64a6ee8fdaac3598c75666d2f99a1d0a50180f00c4bc80b52e262",
-  "LastCheck": "2025-12-12T20:10:06.914266548+00:00",
+  "UpdateHash": "7c5d67372e2b7c9d6b44cf8fa6221398447d27ed4d2059915c1d3780b63c0442",
+  "LastCheck": "2025-12-13T00:50:43.449221822+00:00",
   "OSVersions": [
     {
       "OSVersion": "tvOS 26",
@@ -16,7 +16,7 @@
           "23K54"
         ],
         "ReleaseDate": "2025-12-12",
-        "ExpirationDate": "2026-03-12",
+        "ExpirationDate": "2026-03-13",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/125889",
         "SecurityInfoContext": "tvOS has been updated to version 26.2, which was released on December 12, 2025. This update addresses 10 security issues and is the most recent approved version.",
@@ -28,7 +28,11 @@
         ],
         "CVEs": {
           "CVE-2024-7264": {},
-          "CVE-2025-14174": {},
+          "CVE-2025-14174": {
+            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14174",
+            "in_kev": true,
+            "severity": "High"
+          },
           "CVE-2025-43529": {},
           "CVE-2025-43531": {},
           "CVE-2025-43532": {},
@@ -38,7 +42,9 @@
           "CVE-2025-46285": {},
           "CVE-2025-9086": {}
         },
-        "ActivelyExploitedCVEs": [],
+        "ActivelyExploitedCVEs": [
+          "CVE-2025-14174"
+        ],
         "UniqueCVEsCount": 10,
         "DaysSincePreviousRelease": 39,
         "update_summary": {
@@ -67,7 +73,7 @@
             "23K54"
           ],
           "ReleaseDate": "2025-12-12",
-          "ExpirationDate": "2026-03-12",
+          "ExpirationDate": "2026-03-13",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125889",
           "SecurityInfoContext": "tvOS has been updated to version 26.2, which was released on December 12, 2025. This update addresses 10 security issues and is the most recent approved version.",
@@ -79,7 +85,11 @@
           ],
           "CVEs": {
             "CVE-2024-7264": {},
-            "CVE-2025-14174": {},
+            "CVE-2025-14174": {
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14174",
+              "in_kev": true,
+              "severity": "High"
+            },
             "CVE-2025-43529": {},
             "CVE-2025-43531": {},
             "CVE-2025-43532": {},
@@ -89,7 +99,9 @@
             "CVE-2025-46285": {},
             "CVE-2025-9086": {}
           },
-          "ActivelyExploitedCVEs": [],
+          "ActivelyExploitedCVEs": [
+            "CVE-2025-14174"
+          ],
           "UniqueCVEsCount": 10,
           "DaysSincePreviousRelease": 39,
           "update_summary": {
@@ -117,7 +129,7 @@
             "23J582"
           ],
           "ReleaseDate": "2025-11-03",
-          "ExpirationDate": "2026-03-12",
+          "ExpirationDate": "2026-03-13",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125637",
           "SecurityInfoContext": "tvOS 26.1 was released on November 03, 2025. This release addressed 31 security issues. Newer updates are now available, so please check to see if they apply to your devices.",

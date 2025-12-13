@@ -1,8 +1,8 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
   "catalogVersion": "2025.12.12",
-  "dateReleased": "2025-12-12T17:59:39.2209Z",
-  "count": 1474,
+  "dateReleased": "2025-12-12T20:26:48.178Z",
+  "count": 1475,
   "vulnerabilities": [
     {
       "cveID": "CVE-2018-4063",
@@ -18,6 +18,19 @@
       "cwes": [
         "CWE-434"
       ]
+    },
+    {
+      "cveID": "CVE-2025-14174",
+      "vendorProject": "Google",
+      "product": "Chromium",
+      "vulnerabilityName": "Google Chromium Out of Bounds Memory Access Vulnerability",
+      "dateAdded": "2025-12-12",
+      "shortDescription": "Google Chromium contains an out of bounds memory access vulnerability in ANGLE that could allow a remote attacker to perform out of bounds memory access via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-01-02",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://chromereleases.googleblog.com/2025/12/stable-channel-update-for-desktop_10.html ; https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnotes-security ; https://nvd.nist.gov/vuln/detail/CVE-2025-14174",
+      "cwes": []
     },
     {
       "cveID": "CVE-2025-58360",
@@ -21874,5 +21887,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-12-12T20:09:38.667664187Z"
+  "fetchTimestamp": "2025-12-13T00:50:12.019077574Z"
 }

@@ -1,7 +1,7 @@
 {
-  "content_hash": "969972c23c017c628165b45c2abcff3ddd82706abdbc368fdd24c7d73e81f880",
+  "content_hash": "d64a4b8e462afa80c00b8016e2b6cd4dafc0ec34bf3cf6beacc2486a542cbc27",
   "content_changed": true,
-  "generated_at": "2025-12-12T20:10:07.443470460Z",
+  "generated_at": "2025-12-13T00:50:43.939401560Z",
   "latest_releases": {
     "macos": {
       "version": "26.2",
@@ -57,7 +57,7 @@
         "CVE-2025-5918",
         "CVE-2025-9086"
       ],
-      "actively_exploited_count": 0,
+      "actively_exploited_count": 1,
       "total_cve_count": 47,
       "enterprise_link": null,
       "updates_link": null
@@ -95,7 +95,7 @@
         "CVE-2025-5918",
         "CVE-2025-9086"
       ],
-      "actively_exploited_count": 0,
+      "actively_exploited_count": 1,
       "total_cve_count": 26,
       "enterprise_link": null,
       "updates_link": null
@@ -133,7 +133,7 @@
         "CVE-2025-5918",
         "CVE-2025-9086"
       ],
-      "actively_exploited_count": 0,
+      "actively_exploited_count": 1,
       "total_cve_count": 26,
       "enterprise_link": null,
       "updates_link": null
@@ -155,7 +155,7 @@
         "CVE-2025-46285",
         "CVE-2025-9086"
       ],
-      "actively_exploited_count": 0,
+      "actively_exploited_count": 1,
       "total_cve_count": 10,
       "enterprise_link": null,
       "updates_link": null
@@ -184,7 +184,7 @@
         "CVE-2025-46288",
         "CVE-2025-9086"
       ],
-      "actively_exploited_count": 0,
+      "actively_exploited_count": 1,
       "total_cve_count": 17,
       "enterprise_link": null,
       "updates_link": null
@@ -216,7 +216,7 @@
         "CVE-2025-46288",
         "CVE-2025-9086"
       ],
-      "actively_exploited_count": 0,
+      "actively_exploited_count": 1,
       "total_cve_count": 20,
       "enterprise_link": null,
       "updates_link": null
@@ -247,9 +247,11 @@
   },
   "security_summary": {
     "unique_cves_fixed": 49,
-    "kev_matches": 0,
+    "kev_matches": 1,
     "latest_wave_date": "2025-12-12T00:00:00Z",
-    "kev_cve_list": []
+    "kev_cve_list": [
+      "CVE-2025-14174"
+    ]
   },
   "beta_releases": {
     "latest_wave": "2025-12-12",
