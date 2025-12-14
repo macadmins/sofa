@@ -1,7 +1,7 @@
 {
   "Version": "2.0",
-  "UpdateHash": "aa430fcb286e075fdc96ad776e3332c912672394b82b07e593c37c47806bb86a",
-  "LastCheck": "2025-12-14T12:47:48.898231319+00:00",
+  "UpdateHash": "4fe4d16e42a56c7448e99422584ae96f25c3dfdc4c021da94ae32763d7aad2d2",
+  "LastCheck": "2025-12-14T18:42:26.136211356+00:00",
   "OSVersions": [
     {
       "OSVersion": "macOS 26",
@@ -1437,12 +1437,9 @@
           "UpdateName": "macOS Sequoia 15.6.1",
           "ProductName": "macOS",
           "ProductVersion": "15.6.1",
-          "Build": "24G90",
-          "AllBuilds": [
-            "24G90"
-          ],
+          "Build": "",
+          "AllBuilds": [],
           "ReleaseDate": "2025-08-20T00:00:00Z",
-          "ExpirationDate": "2025-12-14",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/124927",
           "SecurityInfoContext": "macOS 15.6.1 was released on August 20, 2025. This release addressed one security issue. Newer updates are now available, so please check to see if they apply to your devices.",
@@ -1462,14 +1459,12 @@
             "J230KAP",
             "J274AP",
             "J293AP",
-            "J313AP",
             "J314cAP",
             "J314sAP",
             "J316cAP",
             "J316sAP",
             "J375cAP",
             "J375dAP",
-            "J413AP",
             "J414cAP",
             "J414sAP",
             "J415AP",
@@ -1491,22 +1486,9 @@
             "J516cAP",
             "J516mAP",
             "J516sAP",
-            "J575cAP",
-            "J575dAP",
-            "J604AP",
             "J613AP",
-            "J614cAP",
-            "J614sAP",
             "J615AP",
-            "J616cAP",
-            "J616sAP",
-            "J623AP",
-            "J624AP",
             "J680AP",
-            "J713AP",
-            "J715AP",
-            "J773gAP",
-            "J773sAP",
             "J780AP",
             "Mac-1E7E29AD0135F9BC",
             "Mac-63001698E7A34814",
@@ -3491,7 +3473,7 @@
           "ExpirationDate": "2026-03-12",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125636",
-          "SecurityInfoContext": "macOS 14.8.2 was released on November 03, 2025. This release addressed 46 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "macOS 14.8.2 was released on November 03, 2025. This release addressed 50 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "J132AP",
             "J137AP",
@@ -3578,6 +3560,7 @@
             "CVE-2025-43405": {},
             "CVE-2025-43407": {},
             "CVE-2025-43408": {},
+            "CVE-2025-43410": {},
             "CVE-2025-43411": {},
             "CVE-2025-43412": {},
             "CVE-2025-43413": {},
@@ -3594,16 +3577,19 @@
             "CVE-2025-43477": {},
             "CVE-2025-43478": {},
             "CVE-2025-43479": {},
+            "CVE-2025-43494": {},
             "CVE-2025-43498": {},
             "CVE-2025-43499": {},
+            "CVE-2025-43510": {},
+            "CVE-2025-43520": {},
             "CVE-2025-6442": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 46,
+          "UniqueCVEsCount": 50,
           "DaysSincePreviousRelease": 35,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 46 security issues",
+            "summary": "Addresses 50 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -3612,7 +3598,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 46
+              "total": 50
             }
           }
         },
@@ -3844,12 +3830,9 @@
           "UpdateName": "macOS Sonoma 14.7.8",
           "ProductName": "macOS",
           "ProductVersion": "14.7.8",
-          "Build": "23H730",
-          "AllBuilds": [
-            "23H730"
-          ],
+          "Build": "",
+          "AllBuilds": [],
           "ReleaseDate": "2025-08-20T00:00:00Z",
-          "ExpirationDate": "2025-12-14",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/124928",
           "SecurityInfoContext": "macOS 14.7.8 was released on August 20, 2025. This release addressed one security issue. Newer updates are now available, so please check to see if they apply to your devices.",
@@ -14038,7 +14021,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/kb/HT213813",
+          "SecurityInfo": "https://support.apple.com/kb/HT211931",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "J132AP",
@@ -14123,13 +14106,13 @@
     }
   ],
   "XProtectPlistConfigData": {
-    "ReleaseDate": "2025-12-10T18:08:22Z",
-    "com.apple.XProtect": "5324"
+    "com.apple.XProtect": "5324",
+    "ReleaseDate": "2025-12-10T18:08:22Z"
   },
   "XProtectPayloads": {
-    "com.apple.XProtectFramework.XProtect": "156",
     "com.apple.XprotectFramework.PluginService": "74",
-    "ReleaseDate": "2025-12-10T18:08:22Z"
+    "ReleaseDate": "2025-12-10T18:08:22Z",
+    "com.apple.XProtectFramework.XProtect": "156"
   },
   "InstallationApps": {
     "LatestUMA": {
