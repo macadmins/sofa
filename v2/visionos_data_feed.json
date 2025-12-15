@@ -1,8 +1,8 @@
 {
   "OSName": "visionOS",
   "Version": "2.0",
-  "UpdateHash": "f680442f8c9e0d3fc3a008e1148df4c316646c8c640fdabb4814c9f4844edbd8",
-  "LastCheck": "2025-12-15T18:13:16.801913110+00:00",
+  "UpdateHash": "aecea52423358abd27b81a1fffaef3a1291c6b60b48d75d0b9b8345322ebde1b",
+  "LastCheck": "2025-12-15T18:46:06.305944872+00:00",
   "OSVersions": [
     {
       "OSVersion": "visionOS 26",
@@ -34,7 +34,11 @@
           "CVE-2025-43428": {},
           "CVE-2025-43501": {},
           "CVE-2025-43511": {},
-          "CVE-2025-43529": {},
+          "CVE-2025-43529": {
+            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43529",
+            "in_kev": true,
+            "severity": "High"
+          },
           "CVE-2025-43531": {},
           "CVE-2025-43532": {},
           "CVE-2025-43533": {},
@@ -51,6 +55,7 @@
           "CVE-2025-9086": {}
         },
         "ActivelyExploitedCVEs": [
+          "CVE-2025-43529",
           "CVE-2025-14174"
         ],
         "UniqueCVEsCount": 20,
@@ -99,7 +104,11 @@
             "CVE-2025-43428": {},
             "CVE-2025-43501": {},
             "CVE-2025-43511": {},
-            "CVE-2025-43529": {},
+            "CVE-2025-43529": {
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43529",
+              "in_kev": true,
+              "severity": "High"
+            },
             "CVE-2025-43531": {},
             "CVE-2025-43532": {},
             "CVE-2025-43533": {},
@@ -116,6 +125,7 @@
             "CVE-2025-9086": {}
           },
           "ActivelyExploitedCVEs": [
+            "CVE-2025-43529",
             "CVE-2025-14174"
           ],
           "UniqueCVEsCount": 20,

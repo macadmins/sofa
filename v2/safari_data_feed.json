@@ -1,6 +1,6 @@
 {
   "Version": "2.0",
-  "UpdateHash": "c9c25c8b9cb57aa9806852d54c1213d00a186065dfee4d4408422dbdf55008c6",
+  "UpdateHash": "d73c306d3deb1780a2b13ce3c5086fa0b7d21fb98e91ba73c6c3cc5a09fb9fb0",
   "AppVersions": [
     {
       "AppVersion": "Safari 26",
@@ -28,7 +28,17 @@
           "CVE-2025-43501": {},
           "CVE-2025-43511": {},
           "CVE-2025-43526": {},
-          "CVE-2025-43529": {},
+          "CVE-2025-43529": {
+            "exploited": true,
+            "kev": true,
+            "matched_pattern": "CISA KEV catalog",
+            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43529",
+            "tags": [
+              "actively-exploited",
+              "memory-corruption",
+              "webkit"
+            ]
+          },
           "CVE-2025-43531": {},
           "CVE-2025-43535": {},
           "CVE-2025-43536": {},
@@ -36,6 +46,7 @@
           "CVE-2025-46282": {}
         },
         "ActivelyExploitedCVEs": [
+          "CVE-2025-43529",
           "CVE-2025-14174"
         ],
         "UniqueCVEsCount": 11,
@@ -66,7 +77,17 @@
             "CVE-2025-43501": {},
             "CVE-2025-43511": {},
             "CVE-2025-43526": {},
-            "CVE-2025-43529": {},
+            "CVE-2025-43529": {
+              "exploited": true,
+              "kev": true,
+              "matched_pattern": "CISA KEV catalog",
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43529",
+              "tags": [
+                "actively-exploited",
+                "memory-corruption",
+                "webkit"
+              ]
+            },
             "CVE-2025-43531": {},
             "CVE-2025-43535": {},
             "CVE-2025-43536": {},
@@ -74,6 +95,7 @@
             "CVE-2025-46282": {}
           },
           "ActivelyExploitedCVEs": [
+            "CVE-2025-43529",
             "CVE-2025-14174"
           ],
           "UniqueCVEsCount": 11,

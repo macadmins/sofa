@@ -1,8 +1,8 @@
 {
   "OSName": "tvOS",
   "Version": "2.0",
-  "UpdateHash": "c1d3774c3a5d47f42b81960631f31294d320501f482d0eeec0c9712513efaf84",
-  "LastCheck": "2025-12-15T18:13:16.773629702+00:00",
+  "UpdateHash": "6ba14ad53ef4f1c2bb3f107416f0f7d5501d6abaa80835617de150cea3115b95",
+  "LastCheck": "2025-12-15T18:46:06.278807130+00:00",
   "OSVersions": [
     {
       "OSVersion": "tvOS 26",
@@ -33,7 +33,11 @@
             "in_kev": true,
             "severity": "High"
           },
-          "CVE-2025-43529": {},
+          "CVE-2025-43529": {
+            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43529",
+            "in_kev": true,
+            "severity": "High"
+          },
           "CVE-2025-43531": {},
           "CVE-2025-43532": {},
           "CVE-2025-43533": {},
@@ -43,6 +47,7 @@
           "CVE-2025-9086": {}
         },
         "ActivelyExploitedCVEs": [
+          "CVE-2025-43529",
           "CVE-2025-14174"
         ],
         "UniqueCVEsCount": 10,
@@ -90,7 +95,11 @@
               "in_kev": true,
               "severity": "High"
             },
-            "CVE-2025-43529": {},
+            "CVE-2025-43529": {
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43529",
+              "in_kev": true,
+              "severity": "High"
+            },
             "CVE-2025-43531": {},
             "CVE-2025-43532": {},
             "CVE-2025-43533": {},
@@ -100,6 +109,7 @@
             "CVE-2025-9086": {}
           },
           "ActivelyExploitedCVEs": [
+            "CVE-2025-43529",
             "CVE-2025-14174"
           ],
           "UniqueCVEsCount": 10,

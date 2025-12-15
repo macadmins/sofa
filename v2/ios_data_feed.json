@@ -1,7 +1,7 @@
 {
   "Version": "2.0",
-  "UpdateHash": "c4a4d7e76426e2d30c6f9132dcc85b56b5b51264365ad5135e924129cca25db9",
-  "LastCheck": "2025-12-15T18:13:16.736882565+00:00",
+  "UpdateHash": "d48236af3a66313d3a633736a37d67cfb95332512d0f7870392388abcc4e4b87",
+  "LastCheck": "2025-12-15T18:46:06.243868475+00:00",
   "OSVersions": [
     {
       "OSVersion": "26",
@@ -128,7 +128,12 @@
           "CVE-2025-43501": {},
           "CVE-2025-43511": {},
           "CVE-2025-43518": {},
-          "CVE-2025-43529": {},
+          "CVE-2025-43529": {
+            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43529",
+            "actively_exploited": true,
+            "in_kev": true,
+            "severity": "Critical"
+          },
           "CVE-2025-43531": {},
           "CVE-2025-43532": {},
           "CVE-2025-43533": {},
@@ -149,6 +154,7 @@
           "CVE-2025-9086": {}
         },
         "ActivelyExploitedCVEs": [
+          "CVE-2025-43529",
           "CVE-2025-14174"
         ],
         "UniqueCVEsCount": 26,
@@ -292,7 +298,12 @@
             "CVE-2025-43501": {},
             "CVE-2025-43511": {},
             "CVE-2025-43518": {},
-            "CVE-2025-43529": {},
+            "CVE-2025-43529": {
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43529",
+              "actively_exploited": true,
+              "in_kev": true,
+              "severity": "Critical"
+            },
             "CVE-2025-43531": {},
             "CVE-2025-43532": {},
             "CVE-2025-43533": {},
@@ -313,6 +324,7 @@
             "CVE-2025-9086": {}
           },
           "ActivelyExploitedCVEs": [
+            "CVE-2025-43529",
             "CVE-2025-14174"
           ],
           "UniqueCVEsCount": 26,
@@ -913,7 +925,12 @@
           },
           "CVE-2025-43501": {},
           "CVE-2025-43512": {},
-          "CVE-2025-43529": {},
+          "CVE-2025-43529": {
+            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43529",
+            "actively_exploited": true,
+            "in_kev": true,
+            "severity": "Critical"
+          },
           "CVE-2025-43530": {},
           "CVE-2025-43531": {},
           "CVE-2025-43532": {},
@@ -932,6 +949,7 @@
           "CVE-2025-9086": {}
         },
         "ActivelyExploitedCVEs": [
+          "CVE-2025-43529",
           "CVE-2025-14174"
         ],
         "UniqueCVEsCount": 21,
@@ -1040,7 +1058,12 @@
             },
             "CVE-2025-43501": {},
             "CVE-2025-43512": {},
-            "CVE-2025-43529": {},
+            "CVE-2025-43529": {
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43529",
+              "actively_exploited": true,
+              "in_kev": true,
+              "severity": "Critical"
+            },
             "CVE-2025-43530": {},
             "CVE-2025-43531": {},
             "CVE-2025-43532": {},
@@ -1059,6 +1082,7 @@
             "CVE-2025-9086": {}
           },
           "ActivelyExploitedCVEs": [
+            "CVE-2025-43529",
             "CVE-2025-14174"
           ],
           "UniqueCVEsCount": 21,

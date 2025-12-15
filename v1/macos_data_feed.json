@@ -1,5 +1,5 @@
 {
-  "UpdateHash": "db1c1f3c379df93126af1117ee83265e223304068c2a2aee7c05bc4c36e08bf4",
+  "UpdateHash": "262611a2f290477c39c9c47e73549dfb4a65088f4587ecc2fd35e2300465503c",
   "OSVersions": [
     {
       "OSVersion": "Tahoe 26",
@@ -90,7 +90,7 @@
           "CVE-2025-43523": false,
           "CVE-2025-43526": false,
           "CVE-2025-43527": false,
-          "CVE-2025-43529": false,
+          "CVE-2025-43529": true,
           "CVE-2025-43530": false,
           "CVE-2025-43531": false,
           "CVE-2025-43532": false,
@@ -117,6 +117,7 @@
           "CVE-2025-9086": false
         },
         "ActivelyExploitedCVEs": [
+          "CVE-2025-43529",
           "CVE-2025-14174"
         ],
         "UniqueCVEsCount": 47
@@ -210,7 +211,7 @@
             "CVE-2025-43523": false,
             "CVE-2025-43526": false,
             "CVE-2025-43527": false,
-            "CVE-2025-43529": false,
+            "CVE-2025-43529": true,
             "CVE-2025-43530": false,
             "CVE-2025-43531": false,
             "CVE-2025-43532": false,
@@ -237,6 +238,7 @@
             "CVE-2025-9086": false
           },
           "ActivelyExploitedCVEs": [
+            "CVE-2025-43529",
             "CVE-2025-14174"
           ],
           "UniqueCVEsCount": 47,
@@ -3415,6 +3417,7 @@
             "CVE-2025-43405": false,
             "CVE-2025-43407": false,
             "CVE-2025-43408": false,
+            "CVE-2025-43410": false,
             "CVE-2025-43411": false,
             "CVE-2025-43412": false,
             "CVE-2025-43413": false,
@@ -3431,12 +3434,15 @@
             "CVE-2025-43477": false,
             "CVE-2025-43478": false,
             "CVE-2025-43479": false,
+            "CVE-2025-43494": false,
             "CVE-2025-43498": false,
             "CVE-2025-43499": false,
+            "CVE-2025-43510": false,
+            "CVE-2025-43520": false,
             "CVE-2025-6442": false
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 46,
+          "UniqueCVEsCount": 50,
           "DaysSincePreviousRelease": 35
         },
         {
