@@ -1,8 +1,8 @@
 {
   "OSName": "visionOS",
   "Version": "2.0",
-  "UpdateHash": "572a0e844cdd2529e07985c442be206a5c38fc31df3b817d17f57c472382ace9",
-  "LastCheck": "2025-12-15T06:47:15.054082794+00:00",
+  "UpdateHash": "f680442f8c9e0d3fc3a008e1148df4c316646c8c640fdabb4814c9f4844edbd8",
+  "LastCheck": "2025-12-15T12:48:40.952280894+00:00",
   "OSVersions": [
     {
       "OSVersion": "visionOS 26",
@@ -148,7 +148,7 @@
           "ExpirationDate": "2026-03-12",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125638",
-          "SecurityInfoContext": "visionOS 26.1 was released on November 03, 2025. This release addressed 43 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "visionOS 26.1 was released on November 03, 2025. This release addressed 46 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "RealityDevice14,1",
             "RealityDevice17,1"
@@ -191,19 +191,22 @@
             "CVE-2025-43462": {},
             "CVE-2025-43480": {},
             "CVE-2025-43493": {},
+            "CVE-2025-43494": {},
             "CVE-2025-43496": {},
             "CVE-2025-43498": {},
             "CVE-2025-43500": {},
             "CVE-2025-43502": {},
             "CVE-2025-43503": {},
-            "CVE-2025-43507": {}
+            "CVE-2025-43507": {},
+            "CVE-2025-43510": {},
+            "CVE-2025-43520": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 43,
+          "UniqueCVEsCount": 46,
           "DaysSincePreviousRelease": 35,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 43 security issues",
+            "summary": "Addresses 46 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -212,7 +215,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 43
+              "total": 46
             }
           }
         },
