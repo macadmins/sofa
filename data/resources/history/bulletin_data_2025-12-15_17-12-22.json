@@ -1,7 +1,7 @@
 {
-  "content_hash": "23f9b5431a997e54ed4acbeb7baf3abaf99bcd87024e94d7d19585e35ed682cb",
+  "content_hash": "26dd004d8ae371bdfe0fc6a1435d0a7bcc7284c393224cb78b8b4a60bf21e559",
   "content_changed": true,
-  "generated_at": "2025-12-12T19:08:01.573863362Z",
+  "generated_at": "2025-12-15T17:12:22.473805728Z",
   "latest_releases": {
     "macos": {
       "version": "26.2",
@@ -57,7 +57,7 @@
         "CVE-2025-5918",
         "CVE-2025-9086"
       ],
-      "actively_exploited_count": 0,
+      "actively_exploited_count": 1,
       "total_cve_count": 47,
       "enterprise_link": null,
       "updates_link": null
@@ -95,7 +95,7 @@
         "CVE-2025-5918",
         "CVE-2025-9086"
       ],
-      "actively_exploited_count": 0,
+      "actively_exploited_count": 1,
       "total_cve_count": 26,
       "enterprise_link": null,
       "updates_link": null
@@ -133,7 +133,7 @@
         "CVE-2025-5918",
         "CVE-2025-9086"
       ],
-      "actively_exploited_count": 0,
+      "actively_exploited_count": 1,
       "total_cve_count": 26,
       "enterprise_link": null,
       "updates_link": null
@@ -155,7 +155,7 @@
         "CVE-2025-46285",
         "CVE-2025-9086"
       ],
-      "actively_exploited_count": 0,
+      "actively_exploited_count": 1,
       "total_cve_count": 10,
       "enterprise_link": null,
       "updates_link": null
@@ -184,7 +184,7 @@
         "CVE-2025-46288",
         "CVE-2025-9086"
       ],
-      "actively_exploited_count": 0,
+      "actively_exploited_count": 1,
       "total_cve_count": 17,
       "enterprise_link": null,
       "updates_link": null
@@ -216,50 +216,42 @@
         "CVE-2025-46288",
         "CVE-2025-9086"
       ],
-      "actively_exploited_count": 0,
+      "actively_exploited_count": 1,
       "total_cve_count": 20,
       "enterprise_link": null,
       "updates_link": null
     },
     "safari": {
-      "version": "26.1",
-      "build": "26.1",
-      "release_date": "2025-11-03T00:00:00Z",
-      "url": "https://support.apple.com/en-us/125640",
+      "version": "26.2",
+      "build": "26.2",
+      "release_date": "2025-12-12T00:00:00Z",
+      "url": "https://support.apple.com/en-us/125892",
       "cves_fixed": [
-        "CVE-2025-43392",
-        "CVE-2025-43421",
-        "CVE-2025-43425",
-        "CVE-2025-43427",
-        "CVE-2025-43429",
-        "CVE-2025-43430",
-        "CVE-2025-43431",
-        "CVE-2025-43432",
-        "CVE-2025-43433",
-        "CVE-2025-43434",
-        "CVE-2025-43435",
-        "CVE-2025-43438",
-        "CVE-2025-43440",
-        "CVE-2025-43441",
-        "CVE-2025-43443",
-        "CVE-2025-43457",
-        "CVE-2025-43458",
-        "CVE-2025-43480",
-        "CVE-2025-43493",
-        "CVE-2025-43502",
-        "CVE-2025-43503"
+        "CVE-2024-8906",
+        "CVE-2025-14174",
+        "CVE-2025-43501",
+        "CVE-2025-43511",
+        "CVE-2025-43526",
+        "CVE-2025-43529",
+        "CVE-2025-43531",
+        "CVE-2025-43535",
+        "CVE-2025-43536",
+        "CVE-2025-43541",
+        "CVE-2025-46282"
       ],
-      "actively_exploited_count": 0,
-      "total_cve_count": 21,
+      "actively_exploited_count": 1,
+      "total_cve_count": 11,
       "enterprise_link": null,
       "updates_link": null
     }
   },
   "security_summary": {
-    "unique_cves_fixed": 70,
-    "kev_matches": 0,
+    "unique_cves_fixed": 49,
+    "kev_matches": 1,
     "latest_wave_date": "2025-12-12T00:00:00Z",
-    "kev_cve_list": []
+    "kev_cve_list": [
+      "CVE-2025-14174"
+    ]
   },
   "beta_releases": {
     "latest_wave": "2025-12-12",
@@ -271,6 +263,13 @@
     "visionos": null
   },
   "recent_releases": [
+    {
+      "release_date": "2025-12-12",
+      "name": "Safari 26.2",
+      "platform": "safari",
+      "version": "26.2",
+      "url": "https://support.apple.com/en-us/125892"
+    },
     {
       "release_date": "2025-12-12",
       "name": "iOS 18.7.3 and iPadOS 18.7.3",
@@ -339,15 +338,6 @@
       "platform": "other",
       "version": "4.11.1",
       "url": "https://support.apple.com/en-us/125693"
-    },
-    {
-      "release_date": "2025-11-05",
-      "name": "iOS 18.7.2 and iPadOS 18.7.2",
-      "platform": "ios",
-      "version": "18.7.2",
-      "url": "https://support.apple.com/en-us/125633",
-      "enterprise_link": "https://support.apple.com/en-ca/121158",
-      "updates_link": "https://support.apple.com/en-ca/121161"
     }
   ]
 }
