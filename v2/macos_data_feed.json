@@ -1,7 +1,7 @@
 {
   "Version": "2.0",
-  "UpdateHash": "bf63c687e653fb62b7ab91bfcf47f1c3c022a7b208daafac4632154bdc69607a",
-  "LastCheck": "2025-12-15T18:46:06.227863879+00:00",
+  "UpdateHash": "53ffa207dc4dcbf6b651959115d98e9c0bb694590eee42861447770635017074",
+  "LastCheck": "2025-12-15T19:09:23.781682883+00:00",
   "OSVersions": [
     {
       "OSVersion": "macOS 26",
@@ -613,7 +613,7 @@
           "ExpirationDate": "2025-12-28",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125110",
-          "SecurityInfoContext": "macOS 26.0 was released on September 15, 2025. This release addressed 85 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "macOS 26.0 was released on September 15, 2025. This release addressed 86 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "J152FAP",
             "J160AP",
@@ -719,6 +719,7 @@
             "CVE-2025-43317": {},
             "CVE-2025-43318": {},
             "CVE-2025-43319": {},
+            "CVE-2025-43320": {},
             "CVE-2025-43321": {},
             "CVE-2025-43323": {},
             "CVE-2025-43325": {},
@@ -759,11 +760,11 @@
             "CVE-2025-6965": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 85,
+          "UniqueCVEsCount": 86,
           "DaysSincePreviousRelease": 0,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 85 security issues",
+            "summary": "Addresses 86 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -772,7 +773,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 85
+              "total": 86
             }
           }
         }
@@ -14032,7 +14033,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/en-us/125112",
+          "SecurityInfo": "https://support.apple.com/en-us/124149",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "J132AP",
@@ -14117,12 +14118,12 @@
     }
   ],
   "XProtectPlistConfigData": {
-    "ReleaseDate": "2025-12-10T18:08:22Z",
-    "com.apple.XProtect": "5324"
+    "com.apple.XProtect": "5324",
+    "ReleaseDate": "2025-12-10T18:08:22Z"
   },
   "XProtectPayloads": {
-    "ReleaseDate": "2025-12-10T18:08:22Z",
     "com.apple.XprotectFramework.PluginService": "74",
+    "ReleaseDate": "2025-12-10T18:08:22Z",
     "com.apple.XProtectFramework.XProtect": "156"
   },
   "InstallationApps": {
@@ -14216,15 +14217,6 @@
         "url": "https://swcdn.apple.com/content/downloads/17/41/093-34000-A_IVOM0TNC43/plnlr5g9hfkg3fiwr399h1eso63m8vhiqn/InstallAssistant.pkg",
         "posting_date": "2025-09-15T17:26:14Z",
         "size": 15659265724
-      },
-      {
-        "title": "macOS Sequoia",
-        "version": "15.6.1",
-        "build": "24G90",
-        "apple_slug": "093-10756",
-        "url": "https://swcdn.apple.com/content/downloads/26/59/093-10756-A_RD5LVY0R3G/7a96asv0xoamt1fk0xxnqy8jffdyauooaq/InstallAssistant.pkg",
-        "posting_date": "2025-08-27T17:08:15Z",
-        "size": 15664220637
       },
       {
         "title": "macOS Sonoma",
