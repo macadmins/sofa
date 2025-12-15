@@ -1,8 +1,8 @@
 {
   "OSName": "tvOS",
   "Version": "2.0",
-  "UpdateHash": "017c0d9fdf52ea10a598cc449b3c85593dc451df07fc297ef78608c532c062e6",
-  "LastCheck": "2025-12-14T18:42:26.189693460+00:00",
+  "UpdateHash": "c1d3774c3a5d47f42b81960631f31294d320501f482d0eeec0c9712513efaf84",
+  "LastCheck": "2025-12-15T00:51:00.622673178+00:00",
   "OSVersions": [
     {
       "OSVersion": "tvOS 26",
@@ -16,7 +16,7 @@
           "23K54"
         ],
         "ReleaseDate": "2025-12-12",
-        "ExpirationDate": "2026-03-14",
+        "ExpirationDate": "2026-03-15",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/125889",
         "SecurityInfoContext": "tvOS has been updated to version 26.2, which was released on December 12, 2025. This update addresses 10 security issues and is the most recent approved version.",
@@ -73,7 +73,7 @@
             "23K54"
           ],
           "ReleaseDate": "2025-12-12",
-          "ExpirationDate": "2026-03-14",
+          "ExpirationDate": "2026-03-15",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125889",
           "SecurityInfoContext": "tvOS has been updated to version 26.2, which was released on December 12, 2025. This update addresses 10 security issues and is the most recent approved version.",
@@ -129,7 +129,7 @@
             "23J582"
           ],
           "ReleaseDate": "2025-11-03",
-          "ExpirationDate": "2026-03-14",
+          "ExpirationDate": "2026-03-15",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125637",
           "SecurityInfoContext": "tvOS 26.1 was released on November 03, 2025. This release addressed 31 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
@@ -431,7 +431,7 @@
           "ReleaseDate": "2025-05-12",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/122720",
-          "SecurityInfoContext": "tvOS 18.5 was released on May 12, 2025. This release addressed 25 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "tvOS 18.5 was released on May 12, 2025. This release addressed 27 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2024-8176": {},
@@ -456,16 +456,18 @@
             "CVE-2025-31238": {},
             "CVE-2025-31239": {},
             "CVE-2025-31241": {},
+            "CVE-2025-31242": {},
             "CVE-2025-31245": {},
             "CVE-2025-31251": {},
-            "CVE-2025-31257": {}
+            "CVE-2025-31257": {},
+            "CVE-2025-43374": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 25,
+          "UniqueCVEsCount": 27,
           "DaysSincePreviousRelease": 26,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 25 security issues",
+            "summary": "Addresses 27 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -474,7 +476,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 25
+              "total": 27
             }
           }
         },
