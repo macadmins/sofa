@@ -1,7 +1,7 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.12.16",
-  "dateReleased": "2025-12-16T18:00:01.7501Z",
+  "catalogVersion": "2025.12.17",
+  "dateReleased": "2025-12-17T13:52:19.1874Z",
   "count": 1478,
   "vulnerabilities": [
     {
@@ -20003,7 +20003,7 @@
       "dateAdded": "2021-11-03",
       "shortDescription": "Microsoft Windows Print Spooler contains an unspecified vulnerability due to the Windows Print Spooler service improperly performing privileged file operations. Successful exploitation allows an attacker to perform remote code execution with SYSTEM privileges. The vulnerability is also known under the moniker of PrintNightmare.",
       "requiredAction": "Apply updates per vendor instructions.",
-      "dueDate": "2021-07-20",
+      "dueDate": "2022-05-03",
       "knownRansomwareCampaignUse": "Known",
       "notes": "Reference CISA's ED 21-04 (https://www.cisa.gov/news-events/directives/ed-21-04-mitigate-windows-print-spooler-service-vulnerability) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-04. https://nvd.nist.gov/vuln/detail/CVE-2021-34527",
       "cwes": [
@@ -20077,7 +20077,7 @@
       "dateAdded": "2021-11-03",
       "shortDescription": "Microsoft Windows DNS Servers fail to properly handle requests, allowing an attacker to perform remote code execution in the context of the Local System Account. The vulnerability is also known under the moniker of SIGRed.",
       "requiredAction": "Apply updates per vendor instructions.",
-      "dueDate": "2020-07-24",
+      "dueDate": "2022-05-03",
       "knownRansomwareCampaignUse": "Unknown",
       "notes": "Reference CISA's ED 20-03 (https://www.cisa.gov/news-events/directives/ed-20-03-mitigate-windows-dns-server-remote-code-execution-vulnerability-july-2020-patch-tuesday) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 20-03. https://nvd.nist.gov/vuln/detail/CVE-2020-1350",
       "cwes": []
@@ -20424,7 +20424,7 @@
       "dateAdded": "2021-11-03",
       "shortDescription": "Microsoft's Netlogon Remote Protocol (MS-NRPC) contains a privilege escalation vulnerability when an attacker establishes a vulnerable Netlogon secure channel connection to a domain controller. An attacker who successfully exploits the vulnerability could run a specially crafted application on a device on the network. The vulnerability is also known under the moniker of Zerologon.",
       "requiredAction": "Apply updates per vendor instructions.",
-      "dueDate": "2020-09-21",
+      "dueDate": "2022-05-03",
       "knownRansomwareCampaignUse": "Known",
       "notes": "Reference CISA's ED 20-04 (https://www.cisa.gov/news-events/directives/ed-20-04-mitigate-netlogon-elevation-privilege-vulnerability-august-2020-patch-tuesday) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 20-04. https://nvd.nist.gov/vuln/detail/CVE-2020-1472",
       "cwes": [
@@ -20439,7 +20439,7 @@
       "dateAdded": "2021-11-03",
       "shortDescription": "Microsoft Exchange Server contains an unspecified vulnerability that allows for remote code execution. This vulnerability is part of the ProxyLogon exploit chain.",
       "requiredAction": "Apply updates per vendor instructions.",
-      "dueDate": "2021-04-16",
+      "dueDate": "2022-05-03",
       "knownRansomwareCampaignUse": "Known",
       "notes": "Reference CISA's ED 21-02 (https://www.cisa.gov/news-events/directives/ed-21-02-mitigate-microsoft-exchange-premises-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-02. https://nvd.nist.gov/vuln/detail/CVE-2021-26855",
       "cwes": [
@@ -20454,7 +20454,7 @@
       "dateAdded": "2021-11-03",
       "shortDescription": "Microsoft Exchange Server contains an unspecified vulnerability that allows for remote code execution. This vulnerability is part of the ProxyLogon exploit chain.",
       "requiredAction": "Apply updates per vendor instructions.",
-      "dueDate": "2021-04-16",
+      "dueDate": "2022-05-03",
       "knownRansomwareCampaignUse": "Known",
       "notes": "Reference CISA's ED 21-02 (https://www.cisa.gov/news-events/directives/ed-21-02-mitigate-microsoft-exchange-premises-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-02. https://nvd.nist.gov/vuln/detail/CVE-2021-26858",
       "cwes": []
@@ -20467,7 +20467,7 @@
       "dateAdded": "2021-11-03",
       "shortDescription": "Microsoft Exchange Server contains an unspecified vulnerability that allows for remote code execution. This vulnerability is part of the ProxyLogon exploit chain.",
       "requiredAction": "Apply updates per vendor instructions.",
-      "dueDate": "2021-04-16",
+      "dueDate": "2022-05-03",
       "knownRansomwareCampaignUse": "Known",
       "notes": "Reference CISA's ED 21-02 (https://www.cisa.gov/news-events/directives/ed-21-02-mitigate-microsoft-exchange-premises-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-02. https://nvd.nist.gov/vuln/detail/CVE-2021-27065",
       "cwes": [
@@ -20527,7 +20527,7 @@
       "dateAdded": "2021-11-03",
       "shortDescription": "Microsoft Windows CryptoAPI (Crypt32.dll) contains a spoofing vulnerability in the way it validates Elliptic Curve Cryptography (ECC) certificates. An attacker could exploit the vulnerability by using a spoofed code-signing certificate to sign a malicious executable, making it appear the file was from a trusted, legitimate source. A successful exploit could also allow the attacker to conduct man-in-the-middle attacks and decrypt confidential information on user connections to the affected software. The vulnerability is also known under the moniker of CurveBall.",
       "requiredAction": "Apply updates per vendor instructions.",
-      "dueDate": "2020-01-29",
+      "dueDate": "2022-05-03",
       "knownRansomwareCampaignUse": "Unknown",
       "notes": "Reference CISA's ED 20-02 (https://www.cisa.gov/news-events/directives/ed-20-02-mitigate-windows-vulnerabilities-january-2020-patch-tuesday) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 20-02. https://nvd.nist.gov/vuln/detail/CVE-2020-0601",
       "cwes": [
@@ -20585,7 +20585,7 @@
       "dateAdded": "2021-11-03",
       "shortDescription": "Microsoft Exchange Server contains an unspecified vulnerability that allows for remote code execution. This vulnerability is part of the ProxyLogon exploit chain.",
       "requiredAction": "Apply updates per vendor instructions.",
-      "dueDate": "2021-04-16",
+      "dueDate": "2022-05-03",
       "knownRansomwareCampaignUse": "Known",
       "notes": "Reference CISA's ED 21-02 (https://www.cisa.gov/news-events/directives/ed-21-02-mitigate-microsoft-exchange-premises-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-02. https://nvd.nist.gov/vuln/detail/CVE-2021-26857",
       "cwes": [
@@ -20898,7 +20898,7 @@
       "dateAdded": "2021-11-03",
       "shortDescription": "Ivanti Pulse Connect Secure contains a use-after-free vulnerability that allow a remote, unauthenticated attacker to execute code via license services.",
       "requiredAction": "Apply updates per vendor instructions.",
-      "dueDate": "2021-04-23",
+      "dueDate": "2022-05-03",
       "knownRansomwareCampaignUse": "Known",
       "notes": "Reference CISA's ED 21-03 (https://www.cisa.gov/news-events/directives/ed-21-03-mitigate-pulse-connect-secure-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-03. https://nvd.nist.gov/vuln/detail/CVE-2021-22893",
       "cwes": [
@@ -20913,7 +20913,7 @@
       "dateAdded": "2021-11-03",
       "shortDescription": "Ivanti Pulse Connect Secure contains an unspecified vulnerability in the admin web interface that could allow an authenticated attacker to upload a custom template to perform code execution.",
       "requiredAction": "Apply updates per vendor instructions.",
-      "dueDate": "2021-04-23",
+      "dueDate": "2022-05-03",
       "knownRansomwareCampaignUse": "Unknown",
       "notes": "Reference CISA's ED 21-03 (https://www.cisa.gov/news-events/directives/ed-21-03-mitigate-pulse-connect-secure-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-03. https://nvd.nist.gov/vuln/detail/CVE-2020-8243",
       "cwes": [
@@ -20928,7 +20928,7 @@
       "dateAdded": "2021-11-03",
       "shortDescription": "Ivanti Pulse Connect Secure contains an unrestricted file upload vulnerability that allows an authenticated administrator to perform a file write via a maliciously crafted archive upload in the administrator web interface.",
       "requiredAction": "Apply updates per vendor instructions.",
-      "dueDate": "2021-04-23",
+      "dueDate": "2022-05-03",
       "knownRansomwareCampaignUse": "Unknown",
       "notes": "Reference CISA's ED 21-03 (https://www.cisa.gov/news-events/directives/ed-21-03-mitigate-pulse-connect-secure-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-03. https://nvd.nist.gov/vuln/detail/CVE-2021-22900",
       "cwes": [
@@ -20943,7 +20943,7 @@
       "dateAdded": "2021-11-03",
       "shortDescription": "Ivanti Pulse Connect Secure Collaboration Suite contains a buffer overflow vulnerabilities that allows a remote authenticated users to execute code as the root user via maliciously crafted meeting room.",
       "requiredAction": "Apply updates per vendor instructions.",
-      "dueDate": "2021-04-23",
+      "dueDate": "2022-05-03",
       "knownRansomwareCampaignUse": "Unknown",
       "notes": "Reference CISA's ED 21-03 (https://www.cisa.gov/news-events/directives/ed-21-03-mitigate-pulse-connect-secure-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-03. https://nvd.nist.gov/vuln/detail/CVE-2021-22894",
       "cwes": [
@@ -20958,7 +20958,7 @@
       "dateAdded": "2021-11-03",
       "shortDescription": "Pulse Connect Secure contains an unspecified vulnerability that allows an authenticated attacker to perform code execution using uncontrolled gzip extraction.",
       "requiredAction": "Apply updates per vendor instructions.",
-      "dueDate": "2021-04-23",
+      "dueDate": "2022-05-03",
       "knownRansomwareCampaignUse": "Unknown",
       "notes": "Reference CISA's ED 21-03 (https://www.cisa.gov/news-events/directives/ed-21-03-mitigate-pulse-connect-secure-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-03. https://nvd.nist.gov/vuln/detail/CVE-2020-8260",
       "cwes": [
@@ -20973,7 +20973,7 @@
       "dateAdded": "2021-11-03",
       "shortDescription": "Ivanti Pulse Connect Secure contains a command injection vulnerability that allows remote authenticated users to perform remote code execution via Windows File Resource Profiles.",
       "requiredAction": "Apply updates per vendor instructions.",
-      "dueDate": "2021-04-23",
+      "dueDate": "2022-05-03",
       "knownRansomwareCampaignUse": "Unknown",
       "notes": "Reference CISA's ED 21-03 (https://www.cisa.gov/news-events/directives/ed-21-03-mitigate-pulse-connect-secure-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-03. https://nvd.nist.gov/vuln/detail/CVE-2021-22899",
       "cwes": [
@@ -20988,7 +20988,7 @@
       "dateAdded": "2021-11-03",
       "shortDescription": "Ivanti Pulse Connect Secure contains an arbitrary file read vulnerability that allows an unauthenticated remote attacker with network access via HTTPS to send a specially crafted URI.",
       "requiredAction": "Apply updates per vendor instructions.",
-      "dueDate": "2021-04-23",
+      "dueDate": "2022-05-03",
       "knownRansomwareCampaignUse": "Known",
       "notes": "Reference CISA's ED 21-03 (https://www.cisa.gov/news-events/directives/ed-21-03-mitigate-pulse-connect-secure-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-03. https://nvd.nist.gov/vuln/detail/CVE-2019-11510",
       "cwes": [
@@ -21932,5 +21932,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-12-17T12:48:11.094467908Z"
+  "fetchTimestamp": "2025-12-17T17:10:44.077609581Z"
 }
