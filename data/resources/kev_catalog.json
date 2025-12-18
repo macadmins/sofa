@@ -1,9 +1,55 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
   "catalogVersion": "2025.12.17",
-  "dateReleased": "2025-12-17T13:52:19.1874Z",
-  "count": 1478,
+  "dateReleased": "2025-12-17T20:04:39.0159Z",
+  "count": 1481,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-59374",
+      "vendorProject": "ASUS",
+      "product": "Live Update",
+      "vulnerabilityName": "ASUS Live Update Embedded Malicious Code Vulnerability",
+      "dateAdded": "2025-12-17",
+      "shortDescription": "ASUS Live Update contains an embedded malicious code vulnerability client were distributed with unauthorized modifications introduced through a supply chain compromise. The modified builds could cause devices meeting specific targeting conditions to perform unintended actions. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-01-07",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.asus.com/support/faq/1018727/ ; https://nvd.nist.gov/vuln/detail/CVE-2025-59374",
+      "cwes": [
+        "CWE-506"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-40602",
+      "vendorProject": "SonicWall",
+      "product": "SMA1000 appliance",
+      "vulnerabilityName": "SonicWall SMA1000 Missing Authorization Vulnerability",
+      "dateAdded": "2025-12-17",
+      "shortDescription": "SonicWall SMA1000 contains a missing authorization vulnerability that could allow for privilege escalation appliance management console (AMC) of affected devices.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable",
+      "dueDate": "2025-12-24",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "Check for signs of potential compromise on all internet accessible SonicWall SMA1000 instances after applying mitigations. For more information please see: https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2025-0019 ; https://nvd.nist.gov/vuln/detail/CVE-2025-40602",
+      "cwes": [
+        "CWE-862",
+        "CWE-250"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-20393",
+      "vendorProject": "Cisco",
+      "product": "Multiple Products",
+      "vulnerabilityName": "Cisco Multiple Products Improper Input Validation Vulnerability",
+      "dateAdded": "2025-12-17",
+      "shortDescription": "Cisco Secure Email Gateway, Secure Email, AsyncOS Software, and Web Manager appliances contains an improper input validation vulnerability that allows threat actors to execute arbitrary commands with root privileges on the underlying operating system of an affected appliance.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2025-12-24",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "Please adhere to Cisco's guidelines to assess exposure and mitigate risks. Apply any final mitigations provided by the vendor as soon as they become available. For more information please see: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sma-attack-N9bf4 ; https://nvd.nist.gov/vuln/detail/CVE-2025-20393",
+      "cwes": [
+        "CWE-20"
+      ]
+    },
     {
       "cveID": "CVE-2025-59718",
       "vendorProject": "Fortinet",
@@ -21932,5 +21978,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-12-17T20:09:43.112380323Z"
+  "fetchTimestamp": "2025-12-18T00:50:17.405835783Z"
 }
