@@ -1,30 +1,30 @@
 {
-  "timestamp": "2025-12-20T18:01:05.835Z",
+  "timestamp": "2025-12-21T06:01:01.783Z",
   "periods": {
     "volume": {
-      "start": "2025-11-20T00:00:00.000Z",
-      "end": "2025-12-20T00:00:00.000Z",
+      "start": "2025-11-21T00:00:00.000Z",
+      "end": "2025-12-21T00:00:00.000Z",
       "days": 30
     },
     "trend": {
-      "start": "2025-12-13T00:00:00.000Z",
-      "end": "2025-12-20T00:00:00.000Z",
+      "start": "2025-12-14T00:00:00.000Z",
+      "end": "2025-12-21T00:00:00.000Z",
       "days": 7
     }
   },
   "volume": {
     "metrics": {
       "totalRequests": {
-        "value": 121883844,
-        "formatted": "121.88M"
+        "value": 119789896,
+        "formatted": "119.79M"
       },
       "bandwidth": {
-        "bytes": 4204696535174,
-        "formatted": "3.82 TB"
+        "bytes": 4123642528414,
+        "formatted": "3.75 TB"
       },
       "cachedRequests": {
-        "value": 121807216,
-        "formatted": "121.81M"
+        "value": 119716474,
+        "formatted": "119.72M"
       },
       "cacheRatio": {
         "value": 99.9,
@@ -33,9 +33,9 @@
     },
     "calculated": {
       "dailyAverage": {
-        "requests": 4062794,
+        "requests": 3992996,
         "formatted": {
-          "requests": "4.06M"
+          "requests": "3.99M"
         }
       }
     }
@@ -43,16 +43,16 @@
   "trend": {
     "metrics": {
       "totalRequests": {
-        "value": 28145021,
-        "formatted": "28.15M"
+        "value": 27962423,
+        "formatted": "27.96M"
       },
       "bandwidth": {
-        "bytes": 976094376292,
-        "formatted": "909.06 GB"
+        "bytes": 966757449652,
+        "formatted": "900.36 GB"
       },
       "cachedRequests": {
-        "value": 28128666,
-        "formatted": "28.13M"
+        "value": 27947239,
+        "formatted": "27.95M"
       }
     },
     "daily": [
@@ -60,6 +60,11 @@
         "date": "2025-12-16",
         "requests": 4439744,
         "bytes": 158679607307
+      },
+      {
+        "date": "2025-12-20",
+        "requests": 2603891,
+        "bytes": 86140940396
       },
       {
         "date": "2025-12-19",
@@ -70,11 +75,6 @@
         "date": "2025-12-15",
         "requests": 4374719,
         "bytes": 156812646477
-      },
-      {
-        "date": "2025-12-13",
-        "requests": 2786489,
-        "bytes": 95477867036
       },
       {
         "date": "2025-12-14",
