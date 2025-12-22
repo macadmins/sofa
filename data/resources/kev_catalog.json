@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.12.19",
-  "dateReleased": "2025-12-19T18:01:33.3555Z",
-  "count": 1482,
+  "catalogVersion": "2025.12.22",
+  "dateReleased": "2025-12-22T18:30:33.167Z",
+  "count": 1483,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2023-52163",
+      "vendorProject": "Digiever",
+      "product": "DS-2105 Pro",
+      "vulnerabilityName": "Digiever DS-2105 Pro Missing Authorization Vulnerability",
+      "dateAdded": "2025-12-22",
+      "shortDescription": "Digiever DS-2105 Pro contains a missing authorization vulnerability which could allow for command injection via time_tzsetup.cgi.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-01-12",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.digiever.com/tw/support/faq-content.php?FAQ=217 ; https://nvd.nist.gov/vuln/detail/CVE-2023-52163",
+      "cwes": [
+        "CWE-862"
+      ]
+    },
     {
       "cveID": "CVE-2025-14733",
       "vendorProject": "WatchGuard",
@@ -21993,5 +22008,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-12-22T18:44:56.029953079Z"
+  "fetchTimestamp": "2025-12-22T19:07:34.024451714Z"
 }
