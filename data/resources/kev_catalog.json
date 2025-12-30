@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2025.12.22",
-  "dateReleased": "2025-12-22T18:30:33.167Z",
-  "count": 1483,
+  "catalogVersion": "2025.12.29",
+  "dateReleased": "2025-12-29T19:35:19.911Z",
+  "count": 1484,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-14847",
+      "vendorProject": "MongoDB",
+      "product": "MongoDB and MongoDB Server",
+      "vulnerabilityName": "MongoDB and MongoDB Server Improper Handling of Length Parameter Inconsistency Vulnerability",
+      "dateAdded": "2025-12-29",
+      "shortDescription": "MongoDB Server contains an improper handling of length parameter inconsistency vulnerability in Zlib compressed protocol headers. This vulnerability may allow a read of uninitialized heap memory by an unauthenticated client.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-01-19",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://jira.mongodb.org/browse/SERVER-115508 ; https://nvd.nist.gov/vuln/detail/CVE-2025-14847",
+      "cwes": [
+        "CWE-130"
+      ]
+    },
     {
       "cveID": "CVE-2023-52163",
       "vendorProject": "Digiever",
@@ -22008,5 +22023,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2025-12-29T20:09:51.792283438Z"
+  "fetchTimestamp": "2025-12-30T00:50:27.156530477Z"
 }
