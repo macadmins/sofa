@@ -19,10 +19,11 @@
               </svg>
               KEV - Actively Exploited
             </span>
-            <!-- Severity badge removed temporarily - we plan extra source for severity data  -->
-            <!-- <span class="badge severity" :class="getSeverityClass(cveData.severity)">
-              {{ cveData.severity || 'Unknown' }} Severity
-            </span> -->
+            <!-- Severity badge - uses real CVSS data from VulnCheck/NIST NVD -->
+            <span v-if="cveData.severity"
+                  class="badge severity" :class="getSeverityClass(cveData.severity)">
+              {{ cveData.severity }} Severity
+            </span>
           </div>
           <!-- Tags -->
           <div v-if="cveData.tags && cveData.tags.length > 0" class="cve-tags">
@@ -97,8 +98,8 @@
           </div>
         </div>
 
-        <!-- CVSS Score - Commented out temporarily - we plan extra source for CVSS data when available -->
-        <!-- <div class="info-card">
+        <!-- CVSS Score - uses real data from VulnCheck/NIST NVD -->
+        <div v-if="cveData.cvssScore" class="info-card">
           <div class="card-header">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
@@ -107,7 +108,7 @@
           </div>
           <div class="cvss-info">
             <div class="cvss-score" :class="getCvssClass(cveData.cvssScore)">
-              <span class="score-value">{{ cveData.cvssScore || 'N/A' }}</span>
+              <span class="score-value">{{ cveData.cvssScore }}</span>
               <span class="score-label">{{ getCvssLabel(cveData.cvssScore) }}</span>
             </div>
             <div v-if="cveData.cvssVector" class="cvss-vector">
@@ -115,7 +116,7 @@
               <code>{{ cveData.cvssVector }}</code>
             </div>
           </div>
-        </div> -->
+        </div>
 
         <!-- Release Date -->
         <div class="info-card">
@@ -383,6 +384,7 @@ const loadCveDetails = async () => {
   // First try to load CVE data from the NDJSON file
   let cveContextData = null
   let kevData = null
+  let enrichedData = null
   
   try {
     const base = import.meta.env.BASE_URL || '/'
@@ -413,6 +415,23 @@ const loadCveDetails = async () => {
       if (kevResponse.ok) {
         const kevCatalog = await kevResponse.json()
         kevData = kevCatalog.vulnerabilities?.find(v => v.cveID === cveId.value)
+      }
+    }
+
+    // Load enriched CVE data with CVSS scores from VulnCheck/NIST NVD
+    const enrichedResponse = await fetch(`${base}resources/cve_enriched.ndjson`)
+    if (enrichedResponse.ok) {
+      const text = await enrichedResponse.text()
+      const lines = text.split('\n').filter(line => line.trim())
+
+      for (let i = 1; i < lines.length; i++) {
+        try {
+          const data = JSON.parse(lines[i])
+          if (data.cve_id === cveId.value) {
+            enrichedData = data
+            break
+          }
+        } catch (e) { /* skip invalid lines */ }
       }
     }
   } catch (error) {
@@ -456,14 +475,13 @@ const loadCveDetails = async () => {
                   cveContextData?.is_actively_exploited ||
                   allResults.some(r => r.isKev)
     
-    // Determine severity based on KEV status and number of affected systems
-    const severity = isKev ? 'Critical' : 
-                    (cveContextData?.total_releases_with_fix || allResults.length) > 3 ? 'High' : 
-                    (cveContextData?.total_releases_with_fix || allResults.length) > 1 ? 'Medium' : 'Low'
-    
-    const cvssScore = isKev ? 9.1 : 
-                     (cveContextData?.total_releases_with_fix || allResults.length) > 3 ? 7.5 : 
-                     (cveContextData?.total_releases_with_fix || allResults.length) > 1 ? 5.5 : 3.5
+    // Use real CVSS data from VulnCheck/NIST NVD - no heuristic fallback
+    const vulncheckCvss = enrichedData?.vulncheck_data?.cvss
+    const cvssScore = vulncheckCvss?.baseScore || null
+    const severity = vulncheckCvss?.baseSeverity
+                    ? vulncheckCvss.baseSeverity.charAt(0).toUpperCase() + vulncheckCvss.baseSeverity.slice(1).toLowerCase()
+                    : null
+    const cvssVector = vulncheckCvss?.vectorString || null
     
     cveData.value = {
       id: cveId.value,
@@ -488,7 +506,7 @@ const loadCveDetails = async () => {
                 firstResult.appleUrl,
       severity: severity,
       cvssScore: cvssScore,
-      cvssVector: `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:${isKev ? 'H' : 'L'}/I:${isKev ? 'H' : 'L'}/A:${isKev ? 'H' : 'N'}`,
+      cvssVector: cvssVector,
       impact: kevData ? 
         `${kevData.vulnerabilityName}. ${kevData.requiredAction} Due date: ${kevData.dueDate}.` :
         isKev ? 
