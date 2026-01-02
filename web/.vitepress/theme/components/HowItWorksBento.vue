@@ -455,9 +455,9 @@ const v1Feeds = ref([
 
 const metaFeeds = ref([
   { name: 'sofa-status.json', url: '/resources/sofa-status.json', important: true },
-  { name: 'bulletin_data.json', url: '/resources/bulletin.json', important: true },
-  { name: 'essential_links.json', url: '/resources/links.json', important: true },
-  { name: 'timestamp.json', url: '/resources/timestamp.json' }
+  { name: 'bulletin_data.json', url: '/resources/bulletin_data.json', important: true },
+  { name: 'essential_links.json', url: '/resources/essential_links.json', important: true },
+  { name: 'timestamp.json', url: '/v1/timestamp.json' }
 ])
 
 // Deploy status
