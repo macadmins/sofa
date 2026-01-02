@@ -111,7 +111,7 @@ jobs:
           mkdir -p bin
 
           # Use specific version since latest release is marked as prerelease
-          DOWNLOAD_URL="https://github.com/headmin/sofa-core-cli/releases/download/v0.1.4"
+          DOWNLOAD_URL="https://github.com/headmin/sofa-core-cli/releases/download/v0.1.6"
           LINUX_ZIP="sofa-core-cli-x86_64-linux-binaries.zip"
 
           echo "  • Downloading Linux binaries: $LINUX_ZIP"
