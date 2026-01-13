@@ -1,7 +1,7 @@
 {
-  "content_hash": "af76e999343fda9848221d191eb99c550ed7cea58e6e646661566cc972289d37",
+  "content_hash": "d98cb209d6a9eb240d698a3f071885f1af9ddda4e7c77a38d85fb4dbd1494ecf",
   "content_changed": true,
-  "generated_at": "2026-01-07T00:51:17.889158448Z",
+  "generated_at": "2026-01-13T17:12:27.580135729Z",
   "latest_releases": {
     "macos": {
       "version": "26.2",
@@ -54,11 +54,14 @@
         "CVE-2025-46288",
         "CVE-2025-46289",
         "CVE-2025-46291",
+        "CVE-2025-46297",
+        "CVE-2025-46298",
+        "CVE-2025-46299",
         "CVE-2025-5918",
         "CVE-2025-9086"
       ],
       "actively_exploited_count": 2,
-      "total_cve_count": 47,
+      "total_cve_count": 50,
       "enterprise_link": null,
       "updates_link": null
     },
@@ -89,14 +92,17 @@
         "CVE-2025-46277",
         "CVE-2025-46279",
         "CVE-2025-46285",
+        "CVE-2025-46286",
         "CVE-2025-46287",
         "CVE-2025-46288",
         "CVE-2025-46292",
+        "CVE-2025-46298",
+        "CVE-2025-46299",
         "CVE-2025-5918",
         "CVE-2025-9086"
       ],
       "actively_exploited_count": 2,
-      "total_cve_count": 26,
+      "total_cve_count": 29,
       "enterprise_link": null,
       "updates_link": null
     },
@@ -127,14 +133,17 @@
         "CVE-2025-46277",
         "CVE-2025-46279",
         "CVE-2025-46285",
+        "CVE-2025-46286",
         "CVE-2025-46287",
         "CVE-2025-46288",
         "CVE-2025-46292",
+        "CVE-2025-46298",
+        "CVE-2025-46299",
         "CVE-2025-5918",
         "CVE-2025-9086"
       ],
       "actively_exploited_count": 2,
-      "total_cve_count": 26,
+      "total_cve_count": 29,
       "enterprise_link": null,
       "updates_link": null
     },
@@ -153,10 +162,12 @@
         "CVE-2025-43539",
         "CVE-2025-46279",
         "CVE-2025-46285",
+        "CVE-2025-46298",
+        "CVE-2025-46299",
         "CVE-2025-9086"
       ],
       "actively_exploited_count": 2,
-      "total_cve_count": 10,
+      "total_cve_count": 12,
       "enterprise_link": null,
       "updates_link": null
     },
@@ -182,10 +193,12 @@
         "CVE-2025-46285",
         "CVE-2025-46287",
         "CVE-2025-46288",
+        "CVE-2025-46298",
+        "CVE-2025-46299",
         "CVE-2025-9086"
       ],
       "actively_exploited_count": 2,
-      "total_cve_count": 17,
+      "total_cve_count": 19,
       "enterprise_link": null,
       "updates_link": null
     },
@@ -214,10 +227,12 @@
         "CVE-2025-46285",
         "CVE-2025-46287",
         "CVE-2025-46288",
+        "CVE-2025-46298",
+        "CVE-2025-46299",
         "CVE-2025-9086"
       ],
       "actively_exploited_count": 2,
-      "total_cve_count": 20,
+      "total_cve_count": 22,
       "enterprise_link": null,
       "updates_link": null
     },
@@ -246,7 +261,7 @@
     }
   },
   "security_summary": {
-    "unique_cves_fixed": 49,
+    "unique_cves_fixed": 53,
     "kev_matches": 2,
     "latest_wave_date": "2025-12-12T00:00:00Z",
     "kev_cve_list": [
@@ -255,36 +270,36 @@
     ]
   },
   "beta_releases": {
-    "latest_wave": "2025-12-15",
+    "latest_wave": "2026-01-12",
     "macos": {
-      "version": "26.3 beta",
-      "build": "25D5087f",
-      "released": "2025-12-15"
+      "version": "26.3 beta 2",
+      "build": "25D5101c",
+      "released": "2026-01-12"
     },
     "ios": {
-      "version": "26.3 beta",
-      "build": "23D5089e",
-      "released": "2025-12-15"
+      "version": "26.3 beta 2",
+      "build": "23D5103d",
+      "released": "2026-01-12"
     },
     "ipados": {
-      "version": "26.3 beta",
-      "build": "23D5089e",
-      "released": "2025-12-15"
+      "version": "26.3 beta2",
+      "build": "23D5103d",
+      "released": "2026-01-12"
     },
     "tvos": {
-      "version": "26.3 beta",
-      "build": "23K5585c",
-      "released": "2025-12-15"
+      "version": "26.3 beta 2",
+      "build": "23K5600b",
+      "released": "2026-01-12"
     },
     "watchos": {
-      "version": "26.3 beta",
-      "build": "23S5586d",
-      "released": "2025-12-15"
+      "version": "26.3 beta 2",
+      "build": "23S5600d",
+      "released": "2026-01-12"
     },
     "visionos": {
-      "version": "26.3 beta",
-      "build": "23N5588c",
-      "released": "2025-12-15"
+      "version": "26.3 beta 2",
+      "build": "23N5602d",
+      "released": "2026-01-12"
     }
   },
   "recent_releases": [
