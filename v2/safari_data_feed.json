@@ -1,6 +1,6 @@
 {
   "Version": "2.0",
-  "UpdateHash": "d73c306d3deb1780a2b13ce3c5086fa0b7d21fb98e91ba73c6c3cc5a09fb9fb0",
+  "UpdateHash": "41e6b19f6724c6b8f6bade9c351037d8d12cae5b8e610f0b58ff11742cdbb0ae",
   "AppVersions": [
     {
       "AppVersion": "Safari 26",
@@ -21,7 +21,6 @@
             "matched_pattern": "CISA KEV catalog; exploit: apple is aware of a report that this issue may have been exploited; severity: arbitrary code execution; remote: maliciously crafted",
             "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14174",
             "tags": [
-              "use-after-free",
               "webkit"
             ]
           },
@@ -43,13 +42,21 @@
           "CVE-2025-43535": {},
           "CVE-2025-43536": {},
           "CVE-2025-43541": {},
-          "CVE-2025-46282": {}
+          "CVE-2025-46282": {},
+          "CVE-2025-46298": {},
+          "CVE-2025-46299": {
+            "entry_added_date": "2026-01-09",
+            "tags": [
+              "webkit"
+            ],
+            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-46299"
+          }
         },
         "ActivelyExploitedCVEs": [
           "CVE-2025-43529",
           "CVE-2025-14174"
         ],
-        "UniqueCVEsCount": 11,
+        "UniqueCVEsCount": 13,
         "DaysSincePreviousRelease": 39
       },
       "SecurityReleases": [
@@ -70,7 +77,6 @@
               "matched_pattern": "CISA KEV catalog; exploit: apple is aware of a report that this issue may have been exploited; severity: arbitrary code execution; remote: maliciously crafted",
               "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14174",
               "tags": [
-                "use-after-free",
                 "webkit"
               ]
             },
@@ -92,13 +98,21 @@
             "CVE-2025-43535": {},
             "CVE-2025-43536": {},
             "CVE-2025-43541": {},
-            "CVE-2025-46282": {}
+            "CVE-2025-46282": {},
+            "CVE-2025-46298": {},
+            "CVE-2025-46299": {
+              "entry_added_date": "2026-01-09",
+              "tags": [
+                "webkit"
+              ],
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-46299"
+            }
           },
           "ActivelyExploitedCVEs": [
             "CVE-2025-43529",
             "CVE-2025-14174"
           ],
-          "UniqueCVEsCount": 11,
+          "UniqueCVEsCount": 13,
           "DaysSincePreviousRelease": 39
         },
         {
