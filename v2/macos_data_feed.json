@@ -1,7 +1,7 @@
 {
   "Version": "2.0",
-  "UpdateHash": "c0fc535e4ce6f9ca66b8f6f8a3df0ec636ce4f9924147aaad493a4f67d22b7d3",
-  "LastCheck": "2026-01-16T18:46:34.787354528+00:00",
+  "UpdateHash": "6d2156938b305c9640049f3136dc4359b44031bdf7299e04b162d5340d287bfa",
+  "LastCheck": "2026-01-16T19:09:36.978158519+00:00",
   "OSVersions": [
     {
       "OSVersion": "Tahoe 26",
@@ -2895,7 +2895,7 @@
           "ReleaseDate": "2024-10-28T00:00:00Z",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/121564",
-          "SecurityInfoContext": "macOS 15.1 was released on October 28, 2024. This release addressed 80 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "macOS 15.1 was released on October 28, 2024. This release addressed 82 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "J132AP",
             "J137AP",
@@ -2965,6 +2965,7 @@
             "CVE-2024-44197": {},
             "CVE-2024-44200": {},
             "CVE-2024-44201": {},
+            "CVE-2024-44210": {},
             "CVE-2024-44211": {},
             "CVE-2024-44212": {},
             "CVE-2024-44213": {},
@@ -2981,6 +2982,7 @@
             "CVE-2024-44234": {},
             "CVE-2024-44236": {},
             "CVE-2024-44237": {},
+            "CVE-2024-44238": {},
             "CVE-2024-44239": {},
             "CVE-2024-44240": {},
             "CVE-2024-44241": {},
@@ -3033,11 +3035,11 @@
             "CVE-2024-54554": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 80,
+          "UniqueCVEsCount": 82,
           "DaysSincePreviousRelease": 25,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 80 security issues",
+            "summary": "Addresses 82 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -3046,7 +3048,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 80
+              "total": 82
             }
           }
         },
@@ -14396,7 +14398,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/en-us/121753",
+          "SecurityInfo": "https://support.apple.com/kb/HT214038",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "J132AP",
@@ -15748,8 +15750,8 @@
     "ReleaseDate": "2025-12-16T18:21:55Z"
   },
   "XProtectPayloads": {
-    "ReleaseDate": "2025-12-16T18:21:55Z",
     "com.apple.XprotectFramework.PluginService": "74",
+    "ReleaseDate": "2025-12-16T18:21:55Z",
     "com.apple.XProtectFramework.XProtect": "156"
   },
   "BackgroundSecurityImprovements": {},
