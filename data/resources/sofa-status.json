@@ -1,49 +1,49 @@
 {
   "version": "3.0",
-  "generated": "2026-01-16T18:13:43Z",
+  "generated": "2026-01-16T18:46:35Z",
   "data_repo": {
-    "commit": "b30c950482fce791ba476e89867af1d6abbd1796",
-    "commit_short": "b30c950",
+    "commit": "04de3831ed71934731e910f4fb9c4cd70ce46606",
+    "commit_short": "04de383",
     "branch": "main",
-    "commit_date": "2026-01-16T17:12:03Z",
+    "commit_date": "2026-01-16T18:24:57Z",
     "dirty": true
   },
   "pipeline": {
     "gather": {
-      "last_run": "2026-01-16T18:13:13Z",
+      "last_run": "2026-01-16T18:46:14Z",
       "sources": {
         "beta": {
-          "last_fetch": "2026-01-16T18:13:11Z",
-          "current_hash": "3f3785b622625e0e4ad90198100fc84842224781736642ac6f9ec315d1b990f0",
-          "previous_hash": "4a0c5fcbfec5c3d0a99fc75fe75ec3b09a18cdb9924e4c893e204154e89e1f53",
+          "last_fetch": "2026-01-16T18:46:12Z",
+          "current_hash": "6d80b70f1dca54c3c22c1636ac9fbdc96506861376672a05b899beb0c61b22e4",
+          "previous_hash": "3f3785b622625e0e4ad90198100fc84842224781736642ac6f9ec315d1b990f0",
           "changed": true
         },
         "gdmf": {
-          "last_fetch": "2026-01-16T18:13:09Z",
+          "last_fetch": "2026-01-16T18:46:10Z",
           "current_hash": "8255a18ced1641f7977d67c771d2c128bf6b0037a744a7f3b88a3c21b869c59b",
-          "previous_hash": "63c416492490b625cd3538991023282006c27d960d7bf600eca881f9cb2f8b9f",
-          "changed": true
+          "previous_hash": "8255a18ced1641f7977d67c771d2c128bf6b0037a744a7f3b88a3c21b869c59b",
+          "changed": false
         },
         "ipsw": {
-          "last_fetch": "2026-01-16T18:13:11Z",
-          "current_hash": "7ca593d353b89059718a429c706244e8b7dfe03270304bf7896dd3f0282c32a5",
-          "previous_hash": "d600782392e5fcfcc0ffa92c89711363f178ec924cc5dfe0f1a3ff9003489be5",
+          "last_fetch": "2026-01-16T18:46:11Z",
+          "current_hash": "7c87f274563940c41af342e0532aefa4a75f08777db0386a5857e2216a77f432",
+          "previous_hash": "7ca593d353b89059718a429c706244e8b7dfe03270304bf7896dd3f0282c32a5",
           "changed": true
         },
         "kev": {
-          "last_fetch": "2026-01-16T18:13:09Z",
-          "current_hash": "b57e620dece7122124b30f5cb41b9875c3cd021a5d6d4be10c4faa349a076ecf",
-          "previous_hash": "502b535ee72fdc47ebd24a3c0f7d27c844a15c2a34339cafe9f6e983ebaa4304",
+          "last_fetch": "2026-01-16T18:46:10Z",
+          "current_hash": "2ca982da4e7828846cb110f3fa12ce588cae76cefa7f37d3801b93592a1ceebe",
+          "previous_hash": "b57e620dece7122124b30f5cb41b9875c3cd021a5d6d4be10c4faa349a076ecf",
           "changed": true
         },
         "uma": {
-          "last_fetch": "2026-01-16T18:13:12Z",
-          "current_hash": "a0335545cc48dc9204aaf5ebe72602dfedc5f2d02cd917e92d2a381309c9b29b",
-          "previous_hash": "49ab18d1bc05ed842f07a458f80d234c551da11460cec271acd8f096e68b50e6",
+          "last_fetch": "2026-01-16T18:46:13Z",
+          "current_hash": "49ab18d1bc05ed842f07a458f80d234c551da11460cec271acd8f096e68b50e6",
+          "previous_hash": "a0335545cc48dc9204aaf5ebe72602dfedc5f2d02cd917e92d2a381309c9b29b",
           "changed": true
         },
         "xprotect": {
-          "last_fetch": "2026-01-16T18:13:13Z",
+          "last_fetch": "2026-01-16T18:46:14Z",
           "current_hash": "4eb303eaed7055131d9eb8ce5acd7d177a9f91372777958f2e8949bf4b77f0ce",
           "previous_hash": "4eb303eaed7055131d9eb8ce5acd7d177a9f91372777958f2e8949bf4b77f0ce",
           "changed": false
@@ -51,125 +51,124 @@
       },
       "changes_detected": [
         "beta",
-        "gdmf",
         "ipsw",
         "kev",
         "uma"
       ]
     },
     "fetch": {
-      "last_run_start": "2026-01-16T18:13:14Z",
-      "last_run_end": "2026-01-16T18:13:42Z",
+      "last_run_start": "2026-01-16T18:46:15Z",
+      "last_run_end": "2026-01-16T18:46:34Z",
       "mode": "online",
       "releases_fetched": 628,
-      "current_hash": "76cfe6f060e9c629b1fdb580720cabd190859f6b53496ed6c85653021a1f6183",
-      "previous_hash": "73b63d5ed58effa98b9d401f0ec32fa786a27fc1903c629b04173d6655ac773d",
-      "performance_stats": "21.75 releases/sec"
+      "current_hash": "974ef608ca0cf78fba9021d9133ee940e2a73516c74860eb34fb1457a623ed25",
+      "previous_hash": "76cfe6f060e9c629b1fdb580720cabd190859f6b53496ed6c85653021a1f6183",
+      "performance_stats": "31.49 releases/sec"
     },
     "build": {
-      "last_run": "2026-01-16T18:13:42Z",
+      "last_run": "2026-01-16T18:46:34Z",
       "v1": {
-        "last_run": "2026-01-16T18:13:42Z",
+        "last_run": "2026-01-16T18:46:34Z",
         "platforms": {
           "ios": {
-            "current_hash": "8f52dcf0bb0b0588be0c43a76164d807195c6b17066ac2fd51af9cc2b3aea44b",
+            "current_hash": "cf98e42a95c95dc652f503fd4a237cd47d57ebda956564184ed0f61a46ca6e69",
             "previous_hash": null,
             "entries": 3,
-            "size_bytes": 66352,
-            "last_updated": "2026-01-16T18:13:42Z"
+            "size_bytes": 66426,
+            "last_updated": "2026-01-16T18:46:34Z"
           },
           "macos": {
-            "current_hash": "8213feef20668a1af79411d96776ee6d7d07b9753d04fd66b582c3e39e2d6b72",
+            "current_hash": "83c77dbd51359e131fedbd36c0fe0c13b5bd3eeb33b5cc7b1a8f6eac7221fa94",
             "previous_hash": null,
             "entries": 5,
-            "size_bytes": 407957,
-            "last_updated": "2026-01-16T18:13:42Z"
+            "size_bytes": 407883,
+            "last_updated": "2026-01-16T18:46:34Z"
           },
           "safari": {
             "current_hash": "41e6b19f6724c6b8f6bade9c351037d8d12cae5b8e610f0b58ff11742cdbb0ae",
             "previous_hash": null,
             "entries": 3,
             "size_bytes": 35779,
-            "last_updated": "2026-01-16T18:13:42Z"
+            "last_updated": "2026-01-16T18:46:34Z"
           },
           "tvos": {
             "current_hash": "5276f889c687005700486b4c3fff88cadc4675d71f7e60bc9b56357be5722ff1",
             "previous_hash": null,
             "entries": 2,
             "size_bytes": 24799,
-            "last_updated": "2026-01-16T18:13:42Z"
+            "last_updated": "2026-01-16T18:46:34Z"
           },
           "visionos": {
             "current_hash": "f8862a43d036717d29c2f45d07ddfbbc26c25912a973e6dc88d7f9ea84adcec8",
             "previous_hash": null,
             "entries": 2,
             "size_bytes": 29091,
-            "last_updated": "2026-01-16T18:13:42Z"
+            "last_updated": "2026-01-16T18:46:34Z"
           },
           "watchos": {
             "current_hash": "dfdcea7228fa55500e48520056d4cb14ffea61ed80b414a986f45f98026a8e29",
             "previous_hash": null,
             "entries": 0,
             "size_bytes": 126,
-            "last_updated": "2026-01-16T18:13:42Z"
+            "last_updated": "2026-01-16T18:46:34Z"
           }
         }
       },
       "v2": {
-        "last_run": "2026-01-16T18:13:42Z",
+        "last_run": "2026-01-16T18:46:34Z",
         "platforms": {
           "ios": {
-            "current_hash": "ce08e3c0aba7d1388c6dcd4fc819e69d107f22bf32be3fd9af68a6d0714d5f4a",
+            "current_hash": "1276282cd8d47762f248e15a03f3b709420f29bd95bb3ac5525976206c0c44d8",
             "previous_hash": null,
             "entries": 3,
-            "size_bytes": 127060,
-            "last_updated": "2026-01-16T18:13:42Z"
+            "size_bytes": 127128,
+            "last_updated": "2026-01-16T18:46:34Z"
           },
           "macos": {
-            "current_hash": "dd8cb8d14c8095e1b6cda56318d0f8b05008bf3fcda51360588a38eec824880d",
+            "current_hash": "c0fc535e4ce6f9ca66b8f6f8a3df0ec636ce4f9924147aaad493a4f67d22b7d3",
             "previous_hash": null,
             "entries": 5,
-            "size_bytes": 484544,
-            "last_updated": "2026-01-16T18:13:42Z"
+            "size_bytes": 484477,
+            "last_updated": "2026-01-16T18:46:34Z"
           },
           "safari": {
             "current_hash": "41e6b19f6724c6b8f6bade9c351037d8d12cae5b8e610f0b58ff11742cdbb0ae",
             "previous_hash": null,
             "entries": 3,
             "size_bytes": 35779,
-            "last_updated": "2026-01-16T18:13:42Z"
+            "last_updated": "2026-01-16T18:46:34Z"
           },
           "tvos": {
             "current_hash": "b4407284af92b041514433a52e11d368a27c92015bd3590e76240824926eae42",
             "previous_hash": null,
             "entries": 2,
             "size_bytes": 30979,
-            "last_updated": "2026-01-16T18:13:42Z"
+            "last_updated": "2026-01-16T18:46:34Z"
           },
           "visionos": {
             "current_hash": "e7b8cead6b17fd3adf4eb686bbe6774df3c0ad1316c78a2dd8c79a88f78014b6",
             "previous_hash": null,
             "entries": 2,
             "size_bytes": 35910,
-            "last_updated": "2026-01-16T18:13:42Z"
+            "last_updated": "2026-01-16T18:46:34Z"
           },
           "watchos": {
             "current_hash": "8966170fb3a3232ec3db2e65537c38a78d192ed3bc5471a8251b514aaaceb0ea",
             "previous_hash": null,
             "entries": 2,
             "size_bytes": 36711,
-            "last_updated": "2026-01-16T18:13:42Z"
+            "last_updated": "2026-01-16T18:46:34Z"
           }
         }
       }
     },
     "bulletin": {
-      "last_run": "2026-01-16T18:13:43Z",
+      "last_run": "2026-01-16T18:46:35Z",
       "bulletin_count": 1,
       "cve_count": 53,
       "status": "completed",
-      "current_hash": "9c6d41b8edac3b0438b750b2d7673fa310123cfda69efc7c82fdf835fc8db0d0",
-      "previous_hash": "edb06ae6ca46f18e23b03ba54e86049cfb6f222459c625ed5e50d44a83dbed24",
+      "current_hash": "0adb731dbffa53ed927abec012a5e7f4c9dd84077c48d812b6bf172cbda28c03",
+      "previous_hash": "dfba49c44ed431217d6d6463f56b329b01085504da8454b42491158850436046",
       "live_check_enabled": false
     },
     "enrich": null
