@@ -1,9 +1,70 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.01.21",
-  "dateReleased": "2026-01-21T20:14:44.4917Z",
-  "count": 1489,
+  "catalogVersion": "2026.01.22",
+  "dateReleased": "2026-01-22T18:00:26.1194Z",
+  "count": 1493,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-68645",
+      "vendorProject": "Synacor",
+      "product": " Zimbra Collaboration Suite (ZCS)",
+      "vulnerabilityName": "Synacor Zimbra Collaboration Suite (ZCS) PHP Remote File Inclusion Vulnerability",
+      "dateAdded": "2026-01-22",
+      "shortDescription": "Synacor Zimbra Collaboration Suite (ZCS) contains a PHP remote file inclusion vulnerability that could allow for remote attackers to craft requests to the /h/rest endpoint to influence internal request dispatching, allowing inclusion of arbitrary files from the WebRoot directory.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-02-12",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://wiki.zimbra.com/wiki/Security_Center ; https://nvd.nist.gov/vuln/detail/CVE-2025-68645",
+      "cwes": [
+        "CWE-98"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-34026",
+      "vendorProject": "Versa",
+      "product": "Concerto",
+      "vulnerabilityName": "Versa Concerto Improper Authentication Vulnerability",
+      "dateAdded": "2026-01-22",
+      "shortDescription": "Versa Concerto SD-WAN orchestration platform contains an improper authentication vulnerability in the Traefik reverse proxy configuration, allowing at attacker to access administrative endpoints. The internal Actuator endpoint can be leveraged for access to heap dumps and trace logs.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-02-12",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://security-portal.versa-networks.com/emailbulletins/6830f94328defa375486ff2e ; https://nvd.nist.gov/vuln/detail/CVE-2025-34026",
+      "cwes": [
+        "CWE-288"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-31125",
+      "vendorProject": "Vite",
+      "product": "Vitejs",
+      "vulnerabilityName": "Vite Vitejs Improper Access Control Vulnerability",
+      "dateAdded": "2026-01-22",
+      "shortDescription": "Vite Vitejs contains an improper access control vulnerability that exposes content of non-allowed files using ?inline&import or ?raw?import. Only apps explicitly exposing the Vite dev server to the network (using --host or server.host config option) are affected.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-02-12",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/vitejs/vite/commit/59673137c45ac2bcfad1170d954347c1a17ab949 ; https://nvd.nist.gov/vuln/detail/CVE-2025-31125",
+      "cwes": [
+        "CWE-200",
+        "CWE-284"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-54313",
+      "vendorProject": "Prettier",
+      "product": "eslint-config-prettier",
+      "vulnerabilityName": "Prettier eslint-config-prettier Embedded Malicious Code Vulnerability",
+      "dateAdded": "2026-01-22",
+      "shortDescription": "Prettier eslint-config-prettier contains an embedded malicious code vulnerability. Installing an affected package executes an install.js file that launches the node-gyp.dll malware on Windows.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-02-12",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://www.npmjs.com/package/eslint-config-prettier?activeTab=versions ; https://github.com/prettier/eslint-config-prettier/issues/339#issuecomment-3090304490 ; https://nvd.nist.gov/vuln/detail/CVE-2025-54313",
+      "cwes": [
+        "CWE-506"
+      ]
+    },
     {
       "cveID": "CVE-2026-20045",
       "vendorProject": "Cisco",
@@ -22098,5 +22159,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-01-22T18:46:36.236886628Z"
+  "fetchTimestamp": "2026-01-22T19:11:42.273725259Z"
 }
