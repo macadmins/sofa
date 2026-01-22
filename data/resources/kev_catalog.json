@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.01.13",
-  "dateReleased": "2026-01-13T21:11:22.3769Z",
-  "count": 1488,
+  "catalogVersion": "2026.01.21",
+  "dateReleased": "2026-01-21T20:14:44.4917Z",
+  "count": 1489,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-20045",
+      "vendorProject": "Cisco",
+      "product": "Unified Communications Manager",
+      "vulnerabilityName": "Cisco Unified Communications Products Code Injection Vulnerability",
+      "dateAdded": "2026-01-21",
+      "shortDescription": "Cisco Unified Communications Manager (Unified CM), Cisco Unified Communications Manager Session Management Edition (Unified CM SME), Cisco Unified Communications Manager IM & Presence Service (Unified CM IM&P), Cisco Unity Connection, and Cisco Webex Calling Dedicated Instance contain a code injection vulnerability that could allow the attacker to obtain user-level access to the underlying operating system and then elevate privileges to root.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-02-11",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-voice-rce-mORhqY4b ; https://nvd.nist.gov/vuln/detail/CVE-2026-20045",
+      "cwes": [
+        "CWE-94"
+      ]
+    },
     {
       "cveID": "CVE-2026-20805",
       "vendorProject": "Microsoft",
@@ -22083,5 +22098,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-01-21T20:13:48.607604415Z"
+  "fetchTimestamp": "2026-01-22T00:50:33.562962024Z"
 }
