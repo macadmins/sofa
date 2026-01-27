@@ -1,7 +1,7 @@
 {
-  "content_hash": "d3ec3942314523ac1125421d429843809859ba6fcbbfb96f3e3ca03371f04a53",
+  "content_hash": "fc575a23305d90e37ca096730d135ab61e778473580af368a857d212453afdc9",
   "content_changed": true,
-  "generated_at": "2026-01-26T19:12:18.342910577Z",
+  "generated_at": "2026-01-27T06:47:22.666588035Z",
   "latest_releases": {
     "macos": {
       "version": "26.2",
@@ -66,84 +66,24 @@
       "updates_link": null
     },
     "ios": {
-      "version": "26.2",
-      "build": "23S6303",
-      "release_date": "2025-12-12T00:00:00Z",
-      "url": "https://support.apple.com/en-us/125884",
-      "cves_fixed": [
-        "CVE-2024-7264",
-        "CVE-2025-14174",
-        "CVE-2025-43428",
-        "CVE-2025-43475",
-        "CVE-2025-43501",
-        "CVE-2025-43511",
-        "CVE-2025-43518",
-        "CVE-2025-43529",
-        "CVE-2025-43531",
-        "CVE-2025-43532",
-        "CVE-2025-43533",
-        "CVE-2025-43535",
-        "CVE-2025-43536",
-        "CVE-2025-43538",
-        "CVE-2025-43539",
-        "CVE-2025-43541",
-        "CVE-2025-43542",
-        "CVE-2025-46276",
-        "CVE-2025-46277",
-        "CVE-2025-46279",
-        "CVE-2025-46285",
-        "CVE-2025-46286",
-        "CVE-2025-46287",
-        "CVE-2025-46288",
-        "CVE-2025-46292",
-        "CVE-2025-46298",
-        "CVE-2025-46299",
-        "CVE-2025-5918",
-        "CVE-2025-9086"
-      ],
-      "actively_exploited_count": 2,
-      "total_cve_count": 29,
+      "version": "26.2.1",
+      "build": "23S6314",
+      "release_date": "2026-01-26T00:00:00Z",
+      "url": "https://support.apple.com/en-us/100100",
+      "cves_fixed": [],
+      "actively_exploited_count": 0,
+      "total_cve_count": 0,
       "enterprise_link": null,
       "updates_link": null
     },
     "ipados": {
-      "version": "26.2",
-      "build": "23S6303",
-      "release_date": "2025-12-12T00:00:00Z",
-      "url": "https://support.apple.com/en-us/125884",
-      "cves_fixed": [
-        "CVE-2024-7264",
-        "CVE-2025-14174",
-        "CVE-2025-43428",
-        "CVE-2025-43475",
-        "CVE-2025-43501",
-        "CVE-2025-43511",
-        "CVE-2025-43518",
-        "CVE-2025-43529",
-        "CVE-2025-43531",
-        "CVE-2025-43532",
-        "CVE-2025-43533",
-        "CVE-2025-43535",
-        "CVE-2025-43536",
-        "CVE-2025-43538",
-        "CVE-2025-43539",
-        "CVE-2025-43541",
-        "CVE-2025-43542",
-        "CVE-2025-46276",
-        "CVE-2025-46277",
-        "CVE-2025-46279",
-        "CVE-2025-46285",
-        "CVE-2025-46286",
-        "CVE-2025-46287",
-        "CVE-2025-46288",
-        "CVE-2025-46292",
-        "CVE-2025-46298",
-        "CVE-2025-46299",
-        "CVE-2025-5918",
-        "CVE-2025-9086"
-      ],
-      "actively_exploited_count": 2,
-      "total_cve_count": 29,
+      "version": "26.2.1",
+      "build": "23S6314",
+      "release_date": "2026-01-26T00:00:00Z",
+      "url": "https://support.apple.com/en-us/100100",
+      "cves_fixed": [],
+      "actively_exploited_count": 0,
+      "total_cve_count": 0,
       "enterprise_link": null,
       "updates_link": null
     },
@@ -172,33 +112,13 @@
       "updates_link": null
     },
     "watchos": {
-      "version": "26.2",
-      "build": "23S6303",
-      "release_date": "2025-12-12",
-      "url": "https://support.apple.com/en-us/125890",
-      "cves_fixed": [
-        "CVE-2024-7264",
-        "CVE-2025-14174",
-        "CVE-2025-43511",
-        "CVE-2025-43518",
-        "CVE-2025-43529",
-        "CVE-2025-43531",
-        "CVE-2025-43532",
-        "CVE-2025-43533",
-        "CVE-2025-43538",
-        "CVE-2025-43539",
-        "CVE-2025-46276",
-        "CVE-2025-46277",
-        "CVE-2025-46279",
-        "CVE-2025-46285",
-        "CVE-2025-46287",
-        "CVE-2025-46288",
-        "CVE-2025-46298",
-        "CVE-2025-46299",
-        "CVE-2025-9086"
-      ],
-      "actively_exploited_count": 2,
-      "total_cve_count": 19,
+      "version": "26.2.1",
+      "build": "23S6314",
+      "release_date": "2026-01-26",
+      "url": "https://support.apple.com/en-us/100100",
+      "cves_fixed": [],
+      "actively_exploited_count": 0,
+      "total_cve_count": 0,
       "enterprise_link": null,
       "updates_link": null
     },
@@ -263,48 +183,94 @@
     }
   },
   "security_summary": {
-    "unique_cves_fixed": 53,
+    "unique_cves_fixed": 50,
     "kev_matches": 2,
-    "latest_wave_date": "2025-12-12T00:00:00Z",
+    "latest_wave_date": "2026-01-26T00:00:00Z",
     "kev_cve_list": [
       "CVE-2025-14174",
       "CVE-2025-43529"
     ]
   },
   "beta_releases": {
-    "latest_wave": "2026-01-12",
+    "latest_wave": "2026-01-26",
     "macos": {
-      "version": "26.3 beta 2",
-      "build": "25D5101c",
-      "released": "2026-01-12"
+      "version": "26.3 beta 3",
+      "build": "25D5112c",
+      "released": "2026-01-26"
     },
     "ios": {
-      "version": "26.3 beta 2",
-      "build": "23D5103d",
-      "released": "2026-01-12"
+      "version": "26.3 beta 3",
+      "build": "23D5114d",
+      "released": "2026-01-26"
     },
     "ipados": {
-      "version": "26.3 beta2",
-      "build": "23D5103d",
-      "released": "2026-01-12"
+      "version": "26.3 beta 3",
+      "build": "23D5114d",
+      "released": "2026-01-26"
     },
     "tvos": {
-      "version": "26.3 beta 2",
-      "build": "23K5600b",
-      "released": "2026-01-12"
+      "version": "26.3 beta 3",
+      "build": "23K5611c",
+      "released": "2026-01-26"
     },
     "watchos": {
-      "version": "26.3 beta 2",
-      "build": "23S5600d",
-      "released": "2026-01-12"
+      "version": "26.3 beta 3",
+      "build": "23S5611c",
+      "released": "2026-01-26"
     },
     "visionos": {
-      "version": "26.3 beta 2",
-      "build": "23N5602d",
-      "released": "2026-01-12"
+      "version": "26.3 beta 3",
+      "build": "23N5613b",
+      "released": "2026-01-26"
     }
   },
   "recent_releases": [
+    {
+      "release_date": "2026-01-26",
+      "name": "iOS 12.5.8 and iPadOS 12.5.8",
+      "platform": "ios",
+      "version": "12.5.8",
+      "url": "https://support.apple.com/en-us/100100"
+    },
+    {
+      "release_date": "2026-01-26",
+      "name": "iOS 15.8.6 and iPadOS 15.8.6",
+      "platform": "ios",
+      "version": "15.8.6",
+      "url": "https://support.apple.com/en-us/100100"
+    },
+    {
+      "release_date": "2026-01-26",
+      "name": "iOS 16.7.13 and iPadOS 16.7.13",
+      "platform": "ios",
+      "version": "16.7.13",
+      "url": "https://support.apple.com/en-us/100100",
+      "enterprise_link": "https://support.apple.com/en-ca/101584",
+      "updates_link": "https://support.apple.com/en-ca/101566"
+    },
+    {
+      "release_date": "2026-01-26",
+      "name": "iOS 18.7.4 and iPadOS 18.7.4",
+      "platform": "ios",
+      "version": "18.7.4",
+      "url": "https://support.apple.com/en-us/100100",
+      "enterprise_link": "https://support.apple.com/en-ca/121158",
+      "updates_link": "https://support.apple.com/en-ca/121161"
+    },
+    {
+      "release_date": "2026-01-26",
+      "name": "iOS 26.2.1 and iPadOS 26.2.1",
+      "platform": "ios",
+      "version": "26.2.1",
+      "url": "https://support.apple.com/en-us/100100"
+    },
+    {
+      "release_date": "2026-01-26",
+      "name": "watchOS 26.2.1",
+      "platform": "watchos",
+      "version": "26.2.1",
+      "url": "https://support.apple.com/en-us/100100"
+    },
     {
       "release_date": "2025-12-12",
       "name": "Safari 26.2",
@@ -336,50 +302,6 @@
       "url": "https://support.apple.com/en-us/125887",
       "enterprise_link": "https://support.apple.com/en-ca/121011",
       "updates_link": "https://support.apple.com/en-ca/120283"
-    },
-    {
-      "release_date": "2025-12-12",
-      "name": "macOS Sonoma 14.8.3",
-      "platform": "macos",
-      "version": "14.8.3",
-      "url": "https://support.apple.com/en-us/125888",
-      "enterprise_link": "https://support.apple.com/en-ca/109030",
-      "updates_link": "https://support.apple.com/en-ca/109035"
-    },
-    {
-      "release_date": "2025-12-12",
-      "name": "macOS Tahoe 26.2",
-      "platform": "macos",
-      "version": "26.2",
-      "url": "https://support.apple.com/en-us/125886"
-    },
-    {
-      "release_date": "2025-12-12",
-      "name": "tvOS 26.2",
-      "platform": "tvos",
-      "version": "26.2",
-      "url": "https://support.apple.com/en-us/125889"
-    },
-    {
-      "release_date": "2025-12-12",
-      "name": "visionOS 26.2",
-      "platform": "visionos",
-      "version": "26.2",
-      "url": "https://support.apple.com/en-us/125891"
-    },
-    {
-      "release_date": "2025-12-12",
-      "name": "watchOS 26.2",
-      "platform": "watchos",
-      "version": "26.2",
-      "url": "https://support.apple.com/en-us/125890"
-    },
-    {
-      "release_date": "2025-11-13",
-      "name": "Compressor 4.11.1",
-      "platform": "other",
-      "version": "4.11.1",
-      "url": "https://support.apple.com/en-us/125693"
     }
   ]
 }
