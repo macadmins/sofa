@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
   "catalogVersion": "2026.01.27",
-  "dateReleased": "2026-01-27T14:55:21.6431Z",
-  "count": 1499,
+  "dateReleased": "2026-01-27T20:51:50.7688Z",
+  "count": 1500,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-24858",
+      "vendorProject": "Fortinet",
+      "product": "Multiple Products",
+      "vulnerabilityName": "Fortinet Multiple Products Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "dateAdded": "2026-01-27",
+      "shortDescription": "Fortinet FortiAnalyzer, FortiManager, FortiOS, and FortiProxy contain an authentication bypass using an alternate path or channel that could allow an attacker with a FortiCloud account and a registered device to log into other devices registered to other accounts, if FortiCloud SSO authentication is enabled on those devices.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-01-30",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "Please adhere to Fortinet's guidelines to assess exposure and mitigate risks. Check for signs of potential compromise on all internet accessible Fortinet products affected by this vulnerability. Apply any final mitigations provided by the vendor as soon as they become available. For more information please see: https://fortiguard.fortinet.com/psirt/FG-IR-26-060 ; https://www.fortinet.com/blog/psirt-blogs/analysis-of-sso-abuse-on-fortios ; https://nvd.nist.gov/vuln/detail/CVE-2026-24858",
+      "cwes": [
+        "CWE-288"
+      ]
+    },
     {
       "cveID": "CVE-2018-14634",
       "vendorProject": "Linux",
@@ -22249,5 +22264,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-01-27T20:09:53.510291383Z"
+  "fetchTimestamp": "2026-01-28T00:50:24.606774095Z"
 }
