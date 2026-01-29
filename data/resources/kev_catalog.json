@@ -1,7 +1,7 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.01.27",
-  "dateReleased": "2026-01-27T20:51:50.7688Z",
+  "catalogVersion": "2026.01.29",
+  "dateReleased": "2026-01-29T14:16:45.5673Z",
   "count": 1500,
   "vulnerabilities": [
     {
@@ -4353,7 +4353,7 @@
       "shortDescription": "Microsoft Windows Task Scheduler contains a privilege escalation vulnerability that can allow an attacker-provided, local application to escalate privileges outside of its AppContainer, and access privileged RPC functions.",
       "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2024-12-03",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2024-49039 ; https://nvd.nist.gov/vuln/detail/CVE-2024-49039",
       "cwes": [
         "CWE-287"
@@ -4383,7 +4383,7 @@
       "shortDescription": "CyberPanel contains an incorrect default permissions vulnerability that allows a remote, unauthenticated attacker to execute commands as root.",
       "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2024-11-28",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://cyberpanel.net/blog/detials-and-fix-of-recent-security-issue-and-patch-of-cyberpanel ; https://nvd.nist.gov/vuln/detail/CVE-2024-51567",
       "cwes": [
         "CWE-276"
@@ -4559,7 +4559,7 @@
       "shortDescription": "Mozilla Firefox and Firefox ESR contain a use-after-free vulnerability in Animation timelines that allows for code execution in the content process.",
       "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2024-11-05",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://www.mozilla.org/en-US/security/advisories/mfsa2024-51/ ; https://nvd.nist.gov/vuln/detail/CVE-2024-9680",
       "cwes": [
         "CWE-416"
@@ -4574,7 +4574,7 @@
       "shortDescription": "Microsoft Windows Kernel contains a time-of-check to time-of-use (TOCTOU) race condition vulnerability that could allow for privilege escalation. ",
       "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2024-11-05",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2024-30088 ; https://nvd.nist.gov/vuln/detail/CVE-2024-30088",
       "cwes": [
         "CWE-367"
@@ -22264,5 +22264,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-01-29T12:49:05.085691709Z"
+  "fetchTimestamp": "2026-01-29T17:18:31.185576460Z"
 }
