@@ -1,7 +1,7 @@
 {
   "Version": "2.0",
-  "UpdateHash": "de966cd4b59ca5803b4c1b927a2d9da89755e23f29dac5609ccd752573b1e793",
-  "LastCheck": "2026-01-29T06:48:31.968567029+00:00",
+  "UpdateHash": "e5f431caab0539fdb05fe232cc7d936f119530daeb8e9072fb1e427f9d392aeb",
+  "LastCheck": "2026-01-29T12:49:27.838155234+00:00",
   "OSVersions": [
     {
       "OSVersion": "26",
@@ -449,7 +449,7 @@
           "ExpirationDate": "2026-03-12",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125632",
-          "SecurityInfoContext": "iOS 26.1 was released on November 03, 2025. This release addressed 61 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "iOS 26.1 was released on November 03, 2025. This release addressed 62 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "iPad11,1",
             "iPad11,2",
@@ -603,14 +603,15 @@
             "CVE-2025-43503": {},
             "CVE-2025-43507": {},
             "CVE-2025-43510": {},
-            "CVE-2025-43520": {}
+            "CVE-2025-43520": {},
+            "CVE-2025-46316": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 61,
+          "UniqueCVEsCount": 62,
           "DaysSincePreviousRelease": 35,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 61 security issues",
+            "summary": "Addresses 62 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -619,7 +620,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 61
+              "total": 62
             }
           }
         },
@@ -763,7 +764,7 @@
           "ReleaseDate": "2025-09-15T00:00:00Z",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125108",
-          "SecurityInfoContext": "iOS 26.0 was released on September 15, 2025. This release addressed 35 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "iOS 26.0 was released on September 15, 2025. This release addressed 36 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2025-30468": {},
@@ -800,14 +801,15 @@
             "CVE-2025-43372": {},
             "CVE-2025-43376": {},
             "CVE-2025-43419": {},
+            "CVE-2025-46306": {},
             "CVE-2025-6965": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 35,
+          "UniqueCVEsCount": 36,
           "DaysSincePreviousRelease": 0,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 35 security issues",
+            "summary": "Addresses 36 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -816,7 +818,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 35
+              "total": 36
             }
           }
         }
