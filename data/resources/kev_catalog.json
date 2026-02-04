@@ -1,7 +1,7 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.02.03",
-  "dateReleased": "2026-02-03T18:02:42.4117Z",
+  "catalogVersion": "2026.02.04",
+  "dateReleased": "2026-02-04T12:50:10.3837Z",
   "count": 1505,
   "vulnerabilities": [
     {
@@ -3233,7 +3233,7 @@
       "shortDescription": "VMware ESXi contains an arbitrary write vulnerability. Successful exploitation allows an attacker with privileges within the VMX process to trigger an arbitrary kernel write leading to an escape of the sandbox.",
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2025-03-25",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25390 ; https://nvd.nist.gov/vuln/detail/CVE-2025-22225",
       "cwes": [
         "CWE-123"
@@ -22339,5 +22339,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-02-04T12:49:05.564244998Z"
+  "fetchTimestamp": "2026-02-04T17:23:13.756271408Z"
 }
