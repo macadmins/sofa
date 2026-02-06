@@ -1,7 +1,7 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.02.05",
-  "dateReleased": "2026-02-05T22:04:54.3416Z",
+  "catalogVersion": "2026.02.06",
+  "dateReleased": "2026-02-06T13:29:56.5485Z",
   "count": 1507,
   "vulnerabilities": [
     {
@@ -14,7 +14,7 @@
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2026-02-26",
       "knownRansomwareCampaignUse": "Unknown",
-      "notes": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: ; https://github.com/react-native-community/cli/commit/15089907d1f1301b22c72d7f68846a2ef20df547;https://github.com/react-native-community/cli/pull/2735 ; https://nvd.nist.gov/vuln/detail/CVE-2025-11953",
+      "notes": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/react-native-community/cli/commit/15089907d1f1301b22c72d7f68846a2ef20df547 ; https://github.com/react-native-community/cli/pull/2735 ; https://nvd.nist.gov/vuln/detail/CVE-2025-11953",
       "cwes": [
         "CWE-78"
       ]
@@ -134,7 +134,7 @@
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2026-02-16",
       "knownRansomwareCampaignUse": "Unknown",
-      "notes": "This vulnerability affects a common open-source component, third-party library, or a protocol used by different products. Please check with specific vendors for information on patching status. For more information, please see: https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/about/ ; https://www.kernel.org/ ; https://www.cve.org/CVERecord?id=CVE-2018-14634; https://access.redhat.com/errata/RHSA-2018:3540 ; https://nvd.nist.gov/vuln/detail/CVE-2018-14634",
+      "notes": "This vulnerability affects a common open-source component, third-party library, or a protocol used by different products. Please check with specific vendors for information on patching status. For more information, please see: https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/about/ ; https://www.kernel.org/ ; https://www.cve.org/CVERecord?id=CVE-2018-14634 ; https://access.redhat.com/errata/RHSA-2018:3540 ; https://nvd.nist.gov/vuln/detail/CVE-2018-14634",
       "cwes": [
         "CWE-190"
       ]
@@ -22369,5 +22369,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-02-06T12:49:04.893627637Z"
+  "fetchTimestamp": "2026-02-06T17:20:53.668869877Z"
 }
