@@ -1,9 +1,39 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.02.04",
-  "dateReleased": "2026-02-04T12:50:10.3837Z",
-  "count": 1505,
+  "catalogVersion": "2026.02.05",
+  "dateReleased": "2026-02-05T22:04:54.3416Z",
+  "count": 1507,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-11953",
+      "vendorProject": "React Native Community",
+      "product": "CLI",
+      "vulnerabilityName": "React Native Community CLI OS Command Injection Vulnerability",
+      "dateAdded": "2026-02-05",
+      "shortDescription": "React Native Community CLI contains an OS command injection vulnerability which could allow unauthenticated network attackers to send POST requests to the Metro Development Server and run arbitrary executables via a vulnerable endpoint exposed by the server. On Windows, attackers can also execute arbitrary shell commands with fully controlled arguments.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-02-26",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: ; https://github.com/react-native-community/cli/commit/15089907d1f1301b22c72d7f68846a2ef20df547;https://github.com/react-native-community/cli/pull/2735 ; https://nvd.nist.gov/vuln/detail/CVE-2025-11953",
+      "cwes": [
+        "CWE-78"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-24423",
+      "vendorProject": "SmarterTools",
+      "product": "SmarterMail",
+      "vulnerabilityName": "SmarterTools SmarterMail Missing Authentication for Critical Function Vulnerability",
+      "dateAdded": "2026-02-05",
+      "shortDescription": "SmarterTools SmarterMail contains a missing authentication for critical function vulnerability in the ConnectToHub API method. This could allow the attacker to point the SmarterMail instance to a malicious HTTP server which serves the malicious OS command and could lead to command execution. ",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-02-26",
+      "knownRansomwareCampaignUse": "Known",
+      "notes": "https://www.smartertools.com/smartermail/release-notes/current ; https://www.cve.org/CVERecord?id=CVE-2026-24423 ; https://nvd.nist.gov/vuln/detail/CVE-2026-24423",
+      "cwes": [
+        "CWE-306"
+      ]
+    },
     {
       "cveID": "CVE-2021-39935",
       "vendorProject": "GitLab",
@@ -22339,5 +22369,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-02-05T20:13:55.380823481Z"
+  "fetchTimestamp": "2026-02-06T00:52:21.885759234Z"
 }
