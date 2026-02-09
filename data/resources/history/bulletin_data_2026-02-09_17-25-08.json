@@ -1,7 +1,7 @@
 {
-  "content_hash": "e7aaab0d06fd930069a5d3c52b3ef610934d9aeba4ec11c41ce79b1cfbdb2739",
+  "content_hash": "eb7055d41463d15cd9bc45e2fa960d91cc107343580b33467286fa6edec9507b",
   "content_changed": true,
-  "generated_at": "2026-01-31T12:48:38.676155087Z",
+  "generated_at": "2026-02-09T17:25:08.426055404Z",
   "latest_releases": {
     "macos": {
       "version": "26.2",
@@ -187,44 +187,95 @@
     "kev_matches": 2,
     "latest_wave_date": "2026-01-26T00:00:00Z",
     "kev_cve_list": [
-      "CVE-2025-43529",
-      "CVE-2025-14174"
+      "CVE-2025-14174",
+      "CVE-2025-43529"
     ]
   },
   "beta_releases": {
-    "latest_wave": "2026-01-26",
+    "latest_wave": "2026-02-04",
     "macos": {
-      "version": "26.3 beta 3",
-      "build": "25D5112c",
-      "released": "2026-01-26"
+      "version": "26.3 RC",
+      "build": "25D122",
+      "released": "2026-02-04"
     },
     "ios": {
-      "version": "26.3 beta 3",
-      "build": "23D5114d",
-      "released": "2026-01-26"
+      "version": "26.3 RC",
+      "build": "23D125",
+      "released": "2026-02-04"
     },
     "ipados": {
-      "version": "26.3 beta 3",
-      "build": "23D5114d",
-      "released": "2026-01-26"
+      "version": "26.3 RC",
+      "build": "23D125",
+      "released": "2026-02-04"
     },
     "tvos": {
-      "version": "26.3 beta 3",
-      "build": "23K5611c",
-      "released": "2026-01-26"
+      "version": "26.3 RC",
+      "build": "23K619",
+      "released": "2026-02-04"
     },
     "watchos": {
-      "version": "26.3 beta 3",
-      "build": "23S5611c",
-      "released": "2026-01-26"
+      "version": "26.3 RC",
+      "build": "23S618",
+      "released": "2026-02-04"
     },
     "visionos": {
-      "version": "26.3 beta 3",
-      "build": "23N5613b",
-      "released": "2026-01-26"
+      "version": "26.3 RC",
+      "build": "23N619",
+      "released": "2026-02-04"
     }
   },
   "recent_releases": [
+    {
+      "release_date": "2026-02-05",
+      "name": "watchOS 11.6.2",
+      "platform": "watchos",
+      "version": "11.6.2",
+      "url": "https://support.apple.com/en-us/100100"
+    },
+    {
+      "release_date": "2026-02-02",
+      "name": "Security Update 2026-001 Catalina",
+      "platform": "other",
+      "version": "",
+      "url": "https://support.apple.com/en-us/100100"
+    },
+    {
+      "release_date": "2026-02-02",
+      "name": "iOS 16.7.14 and iPadOS 16.7.14",
+      "platform": "ios",
+      "version": "16.7.14",
+      "url": "https://support.apple.com/en-us/100100",
+      "enterprise_link": "https://support.apple.com/en-ca/101584",
+      "updates_link": "https://support.apple.com/en-ca/101566"
+    },
+    {
+      "release_date": "2026-02-02",
+      "name": "macOS Big Sur 11.7.11",
+      "platform": "macos",
+      "version": "11.7.11",
+      "url": "https://support.apple.com/en-us/100100"
+    },
+    {
+      "release_date": "2026-02-02",
+      "name": "watchOS 10.6.2",
+      "platform": "watchos",
+      "version": "10.6.2",
+      "url": "https://support.apple.com/en-us/100100"
+    },
+    {
+      "release_date": "2026-02-02",
+      "name": "watchOS 6.3.1",
+      "platform": "watchos",
+      "version": "6.3.1",
+      "url": "https://support.apple.com/en-us/100100"
+    },
+    {
+      "release_date": "2026-02-02",
+      "name": "watchOS 9.6.4",
+      "platform": "watchos",
+      "version": "9.6.4",
+      "url": "https://support.apple.com/en-us/100100"
+    },
     {
       "release_date": "2026-01-28",
       "name": "Keynote 15.1",
@@ -245,61 +296,6 @@
       "platform": "ios",
       "version": "12.5.8",
       "url": "https://support.apple.com/en-us/100100"
-    },
-    {
-      "release_date": "2026-01-26",
-      "name": "iOS 15.8.6 and iPadOS 15.8.6",
-      "platform": "ios",
-      "version": "15.8.6",
-      "url": "https://support.apple.com/en-us/100100"
-    },
-    {
-      "release_date": "2026-01-26",
-      "name": "iOS 16.7.13 and iPadOS 16.7.13",
-      "platform": "ios",
-      "version": "16.7.13",
-      "url": "https://support.apple.com/en-us/100100",
-      "enterprise_link": "https://support.apple.com/en-ca/101584",
-      "updates_link": "https://support.apple.com/en-ca/101566"
-    },
-    {
-      "release_date": "2026-01-26",
-      "name": "iOS 18.7.4 and iPadOS 18.7.4",
-      "platform": "ios",
-      "version": "18.7.4",
-      "url": "https://support.apple.com/en-us/100100",
-      "enterprise_link": "https://support.apple.com/en-ca/121158",
-      "updates_link": "https://support.apple.com/en-ca/121161"
-    },
-    {
-      "release_date": "2026-01-26",
-      "name": "iOS 26.2.1 and iPadOS 26.2.1",
-      "platform": "ios",
-      "version": "26.2.1",
-      "url": "https://support.apple.com/en-us/100100"
-    },
-    {
-      "release_date": "2026-01-26",
-      "name": "watchOS 26.2.1",
-      "platform": "watchos",
-      "version": "26.2.1",
-      "url": "https://support.apple.com/en-us/100100"
-    },
-    {
-      "release_date": "2025-12-12",
-      "name": "Safari 26.2",
-      "platform": "safari",
-      "version": "26.2",
-      "url": "https://support.apple.com/en-us/125892"
-    },
-    {
-      "release_date": "2025-12-12",
-      "name": "iOS 18.7.3 and iPadOS 18.7.3",
-      "platform": "ios",
-      "version": "18.7.3",
-      "url": "https://support.apple.com/en-us/125885",
-      "enterprise_link": "https://support.apple.com/en-ca/121158",
-      "updates_link": "https://support.apple.com/en-ca/121161"
     }
   ]
 }
