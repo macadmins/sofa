@@ -1,7 +1,7 @@
 {
-  "content_hash": "f7bb4358a4395a6079495c3377610a33bf04e65da871bc1c497b9a64ae02b982",
+  "content_hash": "5f96bd6791f1c377c2dbe73c2f98cf328705da987250d36b689d6e17a8dbe26a",
   "content_changed": true,
-  "generated_at": "2026-02-11T18:50:30.192990759Z",
+  "generated_at": "2026-02-12T00:56:18.086032669Z",
   "latest_releases": {
     "macos": {
       "version": "26.3",
@@ -278,33 +278,28 @@
       "updates_link": null
     },
     "safari": {
-      "version": "26.2",
-      "build": "26.2",
-      "release_date": "2025-12-12T00:00:00Z",
-      "url": "https://support.apple.com/en-us/125892",
+      "version": "26.3",
+      "build": "26.3",
+      "release_date": "2026-02-11T00:00:00Z",
+      "url": "https://support.apple.com/en-us/126354",
       "cves_fixed": [
-        "CVE-2024-8906",
-        "CVE-2025-14174",
-        "CVE-2025-43501",
-        "CVE-2025-43511",
-        "CVE-2025-43526",
-        "CVE-2025-43529",
-        "CVE-2025-43531",
-        "CVE-2025-43535",
-        "CVE-2025-43536",
-        "CVE-2025-43541",
-        "CVE-2025-46282",
-        "CVE-2025-46298",
-        "CVE-2025-46299"
+        "CVE-2026-20608",
+        "CVE-2026-20635",
+        "CVE-2026-20636",
+        "CVE-2026-20644",
+        "CVE-2026-20652",
+        "CVE-2026-20656",
+        "CVE-2026-20660",
+        "CVE-2026-20676"
       ],
-      "actively_exploited_count": 2,
-      "total_cve_count": 13,
+      "actively_exploited_count": 0,
+      "total_cve_count": 8,
       "enterprise_link": null,
       "updates_link": null
     }
   },
   "security_summary": {
-    "unique_cves_fixed": 78,
+    "unique_cves_fixed": 67,
     "kev_matches": 2,
     "latest_wave_date": "2026-02-11T00:00:00Z",
     "kev_cve_list": [
@@ -322,6 +317,13 @@
     "visionos": null
   },
   "recent_releases": [
+    {
+      "release_date": "2026-02-11",
+      "name": "Safari 26.3",
+      "platform": "safari",
+      "version": "26.3",
+      "url": "https://support.apple.com/en-us/126354"
+    },
     {
       "release_date": "2026-02-11",
       "name": "iOS 18.7.5 and iPadOS 18.7.5",
@@ -389,13 +391,6 @@
       "name": "watchOS 11.6.2",
       "platform": "watchos",
       "version": "11.6.2",
-      "url": "https://support.apple.com/en-us/100100"
-    },
-    {
-      "release_date": "2026-02-02",
-      "name": "Security Update 2026-001 Catalina",
-      "platform": "other",
-      "version": "",
       "url": "https://support.apple.com/en-us/100100"
     }
   ]
