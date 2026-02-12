@@ -1,8 +1,8 @@
 {
   "OSName": "watchOS",
   "Version": "2.0",
-  "UpdateHash": "cbfd128d79e0ecd0c0a694eacef46301b22c2482f03b20b0149f55fd216fc4a4",
-  "LastCheck": "2026-02-12T00:56:17.574410026+00:00",
+  "UpdateHash": "9dfe19f34e8f85c2c1bc872f3b13d1d1deadb686a3e867580e2f45f2ae255234",
+  "LastCheck": "2026-02-12T06:50:21.394348244+00:00",
   "OSVersions": [
     {
       "OSVersion": "watchOS 26",
@@ -290,7 +290,7 @@
           "ExpirationDate": "2026-04-26",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125890",
-          "SecurityInfoContext": "watchOS 26.2 was released on December 12, 2025. This release addressed 19 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "watchOS 26.2 was released on December 12, 2025. This release addressed 26 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "Watch6,1",
             "Watch6,10",
@@ -353,19 +353,26 @@
             "CVE-2025-46285": {},
             "CVE-2025-46287": {},
             "CVE-2025-46288": {},
+            "CVE-2025-46290": {},
             "CVE-2025-46298": {},
             "CVE-2025-46299": {},
+            "CVE-2025-46300": {},
+            "CVE-2025-46301": {},
+            "CVE-2025-46302": {},
+            "CVE-2025-46303": {},
+            "CVE-2025-46304": {},
+            "CVE-2025-46305": {},
             "CVE-2025-9086": {}
           },
           "ActivelyExploitedCVEs": [
             "CVE-2025-43529",
             "CVE-2025-14174"
           ],
-          "UniqueCVEsCount": 19,
+          "UniqueCVEsCount": 26,
           "DaysSincePreviousRelease": 39,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 19 security issues",
+            "summary": "Addresses 26 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -374,7 +381,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 19
+              "total": 26
             }
           }
         },
