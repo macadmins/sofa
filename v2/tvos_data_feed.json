@@ -1,8 +1,8 @@
 {
   "OSName": "tvOS",
   "Version": "2.0",
-  "UpdateHash": "c72ad222a1488bcf40a3886e29802d09153615322f7f22db9ad36b41574f3f33",
-  "LastCheck": "2026-02-12T06:50:21.380384031+00:00",
+  "UpdateHash": "ef0d6e5a63313db954805955c29a429d3a6e894c34129e65a5cecbca067e25f4",
+  "LastCheck": "2026-02-12T12:50:25.140256576+00:00",
   "OSVersions": [
     {
       "OSVersion": "tvOS 26",
@@ -154,7 +154,7 @@
           "ExpirationDate": "2026-05-13",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125889",
-          "SecurityInfoContext": "tvOS 26.2 was released on December 12, 2025. This release addressed 12 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "tvOS 26.2 was released on December 12, 2025. This release addressed 18 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "AppleTV11,1",
             "AppleTV14,1",
@@ -181,17 +181,23 @@
             "CVE-2025-46285": {},
             "CVE-2025-46298": {},
             "CVE-2025-46299": {},
+            "CVE-2025-46300": {},
+            "CVE-2025-46301": {},
+            "CVE-2025-46302": {},
+            "CVE-2025-46303": {},
+            "CVE-2025-46304": {},
+            "CVE-2025-46305": {},
             "CVE-2025-9086": {}
           },
           "ActivelyExploitedCVEs": [
             "CVE-2025-43529",
             "CVE-2025-14174"
           ],
-          "UniqueCVEsCount": 12,
+          "UniqueCVEsCount": 18,
           "DaysSincePreviousRelease": 39,
           "update_summary": {
             "priority": "high",
-            "summary": "Addresses 12 security issues",
+            "summary": "Addresses 18 security issues",
             "recommendation": "Update to stay secure - security fixes available",
             "stats": {
               "exploited": 0,
@@ -200,7 +206,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 12
+              "total": 18
             }
           }
         },
