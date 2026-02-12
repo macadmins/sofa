@@ -1,7 +1,7 @@
 {
   "Version": "2.0",
-  "UpdateHash": "9b64b8aced60ff48d72b2efe6e8a4735fea5136823fe97083334241f01524795",
-  "LastCheck": "2026-02-12T18:28:21.295596650+00:00",
+  "UpdateHash": "5dd94528f9e24d292d63e8f185498568f5ab8288ce37e0a1829c1e9603c957a1",
+  "LastCheck": "2026-02-12T18:50:37.353546412+00:00",
   "OSVersions": [
     {
       "OSVersion": "26",
@@ -166,9 +166,15 @@
           "CVE-2026-20678": {},
           "CVE-2026-20680": {},
           "CVE-2026-20682": {},
-          "CVE-2026-20700": {}
+          "CVE-2026-20700": {
+            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20700",
+            "actively_exploited": true,
+            "in_kev": true,
+            "severity": "Critical"
+          }
         },
         "ActivelyExploitedCVEs": [
+          "CVE-2026-20700",
           "CVE-2025-43529",
           "CVE-2025-14174"
         ],
@@ -351,9 +357,15 @@
             "CVE-2026-20678": {},
             "CVE-2026-20680": {},
             "CVE-2026-20682": {},
-            "CVE-2026-20700": {}
+            "CVE-2026-20700": {
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20700",
+              "actively_exploited": true,
+              "in_kev": true,
+              "severity": "Critical"
+            }
           },
           "ActivelyExploitedCVEs": [
+            "CVE-2026-20700",
             "CVE-2025-43529",
             "CVE-2025-14174"
           ],

@@ -1,8 +1,8 @@
 {
   "OSName": "visionOS",
   "Version": "2.0",
-  "UpdateHash": "ca8fec95563b5835ffe0cd7c365f4c3d86fcd289051f8a8d41c9f7377d5e6529",
-  "LastCheck": "2026-02-12T18:28:21.358741358+00:00",
+  "UpdateHash": "7a8232bd5df045385f116aaa9963bbedc97869669a6cf615d9a404b6d56b415e",
+  "LastCheck": "2026-02-12T18:50:37.416618648+00:00",
   "OSVersions": [
     {
       "OSVersion": "visionOS 26",
@@ -61,9 +61,14 @@
           "CVE-2026-20675": {},
           "CVE-2026-20676": {},
           "CVE-2026-20677": {},
-          "CVE-2026-20700": {}
+          "CVE-2026-20700": {
+            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20700",
+            "in_kev": true,
+            "severity": "High"
+          }
         },
         "ActivelyExploitedCVEs": [
+          "CVE-2026-20700",
           "CVE-2025-43529",
           "CVE-2025-14174"
         ],
@@ -140,9 +145,14 @@
             "CVE-2026-20675": {},
             "CVE-2026-20676": {},
             "CVE-2026-20677": {},
-            "CVE-2026-20700": {}
+            "CVE-2026-20700": {
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20700",
+              "in_kev": true,
+              "severity": "High"
+            }
           },
           "ActivelyExploitedCVEs": [
+            "CVE-2026-20700",
             "CVE-2025-43529",
             "CVE-2025-14174"
           ],

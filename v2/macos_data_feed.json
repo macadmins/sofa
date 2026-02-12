@@ -1,7 +1,7 @@
 {
   "Version": "2.0",
-  "UpdateHash": "fa443008d7dae3f7d7ebea1ec7ffc4611457645e4fe88afd08952b43167b75ac",
-  "LastCheck": "2026-02-12T18:28:21.279021861+00:00",
+  "UpdateHash": "a0180acbc5b4b4dc6acbc6a63911f2fbae6097d1f1c193688d9186350b2a3909",
+  "LastCheck": "2026-02-12T18:50:37.337121615+00:00",
   "OSVersions": [
     {
       "OSVersion": "Tahoe 26",
@@ -143,9 +143,15 @@
           "CVE-2026-20677": {},
           "CVE-2026-20680": {},
           "CVE-2026-20681": {},
-          "CVE-2026-20700": {}
+          "CVE-2026-20700": {
+            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20700",
+            "actively_exploited": true,
+            "in_kev": true,
+            "severity": "Critical"
+          }
         },
         "ActivelyExploitedCVEs": [
+          "CVE-2026-20700",
           "CVE-2025-43529",
           "CVE-2025-14174"
         ],
@@ -153,10 +159,10 @@
         "DaysSincePreviousRelease": 61,
         "update_summary": {
           "priority": "critical",
-          "summary": "Contains 2 actively exploited vulnerabilities",
+          "summary": "Contains 3 actively exploited vulnerabilities",
           "recommendation": "Update immediately - actively exploited vulnerabilities",
           "stats": {
-            "exploited": 2,
+            "exploited": 3,
             "critical": 0,
             "high": 0,
             "medium": 0,
@@ -305,9 +311,15 @@
             "CVE-2026-20677": {},
             "CVE-2026-20680": {},
             "CVE-2026-20681": {},
-            "CVE-2026-20700": {}
+            "CVE-2026-20700": {
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20700",
+              "actively_exploited": true,
+              "in_kev": true,
+              "severity": "Critical"
+            }
           },
           "ActivelyExploitedCVEs": [
+            "CVE-2026-20700",
             "CVE-2025-43529",
             "CVE-2025-14174"
           ],
@@ -315,10 +327,10 @@
           "DaysSincePreviousRelease": 61,
           "update_summary": {
             "priority": "critical",
-            "summary": "Contains 2 actively exploited vulnerabilities",
+            "summary": "Contains 3 actively exploited vulnerabilities",
             "recommendation": "Update immediately - actively exploited vulnerabilities",
             "stats": {
-              "exploited": 2,
+              "exploited": 3,
               "critical": 0,
               "high": 0,
               "medium": 0,
@@ -14848,7 +14860,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/en-us/121238",
+          "SecurityInfo": "https://support.apple.com/en-us/120886",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "J132AP",
@@ -16196,8 +16208,8 @@
     }
   },
   "XProtectPlistConfigData": {
-    "ReleaseDate": "2026-02-10T18:19:24Z",
-    "com.apple.XProtect": "5329"
+    "com.apple.XProtect": "5329",
+    "ReleaseDate": "2026-02-10T18:19:24Z"
   },
   "XProtectPayloads": {
     "com.apple.XprotectFramework.PluginService": "74",

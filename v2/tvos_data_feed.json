@@ -1,8 +1,8 @@
 {
   "OSName": "tvOS",
   "Version": "2.0",
-  "UpdateHash": "ef0d6e5a63313db954805955c29a429d3a6e894c34129e65a5cecbca067e25f4",
-  "LastCheck": "2026-02-12T18:28:21.331359919+00:00",
+  "UpdateHash": "d17b5f9becc55ce15a1221cd8653dd1aa1ff0a999ef3795becec4772cc61fbb4",
+  "LastCheck": "2026-02-12T18:50:37.389245686+00:00",
   "OSVersions": [
     {
       "OSVersion": "tvOS 26",
@@ -50,9 +50,14 @@
           "CVE-2026-20654": {},
           "CVE-2026-20671": {},
           "CVE-2026-20675": {},
-          "CVE-2026-20700": {}
+          "CVE-2026-20700": {
+            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20700",
+            "in_kev": true,
+            "severity": "High"
+          }
         },
         "ActivelyExploitedCVEs": [
+          "CVE-2026-20700",
           "CVE-2025-43529",
           "CVE-2025-14174"
         ],
@@ -118,9 +123,14 @@
             "CVE-2026-20654": {},
             "CVE-2026-20671": {},
             "CVE-2026-20675": {},
-            "CVE-2026-20700": {}
+            "CVE-2026-20700": {
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20700",
+              "in_kev": true,
+              "severity": "High"
+            }
           },
           "ActivelyExploitedCVEs": [
+            "CVE-2026-20700",
             "CVE-2025-43529",
             "CVE-2025-14174"
           ],
