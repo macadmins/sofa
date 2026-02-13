@@ -1,8 +1,8 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
   "catalogVersion": "2026.02.12",
-  "dateReleased": "2026-02-12T18:01:14.1716Z",
-  "count": 1516,
+  "dateReleased": "2026-02-12T20:00:05.1211Z",
+  "count": 1517,
   "vulnerabilities": [
     {
       "cveID": "CVE-2026-20700",
@@ -47,6 +47,21 @@
       "notes": "https://notepad-plus-plus.org/news/clarification-security-incident/ ; https://community.notepad-plus-plus.org/topic/27298/notepad-v8-8-9-vulnerability-fix ; https://nvd.nist.gov/vuln/detail/CVE-2025-15556",
       "cwes": [
         "CWE-494"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-40536",
+      "vendorProject": "SolarWinds",
+      "product": "Web Help Desk",
+      "vulnerabilityName": "SolarWinds Web Help Desk Security Control Bypass Vulnerability",
+      "dateAdded": "2026-02-12",
+      "shortDescription": "SolarWinds Web Help Desk contains a security control bypass vulnerability that could allow an unauthenticated attacker to gain access to certain restricted functionality.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-02-15",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://documentation.solarwinds.com/en/success_center/whd/content/release_notes/whd_2026-1_release_notes.htm ; https://www.solarwinds.com/trust-center/security-advisories/CVE-2025-40536 ; https://nvd.nist.gov/vuln/detail/CVE-2025-40536",
+      "cwes": [
+        "CWE-693"
       ]
     },
     {
@@ -22504,5 +22519,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-02-12T20:15:51.992754331Z"
+  "fetchTimestamp": "2026-02-13T00:58:34.910701070Z"
 }
