@@ -1,7 +1,7 @@
 {
-  "content_hash": "5f96bd6791f1c377c2dbe73c2f98cf328705da987250d36b689d6e17a8dbe26a",
+  "content_hash": "28920f46eac97df611335a9a2d2e88b255146782039c622c39ed1113db5cb016",
   "content_changed": true,
-  "generated_at": "2026-02-12T00:56:18.086032669Z",
+  "generated_at": "2026-02-16T18:48:12.122851982Z",
   "latest_releases": {
     "macos": {
       "version": "26.3",
@@ -67,7 +67,7 @@
         "CVE-2026-20681",
         "CVE-2026-20700"
       ],
-      "actively_exploited_count": 2,
+      "actively_exploited_count": 3,
       "total_cve_count": 57,
       "enterprise_link": null,
       "updates_link": null
@@ -120,7 +120,7 @@
         "CVE-2026-20682",
         "CVE-2026-20700"
       ],
-      "actively_exploited_count": 2,
+      "actively_exploited_count": 3,
       "total_cve_count": 41,
       "enterprise_link": null,
       "updates_link": null
@@ -173,7 +173,7 @@
         "CVE-2026-20682",
         "CVE-2026-20700"
       ],
-      "actively_exploited_count": 2,
+      "actively_exploited_count": 3,
       "total_cve_count": 41,
       "enterprise_link": null,
       "updates_link": null
@@ -201,7 +201,7 @@
         "CVE-2026-20675",
         "CVE-2026-20700"
       ],
-      "actively_exploited_count": 2,
+      "actively_exploited_count": 3,
       "total_cve_count": 16,
       "enterprise_link": null,
       "updates_link": null
@@ -231,7 +231,7 @@
         "CVE-2026-20675",
         "CVE-2026-20700"
       ],
-      "actively_exploited_count": 2,
+      "actively_exploited_count": 3,
       "total_cve_count": 18,
       "enterprise_link": null,
       "updates_link": null
@@ -272,7 +272,7 @@
         "CVE-2026-20677",
         "CVE-2026-20700"
       ],
-      "actively_exploited_count": 2,
+      "actively_exploited_count": 3,
       "total_cve_count": 29,
       "enterprise_link": null,
       "updates_link": null
@@ -300,21 +300,46 @@
   },
   "security_summary": {
     "unique_cves_fixed": 67,
-    "kev_matches": 2,
+    "kev_matches": 3,
     "latest_wave_date": "2026-02-11T00:00:00Z",
     "kev_cve_list": [
-      "CVE-2025-14174",
-      "CVE-2025-43529"
+      "CVE-2025-43529",
+      "CVE-2026-20700",
+      "CVE-2025-14174"
     ]
   },
   "beta_releases": {
-    "latest_wave": "2026-02-03",
-    "macos": null,
-    "ios": null,
-    "ipados": null,
-    "tvos": null,
-    "watchos": null,
-    "visionos": null
+    "latest_wave": "2026-02-16",
+    "macos": {
+      "version": "26.4 beta",
+      "build": "25E5207k",
+      "released": "2026-02-16"
+    },
+    "ios": {
+      "version": "26.4 beta",
+      "build": "23E5207q",
+      "released": "2026-02-16"
+    },
+    "ipados": {
+      "version": "26.4 beta",
+      "build": "23E5207q",
+      "released": "2026-02-16"
+    },
+    "tvos": {
+      "version": "26.4 beta",
+      "build": "23L5208m",
+      "released": "2026-02-16"
+    },
+    "watchos": {
+      "version": "26.4 beta",
+      "build": "23T5209m",
+      "released": "2026-02-16"
+    },
+    "visionos": {
+      "version": "26.4 beta",
+      "build": "23O5209m",
+      "released": "2026-02-16"
+    }
   },
   "recent_releases": [
     {
