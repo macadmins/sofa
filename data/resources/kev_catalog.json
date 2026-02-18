@@ -1,9 +1,67 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.02.13",
-  "dateReleased": "2026-02-13T23:49:15.628Z",
-  "count": 1518,
+  "catalogVersion": "2026.02.17",
+  "dateReleased": "2026-02-17T20:07:57.4387Z",
+  "count": 1522,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2020-7796",
+      "vendorProject": "Synacor",
+      "product": "Zimbra Collaboration Suite",
+      "vulnerabilityName": "Synacor Zimbra Collaboration Suite (ZCS) Server-Side Request Forgery Vulnerability",
+      "dateAdded": "2026-02-17",
+      "shortDescription": "Synacor Zimbra Collaboration Suite (ZCS) contains a server-side request forgery vulnerability if WebEx zimlet installed and zimlet JSP is enabled.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-03-10",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://wiki.zimbra.com/wiki/Zimbra_Releases/8.8.15/P7 ; https://nvd.nist.gov/vuln/detail/CVE-2020-7796",
+      "cwes": [
+        "CWE-918"
+      ]
+    },
+    {
+      "cveID": "CVE-2024-7694",
+      "vendorProject": "TeamT5",
+      "product": "ThreatSonar Anti-Ransomware",
+      "vulnerabilityName": "TeamT5 ThreatSonar Anti-Ransomware Unrestricted Upload of File with Dangerous Type Vulnerability",
+      "dateAdded": "2026-02-17",
+      "shortDescription": "TeamT5 ThreatSonar Anti-Ransomware contains an unrestricted upload of file with dangerous type vulnerability. ThreatSonar Anti-Ransomware does not properly validate the content of uploaded files. Remote attackers with administrator privileges on the product platform can upload malicious files, which can be used to execute arbitrary system commands on the server.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-03-10",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://teamt5.org/en/posts/vulnerability-notice-threat-sonar-anti-ransomware-20240715/ ; https://www.twcert.org.tw/en/cp-139-8000-e5a5c-2.html ; https://nvd.nist.gov/vuln/detail/CVE-2024-7694",
+      "cwes": [
+        "CWE-434"
+      ]
+    },
+    {
+      "cveID": "CVE-2008-0015",
+      "vendorProject": "Microsoft",
+      "product": "Windows",
+      "vulnerabilityName": " Microsoft Windows Video ActiveX Control Remote Code Execution Vulnerability",
+      "dateAdded": "2026-02-17",
+      "shortDescription": "Microsoft Windows Video ActiveX Control contains a remote code execution vulnerability. An attacker could exploit the vulnerability by constructing a specially crafted Web page. When a user views the Web page, the vulnerability could allow remote code execution. An attacker who successfully exploited this vulnerability could gain the same user rights as the logged-on user.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-03-10",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://web.archive.org/web/20110305211119/https://www.microsoft.com/technet/security/bulletin/ms09-032.mspx ; https://nvd.nist.gov/vuln/detail/CVE-2008-0015",
+      "cwes": []
+    },
+    {
+      "cveID": "CVE-2026-2441",
+      "vendorProject": "Google",
+      "product": "Chromium",
+      "vulnerabilityName": "Google Chromium CSS Use-After-Free Vulnerability",
+      "dateAdded": "2026-02-17",
+      "shortDescription": "Google Chromium CSS contains a use-after-free vulnerability that could allow a remote attacker to potentially exploit heap corruption via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-03-10",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://chromereleases.googleblog.com/2026/02/stable-channel-update-for-desktop_13.html ; https://nvd.nist.gov/vuln/detail/CVE-2026-2441",
+      "cwes": [
+        "CWE-416"
+      ]
+    },
     {
       "cveID": "CVE-2026-1731",
       "vendorProject": "BeyondTrust",
@@ -22534,5 +22592,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-02-17T20:16:51.801438788Z"
+  "fetchTimestamp": "2026-02-18T00:56:04.903834411Z"
 }
