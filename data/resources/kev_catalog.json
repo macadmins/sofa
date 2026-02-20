@@ -1,7 +1,7 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.02.18",
-  "dateReleased": "2026-02-18T15:55:57.9151Z",
+  "catalogVersion": "2026.02.19",
+  "dateReleased": "2026-02-19T20:35:51.412Z",
   "count": 1524,
   "vulnerabilities": [
     {
@@ -101,7 +101,7 @@
       "shortDescription": "BeyondTrust Remote Support (RS) and Privileged Remote Access (PRA)contain an OS command injection vulnerability. Successful exploitation could allow an unauthenticated remote attacker to execute operating system commands in the context of the site user. Successful exploitation requires no authentication or user interaction and may lead to system compromise, including unauthorized access, data exfiltration, and service disruption.",
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2026-02-16",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "Please adhere to the vendor's guidelines to assess exposure and mitigate risks. Check for signs of potential compromise on all internet accessible BeyondTrust products affected by this vulnerability. For more information please: see: https://www.beyondtrust.com/trust-center/security-advisories/bt26-02 ; https://nvd.nist.gov/vuln/detail/CVE-2026-1731",
       "cwes": [
         "CWE-78"
@@ -22622,5 +22622,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-02-19T20:14:57.778830708Z"
+  "fetchTimestamp": "2026-02-20T00:52:52.863693066Z"
 }
