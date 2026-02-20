@@ -1,9 +1,39 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.02.19",
-  "dateReleased": "2026-02-19T20:35:51.412Z",
-  "count": 1524,
+  "catalogVersion": "2026.02.20",
+  "dateReleased": "2026-02-20T19:27:58.7676Z",
+  "count": 1526,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-49113",
+      "vendorProject": "Roundcube",
+      "product": "Webmail",
+      "vulnerabilityName": "RoundCube Webmail Deserialization of Untrusted Data Vulnerability",
+      "dateAdded": "2026-02-20",
+      "shortDescription": "RoundCube Webmail contains a deserialization of untrusted data vulnerability that allows remote code execution by authenticated users because the _from parameter in a URL is not validated in program/actions/settings/upload.php.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-03-13",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://roundcube.net/news/2025/06/01/security-updates-1.6.11-and-1.5.10 ; https://github.com/roundcube/roundcubemail/releases/tag/1.5.10 ; https://github.com/roundcube/roundcubemail/releases/tag/1.6.11 ; https://nvd.nist.gov/vuln/detail/CVE-2025-49113",
+      "cwes": [
+        "CWE-502"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-68461",
+      "vendorProject": "Roundcube",
+      "product": "Webmail",
+      "vulnerabilityName": "RoundCube Webmail Cross-site Scripting Vulnerability",
+      "dateAdded": "2026-02-20",
+      "shortDescription": "RoundCube Webmail contains a cross-site scripting vulnerability via the animate tag in an SVG document.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-03-13",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://roundcube.net/news/2025/12/13/security-updates-1.6.12-and-1.5.12 ; https://github.com/roundcube/roundcubemail/commit/bfa032631c36b900e7444dfa278340b33cbf7cdb ; https://nvd.nist.gov/vuln/detail/CVE-2025-68461",
+      "cwes": [
+        "CWE-79"
+      ]
+    },
     {
       "cveID": "CVE-2021-22175",
       "vendorProject": "GitLab",
@@ -22622,5 +22652,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-02-20T19:20:04.974844209Z"
+  "fetchTimestamp": "2026-02-20T20:12:27.927474654Z"
 }
