@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.02.20",
-  "dateReleased": "2026-02-20T19:27:58.7676Z",
-  "count": 1526,
+  "catalogVersion": "2026.02.24",
+  "dateReleased": "2026-02-24T17:59:30.7751Z",
+  "count": 1527,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-25108",
+      "vendorProject": "Soliton Systems K.K",
+      "product": "FileZen",
+      "vulnerabilityName": "Soliton Systems K.K FileZen OS Command Injection Vulnerability",
+      "dateAdded": "2026-02-24",
+      "shortDescription": "Soliton Systems K.K FileZen contains an OS command injection vulnerability when an user logs-in to the affected product and sends a specially crafted HTTP request.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-03-17",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://jvn.jp/en/jp/JVN84622767/ ; https://nvd.nist.gov/vuln/detail/CVE-2026-25108",
+      "cwes": [
+        "CWE-78"
+      ]
+    },
     {
       "cveID": "CVE-2025-49113",
       "vendorProject": "Roundcube",
@@ -22652,5 +22667,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-02-24T18:49:54.834806073Z"
+  "fetchTimestamp": "2026-02-24T19:26:42.092944581Z"
 }
