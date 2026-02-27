@@ -1,7 +1,7 @@
 {
-  "content_hash": "21a23d94e12ed763841f5f43c732fa450c627cc4da4f416cec8480a150ea8256",
+  "content_hash": "433f04e8e0c8b74eed207fdfb106ae765135c8908e506036b30ba230b7615956",
   "content_changed": true,
-  "generated_at": "2026-02-24T17:29:11.128568061Z",
+  "generated_at": "2026-02-27T17:17:04.709286465Z",
   "latest_releases": {
     "macos": {
       "version": "26.3",
@@ -237,43 +237,13 @@
       "updates_link": null
     },
     "visionos": {
-      "version": "26.3",
-      "build": "23N6620",
-      "release_date": "2026-02-11",
-      "url": "https://support.apple.com/en-us/126353",
-      "cves_fixed": [
-        "CVE-2025-14174",
-        "CVE-2025-43529",
-        "CVE-2025-59375",
-        "CVE-2026-20608",
-        "CVE-2026-20609",
-        "CVE-2026-20611",
-        "CVE-2026-20615",
-        "CVE-2026-20616",
-        "CVE-2026-20617",
-        "CVE-2026-20621",
-        "CVE-2026-20625",
-        "CVE-2026-20626",
-        "CVE-2026-20627",
-        "CVE-2026-20628",
-        "CVE-2026-20634",
-        "CVE-2026-20635",
-        "CVE-2026-20636",
-        "CVE-2026-20641",
-        "CVE-2026-20644",
-        "CVE-2026-20650",
-        "CVE-2026-20652",
-        "CVE-2026-20653",
-        "CVE-2026-20654",
-        "CVE-2026-20660",
-        "CVE-2026-20671",
-        "CVE-2026-20675",
-        "CVE-2026-20676",
-        "CVE-2026-20677",
-        "CVE-2026-20700"
-      ],
-      "actively_exploited_count": 3,
-      "total_cve_count": 29,
+      "version": "26.3.1",
+      "build": "23N6630",
+      "release_date": "2026-02-26",
+      "url": "https://support.apple.com/en-us/100100",
+      "cves_fixed": [],
+      "actively_exploited_count": 0,
+      "total_cve_count": 0,
       "enterprise_link": null,
       "updates_link": null
     },
@@ -301,15 +271,15 @@
   "security_summary": {
     "unique_cves_fixed": 67,
     "kev_matches": 3,
-    "latest_wave_date": "2026-02-11T00:00:00Z",
+    "latest_wave_date": "2026-02-26",
     "kev_cve_list": [
-      "CVE-2025-43529",
       "CVE-2025-14174",
+      "CVE-2025-43529",
       "CVE-2026-20700"
     ]
   },
   "beta_releases": {
-    "latest_wave": "2026-02-23",
+    "latest_wave": "2026-02-26",
     "macos": {
       "version": "26.4 beta 2",
       "build": "25E5218f",
@@ -342,6 +312,13 @@
     }
   },
   "recent_releases": [
+    {
+      "release_date": "2026-02-26",
+      "name": "visionOS 26.3.1",
+      "platform": "visionos",
+      "version": "26.3.1",
+      "url": "https://support.apple.com/en-us/100100"
+    },
     {
       "release_date": "2026-02-11",
       "name": "Safari 26.3",
@@ -410,13 +387,6 @@
       "platform": "watchos",
       "version": "26.3",
       "url": "https://support.apple.com/en-us/126352"
-    },
-    {
-      "release_date": "2026-02-05",
-      "name": "watchOS 11.6.2",
-      "platform": "watchos",
-      "version": "11.6.2",
-      "url": "https://support.apple.com/en-us/100100"
     }
   ]
 }
