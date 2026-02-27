@@ -1,83 +1,37 @@
 {
   "OSName": "visionOS",
   "Version": "2.0",
-  "UpdateHash": "a1e550f3d0a12564ce0860979aa26bb61138ce67143bd027aa58e8377b3258e7",
-  "LastCheck": "2026-02-26T20:17:27.853192969+00:00",
+  "UpdateHash": "ca1852054a6b9cd43a21ca680399048770a09bb017cf143c3ac640acca6a7e58",
+  "LastCheck": "2026-02-27T00:55:03.016311170+00:00",
   "OSVersions": [
     {
       "OSVersion": "visionOS 26",
       "Latest": {
-        "UpdateName": "visionOS 26.3",
+        "UpdateName": "visionOS 26.3.1",
         "ProductName": "visionOS",
-        "ProductVersion": "26.3",
-        "Build": "23N6620",
+        "ProductVersion": "26.3.1",
+        "Build": "23N6630",
         "AllBuilds": [
-          "23N6620",
-          "23N620"
+          "23N6630",
+          "23N630"
         ],
-        "ReleaseDate": "2026-02-11",
-        "ExpirationDate": "2026-05-27",
+        "ReleaseDate": "2026-02-26",
+        "ExpirationDate": "2026-05-28",
         "ReleaseType": "OS",
-        "SecurityInfo": "https://support.apple.com/en-us/126353",
-        "SecurityInfoContext": "visionOS has been updated to version 26.3, which was released on February 11, 2026. This update addresses 29 security issues and is the most recent approved version.",
+        "SecurityInfo": "https://support.apple.com/en-us/100100",
+        "SecurityInfoContext": "visionOS has been updated to version 26.3.1, which was released on February 26, 2026. This update has no published CVE entries and is the most recent approved version.",
         "SupportedDevices": [
           "RealityDevice14,1",
           "RealityDevice17,1"
         ],
-        "CVEs": {
-          "CVE-2025-14174": {
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14174",
-            "in_kev": true,
-            "severity": "High"
-          },
-          "CVE-2025-43529": {
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43529",
-            "in_kev": true,
-            "severity": "High"
-          },
-          "CVE-2025-59375": {},
-          "CVE-2026-20608": {},
-          "CVE-2026-20609": {},
-          "CVE-2026-20611": {},
-          "CVE-2026-20615": {},
-          "CVE-2026-20616": {},
-          "CVE-2026-20617": {},
-          "CVE-2026-20621": {},
-          "CVE-2026-20625": {},
-          "CVE-2026-20626": {},
-          "CVE-2026-20627": {},
-          "CVE-2026-20628": {},
-          "CVE-2026-20634": {},
-          "CVE-2026-20635": {},
-          "CVE-2026-20636": {},
-          "CVE-2026-20641": {},
-          "CVE-2026-20644": {},
-          "CVE-2026-20650": {},
-          "CVE-2026-20652": {},
-          "CVE-2026-20653": {},
-          "CVE-2026-20654": {},
-          "CVE-2026-20660": {},
-          "CVE-2026-20671": {},
-          "CVE-2026-20675": {},
-          "CVE-2026-20676": {},
-          "CVE-2026-20677": {},
-          "CVE-2026-20700": {
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20700",
-            "in_kev": true,
-            "severity": "High"
-          }
-        },
-        "ActivelyExploitedCVEs": [
-          "CVE-2026-20700",
-          "CVE-2025-43529",
-          "CVE-2025-14174"
-        ],
-        "UniqueCVEsCount": 29,
-        "DaysSincePreviousRelease": 61,
+        "CVEs": {},
+        "ActivelyExploitedCVEs": [],
+        "UniqueCVEsCount": 0,
+        "DaysSincePreviousRelease": 15,
         "update_summary": {
-          "priority": "high",
-          "summary": "Addresses 29 security issues",
-          "recommendation": "Update to stay secure - security fixes available",
+          "priority": "low",
+          "summary": "Maintenance update with no published CVE entries",
+          "recommendation": "Update recommended - may include unpublished security improvements",
           "stats": {
             "exploited": 0,
             "critical": 0,
@@ -85,11 +39,48 @@
             "medium": 0,
             "low": 0,
             "remote": 0,
-            "total": 29
+            "total": 0
           }
         }
       },
       "SecurityReleases": [
+        {
+          "UpdateName": "visionOS 26.3.1",
+          "ProductName": "visionOS",
+          "ProductVersion": "26.3.1",
+          "Build": "23N6630",
+          "AllBuilds": [
+            "23N6630",
+            "23N630"
+          ],
+          "ReleaseDate": "2026-02-26",
+          "ExpirationDate": "2026-05-28",
+          "ReleaseType": "OS",
+          "SecurityInfo": "https://support.apple.com/en-us/100100",
+          "SecurityInfoContext": "visionOS has been updated to version 26.3.1, which was released on February 26, 2026. This update has no published CVE entries and is the most recent approved version.",
+          "SupportedDevices": [
+            "RealityDevice14,1",
+            "RealityDevice17,1"
+          ],
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
+          "DaysSincePreviousRelease": 15,
+          "update_summary": {
+            "priority": "low",
+            "summary": "Maintenance update with no published CVE entries",
+            "recommendation": "Update recommended - may include unpublished security improvements",
+            "stats": {
+              "exploited": 0,
+              "critical": 0,
+              "high": 0,
+              "medium": 0,
+              "low": 0,
+              "remote": 0,
+              "total": 0
+            }
+          }
+        },
         {
           "UpdateName": "visionOS 26.3",
           "ProductName": "visionOS",
@@ -103,7 +94,7 @@
           "ExpirationDate": "2026-05-27",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/126353",
-          "SecurityInfoContext": "visionOS has been updated to version 26.3, which was released on February 11, 2026. This update addresses 29 security issues and is the most recent approved version.",
+          "SecurityInfoContext": "visionOS 26.3 was released on February 11, 2026. This release addressed 29 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "RealityDevice14,1",
             "RealityDevice17,1"
