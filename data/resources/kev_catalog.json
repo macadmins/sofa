@@ -1,9 +1,39 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.02.26",
-  "dateReleased": "2026-02-26T16:22:48.4561Z",
-  "count": 1529,
+  "catalogVersion": "2026.03.03",
+  "dateReleased": "2026-03-03T17:37:44.7824Z",
+  "count": 1531,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-22719",
+      "vendorProject": "Broadcom",
+      "product": "VMware Aria Operations",
+      "vulnerabilityName": "Broadcom VMware Aria Operations Command Injection Vulnerability",
+      "dateAdded": "2026-03-03",
+      "shortDescription": "Broadcom VMware Aria Operations formerly known as vRealize Operations (vROps) contains a command injection vulnerability that allows an unauthenticated attacker to execute arbitrary commands, potentially leading to remote code execution during support‑assisted product migration.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-03-24",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/36947 ; https://knowledge.broadcom.com/external/article/430349 ; https://nvd.nist.gov/vuln/detail/CVE-2026-22719",
+      "cwes": [
+        "CWE-77"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-21385",
+      "vendorProject": "Qualcomm",
+      "product": "Multiple Chipsets",
+      "vulnerabilityName": "Qualcomm Multiple Chipsets Memory Corruption Vulnerability",
+      "dateAdded": "2026-03-03",
+      "shortDescription": "Multiple Qualcomm chipsets contain a memory corruption vulnerability while using alignments for memory allocation. ",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-03-24",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://source.android.com/docs/security/bulletin/2026/2026-03-01 ; https://nvd.nist.gov/vuln/detail/CVE-2026-21385",
+      "cwes": [
+        "CWE-190"
+      ]
+    },
     {
       "cveID": "CVE-2022-20775",
       "vendorProject": "Cisco",
@@ -22698,5 +22728,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-03-03T17:21:08.012551713Z"
+  "fetchTimestamp": "2026-03-03T18:23:23.768988971Z"
 }
