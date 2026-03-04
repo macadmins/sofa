@@ -1,5 +1,5 @@
 {
-  "update_hash": "sha256:cd6a2a62079cfed35a576a9bc285f99e81461bf562fb277a101e9e21f33994f1",
+  "update_hash": "sha256:8f396f4da23e0d26ff418e77f0d75dd004ba15812c047e535842e28152e70fc2",
   "devices": [
     {
       "name": "iPhone 2G",
@@ -1855,6 +1855,90 @@
       "platform": "t8142",
       "cpid": 33090,
       "bdid": 66
+    },
+    {
+      "name": "iPad Air 11-inch (M4)",
+      "identifier": "iPad16,9",
+      "platform": "t8132",
+      "cpid": 33074,
+      "bdid": 18
+    },
+    {
+      "name": "iPhone 17e",
+      "identifier": "iPhone18,5",
+      "platform": "t8150",
+      "cpid": 33104,
+      "bdid": 22
+    },
+    {
+      "name": "iPad Air 13-inch (M4)",
+      "identifier": "iPad16,11",
+      "platform": "t8132",
+      "cpid": 33074,
+      "bdid": 22
+    },
+    {
+      "name": "iPad Air 11-inch (M4)",
+      "identifier": "iPad16,8",
+      "platform": "t8132",
+      "cpid": 33074,
+      "bdid": 16
+    },
+    {
+      "name": "iPad Air 13-inch (M4)",
+      "identifier": "iPad16,10",
+      "platform": "t8132",
+      "cpid": 33074,
+      "bdid": 20
+    },
+    {
+      "name": "MacBook Neo",
+      "identifier": "Mac17,5",
+      "platform": "t8140",
+      "cpid": 33088,
+      "bdid": 100
+    },
+    {
+      "name": "MacBook Pro (14-inch, M5 Max)",
+      "identifier": "Mac17,7",
+      "platform": "t6050",
+      "cpid": 24656,
+      "bdid": 10
+    },
+    {
+      "name": "MacBook Air (13-inch, M5)",
+      "identifier": "Mac17,3",
+      "platform": "t8142",
+      "cpid": 33090,
+      "bdid": 36
+    },
+    {
+      "name": "MacBook Pro (16-inch, M5 Max)",
+      "identifier": "Mac17,6",
+      "platform": "t6050",
+      "cpid": 24656,
+      "bdid": 14
+    },
+    {
+      "name": "MacBook Air (15-inch, M5)",
+      "identifier": "Mac17,4",
+      "platform": "t8142",
+      "cpid": 33090,
+      "bdid": 38
+    },
+    {
+      "name": "MacBook Pro (14-inch, M5 Pro)",
+      "identifier": "Mac17,9",
+      "platform": "t6050",
+      "cpid": 24656,
+      "bdid": 8
+    },
+    {
+      "name": "MacBook Pro (16-inch, M5 Pro)",
+      "identifier": "Mac17,8",
+      "platform": "t6050",
+      "cpid": 24656,
+      "bdid": 12
     }
   ],
   "latest_versions": {
@@ -1867,6 +1951,15 @@
   },
   "signing_status": {
     "MacBookPro18,1": [
+      {
+        "version": "26.3.1",
+        "buildid": "25D2128",
+        "signed": true,
+        "signing_started": null,
+        "signing_stopped": null,
+        "url": "https://updates.cdn-apple.com/2026WinterFCS/fullrestores/047-88313/2E098049-1731-4415-A206-546D09301973/UniversalMac_26.3.1_25D2128_Restore.ipsw",
+        "filesize": 19330833456
+      },
       {
         "version": "26.3",
         "buildid": "25D125",
@@ -2355,6 +2448,15 @@
       }
     ],
     "iPad13,16": [
+      {
+        "version": "26.3.1",
+        "buildid": "23D8133",
+        "signed": true,
+        "signing_started": null,
+        "signing_stopped": null,
+        "url": "https://updates.cdn-apple.com/2026WinterFCS/fullrestores/047-90313/2BC0174C-3EE4-480C-A2EC-FFA08B1C9DF1/iPad_Spring_2022_26.3.1_23D8133_Restore.ipsw",
+        "filesize": 10060423126
+      },
       {
         "version": "26.3",
         "buildid": "23D127",
@@ -2861,6 +2963,15 @@
       }
     ],
     "iPhone14,2": [
+      {
+        "version": "26.3.1",
+        "buildid": "23D8133",
+        "signed": true,
+        "signing_started": null,
+        "signing_stopped": null,
+        "url": "https://updates.cdn-apple.com/2026WinterFCS/fullrestores/047-91013/630198D7-1BC8-4D64-811F-8782FBFFA8A1/iPhone14,2_26.3.1_23D8133_Restore.ipsw",
+        "filesize": 10110507092
+      },
       {
         "version": "26.3",
         "buildid": "23D127",
@@ -3494,6 +3605,15 @@
     ],
     "iPhone15,2": [
       {
+        "version": "26.3.1",
+        "buildid": "23D8133",
+        "signed": true,
+        "signing_started": null,
+        "signing_stopped": null,
+        "url": "https://updates.cdn-apple.com/2026WinterFCS/fullrestores/047-90315/7C17EBB7-485B-4A26-85EA-0111BB99256F/iPhone15,2_26.3.1_23D8133_Restore.ipsw",
+        "filesize": 10222865667
+      },
+      {
         "version": "26.3",
         "buildid": "23D127",
         "signed": true,
@@ -4009,12 +4129,12 @@
     ]
   },
   "macos_ipsw": {
-    "version": "26.3",
-    "build": "25D125",
-    "url": "https://updates.cdn-apple.com/2026WinterFCS/fullrestores/047-60229/6D5DBEA5-75A0-4BEF-ACC9-5ACF9B8DF6B7/UniversalMac_26.3_25D125_Restore.ipsw",
-    "apple_slug": "047-60229",
-    "fetch_timestamp": "2026-03-04T17:20:24.265195703Z"
+    "version": "26.3.1",
+    "build": "25D2128",
+    "url": "https://updates.cdn-apple.com/2026WinterFCS/fullrestores/047-88313/2E098049-1731-4415-A206-546D09301973/UniversalMac_26.3.1_25D2128_Restore.ipsw",
+    "apple_slug": "047-88313",
+    "fetch_timestamp": "2026-03-04T20:14:42.143291673Z"
   },
-  "total_devices": 265,
-  "total_firmwares": 237
+  "total_devices": 277,
+  "total_firmwares": 241
 }
