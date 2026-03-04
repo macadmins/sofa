@@ -1,5 +1,5 @@
 {
-  "update_hash": "sha256:c3d79e28287c9bc122e06e121233c713099c864fc010b6b8365f97f2cedce94c",
+  "update_hash": "sha256:82ba8dfcdbfdfd48f6bccb5443951ece7a03e343af169854f039aaaf3637e45b",
   "devices": [
     {
       "name": "iPhone 2G",
@@ -1890,6 +1890,55 @@
       "platform": "t8132",
       "cpid": 33074,
       "bdid": 20
+    },
+    {
+      "name": "MacBook Neo",
+      "identifier": "Mac17,5",
+      "platform": "t8140",
+      "cpid": 33088,
+      "bdid": 100
+    },
+    {
+      "name": "MacBook Pro (14-inch, M5 Max)",
+      "identifier": "Mac17,7",
+      "platform": "t6050",
+      "cpid": 24656,
+      "bdid": 10
+    },
+    {
+      "name": "MacBook Air (13-inch, M5)",
+      "identifier": "Mac17,3",
+      "platform": "t8142",
+      "cpid": 33090,
+      "bdid": 36
+    },
+    {
+      "name": "MacBook Pro (16-inch, M5 Max)",
+      "identifier": "Mac17,6",
+      "platform": "t6050",
+      "cpid": 24656,
+      "bdid": 14
+    },
+    {
+      "name": "MacBook Air (15-inch, M5)",
+      "identifier": "Mac17,4",
+      "platform": "t8142",
+      "cpid": 33090,
+      "bdid": 38
+    },
+    {
+      "name": "MacBook Pro (14-inch, M5 Pro)",
+      "identifier": "Mac17,9",
+      "platform": "t6050",
+      "cpid": 24656,
+      "bdid": 8
+    },
+    {
+      "name": "MacBook Pro (16-inch, M5 Pro)",
+      "identifier": "Mac17,8",
+      "platform": "t6050",
+      "cpid": 24656,
+      "bdid": 12
     }
   ],
   "latest_versions": {
@@ -1902,6 +1951,15 @@
   },
   "signing_status": {
     "MacBookPro18,1": [
+      {
+        "version": "26.3.1",
+        "buildid": "25D2128",
+        "signed": true,
+        "signing_started": null,
+        "signing_stopped": null,
+        "url": "https://updates.cdn-apple.com/2026WinterFCS/fullrestores/047-88313/2E098049-1731-4415-A206-546D09301973/UniversalMac_26.3.1_25D2128_Restore.ipsw",
+        "filesize": 19330833456
+      },
       {
         "version": "26.3",
         "buildid": "25D125",
@@ -4071,12 +4129,12 @@
     ]
   },
   "macos_ipsw": {
-    "version": "26.3",
-    "build": "25D125",
-    "url": "https://updates.cdn-apple.com/2026WinterFCS/fullrestores/047-60229/6D5DBEA5-75A0-4BEF-ACC9-5ACF9B8DF6B7/UniversalMac_26.3_25D125_Restore.ipsw",
-    "apple_slug": "047-60229",
-    "fetch_timestamp": "2026-03-04T18:48:28.448196729Z"
+    "version": "26.3.1",
+    "build": "25D2128",
+    "url": "https://updates.cdn-apple.com/2026WinterFCS/fullrestores/047-88313/2E098049-1731-4415-A206-546D09301973/UniversalMac_26.3.1_25D2128_Restore.ipsw",
+    "apple_slug": "047-88313",
+    "fetch_timestamp": "2026-03-04T19:20:20.435591328Z"
   },
-  "total_devices": 270,
-  "total_firmwares": 240
+  "total_devices": 277,
+  "total_firmwares": 241
 }
