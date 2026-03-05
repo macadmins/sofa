@@ -1,7 +1,7 @@
 {
   "Version": "2.0",
-  "UpdateHash": "d2b7c365abf3ba9bd399216741d012c5287f9c4cc08705e6b35c24962695955c",
-  "LastCheck": "2026-03-05T18:59:32.849170919+00:00",
+  "UpdateHash": "e3980cf4c1e8ea4d2b2c150ac6f49236de8add533515f52edea406752080249c",
+  "LastCheck": "2026-03-05T19:33:13.442996103+00:00",
   "OSVersions": [
     {
       "OSVersion": "26",
@@ -3998,7 +3998,12 @@
             "CVE-2023-41174": {},
             "CVE-2023-41232": {},
             "CVE-2023-41968": {},
-            "CVE-2023-41974": {},
+            "CVE-2023-41974": {
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-41974",
+              "actively_exploited": true,
+              "in_kev": true,
+              "severity": "Critical"
+            },
             "CVE-2023-41980": {},
             "CVE-2023-41981": {},
             "CVE-2023-41984": {},
@@ -4019,7 +4024,9 @@
             "CVE-2023-42973": {},
             "CVE-2023-42977": {}
           },
-          "ActivelyExploitedCVEs": [],
+          "ActivelyExploitedCVEs": [
+            "CVE-2023-41974"
+          ],
           "UniqueCVEsCount": 76,
           "DaysSincePreviousRelease": 0,
           "update_summary": {
