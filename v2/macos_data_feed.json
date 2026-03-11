@@ -1,23 +1,23 @@
 {
   "Version": "2.0",
-  "UpdateHash": "ba950bb2a4aca11b4e141f5ef13f97e63361a9485469644cff88e558ed6aab66",
-  "LastCheck": "2026-03-11T06:49:18.655881587+00:00",
+  "UpdateHash": "5c91245847af6b7731d146bd48cd981cd4242f16a0054a46f8b213b73c49e89e",
+  "LastCheck": "2026-03-11T10:55:27.215305505+00:00",
   "OSVersions": [
     {
       "OSVersion": "Tahoe 26",
       "Latest": {
-        "UpdateName": "macOS Tahoe 26.3.2",
+        "UpdateName": "macOS Tahoe 26.3.1",
         "ProductName": "macOS",
-        "ProductVersion": "26.3.2",
-        "Build": "25D2140",
+        "ProductVersion": "26.3.1",
+        "Build": "25D2128",
         "AllBuilds": [
-          "25D2140"
+          "25D2128"
         ],
-        "ReleaseDate": "2026-03-10T00:00:00Z",
+        "ReleaseDate": "2026-03-04T00:00:00Z",
         "ExpirationDate": "2026-06-09",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/100100",
-        "SecurityInfoContext": "macOS has been updated to version 26.3.2, which was released on March 10, 2026. This update has no published CVE entries and is the most recent approved version.",
+        "SecurityInfoContext": "macOS has been updated to version 26.3.1, which was released on March 04, 2026. This update has no published CVE entries and is the most recent approved version.",
         "SupportedDevices": [
           "J152FAP",
           "J160AP",
@@ -69,17 +69,25 @@
           "J623AP",
           "J624AP",
           "J700AP",
+          "J704AP",
           "J713AP",
+          "J714cAP",
+          "J714sAP",
           "J715AP",
+          "J716cAP",
+          "J716sAP",
           "J773gAP",
           "J773sAP",
+          "J813AP",
+          "J815AP",
           "VMA2MACOSAP",
           "VMM-x86_64"
         ],
         "CVEs": {},
         "ActivelyExploitedCVEs": [],
         "UniqueCVEsCount": 0,
-        "DaysSincePreviousRelease": 6,
+        "DaysSincePreviousRelease": 21,
+        "DeviceScope": "universal",
         "update_summary": {
           "priority": "low",
           "summary": "Maintenance update with no published CVE entries",
@@ -108,69 +116,15 @@
           "ExpirationDate": "2026-06-09",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/100100",
-          "SecurityInfoContext": "macOS has been updated to version 26.3.2, which was released on March 10, 2026. This update has no published CVE entries and is the most recent approved version.",
+          "SecurityInfoContext": "macOS 26.3.2 was released on March 10, 2026. This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
-            "J152FAP",
-            "J160AP",
-            "J180dAP",
-            "J185AP",
-            "J185FAP",
-            "J214KAP",
-            "J215AP",
-            "J274AP",
-            "J293AP",
-            "J313AP",
-            "J314cAP",
-            "J314sAP",
-            "J316cAP",
-            "J316sAP",
-            "J375cAP",
-            "J375dAP",
-            "J413AP",
-            "J414cAP",
-            "J414sAP",
-            "J415AP",
-            "J416cAP",
-            "J416sAP",
-            "J433AP",
-            "J434AP",
-            "J456AP",
-            "J457AP",
-            "J473AP",
-            "J474sAP",
-            "J475cAP",
-            "J475dAP",
-            "J493AP",
-            "J504AP",
-            "J514cAP",
-            "J514mAP",
-            "J514sAP",
-            "J516cAP",
-            "J516mAP",
-            "J516sAP",
-            "J575cAP",
-            "J575dAP",
-            "J604AP",
-            "J613AP",
-            "J614cAP",
-            "J614sAP",
-            "J615AP",
-            "J616cAP",
-            "J616sAP",
-            "J623AP",
-            "J624AP",
-            "J700AP",
-            "J713AP",
-            "J715AP",
-            "J773gAP",
-            "J773sAP",
-            "VMA2MACOSAP",
-            "VMM-x86_64"
+            "J700AP"
           ],
           "CVEs": {},
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 6,
+          "DeviceScope": "device-specific",
           "update_summary": {
             "priority": "low",
             "summary": "Maintenance update with no published CVE entries",
@@ -198,7 +152,7 @@
           "ExpirationDate": "2026-06-09",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/100100",
-          "SecurityInfoContext": "macOS 26.3.1 was released on March 04, 2026. This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "macOS has been updated to version 26.3.1, which was released on March 04, 2026. This update has no published CVE entries and is the most recent approved version.",
           "SupportedDevices": [
             "J152FAP",
             "J160AP",
@@ -268,6 +222,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 21,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "low",
             "summary": "Maintenance update with no published CVE entries",
@@ -435,6 +390,7 @@
           ],
           "UniqueCVEsCount": 57,
           "DaysSincePreviousRelease": 61,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 3 actively exploited vulnerabilities",
@@ -597,6 +553,7 @@
           ],
           "UniqueCVEsCount": 58,
           "DaysSincePreviousRelease": 39,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 2 actively exploited vulnerabilities",
@@ -799,6 +756,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 111,
           "DaysSincePreviousRelease": 35,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 111 security issues",
@@ -887,6 +845,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 14,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "medium",
             "summary": "Addresses 1 security issue",
@@ -1061,6 +1020,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 87,
           "DaysSincePreviousRelease": 0,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 87 security issues",
@@ -1294,6 +1254,7 @@
         "ActivelyExploitedCVEs": [],
         "UniqueCVEsCount": 35,
         "DaysSincePreviousRelease": 61,
+        "DeviceScope": "universal",
         "update_summary": {
           "priority": "high",
           "summary": "Addresses 35 security issues",
@@ -1432,6 +1393,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 35,
           "DaysSincePreviousRelease": 61,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 35 security issues",
@@ -1560,6 +1522,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 26,
           "DaysSincePreviousRelease": 39,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 26 security issues",
@@ -1723,6 +1686,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 61,
           "DaysSincePreviousRelease": 35,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 61 security issues",
@@ -1808,6 +1772,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 14,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "medium",
             "summary": "Addresses 1 security issue",
@@ -1930,6 +1895,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 38,
           "DaysSincePreviousRelease": 26,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 38 security issues",
@@ -2022,6 +1988,7 @@
           ],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 22,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -2205,6 +2172,7 @@
           ],
           "UniqueCVEsCount": 92,
           "DaysSincePreviousRelease": 78,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -2343,6 +2311,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 54,
           "DaysSincePreviousRelease": 26,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 54 security issues",
@@ -2442,6 +2411,7 @@
           ],
           "UniqueCVEsCount": 2,
           "DaysSincePreviousRelease": 16,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 2 actively exploited vulnerabilities",
@@ -2681,6 +2651,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 155,
           "DaysSincePreviousRelease": 20,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 155 security issues",
@@ -2773,6 +2744,7 @@
           ],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 29,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -2865,6 +2837,7 @@
           ],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 14,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -3028,6 +3001,7 @@
           ],
           "UniqueCVEsCount": 72,
           "DaysSincePreviousRelease": 47,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -3195,6 +3169,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 83,
           "DaysSincePreviousRelease": 22,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 83 security issues",
@@ -3294,6 +3269,7 @@
           ],
           "UniqueCVEsCount": 2,
           "DaysSincePreviousRelease": 22,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 2 actively exploited vulnerabilities",
@@ -3460,6 +3436,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 82,
           "DaysSincePreviousRelease": 25,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 82 security issues",
@@ -3543,6 +3520,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 17,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "low",
             "summary": "Maintenance update with no published CVE entries",
@@ -3730,6 +3708,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 103,
           "DaysSincePreviousRelease": 0,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 103 security issues",
@@ -3967,6 +3946,7 @@
         "ActivelyExploitedCVEs": [],
         "UniqueCVEsCount": 41,
         "DaysSincePreviousRelease": 61,
+        "DeviceScope": "universal",
         "update_summary": {
           "priority": "high",
           "summary": "Addresses 41 security issues",
@@ -4100,6 +4080,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 41,
           "DaysSincePreviousRelease": 61,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 41 security issues",
@@ -4212,6 +4193,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 21,
           "DaysSincePreviousRelease": 39,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 21 security issues",
@@ -4353,6 +4335,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 50,
           "DaysSincePreviousRelease": 35,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 50 security issues",
@@ -4442,6 +4425,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 14,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "medium",
             "summary": "Addresses 1 security issue",
@@ -4571,6 +4555,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 41,
           "DaysSincePreviousRelease": 26,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 41 security issues",
@@ -4667,6 +4652,7 @@
           ],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 22,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -4807,6 +4793,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 52,
           "DaysSincePreviousRelease": 78,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 52 security issues",
@@ -4928,6 +4915,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 33,
           "DaysSincePreviousRelease": 42,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 33 security issues",
@@ -5133,6 +5121,7 @@
           ],
           "UniqueCVEsCount": 110,
           "DaysSincePreviousRelease": 49,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -5229,6 +5218,7 @@
           ],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 14,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -5365,6 +5355,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 48,
           "DaysSincePreviousRelease": 47,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 48 security issues",
@@ -5493,6 +5484,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 40,
           "DaysSincePreviousRelease": 44,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 40 security issues",
@@ -5633,6 +5625,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 52,
           "DaysSincePreviousRelease": 42,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 52 security issues",
@@ -5760,6 +5753,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 39,
           "DaysSincePreviousRelease": 40,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 39 security issues",
@@ -5847,6 +5841,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 9,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "low",
             "summary": "Maintenance update with no published CVE entries",
@@ -6015,6 +6010,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 80,
           "DaysSincePreviousRelease": 77,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 80 security issues",
@@ -6154,6 +6150,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 51,
           "DaysSincePreviousRelease": 49,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 51 security issues",
@@ -6243,6 +6240,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 18,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "medium",
             "summary": "Addresses 1 security issue",
@@ -6423,6 +6421,7 @@
           ],
           "UniqueCVEsCount": 79,
           "DaysSincePreviousRelease": 28,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 2 actively exploited vulnerabilities",
@@ -6510,6 +6509,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 17,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "low",
             "summary": "Maintenance update with no published CVE entries",
@@ -6625,6 +6625,7 @@
           ],
           "UniqueCVEsCount": 20,
           "DaysSincePreviousRelease": 34,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -6714,6 +6715,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 8,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "medium",
             "summary": "Addresses 1 security issue",
@@ -6861,6 +6863,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 59,
           "DaysSincePreviousRelease": 11,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 59 security issues",
@@ -6964,6 +6967,7 @@
           ],
           "UniqueCVEsCount": 2,
           "DaysSincePreviousRelease": 23,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 2 actively exploited vulnerabilities",
@@ -7051,6 +7055,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 13,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "low",
             "summary": "Maintenance update with no published CVE entries",
@@ -7209,6 +7214,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 70,
           "DaysSincePreviousRelease": 29,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 70 security issues",
@@ -7412,6 +7418,7 @@
           ],
           "UniqueCVEsCount": 108,
           "DaysSincePreviousRelease": 0,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -7604,6 +7611,7 @@
         ],
         "UniqueCVEsCount": 1,
         "DaysSincePreviousRelease": 22,
+        "DeviceScope": "universal",
         "update_summary": {
           "priority": "critical",
           "summary": "Contains 1 actively exploited vulnerability",
@@ -7703,6 +7711,7 @@
           ],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 22,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -7833,6 +7842,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 43,
           "DaysSincePreviousRelease": 78,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 43 security issues",
@@ -7950,6 +7960,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 30,
           "DaysSincePreviousRelease": 42,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 30 security issues",
@@ -8147,6 +8158,7 @@
           ],
           "UniqueCVEsCount": 103,
           "DaysSincePreviousRelease": 49,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -8242,6 +8254,7 @@
           ],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 14,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -8367,6 +8380,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 38,
           "DaysSincePreviousRelease": 47,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 38 security issues",
@@ -8487,6 +8501,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 33,
           "DaysSincePreviousRelease": 44,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 33 security issues",
@@ -8623,6 +8638,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 49,
           "DaysSincePreviousRelease": 42,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 49 security issues",
@@ -8741,6 +8757,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 31,
           "DaysSincePreviousRelease": 40,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 31 security issues",
@@ -8827,6 +8844,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 9,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "low",
             "summary": "Maintenance update with no published CVE entries",
@@ -8960,6 +8978,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 46,
           "DaysSincePreviousRelease": 77,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 46 security issues",
@@ -9076,6 +9095,7 @@
           ],
           "UniqueCVEsCount": 22,
           "DaysSincePreviousRelease": 49,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -9164,6 +9184,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 18,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "medium",
             "summary": "Addresses 1 security issue",
@@ -9290,6 +9311,7 @@
           ],
           "UniqueCVEsCount": 32,
           "DaysSincePreviousRelease": 45,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -9397,6 +9419,7 @@
           ],
           "UniqueCVEsCount": 13,
           "DaysSincePreviousRelease": 42,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -9515,6 +9538,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 31,
           "DaysSincePreviousRelease": 34,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 31 security issues",
@@ -9601,6 +9625,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 13,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "low",
             "summary": "Maintenance update with no published CVE entries",
@@ -9716,6 +9741,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 28,
           "DaysSincePreviousRelease": 34,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 28 security issues",
@@ -9839,6 +9865,7 @@
           ],
           "UniqueCVEsCount": 23,
           "DaysSincePreviousRelease": 14,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 2 actively exploited vulnerabilities",
@@ -9934,6 +9961,7 @@
           ],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 21,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -10020,6 +10048,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 24,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "low",
             "summary": "Maintenance update with no published CVE entries",
@@ -10204,6 +10233,7 @@
           ],
           "UniqueCVEsCount": 78,
           "DaysSincePreviousRelease": 33,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 3 actively exploited vulnerabilities",
@@ -10306,6 +10336,7 @@
           ],
           "UniqueCVEsCount": 2,
           "DaysSincePreviousRelease": 34,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 2 actively exploited vulnerabilities",
@@ -10475,6 +10506,7 @@
           ],
           "UniqueCVEsCount": 63,
           "DaysSincePreviousRelease": 166,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 3 actively exploited vulnerabilities",
@@ -10577,6 +10609,7 @@
           ],
           "UniqueCVEsCount": 2,
           "DaysSincePreviousRelease": 218,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 2 actively exploited vulnerabilities",
@@ -10767,6 +10800,7 @@
           ],
           "UniqueCVEsCount": 96,
           "DaysSincePreviousRelease": 218,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -10865,6 +10899,7 @@
           ],
           "UniqueCVEsCount": 4,
           "DaysSincePreviousRelease": 281,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -10995,6 +11030,7 @@
           ],
           "UniqueCVEsCount": 36,
           "DaysSincePreviousRelease": 41,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -11146,6 +11182,7 @@
           ],
           "UniqueCVEsCount": 51,
           "DaysSincePreviousRelease": 547,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 2 actively exploited vulnerabilities",
@@ -11235,6 +11272,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 2,
           "DaysSincePreviousRelease": 597,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "medium",
             "summary": "Addresses 2 security issues",
@@ -11479,6 +11517,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 157,
           "DaysSincePreviousRelease": 0,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 157 security issues",
@@ -11726,6 +11765,7 @@
         ],
         "UniqueCVEsCount": 42,
         "DaysSincePreviousRelease": 77,
+        "DeviceScope": "universal",
         "update_summary": {
           "priority": "critical",
           "summary": "Contains 1 actively exploited vulnerability",
@@ -11869,6 +11909,7 @@
           ],
           "UniqueCVEsCount": 42,
           "DaysSincePreviousRelease": 77,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -11978,6 +12019,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 19,
           "DaysSincePreviousRelease": 67,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 19 security issues",
@@ -12103,6 +12145,7 @@
           ],
           "UniqueCVEsCount": 28,
           "DaysSincePreviousRelease": 45,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -12209,6 +12252,7 @@
           ],
           "UniqueCVEsCount": 9,
           "DaysSincePreviousRelease": 42,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -12327,6 +12371,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 28,
           "DaysSincePreviousRelease": 47,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 28 security issues",
@@ -12440,6 +12485,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 23,
           "DaysSincePreviousRelease": 34,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 23 security issues",
@@ -12555,6 +12601,7 @@
           ],
           "UniqueCVEsCount": 18,
           "DaysSincePreviousRelease": 10,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -12653,6 +12700,7 @@
           ],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 49,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -12806,6 +12854,7 @@
           ],
           "UniqueCVEsCount": 50,
           "DaysSincePreviousRelease": 33,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 2 actively exploited vulnerabilities",
@@ -12904,6 +12953,7 @@
           ],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 34,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -13026,6 +13076,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 32,
           "DaysSincePreviousRelease": 166,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 32 security issues",
@@ -13124,6 +13175,7 @@
           ],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 218,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -13255,6 +13307,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 41,
           "DaysSincePreviousRelease": 443,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 41 security issues",
@@ -13366,6 +13419,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 21,
           "DaysSincePreviousRelease": 547,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 21 security issues",
@@ -13473,6 +13527,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 17,
           "DaysSincePreviousRelease": 547,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 17 security issues",
@@ -13577,6 +13632,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 14,
           "DaysSincePreviousRelease": 0,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 14 security issues",
@@ -13714,6 +13770,7 @@
           ],
           "UniqueCVEsCount": 40,
           "DaysSincePreviousRelease": 225,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -13819,6 +13876,7 @@
           ],
           "UniqueCVEsCount": 2,
           "DaysSincePreviousRelease": 468,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 2 actively exploited vulnerabilities",
@@ -13993,6 +14051,7 @@
           ],
           "UniqueCVEsCount": 71,
           "DaysSincePreviousRelease": 65,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 2 actively exploited vulnerabilities",
@@ -14167,6 +14226,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 84,
           "DaysSincePreviousRelease": 535,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 84 security issues",
@@ -14272,6 +14332,7 @@
           ],
           "UniqueCVEsCount": 2,
           "DaysSincePreviousRelease": 2,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 2 actively exploited vulnerabilities",
@@ -14431,6 +14492,7 @@
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 69,
           "DaysSincePreviousRelease": 6,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "high",
             "summary": "Addresses 69 security issues",
@@ -14529,6 +14591,7 @@
           ],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 4,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -14641,6 +14704,7 @@
           ],
           "UniqueCVEsCount": 15,
           "DaysSincePreviousRelease": 689,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -14792,6 +14856,7 @@
           ],
           "UniqueCVEsCount": 54,
           "DaysSincePreviousRelease": 49,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -14960,6 +15025,7 @@
           ],
           "UniqueCVEsCount": 71,
           "DaysSincePreviousRelease": 0,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "critical",
             "summary": "Contains 1 actively exploited vulnerability",
@@ -14983,7 +15049,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/kb/HT211849",
+          "SecurityInfo": "https://support.apple.com/en-us/125887",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "J132AP",
@@ -15048,6 +15114,7 @@
           "CVEs": {},
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 0,
+          "DeviceScope": "universal",
           "update_summary": {
             "priority": "low",
             "summary": "Maintenance update with no published CVE entries",
@@ -16336,8 +16403,8 @@
   },
   "XProtectPayloads": {
     "com.apple.XProtectFramework.XProtect": "157",
-    "com.apple.XprotectFramework.PluginService": "74",
-    "ReleaseDate": "2026-03-10T18:08:18Z"
+    "ReleaseDate": "2026-03-10T18:08:18Z",
+    "com.apple.XprotectFramework.PluginService": "74"
   },
   "BackgroundSecurityImprovements": {},
   "InstallationApps": {
