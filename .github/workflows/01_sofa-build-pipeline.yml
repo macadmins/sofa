@@ -5,28 +5,28 @@ on:
   workflow_dispatch:
     inputs:
       pipeline_stage:
-        description: 'Pipeline stage to run'
+        description: "Pipeline stage to run"
         type: choice
-        default: 'all'
+        default: "all"
         options:
-        - all
-        - gather
-        - fetch
-        - build
-        - bulletin
-        - rss
+          - all
+          - gather
+          - fetch
+          - build
+          - bulletin
+          - rss
       commit_results:
-        description: 'Commit generated data to repository'
+        description: "Commit generated data to repository"
         type: boolean
         default: true
   schedule:
     # Monday, Tuesday, Wednesday, Thursday, and Friday every 1 hour from 5:00 PM to 8:00 PM CET
-    - cron: '0 17-20 * * 1,2,3,4,5'
+    - cron: "0 17-20 * * 1,2,3,4,5"
 
     # On every day every 6 hours
-    - cron: '30 */6 * * *'
+    - cron: "30 */6 * * *"
 env:
-  PYTHON_VERSION: '3.13'
+  PYTHON_VERSION: "3.13"
 
 jobs:
   pipeline:
@@ -39,12 +39,12 @@ jobs:
         run: |
           echo "🏗️ Setting up processing environment..."
           mkdir -p processing
-          
+
       - name: Checkout repository to processing folder
         uses: actions/checkout@v4
         with:
           path: processing
-        
+
       - name: Show environment info
         run: |
           echo "## 🏭 Production Pipeline Environment" >> $GITHUB_STEP_SUMMARY
@@ -57,45 +57,45 @@ jobs:
           echo "**Commit Results:** ${{ github.event.inputs.commit_results }}" >> $GITHUB_STEP_SUMMARY
           echo "**Timestamp:** $(date -u)" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          
+
           # Show architecture details
           echo "🖥️ Runner Architecture Details:"
           uname -a
           lscpu | head -5 || echo "lscpu not available"
-          
+
           echo "📍 Working from processing directory:"
           cd processing
           pwd
           ls -la
-          
+
       - name: Install Apple Root Certificates
         run: |
           echo "🔐 Installing Apple root certificates for SSL validation..."
-          
+
           # Update package database
           sudo apt-get update
-          
+
           # Install ca-certificates if not present
           sudo apt-get install -y ca-certificates curl
-          
+
           # Download and install Apple Root CA-G3 (current primary root)
           echo "📥 Downloading Apple Root CA-G3..."
           sudo curl -f -o /usr/local/share/ca-certificates/apple-root-ca-g3.crt \
             "https://www.apple.com/certificateauthority/AppleRootCA-G3.cer"
-          
+
           # Download and install Apple Root CA (legacy support)
           echo "📥 Downloading Apple Root CA (legacy)..."
           sudo curl -f -o /usr/local/share/ca-certificates/apple-root-ca.crt \
             "https://www.apple.com/certificateauthority/AppleComputerRootCertificate.cer"
-          
+
           # Update system certificate store
           echo "🔄 Updating system certificate store..."
           sudo update-ca-certificates
-          
+
           # Verify installation
           echo "✅ Apple certificates installed:"
           ls -la /usr/local/share/ca-certificates/apple-*
-          
+
           # Test SSL connection to Apple Developer
           echo "🧪 Testing SSL connection to developer.apple.com..."
           if curl -I --max-time 10 "https://developer.apple.com/news/releases/" >/dev/null 2>&1; then
@@ -103,15 +103,15 @@ jobs:
           else
             echo "⚠️ SSL connection test failed - but continuing anyway"
           fi
-          
+
       - name: Download SOFA CLI binaries
         run: |
           echo "📥 Downloading latest SOFA CLI binaries..."
           cd processing
           mkdir -p bin
 
-          # Use specific version since latest release is marked as prerelease
-          DOWNLOAD_URL="https://github.com/headmin/sofa-core-cli/releases/download/v0.1.6"
+          # Use latest stable release - fix for MacBook Neo - macOS 26.3.2 issue that hit Nudge community
+          DOWNLOAD_URL="https://github.com/headmin/sofa-core-cli/releases/download/v0.1.8"
           LINUX_ZIP="sofa-core-cli-x86_64-linux-binaries.zip"
 
           echo "  • Downloading Linux binaries: $LINUX_ZIP"
@@ -131,33 +131,31 @@ jobs:
             exit 1
           fi
 
-
-          
       - name: Verify binary execution
         run: |
           echo "🔧 Verifying essential SOFA CLI binaries..."
           cd processing/bin
-          
+
           # Verify the binaries we need for the pipeline
           ESSENTIAL_BINARIES=("sofa-build" "sofa-cve" "sofa-fetch" "sofa-gather")
-          
+
           for binary in "${ESSENTIAL_BINARIES[@]}"; do
             echo "Verifying $binary..."
-            
+
             # Check if binary exists and is executable
             if [ ! -f "$binary" ]; then
               echo "  ❌ $binary not found"
               continue
             fi
-            
+
             if [ ! -x "$binary" ]; then
               echo "  ❌ $binary not executable"
-              continue  
+              continue
             fi
-            
+
             # Check binary architecture
             echo "  🔍 Binary info: $(file "$binary")"
-            
+
             # Test execution and show version
             if VERSION_OUTPUT=$(./"$binary" --version 2>&1); then
               echo "  ✅ $binary: $VERSION_OUTPUT"
@@ -171,46 +169,44 @@ jobs:
               exit 1
             fi
           done
-          
+
           # Remove any non-essential binaries that were extracted
           echo "🧹 Cleaning up non-essential binaries..."
           rm -f sofa-init 2>/dev/null || true
           ls -la
-          
+
       - name: Set up Python and UV
         run: |
           echo "🐍 Setting up Python environment..."
           python3 --version
-          
+
           echo "📦 Installing UV..."
           curl -LsSf https://astral.sh/uv/install.sh | sh
-          
+
           # UV installs to ~/.local/bin
           export PATH="$HOME/.local/bin:$PATH"
           echo "$HOME/.local/bin" >> $GITHUB_PATH
-          
+
           # Verify UV installation
           echo "🔍 Checking UV installation..."
           echo "UV install directory contents:"
           ls -la $HOME/.local/bin/ | grep uv || echo "UV not found in .local/bin"
-          
+
           # Test UV directly with full path
           echo "Testing UV with full path:"
           $HOME/.local/bin/uv --version
-          
+
           # Test UV via PATH
           echo "Testing UV via PATH:"
           which uv
           uv --version
 
-
-          
       - name: Gather stage
         if: github.event_name == 'schedule' || contains(github.event.inputs.pipeline_stage, 'gather') || github.event.inputs.pipeline_stage == 'all'
         run: |
           echo "📊 GATHER stage..."
           cd processing
-          
+
           echo "📍 Working from processing directory: $(pwd)"
           echo "🏷️ Git repository state at pipeline start:"
           echo "  Current commit: $(git rev-parse HEAD)"
@@ -219,26 +215,26 @@ jobs:
           echo "  Commit date: $(git log -1 --format='%ci')"
           echo "  Working directory clean: $([ -z "$(git status --porcelain)" ] && echo 'true' || echo 'false')"
           echo ""
-          
+
           echo "📊 Directory structure:"
           ls -la
-          
+
           # Setup environment for processing folder
           export SOFA_BIN_PATH="./bin"
           export PATH="./bin:$HOME/.local/bin:$PATH"
-          
+
           # Directory paths are now relative to processing folder (no absolute paths needed!)
           mkdir -p data/resources data/cache logs
-          
+
           echo "📊 Before gather - existing data:"
           ls -la data/resources/ || echo "No resources directory"
-          
-          # Use the clean, simple pipeline script  
+
+          # Use the clean, simple pipeline script
           echo "Running: uv run --script scripts/sofa_pipeline.py run gather"
           if uv run --script scripts/sofa_pipeline.py run gather; then
             echo "✅ Pipeline GATHER stage completed"
             echo "## ✅ Gather Stage Success" >> $GITHUB_STEP_SUMMARY
-            
+
             # Show captured git info in sofa-status.json
             if [ -f "data/resources/sofa-status.json" ]; then
               echo ""
@@ -249,7 +245,7 @@ jobs:
                 echo "  $(grep -A 6 '"data_repo"' data/resources/sofa-status.json || echo 'No data_repo field found')"
               fi
             fi
-            
+
             echo ""
             echo "✅ Clean pipeline completed with built-in verification"
             echo "## ✅ Clean Pipeline Success" >> $GITHUB_STEP_SUMMARY
@@ -258,7 +254,7 @@ jobs:
             echo "## ❌ Gather Stage Failed" >> $GITHUB_STEP_SUMMARY
             exit 1
           fi
-          
+
       - name: Fetch stage
         if: github.event_name == 'schedule' || contains(github.event.inputs.pipeline_stage, 'fetch') || github.event.inputs.pipeline_stage == 'all'
         run: |
@@ -277,10 +273,6 @@ jobs:
             echo "## ❌ Fetch Stage Failed" >> $GITHUB_STEP_SUMMARY
             exit 1
           fi
-          
-
-
-
 
       - name: Build stage
         if: github.event_name == 'schedule' || contains(github.event.inputs.pipeline_stage, 'build') || github.event.inputs.pipeline_stage == 'all'
@@ -296,7 +288,7 @@ jobs:
           if [ -f "data/resources/supported_devices.json" ]; then
             cp data/resources/supported_devices.json data/models/
           fi
-          
+
           echo "✅ build.toml configured with correct relative paths"
 
           export SOFA_BIN_PATH="./bin"
@@ -344,7 +336,7 @@ jobs:
           cd processing
           echo "## 📁 Generated Files" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          
+
           if [ -d "data/feeds" ]; then
             echo "### Feeds Directory:" >> $GITHUB_STEP_SUMMARY
             find data/feeds -type f | head -20 | while read file; do
@@ -354,7 +346,7 @@ jobs:
           else
             echo "❌ No data/feeds directory found" >> $GITHUB_STEP_SUMMARY
           fi
-          
+
           if [ -d "data/resources" ]; then
             echo "### Resources Directory:" >> $GITHUB_STEP_SUMMARY
             find data/resources -type f | head -20 | while read file; do
@@ -364,8 +356,8 @@ jobs:
           else
             echo "❌ No data/resources directory found" >> $GITHUB_STEP_SUMMARY
           fi
-          
-      - name: RSS generation with beta validation  
+
+      - name: RSS generation with beta validation
         if: success() && (github.event_name == 'schedule' || contains(github.event.inputs.pipeline_stage, 'rss') || github.event.inputs.pipeline_stage == 'all')
         env:
           SOFA_FQDN: ${{ secrets.SOFA_BASE_URL || 'https://sofa.macadmins.io' }}
@@ -374,15 +366,15 @@ jobs:
           echo "📡 RSS generation with beta validation..."
           echo "🌐 Using SOFA_FQDN: $SOFA_FQDN"
           cd processing
-          
+
           # Check for required input files
           echo "📊 RSS input files:"
           ls -la data/resources/bulletin_data.json || echo "❌ bulletin_data.json missing"
-          ls -la data/resources/apple_beta_feed.json || echo "❌ apple_beta_feed.json missing" 
-          
+          ls -la data/resources/apple_beta_feed.json || echo "❌ apple_beta_feed.json missing"
+
           if [ -f "data/resources/bulletin_data.json" ]; then
             echo "✅ Found bulletin_data.json, generating RSS with beta inclusion..."
-            
+
             # Generate RSS with beta releases included for validation
             if uv run --script scripts/generate_rss.py \
               --output v1/rss_feed.xml \
@@ -390,14 +382,14 @@ jobs:
               --include-xprotect \
               --include-beta \
               --verbose; then
-              
+
               echo "✅ RSS generation completed"
               echo "## ✅ RSS Generation Success" >> $GITHUB_STEP_SUMMARY
-              
+
               if [ -f "data/feeds/v1/rss_feed.xml" ]; then
                 rss_size=$(stat -f%z "data/feeds/v1/rss_feed.xml" 2>/dev/null || stat -c%s "data/feeds/v1/rss_feed.xml" 2>/dev/null)
                 echo "Generated RSS feed: ${rss_size} bytes" >> $GITHUB_STEP_SUMMARY
-                
+
                 # RSS generation output already shows beta count
                 echo "✅ RSS generation includes comprehensive beta validation"
                 echo "- **RSS Generation**: ✅ Includes beta releases" >> $GITHUB_STEP_SUMMARY
@@ -411,21 +403,21 @@ jobs:
             echo "## ⚠️ RSS Test Skipped" >> $GITHUB_STEP_SUMMARY
             echo "No bulletin_data.json found for RSS generation" >> $GITHUB_STEP_SUMMARY
           fi
-          
+
       - name: Commit pipeline results
         if: github.event.inputs.commit_results == 'true' || github.event_name == 'schedule'
         run: |
           echo "💾 Committing generated data back to repository..."
           cd processing
-          
+
           # Show what data was generated
           echo "🔍 Generated data structure:"
           find data/ -type f | head -20 || echo "No data files found"
-          
+
           # Add generated data
           git config --local user.email "action@github.com"
           git config --local user.name "SOFA Pipeline"
-          
+
           # Add all feeds and resources
           echo "📁 Adding feeds and resources:"
           git add v1/macos_data_feed.json && echo "✅ Added v1/macos_data_feed.json" || echo "❌ v1/macos_data_feed.json not found or unchanged"
@@ -434,29 +426,29 @@ jobs:
           git add v1/rss_feed.xml && echo "✅ Added v1/rss_feed.xml" || echo "❌ v1/rss_feed.xml not found or unchanged"
           git add v2/ && echo "✅ Added v2 feeds" || echo "❌ v2 directory not found or unchanged"
           git add data/resources/ && echo "✅ Added all resources" || echo "❌ resources directory not found or unchanged"
-          
+
           if git diff --staged --quiet; then
             echo "📝 No new data to commit"
           else
             echo "📝 Analyzing changes for detailed commit message..."
-            
+
             # Analyze what actually changed
             CHANGED_FILES=$(git diff --staged --name-only)
             echo "📊 Files being committed:"
             echo "$CHANGED_FILES"
-            
+
             # Count changes reliably
             V1_COUNT=$(echo "$CHANGED_FILES" | grep -c "^v1/" 2>/dev/null || echo "0")
             V2_COUNT=$(echo "$CHANGED_FILES" | grep -c "^v2/" 2>/dev/null || echo "0")
             RESOURCES_COUNT=$(echo "$CHANGED_FILES" | grep -c "data/resources/" 2>/dev/null || echo "0")
             TOTAL_CHANGES=$(echo "$CHANGED_FILES" | wc -l)
-            
+
             # Simple, clean change analysis - no complex logic that can fail
-            
+
             # Create clean, reliable commit message
             TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
             echo "📝 Committing pipeline data with clean summary..."
-            
+
             # Build simple summary
             CHANGE_SUMMARY=""
             if [ "$V1_COUNT" -gt 0 ]; then
@@ -469,17 +461,17 @@ jobs:
               CHANGE_SUMMARY="${CHANGE_SUMMARY}resources ($RESOURCES_COUNT), "
             fi
             CHANGE_SUMMARY=$(echo "$CHANGE_SUMMARY" | sed 's/, $//')
-            
+
             git commit -m "🔄 SOFA pipeline update - $TIMESTAMP
 
             Pipeline stage: ${{ github.event.inputs.pipeline_stage }} | Files: $TOTAL_CHANGES
             Updates: $CHANGE_SUMMARY
-            
+
             Generated with sofa_pipeline.py v0.2.0 + v0.1.1-beta1 binaries"
-            
+
             git push
             echo "✅ Detailed pipeline data committed to repository"
-            
+
             echo ""
             echo "🏷️ Git repository state after pipeline commit:"
             echo "  New commit: $(git rev-parse HEAD)"
@@ -500,7 +492,7 @@ jobs:
             processing/v2/
           retention-days: 7
           if-no-files-found: warn
-          
+
       - name: Pipeline summary
         if: always()
         run: |
@@ -511,4 +503,3 @@ jobs:
           echo "**Completed:** $(date -u)" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "Clean pipeline provides comprehensive output with built-in verification." >> $GITHUB_STEP_SUMMARY
-
