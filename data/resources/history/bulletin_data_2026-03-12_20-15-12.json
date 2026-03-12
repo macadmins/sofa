@@ -1,12 +1,12 @@
 {
-  "content_hash": "9091af9c836a8021cb14c998989ea01eed92c6e289d23caec411f912ffefb50f",
+  "content_hash": "5c740cd101afcd1f2b68de60c8217633c8d7e3a92729d7b000214b5abe1bb386",
   "content_changed": true,
-  "generated_at": "2026-03-10T20:14:26.725277259Z",
+  "generated_at": "2026-03-12T20:15:12.140384273Z",
   "latest_releases": {
     "macos": {
-      "version": "26.3.2",
-      "build": "25D2140",
-      "release_date": "2026-03-10T00:00:00Z",
+      "version": "26.3.1",
+      "build": "25D2128",
+      "release_date": "2026-03-04T00:00:00Z",
       "url": "https://support.apple.com/en-us/100100",
       "cves_fixed": [],
       "actively_exploited_count": 0,
@@ -129,11 +129,11 @@
   "security_summary": {
     "unique_cves_fixed": 25,
     "kev_matches": 3,
-    "latest_wave_date": "2026-03-10T00:00:00Z",
+    "latest_wave_date": "2026-03-04T00:00:00Z",
     "kev_cve_list": [
-      "CVE-2025-43529",
+      "CVE-2026-20700",
       "CVE-2025-14174",
-      "CVE-2026-20700"
+      "CVE-2025-43529"
     ]
   },
   "beta_releases": {
@@ -170,6 +170,22 @@
     }
   },
   "recent_releases": [
+    {
+      "release_date": "2026-03-11",
+      "name": "iOS 15.8.7 and iPadOS 15.8.7",
+      "platform": "ios",
+      "version": "15.8.7",
+      "url": "https://support.apple.com/en-us/126632"
+    },
+    {
+      "release_date": "2026-03-11",
+      "name": "iOS 16.7.15 and iPadOS 16.7.15",
+      "platform": "ios",
+      "version": "16.7.15",
+      "url": "https://support.apple.com/en-us/126646",
+      "enterprise_link": "https://support.apple.com/en-ca/101584",
+      "updates_link": "https://support.apple.com/en-ca/101566"
+    },
     {
       "release_date": "2026-03-10",
       "name": "macOS Tahoe 26.3.2",
@@ -229,24 +245,6 @@
       "platform": "ios",
       "version": "26.3",
       "url": "https://support.apple.com/en-us/126346"
-    },
-    {
-      "release_date": "2026-02-11",
-      "name": "macOS Sequoia 15.7.4",
-      "platform": "macos",
-      "version": "15.7.4",
-      "url": "https://support.apple.com/en-us/126349",
-      "enterprise_link": "https://support.apple.com/en-ca/121011",
-      "updates_link": "https://support.apple.com/en-ca/120283"
-    },
-    {
-      "release_date": "2026-02-11",
-      "name": "macOS Sonoma 14.8.4",
-      "platform": "macos",
-      "version": "14.8.4",
-      "url": "https://support.apple.com/en-us/126350",
-      "enterprise_link": "https://support.apple.com/en-ca/109030",
-      "updates_link": "https://support.apple.com/en-ca/109035"
     }
   ]
 }
