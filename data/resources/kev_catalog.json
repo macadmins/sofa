@@ -1,9 +1,39 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.03.11",
-  "dateReleased": "2026-03-11T17:24:27.1134Z",
-  "count": 1540,
+  "catalogVersion": "2026.03.13",
+  "dateReleased": "2026-03-13T16:38:24.564Z",
+  "count": 1542,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-3910",
+      "vendorProject": "Google",
+      "product": "Chromium V8",
+      "vulnerabilityName": "Google Chromium V8 Improper Restriction of Operations Within the Bounds of a Memory Buffer Vulnerability",
+      "dateAdded": "2026-03-13",
+      "shortDescription": "Google Chromium V8 contains an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-03-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://chromereleases.googleblog.com/2026/03/stable-channel-update-for-desktop_12.html ; https://nvd.nist.gov/vuln/detail/CVE-2026-3910",
+      "cwes": [
+        "CWE-119"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-3909",
+      "vendorProject": "Google",
+      "product": "Skia",
+      "vulnerabilityName": "Google Skia Out-of-Bounds Write Vulnerability",
+      "dateAdded": "2026-03-13",
+      "shortDescription": "Google Skia contains an out-of-bounds write vulnerability that could allow a remote attacker to perform out of bounds memory access via a crafted HTML page. This vulnerability affects Google Chrome and ChromeOS, Android, Flutter, and possibly other products.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-03-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "This vulnerability affects a common open-source component, third-party library, or a protocol used by different products. Please check with specific vendors for information on patching status. For more information, please see: https://chromereleases.googleblog.com/2026/03/stable-channel-update-for-desktop_12.html#:~:text=Google%20is%20aware ; https://nvd.nist.gov/vuln/detail/CVE-2026-3909",
+      "cwes": [
+        "CWE-787"
+      ]
+    },
     {
       "cveID": "CVE-2025-68613",
       "vendorProject": "n8n",
@@ -22863,5 +22893,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-03-13T12:49:05.615659849Z"
+  "fetchTimestamp": "2026-03-13T17:17:56.464009246Z"
 }
