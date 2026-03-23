@@ -111,7 +111,7 @@ jobs:
           mkdir -p bin
 
           # Use latest stable release - fix for MacBook Neo - macOS 26.3.2 issue that hit Nudge community
-          DOWNLOAD_URL="https://github.com/headmin/sofa-core-cli/releases/download/v0.1.9"
+          DOWNLOAD_URL="https://github.com/headmin/sofa-core-cli/releases/download/v0.2.0"
           LINUX_ZIP="sofa-core-cli-x86_64-linux-binaries.zip"
 
           echo "  • Downloading Linux binaries: $LINUX_ZIP"
