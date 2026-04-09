@@ -1,23 +1,23 @@
 {
   "Version": "2.0",
-  "UpdateHash": "488a2eb154a5c235fbaceebef60bfd814cc36ab702bf9ff860a0601ebd41e3b2",
-  "LastCheck": "2026-04-09T17:30:35.238885426+00:00",
+  "UpdateHash": "b52a9219fa3b29abfa601dd4a939e97117b0369553edd83fbdd7cce77d6babe8",
+  "LastCheck": "2026-04-09T18:30:00.623996765+00:00",
   "OSVersions": [
     {
       "OSVersion": "Tahoe 26",
       "Latest": {
-        "UpdateName": "macOS Tahoe 26.4",
+        "UpdateName": "macOS Tahoe 26.4.1",
         "ProductName": "macOS",
-        "ProductVersion": "26.4",
-        "Build": "25E246",
+        "ProductVersion": "26.4.1",
+        "Build": "25E253",
         "AllBuilds": [
-          "25E246"
+          "25E253"
         ],
-        "ReleaseDate": "2026-03-24T00:00:00Z",
+        "ReleaseDate": "2026-04-09T00:00:00Z",
         "ExpirationDate": "2026-07-08",
         "ReleaseType": "OS",
-        "SecurityInfo": "https://support.apple.com/en-us/126794",
-        "SecurityInfoContext": "macOS has been updated to version 26.4, which was released on March 24, 2026. This update addresses 77 security issues and is the most recent approved version.",
+        "SecurityInfo": "https://support.apple.com/en-us/100100",
+        "SecurityInfoContext": "macOS has been updated to version 26.4.1, which was released on April 09, 2026. This update has no published CVE entries and is the most recent approved version.",
         "SupportedDevices": [
           "J152FAP",
           "J160AP",
@@ -83,93 +83,15 @@
           "VMA2MACOSAP",
           "VMM-x86_64"
         ],
-        "CVEs": {
-          "CVE-2025-14524": {},
-          "CVE-2025-55753": {},
-          "CVE-2025-58098": {},
-          "CVE-2025-59775": {},
-          "CVE-2025-64505": {},
-          "CVE-2025-65082": {},
-          "CVE-2025-66200": {},
-          "CVE-2026-20607": {},
-          "CVE-2026-20631": {},
-          "CVE-2026-20632": {},
-          "CVE-2026-20633": {},
-          "CVE-2026-20643": {},
-          "CVE-2026-20664": {},
-          "CVE-2026-20665": {},
-          "CVE-2026-20684": {},
-          "CVE-2026-20687": {},
-          "CVE-2026-20688": {},
-          "CVE-2026-20690": {},
-          "CVE-2026-20691": {},
-          "CVE-2026-20692": {},
-          "CVE-2026-20693": {},
-          "CVE-2026-20694": {},
-          "CVE-2026-20695": {},
-          "CVE-2026-20697": {},
-          "CVE-2026-20698": {},
-          "CVE-2026-20699": {},
-          "CVE-2026-20701": {},
-          "CVE-2026-28816": {},
-          "CVE-2026-28817": {},
-          "CVE-2026-28818": {},
-          "CVE-2026-28820": {},
-          "CVE-2026-28821": {},
-          "CVE-2026-28822": {},
-          "CVE-2026-28823": {},
-          "CVE-2026-28824": {},
-          "CVE-2026-28825": {},
-          "CVE-2026-28826": {},
-          "CVE-2026-28827": {},
-          "CVE-2026-28828": {},
-          "CVE-2026-28829": {},
-          "CVE-2026-28831": {},
-          "CVE-2026-28832": {},
-          "CVE-2026-28833": {},
-          "CVE-2026-28834": {},
-          "CVE-2026-28835": {},
-          "CVE-2026-28837": {},
-          "CVE-2026-28838": {},
-          "CVE-2026-28839": {},
-          "CVE-2026-28841": {},
-          "CVE-2026-28842": {},
-          "CVE-2026-28844": {},
-          "CVE-2026-28845": {},
-          "CVE-2026-28852": {},
-          "CVE-2026-28857": {},
-          "CVE-2026-28859": {},
-          "CVE-2026-28861": {},
-          "CVE-2026-28862": {},
-          "CVE-2026-28864": {},
-          "CVE-2026-28865": {},
-          "CVE-2026-28866": {},
-          "CVE-2026-28867": {},
-          "CVE-2026-28868": {},
-          "CVE-2026-28870": {},
-          "CVE-2026-28871": {},
-          "CVE-2026-28876": {},
-          "CVE-2026-28877": {},
-          "CVE-2026-28878": {},
-          "CVE-2026-28879": {},
-          "CVE-2026-28880": {},
-          "CVE-2026-28881": {},
-          "CVE-2026-28882": {},
-          "CVE-2026-28886": {},
-          "CVE-2026-28888": {},
-          "CVE-2026-28891": {},
-          "CVE-2026-28892": {},
-          "CVE-2026-28893": {},
-          "CVE-2026-28894": {}
-        },
+        "CVEs": {},
         "ActivelyExploitedCVEs": [],
-        "UniqueCVEsCount": 77,
-        "DaysSincePreviousRelease": 14,
+        "UniqueCVEsCount": 0,
+        "DaysSincePreviousRelease": 16,
         "DeviceScope": "universal",
         "update_summary": {
-          "priority": "high",
-          "summary": "Addresses 77 security issues",
-          "recommendation": "Update to stay secure - security fixes available",
+          "priority": "low",
+          "summary": "Maintenance update with no published CVE entries",
+          "recommendation": "Update recommended - may include unpublished security improvements",
           "stats": {
             "exploited": 0,
             "critical": 0,
@@ -177,11 +99,109 @@
             "medium": 0,
             "low": 0,
             "remote": 0,
-            "total": 77
+            "total": 0
           }
         }
       },
       "SecurityReleases": [
+        {
+          "UpdateName": "macOS Tahoe 26.4.1",
+          "ProductName": "macOS",
+          "ProductVersion": "26.4.1",
+          "Build": "25E253",
+          "AllBuilds": [
+            "25E253"
+          ],
+          "ReleaseDate": "2026-04-09T00:00:00Z",
+          "ExpirationDate": "2026-07-08",
+          "ReleaseType": "OS",
+          "SecurityInfo": "https://support.apple.com/en-us/100100",
+          "SecurityInfoContext": "macOS has been updated to version 26.4.1, which was released on April 09, 2026. This update has no published CVE entries and is the most recent approved version.",
+          "SupportedDevices": [
+            "J152FAP",
+            "J160AP",
+            "J180dAP",
+            "J185AP",
+            "J185FAP",
+            "J214KAP",
+            "J215AP",
+            "J274AP",
+            "J293AP",
+            "J313AP",
+            "J314cAP",
+            "J314sAP",
+            "J316cAP",
+            "J316sAP",
+            "J375cAP",
+            "J375dAP",
+            "J413AP",
+            "J414cAP",
+            "J414sAP",
+            "J415AP",
+            "J416cAP",
+            "J416sAP",
+            "J433AP",
+            "J434AP",
+            "J456AP",
+            "J457AP",
+            "J473AP",
+            "J474sAP",
+            "J475cAP",
+            "J475dAP",
+            "J493AP",
+            "J504AP",
+            "J514cAP",
+            "J514mAP",
+            "J514sAP",
+            "J516cAP",
+            "J516mAP",
+            "J516sAP",
+            "J575cAP",
+            "J575dAP",
+            "J604AP",
+            "J613AP",
+            "J614cAP",
+            "J614sAP",
+            "J615AP",
+            "J616cAP",
+            "J616sAP",
+            "J623AP",
+            "J624AP",
+            "J700AP",
+            "J704AP",
+            "J713AP",
+            "J714cAP",
+            "J714sAP",
+            "J715AP",
+            "J716cAP",
+            "J716sAP",
+            "J773gAP",
+            "J773sAP",
+            "J813AP",
+            "J815AP",
+            "VMA2MACOSAP",
+            "VMM-x86_64"
+          ],
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
+          "DaysSincePreviousRelease": 16,
+          "DeviceScope": "universal",
+          "update_summary": {
+            "priority": "low",
+            "summary": "Maintenance update with no published CVE entries",
+            "recommendation": "Update recommended - may include unpublished security improvements",
+            "stats": {
+              "exploited": 0,
+              "critical": 0,
+              "high": 0,
+              "medium": 0,
+              "low": 0,
+              "remote": 0,
+              "total": 0
+            }
+          }
+        },
         {
           "UpdateName": "macOS Tahoe 26.4",
           "ProductName": "macOS",
@@ -194,7 +214,7 @@
           "ExpirationDate": "2026-07-08",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/126794",
-          "SecurityInfoContext": "macOS has been updated to version 26.4, which was released on March 24, 2026. This update addresses 77 security issues and is the most recent approved version.",
+          "SecurityInfoContext": "macOS 26.4 was released on March 24, 2026. This release addressed 77 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "J152FAP",
             "J160AP",
@@ -504,7 +524,7 @@
           "ExpirationDate": "2026-06-02",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/126348",
-          "SecurityInfoContext": "macOS 26.3 was released on February 11, 2026. This release addressed 66 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "macOS 26.3 was released on February 11, 2026. This release addressed 57 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "J152FAP",
             "J160AP",
@@ -595,7 +615,6 @@
             "CVE-2026-20619": {},
             "CVE-2026-20620": {},
             "CVE-2026-20621": {},
-            "CVE-2026-20622": {},
             "CVE-2026-20623": {},
             "CVE-2026-20624": {},
             "CVE-2026-20625": {},
@@ -607,8 +626,6 @@
             "CVE-2026-20634": {},
             "CVE-2026-20635": {},
             "CVE-2026-20636": {},
-            "CVE-2026-20637": {},
-            "CVE-2026-20639": {},
             "CVE-2026-20641": {},
             "CVE-2026-20644": {},
             "CVE-2026-20646": {},
@@ -616,7 +633,6 @@
             "CVE-2026-20648": {},
             "CVE-2026-20649": {},
             "CVE-2026-20650": {},
-            "CVE-2026-20651": {},
             "CVE-2026-20652": {},
             "CVE-2026-20653": {},
             "CVE-2026-20654": {},
@@ -626,9 +642,7 @@
             "CVE-2026-20662": {},
             "CVE-2026-20666": {},
             "CVE-2026-20667": {},
-            "CVE-2026-20668": {},
             "CVE-2026-20669": {},
-            "CVE-2026-20670": {},
             "CVE-2026-20671": {},
             "CVE-2026-20673": {},
             "CVE-2026-20675": {},
@@ -636,22 +650,19 @@
             "CVE-2026-20677": {},
             "CVE-2026-20680": {},
             "CVE-2026-20681": {},
-            "CVE-2026-20694": {},
-            "CVE-2026-20699": {},
             "CVE-2026-20700": {
               "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20700",
               "actively_exploited": true,
               "in_kev": true,
               "severity": "Critical"
-            },
-            "CVE-2026-28855": {}
+            }
           },
           "ActivelyExploitedCVEs": [
             "CVE-2026-20700",
             "CVE-2025-43529",
             "CVE-2025-14174"
           ],
-          "UniqueCVEsCount": 66,
+          "UniqueCVEsCount": 57,
           "DaysSincePreviousRelease": 61,
           "DeviceScope": "universal",
           "update_summary": {
@@ -665,7 +676,7 @@
               "medium": 0,
               "low": 0,
               "remote": 0,
-              "total": 66
+              "total": 57
             }
           }
         },
@@ -15675,7 +15686,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/en-us/103147",
+          "SecurityInfo": "https://support.apple.com/en-us/122283",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "J132AP",
@@ -17024,13 +17035,13 @@
     }
   },
   "XProtectPlistConfigData": {
-    "ReleaseDate": "2026-04-03T23:32:28Z",
-    "com.apple.XProtect": "5337"
+    "com.apple.XProtect": "5337",
+    "ReleaseDate": "2026-04-03T23:32:28Z"
   },
   "XProtectPayloads": {
-    "com.apple.XprotectFramework.PluginService": "74",
     "ReleaseDate": "2026-04-03T23:32:28Z",
-    "com.apple.XProtectFramework.XProtect": "157"
+    "com.apple.XProtectFramework.XProtect": "157",
+    "com.apple.XprotectFramework.PluginService": "74"
   },
   "BackgroundSecurityImprovements": {
     "26": [
@@ -17122,14 +17133,23 @@
   "InstallationApps": {
     "LatestUMA": {
       "title": "macOS Tahoe",
-      "version": "26.4",
-      "build": "25E246",
-      "apple_slug": "122-10756",
-      "url": "https://swcdn.apple.com/content/downloads/48/33/122-10756-A_YQ9DW48PY4/y7tlsqmgdnno1pkaf137h2l3gmq0t0ywaz/InstallAssistant.pkg",
-      "posting_date": "2026-03-24T17:42:50Z",
-      "size": 18245968224
+      "version": "26.4.1",
+      "build": "25E253",
+      "apple_slug": "122-28067",
+      "url": "https://swcdn.apple.com/content/downloads/40/56/122-28067-A_9B4FJ1TL06/zchwyidn8ubxkpelhytzb05o418bchr2se/InstallAssistant.pkg",
+      "posting_date": "2026-04-09T17:26:13Z",
+      "size": 18249548049
     },
     "AllPreviousUMA": [
+      {
+        "title": "macOS Tahoe",
+        "version": "26.4",
+        "build": "25E246",
+        "apple_slug": "122-10756",
+        "url": "https://swcdn.apple.com/content/downloads/48/33/122-10756-A_YQ9DW48PY4/y7tlsqmgdnno1pkaf137h2l3gmq0t0ywaz/InstallAssistant.pkg",
+        "posting_date": "2026-03-24T17:42:50Z",
+        "size": 18245968224
+      },
       {
         "title": "macOS Tahoe",
         "version": "26.3.2",
@@ -17294,10 +17314,10 @@
       }
     ],
     "LatestMacIPSW": {
-      "macos_ipsw_url": "https://updates.cdn-apple.com/2026WinterFCS/fullrestores/122-00766/062A6121-2ABE-45D7-BCB1-72B666B6D2C2/UniversalMac_26.4_25E246_Restore.ipsw",
-      "macos_ipsw_build": "25E246",
-      "macos_ipsw_version": "26.4",
-      "macos_ipsw_apple_slug": "122-00766"
+      "macos_ipsw_url": "https://updates.cdn-apple.com/2026WinterFCS/fullrestores/122-28781/DCB2FF13-06CB-44C2-BCA2-DFCAF3521D46/UniversalMac_26.4.1_25E253_Restore.ipsw",
+      "macos_ipsw_build": "25E253",
+      "macos_ipsw_version": "26.4.1",
+      "macos_ipsw_apple_slug": "122-28781"
     }
   }
 }
