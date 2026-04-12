@@ -1,0 +1,169 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sofa/v2/dms_consumers_lite/2026.04.11.2",
+  "title": "SOFA dms_consumers_lite (schema 2026.04.11.2)",
+  "description": "Lightweight DMS feed. Same data, ~75% smaller. SupportedDevices lives once per OS version; individual releases only carry it when they differ (RSRs, BSIs).",
+  "type": "object",
+  "required": [
+    "Devices",
+    "Metadata",
+    "Platforms"
+  ],
+  "properties": {
+    "Devices": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/DeviceEntry"
+      }
+    },
+    "Metadata": {
+      "$ref": "#/definitions/MDMMetadata"
+    },
+    "Platforms": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/MDMLitePlatform"
+      }
+    }
+  },
+  "definitions": {
+    "DeviceEntry": {
+      "description": "Value type for the canonical v2-feed `Devices` map.\n\nResolves a GDMF identifier (macOS `board_id` like `J132AP`, or iOS-family `device_id` like `iPhone14,2`) to its marketing name plus — on macOS only — the Apple `device_id`. On iOS/visionOS/tvOS/watchOS the GDMF identifier IS the device_id, so `device_id` is omitted as redundant with the map key.",
+      "type": "object",
+      "required": [
+        "MarketingName"
+      ],
+      "properties": {
+        "DeviceID": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "MarketingName": {
+          "type": "string"
+        }
+      }
+    },
+    "MDMLiteOSVersion": {
+      "type": "object",
+      "required": [
+        "LatestVersion",
+        "OSVersion",
+        "Releases",
+        "SupportedDevices"
+      ],
+      "properties": {
+        "LatestVersion": {
+          "type": "string"
+        },
+        "OSVersion": {
+          "type": "string"
+        },
+        "Releases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MDMLiteRelease"
+          }
+        },
+        "SupportedDevices": {
+          "description": "Default device list for this OS version. Releases inherit this unless they specify their own SupportedDevices (device-specific releases).",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "MDMLitePlatform": {
+      "type": "object",
+      "required": [
+        "OSVersions",
+        "Platform"
+      ],
+      "properties": {
+        "OSVersions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MDMLiteOSVersion"
+          }
+        },
+        "Platform": {
+          "type": "string"
+        }
+      }
+    },
+    "MDMLiteRelease": {
+      "description": "A signed release. If `SupportedDevices` is absent, inherit from the parent OS version's list.",
+      "type": "object",
+      "required": [
+        "ActivelyExploitedCount",
+        "Build",
+        "CVECount",
+        "ReleaseDate",
+        "Version"
+      ],
+      "properties": {
+        "ActivelyExploitedCount": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0.0
+        },
+        "Build": {
+          "type": "string"
+        },
+        "CVECount": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0.0
+        },
+        "ReleaseDate": {
+          "type": "string"
+        },
+        "SupportedDevices": {
+          "description": "Only present when this release's device list differs from the OS version default.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "Type": {
+          "description": "\"release\" or \"bsi\"",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Version": {
+          "type": "string"
+        }
+      }
+    },
+    "MDMMetadata": {
+      "type": "object",
+      "required": [
+        "ContentHash",
+        "Description",
+        "GeneratedAt",
+        "SchemaVersion"
+      ],
+      "properties": {
+        "ContentHash": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "GeneratedAt": {
+          "type": "string"
+        },
+        "SchemaVersion": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
