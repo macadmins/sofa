@@ -32,7 +32,7 @@ jobs:
   pipeline:
     name: SOFA Production Pipeline
     runs-on: ubuntu-latest
-    if: github.event.repository.fork == true
+    if: github.event.repository.fork == false
 
     steps:
       - name: Setup processing directory
