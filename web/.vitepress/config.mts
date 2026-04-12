@@ -101,6 +101,8 @@ export default defineConfig({
         items: [
           { text: 'CVE Search', link: '/cve-search' },
           { text: 'Release Deferrals', link: '/release-deferrals' },
+          { text: 'Signed Versions', link: '/signed-versions' },
+          { text: 'Release Timeline', link: '/release-timeline' },
           { text: 'Model Identifiers', link: '/model-identifier' },
           { text: 'macOS Installers', link: '/macos-installer-info' },
           { text: 'Beta Releases', link: '/beta-releases' },
@@ -123,7 +125,7 @@ export default defineConfig({
     ],
     footer: {
       message: 'Released under the Apache 2.0 License.',
-      copyright: 'Copyright © 2025 by Mac Admins Open Source.',
+      copyright: 'Copyright © 2026 by Mac Admins Open Source.',
     },
   },
   vite: {
