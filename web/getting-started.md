@@ -22,7 +22,7 @@ SOFA's modern interface provides comprehensive tracking across all Apple platfor
 ### Platform Coverage
 
 - **macOS** (Tahoe 26, Sequoia 15, Sonoma 14, Ventura 13, Monterey 12) - Complete version tracking with XProtect data
-- **iOS/iPadOS** (2618, 17) - Latest releases and security updates for mobile devices  
+- **iOS/iPadOS** (26, 18, 17) - Latest releases and security updates for mobile devices  
 - **Safari** (18) - Browser security updates across all platforms
 - **tvOS** (26, 18, 17) - Apple TV platform updates and security fixes
 - **watchOS** (26, 11) - Apple Watch updates and compatibility tracking
