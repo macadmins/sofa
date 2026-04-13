@@ -1,9 +1,114 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.04.08",
-  "dateReleased": "2026-04-08T16:59:09.3378Z",
-  "count": 1559,
+  "catalogVersion": "2026.04.13",
+  "dateReleased": "2026-04-13T17:09:50.5149Z",
+  "count": 1566,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2012-1854",
+      "vendorProject": "Microsoft",
+      "product": "Visual Basic for Applications (VBA)",
+      "vulnerabilityName": "Microsoft Visual Basic for Applications Insecure Library Loading Vulnerability",
+      "dateAdded": "2026-04-13",
+      "shortDescription": "Microsoft Visual Basic for Applications (VBA) contains an insecure library loading vulnerability that could allow for remote code execution.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-04-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2012/ms12-046 ; https://nvd.nist.gov/vuln/detail/CVE-2012-1854",
+      "cwes": [
+        "CWE-426"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-60710",
+      "vendorProject": "Microsoft",
+      "product": "Windows",
+      "vulnerabilityName": "Microsoft Windows Link Following Vulnerability",
+      "dateAdded": "2026-04-13",
+      "shortDescription": "Microsoft Windows contains a link following vulnerability that allows for privilege escalation",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-04-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-60710 ; https://nvd.nist.gov/vuln/detail/CVE-2025-60710",
+      "cwes": [
+        "CWE-59"
+      ]
+    },
+    {
+      "cveID": "CVE-2023-21529",
+      "vendorProject": "Microsoft",
+      "product": "Exchange Server",
+      "vulnerabilityName": "Microsoft Exchange Server Deserialization of Untrusted Data Vulnerability",
+      "dateAdded": "2026-04-13",
+      "shortDescription": "Microsoft Exchange Server contains a deserialization of untrusted data that allows an authenticated attacker to achieve remote code execution.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-04-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-21529 ; https://nvd.nist.gov/vuln/detail/CVE-2023-21529",
+      "cwes": [
+        "CWE-502"
+      ]
+    },
+    {
+      "cveID": "CVE-2023-36424",
+      "vendorProject": "Microsoft",
+      "product": "Windows",
+      "vulnerabilityName": "Microsoft Windows Out-of-Bounds Read Vulnerability",
+      "dateAdded": "2026-04-13",
+      "shortDescription": "Microsoft Windows Common Log File System Driver contains an out-of-bounds read vulnerability that could allow a threat actor for privileges escalation",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-04-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2023-36424 ; https://nvd.nist.gov/vuln/detail/CVE-2023-36424",
+      "cwes": [
+        "CWE-125"
+      ]
+    },
+    {
+      "cveID": "CVE-2020-9715",
+      "vendorProject": "Adobe",
+      "product": "Acrobat",
+      "vulnerabilityName": "Adobe Acrobat Use-After-Free Vulnerability",
+      "dateAdded": "2026-04-13",
+      "shortDescription": "Adobe Acrobat contains a use-after-free vulnerability that allows for code execution",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-04-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://helpx.adobe.com/security/products/acrobat/apsb20-48.html ; https://nvd.nist.gov/vuln/detail/CVE-2020-9715",
+      "cwes": [
+        "CWE-416"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-21643",
+      "vendorProject": "Fortinet",
+      "product": "FortiClient EMS",
+      "vulnerabilityName": "Fortinet SQL Injection Vulnerability",
+      "dateAdded": "2026-04-13",
+      "shortDescription": "Fortinet FortiClient EMS contains a SQL injection vulnerability that may allow an unauthenticated attacker to execute unauthorized code or commands via specifically crafted HTTP requests.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-04-16",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://fortiguard.fortinet.com/psirt/FG-IR-25-1142 ; https://nvd.nist.gov/vuln/detail/CVE-2026-21643",
+      "cwes": [
+        "CWE-89"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-34621",
+      "vendorProject": "Adobe",
+      "product": "Acrobat and Reader",
+      "vulnerabilityName": "Adobe Acrobat and Reader Prototype Pollution Vulnerability",
+      "dateAdded": "2026-04-13",
+      "shortDescription": "Adobe Acrobat and Reader contain a prototype pollution vulnerability that allows for arbitrary code execution.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-04-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://helpx.adobe.com/security/products/acrobat/apsb26-43.html ; https://nvd.nist.gov/vuln/detail/CVE-2026-34621",
+      "cwes": [
+        "CWE-1321"
+      ]
+    },
     {
       "cveID": "CVE-2026-1340",
       "vendorProject": "Ivanti",
@@ -23150,5 +23255,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-04-13T12:51:40.595433935Z"
+  "fetchTimestamp": "2026-04-13T17:29:58.686597422Z"
 }
