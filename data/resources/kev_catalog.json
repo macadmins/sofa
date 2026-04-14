@@ -1,9 +1,39 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.04.13",
-  "dateReleased": "2026-04-13T17:09:50.5149Z",
-  "count": 1566,
+  "catalogVersion": "2026.04.14",
+  "dateReleased": "2026-04-14T17:02:49.9122Z",
+  "count": 1568,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2009-0238",
+      "vendorProject": "Microsoft",
+      "product": "Office",
+      "vulnerabilityName": "Microsoft Office Remote Code Execution",
+      "dateAdded": "2026-04-14",
+      "shortDescription": "Microsoft Office Excel contains a remote code execution vulnerability that could allow an attacker to take complete control of an affected system if a user opens a specially crafted Excel file that includes a malformed object.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-04-28",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2009/ms09-009 ; https://nvd.nist.gov/vuln/detail/CVE-2009-0238",
+      "cwes": [
+        "CWE-94"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-32201",
+      "vendorProject": "Microsoft",
+      "product": "SharePoint Server",
+      "vulnerabilityName": "Microsoft SharePoint Server Improper Input Validation Vulnerability",
+      "dateAdded": "2026-04-14",
+      "shortDescription": "Microsoft SharePoint Server contains an improper input validation vulnerability that allows an unauthorized attacker to perform spoofing over a network.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-04-28",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-32201 ; https://nvd.nist.gov/vuln/detail/CVE-2026-32201",
+      "cwes": [
+        "CWE-20"
+      ]
+    },
     {
       "cveID": "CVE-2012-1854",
       "vendorProject": "Microsoft",
@@ -23255,5 +23285,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-04-14T12:51:35.152478583Z"
+  "fetchTimestamp": "2026-04-14T17:32:05.297084730Z"
 }
