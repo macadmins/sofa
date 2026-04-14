@@ -1,5 +1,5 @@
 {
-  "UpdateHash": "07791051f77f25d871ead6b287ce70d372a633693d3b6bba03e158b459f06a71",
+  "UpdateHash": "e530ca1d3e34bf65bb3bab02cc060fe344338cfa967a996141d1c839bb44d180",
   "OSVersions": [
     {
       "OSVersion": "Tahoe 26",
@@ -1201,10 +1201,9 @@
             "Mac17,7": "MacBook Pro (14-inch, M5 Max)",
             "Mac17,8": "MacBook Pro (16-inch, M5 Pro)",
             "Mac17,9": "MacBook Pro (14-inch, M5 Pro)",
-            "MacBookPro15,1": "MacBook Pro (15-inch, 2018)",
-            "MacBookPro15,3": "MacBook Pro (15-inch, 2019)",
+            "MacBookPro16,1": "MacBook Pro (16-inch, 2019)",
             "MacBookPro16,2": "MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports)",
-            "MacBookPro16,3": "MacBook Pro (13-inch, 2020, Two Thunderbolt 3 ports)",
+            "MacBookPro16,4": "MacBook Pro (16-inch, 2019)",
             "MacBookPro17,1": "MacBook Pro (13-inch, M1, 2020)",
             "MacBookPro18,1": "MacBook Pro (16-inch, M1 Pro, 2021)",
             "MacBookPro18,2": "MacBook Pro (16-inch, M1 Max, 2021)",
@@ -3901,6 +3900,7 @@
             "MacBookPro15,2": "MacBook Pro (13-inch, 2018, Four Thunderbolt 3 ports)",
             "MacBookPro15,3": "MacBook Pro (15-inch, 2019)",
             "MacBookPro15,4": "MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)",
+            "MacBookPro16,1": "MacBook Pro (16-inch, 2019)",
             "MacBookPro16,2": "MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports)",
             "MacBookPro16,3": "MacBook Pro (13-inch, 2020, Two Thunderbolt 3 ports)",
             "MacBookPro16,4": "MacBook Pro (16-inch, 2019)",
@@ -7194,6 +7194,7 @@
             "MacBookPro15,2": "MacBook Pro (13-inch, 2018, Four Thunderbolt 3 ports)",
             "MacBookPro15,3": "MacBook Pro (15-inch, 2019)",
             "MacBookPro15,4": "MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)",
+            "MacBookPro16,1": "MacBook Pro (16-inch, 2019)",
             "MacBookPro16,2": "MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports)",
             "MacBookPro16,3": "MacBook Pro (13-inch, 2020, Two Thunderbolt 3 ports)",
             "MacBookPro16,4": "MacBook Pro (16-inch, 2019)",
@@ -10593,6 +10594,7 @@
             "MacBookPro15,2": "MacBook Pro (13-inch, 2019, Four Thunderbolt 3 ports)",
             "MacBookPro15,3": "MacBook Pro (15-inch, 2019)",
             "MacBookPro15,4": "MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)",
+            "MacBookPro16,1": "MacBook Pro (16-inch, 2019)",
             "MacBookPro16,2": "MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports)",
             "MacBookPro16,3": "MacBook Pro (13-inch, 2020, Two Thunderbolt 3 ports)",
             "MacBookPro16,4": "MacBook Pro (16-inch, 2019)",
@@ -13580,6 +13582,7 @@
             "MacBookPro15,2": "MacBook Pro (13-inch, 2019, Four Thunderbolt 3 ports)",
             "MacBookPro15,3": "MacBook Pro (15-inch, 2019)",
             "MacBookPro15,4": "MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)",
+            "MacBookPro16,1": "MacBook Pro (16-inch, 2019)",
             "MacBookPro16,2": "MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports)",
             "MacBookPro16,3": "MacBook Pro (13-inch, 2020, Two Thunderbolt 3 ports)",
             "MacBookPro16,4": "MacBook Pro (16-inch, 2019)",
@@ -14400,14 +14403,12 @@
     "MacBookPro15,1": {
       "MarketingName": "MacBook Pro (15-inch, 2018)",
       "SupportedOS": [
-        "Tahoe 26",
         "Sequoia 15",
         "Sonoma 14",
         "Ventura 13",
         "Monterey 12"
       ],
       "OSVersions": [
-        26,
         15,
         14,
         13,
@@ -14432,14 +14433,12 @@
     "MacBookPro15,3": {
       "MarketingName": "MacBook Pro (15-inch, 2019)",
       "SupportedOS": [
-        "Tahoe 26",
         "Sequoia 15",
         "Sonoma 14",
         "Ventura 13",
         "Monterey 12"
       ],
       "OSVersions": [
-        26,
         15,
         14,
         13,
@@ -14455,6 +14454,23 @@
         "Monterey 12"
       ],
       "OSVersions": [
+        15,
+        14,
+        13,
+        12
+      ]
+    },
+    "MacBookPro16,1": {
+      "MarketingName": "MacBook Pro (16-inch, 2019)",
+      "SupportedOS": [
+        "Tahoe 26",
+        "Sequoia 15",
+        "Sonoma 14",
+        "Ventura 13",
+        "Monterey 12"
+      ],
+      "OSVersions": [
+        26,
         15,
         14,
         13,
@@ -14481,14 +14497,12 @@
     "MacBookPro16,3": {
       "MarketingName": "MacBook Pro (13-inch, 2020, Two Thunderbolt 3 ports)",
       "SupportedOS": [
-        "Tahoe 26",
         "Sequoia 15",
         "Sonoma 14",
         "Ventura 13",
         "Monterey 12"
       ],
       "OSVersions": [
-        26,
         15,
         14,
         13,
@@ -14498,12 +14512,14 @@
     "MacBookPro16,4": {
       "MarketingName": "MacBook Pro (16-inch, 2019)",
       "SupportedOS": [
+        "Tahoe 26",
         "Sequoia 15",
         "Sonoma 14",
         "Ventura 13",
         "Monterey 12"
       ],
       "OSVersions": [
+        26,
         15,
         14,
         13,

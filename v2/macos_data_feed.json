@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "4cc674d5f96caba30ae6f3b11ad681ae8570b892c36dac0c742d8e3452e41172",
-  "LastCheck": "2026-04-14T07:05:35.106885180+00:00",
+  "UpdateHash": "f26651cda3c5071504e6e5a54e7a655738fb336a64753efe1a44112c8493c7fd",
+  "LastCheck": "2026-04-14T12:52:08.107766525+00:00",
   "OSVersions": [
     {
       "OSVersion": "Tahoe 26",
@@ -1263,10 +1263,9 @@
             "Mac17,7": "MacBook Pro (14-inch, M5 Max)",
             "Mac17,8": "MacBook Pro (16-inch, M5 Pro)",
             "Mac17,9": "MacBook Pro (14-inch, M5 Pro)",
-            "MacBookPro15,1": "MacBook Pro (15-inch, 2018)",
-            "MacBookPro15,3": "MacBook Pro (15-inch, 2019)",
+            "MacBookPro16,1": "MacBook Pro (16-inch, 2019)",
             "MacBookPro16,2": "MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports)",
-            "MacBookPro16,3": "MacBook Pro (13-inch, 2020, Two Thunderbolt 3 ports)",
+            "MacBookPro16,4": "MacBook Pro (16-inch, 2019)",
             "MacBookPro17,1": "MacBook Pro (13-inch, M1, 2020)",
             "MacBookPro18,1": "MacBook Pro (16-inch, M1 Pro, 2021)",
             "MacBookPro18,2": "MacBook Pro (16-inch, M1 Max, 2021)",
@@ -4058,6 +4057,7 @@
             "MacBookPro15,2": "MacBook Pro (13-inch, 2018, Four Thunderbolt 3 ports)",
             "MacBookPro15,3": "MacBook Pro (15-inch, 2019)",
             "MacBookPro15,4": "MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)",
+            "MacBookPro16,1": "MacBook Pro (16-inch, 2019)",
             "MacBookPro16,2": "MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports)",
             "MacBookPro16,3": "MacBook Pro (13-inch, 2020, Two Thunderbolt 3 ports)",
             "MacBookPro16,4": "MacBook Pro (16-inch, 2019)",
@@ -6480,6 +6480,7 @@
             "MacBookPro15,2": "MacBook Pro (13-inch, 2018, Four Thunderbolt 3 ports)",
             "MacBookPro15,3": "MacBook Pro (15-inch, 2019)",
             "MacBookPro15,4": "MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)",
+            "MacBookPro16,1": "MacBook Pro (16-inch, 2019)",
             "MacBookPro16,2": "MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports)",
             "MacBookPro16,3": "MacBook Pro (13-inch, 2020, Two Thunderbolt 3 ports)",
             "MacBookPro16,4": "MacBook Pro (16-inch, 2019)",
@@ -9001,6 +9002,7 @@
             "MacBookPro15,2": "MacBook Pro (13-inch, 2019, Four Thunderbolt 3 ports)",
             "MacBookPro15,3": "MacBook Pro (15-inch, 2019)",
             "MacBookPro15,4": "MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)",
+            "MacBookPro16,1": "MacBook Pro (16-inch, 2019)",
             "MacBookPro16,2": "MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports)",
             "MacBookPro16,3": "MacBook Pro (13-inch, 2020, Two Thunderbolt 3 ports)",
             "MacBookPro16,4": "MacBook Pro (16-inch, 2019)",
@@ -11047,7 +11049,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/kb/HT212622",
+          "SecurityInfo": "https://support.apple.com/en-us/122375",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {},
           "ActivelyExploitedCVEs": [],
@@ -11140,6 +11142,7 @@
             "MacBookPro15,2": "MacBook Pro (13-inch, 2019, Four Thunderbolt 3 ports)",
             "MacBookPro15,3": "MacBook Pro (15-inch, 2019)",
             "MacBookPro15,4": "MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)",
+            "MacBookPro16,1": "MacBook Pro (16-inch, 2019)",
             "MacBookPro16,2": "MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports)",
             "MacBookPro16,3": "MacBook Pro (13-inch, 2020, Two Thunderbolt 3 ports)",
             "MacBookPro16,4": "MacBook Pro (16-inch, 2019)",
@@ -11951,14 +11954,12 @@
     "MacBookPro15,1": {
       "MarketingName": "MacBook Pro (15-inch, 2018)",
       "SupportedOS": [
-        "Tahoe 26",
         "Sequoia 15",
         "Sonoma 14",
         "Ventura 13",
         "Monterey 12"
       ],
       "OSVersions": [
-        26,
         15,
         14,
         13,
@@ -11983,14 +11984,12 @@
     "MacBookPro15,3": {
       "MarketingName": "MacBook Pro (15-inch, 2019)",
       "SupportedOS": [
-        "Tahoe 26",
         "Sequoia 15",
         "Sonoma 14",
         "Ventura 13",
         "Monterey 12"
       ],
       "OSVersions": [
-        26,
         15,
         14,
         13,
@@ -12006,6 +12005,23 @@
         "Monterey 12"
       ],
       "OSVersions": [
+        15,
+        14,
+        13,
+        12
+      ]
+    },
+    "MacBookPro16,1": {
+      "MarketingName": "MacBook Pro (16-inch, 2019)",
+      "SupportedOS": [
+        "Tahoe 26",
+        "Sequoia 15",
+        "Sonoma 14",
+        "Ventura 13",
+        "Monterey 12"
+      ],
+      "OSVersions": [
+        26,
         15,
         14,
         13,
@@ -12032,14 +12048,12 @@
     "MacBookPro16,3": {
       "MarketingName": "MacBook Pro (13-inch, 2020, Two Thunderbolt 3 ports)",
       "SupportedOS": [
-        "Tahoe 26",
         "Sequoia 15",
         "Sonoma 14",
         "Ventura 13",
         "Monterey 12"
       ],
       "OSVersions": [
-        26,
         15,
         14,
         13,
@@ -12049,12 +12063,14 @@
     "MacBookPro16,4": {
       "MarketingName": "MacBook Pro (16-inch, 2019)",
       "SupportedOS": [
+        "Tahoe 26",
         "Sequoia 15",
         "Sonoma 14",
         "Ventura 13",
         "Monterey 12"
       ],
       "OSVersions": [
+        26,
         15,
         14,
         13,
@@ -12839,13 +12855,13 @@
     }
   },
   "XProtectPlistConfigData": {
-    "com.apple.XProtect": "5338",
-    "ReleaseDate": "2026-04-09T22:24:24Z"
+    "ReleaseDate": "2026-04-09T22:24:24Z",
+    "com.apple.XProtect": "5338"
   },
   "XProtectPayloads": {
+    "com.apple.XProtectFramework.XProtect": "157",
     "com.apple.XprotectFramework.PluginService": "74",
-    "ReleaseDate": "2026-04-09T22:24:24Z",
-    "com.apple.XProtectFramework.XProtect": "157"
+    "ReleaseDate": "2026-04-09T22:24:24Z"
   },
   "BackgroundSecurityImprovements": {
     "26": [
