@@ -1,7 +1,7 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.04.20",
-  "dateReleased": "2026-04-20T19:01:09.3195Z",
+  "catalogVersion": "2026.04.21",
+  "dateReleased": "2026-04-21T17:10:43.4666Z",
   "count": 1577,
   "vulnerabilities": [
     {
@@ -14,7 +14,7 @@
       "requiredAction": "Please adhere to CISA’s guidelines to assess exposure and mitigate risks associated with Cisco SD-WAN devices as outlines in CISA’s Emergency Directive 26-03 (URL listed below in Notes) and CISA’s “Hunt & Hardening Guidance for Cisco SD-WAN Devices (URL listed below in Notes). Adhere to the applicable BOD 22-01 guidance for cloud services or discontinue use of the product if mitigations are not available.",
       "dueDate": "2026-04-23",
       "knownRansomwareCampaignUse": "Unknown",
-      "notes": "CISA Mitigation Instructions: https://www.cisa.gov/news-events/directives/ed-26-03-mitigate-vulnerabilities-cisco-sd-wan-systems ; https://www.cisa.gov/news-events/directives/supplemental-direction-ed-26-03-hunt-and-hardening-guidance-cisco-sd-wan-systems ; https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-authbp-qwCX8D4v ; https://nvd.nist.gov/vuln/detail/ CVE-2026-20122",
+      "notes": "CISA Mitigation Instructions: https://www.cisa.gov/news-events/directives/ed-26-03-mitigate-vulnerabilities-cisco-sd-wan-systems ; https://www.cisa.gov/news-events/directives/supplemental-direction-ed-26-03-hunt-and-hardening-guidance-cisco-sd-wan-systems ; https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-authbp-qwCX8D4v ; https://nvd.nist.gov/vuln/detail/CVE-2026-20122",
       "cwes": [
         "CWE-648"
       ]
@@ -59,7 +59,7 @@
       "shortDescription": "PaperCut NG/MF contains an improper authentication vulnerability that could allow remote attackers to bypass authentication on affected installations via the SecurityRequestFilter class.",
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2026-05-04",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://www.papercut.com/kb/Main/PO-1216-and-PO-1219 ; https://nvd.nist.gov/vuln/detail/CVE-2023-27351",
       "cwes": [
         "CWE-287"
@@ -119,8 +119,8 @@
       "shortDescription": "JetBrains TeamCity contains a relative path traversal vulnerability that could allow limited admin actions to be performed.",
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2026-05-04",
-      "knownRansomwareCampaignUse": "Unknown",
-      "notes": "https://www.jetbrains.com/privacy-security/issues-fixed/ ; https://nvd.nist.gov/vuln/detail/CVE-2024-27199",
+      "knownRansomwareCampaignUse": "Known",
+      "notes": "https://www.jetbrains.com/privacy-security/issues-fixed/ ; https://blog.jetbrains.com/teamcity/2024/03/additional-critical-security-issues-affecting-teamcity-on-premises-cve-2024-27198-and-cve-2024-27199-update-to-2023-11-4-now/ ; https://nvd.nist.gov/vuln/detail/CVE-2024-27199",
       "cwes": [
         "CWE-23"
       ]
@@ -210,7 +210,7 @@
       "shortDescription": "Microsoft Exchange Server contains a deserialization of untrusted data that allows an authenticated attacker to achieve remote code execution.",
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2026-04-27",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-21529 ; https://nvd.nist.gov/vuln/detail/CVE-2023-21529",
       "cwes": [
         "CWE-502"
@@ -1201,7 +1201,7 @@
       "shortDescription": "SmarterTools SmarterMail contains an unrestricted upload of file with dangerous type vulnerability that could allow an unauthenticated attacker to upload arbitrary files to any location on the mail server, potentially enabling remote code execution.",
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2026-02-16",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://www.smartertools.com/smartermail/release-notes/current ; https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2025-124/ ; https://nvd.nist.gov/vuln/detail/CVE-2025-52691",
       "cwes": [
         "CWE-434"
@@ -7287,7 +7287,7 @@
       "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2024-03-28",
       "knownRansomwareCampaignUse": "Known",
-      "notes": "https://www.jetbrains.com/help/teamcity/teamcity-2023-11-4-release-notes.html; https://nvd.nist.gov/vuln/detail/CVE-2024-27198",
+      "notes": "https://www.jetbrains.com/help/teamcity/teamcity-2023-11-4-release-notes.html; https://blog.jetbrains.com/teamcity/2024/03/additional-critical-security-issues-affecting-teamcity-on-premises-cve-2024-27198-and-cve-2024-27199-update-to-2023-11-4-now/ ; https://nvd.nist.gov/vuln/detail/CVE-2024-27198",
       "cwes": [
         "CWE-288"
       ]
@@ -23422,5 +23422,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-04-21T12:51:00.064586558Z"
+  "fetchTimestamp": "2026-04-21T17:28:21.594024018Z"
 }
