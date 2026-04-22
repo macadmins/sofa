@@ -1,7 +1,7 @@
 {
-  "content_hash": "ef001b8c5fe89eec1109fb93e86ee5a3a5f71a2c6d613255e6c3812c3b3bf00d",
+  "content_hash": "8a0023c44a337f4f80ebba968ca2ae4bc6eb6e47fac501780dbe3bd1ac257c16",
   "content_changed": true,
-  "generated_at": "2026-04-22T17:27:48.099571463Z",
+  "generated_at": "2026-04-22T18:33:13.396624698Z",
   "latest_releases": {
     "macos": {
       "version": "26.4.1",
@@ -15,24 +15,28 @@
       "updates_link": null
     },
     "ios": {
-      "version": "26.4.1",
-      "build": "23E6254",
-      "release_date": "2026-04-08T00:00:00Z",
-      "url": "https://support.apple.com/en-us/100100",
-      "cves_fixed": [],
+      "version": "26.4.2",
+      "build": "23E6261",
+      "release_date": "2026-04-22T00:00:00Z",
+      "url": "https://support.apple.com/en-us/127002",
+      "cves_fixed": [
+        "CVE-2026-28950"
+      ],
       "actively_exploited_count": 0,
-      "total_cve_count": 0,
+      "total_cve_count": 1,
       "enterprise_link": null,
       "updates_link": null
     },
     "ipados": {
-      "version": "26.4.1",
-      "build": "23E6254",
-      "release_date": "2026-04-08T00:00:00Z",
-      "url": "https://support.apple.com/en-us/100100",
-      "cves_fixed": [],
+      "version": "26.4.2",
+      "build": "23E6261",
+      "release_date": "2026-04-22T00:00:00Z",
+      "url": "https://support.apple.com/en-us/127002",
+      "cves_fixed": [
+        "CVE-2026-28950"
+      ],
       "actively_exploited_count": 0,
-      "total_cve_count": 0,
+      "total_cve_count": 1,
       "enterprise_link": null,
       "updates_link": null
     },
@@ -162,9 +166,9 @@
     }
   },
   "security_summary": {
-    "unique_cves_fixed": 31,
+    "unique_cves_fixed": 32,
     "kev_matches": 0,
-    "latest_wave_date": "2026-04-09T00:00:00Z",
+    "latest_wave_date": "2026-04-22T00:00:00Z",
     "kev_cve_list": []
   },
   "beta_releases": {
@@ -201,6 +205,22 @@
     }
   },
   "recent_releases": [
+    {
+      "release_date": "2026-04-22",
+      "name": "iOS 18.7.8 and iPadOS 18.7.8",
+      "platform": "ios",
+      "version": "18.7.8",
+      "url": "https://support.apple.com/en-us/127003",
+      "enterprise_link": "https://support.apple.com/en-ca/121158",
+      "updates_link": "https://support.apple.com/en-ca/121161"
+    },
+    {
+      "release_date": "2026-04-22",
+      "name": "iOS 26.4.2 and iPadOS 26.4.2",
+      "platform": "ios",
+      "version": "26.4.2",
+      "url": "https://support.apple.com/en-us/127002"
+    },
     {
       "release_date": "2026-04-09",
       "name": "macOS Tahoe 26.4.1",
@@ -262,20 +282,6 @@
       "url": "https://support.apple.com/en-us/126796",
       "enterprise_link": "https://support.apple.com/en-ca/109030",
       "updates_link": "https://support.apple.com/en-ca/109035"
-    },
-    {
-      "release_date": "2026-03-24",
-      "name": "macOS Tahoe 26.4",
-      "platform": "macos",
-      "version": "26.4",
-      "url": "https://support.apple.com/en-us/126794"
-    },
-    {
-      "release_date": "2026-03-24",
-      "name": "tvOS 26.4",
-      "platform": "tvos",
-      "version": "26.4",
-      "url": "https://support.apple.com/en-us/126797"
     }
   ]
 }
