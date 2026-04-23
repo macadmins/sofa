@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.04.22",
-  "dateReleased": "2026-04-22T19:00:25.7012Z",
-  "count": 1578,
+  "catalogVersion": "2026.04.23",
+  "dateReleased": "2026-04-23T17:00:03.832Z",
+  "count": 1579,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-39987",
+      "vendorProject": "Marimo",
+      "product": "Marimo",
+      "vulnerabilityName": "Marimo Remote Code Execution Vulnerability",
+      "dateAdded": "2026-04-23",
+      "shortDescription": "Marimo contains an pre-authorization remote code execution vulnerability, allowing an unauthenticated attacked to shell access and execute arbitrary system commands.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-05-07",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://github.com/marimo-team/marimo/security/advisories/GHSA-2679-6mx9-h9xc ; https://nvd.nist.gov/vuln/detail/CVE-2026-39987",
+      "cwes": [
+        "CWE-306"
+      ]
+    },
     {
       "cveID": "CVE-2026-33825",
       "vendorProject": "Microsoft",
@@ -23437,5 +23452,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-04-23T12:50:45.028287030Z"
+  "fetchTimestamp": "2026-04-23T17:37:28.100648764Z"
 }
