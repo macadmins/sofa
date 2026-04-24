@@ -1,9 +1,70 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.04.23",
-  "dateReleased": "2026-04-23T17:00:03.832Z",
-  "count": 1579,
+  "catalogVersion": "2026.04.24",
+  "dateReleased": "2026-04-24T16:52:07.2233Z",
+  "count": 1583,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2025-29635",
+      "vendorProject": "D-Link",
+      "product": "DIR-823X",
+      "vulnerabilityName": "D-Link DIR-823X Command Injection Vulnerability",
+      "dateAdded": "2026-04-24",
+      "shortDescription": "D-Link DIR-823X contains a command injection vulnerability that allows an authorized attacker to execute arbitrary commands on remote devices by sending a POST request to /goform/set_prohibiting via the corresponding function. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-05-08",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://supportannouncement.us.dlink.com/security/publication.aspx?name=SAP10469 ; https://nvd.nist.gov/vuln/detail/CVE-2025-29635",
+      "cwes": [
+        "CWE-77"
+      ]
+    },
+    {
+      "cveID": "CVE-2024-7399",
+      "vendorProject": "Samsung",
+      "product": "MagicINFO 9 Server",
+      "vulnerabilityName": "Samsung MagicINFO 9 Server Path Traversal Vulnerability",
+      "dateAdded": "2026-04-24",
+      "shortDescription": "Samsung MagicINFO 9 Server contains a path traversal vulnerability that could allow an attacker to write arbitrary files as system authority.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-05-08",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://security.samsungtv.com/securityUpdates ; https://nvd.nist.gov/vuln/detail/CVE-2024-7399",
+      "cwes": [
+        "CWE-22",
+        "CWE-434"
+      ]
+    },
+    {
+      "cveID": "CVE-2024-57728",
+      "vendorProject": "SimpleHelp ",
+      "product": "SimpleHelp",
+      "vulnerabilityName": "SimpleHelp Path Traversal Vulnerability",
+      "dateAdded": "2026-04-24",
+      "shortDescription": "SimpleHelp contains a path traversal vulnerability that allows admin users to upload arbitrary files anywhere on the file system by uploading a crafted zip file (i.e. zip slip). This can be exploited to execute arbitrary code on the host in the context of the SimpleHelp server user.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-05-08",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://simple-help.com/kb---security-vulnerabilities-01-2025#security-vulnerabilities-in-simplehelp-5-5-7-and-earlier ; https://nvd.nist.gov/vuln/detail/CVE-2024-57728",
+      "cwes": [
+        "CWE-22"
+      ]
+    },
+    {
+      "cveID": "CVE-2024-57726",
+      "vendorProject": "SimpleHelp ",
+      "product": "SimpleHelp",
+      "vulnerabilityName": "SimpleHelp Missing Authorization Vulnerability",
+      "dateAdded": "2026-04-24",
+      "shortDescription": "SimpleHelp contains a missing authorization vulnerability that could allow low-privileged technicians to create API keys with excessive permissions. These API keys can be used to escalate privileges to the server admin role.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-05-08",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://simple-help.com/kb---security-vulnerabilities-01-2025#security-vulnerabilities-in-simplehelp-5-5-7-and-earlier ; https://nvd.nist.gov/vuln/detail/CVE-2024-57726",
+      "cwes": [
+        "CWE-862"
+      ]
+    },
     {
       "cveID": "CVE-2026-39987",
       "vendorProject": "Marimo",
@@ -23452,5 +23513,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-04-24T12:50:37.972331216Z"
+  "fetchTimestamp": "2026-04-24T17:25:46.367856802Z"
 }
