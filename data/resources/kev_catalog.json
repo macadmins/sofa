@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.04.28",
-  "dateReleased": "2026-04-28T17:29:22.212Z",
-  "count": 1585,
+  "catalogVersion": "2026.04.30",
+  "dateReleased": "2026-04-30T16:30:36.316Z",
+  "count": 1586,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-41940",
+      "vendorProject": "WebPros",
+      "product": "cPanel & WHM and WP2 (WordPress Squared)",
+      "vulnerabilityName": "WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical Function Vulnerability",
+      "dateAdded": "2026-04-30",
+      "shortDescription": "WebPros cPanel & WHM (WebHost Manager) and WP2 (WordPress Squared) contain an authentication bypass vulnerability in the login flow that allows unauthenticated remote attackers to gain unauthorized access to the control panel.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-05-03",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026 ; https://docs.cpanel.net/release-notes/release-notes/ ; https://docs.wpsquared.com/changelogs/versions/changelog/#13617 ; https://nvd.nist.gov/vuln/detail/CVE-2026-41940\"",
+      "cwes": [
+        "CWE-306"
+      ]
+    },
     {
       "cveID": "CVE-2024-1708",
       "vendorProject": "ConnectWise",
@@ -23543,5 +23558,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-04-30T13:03:51.152787432Z"
+  "fetchTimestamp": "2026-04-30T17:37:00.656909368Z"
 }
