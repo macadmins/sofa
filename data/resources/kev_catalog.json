@@ -1,7 +1,7 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.05.04",
-  "dateReleased": "2026-05-04T14:01:30.7566Z",
+  "catalogVersion": "2026.05.05",
+  "dateReleased": "2026-05-05T12:50:12.8068Z",
   "count": 1587,
   "vulnerabilities": [
     {
@@ -28,7 +28,7 @@
       "shortDescription": "WebPros cPanel & WHM (WebHost Manager) and WP2 (WordPress Squared) contain an authentication bypass vulnerability in the login flow that allows unauthenticated remote attackers to gain unauthorized access to the control panel.",
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2026-05-03",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026 ; https://docs.cpanel.net/release-notes/release-notes/ ; https://docs.wpsquared.com/changelogs/versions/changelog/#13617 ; https://nvd.nist.gov/vuln/detail/CVE-2026-41940\"",
       "cwes": [
         "CWE-306"
@@ -23573,5 +23573,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-05-05T12:55:57.280944563Z"
+  "fetchTimestamp": "2026-05-05T17:40:25.355296418Z"
 }
