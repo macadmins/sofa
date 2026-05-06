@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.05.05",
-  "dateReleased": "2026-05-05T12:50:12.8068Z",
-  "count": 1587,
+  "catalogVersion": "2026.05.06",
+  "dateReleased": "2026-05-06T17:44:48.5596Z",
+  "count": 1588,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-0300",
+      "vendorProject": "Palo Alto Networks",
+      "product": "PAN-OS",
+      "vulnerabilityName": "Palo Alto Networks PAN-OS Out-of-bounds Write Vulnerability",
+      "dateAdded": "2026-05-06",
+      "shortDescription": "Palo Alto Networks PAN-OS contains an out-of-bounds write vulnerability in the User-ID Authentication Portal (aka Captive Portal) service that can allow an unauthenticated attacker to execute arbitrary code with root privileges on the PA-Series and VM-Series firewalls by sending specially crafted packets.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.    Until the vendor releases an official fix, the following workaround should be implemented:  - Restrict User-ID Authentication Portal access to only trusted zones.  - Disable User-ID Authentication Portal if not required.",
+      "dueDate": "2026-05-09",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://security.paloaltonetworks.com/CVE-2026-0300 ; https://nvd.nist.gov/vuln/detail/CVE-2026-0300",
+      "cwes": [
+        "CWE-787"
+      ]
+    },
     {
       "cveID": "CVE-2026-31431",
       "vendorProject": "Linux",
@@ -23573,5 +23588,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-05-06T17:38:54.342586127Z"
+  "fetchTimestamp": "2026-05-06T18:44:40.393982662Z"
 }
