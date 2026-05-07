@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.05.06",
-  "dateReleased": "2026-05-06T20:05:35.8538Z",
-  "count": 1588,
+  "catalogVersion": "2026.05.07",
+  "dateReleased": "2026-05-07T15:36:05.3318Z",
+  "count": 1589,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-6973",
+      "vendorProject": "Ivanti",
+      "product": "Endpoint Manager Mobile (EPMM)",
+      "vulnerabilityName": "Ivanti Endpoint Manager Mobile (EPMM) Improper Input Validation Vulnerability",
+      "dateAdded": "2026-05-07",
+      "shortDescription": "Ivanti Endpoint Manager Mobile (EPMM) contains an improper input validation vulnerability that allows a remotely authenticated user with administrative access to achieve remote code execution.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-05-10",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://hub.ivanti.com/s/article/May-2026-Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-Multiple-CVEs?language=en_US ; https://nvd.nist.gov/vuln/detail/CVE-2026-6973",
+      "cwes": [
+        "CWE-20"
+      ]
+    },
     {
       "cveID": "CVE-2026-0300",
       "vendorProject": "Palo Alto Networks",
@@ -23588,5 +23603,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-05-07T13:09:02.391146580Z"
+  "fetchTimestamp": "2026-05-07T17:38:55.923295441Z"
 }
