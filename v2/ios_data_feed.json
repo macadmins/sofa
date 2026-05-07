@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "e2ec5db71e9d54f657a840c2e8594c902546e6fbfcd437824283c6f6892b407e",
-  "LastCheck": "2026-05-07T18:45:18.924826439+00:00",
+  "UpdateHash": "2d7100b8ba8c4aa9254a6e51a978d8445fb26296e65e3e1c8dfcd9a333e0bebd",
+  "LastCheck": "2026-05-07T19:10:03.095701316+00:00",
   "OSVersions": [
     {
       "OSVersion": "26",
@@ -2638,49 +2638,11 @@
           "ReleaseDate": "2025-05-12T00:00:00Z",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/122404",
-          "SecurityInfoContext": "iOS 18.5 was released on May 12, 2025. This release addressed 37 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "iOS 18.5 was released on May 12, 2025. This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
-          "CVEs": {
-            "CVE-2024-8176": {},
-            "CVE-2025-24213": {},
-            "CVE-2025-24223": {},
-            "CVE-2025-24224": {},
-            "CVE-2025-24225": {},
-            "CVE-2025-30448": {},
-            "CVE-2025-31204": {},
-            "CVE-2025-31205": {},
-            "CVE-2025-31206": {},
-            "CVE-2025-31207": {},
-            "CVE-2025-31208": {},
-            "CVE-2025-31209": {},
-            "CVE-2025-31210": {},
-            "CVE-2025-31212": {},
-            "CVE-2025-31214": {},
-            "CVE-2025-31215": {},
-            "CVE-2025-31216": {},
-            "CVE-2025-31217": {},
-            "CVE-2025-31219": {},
-            "CVE-2025-31221": {},
-            "CVE-2025-31222": {},
-            "CVE-2025-31223": {},
-            "CVE-2025-31225": {},
-            "CVE-2025-31226": {},
-            "CVE-2025-31227": {},
-            "CVE-2025-31228": {},
-            "CVE-2025-31233": {},
-            "CVE-2025-31234": {},
-            "CVE-2025-31238": {},
-            "CVE-2025-31239": {},
-            "CVE-2025-31241": {},
-            "CVE-2025-31242": {},
-            "CVE-2025-31245": {},
-            "CVE-2025-31251": {},
-            "CVE-2025-31253": {},
-            "CVE-2025-31257": {},
-            "CVE-2025-43374": {}
-          },
+          "CVEs": {},
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 37,
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 26,
           "DeviceScope": "universal",
           "SupersededBy": {
@@ -2690,9 +2652,9 @@
             "DaysLater": 78
           },
           "UpdateSummary": {
-            "Priority": "high",
-            "Summary": "Addresses 37 security issues",
-            "Recommendation": "Update to stay secure - security fixes available",
+            "Priority": "low",
+            "Summary": "Maintenance update with no published CVE entries",
+            "Recommendation": "Update recommended - may include unpublished security improvements",
             "Stats": {
               "Exploited": 0,
               "Critical": 0,
@@ -2700,7 +2662,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 37
+              "Total": 0
             }
           }
         },
@@ -3450,7 +3412,7 @@
         "ExpirationDate": "2026-08-05",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/124926",
-        "SecurityInfoContext": "iOS has been updated to version 17.7.10, released on August 20, 2025. This update addresses one security issue and is the most recent approved version.",
+        "SecurityInfoContext": "iOS has been updated to version 17.7.10, released on August 20, 2025. This update has no published CVE entries and is the most recent approved version.",
         "SupportedDevices": [
           "iPad7,1",
           "iPad7,2",
@@ -3459,24 +3421,15 @@
           "iPad7,5",
           "iPad7,6"
         ],
-        "CVEs": {
-          "CVE-2025-43300": {
-            "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-43300",
-            "ActivelyExploited": true,
-            "InKEV": true,
-            "Severity": "Critical"
-          }
-        },
-        "ActivelyExploitedCVEs": [
-          "CVE-2025-43300"
-        ],
-        "UniqueCVEsCount": 1,
+        "CVEs": {},
+        "ActivelyExploitedCVEs": [],
+        "UniqueCVEsCount": 0,
         "DaysSincePreviousRelease": 22,
         "DeviceScope": "universal",
         "UpdateSummary": {
-          "Priority": "medium",
-          "Summary": "Addresses 1 security issue",
-          "Recommendation": "Update to stay secure - security fixes available",
+          "Priority": "low",
+          "Summary": "Maintenance update with no published CVE entries",
+          "Recommendation": "Update recommended - may include unpublished security improvements",
           "Stats": {
             "Exploited": 0,
             "Critical": 0,
@@ -3484,7 +3437,7 @@
             "Medium": 0,
             "Low": 0,
             "Remote": 0,
-            "Total": 1
+            "Total": 0
           }
         }
       },
@@ -3502,7 +3455,7 @@
           "ExpirationDate": "2026-08-05",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/124926",
-          "SecurityInfoContext": "iOS has been updated to version 17.7.10, released on August 20, 2025. This update addresses one security issue and is the most recent approved version.",
+          "SecurityInfoContext": "iOS has been updated to version 17.7.10, released on August 20, 2025. This update has no published CVE entries and is the most recent approved version.",
           "SupportedDevices": [
             "iPad7,1",
             "iPad7,2",
@@ -3511,24 +3464,15 @@
             "iPad7,5",
             "iPad7,6"
           ],
-          "CVEs": {
-            "CVE-2025-43300": {
-              "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-43300",
-              "ActivelyExploited": true,
-              "InKEV": true,
-              "Severity": "Critical"
-            }
-          },
-          "ActivelyExploitedCVEs": [
-            "CVE-2025-43300"
-          ],
-          "UniqueCVEsCount": 1,
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 22,
           "DeviceScope": "universal",
           "UpdateSummary": {
-            "Priority": "medium",
-            "Summary": "Addresses 1 security issue",
-            "Recommendation": "Update to stay secure - security fixes available",
+            "Priority": "low",
+            "Summary": "Maintenance update with no published CVE entries",
+            "Recommendation": "Update recommended - may include unpublished security improvements",
             "Stats": {
               "Exploited": 0,
               "Critical": 0,
@@ -3536,7 +3480,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 1
+              "Total": 0
             }
           }
         },
