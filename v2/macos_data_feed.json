@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "e16fb2e2e687194eb1c457f65c339239c69e86460a5c9980621d7641123732e6",
-  "LastCheck": "2026-05-11T17:43:50.314824155+00:00",
+  "UpdateHash": "12eca9b8fdbdac8ccde81f045c90cccecd2d17b0b4f0113e9d85484569db844e",
+  "LastCheck": "2026-05-11T18:03:00.315625749+00:00",
   "OSVersions": [
     {
       "OSVersion": "Tahoe 26",
@@ -11048,7 +11048,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/kb/HT213845",
+          "SecurityInfo": "https://support.apple.com/en-us/125886",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {},
           "ActivelyExploitedCVEs": [],
@@ -12852,13 +12852,13 @@
     }
   },
   "XProtectPlistConfigData": {
-    "ReleaseDate": "2026-05-05T17:30:31Z",
-    "com.apple.XProtect": "5342"
+    "com.apple.XProtect": "5342",
+    "ReleaseDate": "2026-05-05T17:30:31Z"
   },
   "XProtectPayloads": {
-    "com.apple.XprotectFramework.PluginService": "74",
     "ReleaseDate": "2026-05-05T17:30:31Z",
-    "com.apple.XProtectFramework.XProtect": "157"
+    "com.apple.XProtectFramework.XProtect": "157",
+    "com.apple.XprotectFramework.PluginService": "74"
   },
   "BackgroundSecurityImprovements": {
     "26": [
@@ -12986,14 +12986,23 @@
   "InstallationApps": {
     "LatestUMA": {
       "Title": "macOS Tahoe",
-      "Version": "26.4.1",
-      "Build": "25E253",
-      "AppleSlug": "122-28067",
-      "URL": "https://swcdn.apple.com/content/downloads/40/56/122-28067-A_9B4FJ1TL06/zchwyidn8ubxkpelhytzb05o418bchr2se/InstallAssistant.pkg",
-      "PostingDate": "2026-04-13T23:15:31Z",
-      "Size": 18249548049
+      "Version": "26.5",
+      "Build": "25F71",
+      "AppleSlug": "122-77688",
+      "URL": "https://swcdn.apple.com/content/downloads/51/26/122-77688-A_F01L27Y7Q6/7e8t8w89evbl6sgkoy9jhrmw2tqfkhjsd9/InstallAssistant.pkg",
+      "PostingDate": "2026-05-11T17:19:39Z",
+      "Size": 18308485578
     },
     "AllPreviousUMA": [
+      {
+        "Title": "macOS Tahoe",
+        "Version": "26.4.1",
+        "Build": "25E253",
+        "AppleSlug": "122-28067",
+        "URL": "https://swcdn.apple.com/content/downloads/40/56/122-28067-A_9B4FJ1TL06/zchwyidn8ubxkpelhytzb05o418bchr2se/InstallAssistant.pkg",
+        "PostingDate": "2026-04-13T23:15:31Z",
+        "Size": 18249548049
+      },
       {
         "Title": "macOS Tahoe",
         "Version": "26.4",
@@ -13050,6 +13059,15 @@
       },
       {
         "Title": "macOS Sequoia",
+        "Version": "15.7.7",
+        "Build": "24G720",
+        "AppleSlug": "122-77920",
+        "URL": "https://swcdn.apple.com/content/downloads/08/08/122-77920-A_24DGKW16ZQ/p2g06dyhtgf9mgf2yt1p4ihzvkkk91qvlf/InstallAssistant.pkg",
+        "PostingDate": "2026-05-11T17:29:07Z",
+        "Size": 15662335308
+      },
+      {
+        "Title": "macOS Sequoia",
         "Version": "15.7.5",
         "Build": "24G624",
         "AppleSlug": "047-96175",
@@ -13083,6 +13101,15 @@
         "URL": "https://swcdn.apple.com/content/downloads/23/34/093-99065-A_B4TEYIISAM/1a1ddvynvgdh82ev879kh13y2a3trwr18v/InstallAssistant.pkg",
         "PostingDate": "2025-11-03T21:41:50Z",
         "Size": 15658844828
+      },
+      {
+        "Title": "macOS Sonoma",
+        "Version": "14.8.7",
+        "Build": "23J520",
+        "AppleSlug": "122-77891",
+        "URL": "https://swcdn.apple.com/content/downloads/61/03/122-77891-A_GYK4YJ2CRM/8xrsgsownndvprmza1q0cvbsppw3ohtk85/InstallAssistant.pkg",
+        "PostingDate": "2026-05-11T17:30:42Z",
+        "Size": 13671523298
       },
       {
         "Title": "macOS Sonoma",
