@@ -1,7 +1,7 @@
 {
-  "content_hash": "3ac4a5c375a15d525f94e304a0ae62556c63d0798d7f42230eb2155db467cfcc",
+  "content_hash": "3e1888d813bdd23bf5092647fc5e96fbddb9cc5d2af416cbb27443b681b4384f",
   "content_changed": true,
-  "generated_at": "2026-05-13T17:47:43.800354401Z",
+  "generated_at": "2026-05-13T18:48:54.084092607Z",
   "latest_releases": {
     "macos": {
       "version": "26.5",
@@ -414,30 +414,43 @@
       "updates_link": null
     },
     "safari": {
-      "version": "26.4",
-      "build": "26.4",
-      "release_date": "2026-03-24T00:00:00Z",
-      "url": "https://support.apple.com/en-us/126800",
+      "version": "26.5",
+      "build": "26.5",
+      "release_date": "2026-05-13T00:00:00Z",
+      "url": "https://support.apple.com/en-us/127121",
       "cves_fixed": [
-        "CVE-2026-20643",
-        "CVE-2026-20664",
-        "CVE-2026-20665",
-        "CVE-2026-20691",
-        "CVE-2026-28857",
-        "CVE-2026-28859",
-        "CVE-2026-28861",
-        "CVE-2026-28871"
+        "CVE-2026-28847",
+        "CVE-2026-28883",
+        "CVE-2026-28901",
+        "CVE-2026-28902",
+        "CVE-2026-28903",
+        "CVE-2026-28904",
+        "CVE-2026-28905",
+        "CVE-2026-28907",
+        "CVE-2026-28913",
+        "CVE-2026-28917",
+        "CVE-2026-28942",
+        "CVE-2026-28944",
+        "CVE-2026-28946",
+        "CVE-2026-28947",
+        "CVE-2026-28953",
+        "CVE-2026-28955",
+        "CVE-2026-28958",
+        "CVE-2026-28962",
+        "CVE-2026-28971",
+        "CVE-2026-43658",
+        "CVE-2026-43660"
       ],
       "actively_exploited_count": 0,
-      "total_cve_count": 8,
+      "total_cve_count": 21,
       "enterprise_link": null,
       "updates_link": null
     }
   },
   "security_summary": {
-    "unique_cves_fixed": 91,
+    "unique_cves_fixed": 83,
     "kev_matches": 0,
-    "latest_wave_date": "2026-05-11T00:00:00Z",
+    "latest_wave_date": "2026-05-13T00:00:00Z",
     "kev_cve_list": []
   },
   "beta_releases": {
@@ -450,6 +463,13 @@
     "visionos": null
   },
   "recent_releases": [
+    {
+      "release_date": "2026-05-13",
+      "name": "Safari 26.5",
+      "platform": "safari",
+      "version": "26.5",
+      "url": "https://support.apple.com/en-us/127121"
+    },
     {
       "release_date": "2026-05-11",
       "name": "iOS 15.8.8 and iPadOS 15.8.8",
@@ -522,13 +542,6 @@
       "platform": "tvos",
       "version": "26.5",
       "url": "https://support.apple.com/en-us/127118"
-    },
-    {
-      "release_date": "2026-05-11",
-      "name": "visionOS 26.5",
-      "platform": "visionos",
-      "version": "26.5",
-      "url": "https://support.apple.com/en-us/127120"
     }
   ]
 }
