@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "7ffbb049f9f9e9174e452fd6c5667ee844cb51f6164fc69b21df48049a89fa9c",
-  "LastCheck": "2026-05-14T19:37:55.539863538+00:00",
+  "UpdateHash": "4eb9b222301e890257c60778c8232d824d4995c9de69c026f27e5cf002c9e5ea",
+  "LastCheck": "2026-05-14T20:37:42.701147754+00:00",
   "OSVersions": [
     {
       "OSVersion": "Tahoe 26",
@@ -349,7 +349,7 @@
           "ExpirationDate": "2026-07-08",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/126794",
-          "SecurityInfoContext": "macOS 26.4 was released on March 24, 2026. This release addressed 83 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "macOS 26.4 was released on March 24, 2026. This release addressed 77 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {
             "CVE-2025-14524": {},
             "CVE-2025-55753": {},
@@ -363,7 +363,6 @@
             "CVE-2026-20632": {},
             "CVE-2026-20633": {},
             "CVE-2026-20643": {},
-            "CVE-2026-20657": {},
             "CVE-2026-20664": {},
             "CVE-2026-20665": {},
             "CVE-2026-20684": {},
@@ -375,7 +374,6 @@
             "CVE-2026-20693": {},
             "CVE-2026-20694": {},
             "CVE-2026-20695": {},
-            "CVE-2026-20696": {},
             "CVE-2026-20697": {},
             "CVE-2026-20698": {},
             "CVE-2026-20699": {},
@@ -393,7 +391,6 @@
             "CVE-2026-28827": {},
             "CVE-2026-28828": {},
             "CVE-2026-28829": {},
-            "CVE-2026-28830": {},
             "CVE-2026-28831": {},
             "CVE-2026-28832": {},
             "CVE-2026-28833": {},
@@ -402,7 +399,6 @@
             "CVE-2026-28837": {},
             "CVE-2026-28838": {},
             "CVE-2026-28839": {},
-            "CVE-2026-28840": {},
             "CVE-2026-28841": {},
             "CVE-2026-28842": {},
             "CVE-2026-28844": {},
@@ -410,7 +406,6 @@
             "CVE-2026-28852": {},
             "CVE-2026-28857": {},
             "CVE-2026-28859": {},
-            "CVE-2026-28860": {},
             "CVE-2026-28861": {},
             "CVE-2026-28862": {},
             "CVE-2026-28864": {},
@@ -432,11 +427,10 @@
             "CVE-2026-28891": {},
             "CVE-2026-28892": {},
             "CVE-2026-28893": {},
-            "CVE-2026-28894": {},
-            "CVE-2026-28910": {}
+            "CVE-2026-28894": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 83,
+          "UniqueCVEsCount": 77,
           "DaysSincePreviousRelease": 14,
           "DeviceScope": "universal",
           "SupersededBy": {
@@ -447,7 +441,7 @@
           },
           "UpdateSummary": {
             "Priority": "high",
-            "Summary": "Addresses 83 security issues",
+            "Summary": "Addresses 77 security issues",
             "Recommendation": "Update to stay secure - security fixes available",
             "Stats": {
               "Exploited": 0,
@@ -456,7 +450,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 83
+              "Total": 77
             }
           }
         },
@@ -11395,7 +11389,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/kb/HT213184",
+          "SecurityInfo": "https://support.apple.com/kb/HT213760",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {},
           "ActivelyExploitedCVEs": [],
@@ -13203,9 +13197,9 @@
     "com.apple.XProtect": "5344"
   },
   "XProtectPayloads": {
-    "ReleaseDate": "2026-05-12T17:16:29Z",
     "com.apple.XProtectFramework.XProtect": "157",
-    "com.apple.XprotectFramework.PluginService": "74"
+    "com.apple.XprotectFramework.PluginService": "74",
+    "ReleaseDate": "2026-05-12T17:16:29Z"
   },
   "BackgroundSecurityImprovements": {
     "26": [
