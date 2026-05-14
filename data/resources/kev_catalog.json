@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.05.13",
-  "dateReleased": "2026-05-13T17:58:37.3518Z",
-  "count": 1590,
+  "catalogVersion": "2026.05.14",
+  "dateReleased": "2026-05-14T16:47:45.3703Z",
+  "count": 1591,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-20182",
+      "vendorProject": "Cisco",
+      "product": "Catalyst SD-WAN",
+      "vulnerabilityName": "Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability",
+      "dateAdded": "2026-05-14",
+      "shortDescription": "Cisco Catalyst SD-WAN Controller & Manager contain an authentication bypass vulnerability that allows an unauthenticated, remote attacker to bypass authentication and obtain administrative privileges on an affected system.",
+      "requiredAction": "Please adhere to CISA’s guidelines to assess exposure and mitigate risks associated with Cisco SD-WAN devices as outlined in CISA’s Emergency Directive 26-03 (URL listed below in Notes) and CISA’s Hunt & Hardening Guidance for Cisco SD-WAN Devices (URL listed below in Notes). Adhere to the applicable BOD 22-01 guidance for cloud services or discontinue use of the product if mitigations are not available.",
+      "dueDate": "2026-05-17",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "CISA Mitigation Instructions: https://www.cisa.gov/news-events/directives/ed-26-03-mitigate-vulnerabilities-cisco-sd-wan-systems ; https://www.cisa.gov/news-events/directives/supplemental-direction-ed-26-03-hunt-and-hardening-guidance-cisco-sd-wan-systems ; https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-rpa2-v69WY2SW ; https://nvd.nist.gov/vuln/detail/CVE-2026-20182",
+      "cwes": [
+        "CWE-287"
+      ]
+    },
     {
       "cveID": "CVE-2026-42208",
       "vendorProject": "BerriAI",
@@ -88,7 +103,7 @@
       "shortDescription": "ConnectWise ScreenConnect contains a path traversal vulnerability which could allow an attacker to execute remote code or directly impact confidential data and critical systems.",
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2026-05-12",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://www.connectwise.com/company/trust/security-bulletins/connectwise-screenconnect-23.9.8 ; https://nvd.nist.gov/vuln/detail/CVE-2024-1708",
       "cwes": [
         "CWE-22"
@@ -149,7 +164,7 @@
       "shortDescription": "SimpleHelp contains a path traversal vulnerability that allows admin users to upload arbitrary files anywhere on the file system by uploading a crafted zip file (i.e. zip slip). This can be exploited to execute arbitrary code on the host in the context of the SimpleHelp server user.",
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2026-05-08",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://simple-help.com/kb---security-vulnerabilities-01-2025#security-vulnerabilities-in-simplehelp-5-5-7-and-earlier ; https://nvd.nist.gov/vuln/detail/CVE-2024-57728",
       "cwes": [
         "CWE-22"
@@ -164,7 +179,7 @@
       "shortDescription": "SimpleHelp contains a missing authorization vulnerability that could allow low-privileged technicians to create API keys with excessive permissions. These API keys can be used to escalate privileges to the server admin role.",
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2026-05-08",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://simple-help.com/kb---security-vulnerabilities-01-2025#security-vulnerabilities-in-simplehelp-5-5-7-and-earlier ; https://nvd.nist.gov/vuln/detail/CVE-2024-57726",
       "cwes": [
         "CWE-862"
@@ -23618,5 +23633,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-05-14T13:08:05.790151850Z"
+  "fetchTimestamp": "2026-05-14T17:40:36.730851591Z"
 }
