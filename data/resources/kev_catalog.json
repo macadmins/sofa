@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.05.21",
-  "dateReleased": "2026-05-21T18:43:06.2323Z",
-  "count": 1601,
+  "catalogVersion": "2026.05.22",
+  "dateReleased": "2026-05-22T18:00:11.5035Z",
+  "count": 1602,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-9082",
+      "vendorProject": "Drupal",
+      "product": "Core",
+      "vulnerabilityName": "Drupal Core SQL Injection Vulnerability",
+      "dateAdded": "2026-05-22",
+      "shortDescription": "Drupal Core contains a SQL injection vulnerability that could allow for privilege escalation and remote code execution via specially crafted requests sent with the database abstraction API.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-05-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.drupal.org/sa-core-2026-004 ; https://nvd.nist.gov/vuln/detail/CVE-2026-9082",
+      "cwes": [
+        "CWE-89"
+      ]
+    },
     {
       "cveID": "CVE-2025-34291",
       "vendorProject": "Langflow",
@@ -15599,7 +15614,7 @@
       "shortDescription": "An issue was discovered in Webmin. The parameter old in password_change.cgi contains a command injection vulnerability.",
       "requiredAction": "Apply updates per vendor instructions.",
       "dueDate": "2022-04-15",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://nvd.nist.gov/vuln/detail/CVE-2019-15107",
       "cwes": [
         "CWE-78"
@@ -23779,5 +23794,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-05-22T17:40:19.808789156Z"
+  "fetchTimestamp": "2026-05-22T18:46:05.763417473Z"
 }
