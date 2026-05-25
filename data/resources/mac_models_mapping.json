@@ -1289,6 +1289,17 @@
   "MacBook10,1": {
     "MarketingName": "MacBook (Retina, 12-inch, 2017)",
     "SupportedOS": [
+      "Ventura 13",
+      "Monterey 12"
+    ],
+    "OSVersions": [
+      12,
+      13
+    ]
+  },
+  "MacBook9,1": {
+    "MarketingName": "MacBook (Retina, 12-inch, Early 2016)",
+    "SupportedOS": [
       "Monterey 12"
     ],
     "OSVersions": [
@@ -1430,25 +1441,23 @@
   "MacBookPro14,1": {
     "MarketingName": "MacBook Pro (13-inch, 2017, Two Thunderbolt 3 ports)",
     "SupportedOS": [
+      "Ventura 13",
       "Monterey 12"
     ],
     "OSVersions": [
-      12
+      12,
+      13
     ]
   },
   "MacBookPro14,2": {
     "MarketingName": "MacBook Pro (13-inch, 2017, Four Thunderbolt 3 ports)",
     "SupportedOS": [
-      "Sequoia 15",
       "Ventura 13",
-      "Sonoma 14",
       "Monterey 12"
     ],
     "OSVersions": [
       12,
-      13,
-      14,
-      15
+      13
     ]
   },
   "MacBookPro14,3": {
@@ -2110,27 +2119,19 @@
   "iMac16,1": {
     "MarketingName": "iMac (21.5-inch, Late 2015)",
     "SupportedOS": [
-      "Ventura 13",
       "Monterey 12"
     ],
     "OSVersions": [
-      12,
-      13
+      12
     ]
   },
   "iMac16,2": {
     "MarketingName": "iMac (Retina 4K, 21.5-inch, Late 2015)",
     "SupportedOS": [
-      "Sequoia 15",
-      "Ventura 13",
-      "Sonoma 14",
       "Monterey 12"
     ],
     "OSVersions": [
-      12,
-      13,
-      14,
-      15
+      12
     ]
   },
   "iMac17,1": {
@@ -2145,10 +2146,12 @@
   "iMac18,1": {
     "MarketingName": "iMac (21.5-inch, 2017)",
     "SupportedOS": [
+      "Ventura 13",
       "Monterey 12"
     ],
     "OSVersions": [
-      12
+      12,
+      13
     ]
   },
   "iMac18,2": {
@@ -2191,15 +2194,6 @@
   "iMac19,2": {
     "MarketingName": "iMac (Retina 4K, 21.5-inch, 2019)",
     "SupportedOS": [
-      "Monterey 12"
-    ],
-    "OSVersions": [
-      12
-    ]
-  },
-  "iMac20,1": {
-    "MarketingName": "iMac (Retina 5K, 27-inch, 2020)",
-    "SupportedOS": [
       "Sequoia 15",
       "Ventura 13",
       "Sonoma 14",
@@ -2212,13 +2206,38 @@
       15
     ]
   },
-  "iMac20,2": {
+  "iMac20,1": {
     "MarketingName": "iMac (Retina 5K, 27-inch, 2020)",
     "SupportedOS": [
+      "Sequoia 15",
+      "Ventura 13",
+      "Tahoe 26",
+      "Sonoma 14",
       "Monterey 12"
     ],
     "OSVersions": [
-      12
+      12,
+      13,
+      14,
+      15,
+      26
+    ]
+  },
+  "iMac20,2": {
+    "MarketingName": "iMac (Retina 5K, 27-inch, 2020)",
+    "SupportedOS": [
+      "Sequoia 15",
+      "Ventura 13",
+      "Tahoe 26",
+      "Sonoma 14",
+      "Monterey 12"
+    ],
+    "OSVersions": [
+      12,
+      13,
+      14,
+      15,
+      26
     ]
   },
   "iMac21,1": {
