@@ -1,9 +1,52 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.05.26",
-  "dateReleased": "2026-05-26T17:02:17.2797Z",
-  "count": 1603,
+  "catalogVersion": "2026.05.27",
+  "dateReleased": "2026-05-27T17:08:41.0638Z",
+  "count": 1606,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-48027",
+      "vendorProject": "Nx",
+      "product": "Nx Console",
+      "vulnerabilityName": "Nx Console Embedded Malicious Code Vulnerability",
+      "dateAdded": "2026-05-27",
+      "shortDescription": "Nx Console contains an embedded malicious code vulnerability that allowed a malicious version of Nx Console to be published. The compromised extension fetched an obfuscated payload that could harvested credentials from multiple sources on disk and in memory.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-06-10",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/nrwl/nx-console/security/advisories/GHSA-c9j4-9m59-847w ; https://nvd.nist.gov/vuln/detail/CVE-2026-48027",
+      "cwes": [
+        "CWE-506"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-45321",
+      "vendorProject": "TanStack",
+      "product": "TanStack",
+      "vulnerabilityName": "TanStack Unspecified Vulnerability",
+      "dateAdded": "2026-05-27",
+      "shortDescription": "TanStack contains an unspecified vulnerability that allowed malicious versions of the product to be published to the npm registry to publish credential-stealing malware under a trusted identity.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-06-10",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/TanStack/router/security/advisories/GHSA-g7cv-rxg3-hmpx ; https://nvd.nist.gov/vuln/detail/CVE-2026-45321",
+      "cwes": []
+    },
+    {
+      "cveID": "CVE-2026-8398",
+      "vendorProject": "Daemon",
+      "product": "Daemon Tools Lite",
+      "vulnerabilityName": "Daemon Tools Lite Embedded Malicious Code Vulnerability",
+      "dateAdded": "2026-05-27",
+      "shortDescription": "Daemon Tools contains an unspecified vulnerability that has a high impact on confidentiality, integrity, and availability.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-05-30",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://blog.daemon-tools.cc/post/security-incident ; https://nvd.nist.gov/vuln/detail/CVE-2026-8398",
+      "cwes": [
+        "CWE-506"
+      ]
+    },
     {
       "cveID": "CVE-2026-48172",
       "vendorProject": "LiteSpeed",
@@ -23809,5 +23852,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-05-27T13:43:21.370944803Z"
+  "fetchTimestamp": "2026-05-27T18:03:22.943228609Z"
 }
