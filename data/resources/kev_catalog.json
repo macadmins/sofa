@@ -1,9 +1,22 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.05.29",
-  "dateReleased": "2026-05-29T19:00:06.3429Z",
-  "count": 1607,
+  "catalogVersion": "2026.06.01",
+  "dateReleased": "2026-06-01T16:59:32.7272Z",
+  "count": 1608,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2024-21182",
+      "vendorProject": "Oracle",
+      "product": "WebLogic Server",
+      "vulnerabilityName": "Oracle WebLogic Server Unspecified Vulnerability",
+      "dateAdded": "2026-06-01",
+      "shortDescription": "Oracle WebLogic contains an unspecified vulnerability that could allow an unauthenticated attacker with network access via T3, IIOP to compromise Oracle WebLogic Server. Successful attacks of this vulnerability can result in unauthorized access to critical data or complete access to all Oracle WebLogic Server accessible data.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-06-04",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.oracle.com/security-alerts/cpujul2024.html ; https://nvd.nist.gov/vuln/detail/CVE-2024-21182",
+      "cwes": []
+    },
     {
       "cveID": "CVE-2026-0257",
       "vendorProject": "Palo Alto Networks",
@@ -23867,5 +23880,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-06-01T14:33:40.316202425Z"
+  "fetchTimestamp": "2026-06-01T18:58:21.176470744Z"
 }

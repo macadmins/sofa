@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "c40856652c96c7b4ba12682616d57dfb5f781f697ee1cca04d57db413528b67e",
-  "LastCheck": "2026-06-01T14:34:10.548899619+00:00",
+  "UpdateHash": "aa74dcec568cac7bb6886deda07444e8829bf9c7e0d54b38139588edf39e715e",
+  "LastCheck": "2026-06-01T18:58:58.258093107+00:00",
   "OSVersions": [
     {
       "OSVersion": "26",
@@ -204,6 +204,47 @@
         }
       },
       "SecurityReleases": [
+        {
+          "UpdateName": "iOS 26.5.1",
+          "ProductName": "iOS and iPadOS",
+          "ProductVersion": "26.5.1",
+          "Build": "23F81",
+          "AllBuilds": [
+            "23F81",
+            "23F6081"
+          ],
+          "ReleaseDate": "2026-06-01T00:00:00Z",
+          "ExpirationDate": "2026-08-30",
+          "ReleaseType": "OS",
+          "SecurityInfo": "https://support.apple.com/en-us/100100",
+          "SecurityInfoContext": "iOS 26.5.1 was released on June 01, 2026. This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SupportedDevices": [
+            "iPhone18,1",
+            "iPhone18,2",
+            "iPhone18,3",
+            "iPhone18,4",
+            "iPhone18,5"
+          ],
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
+          "DaysSincePreviousRelease": 21,
+          "DeviceScope": "device-specific",
+          "UpdateSummary": {
+            "Priority": "low",
+            "Summary": "Maintenance update with no published CVE entries",
+            "Recommendation": "Update recommended - may include unpublished security improvements",
+            "Stats": {
+              "Exploited": 0,
+              "Critical": 0,
+              "High": 0,
+              "Medium": 0,
+              "Low": 0,
+              "Remote": 0,
+              "Total": 0
+            }
+          }
+        },
         {
           "UpdateName": "iOS 26.5 and iPadOS 26.5",
           "ProductName": "iOS and iPadOS",
