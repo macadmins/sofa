@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "385402f279e993b73330e4b15b201d34a8781b526ae9d1bd18335208ffe216af",
-  "LastCheck": "2026-06-02T18:20:22.257177222+00:00",
+  "UpdateHash": "418be246377a560ca1aff052acbe653f6cb996ca34f8499a0443508a2774b618",
+  "LastCheck": "2026-06-02T19:47:14.522565848+00:00",
   "OSVersions": [
     {
       "OSVersion": "Tahoe 26",
@@ -510,12 +510,9 @@
           "UpdateName": "macOS Tahoe 26.3",
           "ProductName": "macOS",
           "ProductVersion": "26.3",
-          "Build": "25D125",
-          "AllBuilds": [
-            "25D125"
-          ],
+          "Build": "",
+          "AllBuilds": [],
           "ReleaseDate": "2026-02-11T00:00:00Z",
-          "ExpirationDate": "2026-06-02",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/126348",
           "SecurityInfoContext": "macOS 26.3 was released on February 11, 2026. This release addressed 66 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
@@ -837,7 +834,7 @@
           "DeviceScope": "universal",
           "SupersededBy": {
             "ProductVersion": "26.3",
-            "Build": "25D125",
+            "Build": "",
             "ReleaseDate": "2026-02-11T00:00:00Z",
             "DaysLater": 61
           },
@@ -11389,7 +11386,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/kb/HT213345",
+          "SecurityInfo": "https://support.apple.com/en-us/102876",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {},
           "ActivelyExploitedCVEs": [],
@@ -13213,13 +13210,13 @@
     }
   },
   "XProtectPlistConfigData": {
-    "com.apple.XProtect": "5347",
-    "ReleaseDate": "2026-06-02T17:14:47Z"
+    "ReleaseDate": "2026-06-02T17:14:47Z",
+    "com.apple.XProtect": "5347"
   },
   "XProtectPayloads": {
+    "com.apple.XProtectFramework.XProtect": "157",
     "com.apple.XprotectFramework.PluginService": "74",
-    "ReleaseDate": "2026-06-02T17:14:47Z",
-    "com.apple.XProtectFramework.XProtect": "157"
+    "ReleaseDate": "2026-06-02T17:14:47Z"
   },
   "BackgroundSecurityImprovements": {
     "26": [
