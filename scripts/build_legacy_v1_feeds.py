@@ -387,15 +387,20 @@ def group_versions_by_major(versions: List[Dict], os_type: str) -> Dict[str, Lis
 
 
 def get_latest_version_info(versions: List[Dict]) -> Optional[Dict]:
-    """Get the latest version from a list, preferring higher device count and newer date"""
+    """Get the latest version from a list, preferring higher version number then newer date"""
     if not versions:
         return None
-    
-    latest = max(versions, key=lambda v: (
-        len(v.get("SupportedDevices", [])),  # Prefer more devices
-        v.get("PostingDate", ""),            # Then newer date
-        v.get("ProductVersion", "")          # Then version number
-    ))
+
+    def version_sort_key(v):
+        pv = v.get("ProductVersion", "")
+        try:
+            # Parse version tuple numerically so e.g. 26.5.1 > 26.5 > 18.x
+            parts = tuple(int(x) for x in pv.split("."))
+        except ValueError:
+            parts = (0,)
+        return (parts, v.get("PostingDate", ""))
+
+    latest = max(versions, key=version_sort_key)
     
     return {
         "ProductVersion": latest.get("ProductVersion", ""),
