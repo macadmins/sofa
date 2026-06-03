@@ -106,6 +106,15 @@
               </div>
             </div>
 
+            <!-- Device-specific update note (compact line, only when active) -->
+            <DeviceSpecificUpdates
+              :latest="osData.Latest"
+              :security-releases="osData.SecurityReleases || []"
+              :devices="feedDevices"
+              :platform="platform"
+              :os-version="osData.OSVersion"
+            />
+
             <!-- Action Links -->
             <div class="action-links">
               <!-- What's New button (prioritizes enterprise docs) -->
@@ -433,6 +442,7 @@ export default {
   data() {
     return {
       osData: null,
+      feedDevices: {},
       installationApps: null,
       xProtectData: null,
       osImage: '',
@@ -755,6 +765,9 @@ export default {
             console.error('Unsupported platform:', this.platform)
             return
         }
+
+        // Feed-level Devices map (code -> { MarketingName }) for device-specific cards
+        this.feedDevices = data?.Devices || {}
 
         const version = this.title.split(' ')[1]
         console.log('Looking for version:', version, 'in data:', data)

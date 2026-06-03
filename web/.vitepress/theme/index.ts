@@ -29,6 +29,7 @@ import DataSourceDebug from './components/DataSourceDebug.vue';
 import DataTest from './components/DataTest.vue';
 import ReleaseTimeline from './components/ReleaseTimeline.vue';
 import SignedVersions from './components/SignedVersions.vue';
+import DeviceSpecificUpdates from './components/DeviceSpecificUpdates.vue';
 
 export default {
   extends: DefaultTheme,
@@ -64,5 +65,6 @@ export default {
     app.component('DataTest', DataTest);
     app.component('ReleaseTimeline', ReleaseTimeline);
     app.component('SignedVersions', SignedVersions);
+    app.component('DeviceSpecificUpdates', DeviceSpecificUpdates);
   },
 } satisfies Theme;

@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, watch, onMounted } from 'vue'
+import { ref, computed, watch, onMounted, nextTick } from 'vue'
 
 // Layout constants
 const LANE_WIDTH = 60
@@ -24,6 +24,9 @@ const loading = ref(false)
 const error = ref(null)
 const expandedVersion = ref(null)
 const hoveredVersion = ref(null)
+// Deep-link state: OS version to select and whether to scroll, set from the URL
+const pendingOS = ref(null)
+const pendingScroll = ref(false)
 
 // Fetch feed data
 const fetchFeed = async (platformId) => {
@@ -37,9 +40,20 @@ const fetchFeed = async (platformId) => {
     const res = await fetch(`${base}${platform.feed}`)
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     feedData.value = await res.json()
-    // Auto-select first OS version
+    // Select the deep-linked OS version when present, else the first one
     if (feedData.value?.OSVersions?.length) {
-      selectedOSVersion.value = feedData.value.OSVersions[0].OSVersion
+      const osList = feedData.value.OSVersions.map(o => o.OSVersion)
+      selectedOSVersion.value =
+        (pendingOS.value && osList.includes(pendingOS.value))
+          ? pendingOS.value
+          : osList[0]
+      pendingOS.value = null
+    }
+    // Scroll to the requested group once it has rendered (deep link only)
+    if (pendingScroll.value) {
+      pendingScroll.value = false
+      await nextTick()
+      scrollToGroup()
     }
   } catch (e) {
     error.value = e
@@ -49,7 +63,38 @@ const fetchFeed = async (platformId) => {
   }
 }
 
-onMounted(() => fetchFeed(selectedPlatform.value))
+// Anchor id shared with DeviceSpecificUpdates.vue — keep in sync.
+function anchorId(platformId, osVersion) {
+  return `timeline-${platformId}-${osVersion}`
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
+function scrollToGroup() {
+  if (typeof document === 'undefined') return
+  const id = anchorId(selectedPlatform.value, selectedOSVersion.value)
+  requestAnimationFrame(() => {
+    const el = document.getElementById(id)
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  })
+}
+
+onMounted(() => {
+  let pParam = null
+  if (typeof window !== 'undefined') {
+    const params = new URLSearchParams(window.location.search)
+    pParam = params.get('platform')
+    pendingOS.value = params.get('os')
+  }
+  pendingScroll.value = !!(pParam || pendingOS.value)
+  // Setting selectedPlatform triggers the watcher's fetch; otherwise fetch here.
+  if (pParam && platforms.find(p => p.id === pParam) && pParam !== selectedPlatform.value) {
+    selectedPlatform.value = pParam
+  } else {
+    fetchFeed(selectedPlatform.value)
+  }
+})
 watch(selectedPlatform, (id) => {
   expandedVersion.value = null
   fetchFeed(id)
@@ -537,7 +582,7 @@ function downloadMarkdown(group) {
     </div>
 
     <!-- Graph groups -->
-    <div v-else v-for="group in graphGroups" :key="group.osVersion" class="graph-group">
+    <div v-else v-for="group in graphGroups" :key="group.osVersion" :id="anchorId(selectedPlatform, group.osVersion)" class="graph-group">
       <div class="group-header">
         <h3 class="group-title">{{ group.osVersion }}</h3>
         <div class="export-buttons">
@@ -947,6 +992,7 @@ function downloadMarkdown(group) {
 /* Graph */
 .graph-group {
   margin-bottom: 2rem;
+  scroll-margin-top: 80px; /* offset so the sticky navbar doesn't cover the heading */
 }
 
 .group-header {
