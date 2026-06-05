@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.06.03",
-  "dateReleased": "2026-06-03T17:30:12.2205Z",
-  "count": 1611,
+  "catalogVersion": "2026.06.05",
+  "dateReleased": "2026-06-05T17:00:14.652Z",
+  "count": 1612,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-28318",
+      "vendorProject": "SolarWinds",
+      "product": "Serv-U",
+      "vulnerabilityName": "SolarWinds Serv-U Uncontrolled Resource Consumption Vulnerability",
+      "dateAdded": "2026-06-05",
+      "shortDescription": "SolarWinds Serv-U contains an uncontrolled resource consumption vulnerability that allows specially crafted POST requests using the Content-Encoding: deflate header to crash the Serv-U service without authentication.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-06-19",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.solarwinds.com/trust-center/security-advisories/cve-2026-28318 ; https://documentation.solarwinds.com/en/success_center/servu/content/release_notes/servu_15-5-4-hotfix-1_release_notes.htm#link7 ; https://nvd.nist.gov/vuln/detail/CVE-2026-28318",
+      "cwes": [
+        "CWE-400"
+      ]
+    },
     {
       "cveID": "CVE-2026-45247",
       "vendorProject": "Mirasvit",
@@ -23926,5 +23941,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-06-05T13:33:39.381892618Z"
+  "fetchTimestamp": "2026-06-05T17:41:07.636436367Z"
 }
