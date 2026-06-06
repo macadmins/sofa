@@ -9,6 +9,10 @@ Hello 👋,
 
 Updated automatically via GitHub Actions, the SOFA feed is a dynamic, centralized, and accessible source of truth. It can be self-hosted, giving you complete assurances as to the provenance of the data your fleet and coworkers can consume. The goal is to streamline the monitoring of Apple's software releases, thereby boosting security awareness and administrative efficiency.
 
+## Contributing to SOFA
+
+We welcome contributions and feedback to SOFA! Please read our [contributing guidelines](./CONTRIBUTING.md) before opening a pull request. Most times opening an issue first works well. In general, any code changes should be discussed in an issue before a pull request is opened, especially for new features, behavior changes, refactors, dependency changes, architectural changes, compatibility changes, and large rewrites. Small documentation fixes, typo fixes, and clearly isolated bug fixes may not need prior discussion.
+
 ## Key Features
 
 ### Machine-Readable Feed, RSS Feed, and Web UI
