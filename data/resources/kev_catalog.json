@@ -1,9 +1,25 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.06.05",
-  "dateReleased": "2026-06-05T17:00:14.652Z",
-  "count": 1612,
+  "catalogVersion": "2026.06.08",
+  "dateReleased": "2026-06-08T17:02:09.1385Z",
+  "count": 1613,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-42271",
+      "vendorProject": "BerriAI",
+      "product": "LiteLLM",
+      "vulnerabilityName": "BerriAI LiteLLM Command Injection Vulnerability",
+      "dateAdded": "2026-06-08",
+      "shortDescription": "BerriAI LiteLLM contains a command injection vulnerability that could allow any authenticated user, including holders of low-privilege internal-user keys, to run arbitrary commands on the host.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-06-22",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "This vulnerability affects a common open-source component, third-party library, or a protocol used by different products. Please check with specific vendors for information on patching status. For more information, please see: https://github.com/BerriAI/litellm/security/advisories/GHSA-v4p8-mg3p-g94g ; https://github.com/BerriAI/litellm/releases/tag/v1.83.7-stable ; https://nvd.nist.gov/vuln/detail/CVE-2026-42271",
+      "cwes": [
+        "CWE-78",
+        "CWE-77"
+      ]
+    },
     {
       "cveID": "CVE-2026-28318",
       "vendorProject": "SolarWinds",
@@ -23941,5 +23957,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-06-08T13:53:50.220386470Z"
+  "fetchTimestamp": "2026-06-08T18:03:39.388054678Z"
 }
