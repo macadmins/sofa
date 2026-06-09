@@ -1,9 +1,40 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.06.08",
-  "dateReleased": "2026-06-08T19:00:18.3481Z",
-  "count": 1614,
+  "catalogVersion": "2026.06.09",
+  "dateReleased": "2026-06-09T17:00:18.9931Z",
+  "count": 1616,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-11645",
+      "vendorProject": "Google",
+      "product": "Chromium V8",
+      "vulnerabilityName": "Google Chromium V8 Out-of-Bounds Read and Write Vulnerability",
+      "dateAdded": "2026-06-09",
+      "shortDescription": "Google Chromium V8 out-of-bounds read and write vulnerability that could allow a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-06-23",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop_0153744567.html ; https://issues.chromium.org/issues/506689381 ; https://nvd.nist.gov/vuln/detail/CVE-2026-11645",
+      "cwes": [
+        "CWE-787",
+        "CWE-125"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-7473",
+      "vendorProject": "Arista",
+      "product": "Extensible Operating System",
+      "vulnerabilityName": "Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability",
+      "dateAdded": "2026-06-09",
+      "shortDescription": "Arista Extensible Operating System (EOS) contains an incomplete comparison with missing factors vulnerability when the switch incorrectly decapsulate and forwards other unexpected tunneled packet with a destination IP matching its configured decapsulation IP.",
+      "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2026-06-23",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.arista.com/en/support/advisories-notices/security-advisory/24005-security-advisory-0137 ; https://nvd.nist.gov/vuln/detail/CVE-2026-7473",
+      "cwes": [
+        "CWE-1023"
+      ]
+    },
     {
       "cveID": "CVE-2026-42271",
       "vendorProject": "BerriAI",
@@ -29,7 +60,7 @@
       "shortDescription": "Check Point Security Gateway contains an improper authentication vulnerability in IKEv1 key exchange that could allow an unauthenticated remote attacker to bypass user authentication and establish a remote access VPN connection without a valid user password.",
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2026-06-11",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://blog.checkpoint.com/security/check-point-releases-important-hotfix-for-vulnerabilities-in-deprecated-ikev1-vpn-protocol/ ; https://support.checkpoint.com/results/sk/sk185033?_gl=1*1wqeqhc*_gcl_au*MTI1MzE5MjI2LjE3ODA5MzQ1NTM. ; https://nvd.nist.gov/vuln/detail/CVE-2026-50751",
       "cwes": [
         "CWE-287"
@@ -23972,5 +24003,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-06-09T13:28:50.790682157Z"
+  "fetchTimestamp": "2026-06-09T17:44:13.641111378Z"
 }
