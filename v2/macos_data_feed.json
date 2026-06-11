@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "6064a5d167a857115f19626f6e825cb69c8db7262a741160d54e6d3cc6b0e6c7",
-  "LastCheck": "2026-06-11T08:13:23.371193848+00:00",
+  "UpdateHash": "c664eb249d7a4543ce67614510f7a63fd0d08de470f7784e14135867a975bd4a",
+  "LastCheck": "2026-06-11T13:50:29.034086421+00:00",
   "OSVersions": [
     {
       "OSVersion": "Tahoe 26",
@@ -7232,7 +7232,7 @@
           "ReleaseDate": "2025-03-31T00:00:00Z",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/122375",
-          "SecurityInfoContext": "macOS 13.7.5 was released on March 31, 2025. This release addressed 103 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "macOS 13.7.5 was released on March 31, 2025. This release addressed 108 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {
             "CVE-2024-40864": {},
             "CVE-2024-54533": {},
@@ -7244,6 +7244,7 @@
               "InKEV": true,
               "Severity": "Critical"
             },
+            "CVE-2025-24107": {},
             "CVE-2025-24111": {},
             "CVE-2025-24126": {},
             "CVE-2025-24129": {},
@@ -7252,6 +7253,7 @@
             "CVE-2025-24148": {},
             "CVE-2025-24157": {},
             "CVE-2025-24164": {},
+            "CVE-2025-24165": {},
             "CVE-2025-24170": {},
             "CVE-2025-24172": {},
             "CVE-2025-24173": {},
@@ -7312,6 +7314,7 @@
             "CVE-2025-27113": {},
             "CVE-2025-30424": {},
             "CVE-2025-30429": {},
+            "CVE-2025-30431": {},
             "CVE-2025-30432": {},
             "CVE-2025-30433": {},
             "CVE-2025-30438": {},
@@ -7337,16 +7340,18 @@
             "CVE-2025-31189": {},
             "CVE-2025-31191": {},
             "CVE-2025-31194": {},
+            "CVE-2025-31195": {},
             "CVE-2025-31197": {},
             "CVE-2025-31198": {},
             "CVE-2025-31261": {},
             "CVE-2025-31264": {},
-            "CVE-2025-43205": {}
+            "CVE-2025-43205": {},
+            "CVE-2025-43465": {}
           },
           "ActivelyExploitedCVEs": [
             "CVE-2025-24085"
           ],
-          "UniqueCVEsCount": 103,
+          "UniqueCVEsCount": 108,
           "DaysSincePreviousRelease": 49,
           "DeviceScope": "universal",
           "SupersededBy": {
@@ -7366,7 +7371,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 103
+              "Total": 108
             }
           }
         },
@@ -11468,7 +11473,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/kb/HT213184",
+          "SecurityInfo": "https://support.apple.com/kb/HT210919",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {},
           "ActivelyExploitedCVEs": [],
@@ -13292,12 +13297,12 @@
     }
   },
   "XProtectPlistConfigData": {
-    "ReleaseDate": "2026-06-02T17:14:47Z",
-    "com.apple.XProtect": "5347"
+    "com.apple.XProtect": "5347",
+    "ReleaseDate": "2026-06-02T17:14:47Z"
   },
   "XProtectPayloads": {
-    "com.apple.XprotectFramework.PluginService": "74",
     "ReleaseDate": "2026-06-02T17:14:47Z",
+    "com.apple.XprotectFramework.PluginService": "74",
     "com.apple.XProtectFramework.XProtect": "157"
   },
   "BackgroundSecurityImprovements": {
