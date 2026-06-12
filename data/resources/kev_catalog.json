@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.06.11",
-  "dateReleased": "2026-06-11T19:02:08.0715Z",
-  "count": 1618,
+  "catalogVersion": "2026.06.12",
+  "dateReleased": "2026-06-12T16:46:48.0549Z",
+  "count": 1619,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-35273",
+      "vendorProject": "Oracle",
+      "product": " PeopleSoft Enterprise PeopleTools",
+      "vulnerabilityName": "Oracle PeopleSoft Enterprise PeopleTools Missing Authentication for Critical Function Vulnerability",
+      "dateAdded": "2026-06-12",
+      "shortDescription": "Oracle PeopleSoft Enterprise PeopleTools contains a missing authentication for critical function vulnerability which could allow an unauthenticated attacker to obtain takeover of PeopleSoft Enterprise PeopleTools.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-06-15",
+      "knownRansomwareCampaignUse": "Known",
+      "notes": "https://www.oracle.com/security-alerts/alert-cve-2026-35273.html ; https://support.oracle.com/signin/ ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-35273",
+      "cwes": [
+        "CWE-306"
+      ]
+    },
     {
       "cveID": "CVE-2026-10520",
       "vendorProject": "Ivanti",
@@ -24033,5 +24048,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-06-12T13:42:23.936531438Z"
+  "fetchTimestamp": "2026-06-12T17:49:31.076086969Z"
 }
