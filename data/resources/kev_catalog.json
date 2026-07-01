@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.06.29",
-  "dateReleased": "2026-06-29T18:57:01.4113Z",
-  "count": 1630,
+  "catalogVersion": "2026.07.01",
+  "dateReleased": "2026-07-01T19:00:06.9016Z",
+  "count": 1631,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-45659",
+      "vendorProject": "Microsoft",
+      "product": "SharePoint Server",
+      "vulnerabilityName": "Microsoft SharePoint Server Deserialization of Untrusted Data Vulnerability",
+      "dateAdded": "2026-07-01",
+      "shortDescription": "Microsoft SharePoint Server contains a deserialization of untrusted data vulnerability which allows an authorized attacker to execute code over a network.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-07-04",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45659 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-45659",
+      "cwes": [
+        "CWE-502"
+      ]
+    },
     {
       "cveID": "CVE-2026-48558",
       "vendorProject": "SimpleHelp ",
@@ -24215,5 +24230,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-07-01T19:10:37.233330947Z"
+  "fetchTimestamp": "2026-07-01T19:37:40.813081904Z"
 }
