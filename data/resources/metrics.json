@@ -1,30 +1,30 @@
 {
-  "timestamp": "2026-07-06T18:33:38.793Z",
+  "timestamp": "2026-07-07T07:04:17.433Z",
   "periods": {
     "volume": {
-      "start": "2026-06-06T00:00:00.000Z",
-      "end": "2026-07-06T00:00:00.000Z",
+      "start": "2026-06-07T00:00:00.000Z",
+      "end": "2026-07-07T00:00:00.000Z",
       "days": 30
     },
     "trend": {
-      "start": "2026-06-29T00:00:00.000Z",
-      "end": "2026-07-06T00:00:00.000Z",
+      "start": "2026-06-30T00:00:00.000Z",
+      "end": "2026-07-07T00:00:00.000Z",
       "days": 7
     }
   },
   "volume": {
     "metrics": {
       "totalRequests": {
-        "value": 126117600,
-        "formatted": "126.12M"
+        "value": 127455472,
+        "formatted": "127.46M"
       },
       "bandwidth": {
-        "bytes": 3330973168621,
-        "formatted": "3.03 TB"
+        "bytes": 3383780871849,
+        "formatted": "3.08 TB"
       },
       "cachedRequests": {
-        "value": 122434740,
-        "formatted": "122.43M"
+        "value": 123712934,
+        "formatted": "123.71M"
       },
       "cacheRatio": {
         "value": 97.1,
@@ -33,9 +33,9 @@
     },
     "calculated": {
       "dailyAverage": {
-        "requests": 4203920,
+        "requests": 4248515,
         "formatted": {
-          "requests": "4.20M"
+          "requests": "4.25M"
         }
       }
     }
@@ -43,19 +43,24 @@
   "trend": {
     "metrics": {
       "totalRequests": {
-        "value": 28200085,
-        "formatted": "28.20M"
+        "value": 27600724,
+        "formatted": "27.60M"
       },
       "bandwidth": {
-        "bytes": 766895708237,
-        "formatted": "714.23 GB"
+        "bytes": 756971863924,
+        "formatted": "704.98 GB"
       },
       "cachedRequests": {
-        "value": 27339540,
-        "formatted": "27.34M"
+        "value": 26765035,
+        "formatted": "26.77M"
       }
     },
     "daily": [
+      {
+        "date": "2026-07-06",
+        "requests": 4427826,
+        "bytes": 128663114035
+      },
       {
         "date": "2026-07-03",
         "requests": 3663601,
@@ -85,11 +90,6 @@
         "date": "2026-06-30",
         "requests": 4974564,
         "bytes": 140511227143
-      },
-      {
-        "date": "2026-06-29",
-        "requests": 5027187,
-        "bytes": 138586958348
       }
     ],
     "geographic": {
