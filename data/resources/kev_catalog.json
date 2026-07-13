@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.07.10",
-  "dateReleased": "2026-07-10T17:00:25.7327Z",
-  "count": 1637,
+  "catalogVersion": "2026.07.13",
+  "dateReleased": "2026-07-13T17:00:17.965Z",
+  "count": 1638,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2008-4128",
+      "vendorProject": "Cisco",
+      "product": "IOS",
+      "vulnerabilityName": "Cisco IOS Cross-Site Request Forgery Vulnerability",
+      "dateAdded": "2026-07-13",
+      "shortDescription": "Cisco IOS 12.4 contains multiple cross-site forgery vulnerabilities that allows remote attackers to execute arbitrary commands via (1) a certain \"show privilege\" command to the /level/15/exec/- URI, and (2) a certain \"alias exec\" command to the /level/15/exec/-/configure/http URI.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-07-16",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.cisco.com/c/en/us/obsolete/ios-nx-os-software/cisco-ios-software-releases-12-4-mainline.html ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2008-4128",
+      "cwes": [
+        "CWE-352"
+      ]
+    },
     {
       "cveID": "CVE-2026-56291",
       "vendorProject": "Balbooa",
@@ -24320,5 +24335,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-07-13T13:18:25.943867256Z"
+  "fetchTimestamp": "2026-07-13T17:41:31.593768840Z"
 }
