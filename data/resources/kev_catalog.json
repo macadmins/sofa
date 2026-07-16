@@ -1,9 +1,54 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.07.15",
-  "dateReleased": "2026-07-15T16:42:14.8261Z",
-  "count": 1644,
+  "catalogVersion": "2026.07.16",
+  "dateReleased": "2026-07-16T17:00:15.6845Z",
+  "count": 1647,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-58644",
+      "vendorProject": "Microsoft",
+      "product": "SharePoint",
+      "vulnerabilityName": "Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
+      "dateAdded": "2026-07-16",
+      "shortDescription": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability that allows an unauthorized attacker to execute code over a network.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-07-19",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-58644 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-58644",
+      "cwes": [
+        "CWE-502"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-25089",
+      "vendorProject": "Fortinet",
+      "product": "FortiSandbox",
+      "vulnerabilityName": "Fortinet FortiSandbox OS Command Injection Vulnerability",
+      "dateAdded": "2026-07-16",
+      "shortDescription": "Fortinet FortiSandbox, FortiSandbox Cloud, and FortiSandbox PaaS contain an OS command injection vulnerability that allows an unauthenticated attacker to execute unauthorized commands via specifically crafted HTTP requests.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-07-19",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://fortiguard.fortinet.com/psirt/FG-IR-26-141 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-25089",
+      "cwes": [
+        "CWE-78"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-39808",
+      "vendorProject": "Fortinet",
+      "product": "FortiSandbox",
+      "vulnerabilityName": "Fortinet FortiSandbox OS Command Injection Vulnerability",
+      "dateAdded": "2026-07-16",
+      "shortDescription": "Fortinet FortiSandbox contains an OS command injection vulnerability that could allow an unauthenticated attacker to execute unauthorized code or commands via crafted HTTP requests.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-07-19",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://fortiguard.fortinet.com/psirt/FG-IR-26-100 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-39808",
+      "cwes": [
+        "CWE-78"
+      ]
+    },
     {
       "cveID": "CVE-2026-46817",
       "vendorProject": "Oracle",
@@ -24427,5 +24472,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-07-16T13:01:52.766640847Z"
+  "fetchTimestamp": "2026-07-16T17:33:53.233245484Z"
 }
