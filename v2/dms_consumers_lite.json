@@ -1,8 +1,8 @@
 {
   "Metadata": {
     "SchemaVersion": "2026.04.11.2",
-    "ContentHash": "e5c88057b1a8055793f021c5a61cffff6ecafc636f406c8d9bce7bc3a65c83b8",
-    "GeneratedAt": "2026-07-27T17:36:14.534094967+00:00",
+    "ContentHash": "ba4c683cf085e1eeac5872fd17486a7de14229f5c72ad96ca0e0d2e38f7f7cb1",
+    "GeneratedAt": "2026-07-27T18:06:00.002708887+00:00",
     "Description": "Lightweight DMS feed. Releases inherit SupportedDevices from their OS version unless overridden."
   },
   "Devices": {
@@ -738,7 +738,7 @@
       "OSVersions": [
         {
           "OSVersion": "Tahoe 26",
-          "LatestVersion": "26.5.2",
+          "LatestVersion": "26.6",
           "SupportedDevices": [
             "J152FAP",
             "J160AP",
@@ -805,6 +805,13 @@
             "VMM-x86_64"
           ],
           "Releases": [
+            {
+              "Version": "26.6",
+              "Build": "25G72",
+              "ReleaseDate": "2026-07-27T00:00:00Z",
+              "CVECount": 155,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "26.5.2",
               "Build": "25F84",
@@ -1263,7 +1270,7 @@
         },
         {
           "OSVersion": "Sequoia 15",
-          "LatestVersion": "15.7.7",
+          "LatestVersion": "15.7.8",
           "SupportedDevices": [
             "J132AP",
             "J137AP",
@@ -1334,6 +1341,13 @@
             "VMM-x86_64"
           ],
           "Releases": [
+            {
+              "Version": "15.7.8",
+              "Build": "24G824",
+              "ReleaseDate": "2026-07-27T00:00:00Z",
+              "CVECount": 138,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "15.7.7",
               "Build": "24G720",
@@ -2347,7 +2361,7 @@
       "OSVersions": [
         {
           "OSVersion": "26",
-          "LatestVersion": "26.5.2",
+          "LatestVersion": "26.6",
           "SupportedDevices": [
             "iPad11,1",
             "iPad11,2",
@@ -2446,6 +2460,13 @@
             "iPhone18,5"
           ],
           "Releases": [
+            {
+              "Version": "26.6",
+              "Build": "23U67",
+              "ReleaseDate": "2026-07-27T00:00:00Z",
+              "CVECount": 87,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "26.5.2",
               "Build": "23F84",
@@ -2847,7 +2868,7 @@
       "OSVersions": [
         {
           "OSVersion": "tvOS 26",
-          "LatestVersion": "26.5",
+          "LatestVersion": "26.6",
           "SupportedDevices": [
             "AppleTV11,1",
             "AppleTV14,1",
@@ -2855,6 +2876,13 @@
             "AppleTV6,2"
           ],
           "Releases": [
+            {
+              "Version": "26.6",
+              "Build": "23L773",
+              "ReleaseDate": "2026-07-27",
+              "CVECount": 100,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "26.5",
               "Build": "23L6471",
@@ -2990,7 +3018,7 @@
       "OSVersions": [
         {
           "OSVersion": "watchOS 26",
-          "LatestVersion": "26.5",
+          "LatestVersion": "26.6",
           "SupportedDevices": [
             "Watch6,1",
             "Watch6,10",
@@ -3029,6 +3057,13 @@
             "Watch7,9"
           ],
           "Releases": [
+            {
+              "Version": "26.6",
+              "Build": "23U67",
+              "ReleaseDate": "2026-07-27",
+              "CVECount": 100,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "26.5",
               "Build": "23T6570",
@@ -3212,12 +3247,19 @@
       "OSVersions": [
         {
           "OSVersion": "visionOS 26",
-          "LatestVersion": "26.5",
+          "LatestVersion": "26.6",
           "SupportedDevices": [
             "RealityDevice14,1",
             "RealityDevice17,1"
           ],
           "Releases": [
+            {
+              "Version": "26.6",
+              "Build": "23O770",
+              "ReleaseDate": "2026-07-27",
+              "CVECount": 99,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "26.5",
               "Build": "23O6471",
