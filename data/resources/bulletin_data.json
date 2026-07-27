@@ -1,7 +1,7 @@
 {
-  "content_hash": "2a10dafd9b750b97b01e12d68ad56311a1e22b7b872628f87bbb21b80283fca9",
+  "content_hash": "a4d15077cf9d8e7b8332c164e0c94a20d1db60e2682daebb3a7feeffcf39790a",
   "content_changed": true,
-  "generated_at": "2026-07-27T18:59:35.022982807Z",
+  "generated_at": "2026-07-27T19:34:56.730254002Z",
   "latest_releases": {
     "macos": {
       "version": "26.6",
@@ -704,51 +704,31 @@
       "updates_link": null
     },
     "safari": {
-      "version": "26.5.2",
-      "build": "26.5.2",
-      "release_date": "2026-06-29T00:00:00Z",
-      "url": "https://support.apple.com/en-us/127685",
+      "version": "26.6",
+      "build": "26.6",
+      "release_date": "2026-07-27T00:00:00Z",
+      "url": "https://support.apple.com/en-us/128073",
       "cves_fixed": [
-        "CVE-2026-28979",
-        "CVE-2026-39872",
-        "CVE-2026-43663",
-        "CVE-2026-43676",
-        "CVE-2026-43699",
-        "CVE-2026-43700",
-        "CVE-2026-43701",
-        "CVE-2026-43704",
-        "CVE-2026-43705",
-        "CVE-2026-43707",
-        "CVE-2026-43708",
-        "CVE-2026-43709",
-        "CVE-2026-43712",
-        "CVE-2026-43713",
-        "CVE-2026-43715",
-        "CVE-2026-43716",
-        "CVE-2026-43717",
-        "CVE-2026-43718",
-        "CVE-2026-43720",
-        "CVE-2026-43721",
-        "CVE-2026-43725",
-        "CVE-2026-43726",
-        "CVE-2026-43727",
-        "CVE-2026-43731",
-        "CVE-2026-43732",
-        "CVE-2026-43734",
-        "CVE-2026-43735",
         "CVE-2026-43740",
-        "CVE-2026-43742",
-        "CVE-2026-43745",
-        "CVE-2026-43746"
+        "CVE-2026-43792",
+        "CVE-2026-43804",
+        "CVE-2026-43821",
+        "CVE-2026-64713",
+        "CVE-2026-64718",
+        "CVE-2026-64719",
+        "CVE-2026-64728",
+        "CVE-2026-64730",
+        "CVE-2026-64757",
+        "CVE-2026-64783"
       ],
       "actively_exploited_count": 0,
-      "total_cve_count": 31,
+      "total_cve_count": 11,
       "enterprise_link": null,
       "updates_link": null
     }
   },
   "security_summary": {
-    "unique_cves_fixed": 196,
+    "unique_cves_fixed": 194,
     "kev_matches": 0,
     "latest_wave_date": "2026-07-27T00:00:00Z",
     "kev_cve_list": []
@@ -787,6 +767,13 @@
     }
   },
   "recent_releases": [
+    {
+      "release_date": "2026-07-27",
+      "name": "Safari 26.6",
+      "platform": "safari",
+      "version": "26.6",
+      "url": "https://support.apple.com/en-us/128073"
+    },
     {
       "release_date": "2026-07-27",
       "name": "iOS 26.6 and iPadOS 26.6",
@@ -853,13 +840,6 @@
       "platform": "ios",
       "version": "26.5.2",
       "url": "https://support.apple.com/en-us/127594"
-    },
-    {
-      "release_date": "2026-06-29",
-      "name": "macOS Tahoe 26.5.2",
-      "platform": "macos",
-      "version": "26.5.2",
-      "url": "https://support.apple.com/en-us/127595"
     }
   ]
 }
