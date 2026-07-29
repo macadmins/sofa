@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.07.27",
-  "dateReleased": "2026-07-27T19:00:15.8632Z",
-  "count": 1655,
+  "catalogVersion": "2026.07.29",
+  "dateReleased": "2026-07-29T18:45:59.5809Z",
+  "count": 1656,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-20316",
+      "vendorProject": "Cisco",
+      "product": "Secure Firewall Management Center (FMC)",
+      "vulnerabilityName": "Cisco Secure Firewall Management Center Use of Hard-coded Password Vulnerability",
+      "dateAdded": "2026-07-29",
+      "shortDescription": "Cisco Secure Firewall Management Center (FMC) formerly known as Firepower Management Center contains a use of hard-coded password vulnerability that could allow an unauthenticated, remote attacker to log in to an affected device using a low-privileged account to access sensitive data within the impacted systems.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-08-01",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-fmc-static-cred-BET3Cjh ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-20316",
+      "cwes": [
+        "CWE-259"
+      ]
+    },
     {
       "cveID": "CVE-2025-68686",
       "vendorProject": "Fortinet",
@@ -24592,5 +24607,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-07-29T18:50:03.571866956Z"
+  "fetchTimestamp": "2026-07-29T19:32:45.245799590Z"
 }
