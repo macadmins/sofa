@@ -1,8 +1,8 @@
 {
   "Metadata": {
     "SchemaVersion": "2026.04.11.2",
-    "ContentHash": "66ee09ac36487c491433de5bb47afe0f8136fdc665f92d8d4b2890152b309347",
-    "GeneratedAt": "2026-08-06T13:06:14.128905272+00:00",
+    "ContentHash": "47388e048c5c363cad79a36e1cc0a09bab8e48ffa2c9667d2c131de9c038fe61",
+    "GeneratedAt": "2026-08-07T01:35:33.641234798+00:00",
     "Description": "Lightweight DMS feed. Releases inherit SupportedDevices from their OS version unless overridden."
   },
   "Devices": {
@@ -738,7 +738,7 @@
       "OSVersions": [
         {
           "OSVersion": "Tahoe 26",
-          "LatestVersion": "26.6",
+          "LatestVersion": "26.6.1",
           "SupportedDevices": [
             "J152FAP",
             "J160AP",
@@ -805,6 +805,13 @@
             "VMM-x86_64"
           ],
           "Releases": [
+            {
+              "Version": "26.6.1",
+              "Build": "25G76",
+              "ReleaseDate": "2026-08-06T00:00:00Z",
+              "CVECount": 1,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "26.6",
               "Build": "25G72",
@@ -1270,7 +1277,7 @@
         },
         {
           "OSVersion": "Sequoia 15",
-          "LatestVersion": "15.7.8",
+          "LatestVersion": "15.7.9",
           "SupportedDevices": [
             "J132AP",
             "J137AP",
@@ -1341,6 +1348,13 @@
             "VMM-x86_64"
           ],
           "Releases": [
+            {
+              "Version": "15.7.9",
+              "Build": "24G830",
+              "ReleaseDate": "2026-08-06T00:00:00Z",
+              "CVECount": 1,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "15.7.8",
               "Build": "24G824",
