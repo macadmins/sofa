@@ -1,7 +1,7 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.08.07",
-  "dateReleased": "2026-08-07T16:45:47.0648Z",
+  "catalogVersion": "2026.08.10",
+  "dateReleased": "2026-08-10T16:19:34.1767Z",
   "count": 1662,
   "vulnerabilities": [
     {
@@ -480,7 +480,7 @@
       "shortDescription": "Microsoft SharePoint Server contains a deserialization of untrusted data vulnerability which allows an authorized attacker to execute code over a network.",
       "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
       "dueDate": "2026-07-04",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45659 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-45659",
       "cwes": [
         "CWE-502"
@@ -24697,5 +24697,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-08-10T12:49:10.344996832Z"
+  "fetchTimestamp": "2026-08-10T17:21:00.039930080Z"
 }
