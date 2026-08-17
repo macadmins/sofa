@@ -1,24 +1,24 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "5d20ffc133d8751a3992d1728654812616897381cb5256c5c5e051794b87725b",
-  "LastCheck": "2026-08-17T18:12:32.549752886+00:00",
+  "UpdateHash": "a0f00a57d6d3f6f61aed0cb24a413b2bd3e50092eae1471fe7153f16885017ad",
+  "LastCheck": "2026-08-17T18:26:11.847018823+00:00",
   "OSVersions": [
     {
       "OSVersion": "Tahoe 26",
       "Latest": {
-        "UpdateName": "macOS Tahoe 26.6.1",
+        "UpdateName": "macOS Tahoe 26.6.2",
         "ProductName": "macOS",
-        "ProductVersion": "26.6.1",
-        "Build": "25G76",
+        "ProductVersion": "26.6.2",
+        "Build": "25G83",
         "AllBuilds": [
-          "25G76"
+          "25G83"
         ],
-        "ReleaseDate": "2026-08-06T00:00:00Z",
+        "ReleaseDate": "2026-08-17T00:00:00Z",
         "ExpirationDate": "2026-11-15",
         "ReleaseType": "OS",
-        "SecurityInfo": "https://support.apple.com/en-us/148170",
-        "SecurityInfoContext": "macOS Tahoe has been updated to version 26.6.1, released on August 06, 2026. This update addresses one security issue and is the most recent approved version. This update comes 10 days after the previous release.",
+        "SecurityInfo": "https://support.apple.com/en-us/148281",
+        "SecurityInfoContext": "macOS Tahoe has been updated to version 26.6.2, released on August 17, 2026. This update addresses 28 security issues and is the most recent approved version. This update comes 11 days after the previous release.",
         "SupportedDevices": [
           "J152FAP",
           "J160AP",
@@ -85,15 +85,42 @@
           "VMM-x86_64"
         ],
         "CVEs": {
-          "CVE-2026-65400": {}
+          "CVE-2026-43794": {},
+          "CVE-2026-43795": {},
+          "CVE-2026-64715": {},
+          "CVE-2026-64778": {},
+          "CVE-2026-64779": {},
+          "CVE-2026-64780": {},
+          "CVE-2026-64781": {},
+          "CVE-2026-64782": {},
+          "CVE-2026-64784": {},
+          "CVE-2026-64787": {},
+          "CVE-2026-64788": {},
+          "CVE-2026-65330": {},
+          "CVE-2026-65331": {},
+          "CVE-2026-65332": {},
+          "CVE-2026-65333": {},
+          "CVE-2026-65334": {},
+          "CVE-2026-65335": {},
+          "CVE-2026-65336": {},
+          "CVE-2026-65337": {},
+          "CVE-2026-65338": {},
+          "CVE-2026-65339": {},
+          "CVE-2026-65340": {},
+          "CVE-2026-65341": {},
+          "CVE-2026-65343": {},
+          "CVE-2026-65346": {},
+          "CVE-2026-65347": {},
+          "CVE-2026-65349": {},
+          "CVE-2026-65351": {}
         },
         "ActivelyExploitedCVEs": [],
-        "UniqueCVEsCount": 1,
-        "DaysSincePreviousRelease": 10,
+        "UniqueCVEsCount": 28,
+        "DaysSincePreviousRelease": 11,
         "DeviceScope": "universal",
         "UpdateSummary": {
-          "Priority": "medium",
-          "Summary": "Addresses 1 security issue",
+          "Priority": "high",
+          "Summary": "Addresses 28 security issues",
           "Recommendation": "Update to stay secure - security fixes available",
           "Stats": {
             "Exploited": 0,
@@ -102,11 +129,73 @@
             "Medium": 0,
             "Low": 0,
             "Remote": 0,
-            "Total": 1
+            "Total": 28
           }
         }
       },
       "SecurityReleases": [
+        {
+          "UpdateName": "macOS Tahoe 26.6.2",
+          "ProductName": "macOS",
+          "ProductVersion": "26.6.2",
+          "Build": "25G83",
+          "AllBuilds": [
+            "25G83"
+          ],
+          "ReleaseDate": "2026-08-17T00:00:00Z",
+          "ExpirationDate": "2026-11-15",
+          "ReleaseType": "OS",
+          "SecurityInfo": "https://support.apple.com/en-us/148281",
+          "SecurityInfoContext": "macOS has been updated to version 26.6.2, released on August 17, 2026. This update addresses 28 security issues and is the most recent approved version.",
+          "CVEs": {
+            "CVE-2026-43794": {},
+            "CVE-2026-43795": {},
+            "CVE-2026-64715": {},
+            "CVE-2026-64778": {},
+            "CVE-2026-64779": {},
+            "CVE-2026-64780": {},
+            "CVE-2026-64781": {},
+            "CVE-2026-64782": {},
+            "CVE-2026-64784": {},
+            "CVE-2026-64787": {},
+            "CVE-2026-64788": {},
+            "CVE-2026-65330": {},
+            "CVE-2026-65331": {},
+            "CVE-2026-65332": {},
+            "CVE-2026-65333": {},
+            "CVE-2026-65334": {},
+            "CVE-2026-65335": {},
+            "CVE-2026-65336": {},
+            "CVE-2026-65337": {},
+            "CVE-2026-65338": {},
+            "CVE-2026-65339": {},
+            "CVE-2026-65340": {},
+            "CVE-2026-65341": {},
+            "CVE-2026-65343": {},
+            "CVE-2026-65346": {},
+            "CVE-2026-65347": {},
+            "CVE-2026-65349": {},
+            "CVE-2026-65351": {}
+          },
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 28,
+          "DaysSincePreviousRelease": 11,
+          "DeviceScope": "universal",
+          "UpdateSummary": {
+            "Priority": "high",
+            "Summary": "Addresses 28 security issues",
+            "Recommendation": "Update to stay secure - security fixes available",
+            "Stats": {
+              "Exploited": 0,
+              "Critical": 0,
+              "High": 0,
+              "Medium": 0,
+              "Low": 0,
+              "Remote": 0,
+              "Total": 28
+            }
+          }
+        },
         {
           "UpdateName": "macOS Tahoe 26.6.1",
           "ProductName": "macOS",
@@ -119,7 +208,7 @@
           "ExpirationDate": "2026-11-15",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/148170",
-          "SecurityInfoContext": "macOS has been updated to version 26.6.1, released on August 06, 2026. This update addresses one security issue and is the most recent approved version.",
+          "SecurityInfoContext": "macOS 26.6.1 was released on August 06, 2026. This release addressed one security issue. Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {
             "CVE-2026-65400": {}
           },
@@ -127,6 +216,12 @@
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 10,
           "DeviceScope": "universal",
+          "SupersededBy": {
+            "ProductVersion": "26.6.2",
+            "Build": "25G83",
+            "ReleaseDate": "2026-08-17T00:00:00Z",
+            "DaysLater": 11
+          },
           "UpdateSummary": {
             "Priority": "medium",
             "Summary": "Addresses 1 security issue",
@@ -12032,7 +12127,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/en-us/125888",
+          "SecurityInfo": "https://support.apple.com/kb/HT211289",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {},
           "ActivelyExploitedCVEs": [],
@@ -13856,8 +13951,8 @@
     }
   },
   "XProtectPlistConfigData": {
-    "ReleaseDate": "2026-08-11T17:32:19Z",
-    "com.apple.XProtect": "5355"
+    "com.apple.XProtect": "5355",
+    "ReleaseDate": "2026-08-11T17:32:19Z"
   },
   "XProtectPayloads": {
     "com.apple.XprotectFramework.PluginService": "74",

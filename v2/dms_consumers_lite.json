@@ -1,8 +1,8 @@
 {
   "Metadata": {
     "SchemaVersion": "2026.04.11.2",
-    "ContentHash": "241aad920b5186a8a093a35f3b36d375183000c4104cb6b1b9b6849172c3c03b",
-    "GeneratedAt": "2026-08-17T18:12:32.797966365+00:00",
+    "ContentHash": "67081f7d499a9c021a6601583f0c322eab6ef460eebc70891096147fc70c6e76",
+    "GeneratedAt": "2026-08-17T18:26:12.620814694+00:00",
     "Description": "Lightweight DMS feed. Releases inherit SupportedDevices from their OS version unless overridden."
   },
   "Devices": {
@@ -738,7 +738,7 @@
       "OSVersions": [
         {
           "OSVersion": "Tahoe 26",
-          "LatestVersion": "26.6.1",
+          "LatestVersion": "26.6.2",
           "SupportedDevices": [
             "J152FAP",
             "J160AP",
@@ -805,6 +805,13 @@
             "VMM-x86_64"
           ],
           "Releases": [
+            {
+              "Version": "26.6.2",
+              "Build": "25G83",
+              "ReleaseDate": "2026-08-17T00:00:00Z",
+              "CVECount": 28,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "26.6.1",
               "Build": "25G76",
@@ -2375,7 +2382,7 @@
       "OSVersions": [
         {
           "OSVersion": "26",
-          "LatestVersion": "26.6",
+          "LatestVersion": "26.6.1",
           "SupportedDevices": [
             "iPad11,1",
             "iPad11,2",
@@ -2474,6 +2481,13 @@
             "iPhone18,5"
           ],
           "Releases": [
+            {
+              "Version": "26.6.1",
+              "Build": "23G83",
+              "ReleaseDate": "2026-08-17T00:00:00Z",
+              "CVECount": 29,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "26.6",
               "Build": "23U67",
@@ -2677,6 +2691,21 @@
             "iPhone17,5"
           ],
           "Releases": [
+            {
+              "Version": "18.7.10",
+              "Build": "22H6374",
+              "ReleaseDate": "2026-08-17T00:00:00Z",
+              "CVECount": 122,
+              "ActivelyExploitedCount": 0,
+              "SupportedDevices": [
+                "iPad7,11",
+                "iPad7,12",
+                "iPhone11,2",
+                "iPhone11,4",
+                "iPhone11,6",
+                "iPhone11,8"
+              ]
+            },
             {
               "Version": "18.7.9",
               "Build": "22H6355",
@@ -3255,12 +3284,19 @@
       "OSVersions": [
         {
           "OSVersion": "visionOS 26",
-          "LatestVersion": "26.6",
+          "LatestVersion": "26.6.1",
           "SupportedDevices": [
             "RealityDevice14,1",
             "RealityDevice17,1"
           ],
           "Releases": [
+            {
+              "Version": "26.6.1",
+              "Build": "23O780",
+              "ReleaseDate": "2026-08-17",
+              "CVECount": 0,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "26.6",
               "Build": "23O770",
