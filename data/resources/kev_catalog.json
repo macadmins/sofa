@@ -1,9 +1,69 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.08.17",
-  "dateReleased": "2026-08-17T17:00:24.7655Z",
-  "count": 1666,
+  "catalogVersion": "2026.08.18",
+  "dateReleased": "2026-08-18T16:52:08.5398Z",
+  "count": 1670,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-33824",
+      "vendorProject": "Microsoft",
+      "product": "Internet Key Exchange (IKE) Service Extensions",
+      "vulnerabilityName": "Microsoft Internet Key Exchange (IKE) Service Extensions Double Free Vulnerability",
+      "dateAdded": "2026-08-18",
+      "shortDescription": "Microsoft Internet Key Exchange (IKE) Service Extensions contains a double free vulnerability that could enable remote code execution.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-08-21",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-33824 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-33824",
+      "cwes": [
+        "CWE-415"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-59310",
+      "vendorProject": "Broadcom",
+      "product": "VMware vCenter",
+      "vulnerabilityName": "Broadcom VMware vCenter Path Traversal Vulnerability",
+      "dateAdded": "2026-08-18",
+      "shortDescription": "Broadcom VMware vCenter contains a path traversal vulnerability which could allow a threat actor with network access to vCenter to execute arbitrary code.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-08-21",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-59310",
+      "cwes": [
+        "CWE-22"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-55040",
+      "vendorProject": "Microsoft",
+      "product": "SharePoint",
+      "vulnerabilityName": "Microsoft SharePoint Weak Authentication Vulnerability",
+      "dateAdded": "2026-08-18",
+      "shortDescription": "Microsoft SharePoint contains a weak authentication vulnerability which allows an unauthorized attacker to bypass a security feature over a network.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-08-21",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-55040 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-55040",
+      "cwes": [
+        "CWE-1390"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-65400",
+      "vendorProject": "Apple",
+      "product": "macOS",
+      "vulnerabilityName": "Apple macOS Improper Authentication Vulnerability",
+      "dateAdded": "2026-08-18",
+      "shortDescription": "Apple macOS contains an improper authentication vulnerability that could allow an attacker on the network to authenticate to Screen Sharing without valid credentials.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-08-21",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://support.apple.com/en-us/148170; https://support.apple.com/en-us/148171; https://support.apple.com/en-us/148172 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-65400",
+      "cwes": [
+        "CWE-287"
+      ]
+    },
     {
       "cveID": "CVE-2025-62593",
       "vendorProject": "Ray-Project",
@@ -24758,5 +24818,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-08-18T17:10:16.083207765Z"
+  "fetchTimestamp": "2026-08-18T18:11:07.270983231Z"
 }
