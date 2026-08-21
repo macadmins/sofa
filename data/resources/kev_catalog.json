@@ -1,7 +1,7 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.08.20",
-  "dateReleased": "2026-08-20T17:00:27.8837Z",
+  "catalogVersion": "2026.08.21",
+  "dateReleased": "2026-08-21T11:57:27.4632Z",
   "count": 1673,
   "vulnerabilities": [
     {
@@ -3620,7 +3620,7 @@
       "shortDescription": "Microsoft Windows Common Log File System Driver contains a privilege escalation vulnerability that could allow a local, privileged attacker to bypass certain security mechanisms.",
       "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
       "dueDate": "2025-10-27",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-43226 ; https://nvd.nist.gov/vuln/detail/CVE-2021-43226",
       "cwes": []
     },
@@ -17410,7 +17410,7 @@
       "shortDescription": "A buffer overflow vulnerability in SonicOS allows a remote attacker to cause Denial of Service (DoS) and potentially execute arbitrary code by sending a malicious request to the firewall.",
       "requiredAction": "Apply updates per vendor instructions.",
       "dueDate": "2022-04-05",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://nvd.nist.gov/vuln/detail/CVE-2020-5135",
       "cwes": [
         "CWE-120"
@@ -23166,7 +23166,7 @@
       "shortDescription": "Microsoft MSCOMCTL.OCX contains an unspecified vulnerability that allows for remote code execution, allowing an attacker to take complete control of an affected system under the context of the current user.",
       "requiredAction": "Apply updates per vendor instructions.",
       "dueDate": "2022-05-03",
-      "knownRansomwareCampaignUse": "Unknown",
+      "knownRansomwareCampaignUse": "Known",
       "notes": "https://nvd.nist.gov/vuln/detail/CVE-2012-0158",
       "cwes": [
         "CWE-94"
@@ -24863,5 +24863,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-08-21T06:47:31.650023088Z"
+  "fetchTimestamp": "2026-08-21T12:47:29.877326146Z"
 }
