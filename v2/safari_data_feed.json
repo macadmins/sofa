@@ -1,6 +1,6 @@
 {
   "Version": "2.0",
-  "UpdateHash": "e65bac7309c63487152fffb19bbd25ed7d42394e0ed468fcad345924f534ce90",
+  "UpdateHash": "5f57ece452aca7f89d5b851bf6f53eb8d50a94563795127434749047d79d110e",
   "AppVersions": [
     {
       "AppVersion": "Safari 26",
@@ -791,7 +791,6 @@
             "CVE-2026-28913": {
               "exploited": false,
               "tags": [
-                "use-after-free",
                 "webkit"
               ],
               "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28913"
@@ -865,9 +864,18 @@
             "CVE-2026-28971": {
               "exploited": false,
               "tags": [
+                "bypass",
+                "security",
                 "webkit"
               ],
               "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28971"
+            },
+            "CVE-2026-28984": {
+              "exploited": false,
+              "tags": [
+                "webkit"
+              ],
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28984"
             },
             "CVE-2026-43658": {
               "exploited": false,
@@ -883,10 +891,17 @@
                 "webkit"
               ],
               "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43660"
+            },
+            "CVE-2026-43670": {
+              "exploited": false,
+              "tags": [
+                "security"
+              ],
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43670"
             }
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 21,
+          "UniqueCVEsCount": 23,
           "DaysSincePreviousRelease": 50
         },
         {

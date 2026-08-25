@@ -2,8 +2,8 @@
   "SchemaVersion": "2026.04.11.2",
   "OSName": "watchOS",
   "Version": "2.0",
-  "UpdateHash": "86f944b67afdea6275e63b078ada35c394f9072bc7a96d9a77c9cb712163477d",
-  "LastCheck": "2026-08-25T12:48:25.098930055+00:00",
+  "UpdateHash": "7936995cbb7a20bd45e172c6418afdc91c2278429b3322589b3320ef4516f020",
+  "LastCheck": "2026-08-25T18:12:54.028022365+00:00",
   "OSVersions": [
     {
       "OSVersion": "watchOS 26",
@@ -363,7 +363,7 @@
           "ExpirationDate": "2026-10-25",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/127119",
-          "SecurityInfoContext": "watchOS 26.5 was released on May 11, 2026. This release addressed 43 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "watchOS 26.5 was released on May 11, 2026. This release addressed 46 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "Watch6,1",
             "Watch6,10",
@@ -428,6 +428,7 @@
             "CVE-2026-28974": {},
             "CVE-2026-28977": {},
             "CVE-2026-28983": {},
+            "CVE-2026-28984": {},
             "CVE-2026-28986": {},
             "CVE-2026-28987": {},
             "CVE-2026-28988": {},
@@ -438,16 +439,18 @@
             "CVE-2026-28995": {},
             "CVE-2026-28996": {},
             "CVE-2026-39869": {},
+            "CVE-2026-39877": {},
             "CVE-2026-43654": {},
             "CVE-2026-43655": {},
             "CVE-2026-43658": {},
             "CVE-2026-43660": {},
             "CVE-2026-43661": {},
             "CVE-2026-43666": {},
+            "CVE-2026-43667": {},
             "CVE-2026-43668": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 43,
+          "UniqueCVEsCount": 46,
           "DaysSincePreviousRelease": 48,
           "SupersededBy": {
             "ProductVersion": "26.6",
@@ -457,7 +460,7 @@
           },
           "UpdateSummary": {
             "Priority": "high",
-            "Summary": "Addresses 43 security issues",
+            "Summary": "Addresses 46 security issues",
             "Recommendation": "Update to stay secure - security fixes available",
             "Stats": {
               "Exploited": 0,
@@ -466,7 +469,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 43
+              "Total": 46
             }
           }
         },

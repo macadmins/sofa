@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "af7e6f2a6b0a0ee462f0842b69e3ff3ca177e6ee2b5ff8483f0a9b1a67735464",
-  "LastCheck": "2026-08-25T12:48:25.024054925+00:00",
+  "UpdateHash": "81a0a6ae207403cf389e1ba887f040b0eedc8a2306c343998eca3b278a0e9e80",
+  "LastCheck": "2026-08-25T18:12:53.967677915+00:00",
   "OSVersions": [
     {
       "OSVersion": "26",
@@ -803,7 +803,7 @@
           "ExpirationDate": "2026-10-25",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/127110",
-          "SecurityInfoContext": "iOS 26.5 was released on May 11, 2026. This release addressed 61 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "iOS 26.5 was released on May 11, 2026. This release addressed 67 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "iPad11,1",
             "iPad11,2",
@@ -941,6 +941,7 @@
             "CVE-2026-28974": {},
             "CVE-2026-28977": {},
             "CVE-2026-28983": {},
+            "CVE-2026-28984": {},
             "CVE-2026-28985": {},
             "CVE-2026-28986": {},
             "CVE-2026-28987": {},
@@ -953,19 +954,24 @@
             "CVE-2026-28995": {},
             "CVE-2026-28996": {},
             "CVE-2026-39869": {},
+            "CVE-2026-39877": {},
             "CVE-2026-43653": {},
             "CVE-2026-43654": {},
             "CVE-2026-43655": {},
             "CVE-2026-43656": {},
+            "CVE-2026-43657": {},
             "CVE-2026-43658": {},
             "CVE-2026-43659": {},
             "CVE-2026-43660": {},
             "CVE-2026-43661": {},
             "CVE-2026-43666": {},
-            "CVE-2026-43668": {}
+            "CVE-2026-43667": {},
+            "CVE-2026-43668": {},
+            "CVE-2026-43670": {},
+            "CVE-2026-65367": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 61,
+          "UniqueCVEsCount": 67,
           "DaysSincePreviousRelease": 19,
           "DeviceScope": "universal",
           "SupersededBy": {
@@ -976,7 +982,7 @@
           },
           "UpdateSummary": {
             "Priority": "high",
-            "Summary": "Addresses 61 security issues",
+            "Summary": "Addresses 67 security issues",
             "Recommendation": "Update to stay secure - security fixes available",
             "Stats": {
               "Exploited": 0,
@@ -985,7 +991,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 61
+              "Total": 67
             }
           }
         },
@@ -1943,7 +1949,7 @@
           "ExpirationDate": "2026-11-15",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/127111",
-          "SecurityInfoContext": "iOS 18.7.9 was released on May 11, 2026. This release addressed 47 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "iOS 18.7.9 was released on May 11, 2026. This release addressed 49 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "iPad7,11",
             "iPad7,12",
@@ -1999,10 +2005,12 @@
             "CVE-2026-43659": {},
             "CVE-2026-43660": {},
             "CVE-2026-43666": {},
-            "CVE-2026-43668": {}
+            "CVE-2026-43668": {},
+            "CVE-2026-43670": {},
+            "CVE-2026-65367": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 47,
+          "UniqueCVEsCount": 49,
           "DaysSincePreviousRelease": 19,
           "DeviceScope": "device-specific",
           "SupersededBy": {
@@ -2013,7 +2021,7 @@
           },
           "UpdateSummary": {
             "Priority": "high",
-            "Summary": "Addresses 47 security issues",
+            "Summary": "Addresses 49 security issues",
             "Recommendation": "Update to stay secure - security fixes available",
             "Stats": {
               "Exploited": 0,
@@ -2022,7 +2030,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 47
+              "Total": 49
             }
           }
         },

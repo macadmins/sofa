@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.08.24",
-  "dateReleased": "2026-08-24T18:00:04.7056Z",
-  "count": 1675,
+  "catalogVersion": "2026.08.25",
+  "dateReleased": "2026-08-25T17:43:58.4301Z",
+  "count": 1676,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-60004",
+      "vendorProject": "Gitea",
+      "product": "Gitea",
+      "vulnerabilityName": "Gitea Code Injection Vulnerability",
+      "dateAdded": "2026-08-25",
+      "shortDescription": "Gitea contains a code injection vulnerability that allows an attacker with repository write access to send a malicious patch to the diffpatch API endpoint to plant an executable Git hook and run shell commands as the Gitea service account.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-08-28",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://github.com/go-gitea/gitea/security/advisories/GHSA-rcr6-4jqh-j84m ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-60004",
+      "cwes": [
+        "CWE-94"
+      ]
+    },
     {
       "cveID": "CVE-2026-21962",
       "vendorProject": "Oracle",
@@ -24893,5 +24908,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-08-25T12:47:38.251151915Z"
+  "fetchTimestamp": "2026-08-25T18:12:29.661764479Z"
 }
