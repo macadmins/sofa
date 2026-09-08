@@ -1,8 +1,8 @@
 {
   "Metadata": {
     "SchemaVersion": "2026.04.11.2",
-    "ContentHash": "279f405679b8f3c164570f8233667cee5ed6534d40bc6edf16600478c7d2174a",
-    "GeneratedAt": "2026-09-08T17:17:25.832811508+00:00",
+    "ContentHash": "9c3de035d4501f0474ff712cefce4f36995a89cd3a9eaff249f8b27f575dcf82",
+    "GeneratedAt": "2026-09-08T18:23:28.319919441+00:00",
     "Description": "Lightweight DMS feed. Releases inherit SupportedDevices from their OS version unless overridden."
   },
   "Devices": {
@@ -2382,7 +2382,7 @@
       "OSVersions": [
         {
           "OSVersion": "26",
-          "LatestVersion": "26.6.1",
+          "LatestVersion": "26.6.2",
           "SupportedDevices": [
             "iPad11,1",
             "iPad11,2",
@@ -2481,6 +2481,13 @@
             "iPhone18,5"
           ],
           "Releases": [
+            {
+              "Version": "26.6.2",
+              "Build": "23G90",
+              "ReleaseDate": "2026-09-08T00:00:00Z",
+              "CVECount": 0,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "26.6.1",
               "Build": "23G83",
