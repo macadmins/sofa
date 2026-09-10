@@ -1,9 +1,39 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
   "catalogVersion": "2026.09.10",
-  "dateReleased": "2026-09-10T17:26:03.2241Z",
-  "count": 1703,
+  "dateReleased": "2026-09-10T19:00:05.1949Z",
+  "count": 1705,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-86060",
+      "vendorProject": "MikroTik",
+      "product": "RouterOS",
+      "vulnerabilityName": "MikroTik RouterOS Improper Neutralization of Argument Delimiters in a Command Vulnerability",
+      "dateAdded": "2026-09-10",
+      "shortDescription": "MikroTik RouterOS contains an improper neutralization of argument delimiters in a command vulnerability which allows an attacked to change the trusted RouterOS policy mask, leading to privilege escalation.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-09-13",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": " ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-86060",
+      "cwes": [
+        "CWE-88"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-67277",
+      "vendorProject": "MikroTik",
+      "product": "RouterOS",
+      "vulnerabilityName": "MikroTik RouterOS Missing Authentication for Critical Function Vulnerability",
+      "dateAdded": "2026-09-10",
+      "shortDescription": "MikroTik RouterOS contains a missing authenticaion for critical function vulnerability which allows kernel memory disclosure and denial of service in the btest service.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-09-13",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://mikrotik.com/supportsec/september-2026-vulnerability/ ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-67277",
+      "cwes": [
+        "CWE-306"
+      ]
+    },
     {
       "cveID": "CVE-2026-19490",
       "vendorProject": "Citrix",
@@ -25313,5 +25343,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-09-10T19:13:14.062215612Z"
+  "fetchTimestamp": "2026-09-10T20:16:02.477528821Z"
 }
