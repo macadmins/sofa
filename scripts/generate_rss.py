@@ -374,7 +374,9 @@ def create_feed_item(
         product_lower = product_name.lower()
         
         if "macos" in product_lower or "mac os" in product_lower:
-            if "sequoia" in product_lower or "15." in version:
+            if "tahoe" in product_lower or "26." in version:
+                return f"{SOFA_FQDN}/macos/tahoe"
+            elif "sequoia" in product_lower or "15." in version:
                 return f"{SOFA_FQDN}/macos/sequoia"
             elif "sonoma" in product_lower or "14." in version:
                 return f"{SOFA_FQDN}/macos/sonoma"
