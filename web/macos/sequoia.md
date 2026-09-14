@@ -1,7 +1,7 @@
 ---
 title: Sequoia 15
 platform: macOS
-current: true
+current: false
 layout: doc
 ---
 

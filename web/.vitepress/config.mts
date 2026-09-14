@@ -23,8 +23,8 @@ export default defineConfig({
   themeConfig: {
     // Navigation data for VitePress mobile menu
     nav: [
-      { text: 'macOS', link: '/macos/tahoe' },
-      { text: 'iOS/iPadOS', link: '/ios/ios26' },
+      { text: 'macOS', link: '/macos/goldengate' },
+      { text: 'iOS/iPadOS', link: '/ios/ios27' },
       { text: 'Safari', link: '/safari/safari26' },
       { text: 'tvOS', link: '/tvos/tvos26' },
       { text: 'visionOS', link: '/visionos/visionos26' },
@@ -53,6 +53,7 @@ export default defineConfig({
       {
         text: 'macOS',
         items: [
+          { text: 'macOS Golden Gate 27', link: '/macos/goldengate' },
           { text: 'macOS Tahoe 26', link: '/macos/tahoe' },
           { text: 'macOS Sequoia 15', link: '/macos/sequoia' },
           { text: 'macOS Sonoma 14', link: '/macos/sonoma' },
@@ -63,6 +64,7 @@ export default defineConfig({
       {
         text: 'iOS/iPadOS',
         items: [
+          { text: 'iOS/iPadOS 27', link: '/ios/ios27' },
           { text: 'iOS/iPadOS 26', link: '/ios/ios26' },
           { text: 'iOS/iPadOS 18', link: '/ios/ios18' },
           { text: 'iOS/iPadOS 17', link: '/ios/ios17' },

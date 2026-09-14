@@ -52,11 +52,12 @@ from pathlib import Path
 from typing import Dict, List, Optional, Any
 
 # OS Version ranges to include in feeds (to match live feeds)
-OS_RANGE_MACOS = ["12", "13", "14", "15", "26"]
-OS_RANGE_IOS = ["16", "17", "18", "26"]  # Including 16 to match live feed
+OS_RANGE_MACOS = ["12", "13", "14", "15", "26", "27"]
+OS_RANGE_IOS = ["16", "17", "18", "26", "27"]  # Including 16 to match live feed
 
 # macOS version name transformation table to match live feed schema
 MACOS_NAME_TRANSFORM = {
+    "27": "Golden Gate 27",
     "26": "Tahoe 26",
     "15": "Sequoia 15",
     "14": "Sonoma 14", 

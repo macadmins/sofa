@@ -244,6 +244,7 @@ const getPlatformLink = (system) => {
 
   // Helper function to get macOS link based on version
   const getMacOSLink = (ver) => {
+    if (ver.startsWith('27')) return '/macos/goldengate'
     if (ver.startsWith('26')) return '/macos/tahoe'
     if (ver.startsWith('15')) return '/macos/sequoia'
     if (ver.startsWith('14')) return '/macos/sonoma'

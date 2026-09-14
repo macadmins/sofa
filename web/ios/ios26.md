@@ -1,7 +1,7 @@
 ---
 title: iOS/iPadOS 26
 platform: iOS
-current: true
+current: false
 layout: doc
 ---
 

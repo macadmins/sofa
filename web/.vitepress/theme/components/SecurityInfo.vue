@@ -61,7 +61,7 @@ const loadSecurityData = async () => {
         throw new Error(`Unsupported platform: ${props.platform}`)
     }
 
-    const version = props.title.split(' ')[1] // Gets version number
+    const version = props.title.split(' ').pop() // Gets version number (last token, safe for two-word names)
 
     let releaseData = []
     let latestRelease = null
@@ -570,7 +570,7 @@ onMounted(async () => {
         } else if (data.OSVersions) {
           // Find the specific OS version
           const osVersion = data.OSVersions.find(os => 
-            os.OSVersion.includes(props.title.split(' ')[0])
+            os.OSVersion.includes(props.title.split(' ').pop())
           )
           if (osVersion && osVersion.SecurityReleases) {
             securityData = osVersion.SecurityReleases
