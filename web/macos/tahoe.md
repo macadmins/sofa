@@ -1,7 +1,7 @@
 ---
 title: Tahoe 26
 platform: macOS
-current: false
+current: true
 layout: doc
 ---
 
