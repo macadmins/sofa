@@ -2,8 +2,8 @@
   "SchemaVersion": "2026.04.11.2",
   "OSName": "tvOS",
   "Version": "2.0",
-  "UpdateHash": "84ff4daab2abb6048f5d555583655b5757be8cf5f20418e2dc2a2d0360d0641b",
-  "LastCheck": "2026-09-14T19:15:41.602243455+00:00",
+  "UpdateHash": "73abf05b81fb5788aa53ed1e9892d931af14247cdd01e9fe8823b26c97041e1d",
+  "LastCheck": "2026-09-14T20:17:55.560449999+00:00",
   "OSVersions": [
     {
       "OSVersion": "tvOS 27",
@@ -279,7 +279,7 @@
         "ExpirationDate": "2026-12-13",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/128069",
-        "SecurityInfoContext": "tvOS has been updated to version 26.6, released on July 27, 2026. This update addresses 100 security issues and is the most recent approved version.",
+        "SecurityInfoContext": "tvOS has been updated to version 26.6, released on July 27, 2026. This update addresses 106 security issues and is the most recent approved version.",
         "SupportedDevices": [
           "AppleTV11,1",
           "AppleTV14,1",
@@ -299,6 +299,7 @@
           "CVE-2026-43699": {},
           "CVE-2026-43700": {},
           "CVE-2026-43701": {},
+          "CVE-2026-43702": {},
           "CVE-2026-43703": {},
           "CVE-2026-43704": {},
           "CVE-2026-43705": {},
@@ -340,6 +341,7 @@
           "CVE-2026-43801": {},
           "CVE-2026-43803": {},
           "CVE-2026-43807": {},
+          "CVE-2026-43808": {},
           "CVE-2026-43810": {},
           "CVE-2026-43812": {},
           "CVE-2026-43813": {},
@@ -354,6 +356,7 @@
           "CVE-2026-64709": {},
           "CVE-2026-64713": {},
           "CVE-2026-64716": {},
+          "CVE-2026-64717": {},
           "CVE-2026-64718": {},
           "CVE-2026-64719": {},
           "CVE-2026-64720": {},
@@ -386,14 +389,17 @@
           "CVE-2026-64771": {},
           "CVE-2026-64772": {},
           "CVE-2026-64774": {},
-          "CVE-2026-64775": {}
+          "CVE-2026-64775": {},
+          "CVE-2026-65357": {},
+          "CVE-2026-65371": {},
+          "CVE-2026-65407": {}
         },
         "ActivelyExploitedCVEs": [],
-        "UniqueCVEsCount": 100,
+        "UniqueCVEsCount": 106,
         "DaysSincePreviousRelease": 77,
         "UpdateSummary": {
           "Priority": "high",
-          "Summary": "Addresses 100 security issues",
+          "Summary": "Addresses 106 security issues",
           "Recommendation": "Update to stay secure - security fixes available",
           "Stats": {
             "Exploited": 0,
@@ -402,7 +408,7 @@
             "Medium": 0,
             "Low": 0,
             "Remote": 0,
-            "Total": 100
+            "Total": 106
           }
         }
       },
@@ -420,7 +426,7 @@
           "ExpirationDate": "2026-12-13",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/128069",
-          "SecurityInfoContext": "tvOS has been updated to version 26.6, released on July 27, 2026. This update addresses 100 security issues and is the most recent approved version.",
+          "SecurityInfoContext": "tvOS has been updated to version 26.6, released on July 27, 2026. This update addresses 106 security issues and is the most recent approved version.",
           "SupportedDevices": [
             "AppleTV11,1",
             "AppleTV14,1",
@@ -440,6 +446,7 @@
             "CVE-2026-43699": {},
             "CVE-2026-43700": {},
             "CVE-2026-43701": {},
+            "CVE-2026-43702": {},
             "CVE-2026-43703": {},
             "CVE-2026-43704": {},
             "CVE-2026-43705": {},
@@ -481,6 +488,7 @@
             "CVE-2026-43801": {},
             "CVE-2026-43803": {},
             "CVE-2026-43807": {},
+            "CVE-2026-43808": {},
             "CVE-2026-43810": {},
             "CVE-2026-43812": {},
             "CVE-2026-43813": {},
@@ -495,6 +503,7 @@
             "CVE-2026-64709": {},
             "CVE-2026-64713": {},
             "CVE-2026-64716": {},
+            "CVE-2026-64717": {},
             "CVE-2026-64718": {},
             "CVE-2026-64719": {},
             "CVE-2026-64720": {},
@@ -527,14 +536,17 @@
             "CVE-2026-64771": {},
             "CVE-2026-64772": {},
             "CVE-2026-64774": {},
-            "CVE-2026-64775": {}
+            "CVE-2026-64775": {},
+            "CVE-2026-65357": {},
+            "CVE-2026-65371": {},
+            "CVE-2026-65407": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 100,
+          "UniqueCVEsCount": 106,
           "DaysSincePreviousRelease": 77,
           "UpdateSummary": {
             "Priority": "high",
-            "Summary": "Addresses 100 security issues",
+            "Summary": "Addresses 106 security issues",
             "Recommendation": "Update to stay secure - security fixes available",
             "Stats": {
               "Exploited": 0,
@@ -543,7 +555,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 100
+              "Total": 106
             }
           }
         },

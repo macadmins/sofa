@@ -2,8 +2,8 @@
   "SchemaVersion": "2026.04.11.2",
   "OSName": "watchOS",
   "Version": "2.0",
-  "UpdateHash": "22fed14d52ba1dead31c01b2e0de99e56a73121eddc558b2933670f2be148185",
-  "LastCheck": "2026-09-14T19:15:41.618576886+00:00",
+  "UpdateHash": "43381fa7a6c1938f53d3f1a1f7c4acc584bd4d6c7e5803b701414c3d3786528d",
+  "LastCheck": "2026-09-14T20:17:55.577061070+00:00",
   "OSVersions": [
     {
       "OSVersion": "watchOS 27",
@@ -329,7 +329,7 @@
         "ExpirationDate": "2026-12-13",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/128068",
-        "SecurityInfoContext": "watchOS has been updated to version 26.6, released on July 27, 2026. This update addresses 100 security issues and is the most recent approved version.",
+        "SecurityInfoContext": "watchOS has been updated to version 26.6, released on July 27, 2026. This update addresses 106 security issues and is the most recent approved version.",
         "SupportedDevices": [
           "Watch6,1",
           "Watch6,10",
@@ -382,6 +382,7 @@
           "CVE-2026-43699": {},
           "CVE-2026-43700": {},
           "CVE-2026-43701": {},
+          "CVE-2026-43702": {},
           "CVE-2026-43703": {},
           "CVE-2026-43704": {},
           "CVE-2026-43705": {},
@@ -426,6 +427,7 @@
           "CVE-2026-43803": {},
           "CVE-2026-43805": {},
           "CVE-2026-43807": {},
+          "CVE-2026-43808": {},
           "CVE-2026-43810": {},
           "CVE-2026-43813": {},
           "CVE-2026-43814": {},
@@ -439,6 +441,7 @@
           "CVE-2026-64709": {},
           "CVE-2026-64713": {},
           "CVE-2026-64716": {},
+          "CVE-2026-64717": {},
           "CVE-2026-64718": {},
           "CVE-2026-64719": {},
           "CVE-2026-64720": {},
@@ -467,14 +470,17 @@
           "CVE-2026-64765": {},
           "CVE-2026-64766": {},
           "CVE-2026-64775": {},
-          "CVE-2026-64783": {}
+          "CVE-2026-64783": {},
+          "CVE-2026-65357": {},
+          "CVE-2026-65371": {},
+          "CVE-2026-65407": {}
         },
         "ActivelyExploitedCVEs": [],
-        "UniqueCVEsCount": 100,
+        "UniqueCVEsCount": 106,
         "DaysSincePreviousRelease": 77,
         "UpdateSummary": {
           "Priority": "high",
-          "Summary": "Addresses 100 security issues",
+          "Summary": "Addresses 106 security issues",
           "Recommendation": "Update to stay secure - security fixes available",
           "Stats": {
             "Exploited": 0,
@@ -483,7 +489,7 @@
             "Medium": 0,
             "Low": 0,
             "Remote": 0,
-            "Total": 100
+            "Total": 106
           }
         }
       },
@@ -501,7 +507,7 @@
           "ExpirationDate": "2026-12-13",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/128068",
-          "SecurityInfoContext": "watchOS has been updated to version 26.6, released on July 27, 2026. This update addresses 100 security issues and is the most recent approved version.",
+          "SecurityInfoContext": "watchOS has been updated to version 26.6, released on July 27, 2026. This update addresses 106 security issues and is the most recent approved version.",
           "SupportedDevices": [
             "Watch6,1",
             "Watch6,10",
@@ -554,6 +560,7 @@
             "CVE-2026-43699": {},
             "CVE-2026-43700": {},
             "CVE-2026-43701": {},
+            "CVE-2026-43702": {},
             "CVE-2026-43703": {},
             "CVE-2026-43704": {},
             "CVE-2026-43705": {},
@@ -598,6 +605,7 @@
             "CVE-2026-43803": {},
             "CVE-2026-43805": {},
             "CVE-2026-43807": {},
+            "CVE-2026-43808": {},
             "CVE-2026-43810": {},
             "CVE-2026-43813": {},
             "CVE-2026-43814": {},
@@ -611,6 +619,7 @@
             "CVE-2026-64709": {},
             "CVE-2026-64713": {},
             "CVE-2026-64716": {},
+            "CVE-2026-64717": {},
             "CVE-2026-64718": {},
             "CVE-2026-64719": {},
             "CVE-2026-64720": {},
@@ -639,14 +648,17 @@
             "CVE-2026-64765": {},
             "CVE-2026-64766": {},
             "CVE-2026-64775": {},
-            "CVE-2026-64783": {}
+            "CVE-2026-64783": {},
+            "CVE-2026-65357": {},
+            "CVE-2026-65371": {},
+            "CVE-2026-65407": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 100,
+          "UniqueCVEsCount": 106,
           "DaysSincePreviousRelease": 77,
           "UpdateSummary": {
             "Priority": "high",
-            "Summary": "Addresses 100 security issues",
+            "Summary": "Addresses 106 security issues",
             "Recommendation": "Update to stay secure - security fixes available",
             "Stats": {
               "Exploited": 0,
@@ -655,7 +667,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 100
+              "Total": 106
             }
           }
         },
