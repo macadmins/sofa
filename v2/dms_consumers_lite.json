@@ -1,8 +1,8 @@
 {
   "Metadata": {
     "SchemaVersion": "2026.04.11.2",
-    "ContentHash": "9c3de035d4501f0474ff712cefce4f36995a89cd3a9eaff249f8b27f575dcf82",
-    "GeneratedAt": "2026-09-14T17:42:43.395999970+00:00",
+    "ContentHash": "39389be9549bb0079c5d775f3f52b72ceeabd40bee1b571607f3160d9945d021",
+    "GeneratedAt": "2026-09-14T18:22:10.550522027+00:00",
     "Description": "Lightweight DMS feed. Releases inherit SupportedDevices from their OS version unless overridden."
   },
   "Devices": {
@@ -428,6 +428,21 @@
     "Watch7,9": {
       "MarketingName": "Apple Watch Series 10 (GPS, 46mm)"
     },
+    "Watch8,1": {
+      "MarketingName": "Watch8,1"
+    },
+    "Watch8,2": {
+      "MarketingName": "Watch8,2"
+    },
+    "Watch8,3": {
+      "MarketingName": "Watch8,3"
+    },
+    "Watch8,4": {
+      "MarketingName": "Watch8,4"
+    },
+    "Watch8,5": {
+      "MarketingName": "Watch8,5"
+    },
     "iPad11,1": {
       "MarketingName": "iPad mini (5th generation) Wi-Fi"
     },
@@ -584,12 +599,6 @@
     "iPad17,4": {
       "MarketingName": "iPad Pro 13-inch Wi-Fi + Cellular (M5)"
     },
-    "iPad7,11": {
-      "MarketingName": "iPad (7th generation) Wi-Fi"
-    },
-    "iPad7,12": {
-      "MarketingName": "iPad (7th generation) Wi-Fi + Cellular"
-    },
     "iPad8,1": {
       "MarketingName": "iPad Pro 11-inch (1st generation) Wi-Fi"
     },
@@ -625,18 +634,6 @@
     },
     "iPad8,9": {
       "MarketingName": "iPad Pro 11-inch (2nd generation) Wi-Fi"
-    },
-    "iPhone11,2": {
-      "MarketingName": "iPhone XS"
-    },
-    "iPhone11,4": {
-      "MarketingName": "iPhone XS Max (China mainland)"
-    },
-    "iPhone11,6": {
-      "MarketingName": "iPhone XS Max"
-    },
-    "iPhone11,8": {
-      "MarketingName": "iPhone XR"
     },
     "iPhone12,1": {
       "MarketingName": "iPhone 11"
@@ -730,6 +727,15 @@
     },
     "iPhone18,5": {
       "MarketingName": "iPhone 17e"
+    },
+    "iPhone19,2": {
+      "MarketingName": "iPhone19,2"
+    },
+    "iPhone19,3": {
+      "MarketingName": "iPhone19,3"
+    },
+    "iPhone19,7": {
+      "MarketingName": "iPhone19,7"
     }
   },
   "Platforms": [
@@ -738,7 +744,7 @@
       "OSVersions": [
         {
           "OSVersion": "Tahoe 26",
-          "LatestVersion": "26.6.2",
+          "LatestVersion": "26.7",
           "SupportedDevices": [
             "J152FAP",
             "J160AP",
@@ -805,6 +811,13 @@
             "VMM-x86_64"
           ],
           "Releases": [
+            {
+              "Version": "26.7",
+              "Build": "25G229",
+              "ReleaseDate": "2026-09-14T00:00:00Z",
+              "CVECount": 153,
+              "ActivelyExploitedCount": 1
+            },
             {
               "Version": "26.6.2",
               "Build": "25G83",
@@ -1284,7 +1297,7 @@
         },
         {
           "OSVersion": "Sequoia 15",
-          "LatestVersion": "15.7.9",
+          "LatestVersion": "15.8",
           "SupportedDevices": [
             "J132AP",
             "J137AP",
@@ -1355,6 +1368,13 @@
             "VMM-x86_64"
           ],
           "Releases": [
+            {
+              "Version": "15.8",
+              "Build": "24H23",
+              "ReleaseDate": "2026-09-14T00:00:00Z",
+              "CVECount": 154,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "15.7.9",
               "Build": "24G830",
@@ -2381,8 +2401,107 @@
       "Platform": "iOS",
       "OSVersions": [
         {
+          "OSVersion": "27",
+          "LatestVersion": "27.0",
+          "SupportedDevices": [
+            "iPad12,1",
+            "iPad12,2",
+            "iPad13,1",
+            "iPad13,10",
+            "iPad13,11",
+            "iPad13,16",
+            "iPad13,17",
+            "iPad13,18",
+            "iPad13,19",
+            "iPad13,2",
+            "iPad13,4",
+            "iPad13,5",
+            "iPad13,6",
+            "iPad13,7",
+            "iPad13,8",
+            "iPad13,9",
+            "iPad14,1",
+            "iPad14,10",
+            "iPad14,11",
+            "iPad14,2",
+            "iPad14,3",
+            "iPad14,4",
+            "iPad14,5",
+            "iPad14,6",
+            "iPad14,8",
+            "iPad14,9",
+            "iPad15,3",
+            "iPad15,4",
+            "iPad15,5",
+            "iPad15,6",
+            "iPad15,7",
+            "iPad15,8",
+            "iPad16,1",
+            "iPad16,10",
+            "iPad16,11",
+            "iPad16,2",
+            "iPad16,3",
+            "iPad16,4",
+            "iPad16,5",
+            "iPad16,6",
+            "iPad16,8",
+            "iPad16,9",
+            "iPad17,1",
+            "iPad17,2",
+            "iPad17,3",
+            "iPad17,4",
+            "iPad8,10",
+            "iPad8,11",
+            "iPad8,12",
+            "iPad8,9",
+            "iPhone12,1",
+            "iPhone12,3",
+            "iPhone12,5",
+            "iPhone12,8",
+            "iPhone13,1",
+            "iPhone13,2",
+            "iPhone13,3",
+            "iPhone13,4",
+            "iPhone14,2",
+            "iPhone14,3",
+            "iPhone14,4",
+            "iPhone14,5",
+            "iPhone14,6",
+            "iPhone14,7",
+            "iPhone14,8",
+            "iPhone15,2",
+            "iPhone15,3",
+            "iPhone15,4",
+            "iPhone15,5",
+            "iPhone16,1",
+            "iPhone16,2",
+            "iPhone17,1",
+            "iPhone17,2",
+            "iPhone17,3",
+            "iPhone17,4",
+            "iPhone17,5",
+            "iPhone18,1",
+            "iPhone18,2",
+            "iPhone18,3",
+            "iPhone18,4",
+            "iPhone18,5",
+            "iPhone19,2",
+            "iPhone19,3",
+            "iPhone19,7"
+          ],
+          "Releases": [
+            {
+              "Version": "27.0",
+              "Build": "24R6364",
+              "ReleaseDate": "2026-09-14T00:00:00Z",
+              "CVECount": 126,
+              "ActivelyExploitedCount": 0
+            }
+          ]
+        },
+        {
           "OSVersion": "26",
-          "LatestVersion": "26.6.2",
+          "LatestVersion": "26.7",
           "SupportedDevices": [
             "iPad11,1",
             "iPad11,2",
@@ -2481,6 +2600,13 @@
             "iPhone18,5"
           ],
           "Releases": [
+            {
+              "Version": "26.7",
+              "Build": "23H6024",
+              "ReleaseDate": "2026-09-14T00:00:00Z",
+              "CVECount": 82,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "26.6.2",
               "Build": "23G90",
@@ -2701,307 +2827,29 @@
               "Type": "bsi"
             }
           ]
-        },
-        {
-          "OSVersion": "18",
-          "LatestVersion": "18.7.8",
-          "SupportedDevices": [
-            "iPad11,1",
-            "iPad11,2",
-            "iPad11,3",
-            "iPad11,4",
-            "iPad11,6",
-            "iPad11,7",
-            "iPad12,1",
-            "iPad12,2",
-            "iPad13,1",
-            "iPad13,10",
-            "iPad13,11",
-            "iPad13,16",
-            "iPad13,17",
-            "iPad13,18",
-            "iPad13,19",
-            "iPad13,2",
-            "iPad13,4",
-            "iPad13,5",
-            "iPad13,6",
-            "iPad13,7",
-            "iPad13,8",
-            "iPad13,9",
-            "iPad14,1",
-            "iPad14,10",
-            "iPad14,11",
-            "iPad14,2",
-            "iPad14,3",
-            "iPad14,4",
-            "iPad14,5",
-            "iPad14,6",
-            "iPad14,8",
-            "iPad14,9",
-            "iPad15,3",
-            "iPad15,4",
-            "iPad15,5",
-            "iPad15,6",
-            "iPad15,7",
-            "iPad15,8",
-            "iPad16,1",
-            "iPad16,2",
-            "iPad16,3",
-            "iPad16,4",
-            "iPad16,5",
-            "iPad16,6",
-            "iPad8,1",
-            "iPad8,10",
-            "iPad8,11",
-            "iPad8,12",
-            "iPad8,2",
-            "iPad8,3",
-            "iPad8,4",
-            "iPad8,5",
-            "iPad8,6",
-            "iPad8,7",
-            "iPad8,8",
-            "iPad8,9",
-            "iPhone12,1",
-            "iPhone12,3",
-            "iPhone12,5",
-            "iPhone12,8",
-            "iPhone13,1",
-            "iPhone13,2",
-            "iPhone13,3",
-            "iPhone13,4",
-            "iPhone14,2",
-            "iPhone14,3",
-            "iPhone14,4",
-            "iPhone14,5",
-            "iPhone14,6",
-            "iPhone14,7",
-            "iPhone14,8",
-            "iPhone15,2",
-            "iPhone15,3",
-            "iPhone15,4",
-            "iPhone15,5",
-            "iPhone16,1",
-            "iPhone16,2",
-            "iPhone17,1",
-            "iPhone17,2",
-            "iPhone17,3",
-            "iPhone17,4",
-            "iPhone17,5"
-          ],
-          "Releases": [
-            {
-              "Version": "18.7.10",
-              "Build": "22H6374",
-              "ReleaseDate": "2026-08-17T00:00:00Z",
-              "CVECount": 122,
-              "ActivelyExploitedCount": 0,
-              "SupportedDevices": [
-                "iPad7,11",
-                "iPad7,12",
-                "iPhone11,2",
-                "iPhone11,4",
-                "iPhone11,6",
-                "iPhone11,8"
-              ]
-            },
-            {
-              "Version": "18.7.9",
-              "Build": "22H6355",
-              "ReleaseDate": "2026-05-11T00:00:00Z",
-              "CVECount": 49,
-              "ActivelyExploitedCount": 0,
-              "SupportedDevices": [
-                "iPad7,11",
-                "iPad7,12",
-                "iPhone11,2",
-                "iPhone11,4",
-                "iPhone11,6",
-                "iPhone11,8"
-              ]
-            },
-            {
-              "Version": "18.7.8",
-              "Build": "22H6352",
-              "ReleaseDate": "2026-04-22T00:00:00Z",
-              "CVECount": 1,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.7.7",
-              "Build": "22H340",
-              "ReleaseDate": "2026-03-24T00:00:00Z",
-              "CVECount": 26,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.7.7",
-              "Build": "22H340",
-              "ReleaseDate": "2026-03-24T00:00:00Z",
-              "CVECount": 26,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.7.6",
-              "Build": "22H6320",
-              "ReleaseDate": "2026-03-04T00:00:00Z",
-              "CVECount": 0,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.7.5",
-              "Build": "22H311",
-              "ReleaseDate": "2026-02-11T00:00:00Z",
-              "CVECount": 36,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.7.4",
-              "Build": "22H6218",
-              "ReleaseDate": "2026-01-26T00:00:00Z",
-              "CVECount": 0,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.7.3",
-              "Build": "22H6217",
-              "ReleaseDate": "2025-12-12T00:00:00Z",
-              "CVECount": 23,
-              "ActivelyExploitedCount": 2
-            },
-            {
-              "Version": "18.7.2",
-              "Build": "",
-              "ReleaseDate": "2025-11-05T00:00:00Z",
-              "CVECount": 39,
-              "ActivelyExploitedCount": 2
-            },
-            {
-              "Version": "18.7.1",
-              "Build": "",
-              "ReleaseDate": "2025-09-29T00:00:00Z",
-              "CVECount": 1,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.7",
-              "Build": "",
-              "ReleaseDate": "2025-09-15T00:00:00Z",
-              "CVECount": 14,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.6.2",
-              "Build": "",
-              "ReleaseDate": "2025-08-20T00:00:00Z",
-              "CVECount": 1,
-              "ActivelyExploitedCount": 1
-            },
-            {
-              "Version": "18.6.1",
-              "Build": "",
-              "ReleaseDate": "2025-08-14T00:00:00Z",
-              "CVECount": 0,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.6",
-              "Build": "",
-              "ReleaseDate": "2025-07-29T00:00:00Z",
-              "CVECount": 32,
-              "ActivelyExploitedCount": 2
-            },
-            {
-              "Version": "18.5",
-              "Build": "",
-              "ReleaseDate": "2025-05-12T00:00:00Z",
-              "CVECount": 37,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.4.1",
-              "Build": "",
-              "ReleaseDate": "2025-04-16T00:00:00Z",
-              "CVECount": 2,
-              "ActivelyExploitedCount": 2
-            },
-            {
-              "Version": "18.4",
-              "Build": "",
-              "ReleaseDate": "2025-03-31T00:00:00Z",
-              "CVECount": 78,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.3.2",
-              "Build": "",
-              "ReleaseDate": "2025-03-11T00:00:00Z",
-              "CVECount": 1,
-              "ActivelyExploitedCount": 1
-            },
-            {
-              "Version": "18.3.1",
-              "Build": "",
-              "ReleaseDate": "2025-02-10T00:00:00Z",
-              "CVECount": 2,
-              "ActivelyExploitedCount": 2
-            },
-            {
-              "Version": "18.3",
-              "Build": "",
-              "ReleaseDate": "2025-01-27T00:00:00Z",
-              "CVECount": 40,
-              "ActivelyExploitedCount": 1
-            },
-            {
-              "Version": "18.2.1",
-              "Build": "",
-              "ReleaseDate": "2025-01-06T00:00:00Z",
-              "CVECount": 0,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.2",
-              "Build": "",
-              "ReleaseDate": "2024-12-11T00:00:00Z",
-              "CVECount": 41,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.1.1",
-              "Build": "",
-              "ReleaseDate": "2024-11-19T00:00:00Z",
-              "CVECount": 2,
-              "ActivelyExploitedCount": 2
-            },
-            {
-              "Version": "18.1",
-              "Build": "",
-              "ReleaseDate": "2024-10-28T00:00:00Z",
-              "CVECount": 44,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.0.1",
-              "Build": "",
-              "ReleaseDate": "2024-10-03T00:00:00Z",
-              "CVECount": 2,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.0",
-              "Build": "",
-              "ReleaseDate": "2024-09-16T00:00:00Z",
-              "CVECount": 48,
-              "ActivelyExploitedCount": 0
-            }
-          ]
         }
       ]
     },
     {
       "Platform": "tvOS",
       "OSVersions": [
+        {
+          "OSVersion": "tvOS 27",
+          "LatestVersion": "27.0",
+          "SupportedDevices": [
+            "AppleTV11,1",
+            "AppleTV14,1"
+          ],
+          "Releases": [
+            {
+              "Version": "27.0",
+              "Build": "24J6361",
+              "ReleaseDate": "2026-09-14",
+              "CVECount": 89,
+              "ActivelyExploitedCount": 0
+            }
+          ]
+        },
         {
           "OSVersion": "tvOS 26",
           "LatestVersion": "26.6",
@@ -3069,89 +2917,50 @@
               "ActivelyExploitedCount": 0
             }
           ]
-        },
-        {
-          "OSVersion": "tvOS 18",
-          "LatestVersion": "18.6",
-          "SupportedDevices": [],
-          "Releases": [
-            {
-              "Version": "18.6",
-              "Build": "",
-              "ReleaseDate": "2025-07-29",
-              "CVECount": 26,
-              "ActivelyExploitedCount": 2
-            },
-            {
-              "Version": "18.5",
-              "Build": "",
-              "ReleaseDate": "2025-05-12",
-              "CVECount": 27,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.4.1",
-              "Build": "",
-              "ReleaseDate": "2025-04-16",
-              "CVECount": 2,
-              "ActivelyExploitedCount": 2
-            },
-            {
-              "Version": "18.4",
-              "Build": "",
-              "ReleaseDate": "2025-03-31",
-              "CVECount": 47,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.3.1",
-              "Build": "",
-              "ReleaseDate": "2025-03-11",
-              "CVECount": 0,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.3",
-              "Build": "",
-              "ReleaseDate": "2025-01-27",
-              "CVECount": 25,
-              "ActivelyExploitedCount": 1
-            },
-            {
-              "Version": "18.2.1",
-              "Build": "",
-              "ReleaseDate": "2025-01-16",
-              "CVECount": 0,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.2",
-              "Build": "",
-              "ReleaseDate": "2024-12-11",
-              "CVECount": 29,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.1",
-              "Build": "",
-              "ReleaseDate": "2024-10-28",
-              "CVECount": 19,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "18.0",
-              "Build": "",
-              "ReleaseDate": "2024-09-16",
-              "CVECount": 15,
-              "ActivelyExploitedCount": 0
-            }
-          ]
         }
       ]
     },
     {
       "Platform": "watchOS",
       "OSVersions": [
+        {
+          "OSVersion": "watchOS 27",
+          "LatestVersion": "27.0",
+          "SupportedDevices": [
+            "Watch7,1",
+            "Watch7,10",
+            "Watch7,11",
+            "Watch7,12",
+            "Watch7,13",
+            "Watch7,14",
+            "Watch7,15",
+            "Watch7,16",
+            "Watch7,17",
+            "Watch7,18",
+            "Watch7,19",
+            "Watch7,2",
+            "Watch7,20",
+            "Watch7,3",
+            "Watch7,4",
+            "Watch7,5",
+            "Watch7,8",
+            "Watch7,9",
+            "Watch8,1",
+            "Watch8,2",
+            "Watch8,3",
+            "Watch8,4",
+            "Watch8,5"
+          ],
+          "Releases": [
+            {
+              "Version": "27.0",
+              "Build": "24R6364",
+              "ReleaseDate": "2026-09-14",
+              "CVECount": 93,
+              "ActivelyExploitedCount": 0
+            }
+          ]
+        },
         {
           "OSVersion": "watchOS 26",
           "LatestVersion": "26.6",
@@ -3264,123 +3073,29 @@
               "ActivelyExploitedCount": 0
             }
           ]
-        },
-        {
-          "OSVersion": "watchOS 11",
-          "LatestVersion": "11.6.2",
-          "SupportedDevices": [
-            "Watch6,1",
-            "Watch6,10",
-            "Watch6,11",
-            "Watch6,12",
-            "Watch6,13",
-            "Watch6,14",
-            "Watch6,15",
-            "Watch6,16",
-            "Watch6,17",
-            "Watch6,18",
-            "Watch6,2",
-            "Watch6,3",
-            "Watch6,4",
-            "Watch6,6",
-            "Watch6,7",
-            "Watch6,8",
-            "Watch6,9",
-            "Watch7,1",
-            "Watch7,10",
-            "Watch7,11",
-            "Watch7,2",
-            "Watch7,3",
-            "Watch7,4",
-            "Watch7,5",
-            "Watch7,8",
-            "Watch7,9"
-          ],
-          "Releases": [
-            {
-              "Version": "11.6.2",
-              "Build": "22U95",
-              "ReleaseDate": "2026-02-05",
-              "CVECount": 0,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "11.6.1",
-              "Build": "",
-              "ReleaseDate": "2025-08-14",
-              "CVECount": 0,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "11.6",
-              "Build": "",
-              "ReleaseDate": "2025-07-29",
-              "CVECount": 23,
-              "ActivelyExploitedCount": 2
-            },
-            {
-              "Version": "11.5",
-              "Build": "",
-              "ReleaseDate": "2025-05-12",
-              "CVECount": 26,
-              "ActivelyExploitedCount": 1
-            },
-            {
-              "Version": "11.4",
-              "Build": "",
-              "ReleaseDate": "2025-04-01",
-              "CVECount": 51,
-              "ActivelyExploitedCount": 1
-            },
-            {
-              "Version": "11.3.1",
-              "Build": "",
-              "ReleaseDate": "2025-02-10",
-              "CVECount": 1,
-              "ActivelyExploitedCount": 1
-            },
-            {
-              "Version": "11.3",
-              "Build": "",
-              "ReleaseDate": "2025-01-27",
-              "CVECount": 20,
-              "ActivelyExploitedCount": 1
-            },
-            {
-              "Version": "11.2",
-              "Build": "",
-              "ReleaseDate": "2024-12-11",
-              "CVECount": 32,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "11.1",
-              "Build": "",
-              "ReleaseDate": "2024-10-28",
-              "CVECount": 23,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "11.0.1",
-              "Build": "",
-              "ReleaseDate": "2024-10-03",
-              "CVECount": 0,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "11.0",
-              "Build": "",
-              "ReleaseDate": "2024-09-16",
-              "CVECount": 16,
-              "ActivelyExploitedCount": 0
-            }
-          ]
         }
       ]
     },
     {
       "Platform": "visionOS",
       "OSVersions": [
+        {
+          "OSVersion": "visionOS 27",
+          "LatestVersion": "27.0",
+          "SupportedDevices": [
+            "RealityDevice14,1",
+            "RealityDevice17,1"
+          ],
+          "Releases": [
+            {
+              "Version": "27.0",
+              "Build": "24M6362",
+              "ReleaseDate": "2026-09-14",
+              "CVECount": 124,
+              "ActivelyExploitedCount": 0
+            }
+          ]
+        },
         {
           "OSVersion": "visionOS 26",
           "LatestVersion": "26.6.1",
@@ -3393,7 +3108,7 @@
               "Version": "26.6.1",
               "Build": "23O780",
               "ReleaseDate": "2026-08-17",
-              "CVECount": 0,
+              "CVECount": 2,
               "ActivelyExploitedCount": 0
             },
             {
@@ -3457,97 +3172,6 @@
               "Build": "",
               "ReleaseDate": "2025-09-15",
               "CVECount": 23,
-              "ActivelyExploitedCount": 0
-            }
-          ]
-        },
-        {
-          "OSVersion": "visionOS 2",
-          "LatestVersion": "2.6",
-          "SupportedDevices": [],
-          "Releases": [
-            {
-              "Version": "2.6",
-              "Build": "",
-              "ReleaseDate": "2025-07-29",
-              "CVECount": 26,
-              "ActivelyExploitedCount": 2
-            },
-            {
-              "Version": "2.5",
-              "Build": "",
-              "ReleaseDate": "2025-05-12",
-              "CVECount": 28,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "2.4.1",
-              "Build": "",
-              "ReleaseDate": "2025-04-16",
-              "CVECount": 2,
-              "ActivelyExploitedCount": 2
-            },
-            {
-              "Version": "2.4",
-              "Build": "",
-              "ReleaseDate": "2025-03-31",
-              "CVECount": 52,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "2.3.2",
-              "Build": "",
-              "ReleaseDate": "2025-03-11",
-              "CVECount": 1,
-              "ActivelyExploitedCount": 1
-            },
-            {
-              "Version": "2.3.1",
-              "Build": "",
-              "ReleaseDate": "2025-02-10",
-              "CVECount": 1,
-              "ActivelyExploitedCount": 1
-            },
-            {
-              "Version": "2.3",
-              "Build": "",
-              "ReleaseDate": "2025-01-27",
-              "CVECount": 28,
-              "ActivelyExploitedCount": 1
-            },
-            {
-              "Version": "2.2",
-              "Build": "",
-              "ReleaseDate": "2024-12-11",
-              "CVECount": 21,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "2.1.1",
-              "Build": "",
-              "ReleaseDate": "2024-11-19",
-              "CVECount": 2,
-              "ActivelyExploitedCount": 2
-            },
-            {
-              "Version": "2.1",
-              "Build": "",
-              "ReleaseDate": "2024-10-28",
-              "CVECount": 26,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "2.0.1",
-              "Build": "",
-              "ReleaseDate": "2024-10-03",
-              "CVECount": 0,
-              "ActivelyExploitedCount": 0
-            },
-            {
-              "Version": "2.0",
-              "Build": "",
-              "ReleaseDate": "2024-09-16",
-              "CVECount": 21,
               "ActivelyExploitedCount": 0
             }
           ]
