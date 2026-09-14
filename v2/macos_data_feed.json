@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "8663cc6c298b67fb4ee9157643ba3bd5f99192710a0c700aead19cbbced02925",
-  "LastCheck": "2026-09-14T17:15:39.332356682+00:00",
+  "UpdateHash": "47ee9932b886867b3e32106a6a7baa60c7b5c8786bbc260dcef017a9145897dc",
+  "LastCheck": "2026-09-14T17:42:43.204738159+00:00",
   "OSVersions": [
     {
       "OSVersion": "Tahoe 26",
@@ -12197,7 +12197,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/kb/HT212011",
+          "SecurityInfo": "https://support.apple.com/kb/HT213184",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {},
           "ActivelyExploitedCVEs": [],
@@ -14021,13 +14021,13 @@
     }
   },
   "XProtectPlistConfigData": {
-    "com.apple.XProtect": "5358",
-    "ReleaseDate": "2026-09-01T21:14:25Z"
+    "ReleaseDate": "2026-09-01T21:14:25Z",
+    "com.apple.XProtect": "5358"
   },
   "XProtectPayloads": {
-    "ReleaseDate": "2026-09-01T21:14:25Z",
+    "com.apple.XProtectFramework.XProtect": "157",
     "com.apple.XprotectFramework.PluginService": "74",
-    "com.apple.XProtectFramework.XProtect": "157"
+    "ReleaseDate": "2026-09-01T21:14:25Z"
   },
   "BackgroundSecurityImprovements": {
     "26": [
@@ -14142,15 +14142,33 @@
   },
   "InstallationApps": {
     "LatestUMA": {
-      "Title": "macOS Tahoe",
-      "Version": "26.6.2",
-      "Build": "25G83",
-      "AppleSlug": "140-93587",
-      "URL": "https://swcdn.apple.com/content/downloads/37/33/140-93587-A_GRFFH93NOL/f944yaqo1cjhh2m0kxrl0zhcpg9yb9qphv/InstallAssistant.pkg",
-      "PostingDate": "2026-08-24T22:49:27Z",
-      "Size": 18391902710
+      "Title": "macOS 27 Golden Gate",
+      "Version": "27.0",
+      "Build": "26A428",
+      "AppleSlug": "142-15488",
+      "URL": "https://swcdn.apple.com/content/downloads/01/05/142-15488-A_9XNIAXWVVL/5ajxcy8xk014o98zz1uut0zrlaj2nx91ln/InstallAssistant.pkg",
+      "PostingDate": "2026-09-14T17:13:11Z",
+      "Size": 18414054576
     },
     "AllPreviousUMA": [
+      {
+        "Title": "macOS Tahoe",
+        "Version": "26.7",
+        "Build": "25G229",
+        "AppleSlug": "142-16670",
+        "URL": "https://swcdn.apple.com/content/downloads/52/44/142-16670-A_C1NGFF0VNT/e1mno92ap4g9s6epq5bbee9a57b5tm983g/InstallAssistant.pkg",
+        "PostingDate": "2026-09-14T17:20:59Z",
+        "Size": 18389242715
+      },
+      {
+        "Title": "macOS Tahoe",
+        "Version": "26.6.2",
+        "Build": "25G83",
+        "AppleSlug": "140-93587",
+        "URL": "https://swcdn.apple.com/content/downloads/37/33/140-93587-A_GRFFH93NOL/f944yaqo1cjhh2m0kxrl0zhcpg9yb9qphv/InstallAssistant.pkg",
+        "PostingDate": "2026-08-24T22:49:27Z",
+        "Size": 18391902710
+      },
       {
         "Title": "macOS Tahoe",
         "Version": "26.6.1",
@@ -14186,6 +14204,15 @@
         "URL": "https://swcdn.apple.com/content/downloads/22/07/122-84023-A_RQPL3GX2L6/l6vt7agjz206oaiyhvc0a4wupeffjk36st/InstallAssistant.pkg",
         "PostingDate": "2026-06-09T17:28:04Z",
         "Size": 18308325308
+      },
+      {
+        "Title": "macOS Sequoia",
+        "Version": "15.8",
+        "Build": "24H23",
+        "AppleSlug": "142-16660",
+        "URL": "https://swcdn.apple.com/content/downloads/24/14/142-16660-A_CTI1XX4VYC/dwxnuxoud4401qcf8to49p8iq1ij987j1e/InstallAssistant.pkg",
+        "PostingDate": "2026-09-14T17:22:22Z",
+        "Size": 15670911244
       },
       {
         "Title": "macOS Sequoia",
@@ -14288,10 +14315,10 @@
       }
     ],
     "LatestMacIPSW": {
-      "MacOSIPSWURL": "https://updates.cdn-apple.com/2026SummerFCS/fullrestores/140-75212/A2A24B94-1FC1-45A3-93F7-C51B02AF1F4D/UniversalMac_26.6.2_25G83_Restore.ipsw",
-      "MacOSIPSWBuild": "25G83",
-      "MacOSIPSWVersion": "26.6.2",
-      "MacOSIPSWAppleSlug": "140-75212"
+      "MacOSIPSWURL": "https://updates.cdn-apple.com/2026FallFCS/afcfc88e-bbe6-44bf-a5da-07c56eebc06c/UniversalMac_27.0_26A428_Restore.ipsw",
+      "MacOSIPSWBuild": "26A428",
+      "MacOSIPSWVersion": "27.0",
+      "MacOSIPSWAppleSlug": "unknown"
     }
   }
 }
