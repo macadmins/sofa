@@ -31,10 +31,10 @@ OUTPUT_DIR = Path("data/resources")
 DEVICE_PATTERNS = {
     "macos": {
         "processors": {
-            "M4": ["tahoe", "sequoia"],
-            "M3": ["tahoe", "sequoia", "sonoma"],
-            "M2": ["tahoe", "sequoia", "sonoma", "ventura"],
-            "M1": ["tahoe", "sequoia", "sonoma", "ventura", "monterey"],
+            "M4": ["goldengate", "tahoe", "sequoia"],
+            "M3": ["goldengate", "tahoe", "sequoia", "sonoma"],
+            "M2": ["goldengate", "tahoe", "sequoia", "sonoma", "ventura"],
+            "M1": ["goldengate", "tahoe", "sequoia", "sonoma", "ventura", "monterey"],
         },
         "urls": {
             "MacBook Air": "https://support.apple.com/en-ca/HT201862",

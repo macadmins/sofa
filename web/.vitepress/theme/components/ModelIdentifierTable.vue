@@ -175,6 +175,7 @@ const formatOSName = (osVersion) => {
 
 const formatOSVersionToName = (osVersion) => {
   const osMap = {
+    'goldengate': 'Golden Gate 27',
     'tahoe': 'Tahoe 26',
     'sequoia': 'Sequoia 15',
     'sonoma': 'Sonoma 14', 
@@ -218,6 +219,7 @@ const getChipClass = (description) => {
 
 const getOSDetailsLink = (osVersion) => {
   const osLinks = {
+    'Golden Gate 27': '/macos/goldengate',
     'Tahoe 26': '/macos/tahoe',
     'Sequoia 15': '/macos/sequoia',
     'Sonoma 14': '/macos/sonoma',
@@ -312,6 +314,7 @@ const loadData = async () => {
     
     // Sort by OS version (newest first)
     const osOrder = { 
+      'Golden Gate 27': 0,
       'Tahoe 26': 1, 
       'Sequoia 15': 2, 
       'Sonoma 14': 3, 

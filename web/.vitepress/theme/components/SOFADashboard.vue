@@ -123,7 +123,7 @@
           <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-50 dark:bg-orange-950 text-orange-400 dark:text-orange-300">Beta</span>
         </template>
         <div class="grid grid-cols-1 gap-3 flex-grow">
-          <a v-if="bulletinData?.beta_releases?.macos" :href="`${baseUrl}/macos/tahoe`" class="block">
+          <a v-if="bulletinData?.beta_releases?.macos" :href="`${baseUrl}/macos/goldengate`" class="block">
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-emerald-300 dark:hover:border-emerald-600 transition-all duration-150">
               <div class="space-y-1">
                 <div class="flex items-center gap-1">
@@ -173,7 +173,7 @@
           <a 
             v-for="(version, idx) in macosVersions.slice(0, 2)"
             :key="idx"
-            :href="version.version.startsWith('26') ? `${baseUrl}/macos/tahoe` : version.version.startsWith('14') ? `${baseUrl}/macos/sonoma` : `${baseUrl}/macos/sequoia`"
+            :href="version.version.startsWith('27') ? `${baseUrl}/macos/goldengate` : version.version.startsWith('26') ? `${baseUrl}/macos/tahoe` : version.version.startsWith('14') ? `${baseUrl}/macos/sonoma` : `${baseUrl}/macos/sequoia`"
             class="block"
           >
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-all duration-150 macos-version-card">
@@ -1302,10 +1302,12 @@ const platforms = computed(() => {
   }
 
   return [
-    { name: 'macos-tahoe', label: 'Tahoe 26', link: `${basePath}${configLinks.macos}`, icon: MonitorIcon, color: 'macos' },
+    { name: 'macos-goldengate', label: 'Golden Gate 27', link: `${basePath}${configLinks.macos}`, icon: MonitorIcon, color: 'macos' },
+    { name: 'macos-tahoe', label: 'Tahoe 26', link: `${basePath}/macos/tahoe`, icon: MonitorIcon, color: 'macos' },
     { name: 'macos', label: 'Sequoia 15', link: `${basePath}/macos/sequoia`, icon: MonitorIcon, color: 'macos' },
    // { name: 'macos-sonoma', label: 'Sonoma 14', link: `${basePath}/macos/sonoma`, icon: MonitorIcon, color: 'macos' },
-    { name: 'ios-beta', label: 'iOS/iPadOS 26', link: `${basePath}${configLinks.ios}`, icon: SmartphoneIcon, color: 'ios' },
+    { name: 'ios-beta', label: 'iOS/iPadOS 27', link: `${basePath}${configLinks.ios}`, icon: SmartphoneIcon, color: 'ios' },
+    { name: 'ios-26', label: 'iOS/iPadOS 26', link: `${basePath}/ios/ios26`, icon: SmartphoneIcon, color: 'ios' },
     { name: 'ios', label: 'iOS/iPadOS 18', link: `${basePath}/ios/ios18`, icon: SmartphoneIcon, color: 'ios' },
     { name: 'visionos-beta', label: 'visionOS 26', link: `${basePath}${configLinks.visionos}`, icon: EyeIcon, color: 'visionos' },
     { name: 'visionos', label: 'visionOS 2', link: `${basePath}/visionos/visionos2`, icon: EyeIcon, color: 'visionos' },
@@ -1630,7 +1632,7 @@ const macosVersions = computed(() => {
     // Add the latest stable/beta version
     versions.push({
       version: latest.version,
-      osVersion: latest.version.startsWith('15') ? 'Sequoia' : 'Tahoe',
+      osVersion: latest.version.startsWith('27') ? 'Golden Gate' : latest.version.startsWith('15') ? 'Sequoia' : 'Tahoe',
       build: latest.build,
       releaseDate: formatDate(latest.release_date),
       cves: latest.total_cve_count

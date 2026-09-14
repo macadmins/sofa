@@ -140,13 +140,13 @@ const getBetaImage = (platform) => {
     case 'watchos':
       return '/watchos_26.png'
     case 'ios':
-      return '/ios_26.png'
+      return '/ios_27.png'
     case 'ipados':
-      return '/ios_26.png'
+      return '/ios_27.png'
     case 'visionos':
       return '/visionos_26.png'
     case 'macos':
-      return '/macos_26.png'
+      return '/macos_27.png'
     case 'safari':
       return '/safari_18.png'
     case 'xcode':

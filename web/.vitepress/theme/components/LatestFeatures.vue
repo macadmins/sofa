@@ -608,7 +608,7 @@ export default {
         let versionKey = null
         if (platformKey === 'macOS' && platformData.versions) {
           // Extract OS name from title (e.g., "Sequoia 15" -> "Sequoia")
-          const osName = this.title.split(' ')[0]
+          const osName = this.title.split(' ').slice(0, -1).join(' ') || this.title
           if (platformData.versions[osName]) {
             versionKey = osName
           }
@@ -769,7 +769,7 @@ export default {
         // Feed-level Devices map (code -> { MarketingName }) for device-specific cards
         this.feedDevices = data?.Devices || {}
 
-        const version = this.title.split(' ')[1]
+        const version = this.title.split(' ').pop()
         console.log('Looking for version:', version, 'in data:', data)
 
         if (this.platform.toLowerCase() === 'safari') {
@@ -899,11 +899,13 @@ export default {
     },
     getOsImage(platform, title) {
       const images = {
+        'Golden Gate': '/GoldenGate.png',
         'Tahoe': '/Tahoe.png',
         'Sonoma': '/Sonoma.png',
         'Sequoia': '/Sequoia.png',
         'Ventura': '/Ventura.png',
         'Monterey': '/Monterey.png',
+        'iOS 27': '/ios_27.png',
         'iOS 26': '/ios_26.png',
         'iOS 18': '/ios_18.png',
         'iOS 17': '/ios_17.png',

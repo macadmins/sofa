@@ -364,12 +364,12 @@ function switchPlatform(id) {
 // Map OSVersion + platform to the security page URL with ?version= deep link
 const osPageRoutes = {
   macos: {
-    'Tahoe 26': '/macos/tahoe', 'Sequoia 15': '/macos/sequoia',
+    'Golden Gate 27': '/macos/goldengate', 'Tahoe 26': '/macos/tahoe', 'Sequoia 15': '/macos/sequoia',
     'Sonoma 14': '/macos/sonoma', 'Ventura 13': '/macos/ventura',
     'Monterey 12': '/macos/monterey',
   },
   ios: {
-    '26': '/ios/ios26', '18': '/ios/ios18', '17': '/ios/ios17',
+    '27': '/ios/ios27', '26': '/ios/ios26', '18': '/ios/ios18', '17': '/ios/ios17',
   },
   tvos: {
     '26': '/tvos/tvos26', '18': '/tvos/tvos18',
