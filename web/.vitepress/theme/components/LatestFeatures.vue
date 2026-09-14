@@ -558,7 +558,8 @@ export default {
             
             // Add iOS-specific links
             Object.entries(iOSVersionLinks).forEach(([title, url]) => {
-              if (title.includes('About iOS') || title.includes('What\'s new')) {
+              const iPadOnly = title.includes('iPadOS') && !title.includes('iOS/iPadOS')
+              if ((title.includes('About iOS') || title.includes('What\'s new')) && !iPadOnly) {
                 wantedLinks.push({ 
                   title, 
                   url, 
@@ -579,7 +580,8 @@ export default {
             
             // Add iPadOS-specific links
             Object.entries(iPadOSVersionLinks).forEach(([title, url]) => {
-              if (title.includes('About iPadOS') || title.includes('What\'s new')) {
+              const iPhoneOnly = title.includes('iOS') && !title.includes('iPadOS')
+              if ((title.includes('About iPadOS') || title.includes('What\'s new')) && !iPhoneOnly) {
                 wantedLinks.push({ 
                   title, 
                   url, 
