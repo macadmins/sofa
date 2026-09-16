@@ -1,8 +1,8 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
   "catalogVersion": "2026.09.16",
-  "dateReleased": "2026-09-16T18:10:24.6555Z",
-  "count": 1712,
+  "dateReleased": "2026-09-16T18:47:50.6796Z",
+  "count": 1713,
   "vulnerabilities": [
     {
       "cveID": "CVE-2026-58704",
@@ -32,6 +32,21 @@
       "notes": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ISE-ABP-VNSW7Tn5 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-76460",
       "cwes": [
         "CWE-648"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-87886",
+      "vendorProject": "Acronis",
+      "product": "Backup",
+      "vulnerabilityName": "Acronis Backup Incorrect Default Permissions Vulnerability",
+      "dateAdded": "2026-09-16",
+      "shortDescription": "Acronis Backup plugin for cPanel & WHM and extension for Plesk contains an incorrect default permissions vulnerability that could allow for privilege escalation.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-09-19",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://security-advisory.acronis.com/advisories/SEC-10986 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-87886",
+      "cwes": [
+        "CWE-276"
       ]
     },
     {
@@ -25449,5 +25464,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-09-16T19:14:45.401916613Z"
+  "fetchTimestamp": "2026-09-16T20:18:41.300303304Z"
 }
