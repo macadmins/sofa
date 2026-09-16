@@ -486,7 +486,7 @@ def matches_os_version(title: str, os_type: str, major_version: str) -> bool:
         # Handle base releases like "macOS Sequoia 15" (no point version)
         # and versioned releases like "macOS Sequoia 15.1"
         # Pattern matches: "macOS Sequoia 15" or "macOS Sequoia 15.x.x"
-        version_match = re.search(r'(?:macOS\s+(?:Sequoia|Sonoma|Ventura|Monterey|Big Sur)?\s*)(\d+)(?:\.(\d+))?', title, re.IGNORECASE)
+        version_match = re.search(r'(?:macOS\s+(?:Golden Gate|Tahoe|Sequoia|Sonoma|Ventura|Monterey|Big Sur)?\s*)(\d+)(?:\.(\d+))?', title, re.IGNORECASE)
         if version_match:
             extracted_major = version_match.group(1)
             return extracted_major == major_version
@@ -515,7 +515,7 @@ def extract_version_from_title(title: str) -> Optional[str]:
     
     # If no point version found, check for base releases like "macOS Sequoia 15"
     # This matches "15" at the end of the OS name
-    base_match = re.search(r'(?:macOS\s+(?:Sequoia|Sonoma|Ventura|Monterey|Big Sur)?\s*)(\d+)$', title, re.IGNORECASE)
+    base_match = re.search(r'(?:macOS\s+(?:Golden Gate|Tahoe|Sequoia|Sonoma|Ventura|Monterey|Big Sur)?\s*)(\d+)$', title, re.IGNORECASE)
     if base_match:
         return base_match.group(1) + ".0"  # Return as "15.0" for consistency
     

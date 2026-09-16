@@ -374,7 +374,11 @@ def create_feed_item(
         product_lower = product_name.lower()
         
         if "macos" in product_lower or "mac os" in product_lower:
-            if "sequoia" in product_lower or "15." in version:
+            if "golden gate" in product_lower or "goldengate" in product_lower or "27." in version:
+                return f"{SOFA_FQDN}/macos/goldengate"
+            elif "tahoe" in product_lower or "26." in version:
+                return f"{SOFA_FQDN}/macos/tahoe"
+            elif "sequoia" in product_lower or "15." in version:
                 return f"{SOFA_FQDN}/macos/sequoia"
             elif "sonoma" in product_lower or "14." in version:
                 return f"{SOFA_FQDN}/macos/sonoma"
@@ -383,16 +387,36 @@ def create_feed_item(
             else:
                 return f"{SOFA_FQDN}/macos/sequoia"
         elif "ios" in product_lower and "ipad" not in product_lower:
+            if "27." in version:
+                return f"{SOFA_FQDN}/ios/ios27"
+            elif "26." in version:
+                return f"{SOFA_FQDN}/ios/ios26"
             return f"{SOFA_FQDN}/ios/ios18" if "18." in version else f"{SOFA_FQDN}/ios/ios17"
         elif "ipados" in product_lower or "ipad" in product_lower:
+            if "27." in version:
+                return f"{SOFA_FQDN}/ios/ios27"
+            elif "26." in version:
+                return f"{SOFA_FQDN}/ios/ios26"
             return f"{SOFA_FQDN}/ios/ios18" if "18." in version else f"{SOFA_FQDN}/ios/ios17"
         elif "safari" in product_lower:
             return f"{SOFA_FQDN}/safari/safari18"
         elif "tvos" in product_lower:
+            if "27." in version:
+                return f"{SOFA_FQDN}/tvos/tvos27"
+            elif "26." in version:
+                return f"{SOFA_FQDN}/tvos/tvos26"
             return f"{SOFA_FQDN}/tvos/tvos18" if "18." in version else f"{SOFA_FQDN}/tvos/tvos17"
         elif "watchos" in product_lower:
+            if "27." in version:
+                return f"{SOFA_FQDN}/watchos/watchos27"
+            elif "26." in version:
+                return f"{SOFA_FQDN}/watchos/watchos26"
             return f"{SOFA_FQDN}/watchos/watchos11"
         elif "visionos" in product_lower:
+            if "27." in version:
+                return f"{SOFA_FQDN}/visionos/visionos27"
+            elif "26." in version:
+                return f"{SOFA_FQDN}/visionos/visionos26"
             return f"{SOFA_FQDN}/visionos/visionos2"
         elif "xcode" in product_lower or release_type == "beta":
             return f"{SOFA_FQDN}/beta-releases"

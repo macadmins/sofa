@@ -68,15 +68,15 @@ fi
 echo
 
 if [[ ! -f "$json_cache" ]]; then
-    echo "<result>Could not obtain data</result>"
+    echo "<result>Could not obtain data cache</result>"
     exit
 elif [[ "$os_compatibility" == "legacy" ]]; then
     if ! "$python_path" -c 'import sys, json; print json.load(sys.stdin)["UpdateHash"]' < "$json_cache" > /dev/null; then
-        echo "<result>Could not obtain data</result>"
+        echo "<result>Could not obtain legacy data hash</result>"
         exit
     fi
 elif ! /usr/bin/plutil -extract "UpdateHash" raw "$json_cache" > /dev/null; then
-    echo "<result>Could not obtain data</result>"
+    echo "<result>Could not obtain data hash</result>"
     exit
 fi
 
