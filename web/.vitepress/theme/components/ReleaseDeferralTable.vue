@@ -392,25 +392,35 @@ const getOSLink = (version, release) => {
   
   const links = {
     'macos': {
+      '27': '/macos/goldengate',
+      '26': '/macos/tahoe',
       '15': '/macos/sequoia',
       '14': '/macos/sonoma',
       '13': '/macos/ventura',
       '12': '/macos/monterey'
     },
     'ios': {
+      '27': '/ios/ios27',
+      '26': '/ios/ios26',
       '18': '/ios/ios18',
       '17': '/ios/ios17',
       '16': '/ios/ios16'
     },
     'tvos': {
+      '27': '/tvos/tvos27',
+      '26': '/tvos/tvos26',
       '18': '/tvos/tvos18',
       '17': '/tvos/tvos17'
     },
     'watchos': {
+      '27': '/watchos/watchos27',
+      '26': '/watchos/watchos26',
       '11': '/watchos/watchos11',
       '10': '/watchos/watchos10'
     },
     'visionos': {
+      '27': '/visionos/visionos27',
+      '26': '/visionos/visionos26',
       '2': '/visionos/visionos2'
     }
   }

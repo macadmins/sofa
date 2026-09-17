@@ -26,9 +26,9 @@ export default defineConfig({
       { text: 'macOS', link: '/macos/goldengate' },
       { text: 'iOS/iPadOS', link: '/ios/ios27' },
       { text: 'Safari', link: '/safari/safari26' },
-      { text: 'tvOS', link: '/tvos/tvos26' },
-      { text: 'visionOS', link: '/visionos/visionos26' },
-      { text: 'watchOS', link: '/watchos/watchos26' },
+      { text: 'tvOS', link: '/tvos/tvos27' },
+      { text: 'visionOS', link: '/visionos/visionos27' },
+      { text: 'watchOS', link: '/watchos/watchos27' },
       { text: 'How It Works', link: '/how-it-works' }
     ],
     
@@ -80,6 +80,7 @@ export default defineConfig({
       {
         text: 'tvOS',
         items: [
+          { text: 'tvOS 27', link: '/tvos/tvos27' },
           { text: 'tvOS 26', link: '/tvos/tvos26' },
           { text: 'tvOS 18', link: '/tvos/tvos18' },
         ]
@@ -87,13 +88,15 @@ export default defineConfig({
       {
         text: 'visionOS',
         items: [
-           { text: 'visionOS 26', link: '/visionos/visionos26' },
+          { text: 'visionOS 27', link: '/visionos/visionos27' },
+          { text: 'visionOS 26', link: '/visionos/visionos26' },
           { text: 'visionOS 2', link: '/visionos/visionos2' },
         ]
       },
       {
         text: 'watchOS',
         items: [
+          { text: 'watchOS 27', link: '/watchos/watchos27' },
           { text: 'watchOS 26', link: '/watchos/watchos26' },
           { text: 'watchOS 11', link: '/watchos/watchos11' },
         ]
