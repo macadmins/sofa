@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.09.18",
-  "dateReleased": "2026-09-18T19:00:05.0974Z",
-  "count": 1716,
+  "catalogVersion": "2026.09.21",
+  "dateReleased": "2026-09-21T18:46:35.0873Z",
+  "count": 1717,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-7273",
+      "vendorProject": "Zyxel",
+      "product": "GS1900 Series Switches",
+      "vulnerabilityName": "Zyxel GS1900 Series Switches Stack-Based Buffer Overflow Vulnerability",
+      "dateAdded": "2026-09-21",
+      "shortDescription": "Zyxel GS1900 series switches contain a stack-based buffer overflow vulnerability in the CGI program which could allow a LAN-based, unauthenticated attacker to exploit the flaw and potentially execute OS commands via a crafted HTTP request.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-09-24",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.zyxel.com/global/en/support/security-advisories/zyxel-security-advisory-for-stack-based-buffer-overflow-vulnerability-in-gs1900-series-switches-06-16-2026 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-7273",
+      "cwes": [
+        "CWE-121"
+      ]
+    },
     {
       "cveID": "CVE-2025-39964",
       "vendorProject": "Linux",
@@ -25509,5 +25524,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-09-21T19:15:09.529832755Z"
+  "fetchTimestamp": "2026-09-21T20:17:28.573262267Z"
 }
