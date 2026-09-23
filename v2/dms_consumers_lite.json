@@ -1,8 +1,8 @@
 {
   "Metadata": {
     "SchemaVersion": "2026.04.11.2",
-    "ContentHash": "82bfe3293a8d0ace83b1e5c1e080cc481e13b3eb110340ecf32ff69309ad3481",
-    "GeneratedAt": "2026-09-23T19:16:32.173620324+00:00",
+    "ContentHash": "8e0a11a3878766e1c333b3ab5420abf9cadfc550983df8c1124e033f15aebf38",
+    "GeneratedAt": "2026-09-23T20:19:24.967271569+00:00",
     "Description": "Lightweight DMS feed. Releases inherit SupportedDevices from their OS version unless overridden."
   },
   "Devices": {
@@ -1864,7 +1864,7 @@
       "OSVersions": [
         {
           "OSVersion": "watchOS 27",
-          "LatestVersion": "27.0",
+          "LatestVersion": "27.0.1",
           "SupportedDevices": [
             "Watch7,1",
             "Watch7,10",
@@ -1891,6 +1891,20 @@
             "Watch8,5"
           ],
           "Releases": [
+            {
+              "Version": "27.0.1",
+              "Build": "24R365",
+              "ReleaseDate": "2026-09-23",
+              "CVECount": 0,
+              "ActivelyExploitedCount": 0,
+              "SupportedDevices": [
+                "Watch8,1",
+                "Watch8,2",
+                "Watch8,3",
+                "Watch8,4",
+                "Watch8,5"
+              ]
+            },
             {
               "Version": "27.0",
               "Build": "24R6364",
