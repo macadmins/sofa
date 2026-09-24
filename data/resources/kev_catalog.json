@@ -1,9 +1,39 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.09.23",
-  "dateReleased": "2026-09-23T12:51:35.821Z",
-  "count": 1721,
+  "catalogVersion": "2026.09.24",
+  "dateReleased": "2026-09-24T19:00:55.0481Z",
+  "count": 1723,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-5430",
+      "vendorProject": "WSO2",
+      "product": "Multiple Products",
+      "vulnerabilityName": "WSO2 Multiple Products Path Traversal Vulnerability ",
+      "dateAdded": "2026-09-24",
+      "shortDescription": "WSO2 API Control Plane, API Manager, Traffic Manager & Universal Gateway contain a path traversal vulnerability that could allow for unrestricted file upload and lead to remote code execution. ",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-09-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://security.docs.wso2.com/en/latest/security-announcements/security-advisories/2026/WSO2-2026-5328/ ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-5430",
+      "cwes": [
+        "CWE-347"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-71362",
+      "vendorProject": "Adobe",
+      "product": "Commerce and Magento ",
+      "vulnerabilityName": "Adobe Commerce and Magento Incorrect Authorization Vulnerability ",
+      "dateAdded": "2026-09-24",
+      "shortDescription": "Adobe Commerce and Magento contains an incorrect authorization vulnerability that could allow an attacker to leverage this vulnerability to gain elevated access to sensitive resources without any user interaction. ",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-09-27",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://helpx.adobe.com/security/products/magento/apsb26-92.html ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-71362",
+      "cwes": [
+        "CWE-863"
+      ]
+    },
     {
       "cveID": "CVE-2026-93952",
       "vendorProject": "Arista",
@@ -25584,5 +25614,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-09-24T19:15:33.759464660Z"
+  "fetchTimestamp": "2026-09-24T20:19:32.401176090Z"
 }
