@@ -111,7 +111,9 @@ fi
 
 # 3. idenfity latest compatible major OS
 latest_compatible_os=$(/usr/bin/plutil -extract "Models.$model.SupportedOS.0" raw -expect string "$json_cache" | /usr/bin/head -n 1)
-latest_compatible_os_version=$(/usr/bin/cut -d' ' -f2 <<< "$latest_compatible_os")
+# the major version is always the last field, so take that to handle multi-word
+# names such as "Golden Gate 27" as well as single-word names like "Sequoia 15"
+latest_compatible_os_version=$(/usr/bin/awk '{print $NF}' <<< "$latest_compatible_os")
 
 echo "Latest Compatible macOS: $latest_compatible_os_version"
 
