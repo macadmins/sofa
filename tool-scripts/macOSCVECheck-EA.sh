@@ -91,12 +91,12 @@ fi
 
 echo
 # 3. idenfity latest compatible major OS
-latest_compatible_os=$(/usr/bin/plutil -extract "Models.$model.SupportedOS.0" raw -expect string "$json_cache" | /usr/bin/head -n 1 | cut -d' ' -f2)
+latest_compatible_os=$(/usr/bin/plutil -extract "Models.$model.SupportedOS.0" raw -expect string "$json_cache" | /usr/bin/head -n 1 | /usr/bin/awk '{print $NF}')
 echo "Latest Compatible macOS: $latest_compatible_os"
 
 # 4. Get OSVersions.Latest.ProductVersion
 for i in {0..3}; do
-    os_version=$(/usr/bin/plutil -extract "OSVersions.$i.OSVersion" raw "$json_cache" | /usr/bin/head -n 1 | grep -v "<stdin>" | cut -d' ' -f2)
+    os_version=$(/usr/bin/plutil -extract "OSVersions.$i.OSVersion" raw "$json_cache" | /usr/bin/head -n 1 | grep -v "<stdin>" | /usr/bin/awk '{print $NF}')
     if [[ $os_version ]]; then
         if [[ "$os_version" == "$latest_compatible_os" ]]; then
             product_version=$(/usr/bin/plutil -extract "OSVersions.$i.Latest.ProductVersion" raw "$json_cache" | /usr/bin/head -n 1)
