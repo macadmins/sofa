@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "6546de8c88ec87e65e5b94080ae62a273c39a8e509b90c52ecd7e516590c6c6c",
-  "LastCheck": "2026-09-28T12:54:20.139891337+00:00",
+  "UpdateHash": "e6c4874e93c45c793b43a61f43c1aa63cc5ccbb12dcd9dc31b155c722678d7e6",
+  "LastCheck": "2026-09-28T17:18:15.403388602+00:00",
   "OSVersions": [
     {
       "OSVersion": "Golden Gate 27",
@@ -13586,7 +13586,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/kb/HT211947",
+          "SecurityInfo": "https://support.apple.com/kb/HT213670",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {},
           "ActivelyExploitedCVEs": [],
@@ -15534,13 +15534,13 @@
     }
   },
   "XProtectPlistConfigData": {
-    "com.apple.XProtect": "5360",
-    "ReleaseDate": "2026-09-17T16:08:45Z"
+    "ReleaseDate": "2026-09-17T16:08:45Z",
+    "com.apple.XProtect": "5360"
   },
   "XProtectPayloads": {
+    "com.apple.XprotectFramework.PluginService": "74",
     "ReleaseDate": "2026-09-17T16:08:45Z",
-    "com.apple.XProtectFramework.XProtect": "163",
-    "com.apple.XprotectFramework.PluginService": "74"
+    "com.apple.XProtectFramework.XProtect": "163"
   },
   "BackgroundSecurityImprovements": {
     "26": [
@@ -15708,15 +15708,6 @@
         "URL": "https://swcdn.apple.com/content/downloads/63/03/140-36226-A_WUCZCLWK7K/1elqm2ix9y06je9fgy9rdqed1jod0jgxoe/InstallAssistant.pkg",
         "PostingDate": "2026-07-07T17:36:47Z",
         "Size": 18311577775
-      },
-      {
-        "Title": "macOS Tahoe",
-        "Version": "26.5.1",
-        "Build": "25F80",
-        "AppleSlug": "122-84023",
-        "URL": "https://swcdn.apple.com/content/downloads/22/07/122-84023-A_RQPL3GX2L6/l6vt7agjz206oaiyhvc0a4wupeffjk36st/InstallAssistant.pkg",
-        "PostingDate": "2026-06-09T17:28:04Z",
-        "Size": 18308325308
       },
       {
         "Title": "macOS Sequoia",
