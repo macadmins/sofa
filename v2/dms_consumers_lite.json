@@ -1,8 +1,8 @@
 {
   "Metadata": {
     "SchemaVersion": "2026.04.11.2",
-    "ContentHash": "4e92e27600af40e791d1ffca9a5adb54ec6f7cf5f1f93bfd85166bffac4ba3ec",
-    "GeneratedAt": "2026-09-28T17:18:15.614601015+00:00",
+    "ContentHash": "8aae587bf7374f2211170fdcf6d349bc91d11ed6a029bbbf64a84a90b881cea8",
+    "GeneratedAt": "2026-09-28T18:25:09.380094986+00:00",
     "Description": "Lightweight DMS feed. Releases inherit SupportedDevices from their OS version unless overridden."
   },
   "Devices": {
@@ -708,7 +708,7 @@
       "OSVersions": [
         {
           "OSVersion": "Golden Gate 27",
-          "LatestVersion": "27.0",
+          "LatestVersion": "27.0.1",
           "SupportedDevices": [
             "J180dAP",
             "J274AP",
@@ -773,6 +773,13 @@
           ],
           "Releases": [
             {
+              "Version": "27.0.1",
+              "Build": "26A5434",
+              "ReleaseDate": "2026-09-28T00:00:00Z",
+              "CVECount": 0,
+              "ActivelyExploitedCount": 0
+            },
+            {
               "Version": "27.0",
               "Build": "26A5428",
               "ReleaseDate": "2026-09-14T00:00:00Z",
@@ -783,7 +790,7 @@
         },
         {
           "OSVersion": "Tahoe 26",
-          "LatestVersion": "26.7",
+          "LatestVersion": "26.7.1",
           "SupportedDevices": [
             "J152FAP",
             "J160AP",
@@ -850,6 +857,13 @@
             "VMM-x86_64"
           ],
           "Releases": [
+            {
+              "Version": "26.7.1",
+              "Build": "25G241",
+              "ReleaseDate": "2026-09-28T00:00:00Z",
+              "CVECount": 1,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "26.7",
               "Build": "25G229",
@@ -1341,7 +1355,7 @@
       "OSVersions": [
         {
           "OSVersion": "27",
-          "LatestVersion": "27.0",
+          "LatestVersion": "27.0.1",
           "SupportedDevices": [
             "iPad12,1",
             "iPad12,2",
@@ -1430,6 +1444,13 @@
           ],
           "Releases": [
             {
+              "Version": "27.0.1",
+              "Build": "24A9446",
+              "ReleaseDate": "2026-09-28T00:00:00Z",
+              "CVECount": 0,
+              "ActivelyExploitedCount": 0
+            },
+            {
               "Version": "27.0",
               "Build": "24A9437",
               "ReleaseDate": "2026-09-14T00:00:00Z",
@@ -1440,7 +1461,7 @@
         },
         {
           "OSVersion": "26",
-          "LatestVersion": "26.7",
+          "LatestVersion": "26.7.1",
           "SupportedDevices": [
             "iPad11,1",
             "iPad11,2",
@@ -1539,6 +1560,13 @@
             "iPhone18,5"
           ],
           "Releases": [
+            {
+              "Version": "26.7.1",
+              "Build": "23H6030",
+              "ReleaseDate": "2026-09-28T00:00:00Z",
+              "CVECount": 1,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "26.7",
               "Build": "23H6024",
@@ -1935,12 +1963,19 @@
       "OSVersions": [
         {
           "OSVersion": "visionOS 27",
-          "LatestVersion": "27.0",
+          "LatestVersion": "27.0.1",
           "SupportedDevices": [
             "RealityDevice14,1",
             "RealityDevice17,1"
           ],
           "Releases": [
+            {
+              "Version": "27.0.1",
+              "Build": "24M6372",
+              "ReleaseDate": "2026-09-28",
+              "CVECount": 0,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "27.0",
               "Build": "24M6362",
