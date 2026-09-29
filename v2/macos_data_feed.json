@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "8a56a842cc20037e011371e80b632dab70a53ec648ed2354409fe7fc0d96f2cd",
-  "LastCheck": "2026-09-29T12:53:12.800585835+00:00",
+  "UpdateHash": "db92a7cc4f96f47f14ee23abc53ab18fd67fdb17c7efe43d3561ffcdd5864169",
+  "LastCheck": "2026-09-29T17:16:52.339937330+00:00",
   "OSVersions": [
     {
       "OSVersion": "Golden Gate 27",
@@ -584,18 +584,25 @@
           "VMM-x86_64"
         ],
         "CVEs": {
-          "CVE-2026-86950": {}
+          "CVE-2026-86950": {
+            "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2026-86950",
+            "ActivelyExploited": true,
+            "InKEV": true,
+            "Severity": "Critical"
+          }
         },
-        "ActivelyExploitedCVEs": [],
+        "ActivelyExploitedCVEs": [
+          "CVE-2026-86950"
+        ],
         "UniqueCVEsCount": 1,
         "DaysSincePreviousRelease": 14,
         "DeviceScope": "universal",
         "UpdateSummary": {
-          "Priority": "medium",
-          "Summary": "Addresses 1 security issue",
-          "Recommendation": "Update to stay secure - security fixes available",
+          "Priority": "critical",
+          "Summary": "Contains 1 actively exploited vulnerability",
+          "Recommendation": "Update immediately - actively exploited vulnerabilities",
           "Stats": {
-            "Exploited": 0,
+            "Exploited": 1,
             "Critical": 0,
             "High": 0,
             "Medium": 0,
@@ -620,18 +627,25 @@
           "SecurityInfo": "https://support.apple.com/en-us/149228",
           "SecurityInfoContext": "macOS has been updated to version 26.7.1, released on September 28, 2026. This update addresses one security issue and is the most recent approved version.",
           "CVEs": {
-            "CVE-2026-86950": {}
+            "CVE-2026-86950": {
+              "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2026-86950",
+              "ActivelyExploited": true,
+              "InKEV": true,
+              "Severity": "Critical"
+            }
           },
-          "ActivelyExploitedCVEs": [],
+          "ActivelyExploitedCVEs": [
+            "CVE-2026-86950"
+          ],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 14,
           "DeviceScope": "universal",
           "UpdateSummary": {
-            "Priority": "medium",
-            "Summary": "Addresses 1 security issue",
-            "Recommendation": "Update to stay secure - security fixes available",
+            "Priority": "critical",
+            "Summary": "Contains 1 actively exploited vulnerability",
+            "Recommendation": "Update immediately - actively exploited vulnerabilities",
             "Stats": {
-              "Exploited": 0,
+              "Exploited": 1,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -2697,18 +2711,25 @@
           "VMM-x86_64"
         ],
         "CVEs": {
-          "CVE-2026-86950": {}
+          "CVE-2026-86950": {
+            "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2026-86950",
+            "ActivelyExploited": true,
+            "InKEV": true,
+            "Severity": "Critical"
+          }
         },
-        "ActivelyExploitedCVEs": [],
+        "ActivelyExploitedCVEs": [
+          "CVE-2026-86950"
+        ],
         "UniqueCVEsCount": 1,
         "DaysSincePreviousRelease": 14,
         "DeviceScope": "universal",
         "UpdateSummary": {
-          "Priority": "medium",
-          "Summary": "Addresses 1 security issue",
-          "Recommendation": "Update to stay secure - security fixes available",
+          "Priority": "critical",
+          "Summary": "Contains 1 actively exploited vulnerability",
+          "Recommendation": "Update immediately - actively exploited vulnerabilities",
           "Stats": {
-            "Exploited": 0,
+            "Exploited": 1,
             "Critical": 0,
             "High": 0,
             "Medium": 0,
@@ -2733,18 +2754,25 @@
           "SecurityInfo": "https://support.apple.com/en-us/149229",
           "SecurityInfoContext": "macOS has been updated to version 15.8.1, released on September 28, 2026. This update addresses one security issue and is the most recent approved version.",
           "CVEs": {
-            "CVE-2026-86950": {}
+            "CVE-2026-86950": {
+              "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2026-86950",
+              "ActivelyExploited": true,
+              "InKEV": true,
+              "Severity": "Critical"
+            }
           },
-          "ActivelyExploitedCVEs": [],
+          "ActivelyExploitedCVEs": [
+            "CVE-2026-86950"
+          ],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 14,
           "DeviceScope": "universal",
           "UpdateSummary": {
-            "Priority": "medium",
-            "Summary": "Addresses 1 security issue",
-            "Recommendation": "Update to stay secure - security fixes available",
+            "Priority": "critical",
+            "Summary": "Contains 1 actively exploited vulnerability",
+            "Recommendation": "Update immediately - actively exploited vulnerabilities",
             "Stats": {
-              "Exploited": 0,
+              "Exploited": 1,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -13178,7 +13206,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/en-us/121839",
+          "SecurityInfo": "https://support.apple.com/en-us/120895",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {},
           "ActivelyExploitedCVEs": [],
@@ -15130,8 +15158,8 @@
     "ReleaseDate": "2026-09-28T21:36:50Z"
   },
   "XProtectPayloads": {
-    "com.apple.XprotectFramework.PluginService": "74",
     "ReleaseDate": "2026-09-28T21:36:50Z",
+    "com.apple.XprotectFramework.PluginService": "74",
     "com.apple.XProtectFramework.XProtect": "163"
   },
   "BackgroundSecurityImprovements": {

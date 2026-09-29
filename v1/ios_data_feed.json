@@ -1,5 +1,5 @@
 {
-  "UpdateHash": "b90001c94c3bc843af401144f3af82045fcc7bf71529dfdf0cad52b0876786db",
+  "UpdateHash": "8b6ed5306cdff5858eeaf82bdbcf500703508bca2e29dc05d98dae3f4d50e5df",
   "OSVersions": [
     {
       "OSVersion": "27",
@@ -531,9 +531,11 @@
         ],
         "SecurityInfo": "https://support.apple.com/en-us/149226",
         "CVEs": {
-          "CVE-2026-86950": false
+          "CVE-2026-86950": true
         },
-        "ActivelyExploitedCVEs": [],
+        "ActivelyExploitedCVEs": [
+          "CVE-2026-86950"
+        ],
         "UniqueCVEsCount": 1
       },
       "SecurityReleases": [
@@ -642,9 +644,11 @@
             "iPhone18,5"
           ],
           "CVEs": {
-            "CVE-2026-86950": false
+            "CVE-2026-86950": true
           },
-          "ActivelyExploitedCVEs": [],
+          "ActivelyExploitedCVEs": [
+            "CVE-2026-86950"
+          ],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 14
         },

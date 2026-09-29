@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "c2411f74c81996ca9e1fceee264bdc60551ac3d7868a0533a3240f2c2f520ce2",
-  "LastCheck": "2026-09-29T12:53:12.827187597+00:00",
+  "UpdateHash": "f3df43c1d1e4a81321055272b6f77700eca939f99000ae6661e8c8917cb0a45a",
+  "LastCheck": "2026-09-29T17:16:52.364074722+00:00",
   "OSVersions": [
     {
       "OSVersion": "27",
@@ -619,9 +619,16 @@
           "iPhone18,5"
         ],
         "CVEs": {
-          "CVE-2026-86950": {}
+          "CVE-2026-86950": {
+            "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2026-86950",
+            "ActivelyExploited": true,
+            "InKEV": true,
+            "Severity": "Critical"
+          }
         },
-        "ActivelyExploitedCVEs": [],
+        "ActivelyExploitedCVEs": [
+          "CVE-2026-86950"
+        ],
         "UniqueCVEsCount": 1,
         "DaysSincePreviousRelease": 14,
         "DeviceScope": "universal",
@@ -753,9 +760,16 @@
             "iPhone18,5"
           ],
           "CVEs": {
-            "CVE-2026-86950": {}
+            "CVE-2026-86950": {
+              "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2026-86950",
+              "ActivelyExploited": true,
+              "InKEV": true,
+              "Severity": "Critical"
+            }
           },
-          "ActivelyExploitedCVEs": [],
+          "ActivelyExploitedCVEs": [
+            "CVE-2026-86950"
+          ],
           "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 14,
           "DeviceScope": "universal",
