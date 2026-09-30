@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.09.29",
-  "dateReleased": "2026-09-29T13:51:33.3852Z",
-  "count": 1729,
+  "catalogVersion": "2026.09.30",
+  "dateReleased": "2026-09-30T16:59:23.0688Z",
+  "count": 1730,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-76504",
+      "vendorProject": "Cisco",
+      "product": "Catalyst SD-WAN Manager",
+      "vulnerabilityName": "Cisco Catalyst SD-WAN Manager Hex Encoding Vulnerability",
+      "dateAdded": "2026-09-30",
+      "shortDescription": "Cisco Catalyst SD-WAN Manager contains a hex encoding vulnerability that could allow an unauthenticated, remote attacker to access an affected system with privileges of the admin user due to improper handling of URI encoding in an HTTP request.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-10-03",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-webauth-xr8beuuU ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-76504",
+      "cwes": [
+        "CWE-177"
+      ]
+    },
     {
       "cveID": "CVE-2026-86950",
       "vendorProject": "Apple",
@@ -25704,5 +25719,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-09-30T17:17:57.000691Z"
+  "fetchTimestamp": "2026-09-30T18:23:43.819288973Z"
 }
