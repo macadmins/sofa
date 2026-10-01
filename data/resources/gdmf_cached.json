@@ -1,5 +1,5 @@
 {
-  "etag": "c645843c69affeb1f2071ca768c8e58a16c3a8cbd3a4e5508f7802a3101d5537",
+  "etag": "c3a486c87a4b6047492a9e3eb908e810cd191df37b8583b019b3ba293ec5d580",
   "data": {
     "PublicAssetSets": {
       "iOS": [
@@ -1010,6 +1010,28 @@
           ]
         }
       ],
+      "visionOS": [
+        {
+          "ProductVersion": "27.0.1",
+          "Build": "24M6372",
+          "PostingDate": "2026-09-28",
+          "ExpirationDate": "2026-12-30",
+          "SupportedDevices": [
+            "RealityDevice14,1",
+            "RealityDevice17,1"
+          ]
+        },
+        {
+          "ProductVersion": "27.0.1",
+          "Build": "24M372",
+          "PostingDate": "2026-09-28",
+          "ExpirationDate": "2026-12-30",
+          "SupportedDevices": [
+            "RealityDevice14,1",
+            "RealityDevice17,1"
+          ]
+        }
+      ],
       "macOS": [
         {
           "ProductVersion": "14.8.9",
@@ -1580,28 +1602,6 @@
             "Mac-AA95B1DDAB278B95",
             "VMA2MACOSAP",
             "VMM-x86_64"
-          ]
-        }
-      ],
-      "visionOS": [
-        {
-          "ProductVersion": "27.0.1",
-          "Build": "24M6372",
-          "PostingDate": "2026-09-28",
-          "ExpirationDate": "2026-12-30",
-          "SupportedDevices": [
-            "RealityDevice14,1",
-            "RealityDevice17,1"
-          ]
-        },
-        {
-          "ProductVersion": "27.0.1",
-          "Build": "24M372",
-          "PostingDate": "2026-09-28",
-          "ExpirationDate": "2026-12-30",
-          "SupportedDevices": [
-            "RealityDevice14,1",
-            "RealityDevice17,1"
           ]
         }
       ]
@@ -5961,6 +5961,91 @@
       ]
     },
     "PublicBackgroundSecurityImprovements": {
+      "macOS": [
+        {
+          "ProductVersion": "26.3.2",
+          "Build": "25D771400a",
+          "ProductVersionExtra": "(a)",
+          "PrerequisiteBuild": "25D2140",
+          "PostingDate": "2026-03-17",
+          "ExpirationDate": "2026-12-30",
+          "SupportedDevices": [
+            "J700AP"
+          ]
+        },
+        {
+          "ProductVersion": "26.3.1",
+          "Build": "25D771280a",
+          "ProductVersionExtra": "(a)",
+          "PrerequisiteBuild": "25D2128",
+          "PostingDate": "2026-03-17",
+          "ExpirationDate": "2026-12-30",
+          "SupportedDevices": [
+            "J152FAP",
+            "J160AP",
+            "J180dAP",
+            "J185AP",
+            "J185FAP",
+            "J214KAP",
+            "J215AP",
+            "J274AP",
+            "J293AP",
+            "J313AP",
+            "J314cAP",
+            "J314sAP",
+            "J316cAP",
+            "J316sAP",
+            "J375cAP",
+            "J375dAP",
+            "J413AP",
+            "J414cAP",
+            "J414sAP",
+            "J415AP",
+            "J416cAP",
+            "J416sAP",
+            "J433AP",
+            "J434AP",
+            "J456AP",
+            "J457AP",
+            "J473AP",
+            "J474sAP",
+            "J475cAP",
+            "J475dAP",
+            "J493AP",
+            "J504AP",
+            "J514cAP",
+            "J514mAP",
+            "J514sAP",
+            "J516cAP",
+            "J516mAP",
+            "J516sAP",
+            "J575cAP",
+            "J575dAP",
+            "J604AP",
+            "J613AP",
+            "J614cAP",
+            "J614sAP",
+            "J615AP",
+            "J616cAP",
+            "J616sAP",
+            "J623AP",
+            "J624AP",
+            "J704AP",
+            "J713AP",
+            "J714cAP",
+            "J714sAP",
+            "J715AP",
+            "J716cAP",
+            "J716sAP",
+            "J773gAP",
+            "J773sAP",
+            "J813AP",
+            "J815AP",
+            "VMA2MACOSAP",
+            "VMM-x86_64"
+          ]
+        }
+      ],
       "iOS": [
         {
           "ProductVersion": "26.3.1",
@@ -6065,91 +6150,6 @@
             "iPhone18,3",
             "iPhone18,4",
             "iPhone18,5"
-          ]
-        }
-      ],
-      "macOS": [
-        {
-          "ProductVersion": "26.3.2",
-          "Build": "25D771400a",
-          "ProductVersionExtra": "(a)",
-          "PrerequisiteBuild": "25D2140",
-          "PostingDate": "2026-03-17",
-          "ExpirationDate": "2026-12-30",
-          "SupportedDevices": [
-            "J700AP"
-          ]
-        },
-        {
-          "ProductVersion": "26.3.1",
-          "Build": "25D771280a",
-          "ProductVersionExtra": "(a)",
-          "PrerequisiteBuild": "25D2128",
-          "PostingDate": "2026-03-17",
-          "ExpirationDate": "2026-12-30",
-          "SupportedDevices": [
-            "J152FAP",
-            "J160AP",
-            "J180dAP",
-            "J185AP",
-            "J185FAP",
-            "J214KAP",
-            "J215AP",
-            "J274AP",
-            "J293AP",
-            "J313AP",
-            "J314cAP",
-            "J314sAP",
-            "J316cAP",
-            "J316sAP",
-            "J375cAP",
-            "J375dAP",
-            "J413AP",
-            "J414cAP",
-            "J414sAP",
-            "J415AP",
-            "J416cAP",
-            "J416sAP",
-            "J433AP",
-            "J434AP",
-            "J456AP",
-            "J457AP",
-            "J473AP",
-            "J474sAP",
-            "J475cAP",
-            "J475dAP",
-            "J493AP",
-            "J504AP",
-            "J514cAP",
-            "J514mAP",
-            "J514sAP",
-            "J516cAP",
-            "J516mAP",
-            "J516sAP",
-            "J575cAP",
-            "J575dAP",
-            "J604AP",
-            "J613AP",
-            "J614cAP",
-            "J614sAP",
-            "J615AP",
-            "J616cAP",
-            "J616sAP",
-            "J623AP",
-            "J624AP",
-            "J704AP",
-            "J713AP",
-            "J714cAP",
-            "J714sAP",
-            "J715AP",
-            "J716cAP",
-            "J716sAP",
-            "J773gAP",
-            "J773sAP",
-            "J813AP",
-            "J815AP",
-            "VMA2MACOSAP",
-            "VMM-x86_64"
           ]
         }
       ]
