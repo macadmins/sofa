@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "56682298da6f0ad2cda46c29cd81f17cfd81fec0031b8e39bf7452dd788907b7",
-  "LastCheck": "2026-10-05T07:15:17.098325186+00:00",
+  "UpdateHash": "1af727112a972b343ebf6d8bf56aa6b4f28c43c4f986abec0167ccd6e4c9529b",
+  "LastCheck": "2026-10-05T12:56:16.400870779+00:00",
   "OSVersions": [
     {
       "OSVersion": "Golden Gate 27",
@@ -4851,7 +4851,7 @@
           "ReleaseDate": "2025-02-10T00:00:00Z",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/122900",
-          "SecurityInfoContext": "macOS 15.3.1 was released on February 10, 2025. This release addressed one security issue. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "macOS 15.3.1 was released on February 10, 2025. This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "J132AP",
             "J137AP",
@@ -4906,18 +4906,9 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2025-43200": {
-              "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-43200",
-              "ActivelyExploited": true,
-              "InKEV": true,
-              "Severity": "Critical"
-            }
-          },
-          "ActivelyExploitedCVEs": [
-            "CVE-2025-43200"
-          ],
-          "UniqueCVEsCount": 1,
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 14,
           "DeviceScope": "universal",
           "SupersededBy": {
@@ -4927,17 +4918,17 @@
             "DaysLater": 29
           },
           "UpdateSummary": {
-            "Priority": "critical",
-            "Summary": "Contains 1 actively exploited vulnerability",
-            "Recommendation": "Update immediately - actively exploited vulnerabilities",
+            "Priority": "low",
+            "Summary": "Maintenance update with no published CVE entries",
+            "Recommendation": "Update recommended - may include unpublished security improvements",
             "Stats": {
-              "Exploited": 1,
+              "Exploited": 0,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 1
+              "Total": 0
             }
           }
         },
@@ -13206,7 +13197,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/en-us/103164",
+          "SecurityInfo": "https://support.apple.com/kb/HT213534",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {},
           "ActivelyExploitedCVEs": [],
@@ -15154,13 +15145,13 @@
     }
   },
   "XProtectPlistConfigData": {
-    "ReleaseDate": "2026-09-29T20:40:57Z",
-    "com.apple.XProtect": "5363"
+    "com.apple.XProtect": "5363",
+    "ReleaseDate": "2026-09-29T20:40:57Z"
   },
   "XProtectPayloads": {
-    "com.apple.XProtectFramework.XProtect": "163",
     "ReleaseDate": "2026-09-29T20:40:57Z",
-    "com.apple.XprotectFramework.PluginService": "74"
+    "com.apple.XprotectFramework.PluginService": "74",
+    "com.apple.XProtectFramework.XProtect": "163"
   },
   "BackgroundSecurityImprovements": {
     "26": [
