@@ -1,5 +1,5 @@
 {
-  "UpdateHash": "5ed4c59d95bd46a1b64a86dcfee4cae2923f6d9f3ae4e4a3b36b6982ebde3451",
+  "UpdateHash": "3b0b16f751b02bd62e9e38f6e53136565b687fef500f01c21786fe085f99dd14",
   "OSVersions": [
     {
       "OSVersion": "Golden Gate 27",
@@ -5472,9 +5472,13 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {},
-          "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 0,
+          "CVEs": {
+            "CVE-2025-43200": true
+          },
+          "ActivelyExploitedCVEs": [
+            "CVE-2025-43200"
+          ],
+          "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 14
         },
         {
