@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.10.08",
-  "dateReleased": "2026-10-08T20:09:18.9833Z",
-  "count": 1739,
+  "catalogVersion": "2026.10.13",
+  "dateReleased": "2026-10-13T16:36:26.1679Z",
+  "count": 1740,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-104935",
+      "vendorProject": "Ivanti",
+      "product": "Connect Secure",
+      "vulnerabilityName": "Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
+      "dateAdded": "2026-10-13",
+      "shortDescription": "Ivanti Connect Secure contains an authentication bypass by spoofing vulnerability that allows a remote unauthenticated attacker to execute arbitrary commands.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-10-16",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https:/forums.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935 ; https://nvd.nist.gov/vuln/detail/CVE-2026-104935",
+      "cwes": [
+        "CWE-290"
+      ]
+    },
     {
       "cveID": "CVE-2015-5477",
       "vendorProject": "ISC",
@@ -25855,5 +25870,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-10-13T12:56:02.505769192Z"
+  "fetchTimestamp": "2026-10-13T17:17:04.787445891Z"
 }
