@@ -1,8 +1,8 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
   "catalogVersion": "2026.10.13",
-  "dateReleased": "2026-10-13T16:36:26.1679Z",
-  "count": 1740,
+  "dateReleased": "2026-10-13T19:10:43.6568Z",
+  "count": 1741,
   "vulnerabilities": [
     {
       "cveID": "CVE-2026-104935",
@@ -17,6 +17,21 @@
       "notes": "https:/forums.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935 ; https://nvd.nist.gov/vuln/detail/CVE-2026-104935",
       "cwes": [
         "CWE-290"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-96951",
+      "vendorProject": "Microsoft",
+      "product": "Windows",
+      "vulnerabilityName": "Microsoft Windows Command Injection Vulnerability",
+      "dateAdded": "2026-10-13",
+      "shortDescription": "Microsoft Windows Shell contains a command injection vulnerability that allows an unauthorized attacker to bypass a security feature over a network.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-10-16",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-96951 ; BOD 26-04: BOD 26-04: Prioritizing Security Updates Based on Risk | CISA ; Forensics Triage Requirements: BOD 26-04: Implementation Guidance for Prioritizing Security Updates Based on Risk | CISA ;  https://nvd.nist.gov/vuln/detail/CVE-2026-96951",
+      "cwes": [
+        "CWE-77"
       ]
     },
     {
@@ -25870,5 +25885,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-10-13T19:14:34.342318039Z"
+  "fetchTimestamp": "2026-10-13T20:19:04.772838625Z"
 }
