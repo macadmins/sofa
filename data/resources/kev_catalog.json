@@ -1,9 +1,70 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.10.13",
-  "dateReleased": "2026-10-13T19:10:43.6568Z",
-  "count": 1741,
+  "catalogVersion": "2026.10.14",
+  "dateReleased": "2026-10-14T19:27:28.0105Z",
+  "count": 1745,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-105134",
+      "vendorProject": "Ahsay",
+      "product": "AhsayCBS",
+      "vulnerabilityName": "Ahsay AhsayCBS Command Injection Vulnerability",
+      "dateAdded": "2026-10-14",
+      "shortDescription": "Ahsay AhsayCBS contains a command injection vulnerability that could allow a remote attacker to execute operating system commands via manipulation of the random parameter in the Replication Receiver component’s /rps/api/json/UpdateReceivers.do endpoint. This vulnerability can be chained with CVE-2026-105133.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-10-17",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.ahsay.com/en/company/announcements/patch-cve-105133-105134-update ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-105134",
+      "cwes": [
+        "CWE-77",
+        "CWE-78"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-76519",
+      "vendorProject": "Cisco",
+      "product": "Secure Email Gateway",
+      "vulnerabilityName": "Cisco Secure Email Gateway Relative Path Traversal Vulnerability",
+      "dateAdded": "2026-10-14",
+      "shortDescription": "Cisco Secure Email Gateway contains a relative path traversal vulnerability that could allow an unauthenticated, remote attacker to write arbitrary files on the underlying operating system.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-10-17",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-afw-zqYJkjxp ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-76519",
+      "cwes": [
+        "CWE-23"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-105133",
+      "vendorProject": "Ahsay",
+      "product": "AhsayCBS",
+      "vulnerabilityName": "Ahsay AhsayCBS Improper Authentication Vulnerability",
+      "dateAdded": "2026-10-14",
+      "shortDescription": "Ahsay AhsayCBS contains an improper authentication vulnerability that could allow a remote attacker to bypass authentication via manipulation of the random parameter in the API component’s checkSysPwd function. This vulnerability can be chained with CVE-2026-105134.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-10-17",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://www.ahsay.com/en/company/announcements/patch-cve-105133-105134-update ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-105133",
+      "cwes": [
+        "CWE-287"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-0322",
+      "vendorProject": "Palo Alto Networks",
+      "product": "PAN-OS",
+      "vulnerabilityName": "Palo Alto Networks PAN-OS Code Injection Vulnerability",
+      "dateAdded": "2026-10-14",
+      "shortDescription": "Palo Alto Networks PAN-OS contains a code injection vulnerability that could allow an authenticated attacker with network access to execute arbitrary code with root privileges on the firewall.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-10-17",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://security.paloaltonetworks.com/CVE-2026-0322 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-0322",
+      "cwes": [
+        "CWE-94"
+      ]
+    },
     {
       "cveID": "CVE-2026-104935",
       "vendorProject": "Ivanti",
@@ -25885,5 +25946,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-10-14T19:15:20.585349143Z"
+  "fetchTimestamp": "2026-10-14T20:17:32.090918914Z"
 }
