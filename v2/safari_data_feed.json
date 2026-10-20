@@ -1,6 +1,6 @@
 {
   "Version": "2.0",
-  "UpdateHash": "d45856778496b0586168d0cfcb6272c62569baefd0b9338186f3b3edcb5a90de",
+  "UpdateHash": "b0f3166cdb0beeeb7631a2a87e9cb86ac833e8bec3c70a348a67576a034a5257",
   "AppVersions": [
     {
       "AppVersion": "Safari 27",
@@ -12,50 +12,29 @@
         "ReleaseType": "Safari",
         "SecurityInfo": "https://support.apple.com/en-us/149039",
         "CVEs": {
-          "CVE-2026-64718": {
-            "exploited": false,
-            "tags": [
-              "safari"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64718"
-          },
-          "CVE-2026-64753": {
-            "exploited": false,
+          "CVE-2026-64718": {},
+          "CVE-2026-64753": {},
+          "CVE-2026-84518": {},
+          "CVE-2026-84635": {},
+          "CVE-2026-86872": {
+            "entry_added_date": "2026-10-19",
             "tags": [
               "webkit"
             ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64753"
+            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86872"
           },
-          "CVE-2026-84518": {
-            "exploited": false,
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84518"
-          },
-          "CVE-2026-84635": {
-            "exploited": false,
+          "CVE-2026-86897": {},
+          "CVE-2026-86898": {},
+          "CVE-2026-86922": {
+            "entry_added_date": "2026-10-19",
             "tags": [
               "webkit"
             ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84635"
-          },
-          "CVE-2026-86897": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86897"
-          },
-          "CVE-2026-86898": {
-            "exploited": false,
-            "tags": [
-              "safari",
-              "use-after-free",
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86898"
+            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86922"
           }
         },
         "ActivelyExploitedCVEs": [],
-        "UniqueCVEsCount": 6
+        "UniqueCVEsCount": 8
       },
       "SecurityReleases": [
         {
@@ -66,50 +45,29 @@
           "ReleaseType": "Safari",
           "SecurityInfo": "https://support.apple.com/en-us/149039",
           "CVEs": {
-            "CVE-2026-64718": {
-              "exploited": false,
-              "tags": [
-                "safari"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64718"
-            },
-            "CVE-2026-64753": {
-              "exploited": false,
+            "CVE-2026-64718": {},
+            "CVE-2026-64753": {},
+            "CVE-2026-84518": {},
+            "CVE-2026-84635": {},
+            "CVE-2026-86872": {
+              "entry_added_date": "2026-10-19",
               "tags": [
                 "webkit"
               ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64753"
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86872"
             },
-            "CVE-2026-84518": {
-              "exploited": false,
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84518"
-            },
-            "CVE-2026-84635": {
-              "exploited": false,
+            "CVE-2026-86897": {},
+            "CVE-2026-86898": {},
+            "CVE-2026-86922": {
+              "entry_added_date": "2026-10-19",
               "tags": [
                 "webkit"
               ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84635"
-            },
-            "CVE-2026-86897": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86897"
-            },
-            "CVE-2026-86898": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "use-after-free",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86898"
+              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86922"
             }
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 6
+          "UniqueCVEsCount": 8
         }
       ]
     },
