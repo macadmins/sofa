@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "215af387bbae19e81c0bf38f82fd4c6643b701d5ec982fdb149b9790961d5d58",
-  "LastCheck": "2026-10-22T17:15:36.038306066+00:00",
+  "UpdateHash": "dcdc813a4b435fcc5ae74a157363e04c1ae6e3028746aedfafc75d35dbef1a55",
+  "LastCheck": "2026-10-22T18:44:20.983225328+00:00",
   "OSVersions": [
     {
       "OSVersion": "Golden Gate 27",
@@ -7572,10 +7572,50 @@
           "ReleaseDate": "2024-09-16T00:00:00Z",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/121247",
-          "SecurityInfoContext": "macOS 14.7 was released on September 16, 2024. This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
-          "CVEs": {},
+          "SecurityInfoContext": "macOS 14.7 was released on September 16, 2024. This release addressed 39 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "CVEs": {
+            "CVE-2024-27876": {},
+            "CVE-2024-27880": {},
+            "CVE-2024-40791": {},
+            "CVE-2024-40797": {},
+            "CVE-2024-40801": {},
+            "CVE-2024-40841": {},
+            "CVE-2024-40844": {},
+            "CVE-2024-40845": {},
+            "CVE-2024-40846": {},
+            "CVE-2024-40847": {},
+            "CVE-2024-40848": {},
+            "CVE-2024-40850": {},
+            "CVE-2024-40860": {},
+            "CVE-2024-44125": {},
+            "CVE-2024-44126": {},
+            "CVE-2024-44128": {},
+            "CVE-2024-44135": {},
+            "CVE-2024-44151": {},
+            "CVE-2024-44153": {},
+            "CVE-2024-44154": {},
+            "CVE-2024-44158": {},
+            "CVE-2024-44160": {},
+            "CVE-2024-44161": {},
+            "CVE-2024-44163": {},
+            "CVE-2024-44164": {},
+            "CVE-2024-44165": {},
+            "CVE-2024-44166": {},
+            "CVE-2024-44167": {},
+            "CVE-2024-44168": {},
+            "CVE-2024-44169": {},
+            "CVE-2024-44176": {},
+            "CVE-2024-44177": {},
+            "CVE-2024-44178": {},
+            "CVE-2024-44181": {},
+            "CVE-2024-44182": {},
+            "CVE-2024-44183": {},
+            "CVE-2024-44184": {},
+            "CVE-2024-44190": {},
+            "CVE-2024-54469": {}
+          },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 0,
+          "UniqueCVEsCount": 39,
           "DaysSincePreviousRelease": 40,
           "DeviceScope": "universal",
           "SupersededBy": {
@@ -7585,9 +7625,9 @@
             "DaysLater": 42
           },
           "UpdateSummary": {
-            "Priority": "low",
-            "Summary": "Maintenance update with no published CVE entries",
-            "Recommendation": "Update recommended - may include unpublished security improvements",
+            "Priority": "high",
+            "Summary": "Addresses 39 security issues",
+            "Recommendation": "Update to stay secure - security fixes available",
             "Stats": {
               "Exploited": 0,
               "Critical": 0,
@@ -7595,7 +7635,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 0
+              "Total": 39
             }
           }
         },
@@ -13237,7 +13277,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/kb/HT211947",
+          "SecurityInfo": "https://support.apple.com/kb/HT213257",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {},
           "ActivelyExploitedCVEs": [],
@@ -14257,7 +14297,7 @@
       ]
     },
     "MacBookPro15,2": {
-      "MarketingName": "MacBook Pro (13-inch, 2019, Four Thunderbolt 3 ports)",
+      "MarketingName": "MacBook Pro (13-inch, 2018, Four Thunderbolt 3 ports)",
       "SupportedOS": [
         "Sequoia 15",
         "Sonoma 14",
@@ -15185,12 +15225,12 @@
     }
   },
   "XProtectPlistConfigData": {
-    "com.apple.XProtect": "5368",
-    "ReleaseDate": "2026-10-21T21:24:21Z"
+    "ReleaseDate": "2026-10-21T21:24:21Z",
+    "com.apple.XProtect": "5368"
   },
   "XProtectPayloads": {
-    "ReleaseDate": "2026-10-21T21:24:21Z",
     "com.apple.XProtectFramework.XProtect": "170",
+    "ReleaseDate": "2026-10-21T21:24:21Z",
     "com.apple.XprotectFramework.PluginService": "74"
   },
   "BackgroundSecurityImprovements": {
