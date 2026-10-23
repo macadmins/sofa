@@ -76,7 +76,7 @@ jobs:
           sudo apt-get update
 
           # Install ca-certificates if not present
-          sudo apt-get install -y ca-certificates curl
+          sudo apt-get install -y ca-certificates openssl curl
 
           # Download and install Apple Root CA-G3 (current primary root)
           echo "📥 Downloading Apple Root CA-G3..."
@@ -91,6 +91,8 @@ jobs:
           # Update system certificate store
           echo "🔄 Updating system certificate store..."
           sudo update-ca-certificates
+          # Require the fixed native TLS store before downloading tools or data.
+          python3 processing/scripts/verify_trust_store.py /etc/ssl/certs/ca-certificates.crt
 
           # Verify installation
           echo "✅ Apple certificates installed:"
@@ -181,7 +183,7 @@ jobs:
           python3 --version
 
           echo "📦 Installing UV..."
-          curl -LsSf https://astral.sh/uv/install.sh | sh
+          curl -LsSf https://astral.sh/uv/0.13.4/install.sh | sh
 
           # UV installs to ~/.local/bin
           export PATH="$HOME/.local/bin:$PATH"
