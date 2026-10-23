@@ -1,0 +1,27 @@
+name: Verify pipeline TLS trust
+
+on:
+  pull_request:
+    paths:
+      - scripts/verify_trust_store.py
+      - .github/workflows/01_sofa-build-pipeline.yml
+      - .github/workflows/06_cve-pipeline.yml
+      - .github/workflows/tls-trust.yml
+
+permissions:
+  contents: read
+
+jobs:
+  trust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify patched native runner trust
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ca-certificates openssl curl
+          sudo update-ca-certificates
+          python3 scripts/verify_trust_store.py /etc/ssl/certs/ca-certificates.crt
+      - uses: astral-sh/setup-uv@v3
+        with:
+          version: '0.13.4'
