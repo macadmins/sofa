@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "2156760d8e0b668c7b0c7b6b35d48d976ee46b85930f713fd91db5a0cb2d9302",
-  "LastCheck": "2026-10-23T01:09:06.431763335+00:00",
+  "UpdateHash": "38804a09130de6ab303a7aa52f5b711002df6081ab184b3076ab90acdf45f3c1",
+  "LastCheck": "2026-10-23T06:55:36.816201680+00:00",
   "OSVersions": [
     {
       "OSVersion": "27",
@@ -128,6 +128,43 @@
         }
       },
       "SecurityReleases": [
+        {
+          "UpdateName": "iOS 27.1",
+          "ProductName": "iOS and iPadOS",
+          "ProductVersion": "27.1",
+          "Build": "24A95425",
+          "AllBuilds": [
+            "24A95425",
+            "24A94425"
+          ],
+          "ReleaseDate": "2026-10-23T00:00:00Z",
+          "ExpirationDate": "2027-01-21",
+          "ReleaseType": "OS",
+          "SecurityInfo": "https://support.apple.com/en-us/100100",
+          "SecurityInfoContext": "iOS 27.1 was released on October 23, 2026. This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SupportedDevices": [
+            "iPhone19,4"
+          ],
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
+          "DaysSincePreviousRelease": 25,
+          "DeviceScope": "device-specific",
+          "UpdateSummary": {
+            "Priority": "low",
+            "Summary": "Maintenance update with no published CVE entries",
+            "Recommendation": "Update recommended - may include unpublished security improvements",
+            "Stats": {
+              "Exploited": 0,
+              "Critical": 0,
+              "High": 0,
+              "Medium": 0,
+              "Low": 0,
+              "Remote": 0,
+              "Total": 0
+            }
+          }
+        },
         {
           "UpdateName": "iOS 27.0.1 and iPadOS 27.0.1",
           "ProductName": "iOS and iPadOS",
@@ -4881,6 +4918,9 @@
     },
     "iPhone19,3": {
       "MarketingName": "iPhone19,3"
+    },
+    "iPhone19,4": {
+      "MarketingName": "iPhone19,4"
     },
     "iPhone19,7": {
       "MarketingName": "iPhone19,7"

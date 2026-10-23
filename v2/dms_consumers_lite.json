@@ -1,8 +1,8 @@
 {
   "Metadata": {
     "SchemaVersion": "2026.04.11.2",
-    "ContentHash": "a0190087e4b73ad2ea72574086f4892100c611d6bc17b426e141e6dea1697825",
-    "GeneratedAt": "2026-10-23T01:09:06.589299045+00:00",
+    "ContentHash": "b8e6dabf8b5a70d65a99020c636b4fa3d2159c90cb3b9bdba2fb429d35475fab",
+    "GeneratedAt": "2026-10-23T06:55:37.002165028+00:00",
     "Description": "Lightweight DMS feed. Releases inherit SupportedDevices from their OS version unless overridden."
   },
   "Devices": {
@@ -697,6 +697,9 @@
     },
     "iPhone19,3": {
       "MarketingName": "iPhone19,3"
+    },
+    "iPhone19,4": {
+      "MarketingName": "iPhone19,4"
     },
     "iPhone19,7": {
       "MarketingName": "iPhone19,7"
@@ -1443,6 +1446,16 @@
             "iPhone19,7"
           ],
           "Releases": [
+            {
+              "Version": "27.1",
+              "Build": "24A95425",
+              "ReleaseDate": "2026-10-23T00:00:00Z",
+              "CVECount": 0,
+              "ActivelyExploitedCount": 0,
+              "SupportedDevices": [
+                "iPhone19,4"
+              ]
+            },
             {
               "Version": "27.0.1",
               "Build": "24A9446",
