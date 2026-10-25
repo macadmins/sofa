@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "7fe1030d41e1b7b5597b2d59194d7d1f63dfd46eca961f05035e627f1e07d91b",
-  "LastCheck": "2026-10-25T12:44:44.867518119+00:00",
+  "UpdateHash": "aaabf3cbc7ceec1fb39eee90ea3d13297aa980699063d82c387dd66c8de9eabf",
+  "LastCheck": "2026-10-25T18:42:13.771693652+00:00",
   "OSVersions": [
     {
       "OSVersion": "Golden Gate 27",
@@ -1243,12 +1243,9 @@
           "UpdateName": "macOS Tahoe 26.5.2",
           "ProductName": "macOS",
           "ProductVersion": "26.5.2",
-          "Build": "25F84",
-          "AllBuilds": [
-            "25F84"
-          ],
+          "Build": "",
+          "AllBuilds": [],
           "ReleaseDate": "2026-06-29T00:00:00Z",
-          "ExpirationDate": "2026-10-25",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/127595",
           "SecurityInfoContext": "macOS 26.5.2 was released on June 29, 2026. This release addressed 38 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
@@ -1334,7 +1331,7 @@
           "DeviceScope": "universal",
           "SupersededBy": {
             "ProductVersion": "26.5.2",
-            "Build": "25F84",
+            "Build": "",
             "ReleaseDate": "2026-06-29T00:00:00Z",
             "DaysLater": 28
           },
@@ -3287,12 +3284,9 @@
           "UpdateName": "macOS Sequoia 15.7.7",
           "ProductName": "macOS",
           "ProductVersion": "15.7.7",
-          "Build": "24G720",
-          "AllBuilds": [
-            "24G720"
-          ],
+          "Build": "",
+          "AllBuilds": [],
           "ReleaseDate": "2026-05-11T00:00:00Z",
-          "ExpirationDate": "2026-10-25",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/127116",
           "SecurityInfoContext": "macOS 15.7.7 was released on May 11, 2026. This release addressed 47 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
@@ -3448,7 +3442,7 @@
           "DeviceScope": "universal",
           "SupersededBy": {
             "ProductVersion": "15.7.7",
-            "Build": "24G720",
+            "Build": "",
             "ReleaseDate": "2026-05-11T00:00:00Z",
             "DaysLater": 48
           },
@@ -6363,12 +6357,9 @@
           "UpdateName": "macOS Sonoma 14.8.7",
           "ProductName": "macOS",
           "ProductVersion": "14.8.7",
-          "Build": "23J520",
-          "AllBuilds": [
-            "23J520"
-          ],
+          "Build": "",
+          "AllBuilds": [],
           "ReleaseDate": "2026-05-11T00:00:00Z",
-          "ExpirationDate": "2026-10-25",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/127117",
           "SecurityInfoContext": "macOS 14.8.7 was released on May 11, 2026. This release addressed 44 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
@@ -6517,7 +6508,7 @@
           "DeviceScope": "universal",
           "SupersededBy": {
             "ProductVersion": "14.8.7",
-            "Build": "23J520",
+            "Build": "",
             "ReleaseDate": "2026-05-11T00:00:00Z",
             "DaysLater": 48
           },
@@ -13277,7 +13268,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/en-us/120886",
+          "SecurityInfo": "https://support.apple.com/kb/HT213813",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {},
           "ActivelyExploitedCVEs": [],
@@ -15225,13 +15216,13 @@
     }
   },
   "XProtectPlistConfigData": {
-    "ReleaseDate": "2026-10-21T21:24:21Z",
-    "com.apple.XProtect": "5368"
+    "com.apple.XProtect": "5368",
+    "ReleaseDate": "2026-10-21T21:24:21Z"
   },
   "XProtectPayloads": {
     "ReleaseDate": "2026-10-21T21:24:21Z",
-    "com.apple.XprotectFramework.PluginService": "74",
-    "com.apple.XProtectFramework.XProtect": "170"
+    "com.apple.XProtectFramework.XProtect": "170",
+    "com.apple.XprotectFramework.PluginService": "74"
   },
   "BackgroundSecurityImprovements": {
     "26": [
