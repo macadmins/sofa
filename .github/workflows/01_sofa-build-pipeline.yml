@@ -113,8 +113,8 @@ jobs:
           mkdir -p bin
 
           # Use latest stable release
-          DOWNLOAD_URL="https://github.com/headmin/sofa-core-cli/releases/download/v0.3.2"
-          LINUX_TAR="sofa-0.3.2-linux-x86_64.tar.gz"
+          DOWNLOAD_URL="https://github.com/headmin/sofa-core-cli/releases/download/v0.3.3"
+          LINUX_TAR="sofa-0.3.3-linux-x86_64.tar.gz"
 
           echo "  • Downloading Linux binaries: $LINUX_TAR"
           if curl -L -f -o "$LINUX_TAR" "$DOWNLOAD_URL/$LINUX_TAR"; then
