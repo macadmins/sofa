@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "4c2ef47e1a92fb060a6a2de63bf9c1ef330fa89d23607dbca21fdde2cfd8bb1b",
-  "LastCheck": "2026-10-26T17:16:50.335898372+00:00",
+  "UpdateHash": "2b709d1a868dda360a44d3e6a4a0524a282c6890211b6b8a27a93dca2a6776df",
+  "LastCheck": "2026-10-26T18:28:46.392073093+00:00",
   "OSVersions": [
     {
       "OSVersion": "Golden Gate 27",
@@ -13268,7 +13268,7 @@
           "AllBuilds": [],
           "ReleaseDate": "2021-09-20T00:00:00Z",
           "ReleaseType": "OS",
-          "SecurityInfo": "https://support.apple.com/kb/HT214038",
+          "SecurityInfo": "https://support.apple.com/en-us/125887",
           "SecurityInfoContext": "macOS 12.0 was released on . This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {},
           "ActivelyExploitedCVEs": [],
@@ -15220,9 +15220,9 @@
     "ReleaseDate": "2026-10-21T21:24:21Z"
   },
   "XProtectPayloads": {
+    "com.apple.XProtectFramework.XProtect": "170",
     "com.apple.XprotectFramework.PluginService": "74",
-    "ReleaseDate": "2026-10-21T21:24:21Z",
-    "com.apple.XProtectFramework.XProtect": "170"
+    "ReleaseDate": "2026-10-21T21:24:21Z"
   },
   "BackgroundSecurityImprovements": {
     "26": [
@@ -15338,14 +15338,23 @@
   "InstallationApps": {
     "LatestUMA": {
       "Title": "macOS 27 Golden Gate",
-      "Version": "27.0.1",
-      "Build": "26A434",
-      "AppleSlug": "142-27367",
-      "URL": "https://swcdn.apple.com/content/downloads/04/52/142-27367-A_W3GHHHB05E/4kfhtjlg2i1qcv0obh62hlfcambu6kv15n/InstallAssistant.pkg",
-      "PostingDate": "2026-09-28T17:20:12Z",
-      "Size": 18400048567
+      "Version": "27.2",
+      "Build": "26B123",
+      "AppleSlug": "142-50055",
+      "URL": "https://swcdn.apple.com/content/downloads/52/46/142-50055-A_O5SYDX5BLY/c72meffi1hj2eaf9fgtakkgwds73ujrr5u/InstallAssistant.pkg",
+      "PostingDate": "2026-10-26T18:04:46Z",
+      "Size": 17820888084
     },
     "AllPreviousUMA": [
+      {
+        "Title": "macOS 27 Golden Gate",
+        "Version": "27.0.1",
+        "Build": "26A434",
+        "AppleSlug": "142-27367",
+        "URL": "https://swcdn.apple.com/content/downloads/04/52/142-27367-A_W3GHHHB05E/4kfhtjlg2i1qcv0obh62hlfcambu6kv15n/InstallAssistant.pkg",
+        "PostingDate": "2026-09-28T17:20:12Z",
+        "Size": 18400048567
+      },
       {
         "Title": "macOS 27 Golden Gate",
         "Version": "27.0",
@@ -15354,6 +15363,15 @@
         "URL": "https://swcdn.apple.com/content/downloads/01/05/142-15488-A_9XNIAXWVVL/5ajxcy8xk014o98zz1uut0zrlaj2nx91ln/InstallAssistant.pkg",
         "PostingDate": "2026-09-14T17:13:11Z",
         "Size": 18414054576
+      },
+      {
+        "Title": "macOS Tahoe",
+        "Version": "26.7.2",
+        "Build": "25G332",
+        "AppleSlug": "142-50020",
+        "URL": "https://swcdn.apple.com/content/downloads/38/31/142-50020-A_7SHECS0ACF/ncy3h2j7nwse4aoz0rjot59fp0z9s4yf3o/InstallAssistant.pkg",
+        "PostingDate": "2026-10-26T18:05:55Z",
+        "Size": 18397174906
       },
       {
         "Title": "macOS Tahoe",
@@ -15408,6 +15426,15 @@
         "URL": "https://swcdn.apple.com/content/downloads/63/03/140-36226-A_WUCZCLWK7K/1elqm2ix9y06je9fgy9rdqed1jod0jgxoe/InstallAssistant.pkg",
         "PostingDate": "2026-07-07T17:36:47Z",
         "Size": 18311577775
+      },
+      {
+        "Title": "macOS Sequoia",
+        "Version": "15.8.2",
+        "Build": "24H232",
+        "AppleSlug": "142-50013",
+        "URL": "https://swcdn.apple.com/content/downloads/31/10/142-50013-A_0GMSQ8FVZX/kpmee5466o6dmojjdqw34x6ckj6b332of6/InstallAssistant.pkg",
+        "PostingDate": "2026-10-26T18:03:30Z",
+        "Size": 15671364403
       },
       {
         "Title": "macOS Sequoia",
@@ -15528,9 +15555,9 @@
       }
     ],
     "LatestMacIPSW": {
-      "MacOSIPSWURL": "https://updates.cdn-apple.com/2026FallFCS/59241290-5d51-4ca8-9df4-31624b9a4eac/UniversalMac_27.0.1_26A434_Restore.ipsw",
-      "MacOSIPSWBuild": "26A434",
-      "MacOSIPSWVersion": "27.0.1",
+      "MacOSIPSWURL": "https://updates.cdn-apple.com/2026FallFCS/c9671975-52db-4fb5-9af2-00217169ba8d/UniversalMac_27.2_26B123_Restore.ipsw",
+      "MacOSIPSWBuild": "26B123",
+      "MacOSIPSWVersion": "27.2",
       "MacOSIPSWAppleSlug": "unknown"
     }
   }
