@@ -1,5 +1,5 @@
 {
-  "update_hash": "sha256:7bdf89228938c5e605a87f1e58213598675dcccb6cdda4043ec49837aa9ad21c",
+  "update_hash": "sha256:eecbfae4f1cfbf2a09ad465e5cf887994fdd53fa77be355d9bc1850aeefe0735",
   "devices": [
     {
       "name": "iPhone 2G",
@@ -1995,6 +1995,13 @@
       "platform": "t8160",
       "cpid": 33120,
       "bdid": 14
+    },
+    {
+      "name": "HomePod mini 2",
+      "identifier": "AudioAccessory11,1",
+      "platform": "t8310",
+      "cpid": 33552,
+      "bdid": 66
     }
   ],
   "latest_versions": {
@@ -2604,6 +2611,15 @@
     ],
     "iPad13,16": [
       {
+        "version": "27.2",
+        "buildid": "24B119",
+        "signed": true,
+        "signing_started": null,
+        "signing_stopped": null,
+        "url": "https://updates.cdn-apple.com/2026FallFCS/cd9ea34b-1243-4e28-9341-6adeb9c79e8f/iPad_Spring_2022_27.2_24B119_Restore.ipsw",
+        "filesize": 11734723044
+      },
+      {
         "version": "27.0.1",
         "buildid": "24A446",
         "signed": true,
@@ -3208,6 +3224,15 @@
       }
     ],
     "iPhone14,2": [
+      {
+        "version": "27.2",
+        "buildid": "24B119",
+        "signed": true,
+        "signing_started": null,
+        "signing_stopped": null,
+        "url": "https://updates.cdn-apple.com/2026FallFCS/f1b55dac-7e4b-4958-8d7f-eeb46b1515ae/iPhone14,2_27.2_24B119_Restore.ipsw",
+        "filesize": 11548971321
+      },
       {
         "version": "27.0.1",
         "buildid": "24A446",
@@ -3940,6 +3965,15 @@
     ],
     "iPhone15,2": [
       {
+        "version": "27.2",
+        "buildid": "24B119",
+        "signed": true,
+        "signing_started": null,
+        "signing_stopped": null,
+        "url": "https://updates.cdn-apple.com/2026FallFCS/af566c65-4bae-4e61-ab68-8406b4def41c/iPhone15,2_27.2_24B119_Restore.ipsw",
+        "filesize": 11595790190
+      },
+      {
         "version": "27.0.1",
         "buildid": "24A446",
         "signed": true,
@@ -4553,13 +4587,7 @@
       }
     ]
   },
-  "macos_ipsw": {
-    "version": "27.2",
-    "build": "26B123",
-    "url": "https://updates.cdn-apple.com/2026FallFCS/c9671975-52db-4fb5-9af2-00217169ba8d/UniversalMac_27.2_26B123_Restore.ipsw",
-    "apple_slug": "unknown",
-    "fetch_timestamp": "2026-10-26T19:16:05.554260531Z"
-  },
-  "total_devices": 285,
-  "total_firmwares": 282
+  "macos_ipsw": null,
+  "total_devices": 286,
+  "total_firmwares": 285
 }

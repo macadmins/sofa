@@ -1,8 +1,8 @@
 {
   "Metadata": {
     "SchemaVersion": "2026.04.11.2",
-    "ContentHash": "5d6e0bd7b1f336060ebebe903c93d7ae8ac8e888ea4693cecb8b396fd92c827c",
-    "GeneratedAt": "2026-10-26T19:16:29.399472014+00:00",
+    "ContentHash": "5ca00277e1fb24ad528e52b643c9a18cde4ed9700dae61169409c6ceab847849",
+    "GeneratedAt": "2026-10-27T00:01:26.129080913+00:00",
     "Description": "Lightweight DMS feed. Releases inherit SupportedDevices from their OS version unless overridden."
   },
   "Devices": {
@@ -563,6 +563,12 @@
     "iPad17,4": {
       "MarketingName": "iPad Pro 13-inch Wi-Fi + Cellular (M5)"
     },
+    "iPad19,1": {
+      "MarketingName": "iPad19,1"
+    },
+    "iPad19,2": {
+      "MarketingName": "iPad19,2"
+    },
     "iPad8,1": {
       "MarketingName": "iPad Pro 11-inch (1st generation) Wi-Fi"
     },
@@ -711,7 +717,7 @@
       "OSVersions": [
         {
           "OSVersion": "Golden Gate 27",
-          "LatestVersion": "27.0.1",
+          "LatestVersion": "27.2",
           "SupportedDevices": [
             "J180dAP",
             "J274AP",
@@ -776,6 +782,13 @@
           ],
           "Releases": [
             {
+              "Version": "27.2",
+              "Build": "26B123",
+              "ReleaseDate": "2026-10-26T00:00:00Z",
+              "CVECount": 263,
+              "ActivelyExploitedCount": 0
+            },
+            {
               "Version": "27.0.1",
               "Build": "26A5434",
               "ReleaseDate": "2026-09-28T00:00:00Z",
@@ -786,14 +799,14 @@
               "Version": "27.0",
               "Build": "26A5428",
               "ReleaseDate": "2026-09-14T00:00:00Z",
-              "CVECount": 242,
+              "CVECount": 276,
               "ActivelyExploitedCount": 1
             }
           ]
         },
         {
           "OSVersion": "Tahoe 26",
-          "LatestVersion": "26.7.1",
+          "LatestVersion": "26.7.2",
           "SupportedDevices": [
             "J152FAP",
             "J160AP",
@@ -861,6 +874,13 @@
           ],
           "Releases": [
             {
+              "Version": "26.7.2",
+              "Build": "25G332",
+              "ReleaseDate": "2026-10-26T00:00:00Z",
+              "CVECount": 213,
+              "ActivelyExploitedCount": 0
+            },
+            {
               "Version": "26.7.1",
               "Build": "25G241",
               "ReleaseDate": "2026-09-28T00:00:00Z",
@@ -871,7 +891,7 @@
               "Version": "26.7",
               "Build": "25G229",
               "ReleaseDate": "2026-09-14T00:00:00Z",
-              "CVECount": 173,
+              "CVECount": 178,
               "ActivelyExploitedCount": 1
             },
             {
@@ -1358,7 +1378,7 @@
       "OSVersions": [
         {
           "OSVersion": "27",
-          "LatestVersion": "27.0.1",
+          "LatestVersion": "27.2",
           "SupportedDevices": [
             "iPad12,1",
             "iPad12,2",
@@ -1406,6 +1426,8 @@
             "iPad17,2",
             "iPad17,3",
             "iPad17,4",
+            "iPad19,1",
+            "iPad19,2",
             "iPad8,10",
             "iPad8,11",
             "iPad8,12",
@@ -1443,9 +1465,17 @@
             "iPhone18,5",
             "iPhone19,2",
             "iPhone19,3",
+            "iPhone19,4",
             "iPhone19,7"
           ],
           "Releases": [
+            {
+              "Version": "27.2",
+              "Build": "24B92020",
+              "ReleaseDate": "2026-10-26T00:00:00Z",
+              "CVECount": 163,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "27.1",
               "Build": "24A95425",
@@ -1461,20 +1491,192 @@
               "Build": "24A9446",
               "ReleaseDate": "2026-09-28T00:00:00Z",
               "CVECount": 0,
-              "ActivelyExploitedCount": 0
+              "ActivelyExploitedCount": 0,
+              "SupportedDevices": [
+                "iPad12,1",
+                "iPad12,2",
+                "iPad13,1",
+                "iPad13,10",
+                "iPad13,11",
+                "iPad13,16",
+                "iPad13,17",
+                "iPad13,18",
+                "iPad13,19",
+                "iPad13,2",
+                "iPad13,4",
+                "iPad13,5",
+                "iPad13,6",
+                "iPad13,7",
+                "iPad13,8",
+                "iPad13,9",
+                "iPad14,1",
+                "iPad14,10",
+                "iPad14,11",
+                "iPad14,2",
+                "iPad14,3",
+                "iPad14,4",
+                "iPad14,5",
+                "iPad14,6",
+                "iPad14,8",
+                "iPad14,9",
+                "iPad15,3",
+                "iPad15,4",
+                "iPad15,5",
+                "iPad15,6",
+                "iPad15,7",
+                "iPad15,8",
+                "iPad16,1",
+                "iPad16,10",
+                "iPad16,11",
+                "iPad16,2",
+                "iPad16,3",
+                "iPad16,4",
+                "iPad16,5",
+                "iPad16,6",
+                "iPad16,8",
+                "iPad16,9",
+                "iPad17,1",
+                "iPad17,2",
+                "iPad17,3",
+                "iPad17,4",
+                "iPad8,10",
+                "iPad8,11",
+                "iPad8,12",
+                "iPad8,9",
+                "iPhone12,1",
+                "iPhone12,3",
+                "iPhone12,5",
+                "iPhone12,8",
+                "iPhone13,1",
+                "iPhone13,2",
+                "iPhone13,3",
+                "iPhone13,4",
+                "iPhone14,2",
+                "iPhone14,3",
+                "iPhone14,4",
+                "iPhone14,5",
+                "iPhone14,6",
+                "iPhone14,7",
+                "iPhone14,8",
+                "iPhone15,2",
+                "iPhone15,3",
+                "iPhone15,4",
+                "iPhone15,5",
+                "iPhone16,1",
+                "iPhone16,2",
+                "iPhone17,1",
+                "iPhone17,2",
+                "iPhone17,3",
+                "iPhone17,4",
+                "iPhone17,5",
+                "iPhone18,1",
+                "iPhone18,2",
+                "iPhone18,3",
+                "iPhone18,4",
+                "iPhone18,5",
+                "iPhone19,2",
+                "iPhone19,3",
+                "iPhone19,7"
+              ]
             },
             {
               "Version": "27.0",
               "Build": "24A9437",
               "ReleaseDate": "2026-09-14T00:00:00Z",
-              "CVECount": 145,
-              "ActivelyExploitedCount": 0
+              "CVECount": 163,
+              "ActivelyExploitedCount": 0,
+              "SupportedDevices": [
+                "iPad12,1",
+                "iPad12,2",
+                "iPad13,1",
+                "iPad13,10",
+                "iPad13,11",
+                "iPad13,16",
+                "iPad13,17",
+                "iPad13,18",
+                "iPad13,19",
+                "iPad13,2",
+                "iPad13,4",
+                "iPad13,5",
+                "iPad13,6",
+                "iPad13,7",
+                "iPad13,8",
+                "iPad13,9",
+                "iPad14,1",
+                "iPad14,10",
+                "iPad14,11",
+                "iPad14,2",
+                "iPad14,3",
+                "iPad14,4",
+                "iPad14,5",
+                "iPad14,6",
+                "iPad14,8",
+                "iPad14,9",
+                "iPad15,3",
+                "iPad15,4",
+                "iPad15,5",
+                "iPad15,6",
+                "iPad15,7",
+                "iPad15,8",
+                "iPad16,1",
+                "iPad16,10",
+                "iPad16,11",
+                "iPad16,2",
+                "iPad16,3",
+                "iPad16,4",
+                "iPad16,5",
+                "iPad16,6",
+                "iPad16,8",
+                "iPad16,9",
+                "iPad17,1",
+                "iPad17,2",
+                "iPad17,3",
+                "iPad17,4",
+                "iPad8,10",
+                "iPad8,11",
+                "iPad8,12",
+                "iPad8,9",
+                "iPhone12,1",
+                "iPhone12,3",
+                "iPhone12,5",
+                "iPhone12,8",
+                "iPhone13,1",
+                "iPhone13,2",
+                "iPhone13,3",
+                "iPhone13,4",
+                "iPhone14,2",
+                "iPhone14,3",
+                "iPhone14,4",
+                "iPhone14,5",
+                "iPhone14,6",
+                "iPhone14,7",
+                "iPhone14,8",
+                "iPhone15,2",
+                "iPhone15,3",
+                "iPhone15,4",
+                "iPhone15,5",
+                "iPhone16,1",
+                "iPhone16,2",
+                "iPhone17,1",
+                "iPhone17,2",
+                "iPhone17,3",
+                "iPhone17,4",
+                "iPhone17,5",
+                "iPhone18,1",
+                "iPhone18,2",
+                "iPhone18,3",
+                "iPhone18,4",
+                "iPhone18,5",
+                "iPhone19,2",
+                "iPhone19,3",
+                "iPhone19,7"
+              ]
             }
           ]
         },
         {
           "OSVersion": "26",
-          "LatestVersion": "26.7.1",
+          "LatestVersion": "26.7.2",
           "SupportedDevices": [
             "iPad11,1",
             "iPad11,2",
@@ -1574,6 +1776,13 @@
           ],
           "Releases": [
             {
+              "Version": "26.7.2",
+              "Build": "23H6128",
+              "ReleaseDate": "2026-10-26T00:00:00Z",
+              "CVECount": 134,
+              "ActivelyExploitedCount": 0
+            },
+            {
               "Version": "26.7.1",
               "Build": "23H6030",
               "ReleaseDate": "2026-09-28T00:00:00Z",
@@ -1584,7 +1793,7 @@
               "Version": "26.7",
               "Build": "23H6024",
               "ReleaseDate": "2026-09-14T00:00:00Z",
-              "CVECount": 91,
+              "CVECount": 95,
               "ActivelyExploitedCount": 0
             },
             {
@@ -1791,24 +2000,31 @@
       "OSVersions": [
         {
           "OSVersion": "tvOS 27",
-          "LatestVersion": "27.0",
+          "LatestVersion": "27.2",
           "SupportedDevices": [
             "AppleTV11,1",
             "AppleTV14,1"
           ],
           "Releases": [
             {
+              "Version": "27.2",
+              "Build": "24K6122",
+              "ReleaseDate": "2026-10-26",
+              "CVECount": 72,
+              "ActivelyExploitedCount": 0
+            },
+            {
               "Version": "27.0",
               "Build": "24J6361",
               "ReleaseDate": "2026-09-14",
-              "CVECount": 97,
+              "CVECount": 101,
               "ActivelyExploitedCount": 0
             }
           ]
         },
         {
           "OSVersion": "tvOS 26",
-          "LatestVersion": "26.6",
+          "LatestVersion": "26.6.1",
           "SupportedDevices": [
             "AppleTV11,1",
             "AppleTV14,1",
@@ -1816,6 +2032,17 @@
             "AppleTV6,2"
           ],
           "Releases": [
+            {
+              "Version": "26.6.1",
+              "Build": "23L781",
+              "ReleaseDate": "2026-10-26",
+              "CVECount": 0,
+              "ActivelyExploitedCount": 0,
+              "SupportedDevices": [
+                "AppleTV5,3",
+                "AppleTV6,2"
+              ]
+            },
             {
               "Version": "26.6",
               "Build": "23L773",
@@ -1828,49 +2055,77 @@
               "Build": "",
               "ReleaseDate": "2026-05-11",
               "CVECount": 48,
-              "ActivelyExploitedCount": 0
+              "ActivelyExploitedCount": 0,
+              "SupportedDevices": [
+                "AppleTV5,3",
+                "AppleTV6,2"
+              ]
             },
             {
               "Version": "26.4",
               "Build": "",
               "ReleaseDate": "2026-03-24",
               "CVECount": 19,
-              "ActivelyExploitedCount": 0
+              "ActivelyExploitedCount": 0,
+              "SupportedDevices": [
+                "AppleTV5,3",
+                "AppleTV6,2"
+              ]
             },
             {
               "Version": "26.3",
               "Build": "",
               "ReleaseDate": "2026-02-11",
               "CVECount": 17,
-              "ActivelyExploitedCount": 3
+              "ActivelyExploitedCount": 3,
+              "SupportedDevices": [
+                "AppleTV5,3",
+                "AppleTV6,2"
+              ]
             },
             {
               "Version": "26.2",
               "Build": "",
               "ReleaseDate": "2025-12-12",
               "CVECount": 18,
-              "ActivelyExploitedCount": 2
+              "ActivelyExploitedCount": 2,
+              "SupportedDevices": [
+                "AppleTV5,3",
+                "AppleTV6,2"
+              ]
             },
             {
               "Version": "26.1",
               "Build": "",
               "ReleaseDate": "2025-11-03",
               "CVECount": 31,
-              "ActivelyExploitedCount": 2
+              "ActivelyExploitedCount": 2,
+              "SupportedDevices": [
+                "AppleTV5,3",
+                "AppleTV6,2"
+              ]
             },
             {
               "Version": "26.0.1",
               "Build": "",
               "ReleaseDate": "2025-09-29",
               "CVECount": 0,
-              "ActivelyExploitedCount": 0
+              "ActivelyExploitedCount": 0,
+              "SupportedDevices": [
+                "AppleTV5,3",
+                "AppleTV6,2"
+              ]
             },
             {
               "Version": "26.0",
               "Build": "",
               "ReleaseDate": "2025-09-15",
               "CVECount": 22,
-              "ActivelyExploitedCount": 0
+              "ActivelyExploitedCount": 0,
+              "SupportedDevices": [
+                "AppleTV5,3",
+                "AppleTV6,2"
+              ]
             }
           ]
         }
@@ -1881,7 +2136,7 @@
       "OSVersions": [
         {
           "OSVersion": "watchOS 27",
-          "LatestVersion": "27.0.1",
+          "LatestVersion": "27.2",
           "SupportedDevices": [
             "Watch7,1",
             "Watch7,10",
@@ -1909,6 +2164,13 @@
           ],
           "Releases": [
             {
+              "Version": "27.2",
+              "Build": "24S6118",
+              "ReleaseDate": "2026-10-26",
+              "CVECount": 62,
+              "ActivelyExploitedCount": 0
+            },
+            {
               "Version": "27.0.1",
               "Build": "24R6365",
               "ReleaseDate": "2026-09-28",
@@ -1926,7 +2188,7 @@
               "Version": "27.0",
               "Build": "24R6364",
               "ReleaseDate": "2026-09-14",
-              "CVECount": 102,
+              "CVECount": 106,
               "ActivelyExploitedCount": 0
             }
           ]
@@ -2051,12 +2313,19 @@
       "OSVersions": [
         {
           "OSVersion": "visionOS 27",
-          "LatestVersion": "27.0.1",
+          "LatestVersion": "27.2",
           "SupportedDevices": [
             "RealityDevice14,1",
             "RealityDevice17,1"
           ],
           "Releases": [
+            {
+              "Version": "27.2",
+              "Build": "24N6120",
+              "ReleaseDate": "2026-10-26",
+              "CVECount": 125,
+              "ActivelyExploitedCount": 0
+            },
             {
               "Version": "27.0.1",
               "Build": "24M6372",
@@ -2068,7 +2337,7 @@
               "Version": "27.0",
               "Build": "24M6362",
               "ReleaseDate": "2026-09-14",
-              "CVECount": 138,
+              "CVECount": 148,
               "ActivelyExploitedCount": 0
             }
           ]
