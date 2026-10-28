@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "53cc8b976413b84a8e205784ed191875f0e716dd2571f1881bd9285d364cc09f",
-  "LastCheck": "2026-10-28T18:37:41.756574490+00:00",
+  "UpdateHash": "cb077b1b6b0c7e4bef71b816cf14ccef4501a73becfe181d145e27ea23d33e58",
+  "LastCheck": "2026-10-28T19:11:45.671483813+00:00",
   "OSVersions": [
     {
       "OSVersion": "27",
@@ -5291,11 +5291,27 @@
           "ReleaseDate": "2024-11-19T00:00:00Z",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/121752",
-          "SecurityInfoContext": "iOS 18.1.1 was released on November 19, 2024. This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "iOS 18.1.1 was released on November 19, 2024. This release addressed 2 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
-          "CVEs": {},
-          "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 0,
+          "CVEs": {
+            "CVE-2024-44308": {
+              "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2024-44308",
+              "ActivelyExploited": true,
+              "InKEV": true,
+              "Severity": "Critical"
+            },
+            "CVE-2024-44309": {
+              "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2024-44309",
+              "ActivelyExploited": true,
+              "InKEV": true,
+              "Severity": "Critical"
+            }
+          },
+          "ActivelyExploitedCVEs": [
+            "CVE-2024-44309",
+            "CVE-2024-44308"
+          ],
+          "UniqueCVEsCount": 2,
           "DaysSincePreviousRelease": 22,
           "DeviceScope": "universal",
           "SupersededBy": {
@@ -5305,9 +5321,9 @@
             "DaysLater": 22
           },
           "UpdateSummary": {
-            "Priority": "low",
-            "Summary": "Maintenance update with no published CVE entries",
-            "Recommendation": "Update recommended - may include unpublished security improvements",
+            "Priority": "medium",
+            "Summary": "Addresses 2 security issues",
+            "Recommendation": "Update to stay secure - security fixes available",
             "Stats": {
               "Exploited": 0,
               "Critical": 0,
@@ -5315,7 +5331,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 0
+              "Total": 2
             }
           }
         },
