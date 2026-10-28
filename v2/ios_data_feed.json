@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.04.11.2",
   "Version": "2.0",
-  "UpdateHash": "28cd341706cc1156ce6e1fa7d54a810fc0509dba8e2a803573958fe89812d4e3",
-  "LastCheck": "2026-10-28T12:40:32.093803642+00:00",
+  "UpdateHash": "cb077b1b6b0c7e4bef71b816cf14ccef4501a73becfe181d145e27ea23d33e58",
+  "LastCheck": "2026-10-28T17:13:15.115208128+00:00",
   "OSVersions": [
     {
       "OSVersion": "27",
@@ -4400,11 +4400,64 @@
           "ReleaseDate": "2025-11-05T00:00:00Z",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125633",
-          "SecurityInfoContext": "iOS 18.7.2 was released on November 05, 2025. This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "iOS 18.7.2 was released on November 05, 2025. This release addressed 39 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
-          "CVEs": {},
-          "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 0,
+          "CVEs": {
+            "CVE-2025-43365": {},
+            "CVE-2025-43377": {},
+            "CVE-2025-43383": {},
+            "CVE-2025-43384": {},
+            "CVE-2025-43385": {},
+            "CVE-2025-43386": {},
+            "CVE-2025-43389": {},
+            "CVE-2025-43392": {},
+            "CVE-2025-43398": {},
+            "CVE-2025-43399": {},
+            "CVE-2025-43407": {},
+            "CVE-2025-43418": {},
+            "CVE-2025-43423": {},
+            "CVE-2025-43429": {},
+            "CVE-2025-43431": {},
+            "CVE-2025-43433": {},
+            "CVE-2025-43434": {},
+            "CVE-2025-43435": {},
+            "CVE-2025-43438": {},
+            "CVE-2025-43439": {},
+            "CVE-2025-43441": {},
+            "CVE-2025-43442": {},
+            "CVE-2025-43443": {},
+            "CVE-2025-43444": {},
+            "CVE-2025-43445": {},
+            "CVE-2025-43448": {},
+            "CVE-2025-43450": {},
+            "CVE-2025-43454": {},
+            "CVE-2025-43458": {},
+            "CVE-2025-43493": {},
+            "CVE-2025-43494": {},
+            "CVE-2025-43495": {},
+            "CVE-2025-43496": {},
+            "CVE-2025-43499": {},
+            "CVE-2025-43503": {},
+            "CVE-2025-43507": {},
+            "CVE-2025-43510": {
+              "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-43510",
+              "ActivelyExploited": true,
+              "InKEV": true,
+              "Severity": "Critical"
+            },
+            "CVE-2025-43511": {},
+            "CVE-2025-43520": {
+              "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-43520",
+              "ActivelyExploited": true,
+              "InKEV": true,
+              "Severity": "Critical"
+            }
+          },
+          "ActivelyExploitedCVEs": [
+            "CVE-2025-43520",
+            "CVE-2025-43510"
+          ],
+          "UniqueCVEsCount": 39,
           "DaysSincePreviousRelease": 37,
           "DeviceScope": "universal",
           "SupersededBy": {
@@ -4414,9 +4467,9 @@
             "DaysLater": 37
           },
           "UpdateSummary": {
-            "Priority": "low",
-            "Summary": "Maintenance update with no published CVE entries",
-            "Recommendation": "Update recommended - may include unpublished security improvements",
+            "Priority": "high",
+            "Summary": "Addresses 39 security issues",
+            "Recommendation": "Update to stay secure - security fixes available",
             "Stats": {
               "Exploited": 0,
               "Critical": 0,
@@ -4424,7 +4477,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 0
+              "Total": 39
             }
           }
         },

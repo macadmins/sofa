@@ -2,8 +2,8 @@
   "SchemaVersion": "2026.04.11.2",
   "OSName": "visionOS",
   "Version": "2.0",
-  "UpdateHash": "c7bad566bc72558812041a20e38cc8338f0e6b48841e95ad6920dbb376195922",
-  "LastCheck": "2026-10-28T12:40:32.175806546+00:00",
+  "UpdateHash": "e09f2d12451046499b3663069d94081849079f6b6b71cfe6fe5b54be77beaa9d",
+  "LastCheck": "2026-10-28T17:13:15.195337653+00:00",
   "OSVersions": [
     {
       "OSVersion": "visionOS 27",
@@ -1259,11 +1259,13 @@
           "ReleaseDate": "2025-09-29",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125338",
-          "SecurityInfoContext": "visionOS 26.0.1 was released on September 29, 2025. This update has no published CVE entries. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "visionOS 26.0.1 was released on September 29, 2025. This release addressed one security issue. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
-          "CVEs": {},
+          "CVEs": {
+            "CVE-2025-43400": {}
+          },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 0,
+          "UniqueCVEsCount": 1,
           "DaysSincePreviousRelease": 14,
           "SupersededBy": {
             "ProductVersion": "26.1",
@@ -1272,9 +1274,9 @@
             "DaysLater": 35
           },
           "UpdateSummary": {
-            "Priority": "low",
-            "Summary": "Maintenance update with no published CVE entries",
-            "Recommendation": "Update recommended - may include unpublished security improvements",
+            "Priority": "medium",
+            "Summary": "Addresses 1 security issue",
+            "Recommendation": "Update to stay secure - security fixes available",
             "Stats": {
               "Exploited": 0,
               "Critical": 0,
@@ -1282,7 +1284,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 0
+              "Total": 1
             }
           }
         },
