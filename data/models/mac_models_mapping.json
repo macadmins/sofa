@@ -866,12 +866,10 @@
   "MacBookPro13,1": {
     "MarketingName": "MacBook Pro (13-inch, 2016, Two Thunderbolt 3 ports)",
     "SupportedOS": [
-      "ventura",
       "monterey",
       "bigsur"
     ],
     "OSVersions": [
-      13,
       12,
       11
     ],
@@ -904,10 +902,12 @@
   "MacBookPro14,1": {
     "MarketingName": "MacBook Pro (13-inch, 2017, Two Thunderbolt 3 ports)",
     "SupportedOS": [
+      "ventura",
       "monterey",
       "bigsur"
     ],
     "OSVersions": [
+      13,
       12,
       11
     ],
@@ -916,15 +916,11 @@
   "MacBookPro14,2": {
     "MarketingName": "MacBook Pro (13-inch, 2017, Four Thunderbolt 3 ports)",
     "SupportedOS": [
-      "sequoia",
-      "sonoma",
       "ventura",
       "monterey",
       "bigsur"
     ],
     "OSVersions": [
-      15,
-      14,
       13,
       12,
       11
@@ -948,10 +944,16 @@
   "MacBookPro15,1": {
     "MarketingName": "MacBook Pro (15-inch, 2018)",
     "SupportedOS": [
+      "sequoia",
+      "sonoma",
+      "ventura",
       "monterey",
       "bigsur"
     ],
     "OSVersions": [
+      15,
+      14,
+      13,
       12,
       11
     ],
@@ -960,11 +962,15 @@
   "MacBookPro15,2": {
     "MarketingName": "MacBook Pro (13-inch, 2019, Four Thunderbolt 3 ports)",
     "SupportedOS": [
+      "sequoia",
+      "sonoma",
       "ventura",
       "monterey",
       "bigsur"
     ],
     "OSVersions": [
+      15,
+      14,
       13,
       12,
       11
@@ -974,7 +980,6 @@
   "MacBookPro15,3": {
     "MarketingName": "MacBook Pro (15-inch, 2019)",
     "SupportedOS": [
-      "tahoe",
       "sequoia",
       "sonoma",
       "ventura",
@@ -982,7 +987,6 @@
       "bigsur"
     ],
     "OSVersions": [
-      26,
       15,
       14,
       13,
@@ -1336,11 +1340,9 @@
   "iMac15,1": {
     "MarketingName": "iMac (Retina 5K, 27-inch, Mid 2015)",
     "SupportedOS": [
-      "monterey",
       "bigsur"
     ],
     "OSVersions": [
-      12,
       11
     ],
     "BoardID": "Mac-B809C3757DA9BB8D"
@@ -1348,12 +1350,10 @@
   "iMac16,1": {
     "MarketingName": "iMac (21.5-inch, Late 2015)",
     "SupportedOS": [
-      "ventura",
       "monterey",
       "bigsur"
     ],
     "OSVersions": [
-      13,
       12,
       11
     ],
@@ -1362,16 +1362,10 @@
   "iMac16,2": {
     "MarketingName": "iMac (Retina 4K, 21.5-inch, Late 2015)",
     "SupportedOS": [
-      "sequoia",
-      "sonoma",
-      "ventura",
       "monterey",
       "bigsur"
     ],
     "OSVersions": [
-      15,
-      14,
-      13,
       12,
       11
     ],
@@ -1392,10 +1386,12 @@
   "iMac18,1": {
     "MarketingName": "iMac (21.5-inch, 2017)",
     "SupportedOS": [
+      "ventura",
       "monterey",
       "bigsur"
     ],
     "OSVersions": [
+      13,
       12,
       11
     ],
@@ -1450,18 +1446,6 @@
   "iMac19,2": {
     "MarketingName": "iMac (Retina 4K, 21.5-inch, 2019)",
     "SupportedOS": [
-      "monterey",
-      "bigsur"
-    ],
-    "OSVersions": [
-      12,
-      11
-    ],
-    "BoardID": "Mac-66E35819EE2D0D05"
-  },
-  "iMac20,1": {
-    "MarketingName": "iMac (Retina 5K, 27-inch, 2020)",
-    "SupportedOS": [
       "sequoia",
       "sonoma",
       "ventura",
@@ -1475,15 +1459,43 @@
       12,
       11
     ],
+    "BoardID": "Mac-66E35819EE2D0D05"
+  },
+  "iMac20,1": {
+    "MarketingName": "iMac (Retina 5K, 27-inch, 2020)",
+    "SupportedOS": [
+      "tahoe",
+      "sequoia",
+      "sonoma",
+      "ventura",
+      "monterey",
+      "bigsur"
+    ],
+    "OSVersions": [
+      26,
+      15,
+      14,
+      13,
+      12,
+      11
+    ],
     "BoardID": "J780AP"
   },
   "iMac20,2": {
     "MarketingName": "iMac (Retina 5K, 27-inch, 2020)",
     "SupportedOS": [
+      "tahoe",
+      "sequoia",
+      "sonoma",
+      "ventura",
       "monterey",
       "bigsur"
     ],
     "OSVersions": [
+      26,
+      15,
+      14,
+      13,
       12,
       11
     ],
