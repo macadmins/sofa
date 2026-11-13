@@ -1,5 +1,5 @@
 {
-  "UpdateHash": "ddc8c80b3705e894646bcd4c75614b402b1ddbe8a62694c78165a87d66144cfa",
+  "UpdateHash": "c281852e88a731e9e8adb2267e61dd84919d8a2111d09cdc75ac0fc57ab5c2d6",
   "OSVersions": [
     {
       "OSVersion": "Golden Gate 27",
@@ -997,7 +997,9 @@
             "Mac14,13": "Mac Studio (M2 Max, 2023)",
             "Mac14,14": "Mac Studio (M2 Ultra, 2023)",
             "Mac15,14": "Mac Studio (M3 Ultra, 2025)",
-            "Mac16,9": "Mac Studio (M4 Max, 2025)"
+            "Mac16,9": "Mac Studio (M4 Max, 2025)",
+            "Mac17,14": "Mac Studio (M5 Max)",
+            "Mac17,15": "Mac Studio (M5 Ultra)"
           }
         },
         {
@@ -1008,7 +1010,9 @@
             "Mac14,3": "Mac mini (M2, 2023)",
             "Mac16,10": "Mac mini (M4, 2024)",
             "Mac16,11": "Mac mini (M4 Pro, 2024)",
-            "Macmini9,1": "Mac mini (M1, Late 2020)"
+            "Macmini9,1": "Mac mini (M1, Late 2020)",
+            "Mac17,16": "Mac mini (M5 Pro)",
+            "Mac18,5": "Mac mini (M6)"
           }
         },
         {
@@ -1056,12 +1060,17 @@
             "MacBookPro18,1": "MacBook Pro (16-inch, M1 Pro, 2021)",
             "MacBookPro18,2": "MacBook Pro (16-inch, M1 Max, 2021)",
             "MacBookPro18,3": "MacBook Pro (14-inch, M1 Pro, 2021)",
-            "MacBookPro18,4": "MacBook Pro (14-inch, M1 Max, 2021)"
+            "MacBookPro18,4": "MacBook Pro (14-inch, M1 Max, 2021)",
+            "Mac17,10": "MacBook Pro (16-inch PROLED XDR, M5 Pro or M5 Max)",
+            "Mac17,11": "MacBook Pro (14-inch PROLED XDR, M5 Pro or M5 Max)",
+            "Mac17,12": "MacBook Pro (16-inch PROLED XDR, M5 Pro or M5 Max)",
+            "Mac17,13": "MacBook Pro (14-inch PROLED XDR, M5 Pro or M5 Max)",
+            "Mac18,1": "MacBook Pro (14-inch, M6)"
           }
         },
         {
-          "Model": "Macbook Neo",
-          "URL": "https://support.apple.com/en-ca/HT201862",
+          "Model": "MacBook Neo",
+          "URL": "https://support.apple.com/en-ca/docs/mac/301292",
           "Identifiers": {
             "Mac17,5": "MacBook Neo"
           }
@@ -1082,7 +1091,8 @@
             "Mac16,2": "iMac (24-inch, M4, 2024, Two Ports)",
             "Mac16,3": "iMac (24-inch, M4, 2024, Four Ports)",
             "iMac21,1": "iMac (24-inch, M1, 2021, Four Ports)",
-            "iMac21,2": "iMac (24-inch, M1, 2021, Two Ports)"
+            "iMac21,2": "iMac (24-inch, M1, 2021, Two Ports)",
+            "Mac18,2": "iMac (24-inch, M6, 2026)"
           }
         }
       ]
@@ -3171,81 +3181,9 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2025-14174": true,
-            "CVE-2025-43529": true,
-            "CVE-2025-59375": false,
-            "CVE-2026-20601": false,
-            "CVE-2026-20602": false,
-            "CVE-2026-20603": false,
-            "CVE-2026-20605": false,
-            "CVE-2026-20606": false,
-            "CVE-2026-20608": false,
-            "CVE-2026-20609": false,
-            "CVE-2026-20610": false,
-            "CVE-2026-20611": false,
-            "CVE-2026-20612": false,
-            "CVE-2026-20614": false,
-            "CVE-2026-20615": false,
-            "CVE-2026-20616": false,
-            "CVE-2026-20617": false,
-            "CVE-2026-20618": false,
-            "CVE-2026-20619": false,
-            "CVE-2026-20620": false,
-            "CVE-2026-20621": false,
-            "CVE-2026-20622": false,
-            "CVE-2026-20623": false,
-            "CVE-2026-20624": false,
-            "CVE-2026-20625": false,
-            "CVE-2026-20626": false,
-            "CVE-2026-20627": false,
-            "CVE-2026-20628": false,
-            "CVE-2026-20629": false,
-            "CVE-2026-20630": false,
-            "CVE-2026-20634": false,
-            "CVE-2026-20635": false,
-            "CVE-2026-20636": false,
-            "CVE-2026-20637": false,
-            "CVE-2026-20639": false,
-            "CVE-2026-20641": false,
-            "CVE-2026-20644": false,
-            "CVE-2026-20646": false,
-            "CVE-2026-20647": false,
-            "CVE-2026-20648": false,
-            "CVE-2026-20649": false,
-            "CVE-2026-20650": false,
-            "CVE-2026-20651": false,
-            "CVE-2026-20652": false,
-            "CVE-2026-20653": false,
-            "CVE-2026-20654": false,
-            "CVE-2026-20656": false,
-            "CVE-2026-20658": false,
-            "CVE-2026-20660": false,
-            "CVE-2026-20662": false,
-            "CVE-2026-20666": false,
-            "CVE-2026-20667": false,
-            "CVE-2026-20668": false,
-            "CVE-2026-20669": false,
-            "CVE-2026-20670": false,
-            "CVE-2026-20671": false,
-            "CVE-2026-20672": false,
-            "CVE-2026-20673": false,
-            "CVE-2026-20675": false,
-            "CVE-2026-20676": false,
-            "CVE-2026-20677": false,
-            "CVE-2026-20680": false,
-            "CVE-2026-20681": false,
-            "CVE-2026-20694": false,
-            "CVE-2026-20699": false,
-            "CVE-2026-20700": true,
-            "CVE-2026-28855": false
-          },
-          "ActivelyExploitedCVEs": [
-            "CVE-2026-20700",
-            "CVE-2025-43529",
-            "CVE-2025-14174"
-          ],
-          "UniqueCVEsCount": 67,
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 61
         },
         {
@@ -3922,8 +3860,8 @@
           }
         },
         {
-          "Model": "Macbook Neo",
-          "URL": "https://support.apple.com/en-ca/HT201862",
+          "Model": "MacBook Neo",
+          "URL": "https://support.apple.com/en-ca/docs/mac/301292",
           "Identifiers": {
             "Mac17,5": "MacBook Neo"
           }
@@ -8480,60 +8418,9 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2025-43338": false,
-            "CVE-2025-43402": false,
-            "CVE-2025-43403": false,
-            "CVE-2025-43417": false,
-            "CVE-2025-43473": false,
-            "CVE-2025-43533": false,
-            "CVE-2025-46281": false,
-            "CVE-2025-46283": false,
-            "CVE-2025-46290": false,
-            "CVE-2025-46300": false,
-            "CVE-2025-46301": false,
-            "CVE-2025-46302": false,
-            "CVE-2025-46303": false,
-            "CVE-2025-46304": false,
-            "CVE-2025-46305": false,
-            "CVE-2025-46310": false,
-            "CVE-2025-59375": false,
-            "CVE-2026-20602": false,
-            "CVE-2026-20605": false,
-            "CVE-2026-20606": false,
-            "CVE-2026-20609": false,
-            "CVE-2026-20611": false,
-            "CVE-2026-20612": false,
-            "CVE-2026-20614": false,
-            "CVE-2026-20615": false,
-            "CVE-2026-20616": false,
-            "CVE-2026-20617": false,
-            "CVE-2026-20620": false,
-            "CVE-2026-20621": false,
-            "CVE-2026-20622": false,
-            "CVE-2026-20624": false,
-            "CVE-2026-20625": false,
-            "CVE-2026-20627": false,
-            "CVE-2026-20628": false,
-            "CVE-2026-20630": false,
-            "CVE-2026-20634": false,
-            "CVE-2026-20641": false,
-            "CVE-2026-20651": false,
-            "CVE-2026-20653": false,
-            "CVE-2026-20660": false,
-            "CVE-2026-20667": false,
-            "CVE-2026-20670": false,
-            "CVE-2026-20671": false,
-            "CVE-2026-20673": false,
-            "CVE-2026-20675": false,
-            "CVE-2026-20677": false,
-            "CVE-2026-20680": false,
-            "CVE-2026-20694": false,
-            "CVE-2026-20696": false,
-            "CVE-2026-28995": false
-          },
+          "CVEs": {},
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 50,
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 61
         },
         {
@@ -8818,11 +8705,9 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2025-43400": false
-          },
+          "CVEs": {},
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 1,
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 14
         },
         {
@@ -9497,13 +9382,9 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2025-43200": true
-          },
-          "ActivelyExploitedCVEs": [
-            "CVE-2025-43200"
-          ],
-          "UniqueCVEsCount": 1,
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 14
         },
         {
@@ -10767,11 +10648,9 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2023-42940": false
-          },
+          "CVEs": {},
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 1,
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 8
         },
         {
@@ -11904,120 +11783,9 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2024-40864": false,
-            "CVE-2024-54533": false,
-            "CVE-2024-56171": false,
-            "CVE-2024-9681": false,
-            "CVE-2025-24085": true,
-            "CVE-2025-24107": false,
-            "CVE-2025-24111": false,
-            "CVE-2025-24126": false,
-            "CVE-2025-24129": false,
-            "CVE-2025-24131": false,
-            "CVE-2025-24139": false,
-            "CVE-2025-24148": false,
-            "CVE-2025-24157": false,
-            "CVE-2025-24164": false,
-            "CVE-2025-24165": false,
-            "CVE-2025-24170": false,
-            "CVE-2025-24172": false,
-            "CVE-2025-24173": false,
-            "CVE-2025-24177": false,
-            "CVE-2025-24178": false,
-            "CVE-2025-24179": false,
-            "CVE-2025-24181": false,
-            "CVE-2025-24190": false,
-            "CVE-2025-24195": false,
-            "CVE-2025-24198": false,
-            "CVE-2025-24199": false,
-            "CVE-2025-24203": false,
-            "CVE-2025-24205": false,
-            "CVE-2025-24206": false,
-            "CVE-2025-24207": false,
-            "CVE-2025-24210": false,
-            "CVE-2025-24211": false,
-            "CVE-2025-24212": false,
-            "CVE-2025-24215": false,
-            "CVE-2025-24228": false,
-            "CVE-2025-24229": false,
-            "CVE-2025-24230": false,
-            "CVE-2025-24231": false,
-            "CVE-2025-24232": false,
-            "CVE-2025-24233": false,
-            "CVE-2025-24234": false,
-            "CVE-2025-24235": false,
-            "CVE-2025-24237": false,
-            "CVE-2025-24238": false,
-            "CVE-2025-24240": false,
-            "CVE-2025-24241": false,
-            "CVE-2025-24243": false,
-            "CVE-2025-24244": false,
-            "CVE-2025-24246": false,
-            "CVE-2025-24247": false,
-            "CVE-2025-24249": false,
-            "CVE-2025-24250": false,
-            "CVE-2025-24251": false,
-            "CVE-2025-24252": false,
-            "CVE-2025-24253": false,
-            "CVE-2025-24254": false,
-            "CVE-2025-24255": false,
-            "CVE-2025-24256": false,
-            "CVE-2025-24259": false,
-            "CVE-2025-24260": false,
-            "CVE-2025-24261": false,
-            "CVE-2025-24265": false,
-            "CVE-2025-24266": false,
-            "CVE-2025-24267": false,
-            "CVE-2025-24270": false,
-            "CVE-2025-24271": false,
-            "CVE-2025-24272": false,
-            "CVE-2025-24273": false,
-            "CVE-2025-24276": false,
-            "CVE-2025-24277": false,
-            "CVE-2025-24278": false,
-            "CVE-2025-24279": false,
-            "CVE-2025-27113": false,
-            "CVE-2025-30424": false,
-            "CVE-2025-30429": false,
-            "CVE-2025-30431": false,
-            "CVE-2025-30432": false,
-            "CVE-2025-30433": false,
-            "CVE-2025-30438": false,
-            "CVE-2025-30443": false,
-            "CVE-2025-30444": false,
-            "CVE-2025-30445": false,
-            "CVE-2025-30446": false,
-            "CVE-2025-30447": false,
-            "CVE-2025-30449": false,
-            "CVE-2025-30450": false,
-            "CVE-2025-30452": false,
-            "CVE-2025-30456": false,
-            "CVE-2025-30457": false,
-            "CVE-2025-30460": false,
-            "CVE-2025-30462": false,
-            "CVE-2025-30464": false,
-            "CVE-2025-30465": false,
-            "CVE-2025-30470": false,
-            "CVE-2025-30471": false,
-            "CVE-2025-31182": false,
-            "CVE-2025-31187": false,
-            "CVE-2025-31188": false,
-            "CVE-2025-31189": false,
-            "CVE-2025-31191": false,
-            "CVE-2025-31194": false,
-            "CVE-2025-31195": false,
-            "CVE-2025-31197": false,
-            "CVE-2025-31198": false,
-            "CVE-2025-31261": false,
-            "CVE-2025-31264": false,
-            "CVE-2025-43205": false,
-            "CVE-2025-43465": false
-          },
-          "ActivelyExploitedCVEs": [
-            "CVE-2025-24085"
-          ],
-          "UniqueCVEsCount": 108,
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 49
         },
         {
@@ -12157,48 +11925,9 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2024-44172": false,
-            "CVE-2024-54497": false,
-            "CVE-2024-55549": false,
-            "CVE-2025-24086": false,
-            "CVE-2025-24093": false,
-            "CVE-2025-24094": false,
-            "CVE-2025-24099": false,
-            "CVE-2025-24100": false,
-            "CVE-2025-24102": false,
-            "CVE-2025-24103": false,
-            "CVE-2025-24106": false,
-            "CVE-2025-24109": false,
-            "CVE-2025-24114": false,
-            "CVE-2025-24115": false,
-            "CVE-2025-24116": false,
-            "CVE-2025-24120": false,
-            "CVE-2025-24121": false,
-            "CVE-2025-24122": false,
-            "CVE-2025-24123": false,
-            "CVE-2025-24124": false,
-            "CVE-2025-24127": false,
-            "CVE-2025-24130": false,
-            "CVE-2025-24136": false,
-            "CVE-2025-24138": false,
-            "CVE-2025-24139": false,
-            "CVE-2025-24146": false,
-            "CVE-2025-24149": false,
-            "CVE-2025-24151": false,
-            "CVE-2025-24154": false,
-            "CVE-2025-24156": false,
-            "CVE-2025-24174": false,
-            "CVE-2025-24176": false,
-            "CVE-2025-24183": false,
-            "CVE-2025-24185": false,
-            "CVE-2025-24855": false,
-            "CVE-2025-31242": false,
-            "CVE-2025-31248": false,
-            "CVE-2025-43374": false
-          },
+          "CVEs": {},
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 38,
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 47
         },
         {
@@ -13127,41 +12856,9 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2020-19185": false,
-            "CVE-2020-19186": false,
-            "CVE-2020-19187": false,
-            "CVE-2020-19188": false,
-            "CVE-2020-19189": false,
-            "CVE-2020-19190": false,
-            "CVE-2023-3618": false,
-            "CVE-2023-41989": false,
-            "CVE-2023-42834": false,
-            "CVE-2023-42836": false,
-            "CVE-2023-42838": false,
-            "CVE-2023-42884": false,
-            "CVE-2023-42886": false,
-            "CVE-2023-42891": false,
-            "CVE-2023-42892": false,
-            "CVE-2023-42893": false,
-            "CVE-2023-42894": false,
-            "CVE-2023-42896": false,
-            "CVE-2023-42899": false,
-            "CVE-2023-42914": false,
-            "CVE-2023-42919": false,
-            "CVE-2023-42922": false,
-            "CVE-2023-42924": false,
-            "CVE-2023-42930": false,
-            "CVE-2023-42931": false,
-            "CVE-2023-42932": false,
-            "CVE-2023-42936": false,
-            "CVE-2023-42947": false,
-            "CVE-2023-42952": false,
-            "CVE-2023-42974": false,
-            "CVE-2023-5344": false
-          },
+          "CVEs": {},
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 31,
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 34
         },
         {
@@ -13395,36 +13092,9 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2023-38612": false,
-            "CVE-2023-40403": false,
-            "CVE-2023-40406": false,
-            "CVE-2023-40409": false,
-            "CVE-2023-40410": false,
-            "CVE-2023-40412": false,
-            "CVE-2023-40420": false,
-            "CVE-2023-40427": false,
-            "CVE-2023-40452": false,
-            "CVE-2023-40454": false,
-            "CVE-2023-41063": false,
-            "CVE-2023-41070": false,
-            "CVE-2023-41071": false,
-            "CVE-2023-41073": false,
-            "CVE-2023-41232": false,
-            "CVE-2023-41968": false,
-            "CVE-2023-41981": false,
-            "CVE-2023-41984": false,
-            "CVE-2023-41991": true,
-            "CVE-2023-41992": true,
-            "CVE-2023-41996": false,
-            "CVE-2023-42961": false,
-            "CVE-2023-42969": false
-          },
-          "ActivelyExploitedCVEs": [
-            "CVE-2023-41992",
-            "CVE-2023-41991"
-          ],
-          "UniqueCVEsCount": 23,
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 14
         },
         {
@@ -13491,13 +13161,9 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2023-41064": true
-          },
-          "ActivelyExploitedCVEs": [
-            "CVE-2023-41064"
-          ],
-          "UniqueCVEsCount": 1,
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 21
         },
         {
@@ -13785,15 +13451,9 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2023-32434": true,
-            "CVE-2023-32439": true
-          },
-          "ActivelyExploitedCVEs": [
-            "CVE-2023-32439",
-            "CVE-2023-32434"
-          ],
-          "UniqueCVEsCount": 2,
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 34
         },
         {
@@ -14072,108 +13732,9 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2014-1745": false,
-            "CVE-2022-43551": false,
-            "CVE-2022-43552": false,
-            "CVE-2023-0049": false,
-            "CVE-2023-0051": false,
-            "CVE-2023-0054": false,
-            "CVE-2023-0288": false,
-            "CVE-2023-0433": false,
-            "CVE-2023-0512": false,
-            "CVE-2023-23514": false,
-            "CVE-2023-23523": false,
-            "CVE-2023-23525": false,
-            "CVE-2023-23526": false,
-            "CVE-2023-23527": false,
-            "CVE-2023-23532": false,
-            "CVE-2023-23533": false,
-            "CVE-2023-23534": false,
-            "CVE-2023-23535": false,
-            "CVE-2023-23536": false,
-            "CVE-2023-23537": false,
-            "CVE-2023-23538": false,
-            "CVE-2023-23542": false,
-            "CVE-2023-23543": false,
-            "CVE-2023-27928": false,
-            "CVE-2023-27929": false,
-            "CVE-2023-27931": false,
-            "CVE-2023-27932": false,
-            "CVE-2023-27933": false,
-            "CVE-2023-27934": false,
-            "CVE-2023-27935": false,
-            "CVE-2023-27936": false,
-            "CVE-2023-27937": false,
-            "CVE-2023-27939": false,
-            "CVE-2023-27941": false,
-            "CVE-2023-27942": false,
-            "CVE-2023-27943": false,
-            "CVE-2023-27944": false,
-            "CVE-2023-27946": false,
-            "CVE-2023-27947": false,
-            "CVE-2023-27948": false,
-            "CVE-2023-27949": false,
-            "CVE-2023-27950": false,
-            "CVE-2023-27951": false,
-            "CVE-2023-27952": false,
-            "CVE-2023-27953": false,
-            "CVE-2023-27954": false,
-            "CVE-2023-27955": false,
-            "CVE-2023-27956": false,
-            "CVE-2023-27957": false,
-            "CVE-2023-27958": false,
-            "CVE-2023-27961": false,
-            "CVE-2023-27962": false,
-            "CVE-2023-27963": false,
-            "CVE-2023-27966": false,
-            "CVE-2023-27968": false,
-            "CVE-2023-27969": false,
-            "CVE-2023-28178": false,
-            "CVE-2023-28179": false,
-            "CVE-2023-28180": false,
-            "CVE-2023-28181": false,
-            "CVE-2023-28182": false,
-            "CVE-2023-28187": false,
-            "CVE-2023-28188": false,
-            "CVE-2023-28189": false,
-            "CVE-2023-28190": false,
-            "CVE-2023-28192": false,
-            "CVE-2023-28195": false,
-            "CVE-2023-28197": false,
-            "CVE-2023-28198": false,
-            "CVE-2023-28199": false,
-            "CVE-2023-28200": false,
-            "CVE-2023-28201": false,
-            "CVE-2023-28207": false,
-            "CVE-2023-28209": false,
-            "CVE-2023-28210": false,
-            "CVE-2023-28211": false,
-            "CVE-2023-28212": false,
-            "CVE-2023-28213": false,
-            "CVE-2023-28214": false,
-            "CVE-2023-28215": false,
-            "CVE-2023-32356": false,
-            "CVE-2023-32358": false,
-            "CVE-2023-32362": false,
-            "CVE-2023-32366": false,
-            "CVE-2023-32370": false,
-            "CVE-2023-32378": false,
-            "CVE-2023-32426": false,
-            "CVE-2023-32435": true,
-            "CVE-2023-32436": false,
-            "CVE-2023-40383": false,
-            "CVE-2023-40398": false,
-            "CVE-2023-40433": false,
-            "CVE-2023-41075": false,
-            "CVE-2023-42830": false,
-            "CVE-2023-42862": false,
-            "CVE-2023-42865": false
-          },
-          "ActivelyExploitedCVEs": [
-            "CVE-2023-32435"
-          ],
-          "UniqueCVEsCount": 96,
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 0
         },
         {
@@ -14424,64 +13985,9 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2022-24836": false,
-            "CVE-2022-29181": false,
-            "CVE-2022-32919": false,
-            "CVE-2022-32942": false,
-            "CVE-2022-32943": false,
-            "CVE-2022-35252": false,
-            "CVE-2022-42837": false,
-            "CVE-2022-42839": false,
-            "CVE-2022-42840": false,
-            "CVE-2022-42841": false,
-            "CVE-2022-42842": false,
-            "CVE-2022-42843": false,
-            "CVE-2022-42845": false,
-            "CVE-2022-42847": false,
-            "CVE-2022-42852": false,
-            "CVE-2022-42853": false,
-            "CVE-2022-42854": false,
-            "CVE-2022-42855": false,
-            "CVE-2022-42856": true,
-            "CVE-2022-42858": false,
-            "CVE-2022-42859": false,
-            "CVE-2022-42861": false,
-            "CVE-2022-42862": false,
-            "CVE-2022-42863": false,
-            "CVE-2022-42864": false,
-            "CVE-2022-42865": false,
-            "CVE-2022-42866": false,
-            "CVE-2022-42867": false,
-            "CVE-2022-43454": false,
-            "CVE-2022-46689": false,
-            "CVE-2022-46690": false,
-            "CVE-2022-46691": false,
-            "CVE-2022-46692": false,
-            "CVE-2022-46693": false,
-            "CVE-2022-46695": false,
-            "CVE-2022-46696": false,
-            "CVE-2022-46697": false,
-            "CVE-2022-46698": false,
-            "CVE-2022-46699": false,
-            "CVE-2022-46700": false,
-            "CVE-2022-46701": false,
-            "CVE-2022-46703": false,
-            "CVE-2022-46704": false,
-            "CVE-2022-46705": false,
-            "CVE-2022-46710": false,
-            "CVE-2022-46716": false,
-            "CVE-2022-46718": false,
-            "CVE-2022-46720": false,
-            "CVE-2022-46725": false,
-            "CVE-2022-48610": false,
-            "CVE-2022-48618": true
-          },
-          "ActivelyExploitedCVEs": [
-            "CVE-2022-48618",
-            "CVE-2022-42856"
-          ],
-          "UniqueCVEsCount": 51,
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 0
         },
         {
@@ -14843,7 +14349,6 @@
             "Mac14,7": "MacBook Pro (13-inch, M2, 2022)",
             "Mac14,9": "MacBook Pro (14-inch, M2 Pro, 2023)",
             "Mac15,3": "MacBook Pro (14-inch, M3, Nov 2023)",
-            "MacBookPro13,1": "MacBook Pro (13-inch, 2016, Two Thunderbolt 3 ports)",
             "MacBookPro14,1": "MacBook Pro (13-inch, 2017, Two Thunderbolt 3 ports)",
             "MacBookPro14,2": "MacBook Pro (13-inch, 2017, Four Thunderbolt 3 ports)",
             "MacBookPro14,3": "MacBook Pro (15-inch, 2017)",
@@ -15578,33 +15083,9 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2023-36191": false,
-            "CVE-2023-40413": false,
-            "CVE-2023-40416": false,
-            "CVE-2023-40421": false,
-            "CVE-2023-40423": false,
-            "CVE-2023-40425": false,
-            "CVE-2023-40446": false,
-            "CVE-2023-40449": false,
-            "CVE-2023-41975": false,
-            "CVE-2023-42823": false,
-            "CVE-2023-42840": false,
-            "CVE-2023-42844": false,
-            "CVE-2023-42849": false,
-            "CVE-2023-42853": false,
-            "CVE-2023-42854": false,
-            "CVE-2023-42856": false,
-            "CVE-2023-42858": false,
-            "CVE-2023-42859": false,
-            "CVE-2023-42860": false,
-            "CVE-2023-42873": false,
-            "CVE-2023-42877": false,
-            "CVE-2023-42889": false,
-            "CVE-2023-42952": false
-          },
+          "CVEs": {},
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 23,
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 34
         },
         {
@@ -16081,13 +15562,13 @@
           },
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 32,
-          "DaysSincePreviousRelease": 0
+          "DaysSincePreviousRelease": 38
         },
         {
           "UpdateName": "macOS Monterey 12.6.5",
           "ProductName": "macOS",
           "ProductVersion": "12.6.5",
-          "ReleaseDate": "2023-10-31T00:00:00Z",
+          "ReleaseDate": "2023-04-10T00:00:00Z",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/kb/HT213724",
           "SupportedDevices": [
@@ -16150,14 +15631,10 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2023-28206": true
-          },
-          "ActivelyExploitedCVEs": [
-            "CVE-2023-28206"
-          ],
-          "UniqueCVEsCount": 1,
-          "DaysSincePreviousRelease": 218
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
+          "DaysSincePreviousRelease": 14
         },
         {
           "UpdateName": "macOS Monterey 12.6.4",
@@ -16542,13 +16019,13 @@
           },
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 14,
-          "DaysSincePreviousRelease": 0
+          "DaysSincePreviousRelease": 639
         },
         {
           "UpdateName": "macOS Monterey 12.6",
           "ProductName": "macOS",
           "ProductVersion": "12.6",
-          "ReleaseDate": "2024-06-12T00:00:00Z",
+          "ReleaseDate": "2022-09-12T00:00:00Z",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/kb/HT213444",
           "SupportedDevices": [
@@ -16611,53 +16088,10 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2021-39537": false,
-            "CVE-2022-0261": false,
-            "CVE-2022-0318": false,
-            "CVE-2022-0319": false,
-            "CVE-2022-0351": false,
-            "CVE-2022-0359": false,
-            "CVE-2022-0361": false,
-            "CVE-2022-0368": false,
-            "CVE-2022-0392": false,
-            "CVE-2022-1622": false,
-            "CVE-2022-1720": false,
-            "CVE-2022-2000": false,
-            "CVE-2022-2042": false,
-            "CVE-2022-2124": false,
-            "CVE-2022-2125": false,
-            "CVE-2022-2126": false,
-            "CVE-2022-32864": false,
-            "CVE-2022-32866": false,
-            "CVE-2022-32875": false,
-            "CVE-2022-32877": false,
-            "CVE-2022-32881": false,
-            "CVE-2022-32883": false,
-            "CVE-2022-32888": false,
-            "CVE-2022-32896": false,
-            "CVE-2022-32900": false,
-            "CVE-2022-32902": false,
-            "CVE-2022-32904": false,
-            "CVE-2022-32908": false,
-            "CVE-2022-32911": false,
-            "CVE-2022-32913": false,
-            "CVE-2022-32914": false,
-            "CVE-2022-32917": true,
-            "CVE-2022-32924": false,
-            "CVE-2022-32934": false,
-            "CVE-2022-42789": false,
-            "CVE-2022-42790": false,
-            "CVE-2022-42793": false,
-            "CVE-2022-42818": false,
-            "CVE-2022-42819": false,
-            "CVE-2022-46701": false
-          },
-          "ActivelyExploitedCVEs": [
-            "CVE-2022-32917"
-          ],
-          "UniqueCVEsCount": 40,
-          "DaysSincePreviousRelease": 225
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
+          "DaysSincePreviousRelease": 0
         },
         {
           "UpdateName": "macOS Monterey 12.5.1",
@@ -17117,13 +16551,13 @@
             "CVE-2022-22674"
           ],
           "UniqueCVEsCount": 2,
-          "DaysSincePreviousRelease": 2
+          "DaysSincePreviousRelease": 598
         },
         {
           "UpdateName": "macOS Monterey 12.3",
           "ProductName": "macOS",
           "ProductVersion": "12.3",
-          "ReleaseDate": "2023-10-31T00:00:00Z",
+          "ReleaseDate": "2022-03-14T00:00:00Z",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/kb/HT213183",
           "SupportedDevices": [
@@ -17186,79 +16620,9 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2021-22945": false,
-            "CVE-2021-22946": false,
-            "CVE-2021-22947": false,
-            "CVE-2021-30918": false,
-            "CVE-2021-30946": false,
-            "CVE-2021-30977": false,
-            "CVE-2021-36976": false,
-            "CVE-2021-4136": false,
-            "CVE-2021-4166": false,
-            "CVE-2021-4173": false,
-            "CVE-2021-4187": false,
-            "CVE-2021-4192": false,
-            "CVE-2021-4193": false,
-            "CVE-2021-46059": false,
-            "CVE-2022-0128": false,
-            "CVE-2022-0156": false,
-            "CVE-2022-0158": false,
-            "CVE-2022-21658": false,
-            "CVE-2022-22582": false,
-            "CVE-2022-22597": false,
-            "CVE-2022-22599": false,
-            "CVE-2022-22600": false,
-            "CVE-2022-22609": false,
-            "CVE-2022-22610": false,
-            "CVE-2022-22611": false,
-            "CVE-2022-22612": false,
-            "CVE-2022-22613": false,
-            "CVE-2022-22614": false,
-            "CVE-2022-22615": false,
-            "CVE-2022-22616": false,
-            "CVE-2022-22617": false,
-            "CVE-2022-22621": false,
-            "CVE-2022-22624": false,
-            "CVE-2022-22625": false,
-            "CVE-2022-22626": false,
-            "CVE-2022-22627": false,
-            "CVE-2022-22628": false,
-            "CVE-2022-22629": false,
-            "CVE-2022-22630": false,
-            "CVE-2022-22631": false,
-            "CVE-2022-22632": false,
-            "CVE-2022-22633": false,
-            "CVE-2022-22637": false,
-            "CVE-2022-22638": false,
-            "CVE-2022-22639": false,
-            "CVE-2022-22640": false,
-            "CVE-2022-22641": false,
-            "CVE-2022-22643": false,
-            "CVE-2022-22644": false,
-            "CVE-2022-22647": false,
-            "CVE-2022-22648": false,
-            "CVE-2022-22650": false,
-            "CVE-2022-22651": false,
-            "CVE-2022-22655": false,
-            "CVE-2022-22656": false,
-            "CVE-2022-22657": false,
-            "CVE-2022-22660": false,
-            "CVE-2022-22661": false,
-            "CVE-2022-22662": false,
-            "CVE-2022-22663": false,
-            "CVE-2022-22664": false,
-            "CVE-2022-22665": false,
-            "CVE-2022-22668": false,
-            "CVE-2022-22669": false,
-            "CVE-2022-22672": false,
-            "CVE-2022-26688": false,
-            "CVE-2022-26690": false,
-            "CVE-2022-26691": false,
-            "CVE-2022-46706": false
-          },
+          "CVEs": {},
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 69,
+          "UniqueCVEsCount": 0,
           "DaysSincePreviousRelease": 0
         },
         {
@@ -17335,13 +16699,13 @@
             "CVE-2022-22620"
           ],
           "UniqueCVEsCount": 1,
-          "DaysSincePreviousRelease": 4
+          "DaysSincePreviousRelease": 649
         },
         {
           "UpdateName": "macOS Monterey 12.2",
           "ProductName": "macOS",
           "ProductVersion": "12.2",
-          "ReleaseDate": "2023-11-02T00:00:00Z",
+          "ReleaseDate": "2022-01-26T00:00:00Z",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/kb/HT213054",
           "SupportedDevices": [
@@ -17404,28 +16768,10 @@
             "VMA2MACOSAP",
             "VMM-x86_64"
           ],
-          "CVEs": {
-            "CVE-2022-22578": false,
-            "CVE-2022-22579": false,
-            "CVE-2022-22583": false,
-            "CVE-2022-22584": false,
-            "CVE-2022-22585": false,
-            "CVE-2022-22586": false,
-            "CVE-2022-22587": true,
-            "CVE-2022-22589": false,
-            "CVE-2022-22590": false,
-            "CVE-2022-22591": false,
-            "CVE-2022-22592": false,
-            "CVE-2022-22593": false,
-            "CVE-2022-22594": false,
-            "CVE-2022-22646": false,
-            "CVE-2022-22676": false
-          },
-          "ActivelyExploitedCVEs": [
-            "CVE-2022-22587"
-          ],
-          "UniqueCVEsCount": 15,
-          "DaysSincePreviousRelease": 689
+          "CVEs": {},
+          "ActivelyExploitedCVEs": [],
+          "UniqueCVEsCount": 0,
+          "DaysSincePreviousRelease": 44
         },
         {
           "UpdateName": "macOS Monterey 12.1",
@@ -17864,7 +17210,6 @@
           "Model": "iMac",
           "URL": "https://support.apple.com/en-ca/108054",
           "Identifiers": {
-            "iMac15,1": "iMac (Retina 5K, 27-inch, Mid 2015)",
             "iMac16,1": "iMac (21.5-inch, Late 2015)",
             "iMac16,2": "iMac (Retina 4K, 21.5-inch, Late 2015)",
             "iMac17,1": "iMac (Retina 5K, 27-inch, Late 2015)",
@@ -18485,6 +17830,69 @@
         15
       ]
     },
+    "Mac17,10": {
+      "MarketingName": "MacBook Pro (16-inch PROLED XDR, M5 Pro or M5 Max)",
+      "SupportedOS": [
+        "Golden Gate 27"
+      ],
+      "OSVersions": [
+        27
+      ]
+    },
+    "Mac17,11": {
+      "MarketingName": "MacBook Pro (14-inch PROLED XDR, M5 Pro or M5 Max)",
+      "SupportedOS": [
+        "Golden Gate 27"
+      ],
+      "OSVersions": [
+        27
+      ]
+    },
+    "Mac17,12": {
+      "MarketingName": "MacBook Pro (16-inch PROLED XDR, M5 Pro or M5 Max)",
+      "SupportedOS": [
+        "Golden Gate 27"
+      ],
+      "OSVersions": [
+        27
+      ]
+    },
+    "Mac17,13": {
+      "MarketingName": "MacBook Pro (14-inch PROLED XDR, M5 Pro or M5 Max)",
+      "SupportedOS": [
+        "Golden Gate 27"
+      ],
+      "OSVersions": [
+        27
+      ]
+    },
+    "Mac17,14": {
+      "MarketingName": "Mac Studio (M5 Max)",
+      "SupportedOS": [
+        "Golden Gate 27"
+      ],
+      "OSVersions": [
+        27
+      ]
+    },
+    "Mac17,15": {
+      "MarketingName": "Mac Studio (M5 Ultra)",
+      "SupportedOS": [
+        "Golden Gate 27"
+      ],
+      "OSVersions": [
+        27
+      ]
+    },
+    "Mac17,16": {
+      "MarketingName": "Mac mini (M5 Pro)",
+      "SupportedOS": [
+        "Golden Gate 27"
+      ],
+      "OSVersions": [
+        27
+      ]
+    },
     "Mac17,2": {
       "MarketingName": "MacBook Pro 14-inch (M5)",
       "SupportedOS": [
@@ -18571,6 +17979,33 @@
       "OSVersions": [
         27,
         26
+      ]
+    },
+    "Mac18,1": {
+      "MarketingName": "MacBook Pro (14-inch, M6)",
+      "SupportedOS": [
+        "Golden Gate 27"
+      ],
+      "OSVersions": [
+        27
+      ]
+    },
+    "Mac18,2": {
+      "MarketingName": "iMac (24-inch, M6, 2026)",
+      "SupportedOS": [
+        "Golden Gate 27"
+      ],
+      "OSVersions": [
+        27
+      ]
+    },
+    "Mac18,5": {
+      "MarketingName": "Mac mini (M6)",
+      "SupportedOS": [
+        "Golden Gate 27"
+      ],
+      "OSVersions": [
+        27
       ]
     },
     "MacBook10,1": {
@@ -18701,11 +18136,9 @@
     "MacBookPro13,1": {
       "MarketingName": "MacBook Pro (13-inch, 2016, Two Thunderbolt 3 ports)",
       "SupportedOS": [
-        "Ventura 13",
         "Monterey 12"
       ],
       "OSVersions": [
-        13,
         12
       ]
     },
@@ -19100,15 +18533,6 @@
         15,
         14,
         13,
-        12
-      ]
-    },
-    "iMac15,1": {
-      "MarketingName": "iMac (Retina 5K, 27-inch, Mid 2015)",
-      "SupportedOS": [
-        "Monterey 12"
-      ],
-      "OSVersions": [
         12
       ]
     },
