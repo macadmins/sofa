@@ -173,7 +173,7 @@
           <a 
             v-for="(version, idx) in macosVersions.slice(0, 2)"
             :key="idx"
-            :href="version.version.startsWith('27') ? `${baseUrl}/macos/goldengate` : version.version.startsWith('26') ? `${baseUrl}/macos/tahoe` : version.version.startsWith('14') ? `${baseUrl}/macos/sonoma` : `${baseUrl}/macos/sequoia`"
+            :href="version.href"
             class="block"
           >
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-all duration-150 macos-version-card">
@@ -189,10 +189,10 @@
                 </div>
                 <div>
                   <div class="text-base font-bold text-gray-900 dark:text-gray-100">
-                    macOS {{ version.version }}
+                    macOS {{ version.version }}<span v-if="version.exploited" class="ml-1.5 align-middle inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-red-100 text-red-700 dark:bg-red-900/60 dark:text-red-200" style="-webkit-text-fill-color: currentColor; background-image: none;" title="Actively exploited CVE (Apple or CISA KEV)">{{ version.exploited }} exploited</span>
                   </div>
                   <div class="text-xs small-text mt-0.5">
-                    Build {{ version.build }}
+                    Build {{ version.build }}<span v-if="version.moreBuilds" :title="version.buildsTitle" class="cursor-help"> +{{ version.moreBuilds }} more</span>
                   </div>
                 </div>
               </div>
@@ -215,7 +215,7 @@
           <a 
             v-for="(version, idx) in iosVersions.slice(0, 2)"
             :key="idx"
-            :href="version.version.startsWith('26') ? `${baseUrl}/ios/ios26` : version.version.startsWith('17') ? `${baseUrl}/ios/ios17` : `${baseUrl}/ios/ios18`"
+            :href="version.href"
             class="block"
           >
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-ios-300 dark:hover:border-ios-600 transition-all duration-150 ios-version-card">
@@ -231,10 +231,10 @@
                 </div>
                 <div>
                   <div class="text-base font-bold text-gray-900 dark:text-gray-100">
-                    iOS {{ version.version }}
+                    iOS {{ version.version }}<span v-if="version.exploited" class="ml-1.5 align-middle inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-red-100 text-red-700 dark:bg-red-900/60 dark:text-red-200" style="-webkit-text-fill-color: currentColor; background-image: none;" title="Actively exploited CVE (Apple or CISA KEV)">{{ version.exploited }} exploited</span>
                   </div>
                   <div class="text-xs small-text mt-0.5">
-                    Build {{ version.build }}
+                    Build {{ version.build }}<span v-if="version.moreBuilds" :title="version.buildsTitle" class="cursor-help"> +{{ version.moreBuilds }} more</span>
                   </div>
                 </div>
               </div>
@@ -297,7 +297,7 @@
           <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">Latest</span>
         </template>
         <div class="grid grid-cols-1 gap-3 flex-grow">
-          <a v-if="watchOSVersion" :href="`${baseUrl}/watchos/watchos26`" class="block">
+          <a v-if="watchOSVersion" :href="watchOSVersion.href" class="block">
             <div class="group/btn p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-green-300 dark:hover:border-green-600 transition-all duration-150">
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
@@ -320,7 +320,7 @@
               </div>
             </div>
           </a>
-          <a v-if="tvOSVersion" :href="`${baseUrl}/tvos/tvos26`" class="block">
+          <a v-if="tvOSVersion" :href="tvOSVersion.href" class="block">
             <div class="group/btn p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-green-300 dark:hover:border-green-600 transition-all duration-150">
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
@@ -343,7 +343,7 @@
               </div>
             </div>
           </a>
-          <a v-if="visionOSVersion" :href="`${baseUrl}/visionos/visionos26`" class="block">
+          <a v-if="visionOSVersion" :href="visionOSVersion.href" class="block">
             <div class="group/btn p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-green-300 dark:hover:border-green-600 transition-all duration-150">
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
@@ -381,7 +381,7 @@
           <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">Latest</span>
         </template>
         <div class="grid grid-cols-1 gap-3 flex-grow">
-          <a v-if="safariVersion" :href="`${baseUrl}/safari/safari27`" class="block">
+          <a v-if="safariVersion" :href="safariVersion.href" class="block">
             <div class="group/btn p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all duration-150">
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
@@ -422,7 +422,7 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 flex-grow">
           <!-- Safari -->
-          <a v-if="safariVersion" :href="`${baseUrl}/safari/safari27`" class="block">
+          <a v-if="safariVersion" :href="safariVersion.href" class="block">
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-safari-300 dark:hover:border-safari-600 transition-all duration-150 other-platform-safari">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
@@ -445,7 +445,7 @@
           </a>
           
           <!-- tvOS -->
-          <a v-if="tvOSVersion" :href="`${baseUrl}/tvos/tvos26`" class="block">
+          <a v-if="tvOSVersion" :href="tvOSVersion.href" class="block">
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-tvos-300 dark:hover:border-tvos-600 transition-all duration-150 other-platform-tvos">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
@@ -468,7 +468,7 @@
           </a>
           
           <!-- visionOS -->
-          <a v-if="visionOSVersion" :href="`${baseUrl}/visionos/visionos26`" class="block">
+          <a v-if="visionOSVersion" :href="visionOSVersion.href" class="block">
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-visionos-300 dark:hover:border-visionos-600 transition-all duration-150 other-platform-visionos">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
@@ -491,7 +491,7 @@
           </a>
           
           <!-- watchOS -->
-          <a v-if="watchOSVersion" :href="`${baseUrl}/watchos/watchos26`" class="block">
+          <a v-if="watchOSVersion" :href="watchOSVersion.href" class="block">
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-watchos-300 dark:hover:border-watchos-600 transition-all duration-150 other-platform-watchos">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
@@ -1288,6 +1288,10 @@ const getPlatformLink = (platformName: string) => {
 }
 
 const platforms = computed(() => {
+  // From v2/summary.json: the majors Apple still patches, newest first
+  const chips = summaryChips()
+  if (chips.length) return chips
+
   const base = import.meta.env.BASE_URL || '/'
   const basePath = base.endsWith('/') ? base.slice(0, -1) : base
 
@@ -1346,8 +1350,6 @@ const getBetaPlatformClass = (betaPlatform) => {
 }
 
 // Real data from JSON feeds
-const macosData = ref({})
-const iosData = ref({})
 const betaDataRaw = ref({})
 const bulletinData = ref({})
 const timestampData = ref({})
@@ -1488,12 +1490,8 @@ const bentoDisplayOrder = {
 
 // Use composable for data fetching with proper error handling and fallback
 const bulletin = useSOFAData('resources/bulletin_data.json')
-const macos = useSOFAData('v2/macos_data_feed.json')
-const ios = useSOFAData('v2/ios_data_feed.json')
-const tvos = useSOFAData('v2/tvos_data_feed.json')
-const watchos = useSOFAData('v2/watchos_data_feed.json')
-const visionos = useSOFAData('v2/visionos_data_feed.json')
-const safari = useSOFAData('v2/safari_data_feed.json')
+// v2/summary.json (~20 KB) replaces the six full v2 feeds (~960 KB) for the version cards
+const summary = useSOFAData('v2/summary.json')
 const beta = useSOFAData('resources/apple_beta_feed.json')
 const metadata = useSOFAData('resources/sofa-status.json', {
   autoRefresh: true,
@@ -1535,39 +1533,8 @@ watch(() => bulletin.data.value, (newData) => {
   }
 })
 
-watch(() => macos.data.value, (newData) => {
-  if (newData) macosData.value = newData
-})
-
-watch(() => ios.data.value, (newData) => {
-  if (newData) iosData.value = newData
-})
-
 watch(() => beta.data.value, (newData) => {
   if (newData) betaDataRaw.value = newData
-})
-
-// Add refs for the new platform data
-const tvosData = ref({})
-const watchosData = ref({})
-const visionosData = ref({})
-const safariData = ref({})
-
-// Watch for new platform data changes
-watch(() => tvos.data.value, (newData) => {
-  if (newData) tvosData.value = newData
-})
-
-watch(() => watchos.data.value, (newData) => {
-  if (newData) watchosData.value = newData
-})
-
-watch(() => visionos.data.value, (newData) => {
-  if (newData) visionosData.value = newData
-})
-
-watch(() => safari.data.value, (newData) => {
-  if (newData) safariData.value = newData
 })
 
 watch(() => metadata.data.value, (newData) => {
@@ -1620,8 +1587,65 @@ const formatDate = (dateString) => {
   }
 }
 
+// Detail pages that exist, e.g. "ios/ios27", "macos/goldengate"
+const detailPages = new Set(
+  Object.keys(import.meta.glob('../../../{macos,ios,tvos,watchos,visionos,safari}/*.md'))
+    .map(p => p.replace(/^.*\/(\w+)\/(\w+)\.md$/, '$1/$2'))
+)
+
+// Link for a major: its own page if it exists, else the newest page of that platform
+const pageFor = (platform, major, name) => {
+  const dir = platform.toLowerCase()
+  const slug = dir === 'macos' ? `${dir}/${(name || '').toLowerCase().replace(/\s+/g, '')}` : `${dir}/${dir}${major}`
+  if (detailPages.has(slug)) return `${baseUrl.value}/${slug}`
+  const num = p => parseInt(p.match(/(\d+)$/)?.[1] || '0')
+  const newest = [...detailPages].filter(p => p.startsWith(dir + '/')).sort((a, b) => num(b) - num(a))[0]
+  return `${baseUrl.value}/${newest || dir}`
+}
+
+const summaryMajors = (platform) => summary.data.value?.Platforms?.[platform]?.Majors || []
+
+const CHIP_STYLE = {
+  macOS: { icon: MonitorIcon, color: 'macos' }, iOS: { icon: SmartphoneIcon, color: 'ios' },
+  visionOS: { icon: EyeIcon, color: 'visionos' }, tvOS: { icon: TvIcon, color: 'tvos' },
+  watchOS: { icon: WatchIcon, color: 'watchos' }, Safari: { icon: GlobeIcon, color: 'safari' }
+}
+const summaryChips = () =>
+  Object.entries(CHIP_STYLE).flatMap(([platform, style]) =>
+    summaryMajors(platform).map(m => ({
+      name: `${platform.toLowerCase()}-${m.Major}`,
+      label: platform === 'macOS' ? `${m.Name || 'macOS'} ${m.Major}` : `${platform === 'iOS' ? 'iOS/iPadOS' : platform} ${m.Major}`,
+      link: pageFor(platform, m.Major, m.Name),
+      ...style
+    }))
+  )
+
+// One version card from a summary.json major
+const cardFrom = (platform, m) => {
+  const latest = m.Latest
+  // macOS lists boards per build: show the build most Macs get first
+  const builds = [...(latest.Builds || [])].sort((a, b) => (b.Boards || 0) - (a.Boards || 0))
+  return {
+    version: latest.Version,
+    osVersion: m.Name || `${platform} ${m.Major}`,
+    // Safari has no OS build; the bulletin showed its version there
+    build: builds[0]?.Build || (platform === 'Safari' ? latest.Version : 'N/A'),
+    moreBuilds: Math.max(builds.length - 1, 0),
+    buildsTitle: builds.map(b => (b.Boards ? `${b.Build}: ${b.Boards} boards` : b.Build)).join(' · '),
+    releaseDate: formatDate(latest.ReleaseDate),
+    cves: latest.CVEs,
+    exploited: latest.ExploitedCVEs?.length || 0,
+    priority: latest.Priority,
+    name: `${platform} ${latest.Version}`,
+    href: pageFor(platform, m.Major, m.Name)
+  }
+}
+
 // Computed properties for processed data
 const macosVersions = computed(() => {
+  const majors = summaryMajors('macOS')
+  if (majors.length) return majors.slice(0, 2).map(m => cardFrom('macOS', m))
+
   const versions = []
 
   // Try bulletin data first
@@ -1632,28 +1656,11 @@ const macosVersions = computed(() => {
     // Add the latest stable/beta version
     versions.push({
       version: latest.version,
-      osVersion: latest.version.startsWith('27') ? 'Golden Gate' : latest.version.startsWith('15') ? 'Sequoia' : 'Tahoe',
+      osVersion: '',
       build: latest.build,
       releaseDate: formatDate(latest.release_date),
-      cves: latest.total_cve_count
-    })
-  }
-
-  // Add from original data to get additional versions (stable vs beta)
-  if (macosData.value?.OSVersions) {
-    const additionalVersions = macosData.value.OSVersions.slice(0, 2).map(version => ({
-      version: version.Latest.ProductVersion,
-      osVersion: version.OSVersion,
-      build: version.Latest.Build,
-      releaseDate: formatDate(version.Latest.ReleaseDate),
-      cves: version.SecurityReleases?.[0]?.CVEs ? Object.keys(version.SecurityReleases[0].CVEs).length : 0
-    }))
-
-    // Add versions that aren't already included
-    additionalVersions.forEach(newVersion => {
-      if (!versions.some(existing => existing.version === newVersion.version)) {
-        versions.push(newVersion)
-      }
+      cves: latest.total_cve_count,
+      href: pageFor('macOS', latest.version.split('.')[0])
     })
   }
 
@@ -1666,6 +1673,8 @@ const macosVersions = computed(() => {
 })
 
 const iosVersions = computed(() => {
+  const majors = summaryMajors('iOS')
+  if (majors.length) return majors.slice(0, 2).map(m => cardFrom('iOS', m))
   const versions = []
 
   // Try bulletin data first
@@ -1676,28 +1685,11 @@ const iosVersions = computed(() => {
     // Add the latest stable/beta version
     versions.push({
       version: latest.version,
-      osVersion: latest.version.startsWith('18') ? 'iOS' : 'iOS',
+      osVersion: 'iOS',
       build: latest.build,
       releaseDate: formatDate(latest.release_date),
-      cves: latest.total_cve_count
-    })
-  }
-
-  // Add from original data to get additional versions (stable vs beta)
-  if (iosData.value?.OSVersions) {
-    const additionalVersions = iosData.value.OSVersions.slice(0, 2).map(version => ({
-      version: version.Latest.ProductVersion,
-      osVersion: version.OSVersion,
-      build: version.Latest.Build,
-      releaseDate: formatDate(version.Latest.ReleaseDate),
-      cves: version.SecurityReleases?.[0]?.CVEs ? Object.keys(version.SecurityReleases[0].CVEs).length : 0
-    }))
-
-    // Add versions that aren't already included
-    additionalVersions.forEach(newVersion => {
-      if (!versions.some(existing => existing.version === newVersion.version)) {
-        versions.push(newVersion)
-      }
+      cves: latest.total_cve_count,
+      href: pageFor('iOS', latest.version.split('.')[0])
     })
   }
 
@@ -1760,6 +1752,9 @@ const betaReleases = computed(() => {
 })
 
 const safariVersion = computed(() => {
+  const m = summaryMajors('Safari')[0]
+  if (m) return cardFrom('Safari', m)
+
   // Try bulletin data first
   if (bulletinData.value?.latest_releases?.safari) {
     const latest = bulletinData.value.latest_releases.safari
@@ -1768,19 +1763,8 @@ const safariVersion = computed(() => {
       build: latest.build || 'N/A',
       releaseDate: formatDate(latest.release_date),
       cves: latest.total_cve_count,
-      name: `Safari ${latest.version}`
-    }
-  }
-
-  // Fallback to individual Safari feed data
-  if (safariData.value?.OSVersions && safariData.value.OSVersions.length > 0) {
-    const latest = safariData.value.OSVersions[0]
-    return {
-      version: latest.Latest.ProductVersion,
-      build: latest.Latest.Build || 'N/A',
-      releaseDate: formatDate(latest.Latest.ReleaseDate),
-      cves: latest.SecurityReleases?.reduce((total, release) => total + (release.CVEs?.length || 0), 0) || 0,
-      name: `Safari ${latest.Latest.ProductVersion}`
+      name: `Safari ${latest.version}`,
+      href: pageFor('Safari', latest.version.split('.')[0])
     }
   }
 
@@ -1788,6 +1772,9 @@ const safariVersion = computed(() => {
 })
 
 const watchOSVersion = computed(() => {
+  const m = summaryMajors('watchOS')[0]
+  if (m) return cardFrom('watchOS', m)
+
   // Try bulletin data first (but only if it has actual data)
   if (bulletinData.value?.latest_releases?.watchos?.version && bulletinData.value.latest_releases.watchos.version.trim() !== '') {
     const latest = bulletinData.value.latest_releases.watchos
@@ -1796,19 +1783,8 @@ const watchOSVersion = computed(() => {
       build: latest.build || 'N/A',
       releaseDate: formatDate(latest.release_date),
       cves: latest.total_cve_count,
-      name: `watchOS ${latest.version}`
-    }
-  }
-
-  // Fallback to individual watchOS feed data
-  if (watchosData.value?.OSVersions && watchosData.value.OSVersions.length > 0) {
-    const latest = watchosData.value.OSVersions[0]
-    return {
-      version: latest.Latest.ProductVersion,
-      build: latest.Latest.Build || 'N/A',
-      releaseDate: formatDate(latest.Latest.ReleaseDate),
-      cves: latest.SecurityReleases?.reduce((total, release) => total + (release.CVEs?.length || 0), 0) || 0,
-      name: `watchOS ${latest.Latest.ProductVersion}`
+      name: `watchOS ${latest.version}`,
+      href: pageFor('watchOS', latest.version.split('.')[0])
     }
   }
 
@@ -1816,6 +1792,9 @@ const watchOSVersion = computed(() => {
 })
 
 const tvOSVersion = computed(() => {
+  const m = summaryMajors('tvOS')[0]
+  if (m) return cardFrom('tvOS', m)
+
   // Try bulletin data first
   if (bulletinData.value?.latest_releases?.tvos) {
     const latest = bulletinData.value.latest_releases.tvos
@@ -1824,19 +1803,8 @@ const tvOSVersion = computed(() => {
       build: latest.build || 'N/A',
       releaseDate: formatDate(latest.release_date),
       cves: latest.total_cve_count,
-      name: `tvOS ${latest.version}`
-    }
-  }
-
-  // Fallback to individual tvOS feed data
-  if (tvosData.value?.OSVersions && tvosData.value.OSVersions.length > 0) {
-    const latest = tvosData.value.OSVersions[0]
-    return {
-      version: latest.Latest.ProductVersion,
-      build: latest.Latest.Build || 'N/A',
-      releaseDate: formatDate(latest.Latest.ReleaseDate),
-      cves: latest.SecurityReleases?.reduce((total, release) => total + (release.CVEs?.length || 0), 0) || 0,
-      name: `tvOS ${latest.Latest.ProductVersion}`
+      name: `tvOS ${latest.version}`,
+      href: pageFor('tvOS', latest.version.split('.')[0])
     }
   }
 
@@ -1844,6 +1812,9 @@ const tvOSVersion = computed(() => {
 })
 
 const visionOSVersion = computed(() => {
+  const m = summaryMajors('visionOS')[0]
+  if (m) return cardFrom('visionOS', m)
+
   // Try bulletin data first
   if (bulletinData.value?.latest_releases?.visionos) {
     const latest = bulletinData.value.latest_releases.visionos
@@ -1852,19 +1823,8 @@ const visionOSVersion = computed(() => {
       build: latest.build || 'N/A',
       releaseDate: formatDate(latest.release_date),
       cves: latest.total_cve_count,
-      name: `visionOS ${latest.version}`
-    }
-  }
-
-  // Fallback to individual visionOS feed data
-  if (visionosData.value?.OSVersions && visionosData.value.OSVersions.length > 0) {
-    const latest = visionosData.value.OSVersions[0]
-    return {
-      version: latest.Latest.ProductVersion,
-      build: latest.Latest.Build || 'N/A',
-      releaseDate: formatDate(latest.Latest.ReleaseDate),
-      cves: latest.SecurityReleases?.reduce((total, release) => total + (release.CVEs?.length || 0), 0) || 0,
-      name: `visionOS ${latest.Latest.ProductVersion}`
+      name: `visionOS ${latest.version}`,
+      href: pageFor('visionOS', latest.version.split('.')[0])
     }
   }
 
