@@ -16,7 +16,11 @@ No complex path detection, minimal TOML parsing.
 __version__ = "0.2.0"
 
 import json
+import os
+import signal
 import subprocess
+import threading
+from collections import deque
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -60,30 +64,26 @@ def run_binary_command(cmd: List[str], stage_name: str, timeout: int = 600) -> S
     start_time = datetime.now()
     
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+        # Stream output live (with seconds since start) so a slow or killed stage
+        # shows where the time went; keep the tail for the error message.
+        proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1, start_new_session=True)
+        timer = threading.Timer(timeout, os.killpg, (proc.pid, signal.SIGKILL))
+        timer.start()
+        tail = deque(maxlen=5)
+        for line in proc.stdout:
+            line = line.rstrip()
+            tail.append(line)
+            print(f"[{(datetime.now() - start_time).total_seconds():6.1f}s] {line}", flush=True)
+        returncode = proc.wait()
+        timed_out = not timer.is_alive()
+        timer.cancel()
         duration = (datetime.now() - start_time).total_seconds()
-        
-        # Show command output for transparency (last 300 chars to keep it readable)
-        if result.stdout:
-            # Clean up and show relevant output only
-            clean_output = result.stdout.strip()
-            if len(clean_output) > 300:
-                clean_output = "..." + clean_output[-300:]
-            console.print(f"[dim]stdout: {clean_output}[/dim]")
-        if result.stderr:
-            console.print(f"[red]stderr: {result.stderr[-300:]}[/red]")
-        
-        if result.returncode == 0:
+
+        if timed_out:
+            return StageResult(stage_name, False, duration, f"Timed out after {timeout}s")
+        if returncode == 0:
             return StageResult(stage_name, True, duration, "Completed successfully")
-        else:
-            error_msg = f"Exit code {result.returncode}"
-            if result.stderr:
-                error_msg += f": {result.stderr[:300]}"
-            return StageResult(stage_name, False, duration, error_msg)
-            
-    except subprocess.TimeoutExpired:
-        duration = (datetime.now() - start_time).total_seconds()
-        return StageResult(stage_name, False, duration, f"Timed out after {timeout}s")
+        return StageResult(stage_name, False, duration, f"Exit code {returncode}: " + " | ".join(tail)[-300:])
     except Exception as e:
         duration = (datetime.now() - start_time).total_seconds()
         return StageResult(stage_name, False, duration, str(e))
