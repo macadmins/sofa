@@ -1,0 +1,101 @@
+name: 07 - CSAF update
+
+# Apple's CSAF JSON per advisory, requested separately from the main pipeline: Apple
+# throttles these requests per IP, and publishing a new bulletin must not wait for them.
+# - the main pipeline (01) requests JSON only for new advisories, within 60 s
+# - this workflow re-checks known advisories and completes what 01 had no time for:
+#   preload ~25 min before the regular runs, postload right after 01 and ~20 min later
+# Runs that find nothing due make no requests and commit nothing.
+
+on:
+  workflow_run:
+    workflows: ["01 - SOFA build pipeline"]
+    types: [completed]
+    branches: [main]
+  schedule:
+    # preload (01 runs at :30 every 6 h, and weekdays hourly 17:00-20:00 UTC)
+    - cron: "5 */6 * * *"
+    - cron: "35 16-19 * * 1-5"
+    # postload
+    - cron: "50 */6 * * *"
+    - cron: "20 17-20 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      budget:
+        description: "Seconds for requests to Apple"
+        default: "300"
+
+# Shared with 01: never commit at the same time (01 pushes without retry).
+concurrency:
+  group: sofa-data
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  csaf:
+    if: github.event.repository.fork == false && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Download SOFA CLI binaries
+        run: |
+          mkdir -p bin
+          curl -L -f -o sofa.tar.gz "https://github.com/headmin/sofa-core-cli/releases/download/v0.3.7/sofa-0.3.7-linux-x86_64.tar.gz"
+          tar xzf sofa.tar.gz -C bin/ && rm sofa.tar.gz && chmod +x bin/*
+          ./bin/sofa-fetch --version
+
+      - name: Fetch Apple's CSAF JSON
+        run: ./bin/sofa-fetch csaf --budget "${{ github.event.inputs.budget || '300' }}"
+
+      - name: Check for changes
+        id: changes
+        run: |
+          # content: a new revision in the archive or a logged change -> rebuild and deploy
+          if git status --porcelain data/resources/csaf data/resources/apple_csaf_changes.ndjson | grep -q .; then
+            echo "content=true" >> "$GITHUB_OUTPUT"
+          fi
+          # check times only (304s): commit them so the rotation knows what was confirmed
+          if git status --porcelain data/resources/apple_security_csaf.ndjson | grep -q .; then
+            echo "checked=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: astral-sh/setup-uv@v7
+        if: steps.changes.outputs.content == 'true'
+        with:
+          version: "0.13.4"
+
+      - name: Rebuild feeds
+        if: steps.changes.outputs.content == 'true'
+        run: |
+          export SOFA_BIN_PATH="./bin" PATH="./bin:$PATH"
+          uv run --script scripts/sofa_pipeline.py run build
+          uv run --script scripts/sofa_pipeline.py run bulletin
+
+      - name: Commit and push
+        if: steps.changes.outputs.content == 'true' || steps.changes.outputs.checked == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "SOFA Pipeline"
+          if [ "${{ steps.changes.outputs.content }}" = "true" ]; then
+            git add data/resources/ v1/ v2/
+            msg="🔄 SOFA CSAF update"
+          else
+            git add data/resources/apple_security_csaf.ndjson
+            msg="🔄 SOFA CSAF check"
+          fi
+          git diff --staged --quiet && { echo "Nothing to commit"; exit 0; }
+          git commit -m "$msg - $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git pull --rebase --autostash && git push
+
+      - name: Deploy
+        if: steps.changes.outputs.content == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run 02_r2-upload.yml --ref main
+          gh workflow run 03_sofa-deploy-feeds.yml --ref main -f environment=production

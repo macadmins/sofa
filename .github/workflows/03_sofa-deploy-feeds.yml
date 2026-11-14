@@ -90,7 +90,7 @@ jobs:
           
           # Minify V2 feeds
           echo "Processing V2 feeds..."
-          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json" "summary.json")
+          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json" "summary.json" "index.json")
           for feed in "${V2_FEEDS[@]}"; do
             [ -f "v2/$feed" ] || { echo "  Skipping v2/$feed (not built)"; continue; }
             echo "  Minifying v2/$feed"
@@ -130,7 +130,7 @@ jobs:
           
           # Compress V2 feeds
           echo "Compressing V2 feeds..."
-          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json" "summary.json")
+          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json" "summary.json" "index.json")
           for feed in "${V2_FEEDS[@]}"; do
             [ -f "v2/$feed" ] || continue
             echo "  Compressing v2/$feed"
@@ -177,7 +177,7 @@ jobs:
           
           # Upload V2 feeds to production
           echo "Uploading V2 feeds to production..."
-          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json" "summary.json")
+          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json" "summary.json" "index.json")
           for feed in "${V2_FEEDS[@]}"; do
             [ -f "v2/$feed" ] || continue
             echo "  Uploading v2/$feed"
@@ -186,7 +186,7 @@ jobs:
           done
           
           echo "✅ Production feeds (V1 + V2) uploaded to DigitalOcean"
-          echo "- **Production Deployment**: ✅ Complete (V1: 3 feeds + RSS, V2: 6 feeds + summary)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Production Deployment**: ✅ Complete (V1: 3 feeds + RSS, V2: 6 feeds + summary + index)" >> $GITHUB_STEP_SUMMARY
           
       - name: Deployment summary
         if: always()

@@ -28,6 +28,11 @@ on:
 env:
   PYTHON_VERSION: "3.13"
 
+# Shared with 07 (CSAF update): never commit at the same time.
+concurrency:
+  group: sofa-data
+  cancel-in-progress: false
+
 jobs:
   pipeline:
     name: SOFA Production Pipeline
@@ -113,8 +118,8 @@ jobs:
           mkdir -p bin
 
           # Use latest stable release
-          DOWNLOAD_URL="https://github.com/headmin/sofa-core-cli/releases/download/v0.3.6"
-          LINUX_TAR="sofa-0.3.6-linux-x86_64.tar.gz"
+          DOWNLOAD_URL="https://github.com/headmin/sofa-core-cli/releases/download/v0.3.7"
+          LINUX_TAR="sofa-0.3.7-linux-x86_64.tar.gz"
 
           echo "  • Downloading Linux binaries: $LINUX_TAR"
           if curl -L -f -o "$LINUX_TAR" "$DOWNLOAD_URL/$LINUX_TAR"; then
@@ -469,7 +474,7 @@ jobs:
             Pipeline stage: ${{ github.event.inputs.pipeline_stage }} | Files: $TOTAL_CHANGES
             Updates: $CHANGE_SUMMARY
 
-            Generated with sofa_pipeline.py v0.2.0 + v0.3.6 binaries"
+            Generated with sofa_pipeline.py v0.2.0 + v0.3.7 binaries"
 
             git push
             echo "✅ Detailed pipeline data committed to repository"
