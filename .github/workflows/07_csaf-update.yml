@@ -1,11 +1,14 @@
 name: 07 - CSAF update
 
 # Apple's CSAF JSON per advisory, requested separately from the main pipeline: Apple
-# throttles these requests per IP, and publishing a new bulletin must not wait for them.
+# throttles these requests per IP (from GitHub runners about one every ~2 min), and
+# publishing a new bulletin must not wait for them.
 # - the main pipeline (01) requests JSON only for new advisories, within 60 s
 # - this workflow re-checks known advisories and completes what 01 had no time for:
 #   preload ~25 min before the regular runs, postload right after 01 and ~20 min later
-# Runs that find nothing due make no requests and commit nothing.
+# Two jobs: `fetch` takes its time without holding the lock; `apply` merges the result
+# into the latest main inside the lock shared with 01 (seconds), rebuilds and deploys
+# only when Apple's content changed, otherwise commits just the check times.
 
 on:
   workflow_run:
@@ -23,34 +26,70 @@ on:
     inputs:
       budget:
         description: "Seconds for requests to Apple"
-        default: "300"
-
-# Shared with 01: never commit at the same time (01 pushes without retry).
-concurrency:
-  group: sofa-data
-  cancel-in-progress: false
+        default: "900"
 
 permissions:
   contents: write
   actions: write
 
+env:
+  SOFA_CLI: https://github.com/headmin/sofa-core-cli/releases/download/v0.3.7/sofa-0.3.7-linux-x86_64.tar.gz
+
 jobs:
-  csaf:
+  fetch:
     if: github.event.repository.fork == false && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
+    # one fetch at a time; it does not block 01
+    concurrency:
+      group: sofa-csaf-fetch
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v5
 
       - name: Download SOFA CLI binaries
         run: |
-          mkdir -p bin
-          curl -L -f -o sofa.tar.gz "https://github.com/headmin/sofa-core-cli/releases/download/v0.3.7/sofa-0.3.7-linux-x86_64.tar.gz"
-          tar xzf sofa.tar.gz -C bin/ && rm sofa.tar.gz && chmod +x bin/*
+          mkdir -p bin && curl -L -f "$SOFA_CLI" | tar xz -C bin/ && chmod +x bin/*
           ./bin/sofa-fetch --version
 
       - name: Fetch Apple's CSAF JSON
-        run: ./bin/sofa-fetch csaf --budget "${{ github.event.inputs.budget || '300' }}"
+        run: ./bin/sofa-fetch csaf --budget "${{ github.event.inputs.budget || '900' }}"
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: csaf
+          path: |
+            data/resources/apple_security_csaf.ndjson
+            data/resources/csaf/
+          retention-days: 1
+
+  apply:
+    needs: fetch
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # shared with 01: never commit at the same time (01 pushes without retry)
+    concurrency:
+      group: sofa-data
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - uses: actions/download-artifact@v6
+        with:
+          name: csaf
+          path: ${{ runner.temp }}/csaf
+
+      - name: Download SOFA CLI binaries
+        run: |
+          mkdir -p bin && curl -L -f "$SOFA_CLI" | tar xz -C bin/ && chmod +x bin/*
+
+      - name: Merge into the latest data
+        run: |
+          mkdir -p data/resources/csaf
+          cp -n "${{ runner.temp }}"/csaf/csaf/* data/resources/csaf/ 2>/dev/null || true
+          ./bin/sofa-fetch csaf --merge-from "${{ runner.temp }}/csaf/apple_security_csaf.ndjson"
 
       - name: Check for changes
         id: changes
