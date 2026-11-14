@@ -1,9 +1,9 @@
 {
-  "SchemaVersion": "2026.11.14.3",
+  "SchemaVersion": "2026.11.14.4",
   "OSName": "visionOS",
   "Version": "2.0",
   "UpdateHash": "6aa17f2c69c934a267a9e90e4f34ef0b3df5dab26d5b99357fa3658cf5989b52",
-  "LastCheck": "2026-11-14T20:51:34.356989919+00:00",
+  "LastCheck": "2026-11-14T21:07:10.996867054+00:00",
   "OSVersions": [
     {
       "OSVersion": "visionOS 27",
@@ -2140,7 +2140,7 @@
       "Name": "Apple Product Security",
       "URL": "https://support.apple.com/en-us/100100",
       "Format": "CSAF 2.1 + HTML",
-      "Retrieved": "2026-11-14T20:51:33.672078863Z"
+      "Retrieved": "2026-11-14T21:07:10.224333556Z"
     },
     "KEV": {
       "Layer": 2,
@@ -2153,11 +2153,11 @@
     "CVE-2022-26704": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Spotlight",
         "Impact": "An app may be able to gain elevated privileges",
         "Description": "A validation issue existed in the handling of symlinks. This issue was addressed with improved validation of symlinks.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2024-44308": {
@@ -2345,11 +2345,11 @@
         "KEV"
       ],
       "Apple": {
-        "Advisory": "APPLE-SA-149715",
+        "Advisory": "APPLE-SA-149724",
         "Component": "brotli",
         "Impact": "Processing maliciously crafted input may lead to memory corruption",
         "Description": "An out-of-bounds write issue was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       },
       "KEV": {
         "DateAdded": "2026-10-27",
@@ -2360,41 +2360,41 @@
     "CVE-2026-112413": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Model I/O",
         "Impact": "Processing a maliciously crafted file may lead to unexpected app termination",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112414": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Mail",
         "Impact": "Processing a maliciously crafted message may lead to a denial-of-service",
         "Description": "A stack overflow was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112415": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "AppleAVD",
         "Impact": "An app may be able to cause unexpected system termination or corrupt process memory",
         "Description": "An out-of-bounds write was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112416": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "AppleAVD",
         "Impact": "Processing a maliciously crafted video file may lead to unexpected app termination",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112417": {
@@ -2410,1131 +2410,1131 @@
     "CVE-2026-112423": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "SceneKit",
         "Impact": "Processing a maliciously crafted file may lead to a denial-of-service or potentially disclose memory contents",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112425": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "SceneKit",
         "Impact": "Processing a 3D model may result in disclosure of process memory",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112432": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "FontParser",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "A logging issue was addressed with improved data redaction.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112446": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149035",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Accounts",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "This issue was addressed with additional entitlement checks.",
-        "AvailableFor": "MacBook Neo (2026), MacBook Air with Apple silicon (2020 and later), MacBook Pro with Apple silicon (2020 and later), iMac with Apple silicon (2021 and later), Mac mini with Apple silicon (2020 and later), Mac Studio (2022 and later), and Mac Pro with Apple silicon (2023)"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112449": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Model I/O",
         "Impact": "Processing a maliciously crafted 3D model may lead to memory corruption",
         "Description": "An integer overflow was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112454": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "AppleAVD",
         "Impact": "Processing a maliciously crafted video file may lead to unexpected app termination or corrupt process memory",
         "Description": "The issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112455": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Shortcuts",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "An authorization issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112461": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Model I/O",
         "Impact": "Processing a maliciously crafted 3D model may lead to memory corruption",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112464": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "SceneKit",
         "Impact": "Processing a maliciously crafted file may lead to heap corruption",
         "Description": "An out-of-bounds write issue was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112466": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "AVEVideoEncoder",
         "Impact": "An app may be able to cause unexpected system termination or read kernel memory",
         "Description": "An out-of-bounds read was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112468": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "AVEVideoEncoder",
         "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112469": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "AVEVideoEncoder",
         "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112470": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "AVEVideoEncoder",
         "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112474": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination or write kernel memory",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112476": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112477": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "IOSurface",
         "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
         "Description": "A race condition was addressed with improved locking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112485": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Model I/O",
         "Impact": "Processing a maliciously crafted 3D model may lead to memory corruption",
         "Description": "The issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112486": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Model I/O",
         "Impact": "Processing a 3D model may lead to unexpected app termination",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112488": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "ImageIO",
         "Impact": "Processing a maliciously crafted image may corrupt process memory",
         "Description": "A buffer overflow issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112491": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "RealityKit",
         "Impact": "Processing a maliciously crafted file may lead to unexpected app termination",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112500": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Mail",
         "Impact": "The user's original email address may be leaked when using the Hide My Email feature",
         "Description": "A logic issue was addressed with improved restrictions.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112501": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A race condition was addressed with improved state handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112514": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Kernel",
         "Impact": "An attacker may be able to cause unexpected system termination or corrupt kernel memory",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112515": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "IOHIDFamily",
         "Impact": "An attacker may be able to cause unexpected system termination or read kernel memory",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112516": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112517": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
         "Description": "A use after free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112518": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Heimdal",
         "Impact": "An attacker in a privileged network position may be able to impersonate a Kerberos KDC",
         "Description": "An issue with signature validation was addressed with improved checks.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112546": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Audio",
         "Impact": "Processing a maliciously crafted file may lead to unexpected app termination",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112559": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Shortcuts",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "An authorization issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112560": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "ImageIO",
         "Impact": "Processing a maliciously crafted image may result in disclosure of process memory",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112561": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "ImageIO",
         "Impact": "Processing a maliciously crafted image may result in disclosure of process memory",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112563": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149521",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Model I/O",
         "Impact": "Processing a maliciously crafted file may lead to unexpected app termination",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "macOS Golden Gate"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112565": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149041",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Model I/O",
         "Impact": "Processing a maliciously crafted 3D model may lead to memory corruption",
         "Description": "An integer overflow was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112566": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Bluetooth",
         "Impact": "An attacker in physical proximity may be able to cause a denial-of-service",
         "Description": "A null pointer dereference was addressed with improved validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112567": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Spotlight",
         "Impact": "A malicious application may be able to bypass Privacy preferences",
         "Description": "This issue was addressed with improved checks.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112571": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "ImageIO",
         "Impact": "Processing a maliciously crafted image may result in disclosure of process memory",
         "Description": "A memory initialization issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112576": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected changes to copy-on-write memory",
         "Description": "A memory integrity issue was addressed with improved handling of copy-on-write pages.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112596": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "HomeKit",
         "Impact": "Processing a maliciously crafted video file may lead to unexpected system termination",
         "Description": "An integer overflow was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112599": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to an unexpected process crash",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112606": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A type confusion issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112608": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Core Bluetooth",
         "Impact": "Processing a maliciously crafted Bluetooth packet may result in disclosure of process memory",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112615": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112616": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Screen Time",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "An authorization issue was addressed with improved access control.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112618": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Files",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "An access issue was addressed with improved access restrictions.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112619": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Calendar",
         "Impact": "Processing a maliciously crafted calendar invitation may lead to memory corruption",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112620": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Wi-Fi",
         "Impact": "An attacker in a privileged network position may be able to cause a denial-of-service",
         "Description": "A denial-of-service issue was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112621": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "LinkPresentation",
         "Impact": "Processing a maliciously crafted image may result in memory corruption",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112623": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112624": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Kernel",
         "Impact": "An app may be able to bypass Privacy preferences",
         "Description": "This issue was addressed with improved checks.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112626": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit JavaScript Bindings",
         "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112627": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "ImageIO",
         "Impact": "Processing a maliciously crafted image may result in disclosure of process memory",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112628": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Spotlight",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "This issue was addressed with improved data access restriction.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112629": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "ImageIO",
         "Impact": "Processing a maliciously crafted image may lead to unexpected app termination",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112632": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "ImageIO",
         "Impact": "Processing a maliciously crafted image may result in disclosure of process memory",
         "Description": "An uninitialized memory issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112634": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "ImageIO",
         "Impact": "Processing a maliciously crafted image may lead to unexpected app termination",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112637": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit Canvas",
         "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112638": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "CoreAudio",
         "Impact": "An attacker in radio range may be able to cause unexpected system termination",
         "Description": "A heap buffer overflow was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112639": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit Process Model",
         "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112640": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to memory corruption",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112642": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "FontParser",
         "Impact": "Processing a maliciously crafted font may result in the disclosure of process memory",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112646": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "SpringBoard",
         "Impact": "An app may be able to cause unexpected system termination or corrupt process memory",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112651": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112652": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Security",
         "Impact": "An malicious app may be able to bypass certificate validation",
         "Description": "A logic issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112653": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112654": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112655": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112656": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "CoreText",
         "Impact": "Processing a maliciously crafted font may result in the disclosure of process memory",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112659": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
         "Description": "A type confusion issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112660": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Photos Storage",
         "Impact": "An app may be able to bypass certain Privacy preferences",
         "Description": "An authorization issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112665": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Kernel",
         "Impact": "An app may be able to determine kernel memory layout",
         "Description": "An information disclosure issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112671": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Mail",
         "Impact": "A remote attacker may be able to cause a denial-of-service",
         "Description": "A resource exhaustion issue was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112673": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
         "Description": "A type confusion issue was addressed with improved state handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112676": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Photos Storage",
         "Impact": "An app may be able to access a user's Photos Library",
         "Description": "This issue was addressed with additional entitlement checks.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112678": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Calendar",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "A permissions issue was addressed with additional restrictions.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112679": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112680": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may result in the disclosure of process memory",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112682": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Messages",
         "Impact": "A remote attacker may be able to cause unexpected app termination",
         "Description": "An input validation issue was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112683": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "FontParser",
         "Impact": "Processing a maliciously crafted font may lead to unexpected app termination or corrupt process memory",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112684": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to an unexpected process crash",
         "Description": "This issue was addressed through improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112685": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Siri",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "An authorization issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112686": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
         "Description": "A race condition was addressed with improved locking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112690": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "App Store",
         "Impact": "A remote attacker may be able to break out of the WebContent sandbox",
         "Description": "This issue was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112691": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "SwiftUI",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "An out-of-bounds write issue was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112692": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "App Intents",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "This issue was addressed with additional entitlement checks.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112693": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112695": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112696": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Apple Neural Engine",
         "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112697": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112699": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may result in the disclosure of process memory",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-112706": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "CoreMedia",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "A permissions issue was addressed with additional restrictions.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113896": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "FileProvider",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "A race condition was addressed with additional validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113897": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit Process Model",
         "Impact": "A remote attacker may be able to break out of Web Content sandbox",
         "Description": "This issue was addressed by removing the vulnerable code.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113898": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Accounts",
         "Impact": "A malicious application may be able to bypass Privacy preferences",
         "Description": "A logging issue was addressed with improved data redaction.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113901": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebRTC",
         "Impact": "Processing maliciously crafted web content may lead to an unexpected process crash",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113903": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to unexpected memory modification",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113904": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to an unexpected process crash",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113907": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "CoreAudio",
         "Impact": "An app may be able to cause unexpected system termination or corrupt process memory",
         "Description": "A buffer overflow issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113909": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Wi-Fi",
         "Impact": "An attacker in physical proximity may be able to corrupt process memory",
         "Description": "A memory corruption issue was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113910": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Compression",
         "Impact": "An app may be able to disclose kernel memory",
         "Description": "A memory initialization issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113912": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149041",
+        "Advisory": "APPLE-SA-149526",
         "Component": "CoreAudio",
         "Impact": "Processing a maliciously crafted media file may lead to unexpected app termination or corrupt process memory",
         "Description": "An out-of-bounds access issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113913": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Security",
         "Impact": "Processing web content may disclose sensitive information",
         "Description": "An input validation issue was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113915": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "MediaAnalysis",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "A race condition was addressed with additional validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113949": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to memory corruption",
         "Description": "A type confusion issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113950": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "CoreGraphics",
         "Impact": "Processing a maliciously crafted font may lead to unexpected app termination or corrupt process memory",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113960": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149715",
+        "Advisory": "APPLE-SA-149724",
         "Component": "Messages",
         "Impact": "A user added to an iMessage group may be able to access messages sent before they joined",
         "Description": "This issue was addressed by removing the vulnerable code.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113961": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149715",
+        "Advisory": "APPLE-SA-149724",
         "Component": "Messages",
         "Impact": "A remote attacker may be able to join an iMessage group chat and receive its messages",
         "Description": "An authorization issue was addressed with improved validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113963": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149715",
+        "Advisory": "APPLE-SA-149724",
         "Component": "App Intents",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "An authorization issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113964": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149715",
+        "Advisory": "APPLE-SA-149724",
         "Component": "CoreUtils",
         "Impact": "An attacker in Bluetooth range may be able to bypass the rate limit on pairing code attempts and pair with a device without user interaction",
         "Description": "A logic issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113965": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149715",
+        "Advisory": "APPLE-SA-149724",
         "Component": "CoreUtils",
         "Impact": "A malicious Bluetooth device may be able to establish a pairing without user interaction",
         "Description": "This issue was addressed with improved checks.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113968": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149715",
+        "Advisory": "APPLE-SA-149724",
         "Component": "AirPlay",
         "Impact": "An attacker in Bluetooth range may be able to bypass the rate limit on pairing code attempts",
         "Description": "A logic issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113969": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149715",
+        "Advisory": "APPLE-SA-149724",
         "Component": "rapportd",
         "Impact": "An attacker on the same network may be able to bypass the rate limit on AirPlay pairing code attempts",
         "Description": "A logic issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-113970": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149715",
+        "Advisory": "APPLE-SA-149724",
         "Component": "Bluetooth",
         "Impact": "An attacker in Bluetooth range may be able to corrupt process memory",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-20683": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Apple Account",
         "Impact": "An app may be able to use the Sign In With Apple authentication flow to access the user's Apple Account",
         "Description": "An authentication issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-20700": {
@@ -3575,41 +3575,41 @@
     "CVE-2026-28935": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149036",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
         "Description": "The issue was addressed with improved memory handling.",
-        "AvailableFor": "Apple TV 4K 2nd generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-28966": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "RealityKit",
         "Impact": "Processing a maliciously crafted file may lead to unexpected app termination",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-28968": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-28969": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "IOKit",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A use after free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-28991": {
@@ -3625,41 +3625,41 @@
     "CVE-2026-43686": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "Connecting to a malicious NFS server may lead to kernel memory corruption",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-43687": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "Connecting to a malicious NFS server may disclose kernel memory",
         "Description": "The issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-43689": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "A malicious app may be able to gain root privileges",
         "Description": "A permissions issue was addressed with additional restrictions.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-43695": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "NetworkExtension",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "An authorization issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-43715": {
@@ -3675,21 +3675,21 @@
     "CVE-2026-43785": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "File Bookmark",
         "Impact": "An app may be able to modify a file it only had permission to read",
         "Description": "A permissions issue was addressed with additional restrictions.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-43794": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149036",
+        "Advisory": "APPLE-SA-149038",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to memory corruption",
         "Description": "A memory corruption issue was addressed with improved memory handling.",
-        "AvailableFor": "Apple TV 4K 2nd generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-43795": {
@@ -3705,51 +3705,51 @@
     "CVE-2026-64715": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149036",
+        "Advisory": "APPLE-SA-149038",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to an unexpected process crash",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "Apple TV 4K 2nd generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-64718": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "WebKit Canvas",
         "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-64736": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149036",
+        "Advisory": "APPLE-SA-149038",
         "Component": "IOMobileFrameBuffer",
         "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
         "Description": "An out-of-bounds access issue was addressed with improved bounds checking.",
-        "AvailableFor": "Apple TV 4K 2nd generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-64752": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "CoreMedia",
         "Impact": "Processing a maliciously crafted image may lead to arbitrary code execution",
         "Description": "A memory corruption issue was addressed by removing the vulnerable code.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-64753": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may disclose sensitive user information",
         "Description": "A permissions issue was addressed by removing the vulnerable code.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-64758": {
@@ -3765,21 +3765,21 @@
     "CVE-2026-64760": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "IOSurfaceAccelerator",
         "Impact": "An app may be able to leak sensitive kernel state",
         "Description": "An information leakage was addressed with additional validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-64778": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149036",
+        "Advisory": "APPLE-SA-149038",
         "Component": "WebKit History",
         "Impact": "Visiting a maliciously crafted website may leak sensitive data",
         "Description": "The issue was addressed with improved checks.",
-        "AvailableFor": "Apple TV 4K 2nd generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-64779": {
@@ -3835,31 +3835,31 @@
     "CVE-2026-64787": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149036",
+        "Advisory": "APPLE-SA-149038",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "Apple TV 4K 2nd generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-64788": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149037",
+        "Advisory": "APPLE-SA-149038",
         "Component": "IOGPUFamily",
         "Impact": "Processing maliciously crafted web content may lead to memory corruption",
         "Description": "The issue was addressed with improved memory handling.",
-        "AvailableFor": "Apple Watch Series 9 and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65330": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149036",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
         "Description": "The issue was addressed with improved memory handling.",
-        "AvailableFor": "Apple TV 4K 2nd generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65331": {
@@ -3945,11 +3945,11 @@
     "CVE-2026-65339": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149036",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Audio",
         "Impact": "An app may be able to leak sensitive user information",
         "Description": "A logic issue was addressed with improved checks.",
-        "AvailableFor": "Apple TV 4K 2nd generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65340": {
@@ -3965,71 +3965,71 @@
     "CVE-2026-65341": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149036",
+        "Advisory": "APPLE-SA-149038",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to memory corruption",
         "Description": "The issue was addressed with improved memory handling.",
-        "AvailableFor": "Apple TV 4K 2nd generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65343": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149036",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "A remote attacker may be able to cause unexpected system termination",
         "Description": "A use after free issue was addressed with improved memory management.",
-        "AvailableFor": "Apple TV 4K 2nd generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65344": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "CoreMedia",
         "Impact": "Processing a maliciously crafted video file may lead to unexpected app termination",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65346": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149036",
+        "Advisory": "APPLE-SA-149038",
         "Component": "ImageIO",
         "Impact": "Processing an image may lead to arbitrary code execution",
         "Description": "An integer overflow was addressed with improved input validation.",
-        "AvailableFor": "Apple TV 4K 2nd generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65347": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149036",
+        "Advisory": "APPLE-SA-149038",
         "Component": "ImageIO",
         "Impact": "Processing an image may lead to a denial-of-service",
         "Description": "The issue was addressed with improved checks.",
-        "AvailableFor": "Apple TV 4K 2nd generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65349": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149036",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination or read kernel memory",
         "Description": "An out-of-bounds read was addressed with improved input validation.",
-        "AvailableFor": "Apple TV 4K 2nd generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65350": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65351": {
@@ -4045,31 +4045,31 @@
     "CVE-2026-65358": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A race condition was addressed with improved state handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65359": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "A local user may be able to cause unexpected system termination or read kernel memory",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65360": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A race condition was addressed with improved state handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65371": {
@@ -4085,1141 +4085,1141 @@
     "CVE-2026-65377": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A memory corruption issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65385": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "IOKit",
         "Impact": "A buffer overflow may result in memory corruption and unexpected app termination",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65390": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149036",
+        "Advisory": "APPLE-SA-149038",
         "Component": "WebRTC",
         "Impact": "Processing maliciously crafted web content may lead to memory corruption",
         "Description": "An integer overflow was addressed with improved input validation.",
-        "AvailableFor": "Apple TV 4K 2nd generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65391": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149036",
+        "Advisory": "APPLE-SA-149038",
         "Component": "WebRTC",
         "Impact": "Processing maliciously crafted web content may lead to memory corruption",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "Apple TV 4K 2nd generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65395": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "ImageIO",
         "Impact": "Processing a maliciously crafted image may result in memory corruption",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65397": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Photos Storage",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "An authorization issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65398": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "IOMobileFrameBuffer",
         "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
         "Description": "An out-of-bounds access issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65399": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "copyfile",
         "Impact": "An archive may be able to bypass Gatekeeper",
         "Description": "A file quarantine bypass was addressed with additional checks.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65402": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A use after free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65403": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Reminders",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "This issue was addressed with improved checks.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65405": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to determine kernel memory layout",
         "Description": "A memory initialization issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65406": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "BackgroundAssets",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "A logic issue was addressed with improved validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65407": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "AppleAVD",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A use after free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65409": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Foundation",
         "Impact": "An app may be able to cause a denial of service",
         "Description": "A type confusion issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65410": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "AVEVideoEncoder",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "The issue was addressed with improved checks.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65411": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "MobileBackup",
         "Impact": "An app may be able to modify protected parts of the file system",
         "Description": "A path handling issue was addressed with improved validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65412": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "CoreText",
         "Impact": "Processing web content may lead to a denial-of-service",
         "Description": "A null pointer dereference was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65414": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Bluetooth",
         "Impact": "A remote attacker may be able to cause unexpected app termination or arbitrary code execution",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65415": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "A local user may be able to cause unexpected system termination or read kernel memory",
         "Description": "A race condition was addressed with additional validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84487": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "SceneKit",
         "Impact": "Processing a maliciously crafted file may result in disclosure of process memory",
         "Description": "An integer overflow was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84491": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Photos Storage",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "A permissions issue was addressed with additional restrictions.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84492": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Graphics",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A race condition was addressed with improved state handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84494": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Apple Neural Engine",
         "Impact": "An app may be able to cause unexpected system termination or write kernel memory",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84495": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination or write kernel memory",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84497": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Model I/O",
         "Impact": "Opening a maliciously crafted file may lead to unexpected process termination",
         "Description": "A buffer overflow was addressed with improved size validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84507": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
         "Description": "A race condition was addressed with improved state handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84508": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Security",
         "Impact": "An app may be able to access protected user data",
         "Description": "This issue was addressed with improved validation of the caller's access.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84511": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "CoreUI",
         "Impact": "Processing a maliciously crafted asset catalog may lead to unexpected process termination",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84513": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Symptom Framework",
         "Impact": "A malicious application may be able to determine a user's current location",
         "Description": "A privacy issue was addressed with improved private data redaction for log entries.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84521": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A use after free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84523": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "APFS",
         "Impact": "An app may be able to cause unexpected system termination or write kernel memory",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84524": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "FontParser",
         "Impact": "Processing a maliciously crafted font file may lead to unexpected app termination",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84526": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "SceneKit",
         "Impact": "Processing a maliciously crafted 3D scene may lead to unexpected process termination",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84527": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "TCC",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "A logging issue was addressed with improved data redaction.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84530": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to disclose kernel memory",
         "Description": "An information disclosure issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84532": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "RealityKit",
         "Impact": "Opening a maliciously crafted file may cause unexpected process termination or disclose process memory",
         "Description": "An out-of-bounds read issue was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84534": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "file_cmds",
         "Impact": "Extracting a maliciously crafted archive may allow an attacker to write arbitrary files",
         "Description": "A path handling issue was addressed with improved validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84546": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "SceneKit",
         "Impact": "Processing a maliciously crafted 3D model may lead to memory corruption",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84551": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Sandbox",
         "Impact": "An app may be able to bypass network restrictions",
         "Description": "A logic issue was addressed with improved validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84560": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Bluetooth",
         "Impact": "An app may gain unauthorized access to Bluetooth",
         "Description": "An authorization issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84561": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
         "Description": "A double free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84564": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "ImageIO",
         "Impact": "Processing a maliciously crafted image may result in disclosure of process memory",
         "Description": "An uninitialized memory issue was addressed with improved memory initialization.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84571": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "CoreUI",
         "Impact": "Processing a maliciously crafted image may lead to unexpected app termination",
         "Description": "A buffer overflow was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84575": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "CoreUI",
         "Impact": "Processing a maliciously crafted file may lead to unexpected app termination",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84582": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "App Intents",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "A privacy issue was addressed with improved access restrictions.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84583": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "AuthKit",
         "Impact": "A local app may be able to read a persistent account identifier",
         "Description": "A permissions issue was addressed with additional restrictions.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84595": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Apple Neural Engine",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84596": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "CoreText",
         "Impact": "Processing a maliciously crafted font may result in the disclosure of process memory",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84597": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "FontParser",
         "Impact": "Processing a maliciously crafted font may result in the disclosure of process memory",
         "Description": "An out-of-bounds read issue was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84599": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
         "Description": "The issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84600": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Shortcuts",
         "Impact": "A malicious shortcut may be able to send messages without user confirmation",
         "Description": "An authorization issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84602": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A type confusion issue was addressed with improved checks.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84603": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Sandbox Profiles",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "A permissions issue was addressed with additional restrictions.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84606": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "iCloud",
         "Impact": "An app may be able to identify a user across reinstalls",
         "Description": "A privacy issue was addressed with improved handling of identifiers.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84607": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "AVEVideoEncoder",
         "Impact": "A sandboxed app may be able to execute arbitrary code with kernel privileges",
         "Description": "A race condition was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84609": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Software Update",
         "Impact": "An app may be able to modify protected system files",
         "Description": "A permissions issue was addressed with improved path validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84611": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "SceneKit",
         "Impact": "Processing a maliciously crafted 3D model may lead to memory corruption",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84612": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "DeviceCheck",
         "Impact": "An app may be able to read persistent device identifiers",
         "Description": "An authorization issue was addressed with improved access control.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84613": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Bluetooth",
         "Impact": "An attacker in radio range may be able to cause unexpected system termination",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84615": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Music",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "An authorization issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84616": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "AVEVideoEncoder",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A type confusion issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84620": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "SceneKit",
         "Impact": "Processing a maliciously crafted 3D model may lead to memory corruption",
         "Description": "An integer overflow was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84622": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app with root privileges may be able to read uninitialized kernel memory",
         "Description": "A memory initialization issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84624": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "CoreML",
         "Impact": "A sandboxed app may be able to access restricted files",
         "Description": "A permissions issue was addressed with improved path validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84625": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Sandbox Profiles",
         "Impact": "An app may be able to fingerprint the user",
         "Description": "A permissions issue was addressed with additional sandbox restrictions.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84626": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "NetworkExtension",
         "Impact": "An app may be able to identify what other apps a user has installed",
         "Description": "An information disclosure issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84627": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "RawCamera",
         "Impact": "Processing a maliciously crafted image may lead to heap corruption",
         "Description": "A buffer overflow was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84628": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "MediaRemote",
         "Impact": "A sandboxed app may be able to access the System Keychain",
         "Description": "An authorization issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84629": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Photos Storage",
         "Impact": "An app may be able to fingerprint the user",
         "Description": "This issue was addressed with additional entitlement checks.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84630": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A race condition was addressed with improved state handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84632": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "SceneKit",
         "Impact": "Processing a maliciously crafted 3D model may lead to memory corruption",
         "Description": "The issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84634": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Apple Neural Engine",
         "Impact": "An app may be able to cause unexpected system termination or write kernel memory",
         "Description": "A race condition was addressed with additional validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84635": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
         "Description": "A logic issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-84636": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Wi-Fi Connectivity",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "An authorization issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86870": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "libarchive",
         "Impact": "Processing a maliciously crafted file may lead to unexpected app termination",
         "Description": "A heap buffer overflow was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86872": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149037",
+        "Advisory": "APPLE-SA-149038",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to unexpected behavior",
         "Description": "A logic issue was addressed with improved state management.",
-        "AvailableFor": "Apple Watch Series 9 and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86876": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "CoreMedia",
         "Impact": "A sandboxed process may be able to circumvent sandbox restrictions",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86881": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Security",
         "Impact": "An attacker with a compromised intermediate certificate authority may be able to issue certificates with arbitrary extended key usages",
         "Description": "A certificate validation issue was addressed with improved certificate validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86882": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Accelerate Framework",
         "Impact": "Processing a maliciously crafted image may lead to unexpected process termination",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86883": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Managed Configuration",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "A privacy issue was addressed with improved handling of files.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86887": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Time Zone",
         "Impact": "An app may be able to bypass certain Privacy preferences",
         "Description": "A privacy issue was addressed by removing sensitive data.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86888": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "App Store",
         "Impact": "A local app may be able to read a persistent account identifier",
         "Description": "A permissions issue was addressed with additional restrictions.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86892": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "SpringBoard",
         "Impact": "An app may be able to cause a denial-of-service",
         "Description": "This issue was addressed with additional entitlement checks.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86893": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "CloudKit",
         "Impact": "An app may be able to read device name",
         "Description": "A permissions issue was addressed with additional restrictions.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86895": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "CloudKit",
         "Impact": "A local app may be able to read a persistent account identifier",
         "Description": "An information disclosure issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86897": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Safe Browsing",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "This issue was addressed with additional entitlement checks.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86898": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "WebKit",
         "Impact": "Opening a maliciously crafted webarchive file may lead to universal cross-site scripting",
         "Description": "A logic issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86903": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to disclose kernel memory",
         "Description": "An out-of-bounds read was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86905": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Authentication Services",
         "Impact": "An app may be able to delete credentials stored in Keychain",
         "Description": "This issue was addressed by removing the vulnerable code.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86913": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "CoreMedia",
         "Impact": "Processing a maliciously crafted media file may lead to unexpected app termination or corrupt process memory",
         "Description": "A use after free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86918": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Accelerate Framework",
         "Impact": "Processing a maliciously crafted image may lead to unexpected app termination",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86919": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Core Bluetooth",
         "Impact": "An attacker with a paired Bluetooth device may be able to execute arbitrary code",
         "Description": "A stack overflow was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86920": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Apple Intelligence",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "An authorization issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 15 Pro and later, iPad Pro 12.9-inch 5th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 5th generation and later, and iPad mini 7th generation"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86921": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Siri",
         "Impact": "A local attacker may be able to overwrite restricted files",
         "Description": "A permissions issue was addressed with improved validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86922": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
         "Description": "A type confusion issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86925": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Quick Look",
         "Impact": "An app may be able to access sensitive user data",
         "Description": "An authorization issue was addressed with improved state management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86942": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Heimdal",
         "Impact": "An app may be able to cause a denial-of-service",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86953": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Wi-Fi",
         "Impact": "An attacker in physical proximity may be able to cause a denial-of-service",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86954": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "ImageIO",
         "Impact": "Processing a maliciously crafted image may lead to unexpected app termination",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86957": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Wi-Fi",
         "Impact": "An attacker in wireless proximity may be able to cause unexpected system termination",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86962": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A double free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86964": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "Kernel",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A null pointer dereference was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86966": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "copyfile",
         "Impact": "An app may be able to modify protected parts of the file system",
         "Description": "This issue was addressed with improved handling of symlinks.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86968": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "System Preferences",
         "Impact": "A malicious app may be able to access restricted system interfaces or launder launch attribution",
         "Description": "An access issue was addressed with improved access control.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86970": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "FontParser",
         "Impact": "Processing a maliciously crafted font may result in the disclosure of process memory",
         "Description": "An out-of-bounds read was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86971": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "Accelerate Framework",
         "Impact": "Processing a maliciously crafted image may lead to unexpected app termination",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86972": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "CoreAudio",
         "Impact": "Processing a maliciously crafted audio file may lead to memory corruption",
         "Description": "A buffer overflow was addressed with improved size validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86974": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to memory corruption",
         "Description": "A type confusion issue was addressed with improved checks.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86975": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149034",
+        "Advisory": "APPLE-SA-149038",
         "Component": "ImageIO",
         "Impact": "Processing a maliciously crafted image may lead to unexpected process termination",
         "Description": "An out-of-bounds read was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86986": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "WebKit",
         "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
         "Description": "A use-after-free issue was addressed with improved memory management.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86988": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149526",
         "Component": "ColorSync",
         "Impact": "Processing a maliciously crafted image may result in disclosure of process memory",
         "Description": "The issue was addressed with improved checks.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86990": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149225",
+        "Advisory": "APPLE-SA-149526",
         "Component": "CoreMedia",
         "Impact": "A malicious app may be able to access the camera without user permission",
         "Description": "An access issue was addressed with improved access restrictions.",
-        "AvailableFor": "iPhone XS, iPhone XS Max, iPhone XR, iPad 7th generation"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86991": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "SceneKit",
         "Impact": "Processing a maliciously crafted file may lead to unexpected process termination",
         "Description": "A buffer overflow was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-86992": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149227",
+        "Advisory": "APPLE-SA-149526",
         "Component": "CoreMedia",
         "Impact": "Processing a maliciously crafted video file may lead to unexpected app termination",
         "Description": "The issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     }
   }

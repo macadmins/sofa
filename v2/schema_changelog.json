@@ -1,5 +1,12 @@
 [
   {
+    "version": "2026.11.14.4",
+    "date": "2026-11-14",
+    "changes": [
+      "`CVEDetails.<CVE>.Apple` comes from the feed's own platform advisory when Apple published one with this CVE (the newest if several), else from the lowest advisory ID. Before: always the lowest ID, so for example the visionOS feed showed an iOS advisory's `AvailableFor`"
+    ]
+  },
+  {
     "version": "2026.11.14.3",
     "date": "2026-11-14",
     "changes": [
