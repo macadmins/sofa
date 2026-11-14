@@ -1312,9 +1312,9 @@ const platforms = computed(() => {
     { name: 'visionos-beta', label: 'visionOS 26', link: `${basePath}${configLinks.visionos}`, icon: EyeIcon, color: 'visionos' },
     { name: 'visionos', label: 'visionOS 2', link: `${basePath}/visionos/visionos2`, icon: EyeIcon, color: 'visionos' },
     { name: 'tvos-beta', label: 'tvOS 26', link: `${basePath}${configLinks.tvos}`, icon: TvIcon, color: 'tvos' },
-    { name: 'tvos', label: 'tvOS 18', link: `${basePath}/tvos/tvos18`, icon: TvIcon, color: 'tvos' },
+    // { name: 'tvos', label: 'tvOS 18', link: `${basePath}/tvos/tvos18`, icon: TvIcon, color: 'tvos' },
     { name: 'watchos-beta', label: 'watchOS 26', link: `${basePath}${configLinks.watchos}`, icon: WatchIcon, color: 'watchos' },
-    { name: 'watchos', label: 'watchOS 11', link: `${basePath}/watchos/watchos11`, icon: WatchIcon, color: 'watchos' },
+    // { name: 'watchos', label: 'watchOS 11', link: `${basePath}/watchos/watchos11`, icon: WatchIcon, color: 'watchos' },
     { name: 'safari', label: 'Safari 27', link: `${basePath}${configLinks.safari}`, icon: GlobeIcon, color: 'safari' }
   ]
 })

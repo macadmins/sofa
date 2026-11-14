@@ -41,7 +41,7 @@ jobs:
           mkdir -p processing
 
       - name: Checkout repository to processing folder
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: processing
 
@@ -113,8 +113,8 @@ jobs:
           mkdir -p bin
 
           # Use latest stable release
-          DOWNLOAD_URL="https://github.com/headmin/sofa-core-cli/releases/download/v0.3.3"
-          LINUX_TAR="sofa-0.3.3-linux-x86_64.tar.gz"
+          DOWNLOAD_URL="https://github.com/headmin/sofa-core-cli/releases/download/v0.3.6"
+          LINUX_TAR="sofa-0.3.6-linux-x86_64.tar.gz"
 
           echo "  • Downloading Linux binaries: $LINUX_TAR"
           if curl -L -f -o "$LINUX_TAR" "$DOWNLOAD_URL/$LINUX_TAR"; then
@@ -469,7 +469,7 @@ jobs:
             Pipeline stage: ${{ github.event.inputs.pipeline_stage }} | Files: $TOTAL_CHANGES
             Updates: $CHANGE_SUMMARY
 
-            Generated with sofa_pipeline.py v0.2.0 + v0.3.2 binaries"
+            Generated with sofa_pipeline.py v0.2.0 + v0.3.6 binaries"
 
             git push
             echo "✅ Detailed pipeline data committed to repository"
@@ -484,7 +484,7 @@ jobs:
 
       - name: Upload debug artifacts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: pipeline-debug-${{ github.run_number }}
           path: |

@@ -15,13 +15,13 @@ jobs:
   trust:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Verify patched native runner trust
         run: |
           sudo apt-get update
           sudo apt-get install -y ca-certificates openssl curl
           sudo update-ca-certificates
           python3 scripts/verify_trust_store.py /etc/ssl/certs/ca-certificates.crt
-      - uses: astral-sh/setup-uv@v3
+      - uses: astral-sh/setup-uv@v7
         with:
           version: '0.13.4'

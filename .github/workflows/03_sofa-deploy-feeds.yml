@@ -31,7 +31,7 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 1
         
@@ -90,8 +90,9 @@ jobs:
           
           # Minify V2 feeds
           echo "Processing V2 feeds..."
-          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json")
+          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json" "summary.json")
           for feed in "${V2_FEEDS[@]}"; do
+            [ -f "v2/$feed" ] || { echo "  Skipping v2/$feed (not built)"; continue; }
             echo "  Minifying v2/$feed"
             jq -c . "v2/$feed" > "v2/${feed%.*}_jq.json"
             rm -f "v2/$feed"
@@ -129,8 +130,9 @@ jobs:
           
           # Compress V2 feeds
           echo "Compressing V2 feeds..."
-          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json")
+          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json" "summary.json")
           for feed in "${V2_FEEDS[@]}"; do
+            [ -f "v2/$feed" ] || continue
             echo "  Compressing v2/$feed"
             /usr/bin/gzip --best --stdout "v2/$feed" > "v2/${feed%.*}_compressed.json"
           done
@@ -148,6 +150,7 @@ jobs:
           
           echo "Compression statistics (V2):"
           for feed in "${V2_FEEDS[@]}"; do
+            [ -f "v2/$feed" ] || continue
             original=$(stat -c%s "v2/$feed")
             compressed=$(stat -c%s "v2/${feed%.*}_compressed.json")
             ratio=$(echo "scale=1; $compressed * 100 / $original" | bc)
@@ -174,15 +177,16 @@ jobs:
           
           # Upload V2 feeds to production
           echo "Uploading V2 feeds to production..."
-          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json")
+          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json" "summary.json")
           for feed in "${V2_FEEDS[@]}"; do
+            [ -f "v2/$feed" ] || continue
             echo "  Uploading v2/$feed"
             s3cmd put "v2/$feed" --mime-type 'application/json' --acl-public "s3://sofafeed.macadmins.io/v2/${feed%.*}_uncompressed.json"
             s3cmd put "v2/${feed%.*}_compressed.json" --mime-type 'application/json' --add-header='Content-Encoding:gzip' --add-header='Cache-control:public, no-transform' --acl-public "s3://sofafeed.macadmins.io/v2/$feed"
           done
           
           echo "✅ Production feeds (V1 + V2) uploaded to DigitalOcean"
-          echo "- **Production Deployment**: ✅ Complete (V1: 3 feeds + RSS, V2: 6 feeds)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Production Deployment**: ✅ Complete (V1: 3 feeds + RSS, V2: 6 feeds + summary)" >> $GITHUB_STEP_SUMMARY
           
       - name: Deployment summary
         if: always()

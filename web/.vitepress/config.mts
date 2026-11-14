@@ -67,7 +67,8 @@ export default defineConfig({
           { text: 'iOS/iPadOS 27', link: '/ios/ios27' },
           { text: 'iOS/iPadOS 26', link: '/ios/ios26' },
           { text: 'iOS/iPadOS 18', link: '/ios/ios18' },
-          { text: 'iOS/iPadOS 17', link: '/ios/ios17' },
+          // No longer in the v2 feeds (no data); the page stays reachable by URL.
+          // { text: 'iOS/iPadOS 17', link: '/ios/ios17' },
         ]
       },
       {
@@ -83,7 +84,8 @@ export default defineConfig({
         items: [
           { text: 'tvOS 27', link: '/tvos/tvos27' },
           { text: 'tvOS 26', link: '/tvos/tvos26' },
-          { text: 'tvOS 18', link: '/tvos/tvos18' },
+          // No longer in the v2 feeds (no data); the page stays reachable by URL.
+          // { text: 'tvOS 18', link: '/tvos/tvos18' },
         ]
       },
       {
@@ -99,7 +101,8 @@ export default defineConfig({
         items: [
           { text: 'watchOS 27', link: '/watchos/watchos27' },
           { text: 'watchOS 26', link: '/watchos/watchos26' },
-          { text: 'watchOS 11', link: '/watchos/watchos11' },
+          // No longer in the v2 feeds (no data); the page stays reachable by URL.
+          // { text: 'watchOS 11', link: '/watchos/watchos11' },
         ]
       },
       {
