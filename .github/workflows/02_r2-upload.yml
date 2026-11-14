@@ -60,7 +60,7 @@ jobs:
 
           # Minify V2 feeds
           echo "Processing V2 feeds..."
-          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json" "summary.json")
+          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json" "summary.json" "index.json")
           for feed in "${V2_FEEDS[@]}"; do
             [ -f "v2/$feed" ] || { echo "  Skipping v2/$feed (not built)"; continue; }
             echo "  Minifying v2/$feed"
@@ -90,7 +90,7 @@ jobs:
 
           # Compress V2 feeds
           echo "Compressing V2 feeds..."
-          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json" "summary.json")
+          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json" "summary.json" "index.json")
           for feed in "${V2_FEEDS[@]}"; do
             [ -f "v2/$feed" ] || continue
             echo "  Compressing v2/$feed"
@@ -182,7 +182,7 @@ jobs:
           echo "📂 Uploading v2 feeds..."
 
           # Upload minified JSON files with gzip encoding
-          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json" "summary.json")
+          V2_FEEDS=("ios_data_feed.json" "macos_data_feed.json" "safari_data_feed.json" "tvos_data_feed.json" "watchos_data_feed.json" "visionos_data_feed.json" "summary.json" "index.json")
           for feed in "${V2_FEEDS[@]}"; do
             if [ -f "v2/${feed}.gz" ]; then
               echo "  ↑ Uploading v2/$feed (gzipped)"
