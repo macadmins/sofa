@@ -3,7 +3,7 @@
   "OSName": "visionOS",
   "Version": "2.0",
   "UpdateHash": "67bf8f2fa21995b995866ccf63768d170363cccc3d91689b30aae435abf66109",
-  "LastCheck": "2026-11-14T13:13:45.719193396+00:00",
+  "LastCheck": "2026-11-14T13:39:14.101640289+00:00",
   "OSVersions": [
     {
       "OSVersion": "visionOS 27",
@@ -2521,6 +2521,16 @@
         "AvailableFor": "Apple TV 4K 2nd generation and later"
       }
     },
+    "CVE-2026-64788": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149037",
+        "Component": "IOGPUFamily",
+        "Impact": "Processing maliciously crafted web content may lead to memory corruption",
+        "Description": "The issue was addressed with improved memory handling.",
+        "AvailableFor": "Apple Watch Series 9 and later"
+      }
+    },
     "CVE-2026-65330": {
       "Exploited": false,
       "Apple": {
@@ -3339,6 +3349,16 @@
         "Impact": "Processing a maliciously crafted file may lead to unexpected app termination",
         "Description": "A heap buffer overflow was addressed with improved bounds checking.",
         "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86872": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149037",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to unexpected behavior",
+        "Description": "A logic issue was addressed with improved state management.",
+        "AvailableFor": "Apple Watch Series 9 and later"
       }
     },
     "CVE-2026-86876": {

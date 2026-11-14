@@ -2,7 +2,7 @@
   "SchemaVersion": "2026.11.14.2",
   "Version": "2.0",
   "UpdateHash": "470956fc20eea6e27e4466ceea8ca484b1bd6ce45c2c88500b1d68b7c6a6cb57",
-  "LastCheck": "2026-11-14T13:13:45.484339167+00:00",
+  "LastCheck": "2026-11-14T13:39:13.848133370+00:00",
   "OSVersions": [
     {
       "OSVersion": "Golden Gate 27",
@@ -20022,6 +20022,16 @@
         "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
         "Description": "A use-after-free issue was addressed with improved memory management.",
         "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
+    "CVE-2026-64788": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149037",
+        "Component": "IOGPUFamily",
+        "Impact": "Processing maliciously crafted web content may lead to memory corruption",
+        "Description": "The issue was addressed with improved memory handling.",
+        "AvailableFor": "Apple Watch Series 9 and later"
       }
     },
     "CVE-2026-64789": {

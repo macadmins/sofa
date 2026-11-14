@@ -3,7 +3,7 @@
   "OSName": "watchOS",
   "Version": "2.0",
   "UpdateHash": "f1b41b6a66a9afaaba5480a6a424add2889b44bb6ff98c4fd20f666684e64491",
-  "LastCheck": "2026-11-14T13:13:45.673926585+00:00",
+  "LastCheck": "2026-11-14T13:39:14.055380131+00:00",
   "OSVersions": [
     {
       "OSVersion": "watchOS 27",
@@ -424,6 +424,17 @@
           "ExpirationDate": "2026-12-27",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/149037",
+          "Advisory": {
+            "ID": "APPLE-SA-149037",
+            "Number": "149037",
+            "URL": "https://support.apple.com/en-us/149037",
+            "CSAF": "https://support.apple.com/content/dam/edam/applecare/images/en_US/otherassets/security/149037.json",
+            "Severity": "Medium",
+            "Revision": "4",
+            "Updated": "2026-10-26T19:02:02Z",
+            "AvailableFor": "Apple Watch Series 9 and later",
+            "Source": "Apple"
+          },
           "SecurityInfoContext": "watchOS 27.0 was released on September 14, 2026. This release addressed 106 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "Watch7,1",
@@ -1828,6 +1839,16 @@
         "AvailableFor": "Apple TV 4K 2nd generation and later"
       }
     },
+    "CVE-2026-64788": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149037",
+        "Component": "IOGPUFamily",
+        "Impact": "Processing maliciously crafted web content may lead to memory corruption",
+        "Description": "The issue was addressed with improved memory handling.",
+        "AvailableFor": "Apple Watch Series 9 and later"
+      }
+    },
     "CVE-2026-65330": {
       "Exploited": false,
       "Apple": {
@@ -2516,6 +2537,16 @@
         "Impact": "Processing a maliciously crafted file may lead to unexpected app termination",
         "Description": "A heap buffer overflow was addressed with improved bounds checking.",
         "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86872": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149037",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to unexpected behavior",
+        "Description": "A logic issue was addressed with improved state management.",
+        "AvailableFor": "Apple Watch Series 9 and later"
       }
     },
     "CVE-2026-86876": {
