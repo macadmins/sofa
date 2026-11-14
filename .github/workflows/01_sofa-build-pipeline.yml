@@ -41,7 +41,7 @@ jobs:
           mkdir -p processing
 
       - name: Checkout repository to processing folder
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: processing
 
@@ -484,7 +484,7 @@ jobs:
 
       - name: Upload debug artifacts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: pipeline-debug-${{ github.run_number }}
           path: |

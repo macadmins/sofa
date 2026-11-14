@@ -38,7 +38,7 @@ jobs:
     
     steps:
       - name: Checkout public repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -197,7 +197,7 @@ jobs:
           git push
 
       - name: Upload metrics artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: sofa-metrics-${{ github.run_id }}
           path: |
@@ -212,7 +212,7 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Verify metrics files
         env:
