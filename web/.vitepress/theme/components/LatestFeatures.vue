@@ -558,7 +558,8 @@ export default {
             
             // Add iOS-specific links
             Object.entries(iOSVersionLinks).forEach(([title, url]) => {
-              if (title.includes('About iOS') || title.includes('What\'s new')) {
+              const iPadOnly = title.includes('iPadOS') && !title.includes('iOS/iPadOS')
+              if ((title.includes('About iOS') || title.includes('What\'s new')) && !iPadOnly) {
                 wantedLinks.push({ 
                   title, 
                   url, 
@@ -579,7 +580,8 @@ export default {
             
             // Add iPadOS-specific links
             Object.entries(iPadOSVersionLinks).forEach(([title, url]) => {
-              if (title.includes('About iPadOS') || title.includes('What\'s new')) {
+              const iPhoneOnly = title.includes('iOS') && !title.includes('iPadOS')
+              if ((title.includes('About iPadOS') || title.includes('What\'s new')) && !iPhoneOnly) {
                 wantedLinks.push({ 
                   title, 
                   url, 
@@ -975,8 +977,9 @@ export default {
         // 2. "About [Platform]" links (good overview)
         // 3. "Release Notes" (developer focused)
         
-        const enterpriseLink = this.essentialLinks.find(link => 
-          link.title === 'What\'s new for enterprise'
+        // Prefix match: Apple now titles them per platform ("... in iOS 27", "... in iPadOS 27")
+        const enterpriseLink = this.essentialLinks.find(link =>
+          link.title.startsWith('What\'s new for enterprise')
         );
         if (enterpriseLink) {
           return enterpriseLink.url;
