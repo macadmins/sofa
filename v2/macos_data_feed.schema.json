@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "sofa/v2/macos_data_feed/2026.04.11.2",
-  "title": "SOFA macos_data_feed (schema 2026.04.11.2)",
+  "$id": "sofa/v2/macos_data_feed/2026.11.14.1",
+  "title": "SOFA macos_data_feed (schema 2026.11.14.1)",
   "description": "macOS v2 Feed structure - Enhanced CVE details",
   "type": "object",
   "required": [
@@ -27,6 +27,14 @@
         }
       }
     },
+    "CVEDetails": {
+      "description": "Every CVE in this feed that a source says something about: Apple's text, the KEV entry, SOFA's signals, and `Exploited` from layers 1 and 2 only.",
+      "default": {},
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/CveDetail"
+      }
+    },
     "Devices": {
       "description": "Canonical GDMF identifier -> DeviceEntry map. Every board_id referenced in OSVersions.Latest.SupportedDevices, OSVersions.SecurityReleases[].SupportedDevices, or BackgroundSecurityImprovements.*.SupportedDevices resolves via this map.",
       "type": "object",
@@ -50,8 +58,24 @@
         "$ref": "#/definitions/MacOSVersionV2"
       }
     },
+    "ProductKeys": {
+      "description": "Software Update product keys by the Mac's *current* macOS major (26+ only).",
+      "default": {},
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/ProductKeysV2"
+      }
+    },
     "SchemaVersion": {
       "type": "string"
+    },
+    "Sources": {
+      "description": "What each source key means and its grade: 1 Apple, 2 CISA KEV, 3 SOFA (signals only).",
+      "default": {},
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/SourceInfo"
+      }
     },
     "UpdateHash": {
       "type": "string"
@@ -73,6 +97,102 @@
     }
   },
   "definitions": {
+    "AdvisoryV2": {
+      "description": "Per release: the Apple advisory it is published in. Apple uses one number for all three: the page `support.apple.com/<locale>/149718`, the JSON `…/otherassets/security/149718.json` and the advisory ID `APPLE-SA-149718`.",
+      "type": "object",
+      "required": [
+        "CSAF",
+        "ID",
+        "Number",
+        "Revision",
+        "Source",
+        "URL",
+        "Updated"
+      ],
+      "properties": {
+        "AvailableFor": {
+          "description": "Apple's \"Available for\" when every CVE in the advisory shares it, e.g. Safari 27.2: \"macOS Sequoia and macOS Tahoe\" (the macOS versions this standalone update is for)",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "CSAF": {
+          "description": "Apple's CSAF JSON",
+          "type": "string"
+        },
+        "ID": {
+          "description": "e.g. \"APPLE-SA-149718\"",
+          "type": "string"
+        },
+        "Number": {
+          "description": "The number shared by the page, the JSON and the ID, e.g. \"149718\"",
+          "type": "string"
+        },
+        "Revision": {
+          "type": "string"
+        },
+        "Severity": {
+          "description": "Apple's aggregate severity for the advisory",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Source": {
+          "type": "string"
+        },
+        "URL": {
+          "type": "string"
+        },
+        "Updated": {
+          "type": "string"
+        }
+      }
+    },
+    "AppleDetail": {
+      "type": "object",
+      "properties": {
+        "Advisory": {
+          "description": "e.g. \"APPLE-SA-149718\" (from the CSAF advisory)",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "AvailableFor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Component": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ExploitedStatement": {
+          "description": "Apple's own \"may have been exploited\" sentence, verbatim",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Impact": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
     "BackgroundSecurityImprovement": {
       "description": "A macOS BSI (Background Security Improvement) entry as published in GDMF.\n\nBSI entries are smaller out-of-band security patches delivered to specific device scopes outside the regular macOS update cycle. Each entry carries its own `supported_devices` list of GDMF identifiers; resolve those through the feed's top-level `Devices` map to get marketing names.\n\n# Examples\n\n```text { \"Version\": \"26.3.2\", \"VersionExtra\": \"(a)\", \"Build\": \"25D771400a\", \"SupportedDevices\": [\"J700AP\"], \"CVEs\": [\"CVE-2026-20643\"] } ```",
       "type": "object",
@@ -170,6 +290,24 @@
         }
       }
     },
+    "BuildV2": {
+      "type": "object",
+      "required": [
+        "Build",
+        "SupportedDevices"
+      ],
+      "properties": {
+        "Build": {
+          "type": "string"
+        },
+        "SupportedDevices": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "CVEDetailV2": {
       "description": "CVE Details for v2 feeds - object format",
       "type": "object",
@@ -215,11 +353,45 @@
             "string",
             "null"
           ]
+        }
+      }
+    },
+    "CveDetail": {
+      "description": "One entry of a feed's top-level `CVEDetails` catalogue.",
+      "type": "object",
+      "required": [
+        "Exploited"
+      ],
+      "properties": {
+        "Apple": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/AppleDetail"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
-        "Severity": {
-          "type": [
-            "string",
-            "null"
+        "Exploited": {
+          "description": "From layers 1 and 2 only",
+          "type": "boolean"
+        },
+        "ExploitedSources": {
+          "description": "Source keys the `Exploited` value rests on (empty when not exploited)",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "KEV": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/KevDetail"
+            },
+            {
+              "type": "null"
+            }
           ]
         }
       }
@@ -277,6 +449,29 @@
         }
       }
     },
+    "KevDetail": {
+      "type": "object",
+      "required": [
+        "DateAdded"
+      ],
+      "properties": {
+        "DateAdded": {
+          "type": "string"
+        },
+        "DueDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "KnownRansomwareCampaignUse": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
     "MacIPSWEntryV2": {
       "description": "PascalCase mirror of `macos_builder_v1::MacIPSWEntry` for v2 feeds.",
       "type": "object",
@@ -326,6 +521,17 @@
             "type": "string"
           }
         },
+        "Advisory": {
+          "description": "Apple's advisory for this release (CSAF, since 2026-09-14), matched by its number.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/AdvisoryV2"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
         "AllBuilds": {
           "type": "array",
           "items": {
@@ -334,6 +540,13 @@
         },
         "Build": {
           "type": "string"
+        },
+        "Builds": {
+          "description": "Each GDMF build of this release with the boards it serves, as GDMF lists them (not forward-accumulated like `SupportedDevices`). Absent once GDMF no longer lists the release. A board can appear under more than one build.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BuildV2"
+          }
         },
         "CVEs": {
           "type": "object",
@@ -447,6 +660,36 @@
         }
       }
     },
+    "ProductKeysV2": {
+      "description": "Software Update product keys (`MSU_UPDATE_…`, Apple's \"Product Key\"). Use them for `AutoInstallProductKeys` in `/Library/Preferences/com.apple.SoftwareUpdate.plist` (replace the list, don't append), as an allowlist, or for compliance checks. Observed, undocumented Apple behaviour; the Mac's own RecommendedUpdates holds the exact offered key.",
+      "type": "object",
+      "required": [
+        "Update"
+      ],
+      "properties": {
+        "BackgroundSecurityImprovement": {
+          "description": "`_rsr` keys of the Background Security Improvements GDMF lists for this major.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Update": {
+          "description": "Every release of this major GDMF still lists, newest first, every build. A Mac is offered one of them (a deferral picks an older one); the others are ignored.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Upgrade": {
+          "description": "Opt-in upgrade to the next major (same rule). Never write together with `Update`.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "ReleaseRef": {
       "description": "Pre-computed reference from one release (or BSI) to another.\n\nUsed as the value type for `PatchesRelease`, `SupersededBy`, and `MergedInto` on release and BSI entries. These cross-references save every downstream consumer from re-deriving the join (BSI → patched release, release → next release, device-specific → merging universal).\n\n# Examples\n\n```text \"SupersededBy\": { \"ProductVersion\": \"26.4\", \"Build\": \"25E246\", \"ReleaseDate\": \"2026-03-24T00:00:00Z\", \"DaysLater\": 7 } ```",
       "type": "object",
@@ -470,6 +713,52 @@
           "type": "string"
         },
         "ReleaseDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "SourceInfo": {
+      "description": "Top-level `Sources` of a feed: what each source key means and how fresh it is.",
+      "type": "object",
+      "required": [
+        "Layer",
+        "Name",
+        "URL"
+      ],
+      "properties": {
+        "Format": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Layer": {
+          "type": "integer",
+          "format": "uint8",
+          "minimum": 0.0
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Retrieved": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "URL": {
+          "type": "string"
+        },
+        "Version": {
           "type": [
             "string",
             "null"

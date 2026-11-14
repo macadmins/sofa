@@ -1,5 +1,38 @@
 [
   {
+    "version": "2026.11.14.1",
+    "date": "2026-11-14",
+    "changes": [
+      "Graded sources: every CVE fact names its source. Layer 1 Apple (advisory, CSAF JSON since 2026-09-14, Apple's own 'may have been exploited' sentence), layer 2 CISA KEV. SOFA's own pattern matches are no longer published: their text window reached neighbouring CVEs (off-by-one)",
+      "BREAKING: \"exploited\" (`ActivelyExploited`, `ActivelyExploitedCVEs`, `UpdateSummary.Stats.Exploited`, summary `ExploitedCVEs` and `Priority`) now comes from Apple and CISA KEV only. SOFA's heuristics no longer mark CVEs exploited (e.g. Safari's `sandbox_escape` matches)",
+      "BREAKING: per-CVE `Severity` removed (it was SOFA's own label, not a source). Apple's advisory severity is in `Advisory.Severity`",
+      "BREAKING (Safari): per-CVE objects use the same shape as the other platforms (`ActivelyExploited`, `InKEV`, `NISTURL`, `AppleExploitationNotes`) instead of passed-through fetch internals",
+      "Added top-level `Sources` (what each source key means, its layer, version) and `CVEDetails` (per CVE: `Exploited`, `ExploitedSources`, `Apple` text from the CSAF advisory and Apple's exploitation sentence, the `KEV` entry) to every v2 OS feed and Safari",
+      "Added `Advisory` per release: Apple's `ID` (APPLE-SA-<n>), `Number`, `URL`, `CSAF`, `Severity`, `Revision`, `Updated`, `AvailableFor`; page, JSON and ID share the advisory number",
+      "`AppleExploitationNotes` is now filled with Apple's sentence; tvOS/watchOS/visionOS now set `ActivelyExploited` per CVE; iOS/tvOS/watchOS/visionOS `UpdateSummary` counts match `ActivelyExploitedCVEs`",
+      "summary.json: `ExploitedCVEs[].Sources`"
+    ]
+  },
+  {
+    "version": "2026.11.13.2",
+    "date": "2026-11-13",
+    "changes": [
+      "Added `v2/summary.json`: a small, facts-only summary of all v2 feeds for dashboards, bots, MDM tooling and agents (schema `summary.schema.json`)",
+      "Per platform, the majors Apple still patches (a release on either of the two most recent release dates), each with `Latest` (all builds, CVE count, exploited CVE IDs, `Priority`), the last 5 `Releases`, `DeviceSpecific`, the newest BSI and, for macOS 26+, `ProductKeys`",
+      "`Priority` in the summary: `critical` (actively exploited CVE, Apple or CISA KEV), `security` (CVEs, or details pending), `none`. The v2 feeds' `UpdateSummary.Priority` is unchanged",
+      "Additive: no existing feed changes; `bulletin_data.json` is unchanged"
+    ]
+  },
+  {
+    "version": "2026.11.13.1",
+    "date": "2026-11-13",
+    "changes": [
+      "Additive (macOS v2): `Builds` on releases GDMF still lists: each build with the boards it serves (raw GDMF, not forward-accumulated like `SupportedDevices`; a board can appear under twin builds)",
+      "Additive (macOS v2): top-level `ProductKeys` (Software Update product keys, usable for the `AutoInstallProductKeys` preference, as an allowlist, or for compliance checks) keyed by the Mac's current major (26+; DDM-based Software Update, 15 and older out of scope): `Update` = keys for every release of that major GDMF still lists (every build; a deferred Mac is offered an older one; non-matching keys are ignored, write the whole list), `Upgrade` = opt-in keys for the next major (never together with `Update`), `BackgroundSecurityImprovement` = `_rsr` keys",
+      "Keys reflect observed, undocumented Apple behaviour; prefer the Mac's own RecommendedUpdates when available. `Build` is unchanged and can be a hardware-specific build: use `Builds`"
+    ]
+  },
+  {
     "version": "2026.04.11.2",
     "date": "2026-04-11",
     "changes": [

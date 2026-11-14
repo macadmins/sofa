@@ -1,0 +1,756 @@
+{
+  "SchemaVersion": "2026.11.14.1",
+  "ContentHash": "78b745ae7d8473989791824a508e22d5f7274ea3785c321ef75c9ac1b4cc8a60",
+  "GeneratedAt": "2026-11-14T11:06:03.806950306+00:00",
+  "Platforms": {
+    "Safari": {
+      "Majors": [
+        {
+          "Major": 27,
+          "Latest": {
+            "Version": "27.2",
+            "ReleaseDate": "2026-10-26",
+            "CVEs": 33,
+            "ExploitedCVEs": [],
+            "Priority": "security",
+            "SecurityInfoURL": "https://support.apple.com/en-us/149527"
+          },
+          "Releases": [
+            {
+              "Version": "27.2",
+              "ReleaseDate": "2026-10-26"
+            },
+            {
+              "Version": "27.0",
+              "ReleaseDate": "2026-09-14"
+            }
+          ]
+        }
+      ]
+    },
+    "iOS": {
+      "Majors": [
+        {
+          "Major": 27,
+          "Latest": {
+            "Version": "27.2.1",
+            "ReleaseDate": "2026-11-09",
+            "Builds": [
+              {
+                "Build": "24B92034"
+              },
+              {
+                "Build": "24B9156"
+              },
+              {
+                "Build": "24B91034"
+              },
+              {
+                "Build": "24B8156"
+              },
+              {
+                "Build": "24B6156"
+              },
+              {
+                "Build": "24B156"
+              }
+            ],
+            "CVEs": 9,
+            "ExploitedCVEs": [
+              "CVE-2026-111497"
+            ],
+            "Priority": "critical",
+            "SecurityInfoURL": "https://support.apple.com/en-us/149715"
+          },
+          "Releases": [
+            {
+              "Version": "27.2.1",
+              "ReleaseDate": "2026-11-09"
+            },
+            {
+              "Version": "27.2",
+              "ReleaseDate": "2026-10-26"
+            },
+            {
+              "Version": "27.1",
+              "ReleaseDate": "2026-10-23"
+            },
+            {
+              "Version": "27.0.1",
+              "ReleaseDate": "2026-09-28"
+            },
+            {
+              "Version": "27.0",
+              "ReleaseDate": "2026-09-14"
+            }
+          ]
+        },
+        {
+          "Major": 26,
+          "Latest": {
+            "Version": "26.7.3",
+            "ReleaseDate": "2026-11-09",
+            "Builds": [
+              {
+                "Build": "23H6131"
+              },
+              {
+                "Build": "23H131"
+              }
+            ],
+            "CVEs": 8,
+            "ExploitedCVEs": [
+              "CVE-2026-111497"
+            ],
+            "Priority": "critical",
+            "SecurityInfoURL": "https://support.apple.com/en-us/149716"
+          },
+          "Releases": [
+            {
+              "Version": "26.7.3",
+              "ReleaseDate": "2026-11-09"
+            },
+            {
+              "Version": "26.7.2",
+              "ReleaseDate": "2026-10-26"
+            },
+            {
+              "Version": "26.7.1",
+              "ReleaseDate": "2026-09-28"
+            },
+            {
+              "Version": "26.7",
+              "ReleaseDate": "2026-09-14"
+            },
+            {
+              "Version": "26.6.2",
+              "ReleaseDate": "2026-09-08"
+            }
+          ],
+          "BackgroundSecurityImprovement": {
+            "Version": "26.3.1",
+            "Extra": "(a)",
+            "Build": "23D771330a",
+            "PrerequisiteBuild": "23D8133"
+          }
+        },
+        {
+          "Major": 18,
+          "Latest": {
+            "Version": "18.7.8",
+            "ReleaseDate": "2026-04-22",
+            "Builds": [
+              {
+                "Build": "22H6352"
+              },
+              {
+                "Build": "22H352"
+              }
+            ],
+            "CVEs": 1,
+            "ExploitedCVEs": [],
+            "Priority": "security",
+            "SecurityInfoURL": "https://support.apple.com/en-us/127003"
+          },
+          "Releases": [
+            {
+              "Version": "18.7.12",
+              "ReleaseDate": "2026-11-09"
+            },
+            {
+              "Version": "18.7.11",
+              "ReleaseDate": "2026-10-26"
+            },
+            {
+              "Version": "18.7.10",
+              "ReleaseDate": "2026-08-17"
+            },
+            {
+              "Version": "18.7.9",
+              "ReleaseDate": "2026-05-11"
+            },
+            {
+              "Version": "18.7.8",
+              "ReleaseDate": "2026-04-22"
+            }
+          ],
+          "DeviceSpecific": [
+            {
+              "Version": "18.7.12",
+              "Build": "22H6390",
+              "Boards": 6
+            },
+            {
+              "Version": "18.7.11",
+              "Build": "22H6384",
+              "Boards": 6
+            },
+            {
+              "Version": "18.7.10",
+              "Build": "22H6374",
+              "Boards": 6
+            },
+            {
+              "Version": "18.7.9",
+              "Build": "22H6355",
+              "Boards": 6
+            }
+          ]
+        }
+      ]
+    },
+    "macOS": {
+      "Majors": [
+        {
+          "Major": 27,
+          "Name": "Golden Gate",
+          "Latest": {
+            "Version": "27.2.1",
+            "ReleaseDate": "2026-11-09",
+            "Builds": [
+              {
+                "Build": "26B131",
+                "Boards": 60
+              },
+              {
+                "Build": "26B7131",
+                "Boards": 2
+              },
+              {
+                "Build": "26B8132",
+                "Boards": 4
+              }
+            ],
+            "CVEs": 8,
+            "ExploitedCVEs": [
+              "CVE-2026-111497"
+            ],
+            "Priority": "critical",
+            "SecurityInfoURL": "https://support.apple.com/en-us/149718"
+          },
+          "Releases": [
+            {
+              "Version": "27.2.1",
+              "ReleaseDate": "2026-11-09"
+            },
+            {
+              "Version": "27.2",
+              "ReleaseDate": "2026-10-26"
+            },
+            {
+              "Version": "27.0.1",
+              "ReleaseDate": "2026-09-28"
+            },
+            {
+              "Version": "27.0",
+              "ReleaseDate": "2026-09-14"
+            }
+          ],
+          "ProductKeys": {
+            "Update": [
+              "MSU_UPDATE_26B131_patch_27.2.1_minor",
+              "MSU_UPDATE_26B131_full_27.2.1_minor",
+              "MSU_UPDATE_26B7131_patch_27.2.1_minor",
+              "MSU_UPDATE_26B7131_full_27.2.1_minor",
+              "MSU_UPDATE_26B8132_patch_27.2.1_minor",
+              "MSU_UPDATE_26B8132_full_27.2.1_minor",
+              "MSU_UPDATE_26B123_patch_27.2_minor",
+              "MSU_UPDATE_26B123_full_27.2_minor",
+              "MSU_UPDATE_26B7124_patch_27.2_minor",
+              "MSU_UPDATE_26B7124_full_27.2_minor",
+              "MSU_UPDATE_26B8125_patch_27.2_minor",
+              "MSU_UPDATE_26B8125_full_27.2_minor",
+              "MSU_UPDATE_26A434_patch_27.0.1_minor",
+              "MSU_UPDATE_26A434_full_27.0.1_minor",
+              "MSU_UPDATE_26A5434_patch_27.0.1_minor",
+              "MSU_UPDATE_26A5434_full_27.0.1_minor",
+              "MSU_UPDATE_26A428_patch_27.0_minor",
+              "MSU_UPDATE_26A428_full_27.0_minor",
+              "MSU_UPDATE_26A5428_patch_27.0_minor",
+              "MSU_UPDATE_26A5428_full_27.0_minor"
+            ]
+          }
+        },
+        {
+          "Major": 26,
+          "Name": "Tahoe",
+          "Latest": {
+            "Version": "26.7.3",
+            "ReleaseDate": "2026-11-09",
+            "Builds": [
+              {
+                "Build": "25G342",
+                "Boards": 63
+              }
+            ],
+            "CVEs": 8,
+            "ExploitedCVEs": [
+              "CVE-2026-111497"
+            ],
+            "Priority": "critical",
+            "SecurityInfoURL": "https://support.apple.com/en-us/149719"
+          },
+          "Releases": [
+            {
+              "Version": "26.7.3",
+              "ReleaseDate": "2026-11-09"
+            },
+            {
+              "Version": "26.7.2",
+              "ReleaseDate": "2026-10-26"
+            },
+            {
+              "Version": "26.7.1",
+              "ReleaseDate": "2026-09-28"
+            },
+            {
+              "Version": "26.7",
+              "ReleaseDate": "2026-09-14"
+            },
+            {
+              "Version": "26.6.2",
+              "ReleaseDate": "2026-08-17"
+            }
+          ],
+          "BackgroundSecurityImprovement": {
+            "Version": "26.3.2",
+            "Extra": "(a)",
+            "Build": "25D771400a",
+            "PrerequisiteBuild": "25D2140"
+          },
+          "ProductKeys": {
+            "Update": [
+              "MSU_UPDATE_25G342_patch_26.7.3_minor",
+              "MSU_UPDATE_25G342_full_26.7.3_minor",
+              "MSU_UPDATE_25G332_patch_26.7.2_minor",
+              "MSU_UPDATE_25G332_full_26.7.2_minor",
+              "MSU_UPDATE_25G241_patch_26.7.1_minor",
+              "MSU_UPDATE_25G241_full_26.7.1_minor",
+              "MSU_UPDATE_25G229_patch_26.7_minor",
+              "MSU_UPDATE_25G229_full_26.7_minor",
+              "MSU_UPDATE_25G83_patch_26.6.2_minor",
+              "MSU_UPDATE_25G83_full_26.6.2_minor",
+              "MSU_UPDATE_25G76_patch_26.6.1_minor",
+              "MSU_UPDATE_25G76_full_26.6.1_minor"
+            ],
+            "Upgrade": [
+              "MSU_UPDATE_26B131_patch_27.2.1_major",
+              "MSU_UPDATE_26B131_full_27.2.1_major",
+              "MSU_UPDATE_26B123_patch_27.2_major",
+              "MSU_UPDATE_26B123_full_27.2_major",
+              "MSU_UPDATE_26A434_patch_27.0.1_major",
+              "MSU_UPDATE_26A434_full_27.0.1_major",
+              "MSU_UPDATE_26A5434_patch_27.0.1_major",
+              "MSU_UPDATE_26A5434_full_27.0.1_major",
+              "MSU_UPDATE_26A428_patch_27.0_major",
+              "MSU_UPDATE_26A428_full_27.0_major",
+              "MSU_UPDATE_26A5428_patch_27.0_major",
+              "MSU_UPDATE_26A5428_full_27.0_major"
+            ],
+            "BackgroundSecurityImprovement": [
+              "MSU_UPDATE_25D771400a_patch_26.3.2_rsr",
+              "MSU_UPDATE_25D771400a_full_26.3.2_rsr",
+              "MSU_UPDATE_25D771280a_patch_26.3.1_rsr",
+              "MSU_UPDATE_25D771280a_full_26.3.1_rsr"
+            ]
+          }
+        },
+        {
+          "Major": 15,
+          "Name": "Sequoia",
+          "Latest": {
+            "Version": "15.8.3",
+            "ReleaseDate": "2026-11-09",
+            "Builds": [
+              {
+                "Build": "24H241",
+                "Boards": 67
+              }
+            ],
+            "CVEs": 8,
+            "ExploitedCVEs": [
+              "CVE-2026-111497"
+            ],
+            "Priority": "critical",
+            "SecurityInfoURL": "https://support.apple.com/en-us/149720"
+          },
+          "Releases": [
+            {
+              "Version": "15.8.3",
+              "ReleaseDate": "2026-11-09"
+            },
+            {
+              "Version": "15.8.2",
+              "ReleaseDate": "2026-10-26"
+            },
+            {
+              "Version": "15.8.1",
+              "ReleaseDate": "2026-09-28"
+            },
+            {
+              "Version": "15.8",
+              "ReleaseDate": "2026-09-14"
+            },
+            {
+              "Version": "15.7.9",
+              "ReleaseDate": "2026-08-06"
+            }
+          ]
+        }
+      ]
+    },
+    "tvOS": {
+      "Majors": [
+        {
+          "Major": 27,
+          "Latest": {
+            "Version": "27.2.1",
+            "ReleaseDate": "2026-11-13",
+            "Builds": [
+              {
+                "Build": "24K6157"
+              },
+              {
+                "Build": "24K157"
+              }
+            ],
+            "CVEs": 7,
+            "ExploitedCVEs": [
+              "CVE-2026-111497"
+            ],
+            "Priority": "critical",
+            "SecurityInfoURL": "https://support.apple.com/en-us/149721"
+          },
+          "Releases": [
+            {
+              "Version": "27.2.1",
+              "ReleaseDate": "2026-11-13"
+            },
+            {
+              "Version": "27.2",
+              "ReleaseDate": "2026-10-26"
+            },
+            {
+              "Version": "27.0",
+              "ReleaseDate": "2026-09-14"
+            }
+          ]
+        },
+        {
+          "Major": 26,
+          "Latest": {
+            "Version": "26.6.1",
+            "ReleaseDate": "2026-10-26",
+            "Builds": [
+              {
+                "Build": "23L781"
+              },
+              {
+                "Build": "23L6781"
+              }
+            ],
+            "CVEs": 0,
+            "ExploitedCVEs": [],
+            "Priority": "none",
+            "SecurityInfoURL": "https://support.apple.com/en-us/100100"
+          },
+          "Releases": [
+            {
+              "Version": "26.6.1",
+              "ReleaseDate": "2026-10-26"
+            },
+            {
+              "Version": "26.6",
+              "ReleaseDate": "2026-07-27"
+            },
+            {
+              "Version": "26.5",
+              "ReleaseDate": "2026-05-11"
+            },
+            {
+              "Version": "26.4",
+              "ReleaseDate": "2026-03-24"
+            },
+            {
+              "Version": "26.3",
+              "ReleaseDate": "2026-02-11"
+            }
+          ]
+        }
+      ]
+    },
+    "visionOS": {
+      "Majors": [
+        {
+          "Major": 27,
+          "Latest": {
+            "Version": "27.2.1",
+            "ReleaseDate": "2026-11-09",
+            "Builds": [
+              {
+                "Build": "24N6124"
+              },
+              {
+                "Build": "24N124"
+              }
+            ],
+            "CVEs": 9,
+            "ExploitedCVEs": [
+              "CVE-2026-111497"
+            ],
+            "Priority": "critical",
+            "SecurityInfoURL": "https://support.apple.com/en-us/149724"
+          },
+          "Releases": [
+            {
+              "Version": "27.2.1",
+              "ReleaseDate": "2026-11-09"
+            },
+            {
+              "Version": "27.2",
+              "ReleaseDate": "2026-10-26"
+            },
+            {
+              "Version": "27.0.1",
+              "ReleaseDate": "2026-09-28"
+            },
+            {
+              "Version": "27.0",
+              "ReleaseDate": "2026-09-14"
+            }
+          ]
+        }
+      ]
+    },
+    "watchOS": {
+      "Majors": [
+        {
+          "Major": 27,
+          "Latest": {
+            "Version": "27.2.1",
+            "ReleaseDate": "2026-11-09",
+            "Builds": [
+              {
+                "Build": "24S6132"
+              },
+              {
+                "Build": "24S132"
+              }
+            ],
+            "CVEs": 9,
+            "ExploitedCVEs": [
+              "CVE-2026-111497"
+            ],
+            "Priority": "critical",
+            "SecurityInfoURL": "https://support.apple.com/en-us/149722"
+          },
+          "Releases": [
+            {
+              "Version": "27.2.1",
+              "ReleaseDate": "2026-11-09"
+            },
+            {
+              "Version": "27.2",
+              "ReleaseDate": "2026-10-26"
+            },
+            {
+              "Version": "27.0.1",
+              "ReleaseDate": "2026-09-28"
+            },
+            {
+              "Version": "27.0.1",
+              "ReleaseDate": "2026-09-23"
+            },
+            {
+              "Version": "27.0",
+              "ReleaseDate": "2026-09-14"
+            }
+          ]
+        },
+        {
+          "Major": 26,
+          "Latest": {
+            "Version": "26.6.1",
+            "ReleaseDate": "2026-11-09",
+            "Builds": [
+              {
+                "Build": "23U95"
+              },
+              {
+                "Build": "23U6095"
+              }
+            ],
+            "CVEs": 5,
+            "ExploitedCVEs": [],
+            "Priority": "security",
+            "SecurityInfoURL": "https://support.apple.com/en-us/149723"
+          },
+          "Releases": [
+            {
+              "Version": "26.6.1",
+              "ReleaseDate": "2026-11-09"
+            },
+            {
+              "Version": "26.6",
+              "ReleaseDate": "2026-07-27"
+            },
+            {
+              "Version": "26.5",
+              "ReleaseDate": "2026-05-11"
+            },
+            {
+              "Version": "26.4",
+              "ReleaseDate": "2026-03-24"
+            },
+            {
+              "Version": "26.3",
+              "ReleaseDate": "2026-02-11"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "ExploitedCVEs": [
+    {
+      "CVE": "CVE-2026-111497",
+      "InKEV": true,
+      "Sources": [
+        "KEV"
+      ],
+      "FixedIn": [
+        {
+          "Platform": "macOS",
+          "Version": "27.2.1"
+        },
+        {
+          "Platform": "macOS",
+          "Version": "26.7.3"
+        },
+        {
+          "Platform": "macOS",
+          "Version": "15.8.3"
+        },
+        {
+          "Platform": "iOS",
+          "Version": "27.2.1"
+        },
+        {
+          "Platform": "iOS",
+          "Version": "26.7.3"
+        },
+        {
+          "Platform": "tvOS",
+          "Version": "27.2.1"
+        },
+        {
+          "Platform": "watchOS",
+          "Version": "27.2.1"
+        },
+        {
+          "Platform": "visionOS",
+          "Version": "27.2.1"
+        }
+      ]
+    }
+  ],
+  "Betas": {
+    "iOS": {
+      "Version": "27.3 beta",
+      "Build": "24C5037i",
+      "Released": "2026-11-03"
+    },
+    "macOS": {
+      "Version": "27.3 beta",
+      "Build": "26C5035r",
+      "Released": "2026-11-03"
+    },
+    "tvOS": {
+      "Version": "27.3 beta",
+      "Build": "24K5286g",
+      "Released": "2026-11-03"
+    },
+    "visionOS": {
+      "Version": "27.3 beta",
+      "Build": "24N5286r",
+      "Released": "2026-11-03"
+    },
+    "watchOS": {
+      "Version": "27.3 beta",
+      "Build": "24S5284h",
+      "Released": "2026-11-03"
+    }
+  },
+  "Recent": [
+    {
+      "Date": "2026-11-13",
+      "Platform": "tvos",
+      "Name": "tvOS 27.2.1",
+      "Version": "27.2.1",
+      "URL": "https://support.apple.com/en-us/149721"
+    },
+    {
+      "Date": "2026-11-12",
+      "Platform": "other",
+      "Name": "HomeView Software Version 27.2",
+      "Version": "27.2",
+      "URL": "https://support.apple.com/en-us/149851"
+    },
+    {
+      "Date": "2026-11-09",
+      "Platform": "ios",
+      "Name": "iOS 18.7.12 and iPadOS 18.7.12",
+      "Version": "18.7.12",
+      "URL": "https://support.apple.com/en-us/149717"
+    },
+    {
+      "Date": "2026-11-09",
+      "Platform": "ios",
+      "Name": "iOS 26.7.3 and iPadOS 26.7.3",
+      "Version": "26.7.3",
+      "URL": "https://support.apple.com/en-us/149716"
+    },
+    {
+      "Date": "2026-11-09",
+      "Platform": "ios",
+      "Name": "iOS 27.2.1 and iPadOS 27.2.1",
+      "Version": "27.2.1",
+      "URL": "https://support.apple.com/en-us/149715"
+    },
+    {
+      "Date": "2026-11-09",
+      "Platform": "macos",
+      "Name": "macOS Golden Gate 27.2.1",
+      "Version": "27.2.1",
+      "URL": "https://support.apple.com/en-us/149718"
+    },
+    {
+      "Date": "2026-11-09",
+      "Platform": "macos",
+      "Name": "macOS Sequoia 15.8.3",
+      "Version": "15.8.3",
+      "URL": "https://support.apple.com/en-us/149720"
+    },
+    {
+      "Date": "2026-11-09",
+      "Platform": "macos",
+      "Name": "macOS Tahoe 26.7.3",
+      "Version": "26.7.3",
+      "URL": "https://support.apple.com/en-us/149719"
+    },
+    {
+      "Date": "2026-11-09",
+      "Platform": "visionos",
+      "Name": "visionOS 27.2.1",
+      "Version": "27.2.1",
+      "URL": "https://support.apple.com/en-us/149724"
+    },
+    {
+      "Date": "2026-11-09",
+      "Platform": "watchos",
+      "Name": "watchOS 26.6.1",
+      "Version": "26.6.1",
+      "URL": "https://support.apple.com/en-us/149723"
+    }
+  ]
+}

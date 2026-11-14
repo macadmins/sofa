@@ -1,6 +1,6 @@
 {
   "Version": "2.0",
-  "UpdateHash": "6e107689869de58be1fa0ac2717bff1ff140d5ce559a9390f59c1bf20ed43f61",
+  "UpdateHash": "8fb7748a1c5d025bd3c52d42da03b4743a9b734730c9482b67e90b8fd95c2b06",
   "AppVersions": [
     {
       "AppVersion": "Safari 27",
@@ -12,250 +12,41 @@
         "ReleaseType": "Safari",
         "SecurityInfo": "https://support.apple.com/en-us/149527",
         "CVEs": {
-          "CVE-2026-112599": {
-            "exploited": false,
-            "tags": [
-              "memory-corruption",
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112599"
-          },
-          "CVE-2026-112615": {
-            "exploited": false,
-            "tags": [
-              "arbitrary-code",
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112615"
-          },
-          "CVE-2026-112621": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112621"
-          },
-          "CVE-2026-112623": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112623"
-          },
-          "CVE-2026-112626": {
-            "exploited": true,
-            "matched_pattern": "sandbox_escape",
-            "tags": [
-              "sandbox",
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112626"
-          },
-          "CVE-2026-112637": {
-            "exploited": false,
-            "tags": [
-              "arbitrary-code",
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112637"
-          },
-          "CVE-2026-112639": {
-            "exploited": false,
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112639"
-          },
-          "CVE-2026-112640": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112640"
-          },
-          "CVE-2026-112651": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112651"
-          },
-          "CVE-2026-112653": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112653"
-          },
-          "CVE-2026-112654": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112654"
-          },
-          "CVE-2026-112655": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112655"
-          },
-          "CVE-2026-112659": {
-            "exploited": false,
-            "tags": [
-              "memory-corruption",
-              "security",
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112659"
-          },
-          "CVE-2026-112666": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112666"
-          },
-          "CVE-2026-112669": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112669"
-          },
-          "CVE-2026-112673": {
-            "exploited": false,
-            "tags": [
-              "safari",
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112673"
-          },
-          "CVE-2026-112680": {
-            "exploited": false,
-            "tags": [
-              "arbitrary-code",
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112680"
-          },
-          "CVE-2026-112684": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112684"
-          },
-          "CVE-2026-112686": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112686"
-          },
-          "CVE-2026-112693": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112693"
-          },
-          "CVE-2026-112695": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112695"
-          },
-          "CVE-2026-112697": {
-            "exploited": false,
-            "tags": [
-              "security",
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112697"
-          },
-          "CVE-2026-112699": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112699"
-          },
-          "CVE-2026-113897": {
-            "exploited": false,
-            "tags": [
-              "arbitrary-code",
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113897"
-          },
-          "CVE-2026-113901": {
-            "exploited": false,
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113901"
-          },
-          "CVE-2026-113903": {
-            "exploited": false,
-            "tags": [
-              "arbitrary-code",
-              "security",
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113903"
-          },
-          "CVE-2026-113904": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113904"
-          },
-          "CVE-2026-113949": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113949"
-          },
-          "CVE-2026-113952": {
-            "exploited": false,
-            "tags": [
-              "memory-corruption",
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113952"
-          },
-          "CVE-2026-86973": {
-            "exploited": false,
-            "tags": [
-              "safari"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86973"
-          },
-          "CVE-2026-86974": {
-            "exploited": false,
-            "tags": [
-              "safari",
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86974"
-          },
-          "CVE-2026-86985": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86985"
-          },
-          "CVE-2026-86986": {
-            "exploited": false,
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86986"
-          }
+          "CVE-2026-112599": {},
+          "CVE-2026-112615": {},
+          "CVE-2026-112621": {},
+          "CVE-2026-112623": {},
+          "CVE-2026-112626": {},
+          "CVE-2026-112637": {},
+          "CVE-2026-112639": {},
+          "CVE-2026-112640": {},
+          "CVE-2026-112651": {},
+          "CVE-2026-112653": {},
+          "CVE-2026-112654": {},
+          "CVE-2026-112655": {},
+          "CVE-2026-112659": {},
+          "CVE-2026-112666": {},
+          "CVE-2026-112669": {},
+          "CVE-2026-112673": {},
+          "CVE-2026-112680": {},
+          "CVE-2026-112684": {},
+          "CVE-2026-112686": {},
+          "CVE-2026-112693": {},
+          "CVE-2026-112695": {},
+          "CVE-2026-112697": {},
+          "CVE-2026-112699": {},
+          "CVE-2026-113897": {},
+          "CVE-2026-113901": {},
+          "CVE-2026-113903": {},
+          "CVE-2026-113904": {},
+          "CVE-2026-113949": {},
+          "CVE-2026-113952": {},
+          "CVE-2026-86973": {},
+          "CVE-2026-86974": {},
+          "CVE-2026-86985": {},
+          "CVE-2026-86986": {}
         },
-        "ActivelyExploitedCVEs": [
-          "CVE-2026-112626"
-        ],
+        "ActivelyExploitedCVEs": [],
         "UniqueCVEsCount": 33,
         "DaysSincePreviousRelease": 42
       },
@@ -268,250 +59,41 @@
           "ReleaseType": "Safari",
           "SecurityInfo": "https://support.apple.com/en-us/149527",
           "CVEs": {
-            "CVE-2026-112599": {
-              "exploited": false,
-              "tags": [
-                "memory-corruption",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112599"
-            },
-            "CVE-2026-112615": {
-              "exploited": false,
-              "tags": [
-                "arbitrary-code",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112615"
-            },
-            "CVE-2026-112621": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112621"
-            },
-            "CVE-2026-112623": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112623"
-            },
-            "CVE-2026-112626": {
-              "exploited": true,
-              "matched_pattern": "sandbox_escape",
-              "tags": [
-                "sandbox",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112626"
-            },
-            "CVE-2026-112637": {
-              "exploited": false,
-              "tags": [
-                "arbitrary-code",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112637"
-            },
-            "CVE-2026-112639": {
-              "exploited": false,
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112639"
-            },
-            "CVE-2026-112640": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112640"
-            },
-            "CVE-2026-112651": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112651"
-            },
-            "CVE-2026-112653": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112653"
-            },
-            "CVE-2026-112654": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112654"
-            },
-            "CVE-2026-112655": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112655"
-            },
-            "CVE-2026-112659": {
-              "exploited": false,
-              "tags": [
-                "memory-corruption",
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112659"
-            },
-            "CVE-2026-112666": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112666"
-            },
-            "CVE-2026-112669": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112669"
-            },
-            "CVE-2026-112673": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112673"
-            },
-            "CVE-2026-112680": {
-              "exploited": false,
-              "tags": [
-                "arbitrary-code",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112680"
-            },
-            "CVE-2026-112684": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112684"
-            },
-            "CVE-2026-112686": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112686"
-            },
-            "CVE-2026-112693": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112693"
-            },
-            "CVE-2026-112695": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112695"
-            },
-            "CVE-2026-112697": {
-              "exploited": false,
-              "tags": [
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112697"
-            },
-            "CVE-2026-112699": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-112699"
-            },
-            "CVE-2026-113897": {
-              "exploited": false,
-              "tags": [
-                "arbitrary-code",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113897"
-            },
-            "CVE-2026-113901": {
-              "exploited": false,
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113901"
-            },
-            "CVE-2026-113903": {
-              "exploited": false,
-              "tags": [
-                "arbitrary-code",
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113903"
-            },
-            "CVE-2026-113904": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113904"
-            },
-            "CVE-2026-113949": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113949"
-            },
-            "CVE-2026-113952": {
-              "exploited": false,
-              "tags": [
-                "memory-corruption",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-113952"
-            },
-            "CVE-2026-86973": {
-              "exploited": false,
-              "tags": [
-                "safari"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86973"
-            },
-            "CVE-2026-86974": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86974"
-            },
-            "CVE-2026-86985": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86985"
-            },
-            "CVE-2026-86986": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86986"
-            }
+            "CVE-2026-112599": {},
+            "CVE-2026-112615": {},
+            "CVE-2026-112621": {},
+            "CVE-2026-112623": {},
+            "CVE-2026-112626": {},
+            "CVE-2026-112637": {},
+            "CVE-2026-112639": {},
+            "CVE-2026-112640": {},
+            "CVE-2026-112651": {},
+            "CVE-2026-112653": {},
+            "CVE-2026-112654": {},
+            "CVE-2026-112655": {},
+            "CVE-2026-112659": {},
+            "CVE-2026-112666": {},
+            "CVE-2026-112669": {},
+            "CVE-2026-112673": {},
+            "CVE-2026-112680": {},
+            "CVE-2026-112684": {},
+            "CVE-2026-112686": {},
+            "CVE-2026-112693": {},
+            "CVE-2026-112695": {},
+            "CVE-2026-112697": {},
+            "CVE-2026-112699": {},
+            "CVE-2026-113897": {},
+            "CVE-2026-113901": {},
+            "CVE-2026-113903": {},
+            "CVE-2026-113904": {},
+            "CVE-2026-113949": {},
+            "CVE-2026-113952": {},
+            "CVE-2026-86973": {},
+            "CVE-2026-86974": {},
+            "CVE-2026-86985": {},
+            "CVE-2026-86986": {}
           },
-          "ActivelyExploitedCVEs": [
-            "CVE-2026-112626"
-          ],
+          "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 33,
           "DaysSincePreviousRelease": 42
         },
@@ -527,22 +109,10 @@
             "CVE-2026-64753": {},
             "CVE-2026-84518": {},
             "CVE-2026-84635": {},
-            "CVE-2026-86872": {
-              "entry_added_date": "2026-10-19",
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86872"
-            },
+            "CVE-2026-86872": {},
             "CVE-2026-86897": {},
             "CVE-2026-86898": {},
-            "CVE-2026-86922": {
-              "entry_added_date": "2026-10-19",
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86922"
-            }
+            "CVE-2026-86922": {}
           },
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 8
@@ -580,20 +150,8 @@
           "CVE-2026-65340": {},
           "CVE-2026-65341": {},
           "CVE-2026-65351": {},
-          "CVE-2026-65390": {
-            "entry_added_date": "2026-09-14",
-            "tags": [
-              "webkit"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65390"
-          },
-          "CVE-2026-65391": {
-            "entry_added_date": "2026-09-14",
-            "tags": [
-              "memory-corruption"
-            ],
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65391"
-          }
+          "CVE-2026-65390": {},
+          "CVE-2026-65391": {}
         },
         "ActivelyExploitedCVEs": [],
         "UniqueCVEsCount": 23,
@@ -629,20 +187,8 @@
             "CVE-2026-65340": {},
             "CVE-2026-65341": {},
             "CVE-2026-65351": {},
-            "CVE-2026-65390": {
-              "entry_added_date": "2026-09-14",
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65390"
-            },
-            "CVE-2026-65391": {
-              "entry_added_date": "2026-09-14",
-              "tags": [
-                "memory-corruption"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65391"
-            }
+            "CVE-2026-65390": {},
+            "CVE-2026-65391": {}
           },
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 23,
@@ -656,83 +202,16 @@
           "ReleaseType": "Safari",
           "SecurityInfo": "https://support.apple.com/en-us/128073",
           "CVEs": {
-            "CVE-2026-43792": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43792"
-            },
-            "CVE-2026-43804": {
-              "exploited": false,
-              "tags": [
-                "sandbox",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43804"
-            },
-            "CVE-2026-43821": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "use-after-free",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43821"
-            },
-            "CVE-2026-64713": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64713"
-            },
-            "CVE-2026-64718": {
-              "exploited": false,
-              "tags": [
-                "safari"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64718"
-            },
-            "CVE-2026-64719": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64719"
-            },
-            "CVE-2026-64728": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "use-after-free",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64728"
-            },
-            "CVE-2026-64730": {
-              "exploited": false,
-              "tags": [
-                "sandbox",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64730"
-            },
-            "CVE-2026-64757": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64757"
-            },
-            "CVE-2026-64783": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64783"
-            }
+            "CVE-2026-43792": {},
+            "CVE-2026-43804": {},
+            "CVE-2026-43821": {},
+            "CVE-2026-64713": {},
+            "CVE-2026-64718": {},
+            "CVE-2026-64719": {},
+            "CVE-2026-64728": {},
+            "CVE-2026-64730": {},
+            "CVE-2026-64757": {},
+            "CVE-2026-64783": {}
           },
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 10,
@@ -746,248 +225,37 @@
           "ReleaseType": "Safari",
           "SecurityInfo": "https://support.apple.com/en-us/127685",
           "CVEs": {
-            "CVE-2026-28979": {
-              "exploited": false,
-              "tags": [
-                "safari"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28979"
-            },
-            "CVE-2026-39872": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-39872"
-            },
-            "CVE-2026-43663": {
-              "exploited": false,
-              "tags": [
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43663"
-            },
-            "CVE-2026-43676": {
-              "exploited": false,
-              "tags": [
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43676"
-            },
-            "CVE-2026-43699": {
-              "exploited": false,
-              "tags": [
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43699"
-            },
-            "CVE-2026-43700": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43700"
-            },
-            "CVE-2026-43701": {
-              "exploited": false,
-              "tags": [
-                "out-of-bounds",
-                "safari",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43701"
-            },
-            "CVE-2026-43704": {
-              "exploited": false,
-              "tags": [
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43704"
-            },
-            "CVE-2026-43705": {
-              "exploited": false,
-              "tags": [
-                "sandbox",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43705"
-            },
-            "CVE-2026-43707": {
-              "exploited": false,
-              "tags": [
-                "memory-corruption",
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43707"
-            },
-            "CVE-2026-43708": {
-              "exploited": false,
-              "tags": [
-                "memory-corruption",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43708"
-            },
-            "CVE-2026-43709": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43709"
-            },
-            "CVE-2026-43712": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43712"
-            },
-            "CVE-2026-43713": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43713"
-            },
-            "CVE-2026-43715": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "use-after-free",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43715"
-            },
-            "CVE-2026-43716": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43716"
-            },
-            "CVE-2026-43717": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43717"
-            },
-            "CVE-2026-43718": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "use-after-free"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43718"
-            },
-            "CVE-2026-43720": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43720"
-            },
-            "CVE-2026-43721": {
-              "exploited": false,
-              "tags": [
-                "out-of-bounds"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43721"
-            },
-            "CVE-2026-43725": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43725"
-            },
-            "CVE-2026-43726": {
-              "exploited": false,
-              "tags": [
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43726"
-            },
-            "CVE-2026-43727": {
-              "exploited": false,
-              "tags": [
-                "sandbox",
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43727"
-            },
-            "CVE-2026-43731": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43731"
-            },
-            "CVE-2026-43732": {
-              "exploited": false,
-              "tags": [
-                "memory-corruption",
-                "use-after-free",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43732"
-            },
-            "CVE-2026-43734": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43734"
-            },
-            "CVE-2026-43735": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43735"
-            },
-            "CVE-2026-43740": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43740"
-            },
-            "CVE-2026-43742": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43742"
-            },
-            "CVE-2026-43745": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "security",
-                "use-after-free",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43745"
-            },
-            "CVE-2026-43746": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43746"
-            }
+            "CVE-2026-28979": {},
+            "CVE-2026-39872": {},
+            "CVE-2026-43663": {},
+            "CVE-2026-43676": {},
+            "CVE-2026-43699": {},
+            "CVE-2026-43700": {},
+            "CVE-2026-43701": {},
+            "CVE-2026-43704": {},
+            "CVE-2026-43705": {},
+            "CVE-2026-43707": {},
+            "CVE-2026-43708": {},
+            "CVE-2026-43709": {},
+            "CVE-2026-43712": {},
+            "CVE-2026-43713": {},
+            "CVE-2026-43715": {},
+            "CVE-2026-43716": {},
+            "CVE-2026-43717": {},
+            "CVE-2026-43718": {},
+            "CVE-2026-43720": {},
+            "CVE-2026-43721": {},
+            "CVE-2026-43725": {},
+            "CVE-2026-43726": {},
+            "CVE-2026-43727": {},
+            "CVE-2026-43731": {},
+            "CVE-2026-43732": {},
+            "CVE-2026-43734": {},
+            "CVE-2026-43735": {},
+            "CVE-2026-43740": {},
+            "CVE-2026-43742": {},
+            "CVE-2026-43745": {},
+            "CVE-2026-43746": {}
           },
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 31,
@@ -1001,175 +269,29 @@
           "ReleaseType": "Safari",
           "SecurityInfo": "https://support.apple.com/en-us/127121",
           "CVEs": {
-            "CVE-2026-28847": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28847"
-            },
-            "CVE-2026-28883": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28883"
-            },
-            "CVE-2026-28901": {
-              "exploited": false,
-              "tags": [
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28901"
-            },
-            "CVE-2026-28902": {
-              "exploited": false,
-              "tags": [
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28902"
-            },
-            "CVE-2026-28903": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28903"
-            },
-            "CVE-2026-28904": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28904"
-            },
-            "CVE-2026-28905": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28905"
-            },
-            "CVE-2026-28907": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28907"
-            },
-            "CVE-2026-28913": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28913"
-            },
-            "CVE-2026-28917": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "use-after-free",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28917"
-            },
-            "CVE-2026-28942": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28942"
-            },
-            "CVE-2026-28944": {
-              "exploited": false,
-              "tags": [
-                "safari"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28944"
-            },
-            "CVE-2026-28946": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28946"
-            },
-            "CVE-2026-28947": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28947"
-            },
-            "CVE-2026-28953": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28953"
-            },
-            "CVE-2026-28955": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28955"
-            },
-            "CVE-2026-28958": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28958"
-            },
-            "CVE-2026-28962": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28962"
-            },
-            "CVE-2026-28971": {
-              "exploited": false,
-              "tags": [
-                "bypass",
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28971"
-            },
-            "CVE-2026-28984": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28984"
-            },
-            "CVE-2026-43658": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43658"
-            },
-            "CVE-2026-43660": {
-              "exploited": false,
-              "tags": [
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43660"
-            },
-            "CVE-2026-43670": {
-              "exploited": false,
-              "tags": [
-                "security"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43670"
-            }
+            "CVE-2026-28847": {},
+            "CVE-2026-28883": {},
+            "CVE-2026-28901": {},
+            "CVE-2026-28902": {},
+            "CVE-2026-28903": {},
+            "CVE-2026-28904": {},
+            "CVE-2026-28905": {},
+            "CVE-2026-28907": {},
+            "CVE-2026-28913": {},
+            "CVE-2026-28917": {},
+            "CVE-2026-28942": {},
+            "CVE-2026-28944": {},
+            "CVE-2026-28946": {},
+            "CVE-2026-28947": {},
+            "CVE-2026-28953": {},
+            "CVE-2026-28955": {},
+            "CVE-2026-28958": {},
+            "CVE-2026-28962": {},
+            "CVE-2026-28971": {},
+            "CVE-2026-28984": {},
+            "CVE-2026-43658": {},
+            "CVE-2026-43660": {},
+            "CVE-2026-43670": {}
           },
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 23,
@@ -1183,66 +305,14 @@
           "ReleaseType": "Safari",
           "SecurityInfo": "https://support.apple.com/en-us/126800",
           "CVEs": {
-            "CVE-2026-20643": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20643"
-            },
-            "CVE-2026-20664": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20664"
-            },
-            "CVE-2026-20665": {
-              "exploited": false,
-              "tags": [
-                "bypass",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20665"
-            },
-            "CVE-2026-20691": {
-              "exploited": false,
-              "tags": [
-                "safari"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20691"
-            },
-            "CVE-2026-28857": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28857"
-            },
-            "CVE-2026-28859": {
-              "exploited": false,
-              "tags": [
-                "sandbox",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28859"
-            },
-            "CVE-2026-28861": {
-              "exploited": false,
-              "tags": [
-                "sandbox",
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28861"
-            },
-            "CVE-2026-28871": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28871"
-            }
+            "CVE-2026-20643": {},
+            "CVE-2026-20664": {},
+            "CVE-2026-20665": {},
+            "CVE-2026-20691": {},
+            "CVE-2026-28857": {},
+            "CVE-2026-28859": {},
+            "CVE-2026-28861": {},
+            "CVE-2026-28871": {}
           },
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 8,
@@ -1256,63 +326,14 @@
           "ReleaseType": "Safari",
           "SecurityInfo": "https://support.apple.com/en-us/126354",
           "CVEs": {
-            "CVE-2026-20608": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20608"
-            },
-            "CVE-2026-20635": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20635"
-            },
-            "CVE-2026-20636": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20636"
-            },
-            "CVE-2026-20644": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20644"
-            },
-            "CVE-2026-20652": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20652"
-            },
-            "CVE-2026-20656": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20656"
-            },
-            "CVE-2026-20660": {
-              "exploited": false,
-              "tags": [
-                "safari"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20660"
-            },
-            "CVE-2026-20676": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20676"
-            }
+            "CVE-2026-20608": {},
+            "CVE-2026-20635": {},
+            "CVE-2026-20636": {},
+            "CVE-2026-20644": {},
+            "CVE-2026-20652": {},
+            "CVE-2026-20656": {},
+            "CVE-2026-20660": {},
+            "CVE-2026-20676": {}
           },
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 8,
@@ -1328,29 +349,19 @@
           "CVEs": {
             "CVE-2024-8906": {},
             "CVE-2025-14174": {
-              "exploited": true,
-              "kev": true,
-              "severity": "high",
-              "remote": true,
-              "matched_pattern": "CISA KEV catalog; exploit: apple is aware of a report that this issue may have been exploited; severity: arbitrary code execution; remote: maliciously crafted",
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14174",
-              "tags": [
-                "webkit"
-              ]
+              "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-14174",
+              "ActivelyExploited": true,
+              "InKEV": true,
+              "AppleExploitationNotes": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 26."
             },
             "CVE-2025-43501": {},
             "CVE-2025-43511": {},
             "CVE-2025-43526": {},
             "CVE-2025-43529": {
-              "exploited": true,
-              "kev": true,
-              "matched_pattern": "CISA KEV catalog",
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43529",
-              "tags": [
-                "actively-exploited",
-                "memory-corruption",
-                "webkit"
-              ]
+              "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-43529",
+              "ActivelyExploited": true,
+              "InKEV": true,
+              "AppleExploitationNotes": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 26."
             },
             "CVE-2025-43531": {},
             "CVE-2025-43535": {},
@@ -1358,13 +369,7 @@
             "CVE-2025-43541": {},
             "CVE-2025-46282": {},
             "CVE-2025-46298": {},
-            "CVE-2025-46299": {
-              "entry_added_date": "2026-01-09",
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-46299"
-            }
+            "CVE-2025-46299": {}
           },
           "ActivelyExploitedCVEs": [
             "CVE-2025-43529",
@@ -1381,160 +386,27 @@
           "ReleaseType": "Safari",
           "SecurityInfo": "https://support.apple.com/en-us/125640",
           "CVEs": {
-            "CVE-2025-43392": {
-              "exploited": false,
-              "tags": [
-                "safari"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43392"
-            },
-            "CVE-2025-43421": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43421"
-            },
-            "CVE-2025-43425": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43425"
-            },
-            "CVE-2025-43427": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43427"
-            },
-            "CVE-2025-43429": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43429"
-            },
-            "CVE-2025-43430": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43430"
-            },
-            "CVE-2025-43431": {
-              "exploited": false,
-              "tags": [
-                "use-after-free",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43431"
-            },
-            "CVE-2025-43432": {
-              "exploited": false,
-              "tags": [
-                "buffer-overflow",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43432"
-            },
-            "CVE-2025-43433": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43433"
-            },
-            "CVE-2025-43434": {
-              "exploited": false,
-              "tags": [
-                "memory-corruption",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43434"
-            },
-            "CVE-2025-43435": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43435"
-            },
-            "CVE-2025-43438": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43438"
-            },
-            "CVE-2025-43440": {
-              "exploited": false,
-              "tags": [
-                "safari",
-                "use-after-free",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43440"
-            },
-            "CVE-2025-43441": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43441"
-            },
-            "CVE-2025-43443": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43443"
-            },
-            "CVE-2025-43457": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43457"
-            },
-            "CVE-2025-43458": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43458"
-            },
-            "CVE-2025-43480": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43480"
-            },
-            "CVE-2025-43493": {
-              "exploited": false,
-              "tags": [
-                "safari"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43493"
-            },
-            "CVE-2025-43502": {
-              "exploited": false,
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43502"
-            },
-            "CVE-2025-43503": {
-              "exploited": false,
-              "tags": [
-                "bypass",
-                "privacy",
-                "safari"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43503"
-            }
+            "CVE-2025-43392": {},
+            "CVE-2025-43421": {},
+            "CVE-2025-43425": {},
+            "CVE-2025-43427": {},
+            "CVE-2025-43429": {},
+            "CVE-2025-43430": {},
+            "CVE-2025-43431": {},
+            "CVE-2025-43432": {},
+            "CVE-2025-43433": {},
+            "CVE-2025-43434": {},
+            "CVE-2025-43435": {},
+            "CVE-2025-43438": {},
+            "CVE-2025-43440": {},
+            "CVE-2025-43441": {},
+            "CVE-2025-43443": {},
+            "CVE-2025-43457": {},
+            "CVE-2025-43458": {},
+            "CVE-2025-43480": {},
+            "CVE-2025-43493": {},
+            "CVE-2025-43502": {},
+            "CVE-2025-43503": {}
           },
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 21,
@@ -1555,21 +427,8 @@
             "CVE-2025-43343": {},
             "CVE-2025-43356": {},
             "CVE-2025-43368": {},
-            "CVE-2025-43376": {
-              "entry_added_date": "2025-11-03",
-              "tags": [
-                "safari",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43376"
-            },
-            "CVE-2025-43419": {
-              "entry_added_date": "2025-11-03",
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43419"
-            }
+            "CVE-2025-43376": {},
+            "CVE-2025-43419": {}
           },
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 9
@@ -1589,13 +448,9 @@
           "CVE-2025-24188": {},
           "CVE-2025-31273": {},
           "CVE-2025-31277": {
-            "exploited": true,
-            "kev": true,
-            "matched_pattern": "CISA KEV catalog",
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-31277",
-            "tags": [
-              "webkit"
-            ]
+            "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-31277",
+            "ActivelyExploited": true,
+            "InKEV": true
           },
           "CVE-2025-31278": {},
           "CVE-2025-43211": {},
@@ -1609,10 +464,9 @@
           "CVE-2025-43240": {},
           "CVE-2025-43265": {},
           "CVE-2025-6558": {
-            "exploited": true,
-            "kev": true,
-            "matched_pattern": "CISA KEV catalog",
-            "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6558"
+            "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-6558",
+            "ActivelyExploited": true,
+            "InKEV": true
           },
           "CVE-2025-7424": {},
           "CVE-2025-7425": {}
@@ -1636,13 +490,9 @@
             "CVE-2025-24188": {},
             "CVE-2025-31273": {},
             "CVE-2025-31277": {
-              "exploited": true,
-              "kev": true,
-              "matched_pattern": "CISA KEV catalog",
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-31277",
-              "tags": [
-                "webkit"
-              ]
+              "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-31277",
+              "ActivelyExploited": true,
+              "InKEV": true
             },
             "CVE-2025-31278": {},
             "CVE-2025-43211": {},
@@ -1656,10 +506,9 @@
             "CVE-2025-43240": {},
             "CVE-2025-43265": {},
             "CVE-2025-6558": {
-              "exploited": true,
-              "kev": true,
-              "matched_pattern": "CISA KEV catalog",
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6558"
+              "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-6558",
+              "ActivelyExploited": true,
+              "InKEV": true
             },
             "CVE-2025-7424": {},
             "CVE-2025-7425": {}
@@ -1689,15 +538,7 @@
             "CVE-2025-31223": {},
             "CVE-2025-31238": {},
             "CVE-2025-31257": {},
-            "CVE-2025-31266": {
-              "entry_added_date": "2025-11-21",
-              "tags": [
-                "memory-corruption",
-                "type-confusion",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-31266"
-            }
+            "CVE-2025-31266": {}
           },
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 11,
@@ -1721,13 +562,7 @@
             "CVE-2025-24264": {},
             "CVE-2025-30425": {},
             "CVE-2025-30427": {},
-            "CVE-2025-30466": {
-              "entry_added_date": "2025-05-28",
-              "tags": [
-                "safari"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-30466"
-            },
+            "CVE-2025-30466": {},
             "CVE-2025-30467": {},
             "CVE-2025-31184": {},
             "CVE-2025-31192": {}
@@ -1745,10 +580,10 @@
           "SecurityInfo": "https://support.apple.com/en-us/122285",
           "CVEs": {
             "CVE-2025-24201": {
-              "exploited": true,
-              "kev": true,
-              "matched_pattern": "CISA KEV catalog",
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-24201"
+              "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-24201",
+              "ActivelyExploited": true,
+              "InKEV": true,
+              "AppleExploitationNotes": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 17.2.) Description: An out-of-bounds write issue was addressed with improved checks to prevent unauthorized actions."
             }
           },
           "ActivelyExploitedCVEs": [
@@ -1772,13 +607,7 @@
             "CVE-2025-24158": {},
             "CVE-2025-24162": {},
             "CVE-2025-24169": {},
-            "CVE-2025-24189": {
-              "entry_added_date": "2025-05-16",
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-24189"
-            }
+            "CVE-2025-24189": {}
           },
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 8,
@@ -1798,13 +627,7 @@
             "CVE-2024-54505": {},
             "CVE-2024-54508": {},
             "CVE-2024-54534": {},
-            "CVE-2024-54542": {
-              "entry_added_date": "2025-01-27",
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54542"
-            },
+            "CVE-2024-54542": {},
             "CVE-2024-54543": {}
           },
           "ActivelyExploitedCVEs": [],
@@ -1820,20 +643,16 @@
           "SecurityInfo": "https://support.apple.com/en-us/121756",
           "CVEs": {
             "CVE-2024-44308": {
-              "exploited": true,
-              "kev": true,
-              "matched_pattern": "CISA KEV catalog",
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-44308",
-              "tags": [
-                "actively-exploited",
-                "webkit"
-              ]
+              "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2024-44308",
+              "ActivelyExploited": true,
+              "InKEV": true,
+              "AppleExploitationNotes": "Apple is aware of a report that this issue may have been actively exploited on Intel-based Mac systems."
             },
             "CVE-2024-44309": {
-              "exploited": true,
-              "kev": true,
-              "matched_pattern": "CISA KEV catalog",
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-44309"
+              "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2024-44309",
+              "ActivelyExploited": true,
+              "InKEV": true,
+              "AppleExploitationNotes": "Apple is aware of a report that this issue may have been actively exploited on Intel-based Mac systems."
             }
           },
           "ActivelyExploitedCVEs": [
@@ -1851,13 +670,7 @@
           "ReleaseType": "Safari",
           "SecurityInfo": "https://support.apple.com/en-us/121571",
           "CVEs": {
-            "CVE-2024-44212": {
-              "entry_added_date": "2024-12-11",
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-44212"
-            },
+            "CVE-2024-44212": {},
             "CVE-2024-44229": {},
             "CVE-2024-44244": {},
             "CVE-2024-44259": {},
@@ -1887,51 +700,202 @@
           "ReleaseType": "Safari",
           "SecurityInfo": "https://support.apple.com/en-us/121241",
           "CVEs": {
-            "CVE-2024-40857": {
-              "entry_added_date": "2024-10-28",
-              "tags": [
-                "safari"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-40857"
-            },
+            "CVE-2024-40857": {},
             "CVE-2024-40866": {},
-            "CVE-2024-44155": {
-              "entry_added_date": "2024-10-28",
-              "tags": [
-                "safari",
-                "security"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-44155"
-            },
+            "CVE-2024-44155": {},
             "CVE-2024-44187": {},
-            "CVE-2024-44192": {
-              "entry_added_date": "2025-03-03",
-              "tags": [
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-44192"
-            },
-            "CVE-2024-44202": {
-              "entry_added_date": "2024-10-28",
-              "tags": [
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-44202"
-            },
-            "CVE-2024-54467": {
-              "entry_added_date": "2025-03-03",
-              "tags": [
-                "security",
-                "webkit"
-              ],
-              "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-54467"
-            }
+            "CVE-2024-44192": {},
+            "CVE-2024-44202": {},
+            "CVE-2024-54467": {}
           },
           "ActivelyExploitedCVEs": [],
           "UniqueCVEsCount": 7
         }
       ]
     }
-  ]
+  ],
+  "Sources": {
+    "Apple": {
+      "Layer": 1,
+      "Name": "Apple Product Security",
+      "URL": "https://support.apple.com/en-us/100100",
+      "Format": "CSAF 2.1 + HTML",
+      "Retrieved": "2026-11-14T11:06:03.137615912Z"
+    },
+    "KEV": {
+      "Layer": 2,
+      "Name": "CISA Known Exploited Vulnerabilities",
+      "URL": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "Version": "2026.11.13"
+    }
+  },
+  "CVEDetails": {
+    "CVE-2024-44308": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "Apple",
+        "KEV"
+      ],
+      "Apple": {
+        "ExploitedStatement": "Apple is aware of a report that this issue may have been actively exploited on Intel-based Mac systems."
+      },
+      "KEV": {
+        "DateAdded": "2024-11-21",
+        "DueDate": "2024-12-12",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2024-44309": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "Apple",
+        "KEV"
+      ],
+      "Apple": {
+        "ExploitedStatement": "Apple is aware of a report that this issue may have been actively exploited on Intel-based Mac systems."
+      },
+      "KEV": {
+        "DateAdded": "2024-11-21",
+        "DueDate": "2024-12-12",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2025-14174": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "Apple",
+        "KEV"
+      ],
+      "Apple": {
+        "ExploitedStatement": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 26."
+      },
+      "KEV": {
+        "DateAdded": "2025-12-12",
+        "DueDate": "2026-01-02",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2025-24201": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "Apple",
+        "KEV"
+      ],
+      "Apple": {
+        "ExploitedStatement": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 17.2.) Description: An out-of-bounds write issue was addressed with improved checks to prevent unauthorized actions."
+      },
+      "KEV": {
+        "DateAdded": "2025-03-13",
+        "DueDate": "2025-04-03",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2025-31277": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "KEV"
+      ],
+      "KEV": {
+        "DateAdded": "2026-03-20",
+        "DueDate": "2026-04-03",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2025-43529": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "Apple",
+        "KEV"
+      ],
+      "Apple": {
+        "ExploitedStatement": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 26."
+      },
+      "KEV": {
+        "DateAdded": "2025-12-15",
+        "DueDate": "2026-01-05",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2025-6558": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "KEV"
+      ],
+      "KEV": {
+        "DateAdded": "2025-07-22",
+        "DueDate": "2025-08-12",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2026-64718": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "WebKit Canvas",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-64753": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may disclose sensitive user information",
+        "Description": "A permissions issue was addressed by removing the vulnerable code.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84518": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Safari",
+        "Impact": "A malicious website may be able to determine what apps a user has installed",
+        "Description": "This issue was addressed through improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84635": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
+        "Description": "A logic issue was addressed with improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86897": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Safe Browsing",
+        "Impact": "An app may be able to access sensitive user data",
+        "Description": "This issue was addressed with additional entitlement checks.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86898": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "WebKit",
+        "Impact": "Opening a maliciously crafted webarchive file may lead to universal cross-site scripting",
+        "Description": "A logic issue was addressed with improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86922": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
+        "Description": "A type confusion issue was addressed with improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    }
+  }
 }

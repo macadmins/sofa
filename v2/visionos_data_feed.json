@@ -1,9 +1,9 @@
 {
-  "SchemaVersion": "2026.04.11.2",
+  "SchemaVersion": "2026.11.14.1",
   "OSName": "visionOS",
   "Version": "2.0",
-  "UpdateHash": "ee7b16de241d0ae8fc86d2f2c384884dd43623eea9bd34a0d715427e2447a3e4",
-  "LastCheck": "2026-11-13T20:11:41.821758301+00:00",
+  "UpdateHash": "67bf8f2fa21995b995866ccf63768d170363cccc3d91689b30aae435abf66109",
+  "LastCheck": "2026-11-14T11:06:03.702267860+00:00",
   "OSVersions": [
     {
       "OSVersion": "visionOS 27",
@@ -17,10 +17,10 @@
           "24N124"
         ],
         "ReleaseDate": "2026-11-09",
-        "ExpirationDate": "2027-02-11",
+        "ExpirationDate": "2027-02-12",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/149724",
-        "SecurityInfoContext": "visionOS has been updated to version 27.2.1, released on November 09, 2026. This update addresses 9 security issues and is the most recent approved version.",
+        "SecurityInfoContext": "visionOS has been updated to version 27.2.1, released on November 09, 2026. This update addresses 9 security issues (including one actively exploited vulnerability) and is the most recent approved version.",
         "SupportedDevices": [
           "RealityDevice14,1",
           "RealityDevice17,1"
@@ -28,8 +28,8 @@
         "CVEs": {
           "CVE-2026-111497": {
             "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2026-111497",
-            "InKEV": true,
-            "Severity": "High"
+            "ActivelyExploited": true,
+            "InKEV": true
           },
           "CVE-2026-113960": {},
           "CVE-2026-113961": {},
@@ -46,11 +46,11 @@
         "UniqueCVEsCount": 9,
         "DaysSincePreviousRelease": 14,
         "UpdateSummary": {
-          "Priority": "medium",
-          "Summary": "Addresses 9 security issues",
-          "Recommendation": "Update to stay secure - security fixes available",
+          "Priority": "critical",
+          "Summary": "Contains 1 actively exploited vulnerability",
+          "Recommendation": "Update immediately - actively exploited vulnerabilities",
           "Stats": {
-            "Exploited": 0,
+            "Exploited": 1,
             "Critical": 0,
             "High": 0,
             "Medium": 0,
@@ -71,10 +71,10 @@
             "24N124"
           ],
           "ReleaseDate": "2026-11-09",
-          "ExpirationDate": "2027-02-11",
+          "ExpirationDate": "2027-02-12",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/149724",
-          "SecurityInfoContext": "visionOS has been updated to version 27.2.1, released on November 09, 2026. This update addresses 9 security issues and is the most recent approved version.",
+          "SecurityInfoContext": "visionOS has been updated to version 27.2.1, released on November 09, 2026. This update addresses 9 security issues (including one actively exploited vulnerability) and is the most recent approved version.",
           "SupportedDevices": [
             "RealityDevice14,1",
             "RealityDevice17,1"
@@ -82,8 +82,8 @@
           "CVEs": {
             "CVE-2026-111497": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2026-111497",
-              "InKEV": true,
-              "Severity": "High"
+              "ActivelyExploited": true,
+              "InKEV": true
             },
             "CVE-2026-113960": {},
             "CVE-2026-113961": {},
@@ -100,11 +100,11 @@
           "UniqueCVEsCount": 9,
           "DaysSincePreviousRelease": 14,
           "UpdateSummary": {
-            "Priority": "medium",
-            "Summary": "Addresses 9 security issues",
-            "Recommendation": "Update to stay secure - security fixes available",
+            "Priority": "critical",
+            "Summary": "Contains 1 actively exploited vulnerability",
+            "Recommendation": "Update immediately - actively exploited vulnerabilities",
             "Stats": {
-              "Exploited": 0,
+              "Exploited": 1,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -532,7 +532,7 @@
           "23O6780"
         ],
         "ReleaseDate": "2026-08-17",
-        "ExpirationDate": "2027-02-11",
+        "ExpirationDate": "2027-02-12",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/148353",
         "SecurityInfoContext": "visionOS has been updated to version 26.6.1, released on August 17, 2026. This update addresses 2 security issues and is the most recent approved version.",
@@ -573,7 +573,7 @@
             "23O6780"
           ],
           "ReleaseDate": "2026-08-17",
-          "ExpirationDate": "2027-02-11",
+          "ExpirationDate": "2027-02-12",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/148353",
           "SecurityInfoContext": "visionOS has been updated to version 26.6.1, released on August 17, 2026. This update addresses 2 security issues and is the most recent approved version.",
@@ -953,18 +953,20 @@
           "ReleaseDate": "2026-02-11",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/126353",
-          "SecurityInfoContext": "visionOS 26.3 was released on February 11, 2026. This release addressed 31 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "visionOS 26.3 was released on February 11, 2026. This release addressed 31 security issues (including 3 actively exploited vulnerabilities). Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2025-14174": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-14174",
+              "ActivelyExploited": true,
               "InKEV": true,
-              "Severity": "High"
+              "AppleExploitationNotes": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 26."
             },
             "CVE-2025-43529": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-43529",
+              "ActivelyExploited": true,
               "InKEV": true,
-              "Severity": "High"
+              "AppleExploitationNotes": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 26."
             },
             "CVE-2025-59375": {},
             "CVE-2026-20608": {},
@@ -996,8 +998,9 @@
             "CVE-2026-20677": {},
             "CVE-2026-20700": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2026-20700",
+              "ActivelyExploited": true,
               "InKEV": true,
-              "Severity": "High"
+              "AppleExploitationNotes": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 26."
             }
           },
           "ActivelyExploitedCVEs": [
@@ -1014,11 +1017,11 @@
             "DaysLater": 15
           },
           "UpdateSummary": {
-            "Priority": "high",
-            "Summary": "Addresses 31 security issues",
-            "Recommendation": "Update to stay secure - security fixes available",
+            "Priority": "critical",
+            "Summary": "Contains 3 actively exploited vulnerabilities",
+            "Recommendation": "Update immediately - actively exploited vulnerabilities",
             "Stats": {
-              "Exploited": 0,
+              "Exploited": 3,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -1037,22 +1040,24 @@
           "ReleaseDate": "2025-12-12",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125891",
-          "SecurityInfoContext": "visionOS 26.2 was released on December 12, 2025. This release addressed 29 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "visionOS 26.2 was released on December 12, 2025. This release addressed 29 security issues (including 2 actively exploited vulnerabilities). Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2024-7264": {},
             "CVE-2025-14174": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-14174",
+              "ActivelyExploited": true,
               "InKEV": true,
-              "Severity": "High"
+              "AppleExploitationNotes": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 26."
             },
             "CVE-2025-43428": {},
             "CVE-2025-43501": {},
             "CVE-2025-43511": {},
             "CVE-2025-43529": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-43529",
+              "ActivelyExploited": true,
               "InKEV": true,
-              "Severity": "High"
+              "AppleExploitationNotes": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 26."
             },
             "CVE-2025-43531": {},
             "CVE-2025-43532": {},
@@ -1091,11 +1096,11 @@
             "DaysLater": 61
           },
           "UpdateSummary": {
-            "Priority": "high",
-            "Summary": "Addresses 29 security issues",
-            "Recommendation": "Update to stay secure - security fixes available",
+            "Priority": "critical",
+            "Summary": "Contains 2 actively exploited vulnerabilities",
+            "Recommendation": "Update immediately - actively exploited vulnerabilities",
             "Stats": {
-              "Exploited": 0,
+              "Exploited": 2,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -1114,7 +1119,7 @@
           "ReleaseDate": "2025-11-03",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/125638",
-          "SecurityInfoContext": "visionOS 26.1 was released on November 03, 2025. This release addressed 46 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "visionOS 26.1 was released on November 03, 2025. This release addressed 46 security issues (including 2 actively exploited vulnerabilities). Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2025-43379": {},
@@ -1163,13 +1168,13 @@
             "CVE-2025-43507": {},
             "CVE-2025-43510": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-43510",
-              "InKEV": true,
-              "Severity": "High"
+              "ActivelyExploited": true,
+              "InKEV": true
             },
             "CVE-2025-43520": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-43520",
-              "InKEV": true,
-              "Severity": "High"
+              "ActivelyExploited": true,
+              "InKEV": true
             }
           },
           "ActivelyExploitedCVEs": [
@@ -1185,11 +1190,11 @@
             "DaysLater": 39
           },
           "UpdateSummary": {
-            "Priority": "high",
-            "Summary": "Addresses 46 security issues",
-            "Recommendation": "Update to stay secure - security fixes available",
+            "Priority": "critical",
+            "Summary": "Contains 2 actively exploited vulnerabilities",
+            "Recommendation": "Update immediately - actively exploited vulnerabilities",
             "Stats": {
-              "Exploited": 0,
+              "Exploited": 2,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -1310,14 +1315,14 @@
         "ReleaseDate": "2025-07-29",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/124154",
-        "SecurityInfoContext": "visionOS has been updated to version 2.6, released on July 29, 2025. This update addresses 26 security issues and is the most recent approved version.",
+        "SecurityInfoContext": "visionOS has been updated to version 2.6, released on July 29, 2025. This update addresses 26 security issues (including 2 actively exploited vulnerabilities) and is the most recent approved version.",
         "SupportedDevices": [],
         "CVEs": {
           "CVE-2025-31273": {},
           "CVE-2025-31277": {
             "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-31277",
-            "InKEV": true,
-            "Severity": "High"
+            "ActivelyExploited": true,
+            "InKEV": true
           },
           "CVE-2025-31278": {},
           "CVE-2025-31281": {},
@@ -1341,8 +1346,8 @@
           "CVE-2025-43282": {},
           "CVE-2025-6558": {
             "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-6558",
-            "InKEV": true,
-            "Severity": "High"
+            "ActivelyExploited": true,
+            "InKEV": true
           },
           "CVE-2025-6965": {},
           "CVE-2025-7424": {},
@@ -1355,11 +1360,11 @@
         "UniqueCVEsCount": 26,
         "DaysSincePreviousRelease": 78,
         "UpdateSummary": {
-          "Priority": "high",
-          "Summary": "Addresses 26 security issues",
-          "Recommendation": "Update to stay secure - security fixes available",
+          "Priority": "critical",
+          "Summary": "Contains 2 actively exploited vulnerabilities",
+          "Recommendation": "Update immediately - actively exploited vulnerabilities",
           "Stats": {
-            "Exploited": 0,
+            "Exploited": 2,
             "Critical": 0,
             "High": 0,
             "Medium": 0,
@@ -1379,14 +1384,14 @@
           "ReleaseDate": "2025-07-29",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/124154",
-          "SecurityInfoContext": "visionOS has been updated to version 2.6, released on July 29, 2025. This update addresses 26 security issues and is the most recent approved version.",
+          "SecurityInfoContext": "visionOS has been updated to version 2.6, released on July 29, 2025. This update addresses 26 security issues (including 2 actively exploited vulnerabilities) and is the most recent approved version.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2025-31273": {},
             "CVE-2025-31277": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-31277",
-              "InKEV": true,
-              "Severity": "High"
+              "ActivelyExploited": true,
+              "InKEV": true
             },
             "CVE-2025-31278": {},
             "CVE-2025-31281": {},
@@ -1410,8 +1415,8 @@
             "CVE-2025-43282": {},
             "CVE-2025-6558": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-6558",
-              "InKEV": true,
-              "Severity": "High"
+              "ActivelyExploited": true,
+              "InKEV": true
             },
             "CVE-2025-6965": {},
             "CVE-2025-7424": {},
@@ -1424,11 +1429,11 @@
           "UniqueCVEsCount": 26,
           "DaysSincePreviousRelease": 78,
           "UpdateSummary": {
-            "Priority": "high",
-            "Summary": "Addresses 26 security issues",
-            "Recommendation": "Update to stay secure - security fixes available",
+            "Priority": "critical",
+            "Summary": "Contains 2 actively exploited vulnerabilities",
+            "Recommendation": "Update immediately - actively exploited vulnerabilities",
             "Stats": {
-              "Exploited": 0,
+              "Exploited": 2,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -1512,18 +1517,20 @@
           "ReleaseDate": "2025-04-16",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/122402",
-          "SecurityInfoContext": "visionOS 2.4.1 was released on April 16, 2025. This release addressed 2 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "visionOS 2.4.1 was released on April 16, 2025. This release addressed 2 security issues (including 2 actively exploited vulnerabilities). Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2025-31200": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-31200",
+              "ActivelyExploited": true,
               "InKEV": true,
-              "Severity": "High"
+              "AppleExploitationNotes": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on iOS."
             },
             "CVE-2025-31201": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-31201",
+              "ActivelyExploited": true,
               "InKEV": true,
-              "Severity": "High"
+              "AppleExploitationNotes": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on iOS."
             }
           },
           "ActivelyExploitedCVEs": [
@@ -1539,11 +1546,11 @@
             "DaysLater": 26
           },
           "UpdateSummary": {
-            "Priority": "medium",
-            "Summary": "Addresses 2 security issues",
-            "Recommendation": "Update to stay secure - security fixes available",
+            "Priority": "critical",
+            "Summary": "Contains 2 actively exploited vulnerabilities",
+            "Recommendation": "Update immediately - actively exploited vulnerabilities",
             "Stats": {
-              "Exploited": 0,
+              "Exploited": 2,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -1651,13 +1658,14 @@
           "ReleaseDate": "2025-03-11",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/122284",
-          "SecurityInfoContext": "visionOS 2.3.2 was released on March 11, 2025. This release addressed one security issue. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "visionOS 2.3.2 was released on March 11, 2025. This release addressed one security issue (including one actively exploited vulnerability). Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2025-24201": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-24201",
+              "ActivelyExploited": true,
               "InKEV": true,
-              "Severity": "High"
+              "AppleExploitationNotes": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 17.2.) Description: An out-of-bounds write issue was addressed with improved checks to prevent unauthorized actions."
             }
           },
           "ActivelyExploitedCVEs": [
@@ -1672,11 +1680,11 @@
             "DaysLater": 20
           },
           "UpdateSummary": {
-            "Priority": "medium",
-            "Summary": "Addresses 1 security issue",
-            "Recommendation": "Update to stay secure - security fixes available",
+            "Priority": "critical",
+            "Summary": "Contains 1 actively exploited vulnerability",
+            "Recommendation": "Update immediately - actively exploited vulnerabilities",
             "Stats": {
-              "Exploited": 0,
+              "Exploited": 1,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -1695,13 +1703,14 @@
           "ReleaseDate": "2025-02-10",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/122904",
-          "SecurityInfoContext": "visionOS 2.3.1 was released on February 10, 2025. This release addressed one security issue. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "visionOS 2.3.1 was released on February 10, 2025. This release addressed one security issue (including one actively exploited vulnerability). Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2025-43200": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-43200",
+              "ActivelyExploited": true,
               "InKEV": true,
-              "Severity": "High"
+              "AppleExploitationNotes": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals."
             }
           },
           "ActivelyExploitedCVEs": [
@@ -1716,11 +1725,11 @@
             "DaysLater": 29
           },
           "UpdateSummary": {
-            "Priority": "medium",
-            "Summary": "Addresses 1 security issue",
-            "Recommendation": "Update to stay secure - security fixes available",
+            "Priority": "critical",
+            "Summary": "Contains 1 actively exploited vulnerability",
+            "Recommendation": "Update immediately - actively exploited vulnerabilities",
             "Stats": {
-              "Exploited": 0,
+              "Exploited": 1,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -1739,14 +1748,15 @@
           "ReleaseDate": "2025-01-27",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/122073",
-          "SecurityInfoContext": "visionOS 2.3 was released on January 27, 2025. This release addressed 28 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "visionOS 2.3 was released on January 27, 2025. This release addressed 28 security issues (including one actively exploited vulnerability). Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2024-55549": {},
             "CVE-2025-24085": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2025-24085",
+              "ActivelyExploited": true,
               "InKEV": true,
-              "Severity": "High"
+              "AppleExploitationNotes": "Apple is aware of a report that this issue may have been actively exploited against versions of iOS before iOS 17.2."
             },
             "CVE-2025-24086": {},
             "CVE-2025-24111": {},
@@ -1787,11 +1797,11 @@
             "DaysLater": 14
           },
           "UpdateSummary": {
-            "Priority": "high",
-            "Summary": "Addresses 28 security issues",
-            "Recommendation": "Update to stay secure - security fixes available",
+            "Priority": "critical",
+            "Summary": "Contains 1 actively exploited vulnerability",
+            "Recommendation": "Update immediately - actively exploited vulnerabilities",
             "Stats": {
-              "Exploited": 0,
+              "Exploited": 1,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -1868,18 +1878,20 @@
           "ReleaseDate": "2024-11-19",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/121755",
-          "SecurityInfoContext": "visionOS 2.1.1 was released on November 19, 2024. This release addressed 2 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "visionOS 2.1.1 was released on November 19, 2024. This release addressed 2 security issues (including 2 actively exploited vulnerabilities). Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2024-44308": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2024-44308",
+              "ActivelyExploited": true,
               "InKEV": true,
-              "Severity": "High"
+              "AppleExploitationNotes": "Apple is aware of a report that this issue may have been actively exploited on Intel-based Mac systems."
             },
             "CVE-2024-44309": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2024-44309",
+              "ActivelyExploited": true,
               "InKEV": true,
-              "Severity": "High"
+              "AppleExploitationNotes": "Apple is aware of a report that this issue may have been actively exploited on Intel-based Mac systems."
             }
           },
           "ActivelyExploitedCVEs": [
@@ -1895,11 +1907,11 @@
             "DaysLater": 22
           },
           "UpdateSummary": {
-            "Priority": "medium",
-            "Summary": "Addresses 2 security issues",
-            "Recommendation": "Update to stay secure - security fixes available",
+            "Priority": "critical",
+            "Summary": "Contains 2 actively exploited vulnerabilities",
+            "Recommendation": "Update immediately - actively exploited vulnerabilities",
             "Stats": {
-              "Exploited": 0,
+              "Exploited": 2,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -2077,5 +2089,1377 @@
       "MarketingName": "Vision Pro (M5)"
     }
   },
-  "BackgroundSecurityImprovements": {}
+  "BackgroundSecurityImprovements": {},
+  "Sources": {
+    "Apple": {
+      "Layer": 1,
+      "Name": "Apple Product Security",
+      "URL": "https://support.apple.com/en-us/100100",
+      "Format": "CSAF 2.1 + HTML",
+      "Retrieved": "2026-11-14T11:06:03.137615912Z"
+    },
+    "KEV": {
+      "Layer": 2,
+      "Name": "CISA Known Exploited Vulnerabilities",
+      "URL": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "Version": "2026.11.13"
+    }
+  },
+  "CVEDetails": {
+    "CVE-2024-44308": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "Apple",
+        "KEV"
+      ],
+      "Apple": {
+        "ExploitedStatement": "Apple is aware of a report that this issue may have been actively exploited on Intel-based Mac systems."
+      },
+      "KEV": {
+        "DateAdded": "2024-11-21",
+        "DueDate": "2024-12-12",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2024-44309": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "Apple",
+        "KEV"
+      ],
+      "Apple": {
+        "ExploitedStatement": "Apple is aware of a report that this issue may have been actively exploited on Intel-based Mac systems."
+      },
+      "KEV": {
+        "DateAdded": "2024-11-21",
+        "DueDate": "2024-12-12",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2025-14174": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "Apple",
+        "KEV"
+      ],
+      "Apple": {
+        "ExploitedStatement": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 26."
+      },
+      "KEV": {
+        "DateAdded": "2025-12-12",
+        "DueDate": "2026-01-02",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2025-24085": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "Apple",
+        "KEV"
+      ],
+      "Apple": {
+        "ExploitedStatement": "Apple is aware of a report that this issue may have been actively exploited against versions of iOS before iOS 17.2."
+      },
+      "KEV": {
+        "DateAdded": "2025-01-29",
+        "DueDate": "2025-02-19",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2025-24201": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "Apple",
+        "KEV"
+      ],
+      "Apple": {
+        "ExploitedStatement": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 17.2.) Description: An out-of-bounds write issue was addressed with improved checks to prevent unauthorized actions."
+      },
+      "KEV": {
+        "DateAdded": "2025-03-13",
+        "DueDate": "2025-04-03",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2025-31200": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "Apple",
+        "KEV"
+      ],
+      "Apple": {
+        "ExploitedStatement": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on iOS."
+      },
+      "KEV": {
+        "DateAdded": "2025-04-17",
+        "DueDate": "2025-05-08",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2025-31201": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "Apple",
+        "KEV"
+      ],
+      "Apple": {
+        "ExploitedStatement": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on iOS."
+      },
+      "KEV": {
+        "DateAdded": "2025-04-17",
+        "DueDate": "2025-05-08",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2025-31277": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "KEV"
+      ],
+      "KEV": {
+        "DateAdded": "2026-03-20",
+        "DueDate": "2026-04-03",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2025-43200": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "Apple",
+        "KEV"
+      ],
+      "Apple": {
+        "ExploitedStatement": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals."
+      },
+      "KEV": {
+        "DateAdded": "2025-06-16",
+        "DueDate": "2025-07-07",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2025-43510": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "KEV"
+      ],
+      "KEV": {
+        "DateAdded": "2026-03-20",
+        "DueDate": "2026-04-03",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2025-43520": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "KEV"
+      ],
+      "KEV": {
+        "DateAdded": "2026-03-20",
+        "DueDate": "2026-04-03",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2025-43529": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "Apple",
+        "KEV"
+      ],
+      "Apple": {
+        "ExploitedStatement": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 26."
+      },
+      "KEV": {
+        "DateAdded": "2025-12-15",
+        "DueDate": "2026-01-05",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2025-6558": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "KEV"
+      ],
+      "KEV": {
+        "DateAdded": "2025-07-22",
+        "DueDate": "2025-08-12",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2026-111497": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "KEV"
+      ],
+      "KEV": {
+        "DateAdded": "2026-10-27",
+        "DueDate": "2026-11-10",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2026-112446": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149035",
+        "Component": "Accounts",
+        "Impact": "An app may be able to access sensitive user data",
+        "Description": "This issue was addressed with additional entitlement checks.",
+        "AvailableFor": "MacBook Neo (2026), MacBook Air with Apple silicon (2020 and later), MacBook Pro with Apple silicon (2020 and later), iMac with Apple silicon (2021 and later), Mac mini with Apple silicon (2020 and later), Mac Studio (2022 and later), and Mac Pro with Apple silicon (2023)"
+      }
+    },
+    "CVE-2026-112608": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Core Bluetooth",
+        "Impact": "Processing a maliciously crafted Bluetooth packet may result in disclosure of process memory",
+        "Description": "An out-of-bounds read was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-20683": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Apple Account",
+        "Impact": "An app may be able to use the Sign In With Apple authentication flow to access the user's Apple Account",
+        "Description": "An authentication issue was addressed with improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-20700": {
+      "Exploited": true,
+      "ExploitedSources": [
+        "Apple",
+        "KEV"
+      ],
+      "Apple": {
+        "ExploitedStatement": "Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 26."
+      },
+      "KEV": {
+        "DateAdded": "2026-02-12",
+        "DueDate": "2026-03-05",
+        "KnownRansomwareCampaignUse": "Unknown"
+      }
+    },
+    "CVE-2026-28966": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "RealityKit",
+        "Impact": "Processing a maliciously crafted file may lead to unexpected app termination",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-28968": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-28969": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "IOKit",
+        "Impact": "An app may be able to cause unexpected system termination",
+        "Description": "A use after free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-43686": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "Connecting to a malicious NFS server may lead to kernel memory corruption",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-43687": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "Connecting to a malicious NFS server may disclose kernel memory",
+        "Description": "The issue was addressed with improved memory handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-43689": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "A malicious app may be able to gain root privileges",
+        "Description": "A permissions issue was addressed with additional restrictions.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-43695": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "NetworkExtension",
+        "Impact": "An app may be able to access sensitive user data",
+        "Description": "An authorization issue was addressed with improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-43785": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "File Bookmark",
+        "Impact": "An app may be able to modify a file it only had permission to read",
+        "Description": "A permissions issue was addressed with additional restrictions.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-64718": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "WebKit Canvas",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-64752": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "CoreMedia",
+        "Impact": "Processing a maliciously crafted image may lead to arbitrary code execution",
+        "Description": "A memory corruption issue was addressed by removing the vulnerable code.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-64753": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may disclose sensitive user information",
+        "Description": "A permissions issue was addressed by removing the vulnerable code.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-64760": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "IOSurfaceAccelerator",
+        "Impact": "An app may be able to leak sensitive kernel state",
+        "Description": "An information leakage was addressed with additional validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65344": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "CoreMedia",
+        "Impact": "Processing a maliciously crafted video file may lead to unexpected app termination",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65358": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "An app may be able to cause unexpected system termination",
+        "Description": "A race condition was addressed with improved state handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65359": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "A local user may be able to cause unexpected system termination or read kernel memory",
+        "Description": "An out-of-bounds read was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65360": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "An app may be able to cause unexpected system termination",
+        "Description": "A race condition was addressed with improved state handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65377": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "An app may be able to cause unexpected system termination",
+        "Description": "A memory corruption issue was addressed with improved memory handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65395": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "ImageIO",
+        "Impact": "Processing a maliciously crafted image may result in memory corruption",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65398": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "IOMobileFrameBuffer",
+        "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
+        "Description": "An out-of-bounds access issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65399": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "copyfile",
+        "Impact": "An archive may be able to bypass Gatekeeper",
+        "Description": "A file quarantine bypass was addressed with additional checks.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65402": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "An app may be able to cause unexpected system termination",
+        "Description": "A use after free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65403": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Reminders",
+        "Impact": "An app may be able to access sensitive user data",
+        "Description": "This issue was addressed with improved checks.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65405": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "An app may be able to determine kernel memory layout",
+        "Description": "A memory initialization issue was addressed with improved memory handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65406": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "BackgroundAssets",
+        "Impact": "An app may be able to access sensitive user data",
+        "Description": "A logic issue was addressed with improved validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65407": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "AppleAVD",
+        "Impact": "An app may be able to cause unexpected system termination",
+        "Description": "A use after free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65409": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Foundation",
+        "Impact": "An app may be able to cause a denial of service",
+        "Description": "A type confusion issue was addressed with improved memory handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65410": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "AVEVideoEncoder",
+        "Impact": "An app may be able to cause unexpected system termination",
+        "Description": "The issue was addressed with improved checks.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65411": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "MobileBackup",
+        "Impact": "An app may be able to modify protected parts of the file system",
+        "Description": "A path handling issue was addressed with improved validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65412": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "CoreText",
+        "Impact": "Processing web content may lead to a denial-of-service",
+        "Description": "A null pointer dereference was addressed with improved input validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65414": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Bluetooth",
+        "Impact": "A remote attacker may be able to cause unexpected app termination or arbitrary code execution",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65415": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "A local user may be able to cause unexpected system termination or read kernel memory",
+        "Description": "A race condition was addressed with additional validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84487": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "SceneKit",
+        "Impact": "Processing a maliciously crafted file may result in disclosure of process memory",
+        "Description": "An integer overflow was addressed with improved input validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84491": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Photos Storage",
+        "Impact": "An app may be able to access sensitive user data",
+        "Description": "A permissions issue was addressed with additional restrictions.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84492": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Graphics",
+        "Impact": "An app may be able to cause unexpected system termination",
+        "Description": "A race condition was addressed with improved state handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84497": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Model I/O",
+        "Impact": "Opening a maliciously crafted file may lead to unexpected process termination",
+        "Description": "A buffer overflow was addressed with improved size validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84507": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
+        "Description": "A race condition was addressed with improved state handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84508": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Security",
+        "Impact": "An app may be able to access protected user data",
+        "Description": "This issue was addressed with improved validation of the caller's access.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84511": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "CoreUI",
+        "Impact": "Processing a maliciously crafted asset catalog may lead to unexpected process termination",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84513": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Symptom Framework",
+        "Impact": "A malicious application may be able to determine a user's current location",
+        "Description": "A privacy issue was addressed with improved private data redaction for log entries.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84521": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "An app may be able to cause unexpected system termination",
+        "Description": "A use after free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84523": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "APFS",
+        "Impact": "An app may be able to cause unexpected system termination or write kernel memory",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84524": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "FontParser",
+        "Impact": "Processing a maliciously crafted font file may lead to unexpected app termination",
+        "Description": "An out-of-bounds read was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84526": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "SceneKit",
+        "Impact": "Processing a maliciously crafted 3D scene may lead to unexpected process termination",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84527": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "TCC",
+        "Impact": "An app may be able to access sensitive user data",
+        "Description": "A logging issue was addressed with improved data redaction.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84530": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "An app may be able to disclose kernel memory",
+        "Description": "An information disclosure issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84532": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "RealityKit",
+        "Impact": "Opening a maliciously crafted file may cause unexpected process termination or disclose process memory",
+        "Description": "An out-of-bounds read issue was addressed with improved input validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84534": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "file_cmds",
+        "Impact": "Extracting a maliciously crafted archive may allow an attacker to write arbitrary files",
+        "Description": "A path handling issue was addressed with improved validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84546": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "SceneKit",
+        "Impact": "Processing a maliciously crafted 3D model may lead to memory corruption",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84551": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Sandbox",
+        "Impact": "An app may be able to bypass network restrictions",
+        "Description": "A logic issue was addressed with improved validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84560": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Bluetooth",
+        "Impact": "An app may gain unauthorized access to Bluetooth",
+        "Description": "An authorization issue was addressed with improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84561": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
+        "Description": "A double free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84564": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "ImageIO",
+        "Impact": "Processing a maliciously crafted image may result in disclosure of process memory",
+        "Description": "An uninitialized memory issue was addressed with improved memory initialization.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84571": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "CoreUI",
+        "Impact": "Processing a maliciously crafted image may lead to unexpected app termination",
+        "Description": "A buffer overflow was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84575": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "CoreUI",
+        "Impact": "Processing a maliciously crafted file may lead to unexpected app termination",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84582": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "App Intents",
+        "Impact": "An app may be able to access sensitive user data",
+        "Description": "A privacy issue was addressed with improved access restrictions.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84583": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "AuthKit",
+        "Impact": "A local app may be able to read a persistent account identifier",
+        "Description": "A permissions issue was addressed with additional restrictions.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84595": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Apple Neural Engine",
+        "Impact": "An app may be able to cause unexpected system termination",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84596": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "CoreText",
+        "Impact": "Processing a maliciously crafted font may result in the disclosure of process memory",
+        "Description": "An out-of-bounds read was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84597": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "FontParser",
+        "Impact": "Processing a maliciously crafted font may result in the disclosure of process memory",
+        "Description": "An out-of-bounds read issue was addressed with improved input validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84599": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
+        "Description": "The issue was addressed with improved memory handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84600": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Shortcuts",
+        "Impact": "A malicious shortcut may be able to send messages without user confirmation",
+        "Description": "An authorization issue was addressed with improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84602": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "An app may be able to cause unexpected system termination",
+        "Description": "A type confusion issue was addressed with improved checks.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84603": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Sandbox Profiles",
+        "Impact": "An app may be able to access sensitive user data",
+        "Description": "A permissions issue was addressed with additional restrictions.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84606": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "iCloud",
+        "Impact": "An app may be able to identify a user across reinstalls",
+        "Description": "A privacy issue was addressed with improved handling of identifiers.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84607": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "AVEVideoEncoder",
+        "Impact": "A sandboxed app may be able to execute arbitrary code with kernel privileges",
+        "Description": "A race condition was addressed with improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84609": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Software Update",
+        "Impact": "An app may be able to modify protected system files",
+        "Description": "A permissions issue was addressed with improved path validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84611": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "SceneKit",
+        "Impact": "Processing a maliciously crafted 3D model may lead to memory corruption",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84612": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "DeviceCheck",
+        "Impact": "An app may be able to read persistent device identifiers",
+        "Description": "An authorization issue was addressed with improved access control.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84613": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Bluetooth",
+        "Impact": "An attacker in radio range may be able to cause unexpected system termination",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84615": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Music",
+        "Impact": "An app may be able to access sensitive user data",
+        "Description": "An authorization issue was addressed with improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84616": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "AVEVideoEncoder",
+        "Impact": "An app may be able to cause unexpected system termination",
+        "Description": "A type confusion issue was addressed with improved memory handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84620": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "SceneKit",
+        "Impact": "Processing a maliciously crafted 3D model may lead to memory corruption",
+        "Description": "An integer overflow was addressed with improved input validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84622": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "An app with root privileges may be able to read uninitialized kernel memory",
+        "Description": "A memory initialization issue was addressed with improved memory handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84624": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "CoreML",
+        "Impact": "A sandboxed app may be able to access restricted files",
+        "Description": "A permissions issue was addressed with improved path validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84625": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Sandbox Profiles",
+        "Impact": "An app may be able to fingerprint the user",
+        "Description": "A permissions issue was addressed with additional sandbox restrictions.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84626": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "NetworkExtension",
+        "Impact": "An app may be able to identify what other apps a user has installed",
+        "Description": "An information disclosure issue was addressed with improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84627": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "RawCamera",
+        "Impact": "Processing a maliciously crafted image may lead to heap corruption",
+        "Description": "A buffer overflow was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84628": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "MediaRemote",
+        "Impact": "A sandboxed app may be able to access the System Keychain",
+        "Description": "An authorization issue was addressed with improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84629": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Photos Storage",
+        "Impact": "An app may be able to fingerprint the user",
+        "Description": "This issue was addressed with additional entitlement checks.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84630": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "An app may be able to cause unexpected system termination",
+        "Description": "A race condition was addressed with improved state handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84632": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "SceneKit",
+        "Impact": "Processing a maliciously crafted 3D model may lead to memory corruption",
+        "Description": "The issue was addressed with improved memory handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84634": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Apple Neural Engine",
+        "Impact": "An app may be able to cause unexpected system termination or write kernel memory",
+        "Description": "A race condition was addressed with additional validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84635": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
+        "Description": "A logic issue was addressed with improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-84636": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Wi-Fi Connectivity",
+        "Impact": "An app may be able to access sensitive user data",
+        "Description": "An authorization issue was addressed with improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86870": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "libarchive",
+        "Impact": "Processing a maliciously crafted file may lead to unexpected app termination",
+        "Description": "A heap buffer overflow was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86876": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "CoreMedia",
+        "Impact": "A sandboxed process may be able to circumvent sandbox restrictions",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86881": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Security",
+        "Impact": "An attacker with a compromised intermediate certificate authority may be able to issue certificates with arbitrary extended key usages",
+        "Description": "A certificate validation issue was addressed with improved certificate validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86882": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Accelerate Framework",
+        "Impact": "Processing a maliciously crafted image may lead to unexpected process termination",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86883": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Managed Configuration",
+        "Impact": "An app may be able to access sensitive user data",
+        "Description": "A privacy issue was addressed with improved handling of files.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86887": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Time Zone",
+        "Impact": "An app may be able to bypass certain Privacy preferences",
+        "Description": "A privacy issue was addressed by removing sensitive data.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86888": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "App Store",
+        "Impact": "A local app may be able to read a persistent account identifier",
+        "Description": "A permissions issue was addressed with additional restrictions.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86892": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "SpringBoard",
+        "Impact": "An app may be able to cause a denial-of-service",
+        "Description": "This issue was addressed with additional entitlement checks.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86893": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "CloudKit",
+        "Impact": "An app may be able to read device name",
+        "Description": "A permissions issue was addressed with additional restrictions.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86895": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "CloudKit",
+        "Impact": "A local app may be able to read a persistent account identifier",
+        "Description": "An information disclosure issue was addressed with improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86897": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Safe Browsing",
+        "Impact": "An app may be able to access sensitive user data",
+        "Description": "This issue was addressed with additional entitlement checks.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86898": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "WebKit",
+        "Impact": "Opening a maliciously crafted webarchive file may lead to universal cross-site scripting",
+        "Description": "A logic issue was addressed with improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86903": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "An app may be able to disclose kernel memory",
+        "Description": "An out-of-bounds read was addressed with improved input validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86905": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Authentication Services",
+        "Impact": "An app may be able to delete credentials stored in Keychain",
+        "Description": "This issue was addressed by removing the vulnerable code.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86913": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "CoreMedia",
+        "Impact": "Processing a maliciously crafted media file may lead to unexpected app termination or corrupt process memory",
+        "Description": "A use after free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86918": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Accelerate Framework",
+        "Impact": "Processing a maliciously crafted image may lead to unexpected app termination",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86919": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Core Bluetooth",
+        "Impact": "An attacker with a paired Bluetooth device may be able to execute arbitrary code",
+        "Description": "A stack overflow was addressed with improved input validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86920": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Apple Intelligence",
+        "Impact": "An app may be able to access sensitive user data",
+        "Description": "An authorization issue was addressed with improved state management.",
+        "AvailableFor": "iPhone 15 Pro and later, iPad Pro 12.9-inch 5th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 5th generation and later, and iPad mini 7th generation"
+      }
+    },
+    "CVE-2026-86921": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Siri",
+        "Impact": "A local attacker may be able to overwrite restricted files",
+        "Description": "A permissions issue was addressed with improved validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86922": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
+        "Description": "A type confusion issue was addressed with improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86942": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Heimdal",
+        "Impact": "An app may be able to cause a denial-of-service",
+        "Description": "An out-of-bounds read was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86953": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Wi-Fi",
+        "Impact": "An attacker in physical proximity may be able to cause a denial-of-service",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86954": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "ImageIO",
+        "Impact": "Processing a maliciously crafted image may lead to unexpected app termination",
+        "Description": "An out-of-bounds read was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86957": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Wi-Fi",
+        "Impact": "An attacker in wireless proximity may be able to cause unexpected system termination",
+        "Description": "An out-of-bounds read was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86962": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "An app may be able to cause unexpected system termination",
+        "Description": "A double free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86964": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "Kernel",
+        "Impact": "An app may be able to cause unexpected system termination",
+        "Description": "A null pointer dereference was addressed with improved input validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86966": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "copyfile",
+        "Impact": "An app may be able to modify protected parts of the file system",
+        "Description": "This issue was addressed with improved handling of symlinks.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86975": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149034",
+        "Component": "ImageIO",
+        "Impact": "Processing a maliciously crafted image may lead to unexpected process termination",
+        "Description": "An out-of-bounds read was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    }
+  }
 }

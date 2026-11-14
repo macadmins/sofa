@@ -1,11 +1,11 @@
 {
-  "content_hash": "74e60c1fe08a17d98d554cf3f8f9979181da407236762e2fe8010e6df0dcfd10",
+  "content_hash": "a35ebb657589f494d9b36ed9342e264a97c481f74f234f950b93f2c50994e971",
   "content_changed": true,
-  "generated_at": "2026-11-13T20:11:42.313014557Z",
+  "generated_at": "2026-11-14T11:06:04.190933170Z",
   "latest_releases": {
     "macos": {
       "version": "27.2.1",
-      "build": "26B8132",
+      "build": "26B131",
       "release_date": "2026-11-09T00:00:00Z",
       "url": "https://support.apple.com/en-us/149718",
       "cves_fixed": [
@@ -21,7 +21,10 @@
       "actively_exploited_count": 1,
       "total_cve_count": 8,
       "enterprise_link": null,
-      "updates_link": null
+      "updates_link": null,
+      "actively_exploited_cves": [
+        "CVE-2026-111497"
+      ]
     },
     "ios": {
       "version": "27.2.1",
@@ -41,8 +44,11 @@
       ],
       "actively_exploited_count": 1,
       "total_cve_count": 9,
-      "enterprise_link": "https://support.apple.com/en-us/125073",
-      "updates_link": null
+      "enterprise_link": null,
+      "updates_link": null,
+      "actively_exploited_cves": [
+        "CVE-2026-111497"
+      ]
     },
     "ipados": {
       "version": "27.2.1",
@@ -62,92 +68,33 @@
       ],
       "actively_exploited_count": 1,
       "total_cve_count": 9,
-      "enterprise_link": "https://support.apple.com/en-us/125073",
-      "updates_link": null
+      "enterprise_link": null,
+      "updates_link": null,
+      "actively_exploited_cves": [
+        "CVE-2026-111497"
+      ]
     },
     "tvos": {
-      "version": "27.2",
-      "build": "24K6154",
-      "release_date": "2026-10-26",
-      "url": "https://support.apple.com/en-us/149524",
+      "version": "27.2.1",
+      "build": "24K6157",
+      "release_date": "2026-11-13",
+      "url": "https://support.apple.com/en-us/149721",
       "cves_fixed": [
-        "CVE-2026-112416",
-        "CVE-2026-112425",
-        "CVE-2026-112432",
-        "CVE-2026-112446",
-        "CVE-2026-112454",
-        "CVE-2026-112455",
-        "CVE-2026-112459",
-        "CVE-2026-112464",
-        "CVE-2026-112466",
-        "CVE-2026-112468",
-        "CVE-2026-112469",
-        "CVE-2026-112470",
-        "CVE-2026-112474",
-        "CVE-2026-112476",
-        "CVE-2026-112477",
-        "CVE-2026-112485",
-        "CVE-2026-112491",
-        "CVE-2026-112501",
-        "CVE-2026-112514",
-        "CVE-2026-112515",
-        "CVE-2026-112516",
-        "CVE-2026-112517",
-        "CVE-2026-112518",
-        "CVE-2026-112546",
-        "CVE-2026-112560",
-        "CVE-2026-112561",
-        "CVE-2026-112563",
-        "CVE-2026-112566",
-        "CVE-2026-112567",
-        "CVE-2026-112571",
-        "CVE-2026-112576",
-        "CVE-2026-112595",
-        "CVE-2026-112596",
-        "CVE-2026-112599",
-        "CVE-2026-112606",
-        "CVE-2026-112615",
-        "CVE-2026-112620",
-        "CVE-2026-112626",
-        "CVE-2026-112637",
-        "CVE-2026-112638",
-        "CVE-2026-112640",
-        "CVE-2026-112642",
-        "CVE-2026-112655",
-        "CVE-2026-112656",
-        "CVE-2026-112665",
-        "CVE-2026-112666",
-        "CVE-2026-112669",
-        "CVE-2026-112679",
-        "CVE-2026-112684",
-        "CVE-2026-112685",
-        "CVE-2026-112686",
-        "CVE-2026-112687",
-        "CVE-2026-112689",
-        "CVE-2026-112692",
-        "CVE-2026-112697",
-        "CVE-2026-112705",
-        "CVE-2026-112706",
-        "CVE-2026-113898",
-        "CVE-2026-113904",
-        "CVE-2026-113907",
-        "CVE-2026-113910",
-        "CVE-2026-113912",
-        "CVE-2026-113915",
-        "CVE-2026-113950",
-        "CVE-2026-65350",
-        "CVE-2026-84495",
-        "CVE-2026-86970",
-        "CVE-2026-86972",
-        "CVE-2026-86978",
-        "CVE-2026-86985",
-        "CVE-2026-86988",
-        "CVE-2026-86992"
+        "CVE-2026-111497",
+        "CVE-2026-113963",
+        "CVE-2026-113964",
+        "CVE-2026-113965",
+        "CVE-2026-113968",
+        "CVE-2026-113969",
+        "CVE-2026-113970"
       ],
-      "actively_exploited_count": 0,
-      "total_cve_count": 72,
+      "actively_exploited_count": 1,
+      "total_cve_count": 7,
       "enterprise_link": null,
-      "updates_link": null
+      "updates_link": null,
+      "actively_exploited_cves": [
+        "CVE-2026-111497"
+      ]
     },
     "watchos": {
       "version": "27.2.1",
@@ -168,7 +115,10 @@
       "actively_exploited_count": 1,
       "total_cve_count": 9,
       "enterprise_link": null,
-      "updates_link": null
+      "updates_link": null,
+      "actively_exploited_cves": [
+        "CVE-2026-111497"
+      ]
     },
     "visionos": {
       "version": "27.2.1",
@@ -189,7 +139,10 @@
       "actively_exploited_count": 1,
       "total_cve_count": 9,
       "enterprise_link": null,
-      "updates_link": null
+      "updates_link": null,
+      "actively_exploited_cves": [
+        "CVE-2026-111497"
+      ]
     },
     "safari": {
       "version": "27.2",
@@ -231,16 +184,16 @@
         "CVE-2026-86985",
         "CVE-2026-86986"
       ],
-      "actively_exploited_count": 1,
+      "actively_exploited_count": 0,
       "total_cve_count": 33,
       "enterprise_link": null,
       "updates_link": null
     }
   },
   "security_summary": {
-    "unique_cves_fixed": 101,
+    "unique_cves_fixed": 42,
     "kev_matches": 1,
-    "latest_wave_date": "2026-11-09T00:00:00Z",
+    "latest_wave_date": "2026-11-13",
     "kev_cve_list": [
       "CVE-2026-111497"
     ]
@@ -280,6 +233,13 @@
   },
   "recent_releases": [
     {
+      "release_date": "2026-11-13",
+      "name": "tvOS 27.2.1",
+      "platform": "tvos",
+      "version": "27.2.1",
+      "url": "https://support.apple.com/en-us/149721"
+    },
+    {
       "release_date": "2026-11-12",
       "name": "HomeView Software Version 27.2",
       "platform": "other",
@@ -307,8 +267,7 @@
       "name": "iOS 27.2.1 and iPadOS 27.2.1",
       "platform": "ios",
       "version": "27.2.1",
-      "url": "https://support.apple.com/en-us/149715",
-      "enterprise_link": "https://support.apple.com/en-us/125073"
+      "url": "https://support.apple.com/en-us/149715"
     },
     {
       "release_date": "2026-11-09",
@@ -348,13 +307,6 @@
       "platform": "watchos",
       "version": "26.6.1",
       "url": "https://support.apple.com/en-us/149723"
-    },
-    {
-      "release_date": "2026-11-09",
-      "name": "watchOS 27.2.1",
-      "platform": "watchos",
-      "version": "27.2.1",
-      "url": "https://support.apple.com/en-us/149722"
     }
   ]
 }

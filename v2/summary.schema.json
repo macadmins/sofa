@@ -1,0 +1,391 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sofa/v2/summary/2026.11.14.1",
+  "title": "SOFA summary (schema 2026.11.14.1)",
+  "type": "object",
+  "required": [
+    "Betas",
+    "ContentHash",
+    "ExploitedCVEs",
+    "GeneratedAt",
+    "Platforms",
+    "Recent",
+    "SchemaVersion"
+  ],
+  "properties": {
+    "Betas": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/Beta"
+      }
+    },
+    "ContentHash": {
+      "type": "string"
+    },
+    "ExploitedCVEs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ExploitedCve"
+      }
+    },
+    "GeneratedAt": {
+      "type": "string"
+    },
+    "Platforms": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/PlatformSummary"
+      }
+    },
+    "Recent": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Recent"
+      }
+    },
+    "SchemaVersion": {
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "Beta": {
+      "type": "object",
+      "required": [
+        "Build",
+        "Released",
+        "Version"
+      ],
+      "properties": {
+        "Build": {
+          "type": "string"
+        },
+        "Released": {
+          "type": "string"
+        },
+        "Version": {
+          "type": "string"
+        }
+      }
+    },
+    "Bsi": {
+      "type": "object",
+      "required": [
+        "Build",
+        "Version"
+      ],
+      "properties": {
+        "Build": {
+          "type": "string"
+        },
+        "Extra": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "PrerequisiteBuild": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Version": {
+          "type": "string"
+        }
+      }
+    },
+    "BuildCount": {
+      "type": "object",
+      "required": [
+        "Build"
+      ],
+      "properties": {
+        "Boards": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "uint",
+          "minimum": 0.0
+        },
+        "Build": {
+          "type": "string"
+        }
+      }
+    },
+    "DeviceSpecific": {
+      "type": "object",
+      "required": [
+        "Build",
+        "Version"
+      ],
+      "properties": {
+        "Boards": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "uint",
+          "minimum": 0.0
+        },
+        "Build": {
+          "type": "string"
+        },
+        "Version": {
+          "type": "string"
+        }
+      }
+    },
+    "ExploitedCve": {
+      "type": "object",
+      "required": [
+        "CVE",
+        "FixedIn",
+        "InKEV"
+      ],
+      "properties": {
+        "CVE": {
+          "type": "string"
+        },
+        "FixedIn": {
+          "description": "First release that fixed it, per platform and major.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FixedIn"
+          }
+        },
+        "InKEV": {
+          "type": "boolean"
+        },
+        "Sources": {
+          "description": "What \"exploited\" rests on: \"Apple\" (layer 1) and/or \"KEV\" (layer 2)",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "FixedIn": {
+      "type": "object",
+      "required": [
+        "Platform",
+        "Version"
+      ],
+      "properties": {
+        "Platform": {
+          "type": "string"
+        },
+        "Version": {
+          "type": "string"
+        }
+      }
+    },
+    "MajorSummary": {
+      "type": "object",
+      "required": [
+        "Latest",
+        "Major",
+        "Releases"
+      ],
+      "properties": {
+        "BackgroundSecurityImprovement": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Bsi"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "DeviceSpecific": {
+          "description": "Releases newer than `Latest` that only some devices get.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DeviceSpecific"
+          }
+        },
+        "Latest": {
+          "$ref": "#/definitions/ReleaseSummary"
+        },
+        "Major": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        },
+        "Name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ProductKeys": {
+          "description": "macOS 26+ only: same as the macOS v2 feed's `ProductKeys`.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ProductKeysV2"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "Releases": {
+          "description": "Last 5 releases, newest first.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ReleaseRef"
+          }
+        }
+      }
+    },
+    "PlatformSummary": {
+      "type": "object",
+      "required": [
+        "Majors"
+      ],
+      "properties": {
+        "Majors": {
+          "description": "Majors Apple still patches, newest first.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MajorSummary"
+          }
+        }
+      }
+    },
+    "ProductKeysV2": {
+      "description": "Software Update product keys (`MSU_UPDATE_…`, Apple's \"Product Key\"). Use them for `AutoInstallProductKeys` in `/Library/Preferences/com.apple.SoftwareUpdate.plist` (replace the list, don't append), as an allowlist, or for compliance checks. Observed, undocumented Apple behaviour; the Mac's own RecommendedUpdates holds the exact offered key.",
+      "type": "object",
+      "required": [
+        "Update"
+      ],
+      "properties": {
+        "BackgroundSecurityImprovement": {
+          "description": "`_rsr` keys of the Background Security Improvements GDMF lists for this major.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Update": {
+          "description": "Every release of this major GDMF still lists, newest first, every build. A Mac is offered one of them (a deferral picks an older one); the others are ignored.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Upgrade": {
+          "description": "Opt-in upgrade to the next major (same rule). Never write together with `Update`.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Recent": {
+      "type": "object",
+      "required": [
+        "Date",
+        "Name",
+        "Platform",
+        "Version"
+      ],
+      "properties": {
+        "Date": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Platform": {
+          "type": "string"
+        },
+        "URL": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Version": {
+          "type": "string"
+        }
+      }
+    },
+    "ReleaseRef": {
+      "type": "object",
+      "required": [
+        "ReleaseDate",
+        "Version"
+      ],
+      "properties": {
+        "ReleaseDate": {
+          "type": "string"
+        },
+        "Version": {
+          "type": "string"
+        }
+      }
+    },
+    "ReleaseSummary": {
+      "type": "object",
+      "required": [
+        "CVEs",
+        "ExploitedCVEs",
+        "Priority",
+        "ReleaseDate",
+        "Version"
+      ],
+      "properties": {
+        "Builds": {
+          "description": "Every build; `Boards` where the feed maps builds to boards (macOS).",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BuildCount"
+          }
+        },
+        "CVEs": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "EnterpriseURL": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ExploitedCVEs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Priority": {
+          "description": "`critical` | `security` | `none`",
+          "type": "string"
+        },
+        "ReleaseDate": {
+          "type": "string"
+        },
+        "SecurityInfoURL": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "UpdatesURL": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Version": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
