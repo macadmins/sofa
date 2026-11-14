@@ -25,7 +25,7 @@ export default defineConfig({
     nav: [
       { text: 'macOS', link: '/macos/goldengate' },
       { text: 'iOS/iPadOS', link: '/ios/ios27' },
-      { text: 'Safari', link: '/safari/safari26' },
+      { text: 'Safari', link: '/safari/safari27' },
       { text: 'tvOS', link: '/tvos/tvos27' },
       { text: 'visionOS', link: '/visionos/visionos27' },
       { text: 'watchOS', link: '/watchos/watchos27' },
@@ -73,6 +73,7 @@ export default defineConfig({
       {
         text: 'Safari',
         items: [
+          { text: 'Safari 27', link: '/safari/safari27' },
           { text: 'Safari 26', link: '/safari/safari26' },
           { text: 'Safari 18', link: '/safari/safari18' },
         ]
