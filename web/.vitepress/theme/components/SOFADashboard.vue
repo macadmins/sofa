@@ -381,7 +381,7 @@
           <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">Latest</span>
         </template>
         <div class="grid grid-cols-1 gap-3 flex-grow">
-          <a v-if="safariVersion" :href="`${baseUrl}/safari/safari26`" class="block">
+          <a v-if="safariVersion" :href="`${baseUrl}/safari/safari27`" class="block">
             <div class="group/btn p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all duration-150">
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
@@ -422,7 +422,7 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 flex-grow">
           <!-- Safari -->
-          <a v-if="safariVersion" :href="`${baseUrl}/safari/safari26`" class="block">
+          <a v-if="safariVersion" :href="`${baseUrl}/safari/safari27`" class="block">
             <div class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-safari-300 dark:hover:border-safari-600 transition-all duration-150 other-platform-safari">
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
@@ -1315,7 +1315,7 @@ const platforms = computed(() => {
     { name: 'tvos', label: 'tvOS 18', link: `${basePath}/tvos/tvos18`, icon: TvIcon, color: 'tvos' },
     { name: 'watchos-beta', label: 'watchOS 26', link: `${basePath}${configLinks.watchos}`, icon: WatchIcon, color: 'watchos' },
     { name: 'watchos', label: 'watchOS 11', link: `${basePath}/watchos/watchos11`, icon: WatchIcon, color: 'watchos' },
-    { name: 'safari', label: 'Safari 26', link: `${basePath}${configLinks.safari}`, icon: GlobeIcon, color: 'safari' }
+    { name: 'safari', label: 'Safari 27', link: `${basePath}${configLinks.safari}`, icon: GlobeIcon, color: 'safari' }
   ]
 })
 
