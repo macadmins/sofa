@@ -2,7 +2,7 @@
   "SchemaVersion": "2026.11.14.3",
   "Version": "2.0",
   "UpdateHash": "d9c1ba5af116b3988717193f376e98c36707fe88dab9dec78102accde62c42a4",
-  "LastCheck": "2026-11-14T19:06:07.995065741+00:00",
+  "LastCheck": "2026-11-14T20:51:34.179947304+00:00",
   "OSVersions": [
     {
       "OSVersion": "27",
@@ -6114,7 +6114,7 @@
       "Name": "Apple Product Security",
       "URL": "https://support.apple.com/en-us/100100",
       "Format": "CSAF 2.1 + HTML",
-      "Retrieved": "2026-11-14T18:35:13.405289353Z"
+      "Retrieved": "2026-11-14T20:51:33.672078863Z"
     },
     "KEV": {
       "Layer": 2,
@@ -7861,6 +7861,16 @@
         "AvailableFor": "iPhone XS, iPhone XS Max, iPhone XR, iPad 7th generation"
       }
     },
+    "CVE-2026-20649": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149523",
+        "Component": "Game Center",
+        "Impact": "A user may be able to view sensitive user information",
+        "Description": "A logging issue was addressed with improved data redaction.",
+        "AvailableFor": "macOS Sequoia"
+      }
+    },
     "CVE-2026-20683": {
       "Exploited": false,
       "Apple": {
@@ -7934,6 +7944,16 @@
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A use after free issue was addressed with improved memory management.",
         "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-28991": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149523",
+        "Component": "Accelerate",
+        "Impact": "An app may be able to cause a denial-of-service",
+        "Description": "An out-of-bounds read was addressed with improved bounds checking.",
+        "AvailableFor": "macOS Sequoia"
       }
     },
     "CVE-2026-43661": {

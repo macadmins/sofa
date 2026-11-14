@@ -3,7 +3,7 @@
   "OSName": "watchOS",
   "Version": "2.0",
   "UpdateHash": "c6a3d13f2dde7b8567d54d42f4dc0289861b366fae807983f20fd135642128a4",
-  "LastCheck": "2026-11-14T19:06:08.150353450+00:00",
+  "LastCheck": "2026-11-14T20:51:34.313151713+00:00",
   "OSVersions": [
     {
       "OSVersion": "watchOS 27",
@@ -191,6 +191,17 @@
           "ExpirationDate": "2027-02-07",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/149525",
+          "Advisory": {
+            "ID": "APPLE-SA-149525",
+            "Number": "149525",
+            "URL": "https://support.apple.com/en-us/149525",
+            "CSAF": "https://support.apple.com/content/dam/edam/applecare/images/en_US/otherassets/security/149525.json",
+            "Severity": "Medium",
+            "Revision": "1",
+            "Updated": "2026-10-26T00:00:00Z",
+            "AvailableFor": "Apple Watch Series 9 and later",
+            "Source": "Apple"
+          },
           "SecurityInfoContext": "watchOS 27.2 was released on October 26, 2026. This release addressed 62 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "Watch7,1",
@@ -1615,7 +1626,7 @@
       "Name": "Apple Product Security",
       "URL": "https://support.apple.com/en-us/100100",
       "Format": "CSAF 2.1 + HTML",
-      "Retrieved": "2026-11-14T18:35:13.405289353Z"
+      "Retrieved": "2026-11-14T20:51:33.672078863Z"
     },
     "KEV": {
       "Layer": 2,
@@ -2335,6 +2346,16 @@
         "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
       }
     },
+    "CVE-2026-20649": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149523",
+        "Component": "Game Center",
+        "Impact": "A user may be able to view sensitive user information",
+        "Description": "A logging issue was addressed with improved data redaction.",
+        "AvailableFor": "macOS Sequoia"
+      }
+    },
     "CVE-2026-20700": {
       "Exploited": true,
       "ExploitedSources": [
@@ -2388,6 +2409,16 @@
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A use after free issue was addressed with improved memory management.",
         "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-28991": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149523",
+        "Component": "Accelerate",
+        "Impact": "An app may be able to cause a denial-of-service",
+        "Description": "An out-of-bounds read was addressed with improved bounds checking.",
+        "AvailableFor": "macOS Sequoia"
       }
     },
     "CVE-2026-43661": {

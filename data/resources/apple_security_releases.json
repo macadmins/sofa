@@ -108,7 +108,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "83d9d1670fc0",
@@ -243,7 +243,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "5c9ab51ee5f5",
@@ -303,7 +303,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "5200be4d231b",
@@ -418,7 +418,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "839858d77951",
@@ -443,7 +443,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "f78056e40417",
@@ -467,7 +467,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "0fe2390bb6b9",
@@ -717,7 +717,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "f81d1bdb8a68",
@@ -3396,7 +3396,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "4bd03727994c",
@@ -3496,7 +3496,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "b1be88f7276c",
@@ -3609,7 +3609,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "bd75aab7f8ec",
@@ -3798,7 +3798,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "76d17d671b60",
@@ -3855,7 +3855,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "00c044739ea6",
@@ -3898,7 +3898,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "07870b826d01",
@@ -3976,7 +3976,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "2d730cf8022a",
@@ -4180,7 +4180,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "702d07caafac",
@@ -4870,7 +4870,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "5c06f74d652c",
@@ -10310,7 +10310,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "c1d99d5e4b87",
@@ -19035,7 +19035,7 @@
       "url": "https://support.apple.com/kb/HT213346",
       "os_type": "ios",
       "version": "15.6",
-      "release_date": "2022-07-20",
+      "release_date": "2023-10-31",
       "has_cves": true,
       "cves": [
         "CVE-2022-48503",
@@ -19087,72 +19087,275 @@
         "CVE-2022-2294": {
           "exploited": true,
           "kev": true,
-          "matched_pattern": "CISA KEV catalog",
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "CISA KEV catalog; severity: memory corruption; remote: maliciously crafted",
           "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-2294",
           "tags": [
             "arbitrary-code",
-            "kernel",
-            "network"
-          ]
-        },
-        "CVE-2022-26768": {
-          "severity": "high",
-          "matched_pattern": "severity: memory corruption",
-          "tags": [
-            "arbitrary-code",
+            "memory-corruption",
             "webkit"
           ]
         },
-        "CVE-2022-32788": {
+        "CVE-2022-26768": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel",
+            "memory-corruption"
+          ]
+        },
+        "CVE-2022-26981": {
           "severity": "high",
-          "matched_pattern": "severity: buffer overflow",
+          "matched_pattern": "severity: arbitrary code execution",
+          "tags": [
+            "arbitrary-code"
+          ]
+        },
+        "CVE-2022-32784": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted"
+        },
+        "CVE-2022-32785": {
+          "remote": true,
+          "matched_pattern": "remote: processing a"
+        },
+        "CVE-2022-32787": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: arbitrary code execution; remote: maliciously crafted",
+          "tags": [
+            "arbitrary-code",
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2022-32788": {
+          "severity": "critical",
+          "remote": true,
+          "matched_pattern": "severity: kernel code execution; remote: remote user",
+          "tags": [
+            "buffer-overflow",
+            "kernel"
+          ]
+        },
+        "CVE-2022-32792": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: arbitrary code execution; remote: maliciously crafted",
+          "tags": [
+            "arbitrary-code",
+            "out-of-bounds",
+            "webkit"
+          ]
+        },
+        "CVE-2022-32802": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: arbitrary code execution; remote: maliciously crafted",
+          "tags": [
+            "arbitrary-code"
+          ]
+        },
+        "CVE-2022-32810": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
+        },
+        "CVE-2022-32813": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
+        },
+        "CVE-2022-32814": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel",
+            "type-confusion"
+          ]
+        },
+        "CVE-2022-32815": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
+        },
+        "CVE-2022-32816": {
+          "remote": true,
+          "matched_pattern": "remote: visiting a",
+          "tags": [
+            "webkit"
+          ]
+        },
+        "CVE-2022-32819": {
+          "severity": "critical",
+          "matched_pattern": "severity: gain root privileges"
+        },
+        "CVE-2022-32820": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel",
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2022-32821": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel",
+            "memory-corruption"
+          ]
+        },
+        "CVE-2022-32826": {
+          "severity": "critical",
+          "matched_pattern": "severity: gain root privileges"
+        },
+        "CVE-2022-32829": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
+        },
+        "CVE-2022-32830": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted",
+          "tags": [
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2022-32832": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
+        },
+        "CVE-2022-32839": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: arbitrary code execution; remote: remote user",
+          "tags": [
+            "arbitrary-code"
+          ]
+        },
+        "CVE-2022-32840": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
+        },
+        "CVE-2022-32841": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted"
+        },
+        "CVE-2022-32845": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel",
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2022-32847": {
+          "remote": true,
+          "matched_pattern": "remote: remote user",
           "tags": [
             "kernel"
           ]
         },
-        "CVE-2022-32821": {
-          "severity": "high",
-          "matched_pattern": "severity: memory corruption"
+        "CVE-2022-32849": {
+          "severity": "medium",
+          "matched_pattern": "severity: information disclosure",
+          "tags": [
+            "info-disclosure"
+          ]
         },
         "CVE-2022-32860": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
           "entry_added_date": "2022-11-09",
           "tags": [
-            "network"
+            "arbitrary-code",
+            "kernel",
+            "out-of-bounds"
           ]
         },
         "CVE-2022-32863": {
           "severity": "high",
-          "matched_pattern": "severity: memory corruption",
+          "remote": true,
+          "matched_pattern": "severity: memory corruption; remote: maliciously crafted",
           "entry_added_date": "2023-03-16",
           "tags": [
-            "webkit"
+            "arbitrary-code",
+            "memory-corruption"
           ]
         },
         "CVE-2022-32885": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: memory corruption; remote: maliciously crafted",
           "entry_added_date": "2023-03-16",
           "tags": [
+            "arbitrary-code",
+            "memory-corruption",
             "webkit"
           ]
         },
         "CVE-2022-32948": {
-          "entry_added_date": "2022-11-09"
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "entry_added_date": "2022-11-09",
+          "tags": [
+            "arbitrary-code",
+            "kernel",
+            "out-of-bounds"
+          ]
         },
         "CVE-2022-42805": {
-          "entry_added_date": "2022-11-09"
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "entry_added_date": "2022-11-09",
+          "tags": [
+            "arbitrary-code",
+            "integer-overflow",
+            "kernel"
+          ]
         },
         "CVE-2022-48503": {
           "exploited": true,
           "kev": true,
-          "matched_pattern": "CISA KEV catalog",
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "CISA KEV catalog; severity: arbitrary code execution; remote: web content",
           "nist_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-48503",
           "entry_added_date": "2023-06-21",
           "tags": [
-            "kernel"
+            "arbitrary-code",
+            "webkit"
           ]
         }
       },
       "source_url": "https://support.apple.com/en-us/121012",
-      "parser_version": 0
+      "parser_version": 2
     },
     {
       "id": "2c2ddf4fb539",
@@ -30082,7 +30285,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 0
+      "parser_version": 2
     },
     {
       "id": "091d0c30762e",
@@ -34916,7 +35119,7 @@
       },
       "source_url": "https://support.apple.com/en-us/100100",
       "csaf_url": "https://support.apple.com/content/dam/edam/applecare/images/en_US/otherassets/security/149716.json",
-      "parser_version": 0
+      "parser_version": 2
     },
     {
       "id": "d80b8ffe1288",
@@ -38802,7 +39005,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "04269f89affc",
@@ -38828,7 +39031,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "0a612f4391ca",
@@ -49081,7 +49284,7 @@
       },
       "source_url": "https://support.apple.com/en-us/100100",
       "csaf_url": "https://support.apple.com/content/dam/edam/applecare/images/en_US/otherassets/security/149035.json",
-      "parser_version": 0
+      "parser_version": 2
     },
     {
       "id": "f8cbce2ab724",
@@ -55267,7 +55470,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "b49511cf7ff2",
@@ -55379,7 +55582,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "0706831fb5bb",
@@ -55512,7 +55715,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "9ef06599754c",
@@ -55656,7 +55859,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "11cb26a0b670",
@@ -56023,7 +56226,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "860814707e8c",
@@ -56396,7 +56599,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "1d1d80ac6a30",
@@ -56439,7 +56642,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "a405f635424b",
@@ -56812,7 +57015,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "2dee10e36ebc",
@@ -57112,7 +57315,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "0146d8beedc7",
@@ -57142,7 +57345,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "7a2cc397df2d",
@@ -57690,7 +57893,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "59e893a1aed1",
@@ -57985,7 +58188,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "c6453604b748",
@@ -58448,7 +58651,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "0f35d69736af",
@@ -58609,7 +58812,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "2ffb351fffa0",
@@ -58632,7 +58835,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "e6b1bcf499e6",
@@ -58798,7 +59001,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "6ac347e7f1b7",
@@ -58881,7 +59084,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "bcaee0a8c3c6",
@@ -63937,7 +64140,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "610803b5d4ae",
@@ -63962,7 +64165,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "0990ea1a4564",
@@ -64277,7 +64480,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "66d37a7aa967",
@@ -64598,7 +64801,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "574c864dcbfe",
@@ -64742,7 +64945,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "0d58e087a3db",
@@ -64969,7 +65172,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "16fc5a946d00",
@@ -65691,7 +65894,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "f36e12ce286f",
@@ -65816,7 +66019,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "f888a648c67d",
@@ -66001,7 +66204,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "71d6c5c6e673",
@@ -66031,7 +66234,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "ca946d0f477b",
@@ -66186,7 +66389,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "1c759775e74a",
@@ -66209,7 +66412,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "9b7764a6a2c9",
@@ -66433,7 +66636,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "c429af4b8828",
@@ -66634,7 +66837,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "3def52d28de7",
@@ -66797,7 +67000,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "c95100ed78b7",
@@ -68069,7 +68272,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "a48792184e05",
@@ -68488,7 +68691,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "f8a776e8aeda",
@@ -69043,7 +69246,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "7cdf592a1b72",
@@ -69904,7 +70107,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "4a06eb6f6bed",
@@ -70259,7 +70462,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "e88f22e0a18a",
@@ -73490,18 +73693,36 @@
         "CVE-2021-36690"
       ],
       "cve_context": {
+        "CVE-2021-36690": {
+          "remote": true,
+          "matched_pattern": "remote: remote user"
+        },
         "CVE-2021-39537": {
           "severity": "high",
-          "matched_pattern": "severity: buffer overflow"
+          "matched_pattern": "severity: buffer overflow",
+          "tags": [
+            "arbitrary-code",
+            "buffer-overflow"
+          ]
+        },
+        "CVE-2022-1622": {
+          "remote": true,
+          "matched_pattern": "remote: processing a"
         },
         "CVE-2022-22643": {
           "entry_added_date": "2023-03-16",
           "tags": [
+            "audio",
             "facetime"
           ]
         },
         "CVE-2022-22663": {
-          "entry_added_date": "2023-03-16"
+          "remote": true,
+          "matched_pattern": "remote: malicious app",
+          "entry_added_date": "2023-03-16",
+          "tags": [
+            "bypass"
+          ]
         },
         "CVE-2022-26699": {
           "entry_added_date": "2023-08-01",
@@ -73509,66 +73730,223 @@
             "security"
           ]
         },
-        "CVE-2022-28739": {
+        "CVE-2022-26730": {
           "severity": "high",
-          "matched_pattern": "severity: memory corruption",
+          "remote": true,
+          "matched_pattern": "severity: memory corruption; remote: maliciously crafted",
           "tags": [
-            "filesystem",
-            "sandbox"
+            "arbitrary-code",
+            "memory-corruption"
           ]
         },
+        "CVE-2022-28739": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: memory corruption; remote: remote user",
+          "tags": [
+            "arbitrary-code",
+            "memory-corruption"
+          ]
+        },
+        "CVE-2022-29458": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted"
+        },
         "CVE-2022-32809": {
+          "remote": true,
+          "matched_pattern": "remote: processing a",
           "entry_added_date": "2023-08-01",
           "tags": [
-            "graphics"
+            "out-of-bounds"
           ]
         },
         "CVE-2022-32827": {
           "severity": "high",
-          "matched_pattern": "severity: memory corruption"
+          "matched_pattern": "severity: memory corruption",
+          "tags": [
+            "memory-corruption"
+          ]
         },
         "CVE-2022-32833": {
           "entry_added_date": "2022-12-22",
           "tags": [
-            "network",
-            "security"
+            "bypass",
+            "privacy"
           ]
         },
         "CVE-2022-32849": {
-          "entry_added_date": "2022-11-09"
+          "severity": "medium",
+          "matched_pattern": "severity: information disclosure",
+          "entry_added_date": "2022-11-09",
+          "tags": [
+            "info-disclosure"
+          ]
+        },
+        "CVE-2022-32865": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
+        },
+        "CVE-2022-32866": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
         },
         "CVE-2022-32876": {
-          "entry_added_date": "2023-08-01",
-          "tags": [
-            "shortcuts"
-          ]
+          "entry_added_date": "2023-08-01"
         },
         "CVE-2022-32877": {
           "entry_added_date": "2023-03-16"
         },
-        "CVE-2022-32907": {
-          "entry_added_date": "2023-03-16"
-        },
-        "CVE-2022-32908": {
+        "CVE-2022-32886": {
           "severity": "high",
-          "matched_pattern": "severity: memory corruption"
-        },
-        "CVE-2022-32914": {
-          "severity": "high",
-          "matched_pattern": "severity: use after free",
+          "remote": true,
+          "matched_pattern": "severity: buffer overflow; remote: maliciously crafted",
           "tags": [
-            "kernel"
-          ]
-        },
-        "CVE-2022-32923": {
-          "entry_added_date": "2022-10-27",
-          "tags": [
-            "pdf",
+            "arbitrary-code",
+            "buffer-overflow",
             "webkit"
           ]
         },
-        "CVE-2022-32926": {
+        "CVE-2022-32888": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: arbitrary code execution; remote: maliciously crafted",
+          "tags": [
+            "arbitrary-code",
+            "out-of-bounds",
+            "webkit"
+          ]
+        },
+        "CVE-2022-32889": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
+        },
+        "CVE-2022-32898": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
+        },
+        "CVE-2022-32899": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
+        },
+        "CVE-2022-32905": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: arbitrary code execution; remote: maliciously crafted",
+          "tags": [
+            "arbitrary-code"
+          ]
+        },
+        "CVE-2022-32907": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "entry_added_date": "2023-03-16",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
+        },
+        "CVE-2022-32908": {
+          "severity": "high",
+          "matched_pattern": "severity: memory corruption",
+          "tags": [
+            "memory-corruption"
+          ]
+        },
+        "CVE-2022-32911": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
+        },
+        "CVE-2022-32912": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: arbitrary code execution; remote: maliciously crafted",
+          "tags": [
+            "arbitrary-code",
+            "out-of-bounds",
+            "webkit"
+          ]
+        },
+        "CVE-2022-32914": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel",
+            "use-after-free"
+          ]
+        },
+        "CVE-2022-32915": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel",
+            "type-confusion"
+          ]
+        },
+        "CVE-2022-32922": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: use after free; remote: maliciously crafted",
+          "tags": [
+            "arbitrary-code",
+            "use-after-free",
+            "webkit"
+          ]
+        },
+        "CVE-2022-32923": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted",
           "entry_added_date": "2022-10-27",
+          "tags": [
+            "webkit"
+          ]
+        },
+        "CVE-2022-32924": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
+        },
+        "CVE-2022-32926": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "entry_added_date": "2022-10-27",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
+        },
+        "CVE-2022-32934": {
+          "severity": "critical",
+          "remote": true,
+          "matched_pattern": "severity: kernel code execution; remote: remote user",
           "tags": [
             "kernel"
           ]
@@ -73576,138 +73954,356 @@
         "CVE-2022-32935": {
           "entry_added_date": "2022-10-27"
         },
-        "CVE-2022-32941": {
-          "entry_added_date": "2022-10-27"
-        },
-        "CVE-2022-32944": {
-          "severity": "high",
-          "matched_pattern": "severity: memory corruption",
-          "entry_added_date": "2022-10-27",
+        "CVE-2022-32940": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
           "tags": [
+            "arbitrary-code",
             "kernel"
           ]
         },
-        "CVE-2022-32945": {
-          "entry_added_date": "2022-11-09"
-        },
-        "CVE-2022-3437": {
-          "entry_added_date": "2022-10-25"
-        },
-        "CVE-2022-42798": {
-          "entry_added_date": "2022-10-27"
-        },
-        "CVE-2022-42800": {
-          "entry_added_date": "2023-12-21"
-        },
-        "CVE-2022-42801": {
+        "CVE-2022-32941": {
+          "severity": "high",
+          "matched_pattern": "severity: buffer overflow",
           "entry_added_date": "2022-10-27",
           "tags": [
+            "arbitrary-code",
+            "buffer-overflow"
+          ]
+        },
+        "CVE-2022-32944": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "entry_added_date": "2022-10-27",
+          "tags": [
+            "arbitrary-code",
+            "kernel",
+            "memory-corruption"
+          ]
+        },
+        "CVE-2022-32945": {
+          "entry_added_date": "2022-11-09",
+          "tags": [
+            "audio",
+            "sandbox"
+          ]
+        },
+        "CVE-2022-32947": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
+        },
+        "CVE-2022-3437": {
+          "severity": "high",
+          "matched_pattern": "severity: arbitrary code execution",
+          "entry_added_date": "2022-10-25",
+          "tags": [
+            "arbitrary-code"
+          ]
+        },
+        "CVE-2022-37434": {
+          "severity": "high",
+          "matched_pattern": "severity: arbitrary code execution",
+          "tags": [
+            "arbitrary-code"
+          ]
+        },
+        "CVE-2022-42788": {
+          "remote": true,
+          "matched_pattern": "remote: malicious app"
+        },
+        "CVE-2022-42791": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel",
+            "race-condition"
+          ]
+        },
+        "CVE-2022-42795": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: arbitrary code execution; remote: maliciously crafted",
+          "tags": [
+            "arbitrary-code"
+          ]
+        },
+        "CVE-2022-42798": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted",
+          "entry_added_date": "2022-10-27",
+          "tags": [
+            "audio"
+          ]
+        },
+        "CVE-2022-42799": {
+          "remote": true,
+          "matched_pattern": "remote: malicious web",
+          "tags": [
+            "webkit"
+          ]
+        },
+        "CVE-2022-42800": {
+          "severity": "high",
+          "matched_pattern": "severity: arbitrary code execution",
+          "entry_added_date": "2023-12-21",
+          "tags": [
+            "arbitrary-code"
+          ]
+        },
+        "CVE-2022-42801": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "entry_added_date": "2022-10-27",
+          "tags": [
+            "arbitrary-code",
             "kernel"
           ]
         },
         "CVE-2022-42803": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
           "entry_added_date": "2022-10-27",
           "tags": [
-            "kernel"
+            "arbitrary-code",
+            "kernel",
+            "race-condition"
+          ]
+        },
+        "CVE-2022-42806": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel",
+            "race-condition"
           ]
         },
         "CVE-2022-42807": {
           "entry_added_date": "2023-05-01"
         },
-        "CVE-2022-42810": {
-          "entry_added_date": "2022-10-27",
+        "CVE-2022-42808": {
+          "severity": "critical",
+          "remote": true,
+          "matched_pattern": "severity: kernel code execution; remote: remote user",
           "tags": [
+            "kernel",
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2022-42809": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: arbitrary code execution; remote: maliciously crafted",
+          "tags": [
+            "arbitrary-code"
+          ]
+        },
+        "CVE-2022-42810": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted",
+          "entry_added_date": "2022-10-27"
+        },
+        "CVE-2022-42813": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: arbitrary code execution; remote: maliciously crafted",
+          "tags": [
+            "arbitrary-code",
             "security"
           ]
         },
         "CVE-2022-42816": {
-          "entry_added_date": "2023-12-21"
+          "entry_added_date": "2023-12-21",
+          "tags": [
+            "filesystem"
+          ]
         },
         "CVE-2022-42820": {
           "severity": "high",
           "matched_pattern": "severity: memory corruption",
           "tags": [
             "arbitrary-code",
-            "kernel"
+            "memory-corruption"
           ]
         },
         "CVE-2022-42821": {
-          "entry_added_date": "2022-12-13"
+          "entry_added_date": "2022-12-13",
+          "tags": [
+            "bypass"
+          ]
         },
-        "CVE-2022-42826": {
-          "entry_added_date": "2022-12-22",
+        "CVE-2022-42823": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: arbitrary code execution; remote: maliciously crafted",
+          "tags": [
+            "arbitrary-code",
+            "type-confusion",
+            "webkit"
+          ]
+        },
+        "CVE-2022-42824": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted",
           "tags": [
             "webkit"
           ]
         },
-        "CVE-2022-42828": {
-          "entry_added_date": "2023-08-01"
-        },
-        "CVE-2022-42829": {
+        "CVE-2022-42826": {
           "severity": "high",
-          "matched_pattern": "severity: use after free",
+          "remote": true,
+          "matched_pattern": "severity: use after free; remote: maliciously crafted",
+          "entry_added_date": "2022-12-22",
+          "tags": [
+            "arbitrary-code",
+            "use-after-free",
+            "webkit"
+          ]
+        },
+        "CVE-2022-42828": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "entry_added_date": "2023-08-01",
           "tags": [
             "arbitrary-code",
             "kernel"
           ]
         },
+        "CVE-2022-42829": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel",
+            "use-after-free"
+          ]
+        },
+        "CVE-2022-42830": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
+        },
+        "CVE-2022-42831": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel",
+            "race-condition"
+          ]
+        },
+        "CVE-2022-42832": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel",
+            "race-condition"
+          ]
+        },
         "CVE-2022-42833": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
           "entry_added_date": "2022-12-22",
           "tags": [
-            "graphics"
+            "arbitrary-code",
+            "kernel",
+            "out-of-bounds"
           ]
         },
         "CVE-2022-42834": {
-          "entry_added_date": "2023-05-01"
+          "entry_added_date": "2023-05-01",
+          "tags": [
+            "mail"
+          ]
         },
         "CVE-2022-42838": {
           "entry_added_date": "2022-12-22"
         },
         "CVE-2022-42860": {
-          "entry_added_date": "2023-03-16"
-        },
-        "CVE-2022-46707": {
-          "entry_added_date": "2023-08-01",
+          "entry_added_date": "2023-03-16",
           "tags": [
-            "security"
+            "filesystem"
           ]
         },
+        "CVE-2022-46707": {
+          "entry_added_date": "2023-08-01"
+        },
         "CVE-2022-46709": {
-          "severity": "high",
-          "matched_pattern": "severity: memory corruption",
-          "entry_added_date": "2023-03-16"
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "entry_added_date": "2023-03-16",
+          "tags": [
+            "arbitrary-code",
+            "kernel",
+            "memory-corruption"
+          ]
         },
         "CVE-2022-46712": {
           "severity": "high",
           "matched_pattern": "severity: use after free",
           "entry_added_date": "2023-02-20",
           "tags": [
-            "mail"
+            "kernel",
+            "use-after-free"
           ]
         },
         "CVE-2022-46713": {
-          "entry_added_date": "2023-02-20"
+          "entry_added_date": "2023-02-20",
+          "tags": [
+            "filesystem",
+            "race-condition"
+          ]
+        },
+        "CVE-2022-46721": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
         },
         "CVE-2022-46722": {
-          "entry_added_date": "2023-08-01"
+          "entry_added_date": "2023-08-01",
+          "tags": [
+            "filesystem"
+          ]
+        },
+        "CVE-2022-47915": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
+        },
+        "CVE-2022-47965": {
+          "severity": "critical",
+          "matched_pattern": "severity: execute arbitrary code with kernel",
+          "tags": [
+            "arbitrary-code",
+            "kernel"
+          ]
         },
         "CVE-2022-48504": {
-          "entry_added_date": "2023-12-21",
-          "tags": [
-            "security"
-          ]
+          "entry_added_date": "2023-12-21"
         },
         "CVE-2022-48505": {
           "entry_added_date": "2023-06-26",
           "tags": [
-            "privacy"
+            "filesystem"
           ]
         },
         "CVE-2022-48577": {
-          "entry_added_date": "2023-12-21",
-          "tags": [
-            "security"
-          ]
+          "entry_added_date": "2023-12-21"
         },
         "CVE-2022-48683": {
           "entry_added_date": "2024-05-29",
@@ -73717,7 +74313,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/121012",
-      "parser_version": 0
+      "parser_version": 2
     },
     {
       "id": "139f427ea2d7",
@@ -76158,7 +76754,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "ab19f33c8bed",
@@ -76279,7 +76875,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "c7bd0c83dcf0",
@@ -76304,7 +76900,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "7c60e66debc5",
@@ -76456,7 +77052,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "bc894e025b2c",
@@ -76597,7 +77193,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "55b1a6b9bde9",
@@ -76697,7 +77293,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "1dc72e5e9879",
@@ -76909,7 +77505,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "daaa9510ac76",
@@ -77059,7 +77655,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "d02741000755",
@@ -77203,7 +77799,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "6702dd1dc7ee",
@@ -77830,7 +78426,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "2bcd6e8fd89f",
@@ -87793,7 +88389,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "ccd1d2dcc152",
@@ -90237,7 +90833,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "765274f22b0c",
@@ -90802,7 +91398,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "805e9f184a76",
@@ -91607,7 +92203,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "88384e68dcdf",
@@ -97034,7 +97630,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "4da042e25bd3",
@@ -97808,7 +98404,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "ddf82d25a3d1",
@@ -98791,7 +99387,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "7e62a8852daa",
@@ -107357,18 +107953,86 @@
     }
   ],
   "metadata": {
-    "fetch_timestamp": "2026-11-14T18:35:13.405289353Z",
+    "fetch_timestamp": "2026-11-14T20:51:33.672078863Z",
     "total_releases": 754,
     "cached": 127,
     "fetched": 627,
     "errors": [
-      "CSAF: no copy yet for 8 advisories (149041 149043 149228 149522 149523 149525 149526 149527), requested next run",
-      "iOS 26.7.3 and iPadOS 26.7.3: detail page unavailable; 8 CVEs from Apple's CSAF JSON (JSON link from the previous run); notes from the previous run",
-      "macOS Golden Gate 27: detail page unavailable; 276 CVEs from Apple's CSAF JSON (JSON link from the previous run); notes from the previous run",
-      "iOS 18.7.5 and iPadOS 18.7.5: detail fetch failed, carried forward 36 CVEs",
+      "CSAF: no copy yet for 1 advisories (149522), requested next run",
+      "macOS Tahoe 26.5.2: detail fetch failed, carried forward 38 CVEs",
+      "macOS Tahoe 26.5: detail fetch failed, carried forward 87 CVEs",
+      "tvOS 26.5: detail fetch failed, carried forward 48 CVEs",
+      "watchOS 26.5: detail fetch failed, carried forward 46 CVEs",
+      "macOS Sonoma 14.8.5: detail fetch failed, carried forward 56 CVEs",
+      "Background Security Improvements for iOS, iPadOS, and macOS: detail fetch failed, carried forward 1 CVEs",
+      "macOS Tahoe 26.3: detail fetch failed, carried forward 67 CVEs",
+      "macOS Sonoma 14.8.4: detail fetch failed, carried forward 50 CVEs",
+      "Pages 15.1: detail fetch failed, carried forward 1 CVEs",
+      "macOS Sequoia 15.7.3: detail fetch failed, carried forward 26 CVEs",
+      "macOS Sonoma 14.8.3: detail fetch failed, carried forward 21 CVEs",
+      "Safari 26.2: detail fetch failed, carried forward 13 CVEs",
+      "Compressor 4.11.1: detail fetch failed, carried forward 1 CVEs",
+      "macOS Tahoe 26.1: detail fetch failed, carried forward 114 CVEs",
+      "macOS Sequoia 15.7.2: detail fetch failed, carried forward 61 CVEs",
+      "macOS Tahoe 26.0.1: detail fetch failed, carried forward 1 CVEs",
+      "macOS Sequoia 15.7.1: detail fetch failed, carried forward 1 CVEs",
+      "macOS Sonoma 14.8.1: detail fetch failed, carried forward 1 CVEs",
+      "macOS Sequoia 15.7: detail fetch failed, carried forward 46 CVEs",
+      "macOS Sonoma 14.8: detail fetch failed, carried forward 47 CVEs",
+      "watchOS 26: detail fetch failed, carried forward 24 CVEs",
+      "visionOS 26: detail fetch failed, carried forward 23 CVEs",
+      "macOS Sequoia 15.6.1: detail fetch failed, carried forward 1 CVEs",
+      "macOS Sonoma 14.7.8: detail fetch failed, carried forward 1 CVEs",
+      "macOS Sonoma 14.7.7: detail fetch failed, carried forward 52 CVEs",
+      "macOS Ventura 13.7.7: detail fetch failed, carried forward 43 CVEs",
+      "macOS Sequoia 15.5: detail fetch failed, carried forward 54 CVEs",
+      "macOS Sonoma 14.7.6: detail fetch failed, carried forward 33 CVEs",
+      "Safari 18.4: detail fetch failed, carried forward 14 CVEs",
+      "macOS Sequoia 15.4: detail fetch failed, carried forward 165 CVEs",
+      "macOS Sonoma 14.7.5: detail fetch failed, carried forward 115 CVEs",
+      "macOS Sequoia 15.3.2: detail fetch failed, carried forward 1 CVEs",
+      "visionOS 2.3.2: detail fetch failed, carried forward 1 CVEs",
+      "macOS Sequoia 15.3.1: detail fetch failed, carried forward 1 CVEs",
+      "macOS Ventura 13.7.4: detail fetch failed, carried forward 1 CVEs",
+      "watchOS 11.3.1: detail fetch failed, carried forward 1 CVEs",
+      "GarageBand 10.4.12: detail fetch failed, carried forward 1 CVEs",
+      "Safari 18.2: detail fetch failed, carried forward 8 CVEs",
+      "macOS Sequoia 15.2: detail fetch failed, carried forward 83 CVEs",
+      "macOS Ventura 13.7.2: detail fetch failed, carried forward 33 CVEs",
+      "Safari 18.1.1: detail fetch failed, carried forward 2 CVEs",
+      "macOS Sequoia 15.1.1: detail fetch failed, carried forward 2 CVEs",
+      "Safari 18.1: detail fetch failed, carried forward 5 CVEs",
+      "macOS Sequoia 15.1: detail fetch failed, carried forward 82 CVEs",
+      "macOS Sonoma 14.7.1: detail fetch failed, carried forward 52 CVEs",
+      "macOS Ventura 13.7.1: detail fetch failed, carried forward 49 CVEs",
+      "Apple Music 1.5.0.152 for Windows: detail fetch failed, carried forward 1 CVEs",
+      "Apple TV 1.5.0.152 for Windows: detail fetch failed, carried forward 1 CVEs",
+      "macOS Sequoia 15: detail fetch failed, carried forward 103 CVEs",
+      "visionOS 2: detail fetch failed, carried forward 21 CVEs",
+      "Safari 18: detail fetch failed, carried forward 7 CVEs",
+      "Xcode 16: detail fetch failed, carried forward 5 CVEs",
+      "macOS Sonoma 14.7: detail fetch failed, carried forward 39 CVEs",
+      "macOS Ventura 13.7: detail fetch failed, carried forward 31 CVEs",
+      "iTunes 12.13.3 for Windows: detail fetch failed, carried forward 2 CVEs",
+      "macOS Sonoma 14.6: detail fetch failed, carried forward 80 CVEs",
+      "macOS Ventura 13.6.8: detail fetch failed, carried forward 46 CVEs",
+      "macOS Monterey 12.7.6: detail fetch failed, carried forward 42 CVEs",
+      "Safari 17.5: detail fetch failed, carried forward 10 CVEs",
+      "macOS Sonoma 14.5: detail fetch failed, carried forward 51 CVEs",
+      "macOS Ventura 13.6.7: detail fetch failed, carried forward 22 CVEs",
+      "macOS Monterey 12.7.5: detail fetch failed, carried forward 19 CVEs",
+      "iTunes 12.13.2 for Windows: detail fetch failed, carried forward 1 CVEs",
+      "Safari 17.4.1: detail fetch failed, carried forward 1 CVEs",
+      "macOS Sonoma 14.4.1: detail fetch failed, carried forward 1 CVEs",
+      "macOS Ventura 13.6.6: detail fetch failed, carried forward 1 CVEs",
+      "GarageBand 10.4.11: detail fetch failed, carried forward 1 CVEs",
       "Safari 17.4: detail fetch failed, carried forward 6 CVEs",
-      "macOS Ventura 13: detail fetch failed, carried forward 157 CVEs",
-      "iOS 15.6 and iPadOS 15.6: detail fetch failed, carried forward 44 CVEs"
+      "macOS Sonoma 14.4: detail fetch failed, carried forward 79 CVEs",
+      "macOS Ventura 13.6.5: detail fetch failed, carried forward 32 CVEs",
+      "macOS Monterey 12.7.4: detail fetch failed, carried forward 28 CVEs",
+      "Safari 17.3: detail fetch failed, carried forward 5 CVEs",
+      "macOS Ventura 13.6.4: detail fetch failed, carried forward 13 CVEs",
+      "macOS Monterey 12.7.3: detail fetch failed, carried forward 9 CVEs"
     ],
     "archive_fetched_at": "2026-11-14T10:59:52.507258893Z"
   }
