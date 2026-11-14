@@ -3,7 +3,7 @@
   "OSName": "tvOS",
   "Version": "2.0",
   "UpdateHash": "9295b008a4125ddbc1a468aa96df784a6ce9165872b48a8179478e7b4069ceec",
-  "LastCheck": "2026-11-14T18:35:14.031891806+00:00",
+  "LastCheck": "2026-11-14T19:06:08.100324806+00:00",
   "OSVersions": [
     {
       "OSVersion": "tvOS 27",
@@ -1831,11 +1831,11 @@
     "CVE-2026-113912": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149041",
         "Component": "CoreAudio",
         "Impact": "Processing a maliciously crafted media file may lead to unexpected app termination or corrupt process memory",
         "Description": "An out-of-bounds access issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
       }
     },
     "CVE-2026-113915": {
@@ -1973,6 +1973,16 @@
         "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
       }
     },
+    "CVE-2026-43661": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149041",
+        "Component": "ImageIO",
+        "Impact": "Processing a maliciously crafted image may corrupt process memory",
+        "Description": "A buffer overflow issue was addressed with improved memory handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
     "CVE-2026-43664": {
       "Exploited": false,
       "Apple": {
@@ -2016,11 +2026,21 @@
     "CVE-2026-43702": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149042",
+        "Advisory": "APPLE-SA-149041",
         "Component": "CoreMedia Video Toolbox",
         "Impact": "Processing a maliciously crafted video file may lead to unexpected app termination or corrupt process memory",
         "Description": "The issue was addressed with improved memory handling.",
-        "AvailableFor": "macOS Tahoe"
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-43715": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149041",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to memory corruption",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
       }
     },
     "CVE-2026-43737": {
@@ -2036,11 +2056,11 @@
     "CVE-2026-43743": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149042",
+        "Advisory": "APPLE-SA-149041",
         "Component": "IOGPUFamily",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A race condition was addressed with improved state handling.",
-        "AvailableFor": "macOS Tahoe"
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
       }
     },
     "CVE-2026-43785": {
@@ -2101,6 +2121,16 @@
         "Impact": "Processing maliciously crafted web content may disclose sensitive user information",
         "Description": "A permissions issue was addressed by removing the vulnerable code.",
         "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-64758": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149041",
+        "Component": "ImageIO",
+        "Impact": "Processing a maliciously crafted file may lead to unexpected app termination",
+        "Description": "The issue was addressed with improved bounds checks.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
       }
     },
     "CVE-2026-64760": {
@@ -2251,6 +2281,16 @@
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A race condition was addressed with improved state handling.",
         "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65371": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149043",
+        "Component": "Kernel",
+        "Impact": "An app may be able to disclose kernel memory",
+        "Description": "This issue was addressed with improved redaction of sensitive information.",
+        "AvailableFor": "macOS Sequoia"
       }
     },
     "CVE-2026-65377": {

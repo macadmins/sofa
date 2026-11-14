@@ -1,6 +1,6 @@
 {
   "Version": "2.0",
-  "UpdateHash": "8fb7748a1c5d025bd3c52d42da03b4743a9b734730c9482b67e90b8fd95c2b06",
+  "UpdateHash": "b975619d25e4a3911478efdc7f4aca224704b5cc5843d109f02571c25f8d3f75",
   "AppVersions": [
     {
       "AppVersion": "Safari 27",
@@ -11,6 +11,17 @@
         "ReleaseDate": "2026-10-26T00:00:00Z",
         "ReleaseType": "Safari",
         "SecurityInfo": "https://support.apple.com/en-us/149527",
+        "Advisory": {
+          "ID": "APPLE-SA-149527",
+          "Number": "149527",
+          "URL": "https://support.apple.com/en-us/149527",
+          "CSAF": "https://support.apple.com/content/dam/edam/applecare/images/en_US/otherassets/security/149527.json",
+          "Severity": "Medium",
+          "Revision": "1",
+          "Updated": "2026-10-26T00:00:00Z",
+          "AvailableFor": "macOS Sequoia and macOS Tahoe",
+          "Source": "Apple"
+        },
         "CVEs": {
           "CVE-2026-112599": {},
           "CVE-2026-112615": {},
@@ -58,6 +69,17 @@
           "ReleaseDate": "2026-10-26T00:00:00Z",
           "ReleaseType": "Safari",
           "SecurityInfo": "https://support.apple.com/en-us/149527",
+          "Advisory": {
+            "ID": "APPLE-SA-149527",
+            "Number": "149527",
+            "URL": "https://support.apple.com/en-us/149527",
+            "CSAF": "https://support.apple.com/content/dam/edam/applecare/images/en_US/otherassets/security/149527.json",
+            "Severity": "Medium",
+            "Revision": "1",
+            "Updated": "2026-10-26T00:00:00Z",
+            "AvailableFor": "macOS Sequoia and macOS Tahoe",
+            "Source": "Apple"
+          },
           "CVEs": {
             "CVE-2026-112599": {},
             "CVE-2026-112615": {},
@@ -104,6 +126,17 @@
           "ReleaseDate": "2026-09-14T00:00:00Z",
           "ReleaseType": "Safari",
           "SecurityInfo": "https://support.apple.com/en-us/149039",
+          "Advisory": {
+            "ID": "APPLE-SA-149039",
+            "Number": "149039",
+            "URL": "https://support.apple.com/en-us/149039",
+            "CSAF": "https://support.apple.com/content/dam/edam/applecare/images/en_US/otherassets/security/149039.json",
+            "Severity": "Medium",
+            "Revision": "3",
+            "Updated": "2026-10-14T15:34:35Z",
+            "AvailableFor": "macOS Sequoia and macOS Tahoe",
+            "Source": "Apple"
+          },
           "CVEs": {
             "CVE-2026-64718": {},
             "CVE-2026-64753": {},
@@ -720,7 +753,7 @@
       "Name": "Apple Product Security",
       "URL": "https://support.apple.com/en-us/100100",
       "Format": "CSAF 2.1 + HTML",
-      "Retrieved": "2026-11-14T12:38:09.309971512Z"
+      "Retrieved": "2026-11-14T18:35:13.405289353Z"
     },
     "KEV": {
       "Layer": 2,
@@ -827,6 +860,306 @@
         "KnownRansomwareCampaignUse": "Unknown"
       }
     },
+    "CVE-2026-112599": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149230",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process crash",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-112615": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112621": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "LinkPresentation",
+        "Impact": "Processing a maliciously crafted image may result in memory corruption",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112623": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112626": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit JavaScript Bindings",
+        "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112637": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149230",
+        "Component": "WebKit Canvas",
+        "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-112639": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit Process Model",
+        "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112640": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to memory corruption",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112651": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112653": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112654": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112655": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112659": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
+        "Description": "A type confusion issue was addressed with improved memory handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112666": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149230",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-112669": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149230",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "A race condition was addressed with improved state handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-112673": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
+        "Description": "A type confusion issue was addressed with improved state handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112680": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may result in the disclosure of process memory",
+        "Description": "An out-of-bounds read was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112684": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process crash",
+        "Description": "This issue was addressed through improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112686": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
+        "Description": "A race condition was addressed with improved locking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112693": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112695": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112697": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-112699": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may result in the disclosure of process memory",
+        "Description": "An out-of-bounds read was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-113897": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149230",
+        "Component": "WebKit Process Model",
+        "Impact": "A remote attacker may be able to break out of Web Content sandbox",
+        "Description": "This issue was addressed by removing the vulnerable code.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-113901": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149230",
+        "Component": "WebRTC",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process crash",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-113903": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149230",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to unexpected memory modification",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-113904": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process crash",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-113949": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to memory corruption",
+        "Description": "A type confusion issue was addressed with improved state management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-113952": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "A website may be able to use a media format that should be restricted in Lockdown Mode",
+        "Description": "A logic issue was addressed with improved checks.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-43715": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149041",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to memory corruption",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
     "CVE-2026-43794": {
       "Exploited": false,
       "Apple": {
@@ -835,6 +1168,16 @@
         "Impact": "Processing maliciously crafted web content may lead to memory corruption",
         "Description": "A memory corruption issue was addressed with improved memory handling.",
         "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
+    "CVE-2026-43795": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149038",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "The issue was addressed with improved memory handling.",
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-64715": {
@@ -877,6 +1220,56 @@
         "AvailableFor": "Apple TV 4K 2nd generation and later"
       }
     },
+    "CVE-2026-64779": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149038",
+        "Component": "WebKit Storage",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "A memory corruption vulnerability was addressed with improved locking.",
+        "AvailableFor": "Apple Vision Pro (all models)"
+      }
+    },
+    "CVE-2026-64780": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149038",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "The issue was addressed with improved checks.",
+        "AvailableFor": "Apple Vision Pro (all models)"
+      }
+    },
+    "CVE-2026-64781": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149038",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "The issue was addressed with improved input validation.",
+        "AvailableFor": "Apple Vision Pro (all models)"
+      }
+    },
+    "CVE-2026-64782": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149038",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "A memory corruption vulnerability was addressed with improved locking.",
+        "AvailableFor": "Apple Vision Pro (all models)"
+      }
+    },
+    "CVE-2026-64784": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149038",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "An out-of-bounds access issue was addressed with improved bounds checking.",
+        "AvailableFor": "Apple Vision Pro (all models)"
+      }
+    },
     "CVE-2026-64787": {
       "Exploited": false,
       "Apple": {
@@ -887,6 +1280,96 @@
         "AvailableFor": "Apple TV 4K 2nd generation and later"
       }
     },
+    "CVE-2026-65331": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149038",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "This issue was addressed through improved state management.",
+        "AvailableFor": "Apple Vision Pro (all models)"
+      }
+    },
+    "CVE-2026-65332": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149038",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "This issue was addressed through improved state management.",
+        "AvailableFor": "Apple Vision Pro (all models)"
+      }
+    },
+    "CVE-2026-65333": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149038",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "This issue was addressed through improved state management.",
+        "AvailableFor": "Apple Vision Pro (all models)"
+      }
+    },
+    "CVE-2026-65334": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149038",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "A memory corruption issue was addressed with improved state management.",
+        "AvailableFor": "Apple Vision Pro (all models)"
+      }
+    },
+    "CVE-2026-65335": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149038",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "This issue was addressed through improved state management.",
+        "AvailableFor": "Apple Vision Pro (all models)"
+      }
+    },
+    "CVE-2026-65336": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149038",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "This issue was addressed through improved state management.",
+        "AvailableFor": "Apple Vision Pro (all models)"
+      }
+    },
+    "CVE-2026-65337": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149038",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "This issue was addressed through improved state management.",
+        "AvailableFor": "Apple Vision Pro (all models)"
+      }
+    },
+    "CVE-2026-65338": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149038",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "The issue was addressed with improved memory handling.",
+        "AvailableFor": "Apple Vision Pro (all models)"
+      }
+    },
+    "CVE-2026-65340": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149038",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "This issue was addressed through improved state management.",
+        "AvailableFor": "Apple Vision Pro (all models)"
+      }
+    },
     "CVE-2026-65341": {
       "Exploited": false,
       "Apple": {
@@ -895,6 +1378,16 @@
         "Impact": "Processing maliciously crafted web content may lead to memory corruption",
         "Description": "The issue was addressed with improved memory handling.",
         "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
+    "CVE-2026-65351": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149038",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "This issue was addressed through improved state management.",
+        "AvailableFor": "Apple Vision Pro (all models)"
       }
     },
     "CVE-2026-65390": {
@@ -975,6 +1468,46 @@
         "Impact": "Processing maliciously crafted web content may lead to arbitrary code execution",
         "Description": "A type confusion issue was addressed with improved state management.",
         "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-86973": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebRTC",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process crash",
+        "Description": "An out-of-bounds read was addressed with improved bounds checking.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-86974": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to memory corruption",
+        "Description": "A type confusion issue was addressed with improved checks.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-86985": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process crash",
+        "Description": "This issue was addressed with improved input validation.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-86986": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149227",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
       }
     }
   }

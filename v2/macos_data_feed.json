@@ -2,7 +2,7 @@
   "SchemaVersion": "2026.11.14.3",
   "Version": "2.0",
   "UpdateHash": "470956fc20eea6e27e4466ceea8ca484b1bd6ce45c2c88500b1d68b7c6a6cb57",
-  "LastCheck": "2026-11-14T18:35:13.890722744+00:00",
+  "LastCheck": "2026-11-14T19:06:07.934073246+00:00",
   "OSVersions": [
     {
       "OSVersion": "Golden Gate 27",
@@ -2303,6 +2303,17 @@
           "ExpirationDate": "2027-01-24",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/149228",
+          "Advisory": {
+            "ID": "APPLE-SA-149228",
+            "Number": "149228",
+            "URL": "https://support.apple.com/en-us/149228",
+            "CSAF": "https://support.apple.com/content/dam/edam/applecare/images/en_US/otherassets/security/149228.json",
+            "Severity": "High",
+            "Revision": "2",
+            "Updated": "2026-09-29T20:48:58Z",
+            "AvailableFor": "macOS Tahoe",
+            "Source": "Apple"
+          },
           "SecurityInfoContext": "macOS 26.7.1 was released on September 28, 2026. This release addressed one security issue (including one actively exploited vulnerability). Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {
             "CVE-2026-86950": {
@@ -5410,6 +5421,17 @@
           "ExpirationDate": "2026-12-27",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/149043",
+          "Advisory": {
+            "ID": "APPLE-SA-149043",
+            "Number": "149043",
+            "URL": "https://support.apple.com/en-us/149043",
+            "CSAF": "https://support.apple.com/content/dam/edam/applecare/images/en_US/otherassets/security/149043.json",
+            "Severity": "Medium",
+            "Revision": "4",
+            "Updated": "2026-10-26T19:02:03Z",
+            "AvailableFor": "macOS Sequoia",
+            "Source": "Apple"
+          },
           "SecurityInfoContext": "macOS 15.8 was released on September 14, 2026. This release addressed 180 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {
             "CVE-2019-5598": {},
@@ -20778,11 +20800,11 @@
     "CVE-2026-112565": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149041",
         "Component": "Model I/O",
         "Impact": "Processing a maliciously crafted 3D model may lead to memory corruption",
         "Description": "An integer overflow was addressed with improved input validation.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
       }
     },
     "CVE-2026-112566": {
@@ -21498,11 +21520,11 @@
     "CVE-2026-112688": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149041",
         "Component": "CoreMedia",
         "Impact": "Parsing a file may lead to an unexpected app termination or arbitrary code execution",
         "Description": "A memory corruption issue was addressed with improved memory handling.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
       }
     },
     "CVE-2026-112689": {
@@ -21728,11 +21750,11 @@
     "CVE-2026-113912": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149230",
+        "Advisory": "APPLE-SA-149041",
         "Component": "CoreAudio",
         "Impact": "Processing a maliciously crafted media file may lead to unexpected app termination or corrupt process memory",
         "Description": "An out-of-bounds access issue was addressed with improved bounds checking.",
-        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
       }
     },
     "CVE-2026-113913": {
@@ -22080,6 +22102,16 @@
         "AvailableFor": "MacBook Neo (2026), MacBook Air with Apple silicon (2020 and later), MacBook Pro with Apple silicon (2020 and later), iMac with Apple silicon (2021 and later), Mac mini with Apple silicon (2020 and later), Mac Studio (2022 and later), and Mac Pro with Apple silicon (2023)"
       }
     },
+    "CVE-2026-28930": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149043",
+        "Component": "Spotlight",
+        "Impact": "An app may be able to access protected user data",
+        "Description": "A permissions issue was addressed with additional restrictions.",
+        "AvailableFor": "macOS Sequoia"
+      }
+    },
     "CVE-2026-28934": {
       "Exploited": false,
       "Apple": {
@@ -22148,6 +22180,16 @@
         "Impact": "An attacker in a privileged network position may be able to cause a denial-of-service",
         "Description": "This is a vulnerability in open source code and Apple Software is among the affected projects. The CVE-ID was assigned by a third party. Learn more about the issue and CVE-ID at cve.org.",
         "AvailableFor": "MacBook Neo (2026), MacBook Air with Apple silicon (2020 and later), MacBook Pro with Apple silicon (2020 and later), iMac with Apple silicon (2021 and later), Mac mini with Apple silicon (2020 and later), Mac Studio (2022 and later), and Mac Pro with Apple silicon (2023)"
+      }
+    },
+    "CVE-2026-43661": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149041",
+        "Component": "ImageIO",
+        "Impact": "Processing a maliciously crafted image may corrupt process memory",
+        "Description": "A buffer overflow issue was addressed with improved memory handling.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
       }
     },
     "CVE-2026-43664": {
@@ -22303,11 +22345,21 @@
     "CVE-2026-43702": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149042",
+        "Advisory": "APPLE-SA-149041",
         "Component": "CoreMedia Video Toolbox",
         "Impact": "Processing a maliciously crafted video file may lead to unexpected app termination or corrupt process memory",
         "Description": "The issue was addressed with improved memory handling.",
-        "AvailableFor": "macOS Tahoe"
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
+      }
+    },
+    "CVE-2026-43715": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149041",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to memory corruption",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
       }
     },
     "CVE-2026-43719": {
@@ -22363,11 +22415,11 @@
     "CVE-2026-43743": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149042",
+        "Advisory": "APPLE-SA-149041",
         "Component": "IOGPUFamily",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "A race condition was addressed with improved state handling.",
-        "AvailableFor": "macOS Tahoe"
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
       }
     },
     "CVE-2026-43760": {
@@ -22568,6 +22620,16 @@
         "Impact": "An app may be able to access user-sensitive data",
         "Description": "A path handling issue was addressed with improved validation.",
         "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-64758": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149041",
+        "Component": "ImageIO",
+        "Impact": "Processing a maliciously crafted file may lead to unexpected app termination",
+        "Description": "The issue was addressed with improved bounds checks.",
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
       }
     },
     "CVE-2026-64759": {
@@ -23038,6 +23100,16 @@
         "Impact": "A malicious application may bypass Gatekeeper checks",
         "Description": "A logic issue was addressed with improved state management.",
         "AvailableFor": "MacBook Neo (2026), MacBook Air with Apple silicon (2020 and later), MacBook Pro with Apple silicon (2020 and later), iMac with Apple silicon (2021 and later), Mac mini with Apple silicon (2020 and later), Mac Studio (2022 and later), and Mac Pro with Apple silicon (2023)"
+      }
+    },
+    "CVE-2026-65371": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149043",
+        "Component": "Kernel",
+        "Impact": "An app may be able to disclose kernel memory",
+        "Description": "This issue was addressed with improved redaction of sensitive information.",
+        "AvailableFor": "macOS Sequoia"
       }
     },
     "CVE-2026-65372": {
@@ -25181,11 +25253,11 @@
     "CVE-2026-86944": {
       "Exploited": false,
       "Apple": {
-        "Advisory": "APPLE-SA-149042",
+        "Advisory": "APPLE-SA-149041",
         "Component": "IOAcceleratorFamily",
         "Impact": "An app may be able to cause unexpected system termination",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
-        "AvailableFor": "macOS Tahoe"
+        "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later"
       }
     },
     "CVE-2026-86945": {
