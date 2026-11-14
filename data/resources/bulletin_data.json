@@ -1,7 +1,7 @@
 {
-  "content_hash": "a9c91db1fd2a0f52ccf74049d9b05d8e84c6f7861994e93c614a58966d9d02fd",
+  "content_hash": "75997a1cee0b9050e6e03e73b758a775761ccd9aa500d1c28362a7ffe6823e28",
   "content_changed": true,
-  "generated_at": "2026-11-14T13:39:14.747570542Z",
+  "generated_at": "2026-11-14T18:35:14.671145647Z",
   "latest_releases": {
     "macos": {
       "version": "27.2.1",
@@ -24,7 +24,9 @@
       "updates_link": null,
       "actively_exploited_cves": [
         "CVE-2026-111497"
-      ]
+      ],
+      "advisory_id": "APPLE-SA-149718",
+      "apple_severity": "Medium"
     },
     "ios": {
       "version": "27.2.1",
@@ -48,7 +50,9 @@
       "updates_link": null,
       "actively_exploited_cves": [
         "CVE-2026-111497"
-      ]
+      ],
+      "advisory_id": "APPLE-SA-149715",
+      "apple_severity": "Medium"
     },
     "ipados": {
       "version": "27.2.1",
@@ -72,12 +76,14 @@
       "updates_link": null,
       "actively_exploited_cves": [
         "CVE-2026-111497"
-      ]
+      ],
+      "advisory_id": "APPLE-SA-149715",
+      "apple_severity": "Medium"
     },
     "tvos": {
       "version": "27.2.1",
       "build": "24K6157",
-      "release_date": "2026-11-13",
+      "release_date": "2026-11-13T00:00:00Z",
       "url": "https://support.apple.com/en-us/149721",
       "cves_fixed": [
         "CVE-2026-111497",
@@ -94,12 +100,14 @@
       "updates_link": null,
       "actively_exploited_cves": [
         "CVE-2026-111497"
-      ]
+      ],
+      "advisory_id": "APPLE-SA-149721",
+      "apple_severity": "Medium"
     },
     "watchos": {
       "version": "27.2.1",
       "build": "24S6132",
-      "release_date": "2026-11-09",
+      "release_date": "2026-11-09T00:00:00Z",
       "url": "https://support.apple.com/en-us/149722",
       "cves_fixed": [
         "CVE-2026-111497",
@@ -118,12 +126,14 @@
       "updates_link": null,
       "actively_exploited_cves": [
         "CVE-2026-111497"
-      ]
+      ],
+      "advisory_id": "APPLE-SA-149722",
+      "apple_severity": "Medium"
     },
     "visionos": {
       "version": "27.2.1",
       "build": "24N6124",
-      "release_date": "2026-11-09",
+      "release_date": "2026-11-09T00:00:00Z",
       "url": "https://support.apple.com/en-us/149724",
       "cves_fixed": [
         "CVE-2026-111497",
@@ -142,7 +152,9 @@
       "updates_link": null,
       "actively_exploited_cves": [
         "CVE-2026-111497"
-      ]
+      ],
+      "advisory_id": "APPLE-SA-149724",
+      "apple_severity": "Medium"
     },
     "safari": {
       "version": "27.2",
@@ -193,7 +205,7 @@
   "security_summary": {
     "unique_cves_fixed": 42,
     "kev_matches": 1,
-    "latest_wave_date": "2026-11-13",
+    "latest_wave_date": "2026-11-13T00:00:00Z",
     "kev_cve_list": [
       "CVE-2026-111497"
     ]
