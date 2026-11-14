@@ -1,8 +1,8 @@
 {
-  "SchemaVersion": "2026.11.14.1",
+  "SchemaVersion": "2026.11.14.2",
   "Version": "2.0",
   "UpdateHash": "470956fc20eea6e27e4466ceea8ca484b1bd6ce45c2c88500b1d68b7c6a6cb57",
-  "LastCheck": "2026-11-14T12:38:09.726460880+00:00",
+  "LastCheck": "2026-11-14T13:13:45.484339167+00:00",
   "OSVersions": [
     {
       "OSVersion": "Golden Gate 27",
@@ -18315,9 +18315,9 @@
     "com.apple.XProtect": "5372"
   },
   "XProtectPayloads": {
+    "ReleaseDate": "2026-11-10T20:54:45Z",
     "com.apple.XProtectFramework.XProtect": "170",
-    "com.apple.XprotectFramework.PluginService": "74",
-    "ReleaseDate": "2026-11-10T20:54:45Z"
+    "com.apple.XprotectFramework.PluginService": "74"
   },
   "BackgroundSecurityImprovements": {
     "26": [
@@ -19554,6 +19554,16 @@
         "AvailableFor": "MacBook Neo (2026), MacBook Air with Apple silicon (2020 and later), MacBook Pro with Apple silicon (2020 and later), iMac with Apple silicon (2021 and later), Mac mini with Apple silicon (2020 and later), Mac Studio (2022 and later), and Mac Pro with Apple silicon (2023)"
       }
     },
+    "CVE-2026-28935": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "Kernel",
+        "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
+        "Description": "The issue was addressed with improved memory handling.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
     "CVE-2026-28937": {
       "Exploited": false,
       "Apple": {
@@ -19874,6 +19884,16 @@
         "AvailableFor": "MacBook Neo (2026), MacBook Air with Apple silicon (2020 and later), MacBook Pro with Apple silicon (2020 and later), iMac with Apple silicon (2021 and later), Mac mini with Apple silicon (2020 and later), Mac Studio (2022 and later), and Mac Pro with Apple silicon (2023)"
       }
     },
+    "CVE-2026-43794": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to memory corruption",
+        "Description": "A memory corruption issue was addressed with improved memory handling.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
     "CVE-2026-64712": {
       "Exploited": false,
       "Apple": {
@@ -19894,6 +19914,16 @@
         "AvailableFor": "MacBook Neo (2026), MacBook Air with Apple silicon (2020 and later), MacBook Pro with Apple silicon (2020 and later), iMac with Apple silicon (2021 and later), Mac mini with Apple silicon (2020 and later), Mac Studio (2022 and later), and Mac Pro with Apple silicon (2023)"
       }
     },
+    "CVE-2026-64715": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process crash",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
     "CVE-2026-64718": {
       "Exploited": false,
       "Apple": {
@@ -19902,6 +19932,16 @@
         "Impact": "Processing maliciously crafted web content may lead to an unexpected Safari crash",
         "Description": "A use-after-free issue was addressed with improved memory management.",
         "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-64736": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "IOMobileFrameBuffer",
+        "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
+        "Description": "An out-of-bounds access issue was addressed with improved bounds checking.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
       }
     },
     "CVE-2026-64750": {
@@ -19964,6 +20004,26 @@
         "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
       }
     },
+    "CVE-2026-64778": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "WebKit History",
+        "Impact": "Visiting a maliciously crafted website may leak sensitive data",
+        "Description": "The issue was addressed with improved checks.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
+    "CVE-2026-64787": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
     "CVE-2026-64789": {
       "Exploited": false,
       "Apple": {
@@ -19984,6 +20044,36 @@
         "AvailableFor": "MacBook Neo (2026), MacBook Air with Apple silicon (2020 and later), MacBook Pro with Apple silicon (2020 and later), iMac with Apple silicon (2021 and later), Mac mini with Apple silicon (2020 and later), Mac Studio (2022 and later), and Mac Pro with Apple silicon (2023)"
       }
     },
+    "CVE-2026-65330": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "Kernel",
+        "Impact": "An app may be able to cause unexpected system termination or corrupt kernel memory",
+        "Description": "The issue was addressed with improved memory handling.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
+    "CVE-2026-65339": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "Audio",
+        "Impact": "An app may be able to leak sensitive user information",
+        "Description": "A logic issue was addressed with improved checks.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
+    "CVE-2026-65341": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to memory corruption",
+        "Description": "The issue was addressed with improved memory handling.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
     "CVE-2026-65342": {
       "Exploited": false,
       "Apple": {
@@ -19992,6 +20082,16 @@
         "Impact": "An app may be able to access sensitive user data",
         "Description": "A permissions issue was addressed with improved validation.",
         "AvailableFor": "MacBook Neo (2026), MacBook Air with Apple silicon (2020 and later), MacBook Pro with Apple silicon (2020 and later), iMac with Apple silicon (2021 and later), Mac mini with Apple silicon (2020 and later), Mac Studio (2022 and later), and Mac Pro with Apple silicon (2023)"
+      }
+    },
+    "CVE-2026-65343": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "Kernel",
+        "Impact": "A remote attacker may be able to cause unexpected system termination",
+        "Description": "A use after free issue was addressed with improved memory management.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
       }
     },
     "CVE-2026-65344": {
@@ -20014,6 +20114,26 @@
         "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
       }
     },
+    "CVE-2026-65346": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "ImageIO",
+        "Impact": "Processing an image may lead to arbitrary code execution",
+        "Description": "An integer overflow was addressed with improved input validation.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
+    "CVE-2026-65347": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "ImageIO",
+        "Impact": "Processing an image may lead to a denial-of-service",
+        "Description": "The issue was addressed with improved checks.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
     "CVE-2026-65348": {
       "Exploited": false,
       "Apple": {
@@ -20022,6 +20142,16 @@
         "Impact": "An app may be able to modify protected parts of the file system",
         "Description": "A permissions issue was addressed with additional restrictions.",
         "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-65349": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "Kernel",
+        "Impact": "An app may be able to cause unexpected system termination or read kernel memory",
+        "Description": "An out-of-bounds read was addressed with improved input validation.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
       }
     },
     "CVE-2026-65354": {
@@ -20262,6 +20392,26 @@
         "Impact": "An app may bypass Gatekeeper checks",
         "Description": "This issue was addressed with improved checks.",
         "AvailableFor": "MacBook Neo (2026), MacBook Air with Apple silicon (2020 and later), MacBook Pro with Apple silicon (2020 and later), iMac with Apple silicon (2021 and later), Mac mini with Apple silicon (2020 and later), Mac Studio (2022 and later), and Mac Pro with Apple silicon (2023)"
+      }
+    },
+    "CVE-2026-65390": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "WebRTC",
+        "Impact": "Processing maliciously crafted web content may lead to memory corruption",
+        "Description": "An integer overflow was addressed with improved input validation.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
+    "CVE-2026-65391": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "WebRTC",
+        "Impact": "Processing maliciously crafted web content may lead to memory corruption",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
       }
     },
     "CVE-2026-65392": {

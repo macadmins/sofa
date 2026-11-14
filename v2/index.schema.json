@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sofa/v2/index/2026.11.14.2",
+  "title": "SOFA index (schema 2026.11.14.2)",
+  "type": "object",
+  "required": [
+    "Feeds",
+    "GeneratedAt",
+    "SchemaVersion"
+  ],
+  "properties": {
+    "Feeds": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/FeedEntry"
+      }
+    },
+    "GeneratedAt": {
+      "type": "string"
+    },
+    "SchemaVersion": {
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "FeedEntry": {
+      "type": "object",
+      "required": [
+        "ChangedAt",
+        "ContentHash",
+        "Name",
+        "Path"
+      ],
+      "properties": {
+        "ChangedAt": {
+          "description": "RFC 3339: when ContentHash last changed",
+          "type": "string"
+        },
+        "ContentHash": {
+          "description": "SHA-256 of the content without per-run fields",
+          "type": "string"
+        },
+        "Name": {
+          "description": "e.g. \"macos_data_feed\"",
+          "type": "string"
+        },
+        "Path": {
+          "description": "relative to index.json, e.g. \"macos_data_feed.json\"",
+          "type": "string"
+        },
+        "Schema": {
+          "description": "JSON Schema, relative to index.json, if published",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "SchemaVersion": {
+          "description": "the feed's own SchemaVersion, if it has one",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

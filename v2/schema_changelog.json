@@ -1,5 +1,13 @@
 [
   {
+    "version": "2026.11.14.2",
+    "date": "2026-11-14",
+    "changes": [
+      "Added `v2/index.json`: every v2 feed with `Path`, `Schema`, `SchemaVersion`, `ContentHash` (SHA-256 of the content without per-run fields such as `LastCheck`/`UpdateHash`) and `ChangedAt`. Poll the index (it sends an ETag) and download a feed only when its `ContentHash` changed",
+      "`XProtectPlistConfigData`, `XProtectPayloads` and `BackgroundSecurityImprovements` keys are now written in sorted order (before: a different order on every run, so the files changed without new data)"
+    ]
+  },
+  {
     "version": "2026.11.14.1",
     "date": "2026-11-14",
     "changes": [

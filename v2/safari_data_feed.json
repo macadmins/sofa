@@ -827,6 +827,26 @@
         "KnownRansomwareCampaignUse": "Unknown"
       }
     },
+    "CVE-2026-43794": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to memory corruption",
+        "Description": "A memory corruption issue was addressed with improved memory handling.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
+    "CVE-2026-64715": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process crash",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
     "CVE-2026-64718": {
       "Exploited": false,
       "Apple": {
@@ -845,6 +865,56 @@
         "Impact": "Processing maliciously crafted web content may disclose sensitive user information",
         "Description": "A permissions issue was addressed by removing the vulnerable code.",
         "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-64778": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "WebKit History",
+        "Impact": "Visiting a maliciously crafted website may leak sensitive data",
+        "Description": "The issue was addressed with improved checks.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
+    "CVE-2026-64787": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to an unexpected process termination",
+        "Description": "A use-after-free issue was addressed with improved memory management.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
+    "CVE-2026-65341": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "WebKit",
+        "Impact": "Processing maliciously crafted web content may lead to memory corruption",
+        "Description": "The issue was addressed with improved memory handling.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
+    "CVE-2026-65390": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "WebRTC",
+        "Impact": "Processing maliciously crafted web content may lead to memory corruption",
+        "Description": "An integer overflow was addressed with improved input validation.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
+      }
+    },
+    "CVE-2026-65391": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149036",
+        "Component": "WebRTC",
+        "Impact": "Processing maliciously crafted web content may lead to memory corruption",
+        "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
+        "AvailableFor": "Apple TV 4K 2nd generation and later"
       }
     },
     "CVE-2026-84518": {
