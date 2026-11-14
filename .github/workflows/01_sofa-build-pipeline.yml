@@ -28,6 +28,11 @@ on:
 env:
   PYTHON_VERSION: "3.13"
 
+# Shared with 07 (CSAF update): never commit at the same time.
+concurrency:
+  group: sofa-data
+  cancel-in-progress: false
+
 jobs:
   pipeline:
     name: SOFA Production Pipeline
