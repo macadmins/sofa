@@ -4,24 +4,19 @@ name: 07 - CSAF update
 # throttles these requests per IP (from GitHub runners about one every ~2 min), and
 # publishing a new bulletin must not wait for them.
 # - the main pipeline (01) requests JSON only for new advisories, within 60 s
-# - this workflow re-checks known advisories and completes what 01 had no time for:
-#   preload ~25 min before the regular runs, postload right after 01 and ~20 min later
+# - this workflow re-checks known advisories and completes what 01 had no time for,
+#   twice a day, outside Apple's release window (weekdays 18:00-22:00 CET, when 01 runs
+#   hourly): 23:15 UTC catches the evening's releases, 11:15 UTC re-checks
 # Two jobs: `fetch` takes its time without holding the lock; `apply` merges the result
 # into the latest main inside the lock shared with 01 (seconds), rebuilds and deploys
 # only when Apple's content changed, otherwise commits just the check times.
 
 on:
-  workflow_run:
-    workflows: ["01 - SOFA build pipeline"]
-    types: [completed]
-    branches: [main]
   schedule:
-    # preload (01 runs at :30 every 6 h, and weekdays hourly 17:00-20:00 UTC)
-    - cron: "5 */6 * * *"
-    - cron: "35 16-19 * * 1-5"
-    # postload
-    - cron: "50 */6 * * *"
-    - cron: "20 17-20 * * 1-5"
+    # UTC. Busy window is 16:00-21:59 UTC (18-22 CET/CEST); 01 also runs at :30 every 6 h.
+    # The fetch takes up to 15 min, so both runs finish before 01's next run.
+    - cron: "15 23 * * *"
+    - cron: "15 11 * * *"
   workflow_dispatch:
     inputs:
       budget:
@@ -37,7 +32,7 @@ env:
 
 jobs:
   fetch:
-    if: github.event.repository.fork == false && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
+    if: github.event.repository.fork == false
     runs-on: ubuntu-latest
     timeout-minutes: 25
     # one fetch at a time; it does not block 01
