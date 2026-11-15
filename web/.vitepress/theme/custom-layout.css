@@ -219,7 +219,6 @@ body:not(.layout-home) .VPSidebar {
   
   .VPContent:not(.layout-home .VPContent) {
     margin-left: 0 !important;
-    padding-left: 1.5rem !important;
   }
   
   .VPLocalNav {
@@ -665,4 +664,20 @@ body.layout-home .VPSidebar {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
+}
+/* Phones: one symmetric 16px gutter on doc pages. Previously VPContent (left only),
+   VPDoc, .vp-doc and the component wrappers each added their own padding (80px left / 56px right). */
+@media (max-width: 768px) {
+  .VPDoc {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .vp-doc,
+  .vp-doc.container,
+  .security-info,
+  .latest-features,
+  .beta-features {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }

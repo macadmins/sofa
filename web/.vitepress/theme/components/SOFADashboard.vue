@@ -31,7 +31,7 @@
           </svg>
           <span>Star us on GitHub</span>
         </a>
-        <a class="github-count" href="https://github.com/macadmins/sofa/stargazers" rel="noopener" target="_blank" aria-label="{{ starCount }} stargazers on GitHub">
+        <a v-if="starCount" class="github-count" href="https://github.com/macadmins/sofa/stargazers" rel="noopener" target="_blank" :aria-label="`${starCount} stargazers on GitHub`">
           {{ starCount }}
         </a>
       </div>
@@ -95,11 +95,11 @@
     -->
 
     <!-- Platform Navigation -->
-    <div class="flex flex-wrap justify-center gap-3 mb-12">
+    <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
       <a v-for="platform in platforms" 
          :key="platform.name"
          :href="platform.link"
-         class="platform-btn group flex items-center justify-center gap-2.5 px-3.5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 hover:shadow-sm min-w-0"
+         class="platform-btn group flex items-center justify-center gap-2 sm:gap-2.5 px-3 sm:px-3.5 py-2.5 rounded-lg grow sm:grow-0 text-sm font-semibold transition-all duration-200 hover:shadow-sm min-w-0"
          :data-platform="platform.color">
         <div class="platform-icon w-4 h-4 flex items-center justify-center flex-shrink-0" :data-platform="platform.color">
           <component :is="platform.icon" class="platform-icon-svg w-full h-full" :data-platform="platform.color" />
@@ -570,7 +570,7 @@
           <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">Live</span>
         </template>
         <div class="space-y-3 flex-grow">
-          <div class="grid grid-cols-2 gap-3">
+          <div class="grid grid-cols-[auto_1fr] gap-4">
             <div class="space-y-1">
               <div class="flex items-center gap-1">
                 <component :is="ClockIcon" class="h-3.5 w-3.5 text-blue-600" />
@@ -637,7 +637,7 @@
           <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-md bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">Live</span>
         </template>
         <div class="space-y-3 flex-grow">
-          <div class="grid grid-cols-2 gap-3">
+          <div class="grid grid-cols-[auto_1fr] gap-4">
             <div class="space-y-1">
               <div class="flex items-center gap-1">
                 <component :is="ClockIcon" class="h-3.5 w-3.5 text-purple-600" />
@@ -1051,14 +1051,13 @@
         <div 
           ref="timelineContainer" 
           @scroll="checkScrollButtons"
-          class="overflow-x-auto flex-grow scrollbar-hide mb-3"
+          class="overflow-x-auto flex-grow scrollbar-hide mb-3 snap-x snap-mandatory"
           style="scroll-behavior: smooth;"
         >
-          <div class="flex gap-3 pb-2" style="min-width: max-content;">
+          <div class="flex gap-3 pb-2">
             <div v-for="(release, idx) in recentReleases" :key="idx" 
-                 class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-all duration-150 flex-shrink-0 timeline-release-card" 
-                 :class="getTimelinePlatformClass(release.name)"
-                 style="width: 200px;">
+                 class="group/btn p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-all duration-150 flex-shrink-0 w-full sm:w-[200px] snap-start timeline-release-card" 
+                 :class="getTimelinePlatformClass(release.name)">
               <div class="space-y-1.5">
                 <div class="flex items-center justify-between">
                   <span class="text-xs small-text">{{ release.formattedDate }}</span>
@@ -1965,7 +1964,7 @@ const formatTimeObject = (date) => ({
   utc: {
     time: date.toISOString().slice(11, 19) + ' UTC',
     date: date.toISOString().slice(0, 10),
-    full: date.toISOString().replace('T', ' ').slice(0, 19) + ' UTC'
+    full: date.toISOString().replace('T', ' ').slice(0, 19)
   }
 })
 
