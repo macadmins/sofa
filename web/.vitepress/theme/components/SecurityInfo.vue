@@ -438,13 +438,12 @@ const formatDate = (dateString) => {
   }
 }
 
-// Determine if high risk based on KEV presence
-const hasHighRisk = (update) => {
-  if (!update) return false;
-  
-  const kevCount = update.activelyExploited?.length || 0;
-  return kevCount > 0;
-}
+// Critical: Apple reports the CVE exploited, or CISA KEV lists it for an Apple product
+const hasHighRisk = (update) => (update?.activelyExploited?.length || 0) > 0 && !update.kevOnly
+
+// Every exploited CVE is a KEV entry for another vendor's product (sofa-build rates it `high`)
+const isKevOnly = (u) => (u.ActivelyExploitedCVEs?.length || 0) > 0
+  && u.UpdateSummary?.Priority === 'high' && (u.UpdateSummary?.Stats?.ExploitedElsewhere || 0) > 0
 
 // Toggle functions
 const toggleVersion = (version) => {
@@ -534,6 +533,7 @@ const processSecurityData = (data) => {
       releaseNotes: update.ReleaseNotes || '',
       vulnerabilitiesCount: update.CVEs ? Object.keys(update.CVEs).length : 0,
       activelyExploited,
+      kevOnly: isKevOnly(update),
       cves,
       daysToPrevRelease: update.DaysSincePreviousRelease || 0,
       updateSummary: update.UpdateSummary || null,
@@ -636,8 +636,9 @@ onMounted(async () => {
                   <span class="stat-badge" :class="{ 'has-cves': update.vulnerabilitiesCount > 0 }">
                     {{ update.vulnerabilitiesCount }} {{ update.vulnerabilitiesCount === 1 ? 'CVE' : 'CVEs' }}
                   </span>
-                  <span v-if="update.activelyExploited && update.activelyExploited.length > 0" class="stat-badge kev-badge">
-                    {{ update.activelyExploited.length }} KEV
+                  <span v-if="update.activelyExploited && update.activelyExploited.length > 0" class="stat-badge kev-badge" :class="{ 'kev-elsewhere': update.kevOnly }"
+                        :title="update.kevOnly ? 'In CISA KEV for another vendor\'s product; Apple reports no attacks on its platforms' : 'Actively exploited (Apple or CISA KEV)'">
+                    {{ update.activelyExploited.length }} KEV{{ update.kevOnly ? ' · third-party' : '' }}
                   </span>
                   <span v-if="hasHighRisk(update)" class="risk-indicator high-risk">
                     Mitigates Critical Risk
@@ -659,10 +660,10 @@ onMounted(async () => {
           <div v-if="update.updateSummary || update.securityInfoContext" class="update-summary-section">
             <div v-if="update.updateSummary" class="update-summary">
               <div v-if="update.updateSummary.Summary" class="summary-text">
-                <span class="summary-icon">⚠️</span>
+                <span class="summary-icon">{{ update.kevOnly ? 'ℹ️' : '⚠️' }}</span>
                 {{ update.updateSummary.Summary }}
               </div>
-              <div v-if="update.updateSummary.Recommendation" class="recommendation-text">
+              <div v-if="update.updateSummary.Recommendation" class="recommendation-text" :class="{ 'kev-elsewhere': update.kevOnly }">
                 <strong>Recommendation:</strong> {{ update.updateSummary.Recommendation }}
               </div>
             </div>
@@ -698,7 +699,7 @@ onMounted(async () => {
             </div>
 
             <div v-if="update.activelyExploited && update.activelyExploited.length > 0" class="update-section">
-              <div class="section-label">Actively Exploited Vulnerabilities (KEV):</div>
+              <div class="section-label">{{ update.kevOnly ? 'Exploited in other products (CISA KEV):' : 'Actively Exploited Vulnerabilities (KEV):' }}</div>
               <div class="section-content">
                 <div class="cve-list">
                   <a 
@@ -706,8 +707,9 @@ onMounted(async () => {
                     :key="cve.cve" 
                     :href="cve.link" 
                     class="cve-link exploited"
+                    :class="{ 'kev-elsewhere': update.kevOnly }"
                   >
-                    🔥 {{ cve.cve }}
+                    <span v-if="update.kevOnly" class="exploited-dot kev-elsewhere"></span><template v-else>🔥 </template>{{ cve.cve }}
                   </a>
                 </div>
               </div>
@@ -724,7 +726,7 @@ onMounted(async () => {
                       :href="cve.link" 
                       class="cve-link"
                     >
-                      <span v-if="isActivelyExploited(cve, update.activelyExploited)" class="exploited-dot"></span>
+                      <span v-if="isActivelyExploited(cve, update.activelyExploited)" class="exploited-dot" :class="{ 'kev-elsewhere': update.kevOnly }"></span>
                       {{ cve.cve }}
                     </a>
                   </div>
@@ -777,7 +779,7 @@ onMounted(async () => {
                           :href="cve.link" 
                           class="cve-link"
                         >
-                          <span v-if="isActivelyExploited(cve, update.activelyExploited)" class="exploited-dot"></span>
+                          <span v-if="isActivelyExploited(cve, update.activelyExploited)" class="exploited-dot" :class="{ 'kev-elsewhere': update.kevOnly }"></span>
                           {{ cve.cve }}
                         </a>
                       </div>
@@ -1341,6 +1343,25 @@ html.dark .section-label {
   border-radius: 50%;
   display: inline-block;
   margin-right: 4px;
+}
+
+/* KEV entry for another vendor's product: amber, not red */
+.recommendation-text.kev-elsewhere, .recommendation-text.kev-elsewhere strong { color: #B45309 !important; }
+:root.dark .recommendation-text.kev-elsewhere, :root.dark .recommendation-text.kev-elsewhere strong { color: #FBBF24 !important; }
+.stat-badge.kev-badge.kev-elsewhere,
+.cve-link.exploited.kev-elsewhere {
+  background: #FFFBEB;
+  border-color: #FDE68A;
+  color: #B45309;
+  box-shadow: none;
+}
+.stat-badge.kev-badge.kev-elsewhere::before { filter: hue-rotate(35deg) saturate(1.2); }
+.exploited-dot.kev-elsewhere { background-color: #F59E0B; }
+:root.dark .stat-badge.kev-badge.kev-elsewhere,
+:root.dark .cve-link.exploited.kev-elsewhere {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.35);
+  color: #FBBF24;
 }
 
 /* CVE Groups Header with controls */
