@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.11.15.1",
   "Version": "2.0",
-  "UpdateHash": "9fcfbca3e6c08dd0fdc3709c1ab222a020f3b977e3f07481bb1deebed5148090",
-  "LastCheck": "2026-11-15T12:34:27.142804064+00:00",
+  "UpdateHash": "3d78753f29b465fbb6f26b623edada6f7f95b8e6dc2cd403e1d8dae611d7752d",
+  "LastCheck": "2026-11-15T18:35:01.288833170+00:00",
   "OSVersions": [
     {
       "OSVersion": "Golden Gate 27",
@@ -2888,12 +2888,9 @@
           "UpdateName": "macOS Tahoe 26.6.1",
           "ProductName": "macOS",
           "ProductVersion": "26.6.1",
-          "Build": "25G76",
-          "AllBuilds": [
-            "25G76"
-          ],
+          "Build": "",
+          "AllBuilds": [],
           "ReleaseDate": "2026-08-06T00:00:00Z",
-          "ExpirationDate": "2026-11-15",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/148170",
           "SecurityInfoContext": "macOS 26.6.1 was released on August 06, 2026. This release addressed one security issue (including one actively exploited vulnerability). Newer updates are now available, so please check to see if they apply to your devices.",
@@ -2929,77 +2926,7 @@
               "Remote": 0,
               "Total": 1
             }
-          },
-          "Builds": [
-            {
-              "Build": "25G76",
-              "SupportedDevices": [
-                "J152FAP",
-                "J160AP",
-                "J180dAP",
-                "J185AP",
-                "J185FAP",
-                "J214KAP",
-                "J215AP",
-                "J274AP",
-                "J293AP",
-                "J313AP",
-                "J314cAP",
-                "J314sAP",
-                "J316cAP",
-                "J316sAP",
-                "J375cAP",
-                "J375dAP",
-                "J413AP",
-                "J414cAP",
-                "J414sAP",
-                "J415AP",
-                "J416cAP",
-                "J416sAP",
-                "J433AP",
-                "J434AP",
-                "J456AP",
-                "J457AP",
-                "J473AP",
-                "J474sAP",
-                "J475cAP",
-                "J475dAP",
-                "J493AP",
-                "J504AP",
-                "J514cAP",
-                "J514mAP",
-                "J514sAP",
-                "J516cAP",
-                "J516mAP",
-                "J516sAP",
-                "J575cAP",
-                "J575dAP",
-                "J604AP",
-                "J613AP",
-                "J614cAP",
-                "J614sAP",
-                "J615AP",
-                "J616cAP",
-                "J616sAP",
-                "J623AP",
-                "J624AP",
-                "J700AP",
-                "J704AP",
-                "J713AP",
-                "J714cAP",
-                "J714sAP",
-                "J715AP",
-                "J716cAP",
-                "J716sAP",
-                "J773gAP",
-                "J773sAP",
-                "J813AP",
-                "J815AP",
-                "VMA2MACOSAP",
-                "VMM-x86_64"
-              ]
-            }
-          ]
+          }
         },
         {
           "UpdateName": "macOS Tahoe 26.6",
@@ -3189,7 +3116,7 @@
           "DeviceScope": "universal",
           "SupersededBy": {
             "ProductVersion": "26.6.1",
-            "Build": "25G76",
+            "Build": "",
             "ReleaseDate": "2026-08-06T00:00:00Z",
             "DaysLater": 10
           },
@@ -18819,9 +18746,7 @@
         "MSU_UPDATE_25G229_patch_26.7_minor",
         "MSU_UPDATE_25G229_full_26.7_minor",
         "MSU_UPDATE_25G83_patch_26.6.2_minor",
-        "MSU_UPDATE_25G83_full_26.6.2_minor",
-        "MSU_UPDATE_25G76_patch_26.6.1_minor",
-        "MSU_UPDATE_25G76_full_26.6.1_minor"
+        "MSU_UPDATE_25G83_full_26.6.2_minor"
       ],
       "Upgrade": [
         "MSU_UPDATE_26B131_patch_27.2.1_major",
@@ -18875,7 +18800,7 @@
       "Name": "Apple Product Security",
       "URL": "https://support.apple.com/en-us/100100",
       "Format": "CSAF 2.1 + HTML",
-      "Retrieved": "2026-11-15T12:34:26.556116134Z"
+      "Retrieved": "2026-11-15T18:35:00.692901053Z"
     },
     "KEV": {
       "Layer": 2,

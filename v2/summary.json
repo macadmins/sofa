@@ -1,7 +1,7 @@
 {
   "SchemaVersion": "2026.11.15.1",
-  "ContentHash": "2871275375e0651dd557b8ac8b948836bb4b75b09ab51b209a867e5c5bfff98a",
-  "GeneratedAt": "2026-11-15T12:34:27.556338178+00:00",
+  "ContentHash": "243df9392f08ced50b389a6d77269b393a6ff25e3fa1d67b756d7959f7cf80f2",
+  "GeneratedAt": "2026-11-15T18:35:01.731530833+00:00",
   "Platforms": {
     "Safari": {
       "Majors": [
@@ -137,20 +137,12 @@
         {
           "Major": 18,
           "Latest": {
-            "Version": "18.7.8",
-            "ReleaseDate": "2026-04-22",
-            "Builds": [
-              {
-                "Build": "22H6352"
-              },
-              {
-                "Build": "22H352"
-              }
-            ],
-            "CVEs": 1,
+            "Version": "18.7.9",
+            "ReleaseDate": "2026-05-11",
+            "CVEs": 49,
             "ExploitedCVEs": [],
             "Priority": "security",
-            "SecurityInfoURL": "https://support.apple.com/en-us/127003"
+            "SecurityInfoURL": "https://support.apple.com/en-us/127111"
           },
           "Releases": [
             {
@@ -188,11 +180,6 @@
             {
               "Version": "18.7.10",
               "Build": "22H6374",
-              "Boards": 6
-            },
-            {
-              "Version": "18.7.9",
-              "Build": "22H6355",
               "Boards": 6
             }
           ]
@@ -329,9 +316,7 @@
               "MSU_UPDATE_25G229_patch_26.7_minor",
               "MSU_UPDATE_25G229_full_26.7_minor",
               "MSU_UPDATE_25G83_patch_26.6.2_minor",
-              "MSU_UPDATE_25G83_full_26.6.2_minor",
-              "MSU_UPDATE_25G76_patch_26.6.1_minor",
-              "MSU_UPDATE_25G76_full_26.6.1_minor"
+              "MSU_UPDATE_25G83_full_26.6.2_minor"
             ],
             "Upgrade": [
               "MSU_UPDATE_26B131_patch_27.2.1_major",
