@@ -189,7 +189,7 @@
                 </div>
                 <div>
                   <div class="text-base font-bold text-gray-900 dark:text-gray-100">
-                    macOS {{ version.version }}<span v-if="version.exploited" class="ml-1.5 align-middle inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-red-100 text-red-700 dark:bg-red-900/60 dark:text-red-200" style="-webkit-text-fill-color: currentColor; background-image: none;" title="Actively exploited CVE (Apple or CISA KEV)">{{ version.exploited }} exploited</span>
+                    macOS {{ version.version }}<span v-if="version.exploited" class="ml-1.5 align-middle inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold" :class="version.priority === 'high' ? 'bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-200' : 'bg-red-100 text-red-700 dark:bg-red-900/60 dark:text-red-200'" style="-webkit-text-fill-color: currentColor; background-image: none;" :title="version.priority === 'high' ? 'In CISA KEV for another vendor\'s product; Apple reports no attacks on its platforms' : 'Actively exploited CVE (Apple or CISA KEV)'">{{ version.exploited }} {{ version.priority === 'high' ? 'KEV' : 'exploited' }}</span>
                   </div>
                   <div class="text-xs small-text mt-0.5">
                     Build {{ version.build }}<span v-if="version.moreBuilds" :title="version.buildsTitle" class="cursor-help"> +{{ version.moreBuilds }} more</span>
@@ -231,7 +231,7 @@
                 </div>
                 <div>
                   <div class="text-base font-bold text-gray-900 dark:text-gray-100">
-                    iOS {{ version.version }}<span v-if="version.exploited" class="ml-1.5 align-middle inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-red-100 text-red-700 dark:bg-red-900/60 dark:text-red-200" style="-webkit-text-fill-color: currentColor; background-image: none;" title="Actively exploited CVE (Apple or CISA KEV)">{{ version.exploited }} exploited</span>
+                    iOS {{ version.version }}<span v-if="version.exploited" class="ml-1.5 align-middle inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold" :class="version.priority === 'high' ? 'bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-200' : 'bg-red-100 text-red-700 dark:bg-red-900/60 dark:text-red-200'" style="-webkit-text-fill-color: currentColor; background-image: none;" :title="version.priority === 'high' ? 'In CISA KEV for another vendor\'s product; Apple reports no attacks on its platforms' : 'Actively exploited CVE (Apple or CISA KEV)'">{{ version.exploited }} {{ version.priority === 'high' ? 'KEV' : 'exploited' }}</span>
                   </div>
                   <div class="text-xs small-text mt-0.5">
                     Build {{ version.build }}<span v-if="version.moreBuilds" :title="version.buildsTitle" class="cursor-help"> +{{ version.moreBuilds }} more</span>
