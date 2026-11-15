@@ -1,8 +1,8 @@
 {
-  "SchemaVersion": "2026.11.14.4",
+  "SchemaVersion": "2026.11.15.1",
   "Version": "2.0",
   "UpdateHash": "9fcfbca3e6c08dd0fdc3709c1ab222a020f3b977e3f07481bb1deebed5148090",
-  "LastCheck": "2026-11-15T07:05:43.415843821+00:00",
+  "LastCheck": "2026-11-15T10:40:41.614656976+00:00",
   "OSVersions": [
     {
       "OSVersion": "Golden Gate 27",
@@ -31,7 +31,7 @@
           "AvailableFor": "macOS Golden Gate",
           "Source": "Apple"
         },
-        "SecurityInfoContext": "macOS Golden Gate has been updated to version 27.2.1, released on November 09, 2026. This update addresses 8 security issues (including one actively exploited vulnerability) and is the most recent approved version. This update comes 14 days after the previous release.",
+        "SecurityInfoContext": "macOS Golden Gate has been updated to version 27.2.1, released on November 09, 2026. This update addresses 8 security issues (including one exploited in other products, per CISA KEV) and is the most recent approved version. This update comes 14 days after the previous release.",
         "SupportedDevices": [
           "J180dAP",
           "J274AP",
@@ -121,11 +121,12 @@
         "DaysSincePreviousRelease": 14,
         "DeviceScope": "universal",
         "UpdateSummary": {
-          "Priority": "critical",
-          "Summary": "Contains 1 actively exploited vulnerability",
-          "Recommendation": "Update immediately - actively exploited vulnerabilities",
+          "Priority": "high",
+          "Summary": "Fixes 1 vulnerability exploited in other products (CISA KEV: Google Brotli)",
+          "Recommendation": "Update soon - Apple reports no attacks on macOS",
           "Stats": {
             "Exploited": 1,
+            "ExploitedElsewhere": 1,
             "Critical": 0,
             "High": 0,
             "Medium": 0,
@@ -244,7 +245,7 @@
             "AvailableFor": "macOS Golden Gate",
             "Source": "Apple"
           },
-          "SecurityInfoContext": "macOS has been updated to version 27.2.1, released on November 09, 2026. This update addresses 8 security issues (including one actively exploited vulnerability) and is the most recent approved version.",
+          "SecurityInfoContext": "macOS has been updated to version 27.2.1, released on November 09, 2026. This update addresses 8 security issues (including one exploited in other products, per CISA KEV) and is the most recent approved version.",
           "CVEs": {
             "CVE-2026-111497": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2026-111497",
@@ -266,11 +267,12 @@
           "DaysSincePreviousRelease": 14,
           "DeviceScope": "universal",
           "UpdateSummary": {
-            "Priority": "critical",
-            "Summary": "Contains 1 actively exploited vulnerability",
-            "Recommendation": "Update immediately - actively exploited vulnerabilities",
+            "Priority": "high",
+            "Summary": "Fixes 1 vulnerability exploited in other products (CISA KEV: Google Brotli)",
+            "Recommendation": "Update soon - Apple reports no attacks on macOS",
             "Stats": {
               "Exploited": 1,
+              "ExploitedElsewhere": 1,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -1667,7 +1669,7 @@
           "AvailableFor": "macOS Tahoe",
           "Source": "Apple"
         },
-        "SecurityInfoContext": "macOS Tahoe has been updated to version 26.7.3, released on November 09, 2026. This update addresses 8 security issues (including one actively exploited vulnerability) and is the most recent approved version. This update comes 14 days after the previous release.",
+        "SecurityInfoContext": "macOS Tahoe has been updated to version 26.7.3, released on November 09, 2026. This update addresses 8 security issues (including one exploited in other products, per CISA KEV) and is the most recent approved version. This update comes 14 days after the previous release.",
         "SupportedDevices": [
           "J152FAP",
           "J160AP",
@@ -1754,11 +1756,12 @@
         "DaysSincePreviousRelease": 14,
         "DeviceScope": "universal",
         "UpdateSummary": {
-          "Priority": "critical",
-          "Summary": "Contains 1 actively exploited vulnerability",
-          "Recommendation": "Update immediately - actively exploited vulnerabilities",
+          "Priority": "high",
+          "Summary": "Fixes 1 vulnerability exploited in other products (CISA KEV: Google Brotli)",
+          "Recommendation": "Update soon - Apple reports no attacks on macOS",
           "Stats": {
             "Exploited": 1,
+            "ExploitedElsewhere": 1,
             "Critical": 0,
             "High": 0,
             "Medium": 0,
@@ -1862,7 +1865,7 @@
             "AvailableFor": "macOS Tahoe",
             "Source": "Apple"
           },
-          "SecurityInfoContext": "macOS has been updated to version 26.7.3, released on November 09, 2026. This update addresses 8 security issues (including one actively exploited vulnerability) and is the most recent approved version.",
+          "SecurityInfoContext": "macOS has been updated to version 26.7.3, released on November 09, 2026. This update addresses 8 security issues (including one exploited in other products, per CISA KEV) and is the most recent approved version.",
           "CVEs": {
             "CVE-2026-111497": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2026-111497",
@@ -1884,11 +1887,12 @@
           "DaysSincePreviousRelease": 14,
           "DeviceScope": "universal",
           "UpdateSummary": {
-            "Priority": "critical",
-            "Summary": "Contains 1 actively exploited vulnerability",
-            "Recommendation": "Update immediately - actively exploited vulnerabilities",
+            "Priority": "high",
+            "Summary": "Fixes 1 vulnerability exploited in other products (CISA KEV: Google Brotli)",
+            "Recommendation": "Update soon - Apple reports no attacks on macOS",
             "Stats": {
               "Exploited": 1,
+              "ExploitedElsewhere": 1,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -4663,7 +4667,7 @@
           "AvailableFor": "macOS Sequoia",
           "Source": "Apple"
         },
-        "SecurityInfoContext": "macOS Sequoia has been updated to version 15.8.3, released on November 09, 2026. This update addresses 8 security issues (including one actively exploited vulnerability) and is the most recent approved version. This update comes 14 days after the previous release.",
+        "SecurityInfoContext": "macOS Sequoia has been updated to version 15.8.3, released on November 09, 2026. This update addresses 8 security issues (including one exploited in other products, per CISA KEV) and is the most recent approved version. This update comes 14 days after the previous release.",
         "SupportedDevices": [
           "J132AP",
           "J137AP",
@@ -4754,11 +4758,12 @@
         "DaysSincePreviousRelease": 14,
         "DeviceScope": "universal",
         "UpdateSummary": {
-          "Priority": "critical",
-          "Summary": "Contains 1 actively exploited vulnerability",
-          "Recommendation": "Update immediately - actively exploited vulnerabilities",
+          "Priority": "high",
+          "Summary": "Fixes 1 vulnerability exploited in other products (CISA KEV: Google Brotli)",
+          "Recommendation": "Update soon - Apple reports no attacks on macOS",
           "Stats": {
             "Exploited": 1,
+            "ExploitedElsewhere": 1,
             "Critical": 0,
             "High": 0,
             "Medium": 0,
@@ -4866,7 +4871,7 @@
             "AvailableFor": "macOS Sequoia",
             "Source": "Apple"
           },
-          "SecurityInfoContext": "macOS has been updated to version 15.8.3, released on November 09, 2026. This update addresses 8 security issues (including one actively exploited vulnerability) and is the most recent approved version.",
+          "SecurityInfoContext": "macOS has been updated to version 15.8.3, released on November 09, 2026. This update addresses 8 security issues (including one exploited in other products, per CISA KEV) and is the most recent approved version.",
           "CVEs": {
             "CVE-2026-111497": {
               "NISTURL": "https://nvd.nist.gov/vuln/detail/CVE-2026-111497",
@@ -4888,11 +4893,12 @@
           "DaysSincePreviousRelease": 14,
           "DeviceScope": "universal",
           "UpdateSummary": {
-            "Priority": "critical",
-            "Summary": "Contains 1 actively exploited vulnerability",
-            "Recommendation": "Update immediately - actively exploited vulnerabilities",
+            "Priority": "high",
+            "Summary": "Fixes 1 vulnerability exploited in other products (CISA KEV: Google Brotli)",
+            "Recommendation": "Update soon - Apple reports no attacks on macOS",
             "Stats": {
               "Exploited": 1,
+              "ExploitedElsewhere": 1,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -6874,7 +6880,7 @@
           "ReleaseDate": "2025-07-29T00:00:00Z",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/124149",
-          "SecurityInfoContext": "macOS 15.6 was released on July 29, 2025. This release addressed 92 security issues (including 2 actively exploited vulnerabilities). Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "macOS 15.6 was released on July 29, 2025. This release addressed 92 security issues (including one actively exploited, and one exploited in other products per CISA KEV). Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "J132AP",
             "J137AP",
@@ -7046,10 +7052,11 @@
           },
           "UpdateSummary": {
             "Priority": "critical",
-            "Summary": "Contains 2 actively exploited vulnerabilities",
+            "Summary": "Contains 1 actively exploited vulnerability and 1 vulnerability exploited in other products (CISA KEV: Google Chromium)",
             "Recommendation": "Update immediately - actively exploited vulnerabilities",
             "Stats": {
               "Exploited": 2,
+              "ExploitedElsewhere": 1,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -15687,7 +15694,7 @@
           "ReleaseDate": "2022-07-20T00:00:00Z",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/kb/HT213345",
-          "SecurityInfoContext": "macOS 12.5 was released on July 20, 2022. This release addressed 71 security issues (including 2 actively exploited vulnerabilities). Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "macOS 12.5 was released on July 20, 2022. This release addressed 71 security issues (including one actively exploited, and one exploited in other products per CISA KEV). Newer updates are now available, so please check to see if they apply to your devices.",
           "CVEs": {
             "CVE-2021-28544": {},
             "CVE-2022-2294": {
@@ -15784,10 +15791,11 @@
           },
           "UpdateSummary": {
             "Priority": "critical",
-            "Summary": "Contains 2 actively exploited vulnerabilities",
+            "Summary": "Contains 1 actively exploited vulnerability and 1 vulnerability exploited in other products (CISA KEV: WebRTC)",
             "Recommendation": "Update immediately - actively exploited vulnerabilities",
             "Stats": {
               "Exploited": 2,
+              "ExploitedElsewhere": 1,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -18867,7 +18875,7 @@
       "Name": "Apple Product Security",
       "URL": "https://support.apple.com/en-us/100100",
       "Format": "CSAF 2.1 + HTML",
-      "Retrieved": "2026-11-15T07:05:42.989707328Z"
+      "Retrieved": "2026-11-15T10:40:41.002455119Z"
     },
     "KEV": {
       "Layer": 2,
@@ -18899,7 +18907,9 @@
       "KEV": {
         "DateAdded": "2022-05-23",
         "DueDate": "2022-06-13",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2021-30952": {
@@ -18910,7 +18920,9 @@
       "KEV": {
         "DateAdded": "2026-03-05",
         "DueDate": "2026-03-26",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2022-22587": {
@@ -18925,7 +18937,9 @@
       "KEV": {
         "DateAdded": "2022-01-28",
         "DueDate": "2022-02-11",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "iOS and macOS"
       }
     },
     "CVE-2022-22620": {
@@ -18940,7 +18954,9 @@
       "KEV": {
         "DateAdded": "2022-02-11",
         "DueDate": "2022-02-25",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "iOS, iPadOS, and macOS"
       }
     },
     "CVE-2022-22674": {
@@ -18955,7 +18971,9 @@
       "KEV": {
         "DateAdded": "2022-04-04",
         "DueDate": "2022-04-25",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "macOS"
       }
     },
     "CVE-2022-22675": {
@@ -18970,7 +18988,9 @@
       "KEV": {
         "DateAdded": "2022-04-04",
         "DueDate": "2022-04-25",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "macOS"
       }
     },
     "CVE-2022-2294": {
@@ -18981,7 +19001,9 @@
       "KEV": {
         "DateAdded": "2022-08-25",
         "DueDate": "2022-09-15",
-        "KnownRansomwareCampaignUse": "Known"
+        "KnownRansomwareCampaignUse": "Known",
+        "VendorProject": "WebRTC",
+        "Product": "WebRTC"
       }
     },
     "CVE-2022-26704": {
@@ -19006,7 +19028,9 @@
       "KEV": {
         "DateAdded": "2022-08-18",
         "DueDate": "2022-09-08",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "iOS and macOS"
       }
     },
     "CVE-2022-32894": {
@@ -19021,7 +19045,9 @@
       "KEV": {
         "DateAdded": "2022-08-18",
         "DueDate": "2022-09-08",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "iOS and macOS"
       }
     },
     "CVE-2022-32917": {
@@ -19036,7 +19062,9 @@
       "KEV": {
         "DateAdded": "2022-09-14",
         "DueDate": "2022-10-05",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "iOS, iPadOS, and macOS"
       }
     },
     "CVE-2022-3437": {
@@ -19061,7 +19089,9 @@
       "KEV": {
         "DateAdded": "2022-12-14",
         "DueDate": "2023-01-04",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "iOS"
       }
     },
     "CVE-2022-48503": {
@@ -19072,7 +19102,9 @@
       "KEV": {
         "DateAdded": "2025-10-20",
         "DueDate": "2025-11-10",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2022-48618": {
@@ -19087,7 +19119,9 @@
       "KEV": {
         "DateAdded": "2024-01-31",
         "DueDate": "2024-02-21",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2023-23529": {
@@ -19102,7 +19136,9 @@
       "KEV": {
         "DateAdded": "2023-02-14",
         "DueDate": "2023-03-07",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2023-28204": {
@@ -19117,7 +19153,9 @@
       "KEV": {
         "DateAdded": "2023-05-22",
         "DueDate": "2023-06-12",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2023-28205": {
@@ -19132,7 +19170,9 @@
       "KEV": {
         "DateAdded": "2023-04-10",
         "DueDate": "2023-05-01",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2023-28206": {
@@ -19147,7 +19187,9 @@
       "KEV": {
         "DateAdded": "2023-04-10",
         "DueDate": "2023-05-01",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "iOS, iPadOS, and macOS"
       }
     },
     "CVE-2023-32373": {
@@ -19162,7 +19204,9 @@
       "KEV": {
         "DateAdded": "2023-05-22",
         "DueDate": "2023-06-12",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2023-32409": {
@@ -19177,7 +19221,9 @@
       "KEV": {
         "DateAdded": "2023-05-22",
         "DueDate": "2023-06-12",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2023-32434": {
@@ -19192,7 +19238,9 @@
       "KEV": {
         "DateAdded": "2023-06-23",
         "DueDate": "2023-07-14",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2023-32435": {
@@ -19207,7 +19255,9 @@
       "KEV": {
         "DateAdded": "2023-06-23",
         "DueDate": "2023-07-14",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2023-32439": {
@@ -19222,7 +19272,9 @@
       "KEV": {
         "DateAdded": "2023-06-23",
         "DueDate": "2023-07-14",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2023-37450": {
@@ -19237,7 +19289,9 @@
       "KEV": {
         "DateAdded": "2023-07-13",
         "DueDate": "2023-08-03",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2023-38606": {
@@ -19252,7 +19306,9 @@
       "KEV": {
         "DateAdded": "2023-07-26",
         "DueDate": "2023-08-16",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2023-41064": {
@@ -19267,7 +19323,9 @@
       "KEV": {
         "DateAdded": "2023-09-11",
         "DueDate": "2023-10-02",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "iOS, iPadOS, and macOS"
       }
     },
     "CVE-2023-41990": {
@@ -19282,7 +19340,9 @@
       "KEV": {
         "DateAdded": "2024-01-08",
         "DueDate": "2024-01-29",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2023-41991": {
@@ -19297,7 +19357,9 @@
       "KEV": {
         "DateAdded": "2023-09-25",
         "DueDate": "2023-10-16",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2023-41992": {
@@ -19312,7 +19374,9 @@
       "KEV": {
         "DateAdded": "2023-09-25",
         "DueDate": "2023-10-16",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2023-41993": {
@@ -19327,7 +19391,9 @@
       "KEV": {
         "DateAdded": "2023-09-25",
         "DueDate": "2023-10-16",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2023-42916": {
@@ -19342,7 +19408,9 @@
       "KEV": {
         "DateAdded": "2023-12-04",
         "DueDate": "2023-12-25",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2023-42917": {
@@ -19357,7 +19425,9 @@
       "KEV": {
         "DateAdded": "2023-12-04",
         "DueDate": "2023-12-25",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2023-43000": {
@@ -19368,7 +19438,9 @@
       "KEV": {
         "DateAdded": "2026-03-05",
         "DueDate": "2026-03-26",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2024-23222": {
@@ -19383,7 +19455,9 @@
       "KEV": {
         "DateAdded": "2024-01-23",
         "DueDate": "2024-02-13",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2024-23225": {
@@ -19398,7 +19472,9 @@
       "KEV": {
         "DateAdded": "2024-03-06",
         "DueDate": "2024-03-27",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2024-23296": {
@@ -19413,7 +19489,9 @@
       "KEV": {
         "DateAdded": "2024-03-06",
         "DueDate": "2024-03-27",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2024-27834": {
@@ -19424,7 +19502,9 @@
       "KEV": {
         "DateAdded": "2026-11-04",
         "DueDate": "2026-11-18",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2024-44308": {
@@ -19439,7 +19519,9 @@
       "KEV": {
         "DateAdded": "2024-11-21",
         "DueDate": "2024-12-12",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2024-44309": {
@@ -19454,7 +19536,9 @@
       "KEV": {
         "DateAdded": "2024-11-21",
         "DueDate": "2024-12-12",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-14174": {
@@ -19469,7 +19553,9 @@
       "KEV": {
         "DateAdded": "2025-12-12",
         "DueDate": "2026-01-02",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Google",
+        "Product": "Chromium"
       }
     },
     "CVE-2025-24085": {
@@ -19484,7 +19570,9 @@
       "KEV": {
         "DateAdded": "2025-01-29",
         "DueDate": "2025-02-19",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-24201": {
@@ -19499,7 +19587,9 @@
       "KEV": {
         "DateAdded": "2025-03-13",
         "DueDate": "2025-04-03",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-31200": {
@@ -19514,7 +19604,9 @@
       "KEV": {
         "DateAdded": "2025-04-17",
         "DueDate": "2025-05-08",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-31201": {
@@ -19529,7 +19621,9 @@
       "KEV": {
         "DateAdded": "2025-04-17",
         "DueDate": "2025-05-08",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-31277": {
@@ -19540,7 +19634,9 @@
       "KEV": {
         "DateAdded": "2026-03-20",
         "DueDate": "2026-04-03",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-43200": {
@@ -19555,7 +19651,9 @@
       "KEV": {
         "DateAdded": "2025-06-16",
         "DueDate": "2025-07-07",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-43300": {
@@ -19570,7 +19668,9 @@
       "KEV": {
         "DateAdded": "2025-08-21",
         "DueDate": "2025-09-11",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "iOS, iPadOS, and macOS"
       }
     },
     "CVE-2025-43510": {
@@ -19581,7 +19681,9 @@
       "KEV": {
         "DateAdded": "2026-03-20",
         "DueDate": "2026-04-03",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-43520": {
@@ -19592,7 +19694,9 @@
       "KEV": {
         "DateAdded": "2026-03-20",
         "DueDate": "2026-04-03",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-43529": {
@@ -19607,7 +19711,9 @@
       "KEV": {
         "DateAdded": "2025-12-15",
         "DueDate": "2026-01-05",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-6558": {
@@ -19618,7 +19724,9 @@
       "KEV": {
         "DateAdded": "2025-07-22",
         "DueDate": "2025-08-12",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Google",
+        "Product": "Chromium"
       }
     },
     "CVE-2026-111497": {
@@ -19636,7 +19744,9 @@
       "KEV": {
         "DateAdded": "2026-10-27",
         "DueDate": "2026-11-10",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Google",
+        "Product": "Brotli"
       }
     },
     "CVE-2026-112410": {
@@ -22111,7 +22221,9 @@
       "KEV": {
         "DateAdded": "2026-02-12",
         "DueDate": "2026-03-05",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2026-28850": {
@@ -23429,7 +23541,9 @@
       "KEV": {
         "DateAdded": "2026-08-18",
         "DueDate": "2026-08-21",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "macOS"
       }
     },
     "CVE-2026-65401": {
@@ -25379,7 +25493,9 @@
       "KEV": {
         "DateAdded": "2026-09-29",
         "DueDate": "2026-10-13",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2026-86953": {

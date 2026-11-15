@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "sofa/v2/tvos_data_feed/2026.11.14.4",
-  "title": "SOFA tvos_data_feed (schema 2026.11.14.4)",
+  "$id": "sofa/v2/tvos_data_feed/2026.11.15.1",
+  "title": "SOFA tvos_data_feed (schema 2026.11.15.1)",
   "description": "Generic OS v2 Feed structure for tvOS, visionOS, watchOS",
   "type": "object",
   "required": [
@@ -389,6 +389,19 @@
             "string",
             "null"
           ]
+        },
+        "Product": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "VendorProject": {
+          "description": "CISA's vendor and product, e.g. \"Google\" / \"Brotli\"",
+          "type": [
+            "string",
+            "null"
+          ]
         }
       }
     },
@@ -635,6 +648,12 @@
           "minimum": 0.0
         },
         "Exploited": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        },
+        "ExploitedElsewhere": {
+          "description": "Of `exploited`: CISA KEV entries for another vendor's product (e.g. Google Brotli) that Apple does not report as exploited",
           "type": "integer",
           "format": "uint32",
           "minimum": 0.0

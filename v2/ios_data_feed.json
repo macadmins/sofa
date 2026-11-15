@@ -1,8 +1,8 @@
 {
-  "SchemaVersion": "2026.11.14.4",
+  "SchemaVersion": "2026.11.15.1",
   "Version": "2.0",
   "UpdateHash": "1a67d61c1862530fab0a31ab0f63f06323c8f5fbb2bf182dad41d822ce41226c",
-  "LastCheck": "2026-11-15T07:05:43.473529033+00:00",
+  "LastCheck": "2026-11-15T10:40:41.684120596+00:00",
   "OSVersions": [
     {
       "OSVersion": "27",
@@ -34,7 +34,7 @@
           "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later",
           "Source": "Apple"
         },
-        "SecurityInfoContext": "iOS has been updated to version 27.2.1, released on November 09, 2026. This update addresses 9 security issues (including one actively exploited vulnerability) and is the most recent approved version.",
+        "SecurityInfoContext": "iOS has been updated to version 27.2.1, released on November 09, 2026. This update addresses 9 security issues (including one exploited in other products, per CISA KEV) and is the most recent approved version.",
         "SupportedDevices": [
           "iPad12,1",
           "iPad12,2",
@@ -146,11 +146,12 @@
         "DaysSincePreviousRelease": 14,
         "DeviceScope": "universal",
         "UpdateSummary": {
-          "Priority": "critical",
-          "Summary": "Contains 1 actively exploited vulnerability",
-          "Recommendation": "Update immediately - actively exploited vulnerabilities",
+          "Priority": "high",
+          "Summary": "Fixes 1 vulnerability exploited in other products (CISA KEV: Google Brotli)",
+          "Recommendation": "Update soon - Apple reports no attacks on iOS",
           "Stats": {
             "Exploited": 1,
+            "ExploitedElsewhere": 1,
             "Critical": 0,
             "High": 0,
             "Medium": 0,
@@ -189,7 +190,7 @@
             "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later",
             "Source": "Apple"
           },
-          "SecurityInfoContext": "iOS has been updated to version 27.2.1, released on November 09, 2026. This update addresses 9 security issues (including one actively exploited vulnerability) and is the most recent approved version.",
+          "SecurityInfoContext": "iOS has been updated to version 27.2.1, released on November 09, 2026. This update addresses 9 security issues (including one exploited in other products, per CISA KEV) and is the most recent approved version.",
           "SupportedDevices": [
             "iPad12,1",
             "iPad12,2",
@@ -301,11 +302,12 @@
           "DaysSincePreviousRelease": 14,
           "DeviceScope": "universal",
           "UpdateSummary": {
-            "Priority": "critical",
-            "Summary": "Contains 1 actively exploited vulnerability",
-            "Recommendation": "Update immediately - actively exploited vulnerabilities",
+            "Priority": "high",
+            "Summary": "Fixes 1 vulnerability exploited in other products (CISA KEV: Google Brotli)",
+            "Recommendation": "Update soon - Apple reports no attacks on iOS",
             "Stats": {
               "Exploited": 1,
+              "ExploitedElsewhere": 1,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -1128,7 +1130,7 @@
           "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later",
           "Source": "Apple"
         },
-        "SecurityInfoContext": "iOS has been updated to version 26.7.3, released on November 09, 2026. This update addresses 8 security issues (including one actively exploited vulnerability) and is the most recent approved version.",
+        "SecurityInfoContext": "iOS has been updated to version 26.7.3, released on November 09, 2026. This update addresses 8 security issues (including one exploited in other products, per CISA KEV) and is the most recent approved version.",
         "SupportedDevices": [
           "iPad11,1",
           "iPad11,2",
@@ -1247,11 +1249,12 @@
         "DaysSincePreviousRelease": 14,
         "DeviceScope": "universal",
         "UpdateSummary": {
-          "Priority": "critical",
-          "Summary": "Contains 1 actively exploited vulnerability",
-          "Recommendation": "Update immediately - actively exploited vulnerabilities",
+          "Priority": "high",
+          "Summary": "Fixes 1 vulnerability exploited in other products (CISA KEV: Google Brotli)",
+          "Recommendation": "Update soon - Apple reports no attacks on iOS",
           "Stats": {
             "Exploited": 1,
+            "ExploitedElsewhere": 1,
             "Critical": 0,
             "High": 0,
             "Medium": 0,
@@ -1286,7 +1289,7 @@
             "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later",
             "Source": "Apple"
           },
-          "SecurityInfoContext": "iOS has been updated to version 26.7.3, released on November 09, 2026. This update addresses 8 security issues (including one actively exploited vulnerability) and is the most recent approved version.",
+          "SecurityInfoContext": "iOS has been updated to version 26.7.3, released on November 09, 2026. This update addresses 8 security issues (including one exploited in other products, per CISA KEV) and is the most recent approved version.",
           "SupportedDevices": [
             "iPad11,1",
             "iPad11,2",
@@ -1405,11 +1408,12 @@
           "DaysSincePreviousRelease": 14,
           "DeviceScope": "universal",
           "UpdateSummary": {
-            "Priority": "critical",
-            "Summary": "Contains 1 actively exploited vulnerability",
-            "Recommendation": "Update immediately - actively exploited vulnerabilities",
+            "Priority": "high",
+            "Summary": "Fixes 1 vulnerability exploited in other products (CISA KEV: Google Brotli)",
+            "Recommendation": "Update soon - Apple reports no attacks on iOS",
             "Stats": {
               "Exploited": 1,
+              "ExploitedElsewhere": 1,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -4789,7 +4793,7 @@
           "ReleaseDate": "2025-07-29T00:00:00Z",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/124147",
-          "SecurityInfoContext": "iOS 18.6 was released on July 29, 2025. This release addressed 32 security issues (including 2 actively exploited vulnerabilities). Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "iOS 18.6 was released on July 29, 2025. This release addressed 32 security issues (including one actively exploited, and one exploited in other products per CISA KEV). Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2025-31229": {},
@@ -4848,10 +4852,11 @@
           },
           "UpdateSummary": {
             "Priority": "critical",
-            "Summary": "Contains 2 actively exploited vulnerabilities",
+            "Summary": "Contains 1 actively exploited vulnerability and 1 vulnerability exploited in other products (CISA KEV: Google Chromium)",
             "Recommendation": "Update immediately - actively exploited vulnerabilities",
             "Stats": {
               "Exploited": 2,
+              "ExploitedElsewhere": 1,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -6114,7 +6119,7 @@
       "Name": "Apple Product Security",
       "URL": "https://support.apple.com/en-us/100100",
       "Format": "CSAF 2.1 + HTML",
-      "Retrieved": "2026-11-15T07:05:42.989707328Z"
+      "Retrieved": "2026-11-15T10:40:41.002455119Z"
     },
     "KEV": {
       "Layer": 2,
@@ -6156,7 +6161,9 @@
       "KEV": {
         "DateAdded": "2024-11-21",
         "DueDate": "2024-12-12",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2024-44309": {
@@ -6171,7 +6178,9 @@
       "KEV": {
         "DateAdded": "2024-11-21",
         "DueDate": "2024-12-12",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-14174": {
@@ -6186,7 +6195,9 @@
       "KEV": {
         "DateAdded": "2025-12-12",
         "DueDate": "2026-01-02",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Google",
+        "Product": "Chromium"
       }
     },
     "CVE-2025-24085": {
@@ -6201,7 +6212,9 @@
       "KEV": {
         "DateAdded": "2025-01-29",
         "DueDate": "2025-02-19",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-24200": {
@@ -6216,7 +6229,9 @@
       "KEV": {
         "DateAdded": "2025-02-12",
         "DueDate": "2025-03-05",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "iOS and iPadOS"
       }
     },
     "CVE-2025-24201": {
@@ -6231,7 +6246,9 @@
       "KEV": {
         "DateAdded": "2025-03-13",
         "DueDate": "2025-04-03",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-31200": {
@@ -6246,7 +6263,9 @@
       "KEV": {
         "DateAdded": "2025-04-17",
         "DueDate": "2025-05-08",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-31201": {
@@ -6261,7 +6280,9 @@
       "KEV": {
         "DateAdded": "2025-04-17",
         "DueDate": "2025-05-08",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-31277": {
@@ -6272,7 +6293,9 @@
       "KEV": {
         "DateAdded": "2026-03-20",
         "DueDate": "2026-04-03",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-43200": {
@@ -6287,7 +6310,9 @@
       "KEV": {
         "DateAdded": "2025-06-16",
         "DueDate": "2025-07-07",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-43300": {
@@ -6302,7 +6327,9 @@
       "KEV": {
         "DateAdded": "2025-08-21",
         "DueDate": "2025-09-11",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "iOS, iPadOS, and macOS"
       }
     },
     "CVE-2025-43510": {
@@ -6313,7 +6340,9 @@
       "KEV": {
         "DateAdded": "2026-03-20",
         "DueDate": "2026-04-03",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-43520": {
@@ -6324,7 +6353,9 @@
       "KEV": {
         "DateAdded": "2026-03-20",
         "DueDate": "2026-04-03",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-43529": {
@@ -6339,7 +6370,9 @@
       "KEV": {
         "DateAdded": "2025-12-15",
         "DueDate": "2026-01-05",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-6558": {
@@ -6350,7 +6383,9 @@
       "KEV": {
         "DateAdded": "2025-07-22",
         "DueDate": "2025-08-12",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Google",
+        "Product": "Chromium"
       }
     },
     "CVE-2026-111497": {
@@ -6368,7 +6403,9 @@
       "KEV": {
         "DateAdded": "2026-10-27",
         "DueDate": "2026-11-10",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Google",
+        "Product": "Brotli"
       }
     },
     "CVE-2026-112413": {
@@ -7893,7 +7930,9 @@
       "KEV": {
         "DateAdded": "2026-02-12",
         "DueDate": "2026-03-05",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2026-28864": {
@@ -9903,7 +9942,9 @@
       "KEV": {
         "DateAdded": "2026-09-29",
         "DueDate": "2026-10-13",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2026-86953": {

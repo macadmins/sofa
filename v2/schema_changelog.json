@@ -1,5 +1,14 @@
 [
   {
+    "version": "2026.11.15.1",
+    "date": "2026-11-15",
+    "changes": [
+      "`CVEDetails.<CVE>.KEV` adds CISA's `VendorProject` and `Product` (e.g. Google / Brotli).",
+      "A release whose exploited CVEs are all CISA KEV entries for another vendor's product, with no exploitation statement from Apple, is rated `UpdateSummary.Priority` `high` (was `critical`), and its `Summary`, `Recommendation` and `SecurityInfoContext` say so (\"exploited in other products (CISA KEV: Google Brotli)\", \"Apple reports no attacks on macOS\"). New `UpdateSummary.Stats.ExploitedElsewhere` counts these CVEs (omitted when 0). `ActivelyExploited`, `ActivelyExploitedCVEs` and `Stats.Exploited` are unchanged.",
+      "summary.json: `Priority` can be `high` for the same case."
+    ]
+  },
+  {
     "version": "2026.11.14.4",
     "date": "2026-11-14",
     "changes": [

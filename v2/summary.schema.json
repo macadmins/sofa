@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "sofa/v2/summary/2026.11.14.4",
-  "title": "SOFA summary (schema 2026.11.14.4)",
+  "$id": "sofa/v2/summary/2026.11.15.1",
+  "title": "SOFA summary (schema 2026.11.15.1)",
   "type": "object",
   "required": [
     "Betas",
@@ -364,7 +364,7 @@
           }
         },
         "Priority": {
-          "description": "`critical` | `security` | `none`",
+          "description": "`critical` | `high` (exploited only per CISA KEV, another vendor's product) | `security` | `none`",
           "type": "string"
         },
         "ReleaseDate": {

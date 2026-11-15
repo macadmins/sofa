@@ -1,9 +1,9 @@
 {
-  "SchemaVersion": "2026.11.14.4",
+  "SchemaVersion": "2026.11.15.1",
   "OSName": "visionOS",
   "Version": "2.0",
   "UpdateHash": "12c3abb7a80f4642f165c95a7a11c412c45eaf8b80fc48a6fe9745eabf728103",
-  "LastCheck": "2026-11-15T07:05:43.642820867+00:00",
+  "LastCheck": "2026-11-15T10:40:41.922199223+00:00",
   "OSVersions": [
     {
       "OSVersion": "visionOS 27",
@@ -31,7 +31,7 @@
           "AvailableFor": "Apple Vision Pro (all models)",
           "Source": "Apple"
         },
-        "SecurityInfoContext": "visionOS has been updated to version 27.2.1, released on November 09, 2026. This update addresses 9 security issues (including one actively exploited vulnerability) and is the most recent approved version.",
+        "SecurityInfoContext": "visionOS has been updated to version 27.2.1, released on November 09, 2026. This update addresses 9 security issues (including one exploited in other products, per CISA KEV) and is the most recent approved version.",
         "SupportedDevices": [
           "RealityDevice14,1",
           "RealityDevice17,1"
@@ -57,11 +57,12 @@
         "UniqueCVEsCount": 9,
         "DaysSincePreviousRelease": 14,
         "UpdateSummary": {
-          "Priority": "critical",
-          "Summary": "Contains 1 actively exploited vulnerability",
-          "Recommendation": "Update immediately - actively exploited vulnerabilities",
+          "Priority": "high",
+          "Summary": "Fixes 1 vulnerability exploited in other products (CISA KEV: Google Brotli)",
+          "Recommendation": "Update soon - Apple reports no attacks on visionOS",
           "Stats": {
             "Exploited": 1,
+            "ExploitedElsewhere": 1,
             "Critical": 0,
             "High": 0,
             "Medium": 0,
@@ -96,7 +97,7 @@
             "AvailableFor": "Apple Vision Pro (all models)",
             "Source": "Apple"
           },
-          "SecurityInfoContext": "visionOS has been updated to version 27.2.1, released on November 09, 2026. This update addresses 9 security issues (including one actively exploited vulnerability) and is the most recent approved version.",
+          "SecurityInfoContext": "visionOS has been updated to version 27.2.1, released on November 09, 2026. This update addresses 9 security issues (including one exploited in other products, per CISA KEV) and is the most recent approved version.",
           "SupportedDevices": [
             "RealityDevice14,1",
             "RealityDevice17,1"
@@ -122,11 +123,12 @@
           "UniqueCVEsCount": 9,
           "DaysSincePreviousRelease": 14,
           "UpdateSummary": {
-            "Priority": "critical",
-            "Summary": "Contains 1 actively exploited vulnerability",
-            "Recommendation": "Update immediately - actively exploited vulnerabilities",
+            "Priority": "high",
+            "Summary": "Fixes 1 vulnerability exploited in other products (CISA KEV: Google Brotli)",
+            "Recommendation": "Update soon - Apple reports no attacks on visionOS",
             "Stats": {
               "Exploited": 1,
+              "ExploitedElsewhere": 1,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -1359,7 +1361,7 @@
         "ReleaseDate": "2025-07-29T00:00:00Z",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/124154",
-        "SecurityInfoContext": "visionOS has been updated to version 2.6, released on July 29, 2025. This update addresses 26 security issues (including 2 actively exploited vulnerabilities) and is the most recent approved version.",
+        "SecurityInfoContext": "visionOS has been updated to version 2.6, released on July 29, 2025. This update addresses 26 security issues (including one actively exploited, and one exploited in other products per CISA KEV) and is the most recent approved version.",
         "SupportedDevices": [],
         "CVEs": {
           "CVE-2025-31273": {},
@@ -1405,10 +1407,11 @@
         "DaysSincePreviousRelease": 78,
         "UpdateSummary": {
           "Priority": "critical",
-          "Summary": "Contains 2 actively exploited vulnerabilities",
+          "Summary": "Contains 1 actively exploited vulnerability and 1 vulnerability exploited in other products (CISA KEV: Google Chromium)",
           "Recommendation": "Update immediately - actively exploited vulnerabilities",
           "Stats": {
             "Exploited": 2,
+            "ExploitedElsewhere": 1,
             "Critical": 0,
             "High": 0,
             "Medium": 0,
@@ -1428,7 +1431,7 @@
           "ReleaseDate": "2025-07-29T00:00:00Z",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/124154",
-          "SecurityInfoContext": "visionOS has been updated to version 2.6, released on July 29, 2025. This update addresses 26 security issues (including 2 actively exploited vulnerabilities) and is the most recent approved version.",
+          "SecurityInfoContext": "visionOS has been updated to version 2.6, released on July 29, 2025. This update addresses 26 security issues (including one actively exploited, and one exploited in other products per CISA KEV) and is the most recent approved version.",
           "SupportedDevices": [],
           "CVEs": {
             "CVE-2025-31273": {},
@@ -1474,10 +1477,11 @@
           "DaysSincePreviousRelease": 78,
           "UpdateSummary": {
             "Priority": "critical",
-            "Summary": "Contains 2 actively exploited vulnerabilities",
+            "Summary": "Contains 1 actively exploited vulnerability and 1 vulnerability exploited in other products (CISA KEV: Google Chromium)",
             "Recommendation": "Update immediately - actively exploited vulnerabilities",
             "Stats": {
               "Exploited": 2,
+              "ExploitedElsewhere": 1,
               "Critical": 0,
               "High": 0,
               "Medium": 0,
@@ -2140,7 +2144,7 @@
       "Name": "Apple Product Security",
       "URL": "https://support.apple.com/en-us/100100",
       "Format": "CSAF 2.1 + HTML",
-      "Retrieved": "2026-11-15T07:05:42.989707328Z"
+      "Retrieved": "2026-11-15T10:40:41.002455119Z"
     },
     "KEV": {
       "Layer": 2,
@@ -2172,7 +2176,9 @@
       "KEV": {
         "DateAdded": "2024-11-21",
         "DueDate": "2024-12-12",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2024-44309": {
@@ -2187,7 +2193,9 @@
       "KEV": {
         "DateAdded": "2024-11-21",
         "DueDate": "2024-12-12",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-14174": {
@@ -2202,7 +2210,9 @@
       "KEV": {
         "DateAdded": "2025-12-12",
         "DueDate": "2026-01-02",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Google",
+        "Product": "Chromium"
       }
     },
     "CVE-2025-24085": {
@@ -2217,7 +2227,9 @@
       "KEV": {
         "DateAdded": "2025-01-29",
         "DueDate": "2025-02-19",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-24201": {
@@ -2232,7 +2244,9 @@
       "KEV": {
         "DateAdded": "2025-03-13",
         "DueDate": "2025-04-03",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-31200": {
@@ -2247,7 +2261,9 @@
       "KEV": {
         "DateAdded": "2025-04-17",
         "DueDate": "2025-05-08",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-31201": {
@@ -2262,7 +2278,9 @@
       "KEV": {
         "DateAdded": "2025-04-17",
         "DueDate": "2025-05-08",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-31277": {
@@ -2273,7 +2291,9 @@
       "KEV": {
         "DateAdded": "2026-03-20",
         "DueDate": "2026-04-03",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-43200": {
@@ -2288,7 +2308,9 @@
       "KEV": {
         "DateAdded": "2025-06-16",
         "DueDate": "2025-07-07",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-43510": {
@@ -2299,7 +2321,9 @@
       "KEV": {
         "DateAdded": "2026-03-20",
         "DueDate": "2026-04-03",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-43520": {
@@ -2310,7 +2334,9 @@
       "KEV": {
         "DateAdded": "2026-03-20",
         "DueDate": "2026-04-03",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-43529": {
@@ -2325,7 +2351,9 @@
       "KEV": {
         "DateAdded": "2025-12-15",
         "DueDate": "2026-01-05",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2025-6558": {
@@ -2336,7 +2364,9 @@
       "KEV": {
         "DateAdded": "2025-07-22",
         "DueDate": "2025-08-12",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Google",
+        "Product": "Chromium"
       }
     },
     "CVE-2026-111497": {
@@ -2354,7 +2384,9 @@
       "KEV": {
         "DateAdded": "2026-10-27",
         "DueDate": "2026-11-10",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Google",
+        "Product": "Brotli"
       }
     },
     "CVE-2026-112413": {
@@ -3549,7 +3581,9 @@
       "KEV": {
         "DateAdded": "2026-02-12",
         "DueDate": "2026-03-05",
-        "KnownRansomwareCampaignUse": "Unknown"
+        "KnownRansomwareCampaignUse": "Unknown",
+        "VendorProject": "Apple",
+        "Product": "Multiple Products"
       }
     },
     "CVE-2026-28850": {
