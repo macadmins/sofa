@@ -1,5 +1,7 @@
 <script setup>
 import { computed } from 'vue'
+import { timelineUrl as buildTimelineUrl } from '../composables/timelineLink'
+import { indexProductKeys, pathLabel } from '../composables/productKeys'
 
 const props = defineProps({
   // osData.Latest — the headline release object
@@ -12,6 +14,8 @@ const props = defineProps({
   platform: { type: String, default: '' },
   // OS version string (e.g. "26", "Tahoe 26"), matches ReleaseTimeline group ids
   osVersion: { type: String, default: '' },
+  // feed-level ProductKeys (macOS v2 only): adds a link to the Latest release's update paths
+  productKeys: { type: Object, default: null },
 })
 
 // ---------------------------------------------------------------------------
@@ -58,25 +62,19 @@ function isLatestRelease(update) {
   return !!props.latest && update.ProductVersion === props.latest.ProductVersion
 }
 
-// Anchor id shared with ReleaseTimeline.vue's graph groups — keep in sync.
-function anchorId(platformId, osVersion) {
-  return `timeline-${platformId}-${osVersion}`
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-}
+const timelineUrl = computed(() => buildTimelineUrl(props.platform, props.osVersion))
 
-const timelineUrl = computed(() => {
-  const base = import.meta.env.BASE_URL || '/'
-  const p = (props.platform || '').toLowerCase()
-  const os = props.osVersion || ''
-  const qs = `?platform=${encodeURIComponent(p)}&os=${encodeURIComponent(os)}`
-  return `${base}release-timeline${qs}#${anchorId(p, os)}`
+// "from 27.x, from 26" for the Latest release; empty when the feed has no keys for it
+const keyPaths = computed(() => {
+  const v = props.latest?.ProductVersion
+  const keys = (v && indexProductKeys(props.productKeys)[v]) || []
+  return [...new Set(keys.map(pathLabel))].join(', ')
 })
+const keysUrl = computed(() => buildTimelineUrl(props.platform, props.osVersion, props.latest?.ProductVersion))
 </script>
 
 <template>
-  <div v-if="updates.length" class="ds-line-wrap">
+  <div v-if="updates.length || keyPaths" class="ds-line-wrap">
     <a
       v-for="update in updates"
       :key="update.ProductVersion + '-' + update.Build"
@@ -89,6 +87,13 @@ const timelineUrl = computed(() => {
         <template v-if="isLatestRelease(update)">Device-specific release</template>
         <template v-else>Device update: <span class="ds-line-version">{{ update.ProductVersion }}</span></template>
         <span class="ds-sep">·</span>{{ deviceSummary(update) }}
+      </span>
+      <span class="ds-line-arrow" aria-hidden="true">→</span>
+    </a>
+    <a v-if="keyPaths" :href="keysUrl" class="ds-line pk-line" title="Update paths and product keys on the Release Timeline">
+      <span class="ds-line-icon pk-icon" aria-hidden="true"></span>
+      <span class="ds-line-text">
+        Product keys: <span class="ds-line-version">{{ latest.ProductVersion }}</span><span class="ds-sep">·</span>{{ keyPaths }}
       </span>
       <span class="ds-line-arrow" aria-hidden="true">→</span>
     </a>
@@ -165,5 +170,14 @@ const timelineUrl = computed(() => {
 :root.dark .ds-line-arrow,
 .dark .ds-line-arrow {
   color: #fbbf24;
+}
+.pk-line:hover {
+  color: var(--vp-c-brand-1);
+}
+
+.pk-icon {
+  background: var(--vp-c-brand-1);
+  border-radius: 50%;
+  transform: none;
 }
 </style>

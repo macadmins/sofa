@@ -1,4 +1,7 @@
 <script setup>
+import { indexProductKeys } from '../composables/productKeys'
+import { anchorId } from '../composables/timelineLink'
+import UpdatePaths from './UpdatePaths.vue'
 import { ref, computed, watch, onMounted, nextTick } from 'vue'
 
 // Layout constants
@@ -26,6 +29,7 @@ const expandedVersion = ref(null)
 const hoveredVersion = ref(null)
 // Deep-link state: OS version to select and whether to scroll, set from the URL
 const pendingOS = ref(null)
+const pendingVersion = ref(null) // ?v= deep link: open this node's detail panel
 const pendingScroll = ref(false)
 
 // Fetch feed data
@@ -63,14 +67,6 @@ const fetchFeed = async (platformId) => {
   }
 }
 
-// Anchor id shared with DeviceSpecificUpdates.vue — keep in sync.
-function anchorId(platformId, osVersion) {
-  return `timeline-${platformId}-${osVersion}`
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-}
-
 function scrollToGroup() {
   if (typeof document === 'undefined') return
   const id = anchorId(selectedPlatform.value, selectedOSVersion.value)
@@ -86,6 +82,7 @@ onMounted(() => {
     const params = new URLSearchParams(window.location.search)
     pParam = params.get('platform')
     pendingOS.value = params.get('os')
+    pendingVersion.value = params.get('v')
   }
   pendingScroll.value = !!(pParam || pendingOS.value)
   // Setting selectedPlatform triggers the watcher's fetch; otherwise fetch here.
@@ -98,6 +95,13 @@ onMounted(() => {
 watch(selectedPlatform, (id) => {
   expandedVersion.value = null
   fetchFeed(id)
+})
+// Whenever an OS version is shown (load, sidebar, tab switch), open a release's
+// details: the ?v= deep-linked one if given, otherwise that OS version's latest.
+watch(selectedOSVersion, (os) => {
+  const latest = feedData.value?.OSVersions?.find(o => o.OSVersion === os)?.Latest?.ProductVersion
+  expandedVersion.value = pendingVersion.value || latest || null
+  pendingVersion.value = null
 })
 
 // Available OS versions for the filter
@@ -219,6 +223,7 @@ const graphGroups = computed(() => {
           type: 'release',
           version: sr.ProductVersion,
           build: sr.Build,
+          builds: sr.Builds ?? [], // [{ Build, SupportedDevices }] — per-build models for UpdatePaths
           releaseDate: sr.ReleaseDate,
           scope: sr.DeviceScope || 'universal',
           supportedDevices: sr.SupportedDevices ?? [],
@@ -347,6 +352,10 @@ function bsiDiamond(cx, cy, idx) {
   return `${ox},${oy - s} ${ox + s},${oy} ${ox},${oy + s} ${ox - s},${oy}`
 }
 
+const productKeys = computed(() => indexProductKeys(feedData.value?.ProductKeys))
+function keysFor(n) {
+  return (n && productKeys.value[n.type === 'bsi' ? n.build : n.version]) || []
+}
 function nodeKey(n) {
   return n.type === 'bsi' ? `bsi-${n.version}` : n.version
 }
@@ -820,6 +829,9 @@ function downloadMarkdown(group) {
             <div v-if="group.nodeMap[expandedVersion].patchesRelease" class="detail-item">
               <span class="detail-label">Patches Release</span>
               <span class="detail-value">{{ group.nodeMap[expandedVersion].patchesRelease }}</span>
+            </div>
+            <div v-if="keysFor(group.nodeMap[expandedVersion]).length" class="detail-item full-width">
+                            <UpdatePaths :keys="keysFor(group.nodeMap[expandedVersion])" :builds="group.nodeMap[expandedVersion].builds" :devices="feedData?.Devices" />
             </div>
             <div v-if="group.nodeMap[expandedVersion].cveList?.length" class="detail-item full-width">
               <span class="detail-label">CVEs</span>
