@@ -173,47 +173,17 @@ const formatOSName = (osVersion) => {
   return `macOS ${osVersion}`
 }
 
-const formatOSVersionToName = (osVersion) => {
-  const osMap = {
-    'goldengate': 'Golden Gate 27',
-    'tahoe': 'Tahoe 26',
-    'sequoia': 'Sequoia 15',
-    'sonoma': 'Sonoma 14', 
-    'ventura': 'Ventura 13',
-    'monterey': 'Monterey 12',
-    'bigsur': 'Big Sur 11',
-    'catalina': 'Catalina 10.15',
-    'mojave': 'Mojave 10.14',
-    '15': 'Sequoia 15',
-    '14': 'Sonoma 14',
-    '13': 'Ventura 13', 
-    '12': 'Monterey 12',
-    '11': 'Big Sur 11'
-  }
-  
-  return osMap[osVersion] || null
-}
-
 const formatChipName = (description) => {
-  // Handle various processor formats from device data
-  if (description.includes('M4')) return 'Apple M4'
-  if (description.includes('M3')) return 'Apple M3'
-  if (description.includes('M2')) return 'Apple M2'
-  if (description.includes('M1')) return 'Apple M1'
-  if (description.includes('T2')) return 'Apple T2'
-  if (description.includes('T1')) return 'Apple T1'
-  if (description.includes('Intel')) return 'Intel'
+  const m = description.match(/\bM\d+\b/)
+  if (m) return `Apple ${m[0]}`
+  for (const t of ['T2', 'T1', 'Intel']) if (description.includes(t)) return t === 'Intel' ? 'Intel' : `Apple ${t}`
   return description
 }
 
 const getChipClass = (description) => {
-  if (description.includes('M4')) return 'm4'
-  if (description.includes('M3')) return 'm3'
-  if (description.includes('M2')) return 'm2'
-  if (description.includes('M1')) return 'm1'
-  if (description.includes('T2')) return 't2'
-  if (description.includes('T1')) return 't1'
-  if (description.includes('Intel')) return 'intel'
+  const m = description.match(/\bM(\d+)\b/)
+  if (m) return +m[1] >= 5 ? 'm5' : `m${m[1]}`
+  for (const t of ['t2', 't1', 'intel']) if (description.toLowerCase().includes(t)) return t
   return ''
 }
 
@@ -262,43 +232,33 @@ const loadData = async () => {
   loading.value = true
   
   try {
-    // Load real device data from the unified database
-    const response = await fetch('/resources/all_devices_enhanced.json')
+    // Models come from the v2 macOS feed (kept current by the pipeline). The older
+    // all_devices_enhanced.json is only used to add support URLs where it has them.
+    const response = await fetch('/v2/macos_data_feed.json')
     if (!response.ok) {
       throw new Error('Failed to load device data')
     }
-    
-    const deviceData = await response.json()
-    
-    // Transform device data into the expected format
+    const models = (await response.json()).Models || {}
+    const legacy = await fetch('/resources/all_devices_enhanced.json')
+      .then(r => (r.ok ? r.json() : {}))
+      .catch(() => ({}))
+
     const combinedData = []
-    
-    // Process all devices (skip _metadata)
-    Object.entries(deviceData).forEach(([deviceId, deviceInfo]) => {
-      if (deviceId.startsWith('_')) return // Skip metadata
-      
-      // Only process macOS devices for model identifier table
-      if (!deviceId.startsWith('Mac')) return
-      
-      const supportedMajor = deviceInfo.supportedMajor || []
-      
-      // Create entries for each supported OS version
-      supportedMajor.forEach(osVersion => {
-        const osName = formatOSVersionToName(osVersion)
-        if (osName) {
-          combinedData.push({
-            model: deviceInfo.marketingName || deviceInfo.Model,
-            identifier: deviceId,
-            description: `${deviceInfo.processorFamily} chip`,
-            url: deviceInfo.URL || '#',
-            osVersion: osName,
-            processorFamily: deviceInfo.processorFamily,
-            deviceType: deviceInfo.deviceType
-          })
-        }
+    Object.entries(models).forEach(([identifier, info]) => {
+      if (identifier.startsWith('VirtualMac')) return
+      const name = info.MarketingName || identifier
+      const chip = name.match(/\bM\d+(?: (?:Pro|Max|Ultra))?\b/)?.[0] || legacy[identifier]?.processorFamily || 'Intel'
+      ;(info.SupportedOS || []).forEach(osName => {
+        combinedData.push({
+          model: name,
+          identifier,
+          description: `${chip} chip`,
+          url: legacy[identifier]?.URL || '',
+          osVersion: osName,
+        })
       })
     })
-    
+
     tableData.value = combinedData
     
     // Group by OS version
@@ -641,6 +601,11 @@ onMounted(() => {
   border-radius: 6px;
   font-size: 0.75rem;
   font-weight: 600;
+}
+
+.chip-badge.m5 {
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.1), rgba(13, 148, 136, 0.1));
+  color: #0d9488;
 }
 
 .chip-badge.m4 {
