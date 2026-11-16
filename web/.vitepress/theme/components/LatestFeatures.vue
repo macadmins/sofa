@@ -113,6 +113,7 @@
               :devices="feedDevices"
               :platform="platform"
               :os-version="osData.OSVersion"
+              :product-keys="feedProductKeys"
             />
 
             <!-- Action Links -->
@@ -443,6 +444,7 @@ export default {
     return {
       osData: null,
       feedDevices: {},
+      feedProductKeys: null,
       installationApps: null,
       xProtectData: null,
       osImage: '',
@@ -770,6 +772,7 @@ export default {
 
         // Feed-level Devices map (code -> { MarketingName }) for device-specific cards
         this.feedDevices = data?.Devices || {}
+        this.feedProductKeys = data?.ProductKeys || null
 
         const version = this.title.split(' ').pop()
         console.log('Looking for version:', version, 'in data:', data)
