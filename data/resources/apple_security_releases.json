@@ -27046,7 +27046,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "9025909179d5",
@@ -60439,7 +60439,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "5159db15f79f",
@@ -71310,7 +71310,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 2
+      "parser_version": 0
     },
     {
       "id": "f813f26e88cb",
@@ -107953,11 +107953,15 @@
     }
   ],
   "metadata": {
-    "fetch_timestamp": "2026-11-18T18:13:06.832708442Z",
+    "fetch_timestamp": "2026-11-18T18:35:20.031901880Z",
     "total_releases": 754,
     "cached": 127,
     "fetched": 627,
-    "errors": [],
+    "errors": [
+      "macOS Tahoe 26.6: detail fetch failed, carried forward 170 CVEs",
+      "macOS Sequoia 15.7.8: detail fetch failed, carried forward 148 CVEs",
+      "iOS 18 and iPadOS 18: detail fetch failed, carried forward 48 CVEs"
+    ],
     "archive_fetched_at": "2026-11-14T10:59:52.507258893Z"
   }
 }
