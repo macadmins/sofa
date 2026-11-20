@@ -1,9 +1,69 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.11.18",
-  "dateReleased": "2026-11-18T19:17:41.0354Z",
-  "count": 1786,
+  "catalogVersion": "2026.11.20",
+  "dateReleased": "2026-11-20T17:48:39.1516Z",
+  "count": 1790,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-129448",
+      "vendorProject": "Apache",
+      "product": "Roller",
+      "vulnerabilityName": "Apache Roller Deserialization of Untrusted Data Vulnerability",
+      "dateAdded": "2026-11-20",
+      "shortDescription": "Apache Roller contains a deserialization of untrusted data vulnerability that allows an unauthenticated remote attacker to execute arbitrary code via the XML-RPC endpoint, which accepts and deserializes vendor extension types before authentication. This CVE covers the same underlying vulnerability as CVE-2026-82384 but applies to a broader range of affected versions.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-11-23",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://lists.apache.org/thread/cc0jck13nb9vvcmzxzwotr6n16mx28z9 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-129448",
+      "cwes": [
+        "CWE-502"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-123890",
+      "vendorProject": "Broadcom",
+      "product": "VMware vCenter",
+      "vulnerabilityName": "VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "dateAdded": "2026-11-20",
+      "shortDescription": "Broadcom VMware vCenter contains an authentication bypass using an alternate path or channel vulnerability in the VMware Directory Service that allows an unauthenticated attacker with network access to vCenter to bypass authentication and gain unauthorized access to the system.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines",
+      "dueDate": "2026-11-23",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39495 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-123890",
+      "cwes": [
+        "CWE-288"
+      ]
+    },
+    {
+      "cveID": "CVE-2025-42884",
+      "vendorProject": "SAP",
+      "product": "NetWeaver",
+      "vulnerabilityName": "SAP NetWeaver Improper Neutralization of Special Elements in Data Query Logic Vulnerability",
+      "dateAdded": "2026-11-20",
+      "shortDescription": "SAP NetWeaver Enterprise Portal contains an improper neutralization of special elements in data query logic vulnerability that allows an unauthenticated attacker to disclose or modify server information via injected JNDI environment properties or a URL used during JNDI lookup operations.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-11-23",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/bulletin-2025.html ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2025-42884",
+      "cwes": [
+        "CWE-943"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-76466",
+      "vendorProject": "Cisco",
+      "product": "Expressway Series",
+      "vulnerabilityName": "Cisco Expressway Series Use of Hard-coded Credentials Vulnerability",
+      "dateAdded": "2026-11-20",
+      "shortDescription": "Cisco Expressway Series contains a use of hard-coded credentials vulnerability that allows an unauthenticated, remote attacker with persistent cookies and network access to execute commands as root on a clustered device via the database service.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-11-23",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-vcs-static-cred-hr7EWZ8t ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-76466",
+      "cwes": [
+        "CWE-798"
+      ]
+    },
     {
       "cveID": "CVE-2024-10441",
       "vendorProject": "Synology",
@@ -26579,5 +26639,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-11-20T17:09:03.770757682Z"
+  "fetchTimestamp": "2026-11-20T18:13:44.296288676Z"
 }
