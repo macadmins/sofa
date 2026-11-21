@@ -2,8 +2,8 @@
   "SchemaVersion": "2026.11.15.1",
   "OSName": "watchOS",
   "Version": "2.0",
-  "UpdateHash": "6ad159f5106f4fa3486af8faca8adc3b0c0fe35c1ad824c2ca3982b2f90f923c",
-  "LastCheck": "2026-11-20T20:11:43.929039520+00:00",
+  "UpdateHash": "4ea276226bd0da7ecc6e6e9b0679b12a93a3f592142b9479711edf8c9e6136dc",
+  "LastCheck": "2026-11-21T00:46:41.973198433+00:00",
   "OSVersions": [
     {
       "OSVersion": "watchOS 27",
@@ -17,7 +17,7 @@
           "24S132"
         ],
         "ReleaseDate": "2026-11-09T00:00:00Z",
-        "ExpirationDate": "2027-02-18",
+        "ExpirationDate": "2027-02-19",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/149722",
         "Advisory": {
@@ -104,7 +104,7 @@
             "24S132"
           ],
           "ReleaseDate": "2026-11-09T00:00:00Z",
-          "ExpirationDate": "2027-02-18",
+          "ExpirationDate": "2027-02-19",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/149722",
           "Advisory": {
@@ -204,7 +204,7 @@
             "AvailableFor": "Apple Watch Series 9 and later",
             "Source": "Apple"
           },
-          "SecurityInfoContext": "watchOS 27.2 was released on October 26, 2026. This release addressed 62 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "watchOS 27.2 was released on October 26, 2026. This release addressed 65 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "Watch7,1",
             "Watch7,10",
@@ -286,6 +286,9 @@
             "CVE-2026-113910": {},
             "CVE-2026-113915": {},
             "CVE-2026-113950": {},
+            "CVE-2026-113987": {},
+            "CVE-2026-114024": {},
+            "CVE-2026-114026": {},
             "CVE-2026-65350": {},
             "CVE-2026-65385": {},
             "CVE-2026-84495": {},
@@ -295,7 +298,7 @@
             "CVE-2026-86992": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 62,
+          "UniqueCVEsCount": 65,
           "DaysSincePreviousRelease": 28,
           "SupersededBy": {
             "ProductVersion": "27.2.1",
@@ -305,7 +308,7 @@
           },
           "UpdateSummary": {
             "Priority": "high",
-            "Summary": "Addresses 62 security issues",
+            "Summary": "Addresses 65 security issues",
             "Recommendation": "Update to stay secure - security fixes available",
             "Stats": {
               "Exploited": 0,
@@ -314,7 +317,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 62
+              "Total": 65
             }
           }
         },
@@ -642,7 +645,7 @@
           "23U6095"
         ],
         "ReleaseDate": "2026-11-09T00:00:00Z",
-        "ExpirationDate": "2027-02-18",
+        "ExpirationDate": "2027-02-19",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/149723",
         "Advisory": {
@@ -712,7 +715,7 @@
             "23U6095"
           ],
           "ReleaseDate": "2026-11-09T00:00:00Z",
-          "ExpirationDate": "2027-02-18",
+          "ExpirationDate": "2027-02-19",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/149723",
           "Advisory": {
@@ -1628,7 +1631,7 @@
       "Name": "Apple Product Security",
       "URL": "https://support.apple.com/en-us/100100",
       "Format": "CSAF 2.1 + HTML",
-      "Retrieved": "2026-11-20T20:11:43.033203339Z"
+      "Retrieved": "2026-11-21T00:46:41.043632883Z"
     },
     "KEV": {
       "Layer": 2,

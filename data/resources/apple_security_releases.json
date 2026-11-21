@@ -10508,14 +10508,14 @@
       "has_cves": true,
       "cves": [
         "CVE-2026-112605",
+        "CVE-2026-112603",
         "CVE-2026-112602"
       ],
       "cve_context": {
-        "CVE-2026-112602": {
-          "exploited": false
-        },
-        "CVE-2026-112605": {
-          "exploited": false
+        "CVE-2026-112603": {
+          "severity": "critical",
+          "matched_pattern": "severity: gain root privileges",
+          "entry_added_date": "2026-11-20"
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
@@ -20664,7 +20664,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 0
+      "parser_version": 2
     },
     {
       "id": "11b7c4d5d901",
@@ -23774,7 +23774,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 0
+      "parser_version": 2
     },
     {
       "id": "9870a48a3aea",
@@ -24631,7 +24631,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 0
+      "parser_version": 2
     },
     {
       "id": "6a5de0cd9663",
@@ -26051,7 +26051,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 0
+      "parser_version": 2
     },
     {
       "id": "68d66044e31f",
@@ -32083,7 +32083,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 0
+      "parser_version": 2
     },
     {
       "id": "05ba1daf6790",
@@ -34301,6 +34301,9 @@
       "release_date": "2026-10-26",
       "has_cves": true,
       "cves": [
+        "CVE-2026-114025",
+        "CVE-2026-113987",
+        "CVE-2026-113955",
         "CVE-2026-113952",
         "CVE-2026-113949",
         "CVE-2026-113915",
@@ -34384,6 +34387,7 @@
         "CVE-2026-112501",
         "CVE-2026-112491",
         "CVE-2026-112488",
+        "CVE-2026-112487",
         "CVE-2026-112486",
         "CVE-2026-112479",
         "CVE-2026-112477",
@@ -34516,6 +34520,11 @@
           "tags": [
             "out-of-bounds"
           ]
+        },
+        "CVE-2026-112487": {
+          "severity": "critical",
+          "matched_pattern": "severity: gain root privileges",
+          "entry_added_date": "2026-11-20"
         },
         "CVE-2026-112488": {
           "severity": "high",
@@ -34935,6 +34944,31 @@
             "memory-corruption",
             "type-confusion",
             "webkit"
+          ]
+        },
+        "CVE-2026-113955": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "security",
+            "webkit"
+          ]
+        },
+        "CVE-2026-113987": {
+          "severity": "high",
+          "matched_pattern": "severity: use-after-free",
+          "tags": [
+            "use-after-free"
+          ]
+        },
+        "CVE-2026-114025": {
+          "severity": "high",
+          "matched_pattern": "severity: arbitrary code execution",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "arbitrary-code",
+            "out-of-bounds"
           ]
         },
         "CVE-2026-64750": {
@@ -35961,6 +35995,12 @@
       "release_date": "2026-10-26",
       "has_cves": true,
       "cves": [
+        "CVE-2026-114026",
+        "CVE-2026-114025",
+        "CVE-2026-114024",
+        "CVE-2026-113987",
+        "CVE-2026-113954",
+        "CVE-2026-113953",
         "CVE-2026-113952",
         "CVE-2026-113950",
         "CVE-2026-113949",
@@ -36010,6 +36050,7 @@
         "CVE-2026-112669",
         "CVE-2026-112666",
         "CVE-2026-112665",
+        "CVE-2026-112662",
         "CVE-2026-112660",
         "CVE-2026-112659",
         "CVE-2026-112658",
@@ -36074,6 +36115,7 @@
         "CVE-2026-112500",
         "CVE-2026-112491",
         "CVE-2026-112488",
+        "CVE-2026-112487",
         "CVE-2026-112486",
         "CVE-2026-112485",
         "CVE-2026-112479",
@@ -36084,6 +36126,7 @@
         "CVE-2026-112469",
         "CVE-2026-112468",
         "CVE-2026-112466",
+        "CVE-2026-112465",
         "CVE-2026-112464",
         "CVE-2026-112461",
         "CVE-2026-112459",
@@ -36196,6 +36239,13 @@
             "out-of-bounds"
           ]
         },
+        "CVE-2026-112465": {
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "kernel",
+            "out-of-bounds"
+          ]
+        },
         "CVE-2026-112474": {
           "severity": "high",
           "matched_pattern": "severity: use-after-free",
@@ -36218,6 +36268,11 @@
           "tags": [
             "out-of-bounds"
           ]
+        },
+        "CVE-2026-112487": {
+          "severity": "critical",
+          "matched_pattern": "severity: gain root privileges",
+          "entry_added_date": "2026-11-20"
         },
         "CVE-2026-112488": {
           "severity": "high",
@@ -36366,6 +36421,9 @@
             "memory-corruption",
             "out-of-bounds"
           ]
+        },
+        "CVE-2026-112620": {
+          "entry_added_date": "2026-11-20"
         },
         "CVE-2026-112621": {
           "severity": "high",
@@ -36545,6 +36603,12 @@
             "arbitrary-code",
             "type-confusion",
             "webkit"
+          ]
+        },
+        "CVE-2026-112662": {
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "race-condition"
           ]
         },
         "CVE-2026-112665": {
@@ -36760,6 +36824,49 @@
           ]
         },
         "CVE-2026-113950": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted",
+          "tags": [
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2026-113953": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "integer-overflow"
+          ]
+        },
+        "CVE-2026-113954": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: use-after-free; remote: maliciously crafted",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "use-after-free"
+          ]
+        },
+        "CVE-2026-113987": {
+          "severity": "high",
+          "matched_pattern": "severity: use-after-free",
+          "tags": [
+            "use-after-free"
+          ]
+        },
+        "CVE-2026-114024": {
+          "entry_added_date": "2026-11-20"
+        },
+        "CVE-2026-114025": {
+          "severity": "high",
+          "matched_pattern": "severity: arbitrary code execution",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "arbitrary-code",
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2026-114026": {
           "remote": true,
           "matched_pattern": "remote: maliciously crafted",
           "tags": [
@@ -49323,6 +49430,15 @@
       "release_date": "2026-10-26",
       "has_cves": true,
       "cves": [
+        "CVE-2026-132475",
+        "CVE-2026-114028",
+        "CVE-2026-114026",
+        "CVE-2026-114025",
+        "CVE-2026-114024",
+        "CVE-2026-114023",
+        "CVE-2026-114021",
+        "CVE-2026-113987",
+        "CVE-2026-113953",
         "CVE-2026-113952",
         "CVE-2026-113950",
         "CVE-2026-113949",
@@ -49458,6 +49574,7 @@
         "CVE-2026-112541",
         "CVE-2026-112540",
         "CVE-2026-112539",
+        "CVE-2026-112538",
         "CVE-2026-112537",
         "CVE-2026-112536",
         "CVE-2026-112535",
@@ -49519,6 +49636,7 @@
         "CVE-2026-112468",
         "CVE-2026-112467",
         "CVE-2026-112466",
+        "CVE-2026-112465",
         "CVE-2026-112464",
         "CVE-2026-112462",
         "CVE-2026-112461",
@@ -49708,6 +49826,13 @@
           "remote": true,
           "matched_pattern": "severity: heap corruption; remote: maliciously crafted",
           "tags": [
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2026-112465": {
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "kernel",
             "out-of-bounds"
           ]
         },
@@ -49914,6 +50039,7 @@
         "CVE-2026-112555": {
           "remote": true,
           "matched_pattern": "remote: malicious app",
+          "entry_added_date": "2026-11-20",
           "tags": [
             "sandbox"
           ]
@@ -50506,6 +50632,67 @@
           "matched_pattern": "remote: maliciously crafted",
           "tags": [
             "out-of-bounds"
+          ]
+        },
+        "CVE-2026-113953": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "integer-overflow"
+          ]
+        },
+        "CVE-2026-113987": {
+          "severity": "high",
+          "matched_pattern": "severity: use-after-free",
+          "tags": [
+            "use-after-free"
+          ]
+        },
+        "CVE-2026-114021": {
+          "severity": "high",
+          "matched_pattern": "severity: memory corruption",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "kernel",
+            "memory-corruption",
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2026-114023": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: arbitrary code execution; remote: web content",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "arbitrary-code"
+          ]
+        },
+        "CVE-2026-114024": {
+          "entry_added_date": "2026-11-20"
+        },
+        "CVE-2026-114025": {
+          "severity": "high",
+          "matched_pattern": "severity: arbitrary code execution",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "arbitrary-code",
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2026-114026": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted",
+          "tags": [
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2026-114028": {
+          "severity": "high",
+          "matched_pattern": "severity: use-after-free",
+          "tags": [
+            "kernel",
+            "use-after-free"
           ]
         },
         "CVE-2026-65350": {
@@ -61302,6 +61489,12 @@
       "release_date": "2026-10-26",
       "has_cves": true,
       "cves": [
+        "CVE-2026-114025",
+        "CVE-2026-114023",
+        "CVE-2026-114022",
+        "CVE-2026-114021",
+        "CVE-2026-113987",
+        "CVE-2026-113953",
         "CVE-2026-113915",
         "CVE-2026-113913",
         "CVE-2026-113912",
@@ -62059,6 +62252,55 @@
         "CVE-2026-113913": {
           "remote": true,
           "matched_pattern": "remote: web content"
+        },
+        "CVE-2026-113953": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "integer-overflow"
+          ]
+        },
+        "CVE-2026-113987": {
+          "severity": "high",
+          "matched_pattern": "severity: use-after-free",
+          "tags": [
+            "use-after-free"
+          ]
+        },
+        "CVE-2026-114021": {
+          "severity": "high",
+          "matched_pattern": "severity: memory corruption",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "kernel",
+            "memory-corruption",
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2026-114022": {
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2026-114023": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: arbitrary code execution; remote: web content",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "arbitrary-code"
+          ]
+        },
+        "CVE-2026-114025": {
+          "severity": "high",
+          "matched_pattern": "severity: arbitrary code execution",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "arbitrary-code",
+            "out-of-bounds"
+          ]
         },
         "CVE-2026-20648": {
           "remote": true,
@@ -72482,6 +72724,12 @@
       "release_date": "2026-10-26",
       "has_cves": true,
       "cves": [
+        "CVE-2026-114025",
+        "CVE-2026-114023",
+        "CVE-2026-114022",
+        "CVE-2026-114021",
+        "CVE-2026-113987",
+        "CVE-2026-113953",
         "CVE-2026-113915",
         "CVE-2026-113913",
         "CVE-2026-113912",
@@ -73289,6 +73537,55 @@
         "CVE-2026-113913": {
           "remote": true,
           "matched_pattern": "remote: web content"
+        },
+        "CVE-2026-113953": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "integer-overflow"
+          ]
+        },
+        "CVE-2026-113987": {
+          "severity": "high",
+          "matched_pattern": "severity: use-after-free",
+          "tags": [
+            "use-after-free"
+          ]
+        },
+        "CVE-2026-114021": {
+          "severity": "high",
+          "matched_pattern": "severity: memory corruption",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "kernel",
+            "memory-corruption",
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2026-114022": {
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2026-114023": {
+          "severity": "high",
+          "remote": true,
+          "matched_pattern": "severity: arbitrary code execution; remote: web content",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "arbitrary-code"
+          ]
+        },
+        "CVE-2026-114025": {
+          "severity": "high",
+          "matched_pattern": "severity: arbitrary code execution",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "arbitrary-code",
+            "out-of-bounds"
+          ]
         },
         "CVE-2026-64750": {
           "severity": "high",
@@ -89663,6 +89960,10 @@
       "release_date": "2026-10-26",
       "has_cves": true,
       "cves": [
+        "CVE-2026-114026",
+        "CVE-2026-114025",
+        "CVE-2026-113987",
+        "CVE-2026-113953",
         "CVE-2026-113950",
         "CVE-2026-113915",
         "CVE-2026-113912",
@@ -89719,6 +90020,7 @@
         "CVE-2026-112469",
         "CVE-2026-112468",
         "CVE-2026-112466",
+        "CVE-2026-112465",
         "CVE-2026-112464",
         "CVE-2026-112459",
         "CVE-2026-112455",
@@ -89760,6 +90062,13 @@
           "remote": true,
           "matched_pattern": "severity: heap corruption; remote: maliciously crafted",
           "tags": [
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2026-112465": {
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "kernel",
             "out-of-bounds"
           ]
         },
@@ -90028,6 +90337,37 @@
           ]
         },
         "CVE-2026-113950": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted",
+          "tags": [
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2026-113953": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "integer-overflow"
+          ]
+        },
+        "CVE-2026-113987": {
+          "severity": "high",
+          "matched_pattern": "severity: use-after-free",
+          "tags": [
+            "use-after-free"
+          ]
+        },
+        "CVE-2026-114025": {
+          "severity": "high",
+          "matched_pattern": "severity: arbitrary code execution",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "arbitrary-code",
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2026-114026": {
           "remote": true,
           "matched_pattern": "remote: maliciously crafted",
           "tags": [
@@ -90342,7 +90682,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 0
+      "parser_version": 2
     },
     {
       "id": "5064de779787",
@@ -93399,7 +93739,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 0
+      "parser_version": 2
     },
     {
       "id": "98ff9283fbcc",
@@ -95023,6 +95363,10 @@
       "release_date": "2026-10-26",
       "has_cves": true,
       "cves": [
+        "CVE-2026-114026",
+        "CVE-2026-114024",
+        "CVE-2026-113987",
+        "CVE-2026-113953",
         "CVE-2026-113950",
         "CVE-2026-113949",
         "CVE-2026-113915",
@@ -95117,6 +95461,7 @@
         "CVE-2026-112469",
         "CVE-2026-112468",
         "CVE-2026-112466",
+        "CVE-2026-112465",
         "CVE-2026-112464",
         "CVE-2026-112461",
         "CVE-2026-112455",
@@ -95218,6 +95563,13 @@
           "remote": true,
           "matched_pattern": "severity: heap corruption; remote: maliciously crafted",
           "tags": [
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2026-112465": {
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "kernel",
             "out-of-bounds"
           ]
         },
@@ -95364,6 +95716,9 @@
             "memory-corruption",
             "out-of-bounds"
           ]
+        },
+        "CVE-2026-112620": {
+          "entry_added_date": "2026-11-20"
         },
         "CVE-2026-112621": {
           "severity": "high",
@@ -95712,6 +96067,31 @@
           ]
         },
         "CVE-2026-113950": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted",
+          "tags": [
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2026-113953": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted",
+          "entry_added_date": "2026-11-20",
+          "tags": [
+            "integer-overflow"
+          ]
+        },
+        "CVE-2026-113987": {
+          "severity": "high",
+          "matched_pattern": "severity: use-after-free",
+          "tags": [
+            "use-after-free"
+          ]
+        },
+        "CVE-2026-114024": {
+          "entry_added_date": "2026-11-20"
+        },
+        "CVE-2026-114026": {
           "remote": true,
           "matched_pattern": "remote: maliciously crafted",
           "tags": [
@@ -96841,7 +97221,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 0
+      "parser_version": 2
     },
     {
       "id": "aa7c711ac5e6",
@@ -100691,6 +101071,9 @@
       "release_date": "2026-10-26",
       "has_cves": true,
       "cves": [
+        "CVE-2026-114026",
+        "CVE-2026-114024",
+        "CVE-2026-113987",
         "CVE-2026-113950",
         "CVE-2026-113915",
         "CVE-2026-113910",
@@ -100861,6 +101244,7 @@
           "severity": "high",
           "remote": true,
           "matched_pattern": "severity: use-after-free; remote: maliciously crafted",
+          "entry_added_date": "2026-11-20",
           "tags": [
             "arbitrary-code",
             "use-after-free",
@@ -101003,6 +101387,24 @@
         "CVE-2026-113950": {
           "remote": true,
           "matched_pattern": "remote: maliciously crafted",
+          "tags": [
+            "out-of-bounds"
+          ]
+        },
+        "CVE-2026-113987": {
+          "severity": "high",
+          "matched_pattern": "severity: use-after-free",
+          "tags": [
+            "use-after-free"
+          ]
+        },
+        "CVE-2026-114024": {
+          "entry_added_date": "2026-11-20"
+        },
+        "CVE-2026-114026": {
+          "remote": true,
+          "matched_pattern": "remote: maliciously crafted",
+          "entry_added_date": "2026-11-20",
           "tags": [
             "out-of-bounds"
           ]
@@ -107967,19 +108369,20 @@
     }
   ],
   "metadata": {
-    "fetch_timestamp": "2026-11-20T20:11:43.033203339Z",
+    "fetch_timestamp": "2026-11-21T00:46:41.043632883Z",
     "total_releases": 755,
     "cached": 128,
     "fetched": 627,
     "errors": [
-      "iOS 16.7.16 and iPadOS 16.7.16: detail fetch failed, carried forward 1 CVEs",
-      "visionOS 26.5: detail fetch failed, carried forward 51 CVEs",
-      "iOS 26.4 and iPadOS 26.4: detail fetch failed, carried forward 44 CVEs",
-      "iOS 16.7.9 and iPadOS 16.7.9: detail fetch failed, carried forward 27 CVEs",
-      "watchOS 10.5: detail fetch failed, carried forward 27 CVEs",
-      "iOS 17.4.1 and iPadOS 17.4.1: detail fetch failed, carried forward 1 CVEs",
-      "visionOS 1.1.1: detail fetch failed, carried forward 1 CVEs",
-      "iOS 15.8.1 and iPadOS 15.8.1: detail fetch failed, carried forward 2 CVEs"
+      "Xcode 27.2: CVE lists differ (only in CSAF: [], only in HTML: [CVE-2026-112603]); kept both",
+      "iOS 27.2 and iPadOS 27.2: CVE lists differ (only in CSAF: [], only in HTML: [CVE-2026-112465,CVE-2026-112487,CVE-2026-112662,CVE-2026-113953,CVE-2026-113954,CVE-2026-113987,CVE-2026-114024,CVE-2026-114025,CVE-2026-114026]); kept both",
+      "iOS 26.7.2 and iPadOS 26.7.2: CVE lists differ (only in CSAF: [], only in HTML: [CVE-2026-112487,CVE-2026-113955,CVE-2026-113987,CVE-2026-114025]); kept both",
+      "macOS Golden Gate 27.2: CVE lists differ (only in CSAF: [], only in HTML: [CVE-2026-112465,CVE-2026-112538,CVE-2026-113953,CVE-2026-113987,CVE-2026-114021,CVE-2026-114023,CVE-2026-114024,CVE-2026-114025,CVE-2026-114026,CVE-2026-114028,CVE-2026-132475]); kept both",
+      "macOS Tahoe 26.7.2: CVE lists differ (only in CSAF: [], only in HTML: [CVE-2026-113953,CVE-2026-113987,CVE-2026-114021,CVE-2026-114022,CVE-2026-114023,CVE-2026-114025]); kept both",
+      "macOS Sequoia 15.8.2: CVE lists differ (only in CSAF: [], only in HTML: [CVE-2026-113953,CVE-2026-113987,CVE-2026-114021,CVE-2026-114022,CVE-2026-114023,CVE-2026-114025]); kept both",
+      "tvOS 27.2: CVE lists differ (only in CSAF: [], only in HTML: [CVE-2026-112465,CVE-2026-113953,CVE-2026-113987,CVE-2026-114025,CVE-2026-114026]); kept both",
+      "watchOS 27.2: CVE lists differ (only in CSAF: [], only in HTML: [CVE-2026-113987,CVE-2026-114024,CVE-2026-114026]); kept both",
+      "visionOS 27.2: CVE lists differ (only in CSAF: [], only in HTML: [CVE-2026-112465,CVE-2026-113953,CVE-2026-113987,CVE-2026-114024,CVE-2026-114026]); kept both"
     ],
     "archive_fetched_at": "2026-11-14T10:59:52.507258893Z"
   }

@@ -1,8 +1,8 @@
 {
   "SchemaVersion": "2026.11.15.1",
   "Version": "2.0",
-  "UpdateHash": "0970d9ddbca6164a01dfae2c51177d9c95f05fcc2429cb84599d5382591f4616",
-  "LastCheck": "2026-11-20T20:11:43.739976111+00:00",
+  "UpdateHash": "86d484e12ef95e71a203d3d472888fd9cab4b2046fa6bcfb6cb12a845e558481",
+  "LastCheck": "2026-11-21T00:46:41.761948039+00:00",
   "OSVersions": [
     {
       "OSVersion": "27",
@@ -20,7 +20,7 @@
           "24B156"
         ],
         "ReleaseDate": "2026-11-09T00:00:00Z",
-        "ExpirationDate": "2027-02-18",
+        "ExpirationDate": "2027-02-19",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/149715",
         "Advisory": {
@@ -176,7 +176,7 @@
             "24B156"
           ],
           "ReleaseDate": "2026-11-09T00:00:00Z",
-          "ExpirationDate": "2027-02-18",
+          "ExpirationDate": "2027-02-19",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/149715",
           "Advisory": {
@@ -345,7 +345,7 @@
             "Updated": "2026-10-26T00:00:00Z",
             "Source": "Apple"
           },
-          "SecurityInfoContext": "iOS 27.2 was released on October 26, 2026. This release addressed 163 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "iOS 27.2 was released on October 26, 2026. This release addressed 172 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "iPad12,1",
             "iPad12,2",
@@ -452,6 +452,7 @@
             "CVE-2026-112459": {},
             "CVE-2026-112461": {},
             "CVE-2026-112464": {},
+            "CVE-2026-112465": {},
             "CVE-2026-112466": {},
             "CVE-2026-112468": {},
             "CVE-2026-112469": {},
@@ -462,6 +463,7 @@
             "CVE-2026-112479": {},
             "CVE-2026-112485": {},
             "CVE-2026-112486": {},
+            "CVE-2026-112487": {},
             "CVE-2026-112488": {},
             "CVE-2026-112491": {},
             "CVE-2026-112500": {},
@@ -526,6 +528,7 @@
             "CVE-2026-112658": {},
             "CVE-2026-112659": {},
             "CVE-2026-112660": {},
+            "CVE-2026-112662": {},
             "CVE-2026-112665": {},
             "CVE-2026-112666": {},
             "CVE-2026-112669": {},
@@ -575,6 +578,12 @@
             "CVE-2026-113949": {},
             "CVE-2026-113950": {},
             "CVE-2026-113952": {},
+            "CVE-2026-113953": {},
+            "CVE-2026-113954": {},
+            "CVE-2026-113987": {},
+            "CVE-2026-114024": {},
+            "CVE-2026-114025": {},
+            "CVE-2026-114026": {},
             "CVE-2026-65350": {},
             "CVE-2026-65385": {},
             "CVE-2026-65397": {},
@@ -601,7 +610,7 @@
             "CVE-2026-86992": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 163,
+          "UniqueCVEsCount": 172,
           "DaysSincePreviousRelease": 3,
           "DeviceScope": "universal",
           "SupersededBy": {
@@ -612,7 +621,7 @@
           },
           "UpdateSummary": {
             "Priority": "high",
-            "Summary": "Addresses 163 security issues",
+            "Summary": "Addresses 172 security issues",
             "Recommendation": "Update to stay secure - security fixes available",
             "Stats": {
               "Exploited": 0,
@@ -621,7 +630,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 163
+              "Total": 172
             }
           }
         },
@@ -812,7 +821,7 @@
             "24A437"
           ],
           "ReleaseDate": "2026-09-14T00:00:00Z",
-          "ExpirationDate": "2027-02-18",
+          "ExpirationDate": "2027-02-19",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/149034",
           "Advisory": {
@@ -1116,7 +1125,7 @@
           "23H131"
         ],
         "ReleaseDate": "2026-11-09T00:00:00Z",
-        "ExpirationDate": "2027-02-18",
+        "ExpirationDate": "2027-02-19",
         "ReleaseType": "OS",
         "SecurityInfo": "https://support.apple.com/en-us/149716",
         "Advisory": {
@@ -1275,7 +1284,7 @@
             "23H131"
           ],
           "ReleaseDate": "2026-11-09T00:00:00Z",
-          "ExpirationDate": "2027-02-18",
+          "ExpirationDate": "2027-02-19",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/149716",
           "Advisory": {
@@ -1447,7 +1456,7 @@
             "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 3rd generation and later, iPad Pro 11-inch 1st generation and later, iPad Air 3rd generation and later, iPad 8th generation and later, and iPad mini 5th generation and later",
             "Source": "Apple"
           },
-          "SecurityInfoContext": "iOS 26.7.2 was released on October 26, 2026. This release addressed 134 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "iOS 26.7.2 was released on October 26, 2026. This release addressed 138 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "iPad11,1",
             "iPad11,2",
@@ -1566,6 +1575,7 @@
             "CVE-2026-112477": {},
             "CVE-2026-112479": {},
             "CVE-2026-112486": {},
+            "CVE-2026-112487": {},
             "CVE-2026-112488": {},
             "CVE-2026-112491": {},
             "CVE-2026-112501": {},
@@ -1649,6 +1659,9 @@
             "CVE-2026-113915": {},
             "CVE-2026-113949": {},
             "CVE-2026-113952": {},
+            "CVE-2026-113955": {},
+            "CVE-2026-113987": {},
+            "CVE-2026-114025": {},
             "CVE-2026-28864": {},
             "CVE-2026-64750": {},
             "CVE-2026-64759": {},
@@ -1682,7 +1695,7 @@
             "CVE-2026-86992": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 134,
+          "UniqueCVEsCount": 138,
           "DaysSincePreviousRelease": 28,
           "DeviceScope": "universal",
           "SupersededBy": {
@@ -1693,7 +1706,7 @@
           },
           "UpdateSummary": {
             "Priority": "high",
-            "Summary": "Addresses 134 security issues",
+            "Summary": "Addresses 138 security issues",
             "Recommendation": "Update to stay secure - security fixes available",
             "Stats": {
               "Exploited": 0,
@@ -1702,7 +1715,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 134
+              "Total": 138
             }
           }
         },
@@ -1873,7 +1886,7 @@
             "23H24"
           ],
           "ReleaseDate": "2026-09-14T00:00:00Z",
-          "ExpirationDate": "2027-02-18",
+          "ExpirationDate": "2027-02-19",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/149041",
           "Advisory": {
@@ -3515,7 +3528,7 @@
             "22H390"
           ],
           "ReleaseDate": "2026-11-09T00:00:00Z",
-          "ExpirationDate": "2027-02-18",
+          "ExpirationDate": "2027-02-19",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/149717",
           "Advisory": {
@@ -3645,7 +3658,7 @@
             "22H374"
           ],
           "ReleaseDate": "2026-08-17T00:00:00Z",
-          "ExpirationDate": "2027-02-18",
+          "ExpirationDate": "2027-02-19",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/148287",
           "SecurityInfoContext": "iOS 18.7.10 was released on August 17, 2026. This release addressed 131 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
@@ -3912,7 +3925,7 @@
             "22H352"
           ],
           "ReleaseDate": "2026-04-22T00:00:00Z",
-          "ExpirationDate": "2027-02-18",
+          "ExpirationDate": "2027-02-19",
           "ReleaseType": "OS",
           "SecurityInfo": "https://support.apple.com/en-us/127003",
           "SecurityInfoContext": "iOS 18.7.8 was released on April 22, 2026. This release addressed one security issue. Newer updates are now available, so please check to see if they apply to your devices.",
@@ -5969,7 +5982,7 @@
       "Name": "Apple Product Security",
       "URL": "https://support.apple.com/en-us/100100",
       "Format": "CSAF 2.1 + HTML",
-      "Retrieved": "2026-11-20T20:11:43.033203339Z"
+      "Retrieved": "2026-11-21T00:46:41.043632883Z"
     },
     "KEV": {
       "Layer": 2,
@@ -6506,6 +6519,16 @@
         "Impact": "Processing a 3D model may lead to unexpected app termination",
         "Description": "An out-of-bounds write issue was addressed with improved bounds checking.",
         "AvailableFor": "iPhone 11 and later, iPad Pro 12.9-inch 4th generation and later, iPad Pro 11-inch 2nd generation and later, iPad Air 4th generation and later, iPad 9th generation and later, and iPad mini 6th generation and later"
+      }
+    },
+    "CVE-2026-112487": {
+      "Exploited": false,
+      "Apple": {
+        "Advisory": "APPLE-SA-149521",
+        "Component": "Storage",
+        "Impact": "An app may be able to gain root privileges",
+        "Description": "A path handling issue was addressed with improved validation.",
+        "AvailableFor": "macOS Golden Gate"
       }
     },
     "CVE-2026-112488": {
