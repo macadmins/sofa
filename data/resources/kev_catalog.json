@@ -1,9 +1,39 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
   "catalogVersion": "2026.11.23",
-  "dateReleased": "2026-11-23T12:54:37.9646Z",
-  "count": 1790,
+  "dateReleased": "2026-11-23T19:43:55.7979Z",
+  "count": 1792,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-133968",
+      "vendorProject": "Project MONAI",
+      "product": "MONAI Label",
+      "vulnerabilityName": "Project MONAI MONAI Label Path Traversal Vulnerability",
+      "dateAdded": "2026-11-23",
+      "shortDescription": "Project MONAI MONAI Label contains a path traversal vulnerability that allows an unauthenticated remote attacker to write arbitrary files outside the intended datastore directory, potentially resulting in remote code execution.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-11-26",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94 ; https://github.com/Project-MONAI/MONAILabel/pull/1915 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-133968",
+      "cwes": [
+        "CWE-24"
+      ]
+    },
+    {
+      "cveID": "CVE-2026-134624",
+      "vendorProject": "N-able",
+      "product": "MailAssure",
+      "vulnerabilityName": "N-able MailAssure (SpamExperts) Server-Side Request Forgery (SSRF) Vulnerability",
+      "dateAdded": "2026-11-23",
+      "shortDescription": "N-able MailAssure (SpamExperts) contains a server-side request forgery vulnerability in the LDAP synchronization connection check that allows an authenticated API user to connect to arbitrary internal hosts and ports, determine which are reachable, and send crafted data to internal services.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-11-26",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://me.n-able.com/s/security-advisory/aArVy0000002mrlKAA ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-134624",
+      "cwes": [
+        "CWE-918"
+      ]
+    },
     {
       "cveID": "CVE-2026-129448",
       "vendorProject": "Apache",
@@ -26639,5 +26669,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-11-23T20:10:39.785279734Z"
+  "fetchTimestamp": "2026-11-24T06:41:36.198339239Z"
 }
