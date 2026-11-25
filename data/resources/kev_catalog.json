@@ -1,9 +1,24 @@
 {
   "title": "CISA Catalog of Known Exploited Vulnerabilities",
-  "catalogVersion": "2026.11.24",
-  "dateReleased": "2026-11-24T17:47:46.199Z",
-  "count": 1795,
+  "catalogVersion": "2026.11.25",
+  "dateReleased": "2026-11-25T14:22:29.6361Z",
+  "count": 1796,
   "vulnerabilities": [
+    {
+      "cveID": "CVE-2026-103406",
+      "vendorProject": "Hewlett Packard Enterprise (HPE)",
+      "product": "Juniper Session Smart Conductor and Session Smart Router",
+      "vulnerabilityName": "Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router OS Command Injection Vulnerability",
+      "dateAdded": "2026-11-25",
+      "shortDescription": "Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router contain an OS command injection vulnerability that could allow a remote attacker to execute arbitrary commands as root via a specially crafted salt minion ID.",
+      "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "dueDate": "2026-11-28",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "https://supportportal.juniper.net/s/article/2026-10-On-Demand-Security-Bulletin-Session-Smart-Router-and-Session-Smart-Conductor-Multiple-internally-discovered-vulnerabilities-resolved ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-103406",
+      "cwes": [
+        "CWE-78"
+      ]
+    },
     {
       "cveID": "CVE-2026-132224",
       "vendorProject": "Optimizely",
@@ -26714,5 +26729,5 @@
       ]
     }
   ],
-  "fetchTimestamp": "2026-11-25T12:38:45.310745463Z"
+  "fetchTimestamp": "2026-11-25T18:13:20.449384394Z"
 }
