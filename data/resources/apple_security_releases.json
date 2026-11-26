@@ -68947,7 +68947,7 @@
         }
       },
       "source_url": "https://support.apple.com/en-us/100100",
-      "parser_version": 0
+      "parser_version": 2
     },
     {
       "id": "f8a776e8aeda",
@@ -89960,6 +89960,10 @@
       "release_date": "2026-10-26",
       "has_cves": true,
       "cves": [
+        "CVE-2026-114026",
+        "CVE-2026-114025",
+        "CVE-2026-113987",
+        "CVE-2026-113953",
         "CVE-2026-113950",
         "CVE-2026-113915",
         "CVE-2026-113912",
@@ -90016,6 +90020,7 @@
         "CVE-2026-112469",
         "CVE-2026-112468",
         "CVE-2026-112466",
+        "CVE-2026-112465",
         "CVE-2026-112464",
         "CVE-2026-112459",
         "CVE-2026-112455",
@@ -90421,7 +90426,7 @@
       },
       "source_url": "https://support.apple.com/en-us/100100",
       "csaf_url": "https://support.apple.com/content/dam/edam/applecare/images/en_US/otherassets/security/149524.json",
-      "parser_version": 0
+      "parser_version": 2
     },
     {
       "id": "6b2aa93e8ed8",
@@ -108364,7 +108369,7 @@
     }
   ],
   "metadata": {
-    "fetch_timestamp": "2026-11-26T19:09:38.626175641Z",
+    "fetch_timestamp": "2026-11-26T20:11:20.363348838Z",
     "total_releases": 755,
     "cached": 128,
     "fetched": 627,
@@ -108374,10 +108379,9 @@
       "macOS Golden Gate 27.2: CVE lists differ (only in CSAF: [], only in HTML: [CVE-2026-112465,CVE-2026-112538,CVE-2026-113953,CVE-2026-113987,CVE-2026-114021,CVE-2026-114023,CVE-2026-114024,CVE-2026-114025,CVE-2026-114026,CVE-2026-114028,CVE-2026-132475]); kept both",
       "macOS Tahoe 26.7.2: CVE lists differ (only in CSAF: [], only in HTML: [CVE-2026-113953,CVE-2026-113987,CVE-2026-114021,CVE-2026-114022,CVE-2026-114023,CVE-2026-114025]); kept both",
       "macOS Sequoia 15.8.2: CVE lists differ (only in CSAF: [], only in HTML: [CVE-2026-113953,CVE-2026-113987,CVE-2026-114021,CVE-2026-114022,CVE-2026-114023,CVE-2026-114025]); kept both",
-      "tvOS 27.2: detail page unavailable; 72 CVEs from Apple's CSAF JSON (JSON link from the previous run); notes from the previous run",
+      "tvOS 27.2: CVE lists differ (only in CSAF: [], only in HTML: [CVE-2026-112465,CVE-2026-113953,CVE-2026-113987,CVE-2026-114025,CVE-2026-114026]); kept both",
       "watchOS 27.2: CVE lists differ (only in CSAF: [], only in HTML: [CVE-2026-113987,CVE-2026-114024,CVE-2026-114026]); kept both",
-      "visionOS 27.2: CVE lists differ (only in CSAF: [], only in HTML: [CVE-2026-112465,CVE-2026-113953,CVE-2026-113987,CVE-2026-114024,CVE-2026-114026]); kept both",
-      "macOS Tahoe 26.1: detail fetch failed, carried forward 114 CVEs"
+      "visionOS 27.2: CVE lists differ (only in CSAF: [], only in HTML: [CVE-2026-112465,CVE-2026-113953,CVE-2026-113987,CVE-2026-114024,CVE-2026-114026]); kept both"
     ],
     "archive_fetched_at": "2026-11-21T18:34:42.681490791Z"
   }
