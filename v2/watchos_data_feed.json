@@ -2,8 +2,8 @@
   "SchemaVersion": "2026.11.15.1",
   "OSName": "watchOS",
   "Version": "2.0",
-  "UpdateHash": "0a00007e9060f2ee93f84f099fde1d1aeab1c609c4d05c2a7cc5ed84dbe605e9",
-  "LastCheck": "2026-11-27T18:35:34.239008677+00:00",
+  "UpdateHash": "1a3db7f86e7baa48a82fcad3ccba89a083cb3a0fccfc86150b935c6463d0a323",
+  "LastCheck": "2026-11-27T19:12:03.784799825+00:00",
   "OSVersions": [
     {
       "OSVersion": "watchOS 27",
@@ -204,7 +204,7 @@
             "AvailableFor": "Apple Watch Series 9 and later",
             "Source": "Apple"
           },
-          "SecurityInfoContext": "watchOS 27.2 was released on October 26, 2026. This release addressed 65 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "watchOS 27.2 was released on October 26, 2026. This release addressed 62 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "Watch7,1",
             "Watch7,10",
@@ -286,9 +286,6 @@
             "CVE-2026-113910": {},
             "CVE-2026-113915": {},
             "CVE-2026-113950": {},
-            "CVE-2026-113987": {},
-            "CVE-2026-114024": {},
-            "CVE-2026-114026": {},
             "CVE-2026-65350": {},
             "CVE-2026-65385": {},
             "CVE-2026-84495": {},
@@ -298,7 +295,7 @@
             "CVE-2026-86992": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 65,
+          "UniqueCVEsCount": 62,
           "DaysSincePreviousRelease": 28,
           "SupersededBy": {
             "ProductVersion": "27.2.1",
@@ -308,7 +305,7 @@
           },
           "UpdateSummary": {
             "Priority": "high",
-            "Summary": "Addresses 65 security issues",
+            "Summary": "Addresses 62 security issues",
             "Recommendation": "Update to stay secure - security fixes available",
             "Stats": {
               "Exploited": 0,
@@ -317,7 +314,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 65
+              "Total": 62
             }
           }
         },
@@ -1631,7 +1628,7 @@
       "Name": "Apple Product Security",
       "URL": "https://support.apple.com/en-us/100100",
       "Format": "CSAF 2.1 + HTML",
-      "Retrieved": "2026-11-27T18:35:33.533274377Z"
+      "Retrieved": "2026-11-27T19:12:02.933800010Z"
     },
     "KEV": {
       "Layer": 2,
