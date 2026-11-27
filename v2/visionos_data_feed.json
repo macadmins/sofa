@@ -2,8 +2,8 @@
   "SchemaVersion": "2026.11.15.1",
   "OSName": "visionOS",
   "Version": "2.0",
-  "UpdateHash": "9a2fbd74bd864658427045afad9fcb720b4b1ade9cb68c17cab8a823ccc66774",
-  "LastCheck": "2026-11-27T19:12:03.840416710+00:00",
+  "UpdateHash": "22b0b7e3295377046743c8f72f990714d01538bda0abbe640823c870922d24e7",
+  "LastCheck": "2026-11-27T20:11:47.213777212+00:00",
   "OSVersions": [
     {
       "OSVersion": "visionOS 27",
@@ -162,7 +162,7 @@
             "AvailableFor": "Apple Vision Pro (all models)",
             "Source": "Apple"
           },
-          "SecurityInfoContext": "visionOS 27.2 was released on October 26, 2026. This release addressed 125 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
+          "SecurityInfoContext": "visionOS 27.2 was released on October 26, 2026. This release addressed 130 security issues. Newer updates are now available, so please check to see if they apply to your devices.",
           "SupportedDevices": [
             "RealityDevice14,1",
             "RealityDevice17,1"
@@ -183,6 +183,7 @@
             "CVE-2026-112455": {},
             "CVE-2026-112461": {},
             "CVE-2026-112464": {},
+            "CVE-2026-112465": {},
             "CVE-2026-112466": {},
             "CVE-2026-112468": {},
             "CVE-2026-112469": {},
@@ -277,6 +278,10 @@
             "CVE-2026-113915": {},
             "CVE-2026-113949": {},
             "CVE-2026-113950": {},
+            "CVE-2026-113953": {},
+            "CVE-2026-113987": {},
+            "CVE-2026-114024": {},
+            "CVE-2026-114026": {},
             "CVE-2026-65350": {},
             "CVE-2026-65385": {},
             "CVE-2026-65397": {},
@@ -295,7 +300,7 @@
             "CVE-2026-86992": {}
           },
           "ActivelyExploitedCVEs": [],
-          "UniqueCVEsCount": 125,
+          "UniqueCVEsCount": 130,
           "DaysSincePreviousRelease": 28,
           "SupersededBy": {
             "ProductVersion": "27.2.1",
@@ -305,7 +310,7 @@
           },
           "UpdateSummary": {
             "Priority": "high",
-            "Summary": "Addresses 125 security issues",
+            "Summary": "Addresses 130 security issues",
             "Recommendation": "Update to stay secure - security fixes available",
             "Stats": {
               "Exploited": 0,
@@ -314,7 +319,7 @@
               "Medium": 0,
               "Low": 0,
               "Remote": 0,
-              "Total": 125
+              "Total": 130
             }
           }
         },
@@ -2137,7 +2142,7 @@
       "Name": "Apple Product Security",
       "URL": "https://support.apple.com/en-us/100100",
       "Format": "CSAF 2.1 + HTML",
-      "Retrieved": "2026-11-27T19:12:02.933800010Z"
+      "Retrieved": "2026-11-27T20:11:46.310395297Z"
     },
     "KEV": {
       "Layer": 2,
